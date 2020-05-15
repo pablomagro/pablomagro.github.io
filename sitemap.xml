@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pmagas.serveblog.net/2016/09/13/youtube-dl/</loc>
+    
+    <lastmod>2020-05-15T19:13:17.544Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://pmagas.serveblog.net/2016/09/13/Git-Documentation/</loc>
     
     <lastmod>2020-05-13T10:38:36.276Z</lastmod>
@@ -10,13 +17,6 @@
   
   <url>
     <loc>http://pmagas.serveblog.net/2016/09/18/Post-Installing-GNU-Linux-Debian-based/</loc>
-    
-    <lastmod>2020-05-13T10:38:19.952Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://pmagas.serveblog.net/2016/09/13/youtube-dl/</loc>
     
     <lastmod>2020-05-13T10:38:19.952Z</lastmod>
     
