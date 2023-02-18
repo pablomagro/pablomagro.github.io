@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Technical Tips to Revitalize Your Devices and Memory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Some tech things to refresh and don&#39;t forget">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Technical Tips to Revitalize Your Devices and Memory">
+<meta property="og:url" content="https://pmagas.serveblog.net/page/3/index.html">
+<meta property="og:site_name" content="Technical Tips to Revitalize Your Devices and Memory">
+<meta property="og:description" content="Some tech things to refresh and don&#39;t forget">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Pablo Magro Gaspar">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@https:&#x2F;&#x2F;twitter.com&#x2F;esrhim">
+<link rel="publisher" href="https://plus.google.com/u/0/113537401711657998977?rel=author">
+  
+    <link rel="alternate" href="/atom.xml" title="Technical Tips to Revitalize Your Devices and Memory" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-70668709-6', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Technical Tips to Revitalize Your Devices and Memory</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://pmagas.serveblog.net"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Obtain-a-refresh-token-at-Google-OAuth2-Playground" class="article article-type-post"
+  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/05/Obtain-a-refresh-token-at-Google-OAuth2-Playground/" class="article-date">
+  <time datetime="2018-01-04T21:54:03.000Z" itemprop="datePublished">5 Jan 2018</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Google/">Google</a>►<a class="article-category-link" href="/categories/Google/OAuth2-0/">OAuth2.0</a>►<a class="article-category-link" href="/categories/Google/OAuth2-0/Nodemailer/">Nodemailer</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/05/Obtain-a-refresh-token-at-Google-OAuth2-Playground/">Obtain a refresh token at Google OAuth2 Playground</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.- Go to the <a target="_blank" rel="noopener" href="https://developers.google.com/oauthplayground">Google Oauth2.0 Playground</a>.</p>
+<p>2.- Click the Gear Button on the right-top. Set your Client ID and Client Secret obtained from the <a target="_blank" rel="noopener" href="https://code.google.com/apis/console/">Google Developers Console</a>, and select Access token location as Authorization header w&#x2F; Bearer prefix. Close this configuration overlay.</p>
+<p><a target="_blank" rel="noopener" href="https://imgur.com/7Bcg7sM"><img src="https://i.imgur.com/7Bcg7sM.png" title="source: imgur.com" /></a></p>
+<p>3.- You will need to list the URL <a target="_blank" rel="noopener" href="https://developers.google.com/oauthplayground">https://developers.google.com/oauthplayground</a> as a valid redirect URI in your <a target="_blank" rel="noopener" href="https://code.google.com/apis/console/">Google APIs Console</a>‘s project. Then enter the client ID and secret assigned to a web application on your project below:</p>
+<p>4.- Set up the scopes. Use <a target="_blank" rel="noopener" href="https://mail.google.com/">https://mail.google.com/</a> as it’s the one need by nodemailer. Then click the Authorize APIs button.</p>
+<p><a target="_blank" rel="noopener" href="https://imgur.com/V8vMd06"><img src="https://i.imgur.com/V8vMd06.png" title="source: imgur.com" /></a></p>
+<p>5.- After OAuth2.0 authorization, exchange authorization code for tokens and your refresh token is ready-to-use.</p>
+<p><a target="_blank" rel="noopener" href="https://imgur.com/Xr2Cvvj"><img src="https://i.imgur.com/Xr2Cvvj.png" title="source: imgur.com" /></a></p>
+<p>6.- Finally you can use above credentials to send emails via <a target="_blank" rel="noopener" href="https://nodemailer.com/about/">nodemailer</a> without including passwords, as below:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Create the STMP transporter using the Gmail API and OAuth 2.0.</span></span><br><span class="line"><span class="keyword">const</span> transporter = nodemailer.<span class="title function_">createTransport</span>(&#123;</span><br><span class="line">  <span class="attr">service</span>: <span class="string">&#x27;Gmail&#x27;</span>,</span><br><span class="line">  <span class="attr">pool</span>: mailConfig.<span class="property">gmail</span>.<span class="property">pool</span>,</span><br><span class="line">  <span class="attr">auth</span>: &#123;</span><br><span class="line">    <span class="attr">clientId</span>:     mailConfig.<span class="property">clientID</span>,</span><br><span class="line">    <span class="attr">clientSecret</span>: mailConfig.<span class="property">clientSecret</span>,</span><br><span class="line">    <span class="attr">type</span>:         mailConfig.<span class="property">gmail</span>.<span class="property">type</span>,        <span class="comment">// &#x27;OAuth2&#x27;</span></span><br><span class="line">    <span class="attr">user</span>:         mailConfig.<span class="property">gmail</span>.<span class="property">user</span>,</span><br><span class="line">    <span class="attr">refreshToken</span>: mailConfig.<span class="property">gmail</span>.<span class="property">refreshToken</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://pmagas.serveblog.net/2018/01/05/Obtain-a-refresh-token-at-Google-OAuth2-Playground/" data-id="cle9c24mr000uros9a7lzcs6i" class="article-share-link">Share</a>
+      
+        <a href="https://pmagas.serveblog.net/2018/01/05/Obtain-a-refresh-token-at-Google-OAuth2-Playground/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Token/" rel="tag">Token</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer" class="article article-type-post"
+  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/" class="article-date">
+  <time datetime="2018-01-03T07:09:55.000Z" itemprop="datePublished">3 Jan 2018</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GNU-Linux/">GNU/Linux</a>►<a class="article-category-link" href="/categories/GNU-Linux/Installer/">Installer</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/">How to provide non-free firmware files to the Debian Stretch Installer</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>When I attempted to install Debian (9.3) on my laptop &#x2F; pc, I could not get a network connection, because the installer told me that it was missing the required firmware files for my network interfaces:</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Some of your hardware needs non-free firmware files to operate.  The firmware can be loaded from</span><br><span class="line">removable media, such as a USB stick or floppy.</span><br><span class="line"></span><br><span class="line">The missing firmware files are: iwlwifi-6000g2b-6.ucode iwlwifi-6000g2b-5.ucode</span><br><span class="line"></span><br><span class="line">If you have such media available now, insert it, and continue.</span><br><span class="line">Load missing firmware from removable media?</span><br></pre></td></tr></table></figure>
+
+<p>As I have been in this situation several times when I do not have a easy access to internet using a wired connection and I have a wireless card where the driver is not recognized by debian, and I have decided to write these lines to remind me how to fix it.</p>
+<h2 id="Faster-solution"><a href="#Faster-solution" class="headerlink" title="Faster solution"></a>Faster solution</h2><p>Use the unofficial ISO images with the non-free firmware already included (My normal option):
+<a target="_blank" rel="noopener" href="http://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/">http://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/</a></p>
+<h2 id="Longer-solution"><a href="#Longer-solution" class="headerlink" title="Longer solution"></a>Longer solution</h2><p>Download the non-free firmware, store it within an usb drive and mount it during the installation; you can check <a target="_blank" rel="noopener" href="https://www.linuxquestions.org/questions/debian-26/how-to-provide-non-free-firmware-files-to-the-debian-jessie-installer-4175542680/">this post</a> out, it is very well explained. Below is a summary from above post:</p>
+<ul>
+<li>First, of course, I had to actually find the required firmware files. To that end:</li>
+<li>I went to the Debian site.</li>
+<li>I clicked the Debian Packages link, to continue to the Debian Packages page.</li>
+<li>Under the Packages header, I selected the Search the contents of packages link.</li>
+<li>In the Keyword: field, I entered: iwlwifi.</li>
+<li>Under Display:, I selected the option labelled packages that contain files whose names contain the keyword.</li>
+<li>I left the Distribution: value unchanged at stable.</li>
+<li>I changed the Architecture: value to 64-bit PC (amd64).</li>
+<li>I clicked the Search button.</li>
+<li>In the list of search results that appeared next, I looked for the two files that I needed: iwlwifi-6000g2b-5.ucode and iwlwifi-6000g2b-6.ucode. Both files were present in the firmware-iwlwifi package.</li>
+<li>I clicked one of the firmware-iwlwifi links, to move on to the Binary firmware for Intel Wireless cards page.</li>
+<li>Under the Download firmware-iwlwifi header, I clicked the all architecture link to continue.</li>
+<li>On the next page, I clicked the link to the site from which I wanted to download the file.</li>
+</ul>
+<p>The Debian package firmware-iwlwifi_20161130-3_all.deb got downloaded for me.</p>
+<p>Next, it was time to extract the contents of the downloaded packages:</p>
+<p>I opened a command-line terminal window, and went to the directory where the packages were downloaded―which, in my case, was my personal download directory:
+Code:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Downloads</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>I extracted the contents of both packages into the current directory:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-deb --extract firmware-iwlwifi_20161130-3_all.deb .</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>I copied the entire contents of the firmware subdirectory to a USB stick that was formatted with a FAT filesystem.</li>
+</ul>
+<p>Note, in particular, that the USB stick included the contents of the firmware directory, not the directory itself!</p>
+<p>Finally, the time had come to retry the Debian installation. I simply booted the computer off the Debian 8.0.0 medium, and when it complained again about the missing firmware files, I took the following steps:</p>
+<ul>
+<li>Inserted the USB stick.</li>
+<li>pressed the <code>&lt;CTRL&gt;+&lt;Alt&gt;+&lt;F2&gt;</code> key combination, to switch to the second virtual terminal.</li>
+<li>ran either the blkid or the fdisk -l command, to find out under which device name the USB stick was known: &#x2F;dev&#x2F;sdc. Its FAT filesystem, which contained the firmware files, then, was &#x2F;dev&#x2F;sdc1.</li>
+<li>mounted the FAT filesystem under the &#x2F;lib&#x2F;firmware mountpoint―which, however, I had to create first:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /lib/firmware</span><br><span class="line">mount /dev/sdc1 /lib/firmware</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>I pressed <code>&lt;Ctrl&gt;+&lt;Alt&gt;+&lt;F5&gt;</code> to continue the installation process.</li>
+</ul>
+<p>The firmware files were successfully loaded, and I got prompted for my wireless networking parameters.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://pmagas.serveblog.net/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/" data-id="cle9c24mn000lros95i2lf9uw" class="article-share-link">Share</a>
+      
+        <a href="https://pmagas.serveblog.net/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debian/" rel="tag">Debian</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="latest-Install-latest-hplip-version-on-Debian-9" class="article article-type-latest"
+  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/29/Install-latest-hplip-version-on-Debian-9/" class="article-date">
+  <time datetime="2017-12-28T22:35:26.000Z" itemprop="datePublished">29 Dec 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GNU-Linux/">GNU/Linux</a>►<a class="article-category-link" href="/categories/GNU-Linux/Debian/">Debian</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/29/Install-latest-hplip-version-on-Debian-9/">Install latest hplip version on Debian 9</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I bought a new HP Deskjet 2621 and I tried to install it using the hp-setup which didn’t recognize it.</p>
+<p>The problem is the hplip version (generaly 3.16.11+repack0-3 in jessie and 3.16.11+repack0-1~bpo8+1 in jessie-backports), if you have a too recent printer (like me), ppd files are not available in version 3.16.11+repack0-3.</p>
+<p>I tried to install latest one <a target="_blank" rel="noopener" href="https://sourceforge.net/projects/hplip/files/hplip/3.17.11/">binary</a> (at that moment).</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh hplip-3.17.11.run</span><br></pre></td></tr></table></figure>
+
+<p>After the whole process a had a dependencies problems because packages:</p>
+<ul>
+<li><strong>pyqt4</strong></li>
+<li><strong>pyqt4-dbus</strong></li>
+</ul>
+<p>had different names in 9.3:</p>
+<ul>
+<li><strong>python-qt4</strong></li>
+<li><strong>python-qt4-dbus</strong></li>
+</ul>
+<p>So to fix it you have two options once downloaded the source code from above link.</p>
+<ol>
+<li>Following the instructions from the following <a target="_blank" rel="noopener" href="https://answers.launchpad.net/hplip/+question/452076">link</a> (#3 message).</li>
+<li>Compile and install it your self.</li>
+</ol>
+<p>I chose the 2nd option:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/src/hplip-3.17.11 $ ./configure</span><br></pre></td></tr></table></figure>
+
+<p>Here I found another dependencies issue:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;configure: error: cannot find net-snmp support (or --disable-network-build)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Disabling the networking build is bad idea if you have a wireless printer, it won’t work. Then your have to install the <strong>net-snmp</strong> packages and the development packages for <strong>openssl</strong>.</p>
+<p>Once installed above dependencies, I just executed bellow commands to install the hp-setup binary with my printer drivers.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~/src/hplip-3.17.11 $ make clean</span><br><span class="line">~/src/hplip-3.17.11 $ ./configure</span><br><span class="line">~/src/hplip-3.17.11 $ make</span><br><span class="line">~/src/hplip-3.17.11 $ su -c <span class="string">&quot;make install&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>And then execute hp-setup ans install your printer:</p>
+<img src="https://i.imgur.com/A9DIJ2v.png" width="" height="" alt="Hp-setup example" />
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://pmagas.serveblog.net/2017/12/29/Install-latest-hplip-version-on-Debian-9/" data-id="cle9c24mo000mros9f4fqcxqq" class="article-share-link">Share</a>
+      
+        <a href="https://pmagas.serveblog.net/2017/12/29/Install-latest-hplip-version-on-Debian-9/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Install/" rel="tag">Install</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hplip/" rel="tag">hplip</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Productive-VS-Code-Extensions" class="article article-type-post"
+  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/21/Productive-VS-Code-Extensions/" class="article-date">
+  <time datetime="2017-11-21T08:23:07.000Z" itemprop="datePublished">21 Nov 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/VS-Code/">VS Code</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/21/Productive-VS-Code-Extensions/">Productive VS Code Extensions</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I have been using Visual Studio Code now for over a year and I absolutely love the productivity it is given to me working with React and Angular projects.</p>
+<h1 id="List-of-Extensions"><a href="#List-of-Extensions" class="headerlink" title="List of Extensions"></a>List of Extensions</h1><ol>
+<li><a href="#angular-5-snippets">Angular 5 Snippets</a></li>
+<li><a href="#auto-import">Auto Import</a></li>
+<li><a href="#angular2-inline">Angular2 Inline</a></li>
+<li><a href="#angular2-switcher">Angular2 Switcher</a></li>
+<li><a href="#eslint">ESLint</a></li>
+<li><a href="#tslint">TSLint</a></li>
+<li><a href="#angular-language-service">Angular Language Service</a></li>
+<li><a href="#auto-rename-tags">Auto Rename Tags</a></li>
+<li><a href="#bracket-pair-colorizer">Bracket Pair Colorizer</a></li>
+<li><a href="#code-spell-checker">Code Spell Checker</a></li>
+<li><a href="#mocha-sidebar">Mocha sidebar</a></li>
+<li><a href="#mark-jump">Mark Jump</a></li>
+<li><a href="#project-manager">Project Manager</a></li>
+<li><a href="#settings-sync">Settings Sync</a></li>
+<li><a href="#shortcuts">Shortcuts</a></li>
+</ol>
+<h2 id="Angular-5-Snippets"><a href="#Angular-5-Snippets" class="headerlink" title="Angular 5 Snippets "></a><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=Mikael.Angular-BeastCode">Angular 5 Snippets</a> <a id="angular-5-snippets"></a></h2><p>Visual Studio Code TypeScript and Html snippets and code examples for Angular 2+.</p>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><p>Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ext install Mikael.Angular-BeastCode</span><br></pre></td></tr></table></figure>
+
+<h2 id="Auto-Import"><a href="#Auto-Import" class="headerlink" title="Auto Import "></a><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=steoates.autoimport">Auto Import</a> <a id="auto-import"></a></h2><p>Automatically finds, parses and provides code actions and code completion for all available imports. Works with Typescript and TSX.</p>
+<h3 id="Installation-1"><a href="#Installation-1" class="headerlink" title="Installation"></a>Installation</h3><p>Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ext install steoates.autoimport</span><br></pre></td></tr></table></figure>
+
+<h2 id="Angular2-Inline"><a href="#Angular2-Inline" class="headerlink" title="Angular2 Inline "></a><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=natewallace.angular2-inline">Angular2 Inline</a> <a id="angular2-inline"></a></h2><p><em>This extension replaces the language-vscode-javascript-angular2 extension.</em></p>
+<p>This package is a language extension for Microsoft Visual Studio Code. It extends the javascript and typescript languages to add Angular2 specific features for inline templates and stylesheets. When you define an inline template or inline style sheet using the backtick character(`) the content will be processed by this extension.</p>
+<p>The features provided by this extension:</p>
+<p>Syntax highlighting of inline html and css.
+Code completion, highlighting, and hover information for inline html.</p>
+<h4 id="Installation-2"><a href="#Installation-2" class="headerlink" title="Installation"></a>Installation</h4><p>Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ext install natewallace.angular2-inline</span><br></pre></td></tr></table></figure>
+
+<h2 id="Angular2-Switcher"><a href="#Angular2-Switcher" class="headerlink" title="Angular2 Switcher "></a><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=natewallace.angular2-inline">Angular2 Switcher</a> <a id="angular2-switcher"></a></h2><p>Easily navigate to typescript(.ts)|template(.html)|style(.scss&#x2F;.sass&#x2F;.less&#x2F;.css) in angular2 project.</p>
+<h4 id="Installation-3"><a href="#Installation-3" class="headerlink" title="Installation"></a>Installation</h4><p>Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ext install infinity1207.angular2-switcher</span><br></pre></td></tr></table></figure>
+
+<h2 id="ESLint"><a href="#ESLint" class="headerlink" title="ESLint "></a><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint.tslint">ESLint</a> <a id="eslint"></a></h2><p>Integrates <a target="_blank" rel="noopener" href="http://eslint.org/">ESLint</a> into VS Code. If you are new to ESLint check the <a target="_blank" rel="noopener" href="http://eslint.org/">documentation</a>.</p>
+<p>The extension uses the ESLint library installed in the opened workspace folder. If the folder doesn’t provide one the extension looks for a global install version. If you haven’t installed ESLint either locally or globally do so by running npm install eslint in the workspace folder for a local install or <em><code>npm install -g eslint</code></em> for a global install.</p>
+<p>On new folders you might also need to create a .eslintrc configuration file. You can do this by either using the VS Code command Create ESLint configuration or by running the eslint command in a terminal. If you have installed ESLint globally (see above) then <a target="_blank" rel="noopener" href="http://eslint.org/docs/user-guide/command-line-interface">run eslint –init</a> in a terminal. If you have installed ESLint locally then run <a target="_blank" rel="noopener" href="http://eslint.org/docs/user-guide/command-line-interface">.\node_modules.bin\eslint –init</a> under Windows and <a target="_blank" rel="noopener" href="http://eslint.org/docs/user-guide/command-line-interface">.&#x2F;node_modules&#x2F;.bin&#x2F;eslint –init</a> under Linux and Mac.</p>
+<h3 id="Installation-4"><a href="#Installation-4" class="headerlink" title="Installation"></a>Installation</h3><p>Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ext install dbaeumer.vscode-eslint</span><br></pre></td></tr></table></figure>
+
+<h2 id="TSLint"><a href="#TSLint" class="headerlink" title="TSLint "></a><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=eg2.tslint">TSLint</a> <a id="tslint"></a></h2><p>Integrates the <a href="#https://github.com/palantir/tslint">tslint</a> linter for the TypeScript language into VS Code.</p>
+<p>Please refer to the tslint <a href="#https://github.com/palantir/tslint">documentation</a> for how to configure the linting rules.</p>
+<h4 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h4><p>The extension requires that the tslint and typescript modules are installed either locally or globally. The extension will use the tslint module that is installed closest to the linted file. To install tslint and typescript globally you can run</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g tslint typescript.</span><br></pre></td></tr></table></figure>
+
+<h4 id="Installation-5"><a href="#Installation-5" class="headerlink" title="Installation"></a>Installation</h4><p>Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ext install infinity1207.angular2-switcher</span><br></pre></td></tr></table></figure>
+
+<h2 id="Angular-Language-Service"><a href="#Angular-Language-Service" class="headerlink" title="Angular Language Service "></a><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=Angular.ng-template">Angular Language Service</a> <a id="angular-language-service"></a></h2><p>Editor services for Angular templates. When typing in inline or external templates you will get suggestions for autocompletion.</p>
+<h4 id="Installation-6"><a href="#Installation-6" class="headerlink" title="Installation"></a>Installation</h4><p>Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ext install Angular.ng-template</span><br></pre></td></tr></table></figure>
+
+<h4 id="Using"><a href="#Using" class="headerlink" title="Using"></a>Using</h4><p>This extension provides a rich editing experience for Angular templates, both inline and external templates including:</p>
+<ul>
+<li>Completions lists</li>
+<li>AOT Diagnostic messages</li>
+<li>Quick info</li>
+<li>Go to definition</li>
+</ul>
+<p>This extension uses @angular&#x2F;<a href="mailto:&#108;&#97;&#x6e;&#103;&#117;&#x61;&#103;&#101;&#x2d;&#115;&#101;&#x72;&#118;&#x69;&#99;&#x65;&#64;&#x35;&#x2e;&#x30;&#46;&#x30;&#x2d;&#98;&#101;&#116;&#x61;&#x2e;&#x35;">&#108;&#97;&#x6e;&#103;&#117;&#x61;&#103;&#101;&#x2d;&#115;&#101;&#x72;&#118;&#x69;&#99;&#x65;&#64;&#x35;&#x2e;&#x30;&#46;&#x30;&#x2d;&#98;&#101;&#116;&#x61;&#x2e;&#x35;</a> and <a href="mailto:&#x74;&#121;&#x70;&#101;&#115;&#x63;&#x72;&#105;&#x70;&#116;&#64;&#x32;&#x2e;&#52;&#x2e;&#x32;">&#x74;&#121;&#x70;&#101;&#115;&#x63;&#x72;&#105;&#x70;&#116;&#64;&#x32;&#x2e;&#52;&#x2e;&#x32;</a>.</p>
+<h2 id="Auto-Rename-Tags"><a href="#Auto-Rename-Tags" class="headerlink" title="Auto Rename Tags "></a><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag">Auto Rename Tags</a> <a id="auto-rename-tags"></a></h2><p>Editor services for Angular templates. When typing in inline or external templates you will get suggestions for autocompletion.</p>
+<p>If you rename an HTML tag, the related closing tag will be adjusted simultaneously.</p>
+<img src="https://raw.githubusercontent.com/formulahendry/vscode-auto-rename-tag/master/images/usage.gif" width="727" height="473" alt="Usage example" />
+
+<h4 id="Installation-7"><a href="#Installation-7" class="headerlink" title="Installation"></a>Installation</h4><p>Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ext install formulahendry.auto-rename-tag</span><br></pre></td></tr></table></figure>
+
+<h4 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h4><p>Add entry into auto-rename-tag.activationOnLanguage to set the languages that the extension will be activated. By default, it is [“*”] and will be activated for all languages.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;auto-rename-tag.activationOnLanguage&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;html&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;xml&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;php&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;javascript&quot;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Note</strong>: The setting should be set with language id defined in VS Code. Taking javascript definition as an example, we need to use javascript for .js and .es6, use javascriptreact for .jsx. So, if you want to enable this extension on .js file, you need to add javascript in settings.json.</p>
+<h2 id="Bracket-Pair-Colorizer"><a href="#Bracket-Pair-Colorizer" class="headerlink" title="Bracket Pair Colorizer "></a><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer">Bracket Pair Colorizer</a> <a id="bracket-pair-colorizer"></a></h2><p>Note: This extension has grown beyond its initial requirements and needs a rewrite for better language support.</p>
+<p>This extension allows matching brackets to be identified with colours. The user can define which characters to match, and which colours to use.</p>
+<p>All pairs of related brackets ( (…) , {…} , […] , as well in nested constellations) will be colored with a specific color.</p>
+<img src="https://github.com/CoenraadS/BracketPair/raw/master/images/example.png" width="" height="" alt="Screenshot" />
+
+<h4 id="Installation-8"><a href="#Installation-8" class="headerlink" title="Installation"></a>Installation</h4><p>Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ext install CoenraadS.bracket-pair-colorizer</span><br></pre></td></tr></table></figure>
+
+<h2 id="Code-Spell-Checker"><a href="#Code-Spell-Checker" class="headerlink" title="Code Spell Checker "></a><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">Code Spell Checker</a> <a id="code-spell-checker"></a></h2><p>A basic spell checker that works well with camelCase code.</p>
+<p>The goal of this spell checker is to help with catching common spelling errors while keeping the number of false positives low.</p>
+<h4 id="Installation-9"><a href="#Installation-9" class="headerlink" title="Installation"></a>Installation</h4><p>Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ext install streetsidesoftware.code-spell-checker</span><br></pre></td></tr></table></figure>
+
+<h4 id="Functionality"><a href="#Functionality" class="headerlink" title="Functionality"></a>Functionality</h4><p>Load a TypeScript, JavaScript, Text, etc.. file. Words not in the dictionary files will have a squiggly underline.</p>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><img src="https://raw.githubusercontent.com/Jason-Rev/vscode-spell-checker/master/client/images/example.gif" width="" height="" alt="Example" />
+
+<h2 id="Mocha-sidebar"><a href="#Mocha-sidebar" class="headerlink" title="Mocha sidebar "></a><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=maty.vscode-mocha-sidebar">Mocha sidebar</a> <a id="mocha-sidebar"></a></h2><p>Mocha side bar is the most complete extension for mocha testing based on not maintained mocha extension and supports all of its features and much more.</p>
+<h4 id="Installation-10"><a href="#Installation-10" class="headerlink" title="Installation"></a>Installation</h4><p>Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ext install maty.vscode-mocha-sidebar</span><br></pre></td></tr></table></figure>
+
+<h4 id="Functionality-1"><a href="#Functionality-1" class="headerlink" title="Functionality"></a>Functionality</h4><p>Mocha side bar already supports this features:</p>
+<ul>
+<li>See all tests in vscode side bar menu</li>
+<li>Run tests for each level hierarchy from all tests to a single test(and each describer of course)</li>
+<li>Debug tests for each level hierarchy from all tests to a single test(and each describer of course)</li>
+<li>Auto run tests on file save</li>
+<li>NEW: see tests results directly on the code</li>
+<li>NEW:run&#x2F;debug results directly from the code</li>
+</ul>
+<h4 id="Configuration-1"><a href="#Configuration-1" class="headerlink" title="Configuration"></a>Configuration</h4><p>As I am using the NODE_PATH variable for the relative paths, I have to set it using the “mocha.env” option.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//-------- Mocha options --------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Mocha: Glob to search for test files</span></span><br><span class="line"><span class="attr">&quot;mocha.files.glob&quot;</span><span class="punctuation">:</span> <span class="string">&quot;test/**/**/*.js&quot;</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Mocha: Environment variables to run your tests</span></span><br><span class="line"><span class="attr">&quot;mocha.env&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;NODE_PATH&quot;</span><span class="punctuation">:</span> <span class="string">&quot;.&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;TEST_ENV&quot;</span><span class="punctuation">:</span> <span class="string">&quot;unit&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;NODE_ENV&quot;</span><span class="punctuation">:</span> <span class="string">&quot;development&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Mocha: Options to run Mocha</span></span><br><span class="line"><span class="attr">&quot;mocha.options&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;timeout&quot;</span><span class="punctuation">:</span> <span class="number">10000</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Mocha: this option allows you to enable/disable lens decorations and set update threshold &quot;</span></span><br><span class="line"><span class="attr">&quot;mocha.sideBarOptions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;default&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;lens&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">// -&gt; enable/disable lens</span></span><br><span class="line">      <span class="attr">&quot;decoration&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">// -&gt; enable/disable decoration</span></span><br><span class="line">      <span class="attr">&quot;autoUpdateTime&quot;</span><span class="punctuation">:</span> <span class="number">600000</span> <span class="comment">// -&gt; set timeout between each decorations and lens updates during test writing</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><img src="https://i.imgur.com/p2yuNWl.png" width="" height="" alt="Working example" />
+
+<h4 id="Functionality-2"><a href="#Functionality-2" class="headerlink" title="Functionality"></a>Functionality</h4><p>Mocha side bar already supports this features:</p>
+<ul>
+<li>See all tests in vscode side bar menu</li>
+<li>Run tests for each level hierarchy from all tests to a single test(and each describer of course)</li>
+<li>Debug tests for each level hierarchy from all tests to a single test(and each describer of course)</li>
+<li>Auto run tests on file save</li>
+<li>NEW: see tests results directly on the code</li>
+<li>NEW:run&#x2F;debug results directly from the code</li>
+</ul>
+<h4 id="Configuration-2"><a href="#Configuration-2" class="headerlink" title="Configuration"></a>Configuration</h4><p>As I am using the NODE_PATH variable for the relative paths, I have to set it using the “mocha.env” option.</p>
+<h2 id="Mark-Jump"><a href="#Mark-Jump" class="headerlink" title="Mark Jump"></a><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=spywhere.mark-jump">Mark Jump</a><a id="mark-jump"></a></h2><p>Jump to the marked section in the code</p>
+<h4 id="Installation-11"><a href="#Installation-11" class="headerlink" title="Installation"></a>Installation</h4><p>Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ext install spywhere.mark-jump</span><br></pre></td></tr></table></figure>
+
+<h4 id="What-is-Mark-Jump"><a href="#What-is-Mark-Jump" class="headerlink" title="What is Mark Jump?"></a>What is Mark Jump?</h4><p>Mark Jump is simply an extension that let you jump across your marking points in the code.</p>
+<h4 id="How-to-use-it"><a href="#How-to-use-it" class="headerlink" title="How to use it?"></a>How to use it?</h4><p>Simply install the extension, Mark Jump should show the mark count in the status bar! Use arrow keys to jump between them, click to jump to it.</p>
+<p>You can also use the following key bindings to jump through various type of marks…</p>
+<ul>
+<li>Ctrl+Alt+P &#x2F; Ctrl+Cmd+P (markJump.jumpToProjectMarks): Jump to all marks in the project</li>
+<li>Ctrl+Alt+M &#x2F; Ctrl+Cmd+M (markJump.jumpToMarks): Jump to all marks (either in current editor or a whole project)</li>
+<li>Ctrl+Alt+S &#x2F; Ctrl+Cmd+S (markJump.jumpToEditorMarks.section): Jump to all section marks (in current editor)</li>
+<li>Ctrl+Alt+T &#x2F; Ctrl+Cmd+T (markJump.jumpToEditorMarks.todo): Jump to all TODOs (in current editor)</li>
+<li>Ctrl+Alt+N &#x2F; Ctrl+Cmd+N (markJump.jumpToEditorMarks.note): Jump to all Notes (in current editor)</li>
+<li>Ctrl+Alt+, &#x2F; Ctrl+Cmd+, (markJump.jumpToPreviousMark): Jump to previous mark (in current editor)</li>
+<li>Ctrl+Alt+. &#x2F; Ctrl+Cmd+. (markJump.jumpToNextMark): Jump to next mark (in current editor)</li>
+</ul>
+<h2 id="Project-Manager"><a href="#Project-Manager" class="headerlink" title="Project Manager "></a><a target="_blank" rel="noopener" href="https://github.com/alefragnani/vscode-project-manager">Project Manager</a> <a id="project-manager"></a></h2><p>Project Manager is an open source extension created for Visual Studio Code. While being free and open source, if you find it useful, please consider supporting it</p>
+<p>It helps you to easily access your projects, no matter where they are located. Don’t miss that important projects anymore. You can define your own Favorite projects, or choose for auto-detect VSCode projects, Git, Mercurial and SVN repositories or any folder.</p>
+<p>Since version 8 you have a dedicated Activity Bar for your projects!</p>
+<h3 id="What’s-new-in-Project-Manager-9"><a href="#What’s-new-in-Project-Manager-9" class="headerlink" title="What’s new in Project Manager 9"></a>What’s new in Project Manager 9</h3><ul>
+<li>Moves the Treeview to its own Activity Bar</li>
+<li>Adds Add to Workspace command to add any project to current workspace</li>
+<li>Use new NotificationUI while refreshing projects</li>
+</ul>
+<h4 id="Installation-12"><a href="#Installation-12" class="headerlink" title="Installation"></a><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager">Installation</a></h4><p>Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ext install alefragnani.project-manager</span><br></pre></td></tr></table></figure>
+
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><h4 id="Available-Commands"><a href="#Available-Commands" class="headerlink" title="Available Commands"></a>Available Commands</h4><ul>
+<li>Project Manager: <code>Save Project</code> Save the current folder as a new project</li>
+<li>Project Manager: <code>Edit Project</code> Edit your projects manually (projects.json)</li>
+<li>Project Manager: <code>List Projects</code> to Open List all saved&#x2F;detected projects and pick one</li>
+<li>Project Manager: <code>List Projects</code> to Open in New Window List all saved&#x2F;detected projects and pick one to be opened in New Window</li>
+<li>Project Manager: <code>Refresh Projects</code> Refresh the cached projects</li>
+</ul>
+<h3 id="Open-project-in-a-new-window-Version-9-0-0"><a href="#Open-project-in-a-new-window-Version-9-0-0" class="headerlink" title="Open project in a new window (Version 9.0.0)"></a>Open project in a new window (Version 9.0.0)</h3><h4 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h4><ul>
+<li>Open settings</li>
+<li>Search by: projectManager.openInNewWindow</li>
+<li>Check option: “Project Manager: Open In New Window When Clicking In Status Bar”</li>
+</ul>
+<h2 id="Settings-Sync"><a href="#Settings-Sync" class="headerlink" title="Settings Sync "></a><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync">Settings Sync</a> <a id="settings-sync"></a></h2><p>Synchronize Settings, Snippets, Themes, File Icons, Launch, Keybindings, Workspaces and Extensions Across Multiple Machines Using GitHub Gist.</p>
+<h3 id="Installation-13"><a href="#Installation-13" class="headerlink" title="Installation"></a>Installation</h3><p>Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ext install Shan.code-settings-sync</span><br></pre></td></tr></table></figure>
+
+<h3 id="Key-Features"><a href="#Key-Features" class="headerlink" title="Key Features"></a>Key Features</h3><ol>
+<li>Use your GitHub account token and Gist.</li>
+<li>Easy to Upload and Download on one click.</li>
+<li>Show a summary page at the end with details about config and extensions effected.</li>
+<li>Auto download Latest Settings on Startup.</li>
+<li>Auto upload Settings on file change.</li>
+<li>Share the Gist with other users and let them download your settings.</li>
+<li>Supports GitHub Enterprise</li>
+<li>Support pragmas with @sync keywords: host, os and env are supported.</li>
+</ol>
+<p>Check the “Steps To Get a Personal Access Token from GitHub” to setup Setting Sync and a GitHub account.</p>
+<h2 id="Shortcuts"><a href="#Shortcuts" class="headerlink" title="Shortcuts "></a>Shortcuts <a id="shortcuts"></a></h2><h3 id="Lower-Case-and-Upper-Case"><a href="#Lower-Case-and-Upper-Case" class="headerlink" title="Lower Case and Upper Case"></a>Lower Case and Upper Case</h3><p>From Visual Studio Code version 1.8.1 or above you can customize your own shortcuts to do it .</p>
+<ol>
+<li>Top menu: File-&gt; Preferences -&gt; Keyboard Shortcuts.</li>
+<li>Click over keybindings.json and an editor will appear with keybindings.json file.</li>
+<li>Place the following JSON in there and save.<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+k u&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;editor.action.transformToUppercase&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;when&quot;</span><span class="punctuation">:</span> <span class="string">&quot;editorTextFocus&quot;</span></span><br><span class="line">     <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">     <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+k l&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;editor.action.transformToLowercase&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;when&quot;</span><span class="punctuation">:</span> <span class="string">&quot;editorTextFocus&quot;</span></span><br><span class="line">     <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Copy-lines"><a href="#Copy-lines" class="headerlink" title="Copy lines"></a>Copy lines</h3><p>Copy line down:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Ctrl+Alt+Windows+Down&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;editor.action.copyLinesDownAction&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;when&quot;</span><span class="punctuation">:</span> <span class="string">&quot;editorTextFocus&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>Copy line up:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Ctrl+Alt+Windows+Up&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;editor.action.copyLinesUpAction&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;when&quot;</span><span class="punctuation">:</span> <span class="string">&quot;editorTextFocus&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="Select-a-line"><a href="#Select-a-line" class="headerlink" title="Select a line"></a>Select a line</h3><p>Ctrl+i</p>
+<h3 id="Multi-cursor-modifier"><a href="#Multi-cursor-modifier" class="headerlink" title="Multi-cursor modifier"></a><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/editor/codebasics#_multicursor-modifier">Multi-cursor modifier</a></h3><p>If you’d like to change the modifier key for applying multiple cursors to Cmd+Click on macOS and Ctrl+Click on Windows and Linux, you can do so with the <strong>editor.multiCursorModifier</strong> <a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/getstarted/settings">setting</a>. This lets users coming from other editors such as Sublime Text or Atom continue to use the keyboard modifier they are familiar with.</p>
+<p>The setting can be set to:</p>
+<ul>
+<li><code>ctrlCmd</code> - Maps to <code>Ctrl</code> on Windows and Cmd on macOS.</li>
+<li><code>alt</code> - The existing default <code>Alt</code>.</li>
+</ul>
+<p>There’s also a menu item Use Ctrl+Click for Multi-Cursor in the Selection menu to quickly toggle this setting.</p>
+<p><strong>I use this option because I use <code>Alt+Click</code> in GNU&#x2F;Linux to move windows, I don not wat change that behaviour which I have used per years.</strong></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// DEFAULT:</span></span><br><span class="line"><span class="comment">// The modifier to be used to add multiple cursors with the mouse. `ctrlCmd` maps to `Control` on Windows and Linux and to `Command` on macOS. The Go To Definition and Open Link mouse gestures will adapt such that they do not conflict with the multicursor modifier.</span></span><br><span class="line"><span class="attr">&quot;editor.multiCursorModifier&quot;</span><span class="punctuation">:</span> <span class="string">&quot;alt&quot;</span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// MY OPTION:</span></span><br><span class="line"><span class="attr">&quot;editor.multiCursorModifier&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrlCmd&quot;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<p>The Go To Definition and Open Link gestures will also respect this setting and adapt such that they do not conflict. For example, when the setting is ctrlCmd, multiple cursors can be added with <code>Ctrl/Cmd+Click</code>, and opening links or going to definition can be invoked with <code>Alt+Click</code>.</p>
+<blockquote>
+<p>You can also add more cursors with <code>Ctrl+Shift+</code>L, which will add a selection at each occurrence of the current selected text.</p>
+</blockquote>
+<h3 id="Insert-cursor-at-end-of-each-line"><a href="#Insert-cursor-at-end-of-each-line" class="headerlink" title="Insert cursor at end of each line"></a>Insert cursor at end of each line</h3><p>Shift+Alt+i</p>
+<img src="https://i.stack.imgur.com/W6SRV.png" alt="Insert cursor at end of each line" />
+
+<h3 id="Trim-Trailing-Whitespace"><a href="#Trim-Trailing-Whitespace" class="headerlink" title="Trim Trailing Whitespace"></a>Trim Trailing Whitespace</h3><p>You can enable whitespace trimming from settings:</p>
+<ol>
+<li>Open VS User Settings (Preferences &gt; User Settings). This will open two side-by-side documents.</li>
+<li>Add a new “files.trimTrailingWhitespace”: true setting to the User Settings document on the right if it’s not already there. This is so you aren’t editing the Default Setting directly, but instead adding to it.</li>
+<li>Save the User Settings file.</li>
+</ol>
+<h3 id="Basic-Editing"><a href="#Basic-Editing" class="headerlink" title="Basic Editing"></a>Basic Editing</h3><p>Visual Studio Code is an editor first and foremost and includes the features you need for highly productive source code editing. This topic takes you through the basics of the editor and helps you get moving with your code.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/editor/codebasics">https://code.visualstudio.com/docs/editor/codebasics</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/getstarted/keybindings">https://code.visualstudio.com/docs/getstarted/keybindings</a></li>
+</ul>
+<h3 id="Official-VSCode-Keyboard-shortcut-cheatsheets"><a href="#Official-VSCode-Keyboard-shortcut-cheatsheets" class="headerlink" title="Official VSCode Keyboard shortcut cheatsheets:"></a>Official VSCode Keyboard shortcut cheatsheets:</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf">https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf">https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf">https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://pmagas.serveblog.net/2017/11/21/Productive-VS-Code-Extensions/" data-id="cle9c24ms000zros9cziy9b7x" class="article-share-link">Share</a>
+      
+        <a href="https://pmagas.serveblog.net/2017/11/21/Productive-VS-Code-Extensions/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Extensions/" rel="tag">Extensions</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Disable-baloo-file-extractor" class="article article-type-post"
+  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/16/Disable-baloo-file-extractor/" class="article-date">
+  <time datetime="2017-11-15T19:33:44.000Z" itemprop="datePublished">16 Nov 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GNU-Linux/">GNU/Linux</a>►<a class="article-category-link" href="/categories/GNU-Linux/KDE/">KDE</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/16/Disable-baloo-file-extractor/">Disable baloo file extractor</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Disable-baloo-file-extractor-KDE-5"><a href="#Disable-baloo-file-extractor-KDE-5" class="headerlink" title="Disable baloo-file-extractor (KDE 5)"></a>Disable baloo-file-extractor (KDE 5)</h2><p>Run below command from the console:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ balooctl status</span><br><span class="line">$ balooctl <span class="built_in">disable</span></span><br></pre></td></tr></table></figure>
+
+<p>Remove the local content:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">rm</span> -rfv ~/.local/share/baloo</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://pmagas.serveblog.net/2017/11/16/Disable-baloo-file-extractor/" data-id="cle9c24mh0005ros9de005nhu" class="article-share-link">Share</a>
+      
+        <a href="https://pmagas.serveblog.net/2017/11/16/Disable-baloo-file-extractor/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/File/" rel="tag">File</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; __(&#39;prev&#39;)</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">__(&#39;next&#39;) &amp;raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/18/Getting-Started-With-Hexo/">Getting started with Hexo</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/17/How-to-add-Open-Folder-with-X-when-I-right-click-in-an-folder-in-Dolphin/">How to add Open Folder with X when I right click in an folder in Dolphin</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/16/AI-Websites-to-make-your-Life-Easier/">AI Websites to make your Life Easier</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/16/free-host-for-web-application-sites/">Free host for web application sites</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/">AWS Certified Solutions Architect Certification SAA-C02</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI-Websites/">AI, Websites</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/">CLI</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/youtube-dl/">youtube-dl</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/">GNU/Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/CLI/">CLI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Debian/">Debian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Installer/">Installer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/KDE/">KDE</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Global/">Global</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/">OAuth2.0</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/Nodemailer/">Nodemailer</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hosting/">Hosting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/">KDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/Dolphin/">Dolphin</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Protractor/">Protractor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VS-Code/">VS Code</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/Certifications/" style="font-size: 10px;">Certifications</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/General-Utilities-Coding/" style="font-size: 10px;">General, Utilities, Coding</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Install/" style="font-size: 20px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Pablo Magro Gaspar<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'pablomagro';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+<link rel="stylesheet" href="/scroll2top/scroll2top.css">
+
+
+<script src="/scroll2top/scroll2top.js"></script>
+
+
+<div class="scrollup">
+  <a title="Scroll up" href="#">Scroll</a>
+</div>
+    
+  </div>
+</body>
+</html>

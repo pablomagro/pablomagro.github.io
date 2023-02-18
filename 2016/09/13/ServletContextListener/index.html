@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ServletContextListener | Technical Tips to Revitalize Your Devices and Memory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Implementations of this interface recieve notifications about changes to the servlet context of the web application they are part of. To recieve notification events, the implementation class must be c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ServletContextListener">
+<meta property="og:url" content="https://pmagas.serveblog.net/2016/09/13/ServletContextListener/index.html">
+<meta property="og:site_name" content="Technical Tips to Revitalize Your Devices and Memory">
+<meta property="og:description" content="Implementations of this interface recieve notifications about changes to the servlet context of the web application they are part of. To recieve notification events, the implementation class must be c">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2016-09-13T04:52:53.000Z">
+<meta property="article:modified_time" content="2023-02-15T20:30:58.877Z">
+<meta property="article:author" content="Pablo Magro Gaspar">
+<meta property="article:tag" content="ServletContextListener">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Filter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@https:&#x2F;&#x2F;twitter.com&#x2F;esrhim">
+<link rel="publisher" href="https://plus.google.com/u/0/113537401711657998977?rel=author">
+  
+    <link rel="alternate" href="/atom.xml" title="Technical Tips to Revitalize Your Devices and Memory" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-70668709-6', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Technical Tips to Revitalize Your Devices and Memory</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://pmagas.serveblog.net"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ServletContextListener" class="article article-type-post"
+  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/13/ServletContextListener/" class="article-date">
+  <time datetime="2016-09-13T04:52:53.000Z" itemprop="datePublished">13 Sep 2016</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ServletContextListener
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Implementations of this interface recieve notifications about changes to the servlet context of the web application they are part of. To recieve notification events, the implementation class must be configured in the deployment descriptor for the web application.</p>
+<pre><code>public interface ServletContextListener extends EventListener
+</code></pre>
+<p><a target="_blank" rel="noopener" href="http://docs.oracle.com/javaee/7/api/javax/servlet/ServletContextListener.html">Interface</a> for receiving notification events about ServletContext lifecycle changes.</p>
+<h3 id="Methods-Summary"><a href="#Methods-Summary" class="headerlink" title="Methods Summary"></a>Methods Summary</h3><h5 id="void-contextDestroyed-ServletContextEvent-sce"><a href="#void-contextDestroyed-ServletContextEvent-sce" class="headerlink" title="void contextDestroyed(ServletContextEvent sce)"></a>void contextDestroyed(ServletContextEvent sce)</h5><pre><code>Notification that the servlet context is about to be shut down.
+</code></pre>
+<p>All servlets and filters will have been destroyed before any ServletContextListeners  are notified of context destruction.</p>
+<h4 id="void-contextInitialized-ServletContextEvent-sce"><a href="#void-contextInitialized-ServletContextEvent-sce" class="headerlink" title="void contextInitialized(ServletContextEvent sce)"></a>void contextInitialized(ServletContextEvent sce)</h4><pre><code>Notification that the web application is ready to process requests.
+</code></pre>
+<p>All ServletContextListeners are notified of context initialization before any filters or servlets in the web application are initialized.</p>
+<h3 id="Set-the-deployment-descriptor"><a href="#Set-the-deployment-descriptor" class="headerlink" title="Set the deployment descriptor."></a>Set the deployment descriptor.</h3><h4 id="web-xml-Servlet-lt-3-0"><a href="#web-xml-Servlet-lt-3-0" class="headerlink" title="web.xml (Servlet &lt; 3.0)"></a>web.xml (Servlet &lt; 3.0)</h4><pre><code>Sample web.xml file:
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot; xmlns:web=&quot;http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot; xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot; id=&quot;WebApp_ID&quot; version=&quot;2.5&quot;&gt;
+  ...
+  &lt;listener&gt;
+    &lt;listener-class&gt;example.ExampleApplicationLifeCycleListener&lt;/listener-class&gt;
+  &lt;/listener&gt;
+  ...
+&lt;/web-app&gt;
+</code></pre>
+<h4 id="WebListener-Servlet-gt-x3D-3-0"><a href="#WebListener-Servlet-gt-x3D-3-0" class="headerlink" title="@WebListener (Servlet &gt;&#x3D; 3.0)"></a>@WebListener (Servlet &gt;&#x3D; 3.0)</h4><p>The <code>WebListener</code> annotation is used to register the following types of listeners</p>
+<ul>
+<li><em>Context Listener</em> (javax.servlet.ServletContextListener)</li>
+<li><em>Context Attribute Listener</em> (javax.servlet.ServletContextAttributeListener)</li>
+<li><em>Servlet Request Listener</em> (javax.servlet.ServletRequestListener)</li>
+<li><em>Servlet Request Attribute Listener</em> (javax.servlet.ServletRequestAttributeListener)</li>
+<li><em>Http Session Listener</em> (javax.servlet.http.HttpSessionListener)</li>
+<li><em>Http Session Attribute Listener</em> (javax.servlet.http.HttpSessionAttributeListener)</li>
+</ul>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Registering ServletContextListeners, which run your code before the web application is started. It waits for specified event happened, then “hijack” the event and run its own event.</p>
+<p><strong>Problem</strong>
+You want to initialize a database connection pool before the web application is started, is there a “main()” method in the web application environment?</p>
+<p><strong>Solution</strong>
+The ServletContextListener is what you want, it will run your code before the web application is started.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> example;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebListener;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletContextListener;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebListener</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ExampleApplicationLifeCycleListener</span> <span class="keyword">implements</span> <span class="title class_">ServletContextListener</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">contextInitialized</span><span class="params">(ServletContextEvent event)</span> &#123;</span><br><span class="line">    <span class="comment">//do on application init</span></span><br><span class="line">    <span class="type">EntityManagerFactory</span> <span class="variable">emf</span> <span class="operator">=</span></span><br><span class="line">            Persistence.createEntityManagerFactory(<span class="string">&quot;$objectdb/db/example.odb&quot;</span>);</span><br><span class="line">    event.getServletContext().setAttribute(<span class="string">&quot;emf&quot;</span>, emf);</span><br><span class="line">    System.out.println(<span class="string">&quot;ServletContextListener started&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">contextDestroyed</span><span class="params">(ServletContextEvent event)</span> &#123;</span><br><span class="line">    <span class="comment">//do on application destroy</span></span><br><span class="line">    <span class="type">EntityManagerFactory</span> <span class="variable">emf</span> <span class="operator">=</span></span><br><span class="line">            (EntityManagerFactory)event.getServletContext().getAttribute(<span class="string">&quot;emf&quot;</span>);</span><br><span class="line">    emf.close();  </span><br><span class="line">    System.out.println(<span class="string">&quot;ServletContextListener destroyed&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://www.ntu.edu.sg/home/ehchua/programming/java/JavaServlets.html">https://www.ntu.edu.sg/home/ehchua/programming/java/JavaServlets.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api/3.1.0">https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api/3.1.0</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.caucho.com/2009/10/06/servlet-30-tutorial-weblistener-webservlet-webfilter-and-webinitparam/">http://blog.caucho.com/2009/10/06/servlet-30-tutorial-weblistener-webservlet-webfilter-and-webinitparam/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.mkyong.com/servlet/what-is-listener-servletcontextlistener-example/">https://www.mkyong.com/servlet/what-is-listener-servletcontextlistener-example/</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://pmagas.serveblog.net/2016/09/13/ServletContextListener/" data-id="cle9c24mv0017ros9cb8e4llv" class="article-share-link">Share</a>
+      
+        <a href="https://pmagas.serveblog.net/2016/09/13/ServletContextListener/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Filter/" rel="tag">Filter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ServletContextListener/" rel="tag">ServletContextListener</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/15/Bootable-CD-from-ISO/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Bootable CD from ISO
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/13/How-do-I-reset-a-monitor-settings/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">How do I reset a monitor settings?</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/18/Getting-Started-With-Hexo/">Getting started with Hexo</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/17/How-to-add-Open-Folder-with-X-when-I-right-click-in-an-folder-in-Dolphin/">How to add Open Folder with X when I right click in an folder in Dolphin</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/16/AI-Websites-to-make-your-Life-Easier/">AI Websites to make your Life Easier</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/16/free-host-for-web-application-sites/">Free host for web application sites</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/">AWS Certified Solutions Architect Certification SAA-C02</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI-Websites/">AI, Websites</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/">CLI</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/youtube-dl/">youtube-dl</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/">GNU/Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/CLI/">CLI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Debian/">Debian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Installer/">Installer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/KDE/">KDE</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Global/">Global</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/">OAuth2.0</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/Nodemailer/">Nodemailer</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hosting/">Hosting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/">KDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/Dolphin/">Dolphin</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Protractor/">Protractor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VS-Code/">VS Code</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/Certifications/" style="font-size: 10px;">Certifications</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/General-Utilities-Coding/" style="font-size: 10px;">General, Utilities, Coding</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Install/" style="font-size: 20px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Pablo Magro Gaspar<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'pablomagro';
+  
+  var disqus_url = 'https://pmagas.serveblog.net/2016/09/13/ServletContextListener/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+<link rel="stylesheet" href="/scroll2top/scroll2top.css">
+
+
+<script src="/scroll2top/scroll2top.js"></script>
+
+
+<div class="scrollup">
+  <a title="Scroll up" href="#">Scroll</a>
+</div>
+    
+  </div>
+</body>
+</html>
