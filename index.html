@@ -85,7 +85,7 @@ ga('send', 'pageview');
   itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2023/06/21/Getting-Started-With-Hexo/" class="article-date">
-  <time datetime="2023-06-21T00:29:48.540Z" itemprop="datePublished">21 Jun 2023</time>
+  <time datetime="2023-06-21T10:01:34.690Z" itemprop="datePublished">21 Jun 2023</time>
 </a>
     
   <div class="article-category">
@@ -189,7 +189,7 @@ You can use a custom domain name for your github pages website. All you need to 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/06/21/Getting-Started-With-Hexo/" data-id="clj4z9cn7000hcposh925dzfw" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/06/21/Getting-Started-With-Hexo/" data-id="clj5jop4d000hcuopg3cv0stj" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/06/21/Getting-Started-With-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -230,9 +230,54 @@ You can use a custom domain name for your github pages website. All you need to 
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="CloudWatch"><a href="#CloudWatch" class="headerlink" title="CloudWatch"></a>CloudWatch</h2><h3 id="Alarms"><a href="#Alarms" class="headerlink" title="Alarms"></a>Alarms</h3><p>CloudWatch alarms allow you to monitor metrics and trigger actions based on defined thresholds. In this case, you can create a CloudWatch alarm that monitors the CPU utilization metric of the EC2 instance. When the CPU utilization reaches 100%, the alarm will be triggered, and you can configure actions such as sending notifications or executing automated actions to address the unresponsiveness issue.</p>
+        <h1 id="Summary-of-concepts-for-AWS-SysOps-Administrator-Certification"><a href="#Summary-of-concepts-for-AWS-SysOps-Administrator-Certification" class="headerlink" title="Summary of concepts for AWS SysOps Administrator Certification."></a>Summary of concepts for AWS SysOps Administrator Certification.</h1><h2 id="CloudWatch"><a href="#CloudWatch" class="headerlink" title="CloudWatch"></a>CloudWatch</h2><h3 id="Alarms"><a href="#Alarms" class="headerlink" title="Alarms"></a>Alarms</h3><p>CloudWatch alarms allow you to monitor metrics and trigger actions based on defined thresholds. In this case, you can create a CloudWatch alarm that monitors the CPU utilization metric of the EC2 instance. When the CPU utilization reaches 100%, the alarm will be triggered, and you can configure actions such as sending notifications or executing automated actions to address the unresponsiveness issue.</p>
 <h3 id="👀-For-each-production-EC2-instance-create-an-Amazon-CloudWatch-alarm-for-Status-Check-Failed-System-Set-the-alarm-action-to-recover-the-EC2-instance-Configure-the-alarm-notification-to-be-published-to-an-Amazon-Simple-Notification-Service-Amazon-SNS-topic"><a href="#👀-For-each-production-EC2-instance-create-an-Amazon-CloudWatch-alarm-for-Status-Check-Failed-System-Set-the-alarm-action-to-recover-the-EC2-instance-Configure-the-alarm-notification-to-be-published-to-an-Amazon-Simple-Notification-Service-Amazon-SNS-topic" class="headerlink" title="👀 For each production EC2 instance, create an Amazon CloudWatch alarm for Status Check Failed: System. Set the alarm action to recover the EC2 instance. Configure the alarm notification to be published to an Amazon Simple Notification Service (Amazon SNS) topic."></a><code>👀</code> For each production EC2 instance, create an <code>Amazon CloudWatch alar</code>m for Status <code>Check Failed: System</code>. Set the alarm action to <code>recover the EC2 instance</code>. Configure the alarm notification to be published to an Amazon Simple Notification Service (Amazon SNS) topic.</h3><p><code>Explanation</code>: By creating a <code>CloudWatch alarm</code> for Status <code>Check Failed: System</code>, you can<code> automate the recovery task of EC2 instances</code> (<code>stop, terminate, reboot, or recover your Amazon EC2 instances</code>). When the system health check fails for an EC2 instance, the alarm will be triggered and perform the configured action to recover the instance. This eliminates the need for manual intervention. Additionally, configuring the alarm to publish notifications to an SNS topic allows you to receive notifications whenever a system health check fails.</p>
-<h3 id="Metrics"><a href="#Metrics" class="headerlink" title="Metrics"></a>Metrics</h3><h4 id="Determine-which-instance-use-the-most-bandwidth"><a href="#Determine-which-instance-use-the-most-bandwidth" class="headerlink" title="Determine which instance use the most bandwidth"></a>Determine which instance use the most bandwidth</h4><p><code>NetworkIn</code> <code>and NetworkOut</code></p>
+<h3 id="Metrics"><a href="#Metrics" class="headerlink" title="Metrics"></a>Metrics</h3><p>AWS Provided metrics (AWS pushes them):</p>
+<ol>
+<li><code>Basic</code> Monitoring (default): metrics are collected at a <code>5 minute</code> internal</li>
+<li><code>Detailed</code> Monitoring (paid): metrics are collected at a <code>1 minute</code> interval</li>
+<li>Includes <code>CPU, Network, Disk and Status Check Metrics</code></li>
+</ol>
+<p>Custom metric (yours to push):</p>
+<ol>
+<li>Basic Resolution: 1 minute resolution</li>
+<li>High Resolution: all the way to 1 second resolution</li>
+<li>Include <code>RAM</code>, application level metrics</li>
+<li>Make sure the IAM permissions on the EC2 instance role are correct !</li>
+</ol>
+<p><u><strong>RAM is NOT included in the AWS EC2 metrics</strong></u></p>
+<h3 id="Status-Check"><a href="#Status-Check" class="headerlink" title="Status Check"></a>Status Check</h3><p>Automated checks to identify <code>hardware</code> and <code>software issues</code>.</p>
+<p>System Status Checks</p>
+<ul>
+<li>Monitors problems with AWS systems (software&#x2F;hardware issues on the physical host, loss of system power, …)</li>
+<li>Check <code>Personal Health Dashboard</code> for any scheduled critical maintenance by AWS to your instance’s host</li>
+<li>Resolution: stop and start the instance (instance migrated to a new host)<ul>
+<li>Either wait for AWS to fix the host, OR</li>
+<li>Move the EC2 instance to a new host &#x3D; STOP &amp; START the instance (if EBS backed)
+Instance Status Checks</li>
+</ul>
+</li>
+<li>Monitors software&#x2F;network configuration of your instance (invalid network configuration, exhausted memory, …)</li>
+<li>Resolution: reboot the instance or change instance configuration.</li>
+</ul>
+<h4 id="Status-Checks-CW-Metrics-amp-Recovery-OJO-👀"><a href="#Status-Checks-CW-Metrics-amp-Recovery-OJO-👀" class="headerlink" title="Status Checks - CW Metrics &amp; Recovery - OJO 👀"></a>Status Checks - CW Metrics &amp; Recovery - OJO <code>👀</code></h4><ul>
+<li>CloudWatch Metrics (1 minute interval)<ul>
+<li><code>StatusCheckFailed_System</code></li>
+<li><code>StatusCheckFailed_Instance</code></li>
+<li><code>StatusCheckFailed</code> (for both)</li>
+</ul>
+</li>
+<li>Option 1: <code>CloudWatch Alarm</code><ul>
+<li>Recover EC2 instance with the same private&#x2F;public IP, EIP, metadata, and Placement Group</li>
+<li>Send notifications using SNS  trigger</li>
+</ul>
+</li>
+<li>Option 2: <code>Auto Scaling Group</code><ul>
+<li>Set min&#x2F;max&#x2F;desired 1 to recover an instance but <code>won&#39;t keep the same private and elastic IP</code>.&#96;</li>
+</ul>
+</li>
+</ul>
+<h4 id="Determine-which-instance-use-the-most-bandwidth"><a href="#Determine-which-instance-use-the-most-bandwidth" class="headerlink" title="Determine which instance use the most bandwidth"></a>Determine which instance use the most bandwidth</h4><p><code>NetworkIn</code> <code>and NetworkOut</code></p>
 <h4 id="Identify-the-processing-power-required"><a href="#Identify-the-processing-power-required" class="headerlink" title="Identify the processing power required"></a>Identify the processing power required</h4><p><code>👀</code> <code>CPUUtilization</code> specifies the percentage of allocated EC2 compute units that are currently in use on the instance. This metric identifies the <code>processing power required</code> to <code>run</code> an <code>application on a selected instance</code>. This metric is expressed in Percent.</p>
 <h4 id="Number-of-users"><a href="#Number-of-users" class="headerlink" title="Number of users."></a>Number of users.</h4><p><code>👀</code> <code>ActiveConnectionCount</code> This metric <code>represents</code> the <code>total number of concurrent TCP connections active</code> from clients to the load balancer and from the load balancer to targets.</p>
 <h4 id="RAMUtilization-is-NOT-available-as-an-EC2-metric"><a href="#RAMUtilization-is-NOT-available-as-an-EC2-metric" class="headerlink" title="RAMUtilization is NOT available as an EC2 metric"></a>RAMUtilization is <code>NOT available as</code> an <code>EC2 metric</code></h4><p><code>RAMUtilization</code> You can publish your own metrics to CloudWatch using the AWS CLI or an API. You can view statistical graphs of your published metrics with the AWS Management Console. Metrics produced by AWS services are standard resolution by default.</p>
@@ -429,11 +474,40 @@ You can also simplify and speed up business workflows and big data jobs using Am
 </ol>
 <p>The default is to <code>terminate</code> Spot Instances when they are interrupted.</p>
 <h3 id="Q-Spot-Fleet-Config-Cost-Optimization"><a href="#Q-Spot-Fleet-Config-Cost-Optimization" class="headerlink" title="*Q Spot Fleet Config Cost Optimization"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-spot-fleet-works.html">Spot Fleet Config Cost Optimization</a></h3><p>Using <code>lowestPrice</code> allocation <code>strategy</code> a Spot Fleet automatically deploys the lowest price combination of instance types and Availability Zones based on the current Spot price across the number of Spot pools specified. You can use this combination to avoid the most expensive Spot Instances.</p>
+<p><u>Spot Fleets allow us to automatically request Spot Instances with the lowest price</u></p>
 <h3 id="Q-Get-public-IP-address"><a href="#Q-Get-public-IP-address" class="headerlink" title="*Q Get public IP address"></a><code>*Q</code> Get public IP address</h3><p>EC2 instances in AWS have <code>metadata</code> associated with them that can be accessed from within the instance. This metadata includes information about the instance, such as its IP address, instance type, security groups, and more.</p>
 <p>Can make an HTTP GET request to a specific URL provided by the instance metadata service. The URL is <a target="_blank" rel="noopener" href="http://169.254.169.254/latest/meta-data/public-ipv4">http://169.254.169.254/latest/meta-data/public-ipv4</a>.</p>
-<h2 id="👀👀-EC2-Detailed-monitoring"><a href="#👀👀-EC2-Detailed-monitoring" class="headerlink" title="👀👀 EC2 Detailed monitoring"></a>👀👀 EC2 Detailed monitoring</h2><p><code>Metrics are the fundamental concept in CloudWatch</code>. A metric represents a time-ordered set of data points that are published to CloudWatch. Think of a metric as a variable to monitor, and the data points as representing the values of that variable over time.</p>
+<h3 id="👀-EC2-Detailed-monitoring-👀"><a href="#👀-EC2-Detailed-monitoring-👀" class="headerlink" title="👀 EC2 Detailed monitoring 👀"></a>👀 EC2 Detailed monitoring 👀</h3><p><code>Metrics are the fundamental concept in CloudWatch</code>. A metric represents a time-ordered set of data points that are published to CloudWatch. Think of a metric as a variable to monitor, and the data points as representing the values of that variable over time.</p>
 <p><code>By default, your instance is enabled for basic monitoring</code>. You can optionally enable detailed monitoring. After you enable <code>detailed monitoring</code>, the Amazon EC2 console displays monitoring graphs with a <code>1-minute period</code> for the instance. .In <code>Basic monitoring</code>, data is available automatically in <code>5-minute periods</code> at no charge</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch-new.html">Enable or turn off detailed monitoring for your instances</a></p>
+<h3 id="👀-EC2-Launch-Troubleshooting-👀"><a href="#👀-EC2-Launch-Troubleshooting-👀" class="headerlink" title="👀 EC2 Launch Troubleshooting 👀"></a>👀 EC2 Launch Troubleshooting 👀</h3><p><code>InstanceLimitExceeded</code>: if you get this error, it means that you have reached your limit of <code>max number of vCPUs</code> per <code>region</code>.</p>
+<p><code>InsufficientInstanceCapacity</code> : if you get this error, it means &#96;AWS does not have that enough On-Demand capacity&#96;&#96; in the particular AZ where
+the instance is launched</p>
+<p><code>Instance Terminates Immediately</code> <strong>(goes from pending to terminated)</strong></p>
+<ol>
+<li>You’ve reached your EBS volume limit.</li>
+<li>An EBS snapshot is corrupt.</li>
+<li>The root EBS volume is encrypted and you do not have permissions to access the KMS key for decryption.</li>
+<li>The instance store-backed AMI that you used to launch the instance is missing a required part (an image.part.xx file).</li>
+</ol>
+<h3 id="👀-EC2-SSH-Troubleshooting-👀"><a href="#👀-EC2-SSH-Troubleshooting-👀" class="headerlink" title="👀 EC2 SSH Troubleshooting 👀"></a>👀 EC2 SSH Troubleshooting 👀</h3><ol>
+<li>SG is not configured correctly</li>
+<li>NACL is not configured correctly</li>
+<li>Check the route table for the subnet (routes traffic destined outside VPC to IGW)</li>
+<li>Instance doesn’t have a public IPv4</li>
+<li>CPU load of the instance is high</li>
+</ol>
+<h3 id="EC2-Instances-Purchasing-Options"><a href="#EC2-Instances-Purchasing-Options" class="headerlink" title="EC2 Instances Purchasing Options"></a>EC2 Instances Purchasing Options</h3><ol>
+<li><code>On-Demand</code> Instances – short workload, predictable pricing, pay by second</li>
+<li><code>Reserved</code> (1 &amp; 3 years)</li>
+<li><code>Reserved Instances</code> – long workloads</li>
+<li><code>Convertible Reserved Instances</code> – long workloads with flexible instances</li>
+<li><code>Savings Plans (1 &amp; 3 years)</code> –commitment to an amount of usage, long workload</li>
+<li><code>Spot Instances</code> – short workloads, cheap, can lose instances (less reliable)</li>
+<li><code>Dedicated Hosts</code> – book an entire physical server, control instance placement</li>
+<li><code>Dedicated Instances</code> – no other customers will share your hardware</li>
+<li><code>Capacity Reservations</code> – reserve capacity in a specific AZ for any duration</li>
+</ol>
 <h2 id="AWS-Storage-Gateway"><a href="#AWS-Storage-Gateway" class="headerlink" title="AWS Storage Gateway"></a>AWS Storage Gateway</h2><p>AWS Storage Gateway is a set of hybrid cloud storage services that provide on-premises access to virtually unlimited cloud storage.</p>
 <p>AWS Storage Gateway <code>uses SSL/TLS</code> (Secure Socket Layers&#x2F;Transport Layer Security) <code>to encrypt data</code> that is transferred <code>between your gateway appliance and AWS storage</code>. By default, Storage Gateway uses Amazon S3-Managed Encryption Keys (SSE-S3) to server-side encrypt all data it stores in Amazon S3. You have an option to use the Storage Gateway API to configure your gateway to encrypt data stored in the cloud using server-side encryption with AWS Key Management Service (SSE-KMS) customer master keys (CMKs).</p>
 <p>File, Volume and Tape Gateway data is stored in Amazon S3 buckets by AWS Storage Gateway. Tape Gateway supports backing data to Amazon S3 Glacier apart from the standard storage.</p>
@@ -596,6 +670,42 @@ gives you visibility and control of your infrastructure on AWS. Systems Manager 
 <h2 id="👀-Billing-Preferences"><a href="#👀-Billing-Preferences" class="headerlink" title="👀 Billing Preferences"></a>👀 Billing Preferences</h2><p>The management account of an organization can change this setting by turning off <code>RI</code> (Reserved Instances) sharing for <code>an individual member account</code> the more suitable service is AWS WAF</p>
 <h2 id="👀-AWS-Shield-Advanced"><a href="#👀-AWS-Shield-Advanced" class="headerlink" title="👀 AWS Shield Advanced"></a>👀 AWS Shield Advanced</h2><p>is more suitable to be used against <code>distributed denial of service (DDoS</code>) attacks but not for common web exploits such as <code>cross-site scripting</code>, <code>SQL injection</code>, and <code>brute-force HTTP flood attacks</code>.</p>
 <h2 id="👀-A-placement-group"><a href="#👀-A-placement-group" class="headerlink" title="👀 A placement group"></a>👀 A placement group</h2><p>is a logical <code>grouping</code> of <code>instances</code> <code>within</code> a <code>single Availability Zone</code>. By placing the EC2 instances in a placement group, you can ensure that the instances are physically located close to each other, which can significantly <code>reduce network latency between them</code>. This can <code>improve the performance</code> of inter-instance communication and reduce the overall latency in data transfer.</p>
+<p>Sometimes you want control over the EC2 Instance placement strategy, When you create a placement group, you specify one of the following strategies for the group:</p>
+<ul>
+<li><code>Cluster—clusters</code> instances into a <code>low-latency</code> group in a <code>single Availability Zone</code>.<ul>
+<li><code>Pros</code>: Great network (10 Gbps bandwidth between instances with Enhanced Networking enabled - recommended)</li>
+<li><code>Cons</code>: If the rack fails, all instances fails at the same time</li>
+<li><code>Use</code> case: Big Data job that needs to complete fast</li>
+</ul>
+</li>
+<li><code>Spread—spreads</code> instances across underlying hardware (max 7 instances per group per AZ) – critical applications<ul>
+<li><code>Pros</code>:<ul>
+<li>Can span across Availability Zones (AZ)</li>
+<li>Reduced risk is simultaneous failure</li>
+<li>EC2 Instances are on different  physical hardware</li>
+</ul>
+</li>
+<li><code>Cons</code>:<ul>
+<li>Limited to 7 instances per AZ per placement group</li>
+</ul>
+</li>
+<li><code>Use case</code>:<ul>
+<li>Application that needs to maximize high availability</li>
+<li>Critical Applications where each instance must be isolated from failure from each other</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Partition—spreads</code> instances across many different partitions (which rely on different sets of racks) within an AZ. Scales to 100s of EC2 instances per group (Hadoop, Cassandra, Kafka)<ul>
+<li>Up to 7 partitions per AZ  Can span across multiple AZs in the same region</li>
+<li>Up to 100s of EC2 instances</li>
+<li>The instances in a partition do not share racks with the instances in the other partitions</li>
+<li>A partition failure can affect many EC2 but won’t affect other partitions</li>
+<li>EC2 instances get access to the partition information as metadata</li>
+<li>Use cases: HDFS, HBase, Cassandra, Kafka</li>
+</ul>
+</li>
+</ul>
 <h2 id="👀-Network-Firewall"><a href="#👀-Network-Firewall" class="headerlink" title="👀 Network Firewall"></a>👀 Network Firewall</h2><p>You can use Network Firewall to monitor and protect your Amazon VPC traffic in a number of ways, including the following:
 – Pass traffic through only from known AWS service domains or IP address endpoints, such as Amazon S3.
 – Use custom <code>lists of known bad domains to limit the types of domain names that your applications can access</code>.
@@ -620,7 +730,7 @@ AWS &#96;&#96;Systems Manager Automation provides a way to automate common opera
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="clj4z9cmr0004cpos2bg16d98" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="clj5jop420004cuop05qf8m9a" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -754,7 +864,7 @@ leading cross-functional teams, coordinating resources, managing timelines, and 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/01/Prompts/" data-id="clj4z9cnq001dcpos9a07accf" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/01/Prompts/" data-id="clj5jop56001dcuopelqm68yo" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/05/01/Prompts/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1066,7 +1176,7 @@ leading cross-functional teams, coordinating resources, managing timelines, and 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/04/14/React-Hooks-All-React-Hooks-Explained/" data-id="clj4z9cns001jcpos9qfo8i4p" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/04/14/React-Hooks-All-React-Hooks-Explained/" data-id="clj5jop58001jcuop8yvtda94" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/04/14/React-Hooks-All-React-Hooks-Explained/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1131,7 +1241,7 @@ leading cross-functional teams, coordinating resources, managing timelines, and 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/04/03/Coding-Resources/" data-id="clj4z9cn1000acpos84amepfc" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/04/03/Coding-Resources/" data-id="clj5jop47000acuop2t6oe5kp" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/04/03/Coding-Resources/#disqus_thread" class="article-comment-link">Comments</a>
       
