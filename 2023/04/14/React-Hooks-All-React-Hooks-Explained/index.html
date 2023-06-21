@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>React Hooks - Some React Hooks Explained | Technical Tips to Revitalize Your Devices and Memory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Built-in React HooksHooks are a new addition in React 16.8. They let you use state and other React features without writing a class. Tey are build-in in the chore of React. One of the benefits of Reac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Hooks - Some React Hooks Explained">
+<meta property="og:url" content="https://blog.pablo-magro-gaspar.site/2023/04/14/React-Hooks-All-React-Hooks-Explained/index.html">
+<meta property="og:site_name" content="Technical Tips to Revitalize Your Devices and Memory">
+<meta property="og:description" content="Built-in React HooksHooks are a new addition in React 16.8. They let you use state and other React features without writing a class. Tey are build-in in the chore of React. One of the benefits of Reac">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-04-14T21:31:01.000Z">
+<meta property="article:modified_time" content="2023-06-21T00:29:48.540Z">
+<meta property="article:author" content="Pablo Magro Gaspar">
+<meta property="article:tag" content="Hooks">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@https:&#x2F;&#x2F;twitter.com&#x2F;esrhim">
+<link rel="publisher" href="https://plus.google.com/u/0/113537401711657998977?rel=author">
+  
+    <link rel="alternate" href="/atom.xml" title="Technical Tips to Revitalize Your Devices and Memory" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-70668709-6', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Technical Tips to Revitalize Your Devices and Memory</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.pablo-magro-gaspar.site"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-React-Hooks-All-React-Hooks-Explained" class="article article-type-post"
+  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/04/14/React-Hooks-All-React-Hooks-Explained/" class="article-date">
+  <time datetime="2023-04-14T21:31:01.000Z" itemprop="datePublished">15 Apr 2023</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React/">React</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React Hooks - Some React Hooks Explained
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Built-in-React-Hooks"><a href="#Built-in-React-Hooks" class="headerlink" title="Built-in React Hooks"></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react">Built-in React Hooks</a></h1><p>Hooks are a new addition in <a target="_blank" rel="noopener" href="https://legacy.reactjs.org/blog/2019/02/06/react-v16.8.0.html">React 16.8</a>. They let you use state and other React features without writing a class. Tey are build-in in the chore of React.</p>
+<p>One of the benefits of React is that it does for you, if you determine some sort of system to manage the state of the application</p>
+<p>Changing the state of the application and as you change the state of the application the webpage itself re-renders automatically to show the new values.</p>
+<h1 id="List-of-Hooks"><a href="#List-of-Hooks" class="headerlink" title="List of Hooks"></a>List of Hooks</h1><ol>
+<li><a href="#state-hooks">State Hooks</a><ol>
+<li><a href="#useState">useState</a></li>
+<li><a href="#useReducer">useReducer</a></li>
+</ol>
+</li>
+<li><a href="#Effect-Hooks">Effect Hooks</a><ol>
+<li><a href="#useEffect">useEffect</a></li>
+<li><a href="#useLayoutEffect">useLayoutEffect</a></li>
+</ol>
+</li>
+<li><a href="#Ref-Hooks">Ref Hooks</a><ol>
+<li><a href="#useRef">useRef</a></li>
+</ol>
+</li>
+<li><a href="#Context-Hooks">Context Hooks</a><ol>
+<li><a href="#useContext">useContext</a></li>
+</ol>
+</li>
+<li><a href="performance-hooks">Performance Hooks</a><ol>
+<li><a href="#useMemo">useMemo</a></li>
+<li><a href="#useCallback">useCallback</a></li>
+<li><a href="#useDeferredValue">useDeferredValue</a></li>
+</ol>
+</li>
+<li><a href="#other-hooks">Other Hooks</a><ol>
+<li><a href="#useDebugValue">useDebugValue</a></li>
+</ol>
+</li>
+</ol>
+<h2 id="State-Hooks"><a href="#State-Hooks" class="headerlink" title="State Hooks"></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react#state-hooks">State Hooks</a><a id="state-hooks"></a></h2><p>To add state to a component, use one of these Hooks:</p>
+<ul>
+<li><p><code>useState</code> declares a state variable that you can update directly.</p>
+</li>
+<li><p><code>useReducer</code> declares a state variable with the update logic inside a reducer function</p>
+</li>
+</ul>
+<h3 id="useState"><a href="#useState" class="headerlink" title="useState"></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useState">useState</a><a id="useState"></a></h3><p>useState is a React Hook that lets you add a state variable to your <code>component</code>.</p>
+<pre><code>When data changes re-render de UI
+</code></pre>
+<h4 id="An-example-of-using-useState"><a href="#An-example-of-using-useState" class="headerlink" title="An example of using useState"></a>An example of using useState</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Reactive value, setter</span></span><br><span class="line"><span class="keyword">const</span> [state, setState] = <span class="title function_">useState</span>(initialState);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// A function example</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">UseStateEffect</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [data, setData] = <span class="title function_">useState</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">  <span class="keyword">const</span> [inputValue, setInputValue] = <span class="title function_">useState</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> <span class="title function_">onChange</span> = (<span class="params">event</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> newValue = event.<span class="property">target</span>.<span class="property">value</span></span><br><span class="line">    <span class="title function_">setInputValue</span>(newValue);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">getDummyData</span>(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; data&#125; = <span class="keyword">await</span> axios.<span class="title function_">get</span>(<span class="string">&quot;https://jsonplaceholder.typicode.com/comments&quot;</span>)</span><br><span class="line">      <span class="title function_">setData</span>(response.<span class="property">data</span>[<span class="number">0</span>].<span class="property">email</span>);</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;API WAS CALLED&quot;</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;, []);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span> = <span class="string">&quot;Enter something...&quot;</span> <span class="attr">onChange</span>=<span class="string">&#123;onChange&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;inputValue&#125;</span></span><br><span class="line"><span class="language-xml">      &#123;/* <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;data&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> */&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">UseStateEffect</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="useReducer"><a href="#useReducer" class="headerlink" title="useReducer"></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useReducer">useReducer</a><a id="useReducer"></a></h3><p>It’s an alternative to the useState, which form me is less cleaner and adding extra complexity. <code>I wouldn&#39;t use</code> <code>Redux</code> is more complex rather than use <code>setState</code> to manage the state when it grows.</p>
+<p>Declares a state variable with the update logic inside a <a target="_blank" rel="noopener" href="https://react.dev/learn/extracting-state-logic-into-a-reducer">reducer function</a>.</p>
+<p>Call useReducer at the top level of your component to manage its state with a reducer.</p>
+<h4 id="An-example-of-using-useReduce"><a href="#An-example-of-using-useReduce" class="headerlink" title="An example of using useReduce"></a>An example of using useReduce</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Similar to set state, but a different way to set/manage state using the REDUX pattern.</span></span><br><span class="line"><span class="title function_">useReducer</span>(reducer, initialArg, init?)</span><br><span class="line"></span><br><span class="line"><span class="comment">// An example</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">reducer</span> = (<span class="params">state, action</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.<span class="property">type</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;INCREMENT&quot;</span>:</span><br><span class="line">      <span class="keyword">return</span> &#123; <span class="attr">count</span>: state.<span class="property">count</span> + <span class="number">1</span>, <span class="attr">showText</span>: state.<span class="property">showText</span> &#125;;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;toggleShowText&quot;</span>:</span><br><span class="line">      <span class="keyword">return</span> &#123; <span class="attr">count</span>: state.<span class="property">count</span>, <span class="attr">showText</span>: !state.<span class="property">showText</span> &#125;;</span><br><span class="line">    <span class="attr">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">UseReducer</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> [state, dispatch] = <span class="title function_">useReducer</span>(reducer, &#123; <span class="attr">count</span>: <span class="number">0</span>, <span class="attr">showText</span>: <span class="literal">true</span> &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;state.count&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">          dispatch(&#123; type: &quot;INCREMENT&quot; &#125;);</span></span><br><span class="line"><span class="language-xml">          dispatch(&#123; type: &quot;toggleShowText&quot; &#125;);</span></span><br><span class="line"><span class="language-xml">        &#125;&#125;</span></span><br><span class="line"><span class="language-xml">      &gt;</span></span><br><span class="line"><span class="language-xml">        Click Here</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">      &#123;state.showText &amp;&amp; <span class="tag">&lt;<span class="name">p</span>&gt;</span>This is a text<span class="tag">&lt;/<span class="name">p</span>&gt;</span>&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Effect-Hooks"><a href="#Effect-Hooks" class="headerlink" title="Effect Hooks"></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react#effect-hooks">Effect Hooks</a><a id="Effect-Hooks"></a></h2><p>Effects let a component connect to and synchronize with external systems. This includes dealing with network, browser DOM, animations, widgets written using a different UI library, and other non-React code.</p>
+<ul>
+<li><code>useEffect</code> connects a component to an external system.</li>
+</ul>
+<p>Effects are an “escape hatch” from the React paradigm. Don’t use Effects to orchestrate the data flow of your application. If you’re not interacting with an external system, <a target="_blank" rel="noopener" href="https://react.dev/learn/you-might-not-need-an-effect">you might not need an Effect</a>.</p>
+<p>There are two rarely used variations of <code>useEffect</code> with differences in timing:</p>
+<ul>
+<li><code>useLayoutEffect</code> fires before the browser repaints the screen. You can measure layout here.</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useInsertionEffect">useInsertionEffect</a> fires before React makes changes to the DOM. Libraries can insert dynamic CSS here.</li>
+</ul>
+<h3 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useEffect"><strong>useEffect</strong></a><a id="useEffect"></a></h3><p><code>useEffect</code> is a React Hook that lets you <a target="_blank" rel="noopener" href="https://react.dev/learn/synchronizing-with-effects">synchronize a component with an external system</a>.</p>
+<pre><code>  useEffect(setup, dependencies?)
+</code></pre>
+<h4 id="An-example-of-using-useEffect"><a href="#An-example-of-using-useEffect" class="headerlink" title="An example of using useEffect"></a>An example of using useEffect</h4><p>Call <code>useEffect</code> at the top level of your component to declare an Effect:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useEffect &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createConnection &#125; <span class="keyword">from</span> <span class="string">&#x27;./chat.js&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">ChatRoom</span>(<span class="params">&#123; roomId &#125;</span>) &#123;</span><br><span class="line">  <span class="comment">// Reactive value, setter</span></span><br><span class="line">  <span class="keyword">const</span> [serverUrl, setServerUrl] = <span class="title function_">useState</span>(<span class="string">&#x27;https://localhost:1234&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="title function_">useEffect</span>(</span><br><span class="line">    <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// RUN when mounted and when state changes (2).</span></span><br><span class="line">      <span class="comment">// alert(&quot;Hello side effect!&quot;)</span></span><br><span class="line">      <span class="keyword">const</span> connection = <span class="title function_">createConnection</span>(serverUrl, roomId);</span><br><span class="line">      connection.<span class="title function_">connect</span>();</span><br><span class="line">      <span class="comment">// RUN before the component is removed from the DOM</span></span><br><span class="line">      <span class="keyword">return</span> <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        connection.<span class="title function_">disconnect</span>();</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// Array of dependencies, with [] there is no dependencies, it&#x27;s triggered once.</span></span><br><span class="line">    <span class="comment">// RUN when serverUrl or roomId change.</span></span><br><span class="line">    [serverUrl, roomId]</span><br><span class="line">  );</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="useLayoutEffect"><a href="#useLayoutEffect" class="headerlink" title="useLayoutEffect"></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useLayoutEffect"><strong>useLayoutEffect</strong></a><a id="useLayoutEffect"></a></h2><h2 style="color: red; font-weight: bold;">Pitfall:
+ <span style="color: black; font-weight: normal;">useLayoutEffect can hurt performance. Prefer  <a href="[Ref-Hooks](https://react.dev/reference/react/useEffect)">useEffect</a> when possible</span>
+</h2>
+
+<ul>
+<li><strong>Similar</strong> to <strong>useEffect</strong> but</li>
+<li><strong>RUNS</strong> after render, but before pointing the script.</li>
+<li><strong>CAUTION</strong> blocks visual updates until your callback is finished.</li>
+</ul>
+<p>useLayoutEffect is a version of <a target="_blank" rel="noopener" href="https://react.dev/reference/react/useEffect">useEffect</a> that fires before the browser repaints the screen.</p>
+<pre><code>useLayoutEffect(setup, dependencies?)
+</code></pre>
+<h4 id="An-example-of-using-useLayoutEffect"><a href="#An-example-of-using-useLayoutEffect" class="headerlink" title="An example of using useLayoutEffect"></a>An example of using useLayoutEffect</h4><p>Call <code>useLayoutEffect</code> perform the layout measurements before the browser repaints the screen:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState, useLayoutEffect, useRef &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">MyComponent</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [width, setWidth] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> ref = <span class="title function_">useRef</span>(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* ***************************************************************</span></span><br><span class="line"><span class="comment">   * Similar to useEffect, but</span></span><br><span class="line"><span class="comment">   * RUNS after render, but before pointing the script.</span></span><br><span class="line"><span class="comment">   * CAUTION blocks visual updates until your callback is finished</span></span><br><span class="line"><span class="comment">   * *************************************************************** */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// Use useLayoutEffect to measure the width of the element</span></span><br><span class="line">  <span class="title function_">useLayoutEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (ref.<span class="property">current</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> newWidth = ref.<span class="property">current</span>.<span class="title function_">getBoundingClientRect</span>().<span class="property">width</span>;</span><br><span class="line">      <span class="title function_">setWidth</span>(newWidth);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, []);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">&#123;ref&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      This element has a width of &#123;width&#125;px.</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Note that <code>useLayoutEffect</code> should be used sparingly, as it can negatively impact the performance of your application if used excessively or inefficiently. You should only use <code>useLayoutEffect</code> when you need to perform a measurement or layout calculation that affects the visual appearance of your application.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useLayoutEffect#reference">Reference</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useLayoutEffect#useinsertioneffect">useLayoutEffect(setup, dependencies?)</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useLayoutEffect#usage">Usage</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useLayoutEffect#measuring-layout-before-the-browser-repaints-the-screen">Measuring layout before the browser repaints the screen</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useLayoutEffect#troubleshooting">Troubleshooting</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useLayoutEffect#im-getting-an-error-uselayouteffect-does-nothing-on-the-server">I’m getting an error: ”useLayoutEffect does nothing on the server”</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Ref-Hooks"><a href="#Ref-Hooks" class="headerlink" title="Ref Hooks "></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react#effect-hooks">Ref Hooks</a> <a id="Ref-Hooks"></a></h2><p><em>Refs</em> let a component <a target="_blank" rel="noopener" href="https://react.dev/learn/referencing-values-with-refs">hold some information that isn’t used for rendering,</a> like a DOM node or a timeout ID. Unlike with state, updating a ref does not re-render your component. Refs are an “escape hatch” from the React paradigm. They are useful when you need to work with non-React systems, such as the built-in browser APIs.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useRef">useRef</a> declares a ref. You can hold any value in it, but most often it’s used to hold a DOM node.</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useImperativeHandle">useImperativeHandle</a> lets you customize the ref exposed by your component. This is rarely used.</li>
+</ul>
+<p>Easiest way to manipulate and access DOM elements.</p>
+<h3 id="useRef"><a href="#useRef" class="headerlink" title="useRef"></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useRef">useRef</a><a id="useRef"></a></h3><p>useRef is a React Hook that lets you reference a value that’s not needed for rendering.</p>
+<pre><code>  const ref = useRef(initialValue)
+</code></pre>
+<h4 id="An-example-of-using-useRef"><a href="#An-example-of-using-useRef" class="headerlink" title="An example of using useRef"></a>An example of using useRef</h4><p>Use the <code>useRef</code> hook in a React component to store a reference to a DOM element:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useRef &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">MyComponent</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> inputRef = <span class="title function_">useRef</span>(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">handleButtonClick</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// Focus the input element</span></span><br><span class="line">    inputRef.<span class="property">current</span>.<span class="title function_">focus</span>();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;Example...&quot;</span> <span class="attr">ref</span>=<span class="string">&#123;inputRef&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;handleButtonClick&#125;</span>&gt;</span>Focus input<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>By using the <code>useRef</code> hook to store a reference to the input element, we can avoid the need to rely on DOM queries or selectors to manipulate the input element, which can be slower and less reliable. Instead, we can directly access the input element using the <code>current</code> property of the <code>inputRef</code> object.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useRef#reference">Reference</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useRef#useref">useRef(initialValue)</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useRef#usage">Usage</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useRef#referencing-a-value-with-a-ref">Referencing a value with a ref</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useRef#manipulating-the-dom-with-a-ref">Manipulating the DOM with a ref</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useRef#avoiding-recreating-the-ref-contents">Avoiding recreating the ref contents</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useRef#troubleshooting">Troubleshooting</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useRef#i-cant-get-a-ref-to-a-custom-component">I can’t get a ref to a custom component</a></li>
+</ul>
+</li>
+</ul>
+<p>Creating a some short of to-do application, clear an input file when submitted the value</p>
+<hr>
+<h2 id="Context-Hooks"><a href="#Context-Hooks" class="headerlink" title="Context Hooks "></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react#context-hooks">Context Hooks</a> <a name="Context-Hooks"></a></h2><p><em>Context</em> lets a component <a target="_blank" rel="noopener" href="https://react.dev/learn/passing-props-to-a-component">receive information from distant parents without passing it as props.</a> For example, your app’s top-level component can pass the current UI theme to all components below, no matter how deep.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useContext">useContext</a> reads and subscribes to a context.</li>
+</ul>
+<h3 id="useContext"><a href="#useContext" class="headerlink" title="useContext "></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useContext"><strong>useContext</strong></a> <a name="useContext"></a></h3><p>To share value through disconnected components, we can create a context object.</p>
+<p><em>useContext</em> is a React Hook that lets you read and subscribe to <a target="_blank" rel="noopener" href="https://react.dev/learn/passing-data-deeply-with-context">context</a> from your component.</p>
+<pre><code>  const value = useContext(SomeContext)
+</code></pre>
+<h4 id="Examples-of-using-useContext"><a href="#Examples-of-using-useContext" class="headerlink" title="Examples of using useContext"></a>Examples of using useContext</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createContext, useContext &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> moods = &#123;</span><br><span class="line">  <span class="attr">happy</span>: <span class="string">&quot;😄&quot;</span>,</span><br><span class="line">  <span class="attr">sad</span>: <span class="string">&quot;😒&quot;</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// To share value through disconnected components, we can create a context object.</span></span><br><span class="line"><span class="comment">// CONTEXT share data without passing props. during the entire component tree.</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">MoodContext</span> = <span class="title function_">createContext</span>(moods)</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">MoodEmoji</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// Consume value from nearest parent provider.</span></span><br><span class="line">  <span class="keyword">const</span> mood = <span class="title function_">useContext</span>(<span class="title class_">MoodContext</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123; mood.happy &#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">ReactHooksExplained</span> () &#123;</span><br><span class="line">  <span class="comment">// Get the context value.</span></span><br><span class="line">  <span class="keyword">const</span> <span class="title class_">MoodContextValue</span> = <span class="title function_">useContext</span>(<span class="title class_">MoodContext</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="comment">// Create context to scope the mood there,</span></span><br><span class="line">    <span class="comment">// and not need to use pass props down to the child components.</span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">MoodContext.Provider</span> <span class="attr">value</span>=<span class="string">&#123;MoodContextValue&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">MoodEmoji</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">MoodContext.Provider</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">ThemeContext</span> = <span class="title class_">React</span>.<span class="title function_">createContext</span>(<span class="string">&#x27;light&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Display</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line"> <span class="keyword">const</span> theme = <span class="title function_">useContext</span>(<span class="title class_">ThemeContext</span>);</span><br><span class="line"> <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">background:</span> <span class="attr">theme</span> === <span class="string">&#x27;dark&#x27;</span> ? &#x27;<span class="attr">black</span>&#x27; <span class="attr">:</span> &#x27;<span class="attr">papayawhip</span>&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">color:</span> <span class="attr">theme</span> === <span class="string">&#x27;dark&#x27;</span> ? &#x27;<span class="attr">white</span>&#x27; <span class="attr">:</span> &#x27;<span class="attr">palevioletred</span>&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">width:</span> &#x27;<span class="attr">100</span>%&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">minHeight:</span> &#x27;<span class="attr">200px</span>&#x27;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    &gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;&#x27;The theme here is &#x27; + theme&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useContext#reference">Reference</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useContext#usecontext">useContext(SomeContext)</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useContext#usage">Usage</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useContext#passing-data-deeply-into-the-tree">Passing data deeply into the tree</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useContext#updating-data-passed-via-context">Updating data passed via context</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useContext#specifying-a-fallback-default-value">Specifying a fallback default value</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useContext#overriding-context-for-a-part-of-the-tree">Overriding context for a part of the tree</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useContext#optimizing-re-renders-when-passing-objects-and-functions">Optimizing re-renders when passing objects and functions</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useContext#troubleshooting">Troubleshooting</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useContext#my-component-doesnt-see-the-value-from-my-provider">My component doesn’t see the value from my provider</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useContext#i-am-always-getting-undefined-from-my-context-although-the-default-value-is-different">I am always getting undefined from my context although the default value is different</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Performance-Hooks"><a href="#Performance-Hooks" class="headerlink" title="Performance Hooks "></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react#performance-hooks"><strong>Performance Hooks</strong></a> <a name="performance-hooks"></a></h2><p>A common way to optimize re-rendering performance is to skip unnecessary work. For example, you can tell React to reuse a cached calculation or to skip a re-render if the data has not changed since the previous render.</p>
+<p>To skip calculations and unnecessary re-rendering, use one of these Hooks:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useMemo">useMemo</a> lets you cache the result of an expensive calculation.</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useCallback">useCallback</a> lets you cache a function definition before passing it down to an optimized component.</li>
+</ul>
+<p>Sometimes, you can’t skip re-rendering because the screen actually needs to update. In that case, you can improve performance by separating blocking updates that must be synchronous (like typing into an input) from non-blocking updates which don’t need to block the user interface (like updating a chart).</p>
+<p>To prioritize rendering, use one of these Hooks:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useTransition">useTransition</a> lets you mark a state transition as non-blocking and allow other updates to interrupt it.</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useDeferredValue">useDeferredValue</a> lets you defer updating a non-critical part of the UI and let other parts update first.</li>
+</ul>
+<h3 id="useMemo"><a href="#useMemo" class="headerlink" title="useMemo "></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useMemo"><strong>useMemo</strong></a> <a name="useMemo"></a></h3><p>useMemo is a React Hook that lets you cache the result of a calculation between re-renders.</p>
+<ul>
+<li><strong>MEMOIZATION</strong>: cache result of function call, to optimize performance</li>
+<li><strong>CAUTION</strong>: this only used as needed for expensive computations</li>
+</ul>
+<h4 id="An-example-of-using-useMemo"><a href="#An-example-of-using-useMemo" class="headerlink" title="An example of using useMemo"></a>An example of using useMemo</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// When data changes re-render de UI</span></span><br><span class="line"><span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// MEMOIZATION: cache result of function call, to optimize performance</span></span><br><span class="line"><span class="comment">// CAUTION: this only used as needed for expensive computations</span></span><br><span class="line"><span class="keyword">const</span> expensiveCount = <span class="title function_">useMemo</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> count ** <span class="number">2</span></span><br><span class="line">&#125;, [count]) <span class="comment">// RECOMPUTE: when count changes</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;App&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;count&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useMemo#reference">Reference</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useMemo#usememo">useMemo(calculateValue, dependencies)</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useMemo#usage">Usage</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useMemo#skipping-expensive-recalculations">Skipping expensive recalculations</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useMemo#skipping-re-rendering-of-components">Skipping re-rendering of components</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useMemo#memoizing-a-dependency-of-another-hook">Memoizing a dependency of another Hook</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useMemo#memoizing-a-function">Memoizing a function</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useMemo#troubleshooting">Troubleshooting</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useMemo#my-calculation-runs-twice-on-every-re-render">My calculation runs twice on every re-render</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useMemo#my-usememo-call-is-supposed-to-return-an-object-but-returns-undefined">My useMemo call is supposed to return an object, but returns undefined</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useMemo#every-time-my-component-renders-the-calculation-in-usememo-re-runs">Every time my component renders, the calculation in useMemo re-runs</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useMemo#i-need-to-call-usememo-for-each-list-item-in-a-loop-but-its-not-allowed">I need to call useMemo for each list item in a loop, but it’s not allowed</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="useCallback"><a href="#useCallback" class="headerlink" title="useCallback "></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useCallback"><strong>useCallback</strong></a> <a name="useCallback"></a></h3><p>useCallback is a React Hook that lets you cache a function definition between re-renders.</p>
+<h4 id="An-example-of-useCallback"><a href="#An-example-of-useCallback" class="headerlink" title="An example of useCallback"></a>An example of useCallback</h4><p>In this example, the <code>ChildComponent</code> receives the <code>onClick</code> prop from the <code>ParentComponent</code> and uses it to handle a click event on a button element. Because the <code>onClick</code> prop is a memoized callback function, the <code>ChildComponent</code> can safely use it without needing to worry about unnecessary re-renders due to changes in the function reference.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Maybe we want to memoize the function, passing the function to multiple child components,</span></span><br><span class="line"><span class="comment">// especially with big lists, wrapping the function with avoid unnecessary re-rendering in the child components</span></span><br><span class="line"><span class="comment">// because is using always the same function object.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState, useCallback &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ChildComponent</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComponent&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">ParentComponent</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Define a memoized callback function using the useCallback hook</span></span><br><span class="line">  <span class="keyword">const</span> handleClick = <span class="title function_">useCallback</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">setCount</span>(<span class="function"><span class="params">prevCount</span> =&gt;</span> prevCount + <span class="number">1</span>);</span><br><span class="line">  &#125;, []);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>Count: &#123;count&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ChildComponent</span> <span class="attr">onClick</span>=<span class="string">&#123;handleClick&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">ChildComponent</span>(<span class="params">&#123; onClick &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;onClick&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      Click me!</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useCallback#reference">Reference</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useCallback#usecallback">useCallback(fn, dependencies)</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useCallback#usage">Usage</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useCallback#skipping-re-rendering-of-components">Skipping re-rendering of components</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useCallback#updating-state-from-a-memoized-callback">Updating state from a memoized callback</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useCallback#preventing-an-effect-from-firing-too-often">Preventing an Effect from firing too often</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useCallback#optimizing-a-custom-hook">Optimizing a custom Hook</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useCallback#troubleshooting">Troubleshooting</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useCallback#every-time-my-component-renders-usecallback-returns-a-different-function">Every time my component renders, useCallback returns a different function</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useCallback#i-need-to-call-usememo-for-each-list-item-in-a-loop-but-its-not-allowed">I need to call useCallback for each list item in a loop, but it’s not allowed</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="useDeferredValue"><a href="#useDeferredValue" class="headerlink" title="useDeferredValue "></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useDeferredValue"><strong>useDeferredValue</strong></a> <a name="useDeferredValue"></a></h3><p>The <code>useDeferredValue</code> Hook is a new addition to React 18 and it lets you defer updating a part of the UI.</p>
+<pre><code>  const deferredValue = useDeferredValue(value)
+</code></pre>
+<p><code>useDeferredValue</code> allows you to defer the rendering of a value until a future point in time, which can be incredibly useful in situations where you want to avoid unnecessary rendering.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [valueToDefer, setValueToDefer] = <span class="title function_">useState</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="keyword">const</span> deferredValue = <span class="title function_">useDeferredValue</span>(valueToDefer)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;deferredValue&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
+
+<p>By using the <code>useDeferredValue</code> Hook, you can avoid this problem by deferring the rendering of the search results until the user stops typing. This is similar to how <em>debouncing</em> works; it can dramatically improve performance.</p>
+<p>The following example shows how to use the <code>useDeferredValue</code> Hook to simulate a debouncing pattern retrieving Star War’s characters names.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useDeferredValue, useEffect, useState &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">UseDeferredHook</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [searchQuery, setSearchQuery] = <span class="title function_">useState</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  <span class="keyword">const</span> deferredSearchQuery = <span class="title function_">useDeferredValue</span>(searchQuery)</span><br><span class="line">  <span class="keyword">const</span> [resultQuery, setResultQuery] = <span class="title function_">useState</span>([])</span><br><span class="line"></span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchPeople</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!searchQuery) &#123;</span><br><span class="line">        <span class="title function_">setResultQuery</span>([])</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">`https://swapi.dev/api/people/?search=<span class="subst">$&#123;deferredSearchQuery&#125;</span>`</span>)</span><br><span class="line">      <span class="keyword">const</span> &#123; results &#125; = <span class="keyword">await</span> response.<span class="title function_">json</span>()</span><br><span class="line">      <span class="title function_">setResultQuery</span>(results)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">fetchPeople</span>()</span><br><span class="line">  <span class="comment">// eslint-disable-next-line react-hooks/exhaustive-deps</span></span><br><span class="line">  &#125;, [deferredSearchQuery])</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">handleOnChange</span>(<span class="params">event: any</span>) &#123;</span><br><span class="line">    <span class="title function_">setSearchQuery</span>(event.<span class="property">target</span>.<span class="property">value</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;input&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;Type a character&quot;</span> <span class="attr">value</span>=<span class="string">&#123;searchQuery&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;handleOnChange&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;resultQuery &amp;&amp; (resultQuery.map((person : any) =&gt; (</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;person.name&#125;</span>&gt;</span>&#123;person.name&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        )))&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">UseDeferredHook</span></span><br></pre></td></tr></table></figure>
+
+<p>In this example, it’s using the <code>useState</code> hook to manage the <code>searchQuery</code> state, which holds the user’s search input. We’re also using the <code>useDeferredValue</code> hook to create a <code>deferredSearchQuery</code> variable, which we pass to the Star Wars API search endpoint after a 1 second delay.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useDeferredValue#reference">Reference</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useDeferredValue#usedeferredvalue">useDeferredValue(value)</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useDeferredValue#usage">Usage</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useDeferredValue#showing-stale-content-while-fresh-content-is-loading">Showing stale content while fresh content is
+&gt; loading</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useDeferredValue#indicating-that-the-content-is-stale">Indicating that the content is
+&gt; stale</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useDeferredValue#deferring-re-rendering-for-a-part-of-the-ui">Deferring re-rendering for a part of the
+&gt; UI</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Other-Hooks"><a href="#Other-Hooks" class="headerlink" title="Other Hooks "></a><strong>Other Hooks</strong> <a name="other-hooks"></a></h2><p>These <a href="(https://react.dev/reference/react#other-hooks)">Hooks</a> are mostly useful to library authors and aren’t commonly used in the application code.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useDebugValue">useDebugValue</a> lets you customize the label React DevTools displays for your custom Hook.</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useId">useId</a> lets a component associate a unique ID with itself. Typically used with accessibility APIs.</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useSyncExternalStore">useSyncExternalStore</a> lets a component subscribe to an external store.</li>
+</ul>
+<h3 id="useDebugValue"><a href="#useDebugValue" class="headerlink" title="useDebugValue "></a><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useDebugValue"><strong>useDebugValue</strong></a> <a name="useDebugValue"></a></h3><p>useDebugValue is a React Hook that lets you add a label to a custom Hook in <a target="_blank" rel="noopener" href="https://react.dev/learn/react-developer-tools">React DevTools.</a></p>
+<pre><code>useDebugValue(value, format?)
+</code></pre>
+<h4 id="An-example-of-using-useDebugValue"><a href="#An-example-of-using-useDebugValue" class="headerlink" title="An example of using useDebugValue"></a>An example of using useDebugValue</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Use in multiple components.</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">useDisplayName</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [displayName, setDisplayName] = useState&lt;string&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> data = <span class="title function_">fetchFromDatabase</span>(props.<span class="property">userId</span>);</span><br><span class="line">    <span class="title function_">setDisplayName</span>(data.<span class="property">id</span>);</span><br><span class="line">  &#125;, []);</span><br><span class="line"></span><br><span class="line">  <span class="title function_">useDebugValue</span>(displayName ?? <span class="string">&#x27;loading...&#x27;</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> displayName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useDebugValue#reference">Reference</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useDebugValue#usedebugvalue">useDebugValue(value, format?)</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useDebugValue#usage">Usage</a><ul>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useDebugValue#adding-a-label-to-a-custom-hook">Adding a label to a custom Hook</a></li>
+<li><a target="_blank" rel="noopener" href="https://react.dev/reference/react/useDebugValue#deferring-formatting-of-a-debug-value">Deferring formatting of a debug value</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/04/14/React-Hooks-All-React-Hooks-Explained/" data-id="clj4z9cns001jcpos9qfo8i4p" class="article-share-link">Share</a>
+      
+        <a href="https://blog.pablo-magro-gaspar.site/2023/04/14/React-Hooks-All-React-Hooks-Explained/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hooks/" rel="tag">Hooks</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/05/01/Prompts/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Prompts
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/04/03/Coding-Resources/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Coding Resources</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/06/21/Getting-Started-With-Hexo/">Getting started with Hexo</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/">AWS Certified SysOps Administrator – Associate (SOA-C02)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/01/Prompts/">Prompts</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/14/React-Hooks-All-React-Hooks-Explained/">React Hooks - Some React Hooks Explained</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/03/Coding-Resources/">Coding Resources</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/">CLI</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/youtube-dl/">youtube-dl</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/">GNU/Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/CLI/">CLI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Debian/">Debian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Installer/">Installer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/KDE/">KDE</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Global/">Global</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/">OAuth2.0</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/Nodemailer/">Nodemailer</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hosting/">Hosting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/">KDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/Dolphin/">Dolphin</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kubernetes/">Kubernetes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Open-AI/">Open AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Protractor/">Protractor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Refranes-Citas-Proverbios/">Refranes, Citas, Proverbios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VS-Code/">VS Code</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/Certifications/" style="font-size: 20px;">Certifications</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Install/" style="font-size: 20px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Prompts/" style="font-size: 10px;">Prompts</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/Resources/" style="font-size: 10px;">Resources</a> <a href="/tags/SOA-C02/" style="font-size: 10px;">SOA-C02</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/SysOps/" style="font-size: 10px;">SysOps</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Pablo Magro Gaspar<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'pablomagro';
+  
+  var disqus_url = 'https://blog.pablo-magro-gaspar.site/2023/04/14/React-Hooks-All-React-Hooks-Explained/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+<link rel="stylesheet" href="/scroll2top/scroll2top.css">
+
+
+<script src="/scroll2top/scroll2top.js"></script>
+
+
+<div class="scrollup">
+  <a title="Scroll up" href="#">Scroll</a>
+</div>
+    
+  </div>
+</body>
+</html>
