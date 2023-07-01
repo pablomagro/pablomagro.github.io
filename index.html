@@ -84,8 +84,8 @@ ga('send', 'pageview');
     <article id="post-Getting-Started-With-Hexo" class="article article-type-post"
   itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2023/06/29/Getting-Started-With-Hexo/" class="article-date">
-  <time datetime="2023-06-29T23:29:33.490Z" itemprop="datePublished">30 Jun 2023</time>
+    <a href="/2023/07/01/Getting-Started-With-Hexo/" class="article-date">
+  <time datetime="2023-07-01T05:13:06.222Z" itemprop="datePublished">1 Jul 2023</time>
 </a>
     
   <div class="article-category">
@@ -100,7 +100,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/06/29/Getting-Started-With-Hexo/">Getting started with Hexo</a>
+      <a class="article-title" href="/2023/07/01/Getting-Started-With-Hexo/">Getting started with Hexo</a>
     </h1>
   
 
@@ -189,9 +189,9 @@ You can use a custom domain name for your github pages website. All you need to 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/06/29/Getting-Started-With-Hexo/" data-id="cljhs2j1m000fe2otgi52bn6i" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/07/01/Getting-Started-With-Hexo/" data-id="cljjjs55l000hbmoygw0v3w24" class="article-share-link">Share</a>
       
-        <a href="https://blog.pablo-magro-gaspar.site/2023/06/29/Getting-Started-With-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="https://blog.pablo-magro-gaspar.site/2023/07/01/Getting-Started-With-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
@@ -245,7 +245,7 @@ You can use a custom domain name for your github pages website. All you need to 
 <li><code>Detailed</code> Monitoring (paid): metrics are collected at a <code>1 minute</code> interval</li>
 <li>Includes <code>CPU, Network, Disk and Status Check Metrics</code></li>
 </ol>
-<p>Custom metric (yours to push):</p>
+<p>Custom metric (<strong>yours to push</strong>):</p>
 <ol>
 <li>Basic Resolution: 1 minute resolution</li>
 <li>High Resolution: all the way to 1 second resolution</li>
@@ -253,7 +253,100 @@ You can use a custom domain name for your github pages website. All you need to 
 <li>Make sure the IAM permissions on the EC2 instance role are correct !</li>
 </ol>
 <p><u><strong>RAM is NOT included in the AWS EC2 metrics</strong></u></p>
+<h4 id="CloudWatch-Custom-Metrics"><a href="#CloudWatch-Custom-Metrics" class="headerlink" title="CloudWatch Custom Metrics"></a>CloudWatch Custom Metrics</h4><p>You can retrieve custom metrics from your applications or services using the <code>StatsD</code> and <code>collectd</code> protocols. StatsD is supported on both Linux servers and servers running Windows Server. collectd is supported only on Linux</p>
+<ul>
+<li>Possibility to define and send your own custom metrics to CloudWatch</li>
+<li>Example: memory (RAM) usage, disk space, number of logged in users …</li>
+<li>Use API call <code>PutMetricData</code></li>
+<li>Ability to use dimensions (attributes) to segment metrics<ul>
+<li>Instance.id</li>
+<li>Environment.name</li>
+</ul>
+</li>
+<li>Metric resolution (<code>StorageResolution</code> API parameter – two possible value):<ul>
+<li>Standard: 1 minute (60 seconds)</li>
+<li>High Resolution: 1&#x2F;5&#x2F;10&#x2F;30 second(s) – Higher cost</li>
+</ul>
+</li>
+<li>Important <code>👀 Exam</code>: <code>**Accepts metric data points two weeks in the past and two hours in the future (make sure to configure your EC2 instance time correctly)**</code></li>
+</ul>
+<h3 id="CloudWatch-Dashboards"><a href="#CloudWatch-Dashboards" class="headerlink" title="CloudWatch Dashboards"></a>CloudWatch Dashboards</h3><ul>
+<li>Great way to setup custom dashboards for quick access to key metrics and alarms</li>
+<li><code>**Dashboards are global**</code></li>
+<li><code>**Dashboards can include graphs from different AWS accounts and regions**</code> <code>👀 Exam</code></li>
+<li>You can change the time zone &amp; time range of the dashboards</li>
+<li>You can setup automatic refresh (10s, 1m, 2m, 5m, 15m)</li>
+<li>Dashboards can be shared with people who don’t have an AWS account (public, email address, 3rd party SSO provider through Amazon Cognito)</li>
+</ul>
+<p>CloudWatch Logs - Sources</p>
+<ul>
+<li>SDK, CloudWatch Logs Agent, CloudWatch Unified Agent</li>
+<li>Elastic Beanstalk: collection of logs from application</li>
+<li>ECS: collection from containers</li>
+<li>AWS Lambda: collection from function logs</li>
+<li>VPC Flow Logs: VPC specific logs</li>
+<li>API Gateway</li>
+<li>CloudTrail based on filter</li>
+<li>Route53: Log DNS queries</li>
+</ul>
+<h3 id="CloudWatch-Logs-Subscriptions"><a href="#CloudWatch-Logs-Subscriptions" class="headerlink" title="CloudWatch Logs Subscriptions"></a>CloudWatch Logs Subscriptions</h3><ul>
+<li><p><strong><code>Get a real-time log events from CloudWatch Logs for processing and analysis</code></strong></p>
+</li>
+<li><p>Send to Kinesis Data Streams, Kinesis Data Firehose, or Lambda</p>
+</li>
+<li><p><code>Subscription Filter </code>– filter which logs are events delivered to your destination</p>
+</li>
+<li><p><code>Cross-Account Subscription</code> – send log events to resources in a different AWS account (KDS, KDF)</p>
+</li>
+</ul>
 <h3 id="Alarms"><a href="#Alarms" class="headerlink" title="Alarms"></a>Alarms</h3><p>CloudWatch alarms allow you to monitor metrics and trigger actions based on defined thresholds. In this case, you can create a CloudWatch alarm that monitors the CPU utilization metric of the EC2 instance. When the CPU utilization reaches 100%, the alarm will be triggered, and you can configure actions such as sending notifications or executing automated actions to address the unresponsiveness issue.</p>
+<h3 id="Alarm-Targets"><a href="#Alarm-Targets" class="headerlink" title="Alarm Targets:"></a>Alarm Targets:</h3><ul>
+<li><p><code>EC2</code> - Stop, Terminate, Reboot, or Recover an EC2 Instance</p>
+</li>
+<li><p><code>EC2 Auto Scaling</code> - Trigger Auto Scaling Action, scaling up or down.</p>
+</li>
+<li><p><code>SNS</code> - Send notification to SNS (from which you can do pretty much anything)</p>
+</li>
+<li><p><code>Composite Alarms are monitoring the states of multiple other alarms</code></p>
+</li>
+</ul>
+<h3 id="EC2-Instance-Recovery"><a href="#EC2-Instance-Recovery" class="headerlink" title="EC2 Instance Recovery"></a>EC2 Instance Recovery</h3><p>StatusCheckFailed_System</p>
+<ul>
+<li><p>Status Check:</p>
+<ul>
+<li><code>Instance status = check the EC2 VM</code></li>
+<li><code>System status = check the underlying hardware</code></li>
+</ul>
+</li>
+<li><p><code>Recovery: Same Private, Public, Elastic IP, metadata, placement group</code></p>
+<pre><code>👀 Alarms can be created based on CloudWatch Logs Metrics Filters
+</code></pre>
+</li>
+<li><p>Test an alarm using <code>aws set-alarm-state</code></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">👀 aws cloudwatch set-alarm-state --alarm-name <span class="string">&quot;TerminateInHighCPU&quot;</span> --state-value ALARM --state-reason <span class="string">&quot;testing purposes&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="CloudWatch-Synthetics"><a href="#CloudWatch-Synthetics" class="headerlink" title="CloudWatch Synthetics"></a>CloudWatch Synthetics</h3><p>CloudWatch Synthetics canaries are <code>automated/configurable scripts</code> that <code>monitor</code> the <code>availability and performance of applications, endpoints, and APIs</code>. They are <code>designed to simulate user interactions with an application and provide insights into its behavior</code>.</p>
+<p>Canaries are created using scripts written in Node.js or Python and are scheduled to run at regular intervals. These scripts perform tasks such as navigating through a website, clicking on specific elements, submitting forms, and validating responses. By executing these predefined actions, canaries can monitor the functionality, responsiveness, and performance of an application or API.</p>
+<p>CloudWatch Synthetics canaries collect data on metrics like response time, latency, availability, and success rates. They can also be configured to generate alarms when certain conditions are met, allowing proactive identification and remediation of issues.</p>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor-check-reference.html">https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor-check-reference.html</a></p>
+<h3 id="Amazon-EventBridge-formerly-CloudWatch-Events"><a href="#Amazon-EventBridge-formerly-CloudWatch-Events" class="headerlink" title="Amazon EventBridge (formerly CloudWatch Events)"></a>Amazon EventBridge (formerly CloudWatch Events)</h3><ul>
+<li>Schedule: Cron jobs (scheduled scripts) - Schedule Every hour -&gt;  Trigger script on Lambda function</li>
+<li>Event Pattern: Event rules to react to a service doing something - IAM Root User Sign in Event -&gt;  SNS Topic with Email Notification</li>
+<li>Trigger Lambda functions, send SQS&#x2F;SNS messages…</li>
+</ul>
+<p><img src="/./source/images/AWS-EventBridge-Rules.png" alt="EventBridge Rules" title="EventBridge Rules"></p>
+<h3 id="Service-Quotas-CloudWatch-Alarms"><a href="#Service-Quotas-CloudWatch-Alarms" class="headerlink" title="Service Quotas CloudWatch Alarms"></a>Service Quotas CloudWatch Alarms</h3><ul>
+<li>Notify you when you’re close to a service quota value threshold</li>
+<li>Create CloudWatch Alarms on the Service Quotas console</li>
+<li>Example: Lambda concurrent executions</li>
+<li>Helps you know if you need to request a quota increase or shutdown resources before limit is reached</li>
+</ul>
+<h3 id="Alternative-Trusted-Advisor-252B-CW-Alarms"><a href="#Alternative-Trusted-Advisor-252B-CW-Alarms" class="headerlink" title="Alternative: Trusted Advisor %252B CW Alarms"></a>Alternative: Trusted Advisor %252B CW Alarms</h3><ul>
+<li>Limited number of Service Limits checks in Trusted Advisor (~50)</li>
+<li>Trusted Advisor publishes its check results to CloudWatch</li>
+</ul>
 <h3 id="👀-For-each-production-EC2-instance-create-an-Amazon-CloudWatch-alarm-for-Status-Check-Failed-System-Set-the-alarm-action-to-recover-the-EC2-instance-Configure-the-alarm-notification-to-be-published-to-an-Amazon-Simple-Notification-Service-Amazon-SNS-topic"><a href="#👀-For-each-production-EC2-instance-create-an-Amazon-CloudWatch-alarm-for-Status-Check-Failed-System-Set-the-alarm-action-to-recover-the-EC2-instance-Configure-the-alarm-notification-to-be-published-to-an-Amazon-Simple-Notification-Service-Amazon-SNS-topic" class="headerlink" title="👀 For each production EC2 instance, create an Amazon CloudWatch alarm for Status Check Failed: System. Set the alarm action to recover the EC2 instance. Configure the alarm notification to be published to an Amazon Simple Notification Service (Amazon SNS) topic."></a><code>👀</code> For each production EC2 instance, create an <code>Amazon CloudWatch alar</code>m for Status <code>Check Failed: System</code>. Set the alarm action to <code>recover the EC2 instance</code>. Configure the alarm notification to be published to an Amazon Simple Notification Service (Amazon SNS) topic.</h3><p><code>Explanation</code>: By creating a <code>CloudWatch alarm</code> for Status <code>Check Failed: System</code>, you can<code> automate the recovery task of EC2 instances</code> (<code>stop, terminate, reboot, or recover your Amazon EC2 instances</code>). When the system health check fails for an EC2 instance, the alarm will be triggered and perform the configured action to recover the instance. This eliminates the need for manual intervention. Additionally, configuring the alarm to publish notifications to an SNS topic allows you to receive notifications whenever a system health check fails.</p>
 <h3 id="Status-Check"><a href="#Status-Check" class="headerlink" title="Status Check"></a>Status Check</h3><p>Automated checks to identify <code>hardware</code> and <code>software issues</code>.</p>
 <p>System Status Checks</p>
@@ -297,19 +390,102 @@ Instance Status Checks</li>
 <p>Snapshots are incremental backups, which means that only the blocks on the device that have changed after your most recent snapshot are saved. This minimizes the time required to create the snapshot and saves on storage costs by not duplicating data. Each snapshot contains all of the information that is needed to restore your data (from the moment when the snapshot was taken) to a new EBS volume.</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/TakeScheduledSnapshot.html">Schedule Automated Amazon EBS Snapshots Using CloudWatch Events</a></p>
 <h3 id="Q-Filters"><a href="#Q-Filters" class="headerlink" title="*Q Filters"></a>*Q <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringLogData.html">Filters</a></h3><p>You can create a <code>count</code> of <code>404</code> errors <code>and exclude</code> other <code>4xx</code> errors with a filter pattern on 404 errors.</p>
-<h3 id="Agents"><a href="#Agents" class="headerlink" title="Agents"></a>Agents</h3><h4 id="Custom-Metrics"><a href="#Custom-Metrics" class="headerlink" title="Custom Metrics"></a>Custom Metrics</h4><p>You can retrieve custom metrics from your applications or services using the <code>StatsD</code> and <code>collectd</code> protocols. StatsD is supported on both Linux servers and servers running Windows Server. collectd is supported only on Linux</p>
-<h4 id="Install-Agents-to-track-the-state-of-each-of-the-instances"><a href="#Install-Agents-to-track-the-state-of-each-of-the-instances" class="headerlink" title="Install Agents to track the state of each of the instances"></a>Install Agents to track the state of each of the instances</h4><p>You must attach the <code>CloudWatchAgentServerRole</code> IAM role to the EC2 instance to be able to run the CloudWatch agent on the instance. This role enables the CloudWatch agent to perform actions on the instance.</p>
+<h3 id="Agents"><a href="#Agents" class="headerlink" title="Agents"></a>Agents</h3><h4 id="Install-Agents-to-track-the-state-of-each-of-the-instances"><a href="#Install-Agents-to-track-the-state-of-each-of-the-instances" class="headerlink" title="Install Agents to track the state of each of the instances"></a>Install Agents to track the state of each of the instances</h4><p>You must attach the <code>CloudWatchAgentServerRole</code> IAM role to the EC2 instance to be able to run the CloudWatch agent on the instance. This role enables the CloudWatch agent to perform actions on the instance.</p>
 <h3 id="Instal-CloudWatch-agent"><a href="#Instal-CloudWatch-agent" class="headerlink" title="Instal CloudWatch agent"></a>Instal CloudWatch agent</h3><p>If your AMI contains a CloudWatch agent, it’s automatically installed on EC2 instances when you create an EC2 Auto Scaling group. With the stock Amazon Linux AMI, you need to install it (AWS recommends to install via yum).</p>
-<h3 id="CloudWatch-Synthetics"><a href="#CloudWatch-Synthetics" class="headerlink" title="CloudWatch Synthetics"></a>CloudWatch Synthetics</h3><p>CloudWatch Synthetics canaries are automated scripts that monitor the availability and performance of applications, endpoints, and APIs. They are <code>designed to simulate user interactions with an application and provide insights into its behavior</code>.</p>
-<p>Canaries are created using scripts written in Node.js or Python and are scheduled to run at regular intervals. These scripts perform tasks such as navigating through a website, clicking on specific elements, submitting forms, and validating responses. By executing these predefined actions, canaries can monitor the functionality, responsiveness, and performance of an application or API.</p>
-<p>CloudWatch Synthetics canaries collect data on metrics like response time, latency, availability, and success rates. They can also be configured to generate alarms when certain conditions are met, allowing proactive identification and remediation of issues.</p>
-<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor-check-reference.html">https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor-check-reference.html</a></p>
 <h3 id="Publish-custom-metrics-to-CloudWatch"><a href="#Publish-custom-metrics-to-CloudWatch" class="headerlink" title="Publish custom metrics to CloudWatch."></a>Publish custom metrics to CloudWatch.</h3><p>You can publish your own metrics to CloudWatch using the AWS CLI or an API. You can view statistical graphs of your published metrics with the AWS Management Console. CloudWatch stores data about a metric as a series of data points. Each data point has an associated time stamp. You can even publish an aggregated set of data points called a statistic set.</p>
-<p>The <code>put-metric-data</code> <code>command</code> publishes metric data to Amazon CloudWatch, which associates it with the specified metric. If the specified metric does not exist, CloudWatch creates the metric which can take up to fifteen minutes for the metric to appear in calls to <code>ListMetrics</code>.</p>
-<h2 id="CloudTrail"><a href="#CloudTrail" class="headerlink" title="CloudTrail"></a>CloudTrail</h2><h3 id="Q-To-ensure-that-SysOps-administrators-can-easily-verify-that-the-CloudTrail-log-files-have-not-been-deleted-or-changed-the-following-action-should-be-taken"><a href="#Q-To-ensure-that-SysOps-administrators-can-easily-verify-that-the-CloudTrail-log-files-have-not-been-deleted-or-changed-the-following-action-should-be-taken" class="headerlink" title="Q. To ensure that SysOps administrators can easily verify that the CloudTrail log files have not been deleted or changed, the following action should be taken:"></a>Q. To ensure that SysOps administrators can easily verify that the CloudTrail log files have not been deleted or changed, the following action should be taken:</h3><p>Enable <code>CloudTrail log file integrity validation</code> when the trail is created or updated.</p>
-<p><code>Explanation</code>: Enabling <code>CloudTrail log file integrity validation</code> ensures that the log files are protected against tampering or unauthorized modification. CloudTrail uses SHA-256 hashes to validate the integrity of the log files stored in Amazon S3. By enabling this feature, the SysOps administrators can easily verify the integrity of the log files and ensure that they have not been deleted or changed.</p>
-<h2 id="Q-AWS-Artifact"><a href="#Q-AWS-Artifact" class="headerlink" title="*Q AWS Artifact"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html">AWS Artifact</a></h2><p>AWS Artifact <code>keeps compliance-related reports and agreements</code>.</p>
-<h2 id="👀-Q-AWS-Config"><a href="#👀-Q-AWS-Config" class="headerlink" title="👀 *Q AWS Config"></a>👀 <code>*Q</code> AWS Config</h2><p>AWS Config <code>keeps track of</code> the <code>configuration</code> of <code>your AWS resources and their relationships to other resources</code>. It can also <code>evaluate</code> those AWS <code>resources for compliance</code>. This service uses rules that can be configured to evaluate AWS resources against desired configurations.</p>
+<p>The <code>put-metric-data</code> <code>command</code> publishes metric data to Amazon CloudWatch, which associates it with the specified metric. If the specified metric does not exist, CloudWatch creates the metric which can take up to fifteen minutes for the metric to appear in calls to <code>ListMetrics</code>..</p>
+<hr>
+<h2 id="CloudTrail"><a href="#CloudTrail" class="headerlink" title="CloudTrail"></a>CloudTrail</h2><p><code>Provides governance, compliance and audit for your AWS Account</code></p>
+<ul>
+<li>CloudTrail is <code>enabled by default</code>!</li>
+<li>Get <code>an history of events / API calls made within your AWS Account</code> by:<ul>
+<li>Console</li>
+<li>SDK</li>
+<li>CLI</li>
+<li>AWS Services</li>
+</ul>
+</li>
+<li>Can put logs from CloudTrail into CloudWatch Logs or S3</li>
+<li><code>A trail can be applied to All Regions (default) or a single Region</code></li>
+<li>If a resource is deleted in AWS, investigate CloudTrail first!</li>
+</ul>
+<h3 id="CloudTrail-Insights"><a href="#CloudTrail-Insights" class="headerlink" title="CloudTrail Insights"></a>CloudTrail Insights</h3><ul>
+<li>👀 Enable <code>CloudTrail Insights to detect unusual activity</code> in your account:<ul>
+<li>inaccurate resource provisioning</li>
+<li>hitting service limits</li>
+<li>Bursts of AWS IAM actions</li>
+<li>Gaps in periodic maintenance activity</li>
+</ul>
+</li>
+<li>CloudTrail Insights analyzes normal management events to create a baseline</li>
+<li>And then <code>continuously analyzes write events to detect unusual patterns</code>.<ul>
+<li>Anomalies appear in the CloudTrail console</li>
+<li>Event is sent to Amazon S3</li>
+<li>An EventBridge event is generated (for automation needs)</li>
+</ul>
+</li>
+</ul>
+<h3 id="CloudTrail-–-Integration-with-EventBridge"><a href="#CloudTrail-–-Integration-with-EventBridge" class="headerlink" title="CloudTrail – Integration with EventBridge"></a>CloudTrail – Integration with EventBridge</h3><ul>
+<li>Used to react to any API call being made in your account</li>
+<li>CloudTrail is not “real-time”:<ul>
+<li>Delivers an event within 15 minutes of an API call</li>
+<li>Delivers log files to an S3 bucket every 5 minutes</li>
+</ul>
+</li>
+</ul>
+<h3 id="CloudTrail-–-Organizations-Trails"><a href="#CloudTrail-–-Organizations-Trails" class="headerlink" title="CloudTrail – Organizations Trails"></a>CloudTrail – Organizations Trails</h3><ul>
+<li>A trail that will log all events for all AWS accounts in an AWS Organization</li>
+<li>Log events for management and member accounts</li>
+<li>Trail with the same name will be created in every AWS account (IAM permissions)</li>
+<li>Member accounts can’t remove or modify the organization trail (view only)</li>
+</ul>
+<h3 id="CloudTrail-Log-File-Integrity-Validation"><a href="#CloudTrail-Log-File-Integrity-Validation" class="headerlink" title="CloudTrail - Log File Integrity Validation"></a>CloudTrail - Log File Integrity Validation</h3><p><strong><code>Digest Files</code></strong>:</p>
+<ul>
+<li><p>References the log files for the last hour and contains a hash of each</p>
+</li>
+<li><p>Stored in the same S3 bucket as log files (different folder)</p>
+</li>
+<li><p><code>Helps you determine whether a log file was modified/deleted after CloudTrail delivered it</code></p>
+</li>
+<li><p><code>Hashing using SHA-256, Digital Signing using SHA- 256 with RSĂ</code></p>
+</li>
+<li><p><code>Protect the S3 bucket using bucket policy, versioning, MFA Delete protection, encryption, object lock</code></p>
+</li>
+<li><p>Protect files using IAM</p>
+<h3 id="Q-To-ensure-that-SysOps-administrators-can-easily-verify-that-the-CloudTrail-log-files-have-not-been-deleted-or-changed-the-following-action-should-be-taken"><a href="#Q-To-ensure-that-SysOps-administrators-can-easily-verify-that-the-CloudTrail-log-files-have-not-been-deleted-or-changed-the-following-action-should-be-taken" class="headerlink" title="Q. To ensure that SysOps administrators can easily verify that the CloudTrail log files have not been deleted or changed, the following action should be taken:"></a>Q. To ensure that SysOps administrators can easily verify that the CloudTrail log files have not been deleted or changed, the following action should be taken:</h3><p>Enable <code>CloudTrail log file integrity validation</code> when the trail is created or updated.</p>
+<p><code>Explanation</code>: Enabling <code>CloudTrail log file integrity validation</code> ensures that the log files are protected against tampering or unauthorized modification. CloudTrail uses SHA-256 hashes to validate the integrity of the log files stored in Amazon S3. By enabling this feature, the SysOps administrators can easily verify the integrity of the log files and ensure that they have not been deleted or changed</p>
+</li>
+</ul>
+<h3 id="Cloud-Trail-Integration-with-EventBridge-AWS-CloudTrail"><a href="#Cloud-Trail-Integration-with-EventBridge-AWS-CloudTrail" class="headerlink" title="Cloud Trail - Integration with EventBridge AWS CloudTrail"></a>Cloud Trail - Integration with EventBridge AWS CloudTrail</h3><ul>
+<li>Used to react to any API call being made in your account</li>
+<li>Cloud Trail is not “real-time”:<ul>
+<li>Delivers an event within 15 minutes of an API call</li>
+<li>Delivers log files to an S3 bucket every 5 minutes</li>
+</ul>
+</li>
+</ul>
+<h3 id="CloudTrail-–-Organizations-Trails-1"><a href="#CloudTrail-–-Organizations-Trails-1" class="headerlink" title="CloudTrail – Organizations Trails"></a>CloudTrail – Organizations Trails</h3><ul>
+<li>A trail that will log all events for all AWS accounts in an AWS Organization</li>
+<li>Log events for management and member accounts</li>
+<li>Trail with the same name will be created in every AWS account (IAM permissions)</li>
+<li><code>Member accounts can’t remove or modify the organization trail (view only)</code></li>
+</ul>
+<hr>
+<h2 id="👀-Q-AWS-Config"><a href="#👀-Q-AWS-Config" class="headerlink" title="👀 *Q AWS Config"></a><code>👀 *Q</code> AWS Config</h2><ul>
+<li>Helps with <code>auditing</code> and recording <strong><code>compliance</code></strong> of your AWS resources.</li>
+<li>Helps <code>record configurations</code> and changes over time.
+Questions that can be solved by AWS Config:<ul>
+<li>Is there <strong>unrestricted SSH</strong> access to my security groups?</li>
+<li>Do my <strong>buckets have any public access</strong>?</li>
+<li>How has my <strong>ALB configuration changed over time</strong>?</li>
+</ul>
+</li>
+<li>You can <code>receive alerts</code> (SNS notifications) for any changes</li>
+<li>AWS Config is a <code>per-region service</code>.</li>
+<li>Can be aggregated across regions and accounts.</li>
+<li>Possibility of storing the configuration data into S3 (analyzed by Athena)</li>
+</ul>
+<p>AWS Config <code>keeps track of</code> the <code>configuration</code> of <code>your AWS resources and their relationships to other resources</code>. It can also <code>evaluate</code> those AWS resources for <u><strong><code>compliance</code></strong></u>. This service uses rules that can be configured to evaluate AWS resources against desired configurations.</p>
 <p>For example,</p>
 <ul>
 <li>can track <code>changes</code> to <em><code>CloudFormation stacks</code></em>.</li>
@@ -325,6 +501,61 @@ Instance Status Checks</li>
 <p><code>AWS Config Auto Remediation feature</code> has auto remediate feature for any non-compliant S3 buckets using the following AWS Config rules:
 s3-bucket-logging-enabled s3-bucket-server-side-encryption-enabled s3-bucket-public-read-prohibited s3-bucket-public-write-prohibited
 These AWS Config rules act as controls to prevent any non-compliant S3 activities.</p>
+<h3 id="Config-Rules"><a href="#Config-Rules" class="headerlink" title="Config Rules"></a>Config Rules</h3><ul>
+<li>Can use AWS managed config rules (over 75)</li>
+<li>Can make <strong><code>custom config rules (must be defined in AWS Lambda)</code></strong>.<ul>
+<li>Ex: evaluate if each EBS disk is of type gp2</li>
+<li>Ex: evaluate if each EC2 instance is t2.micro</li>
+</ul>
+</li>
+<li>Rules can be evaluated &#x2F; triggered:<ul>
+<li>For each config change</li>
+<li>And &#x2F; or: at regular time intervals</li>
+</ul>
+</li>
+<li><strong><code>AWS Config Rules does not prevent actions from happening (no deny)</code></strong>.</li>
+</ul>
+<h3 id="Config-Rules-–-Remediations"><a href="#Config-Rules-–-Remediations" class="headerlink" title="Config Rules – Remediations"></a>Config Rules – Remediations</h3><ul>
+<li><code>Automate remediation of non-compliant resources using SSM Automation Documents</code>.</li>
+<li>Use AWS-Managed Automation Documents or create custom Automation Documents<ul>
+<li><code>Tip: you can create custom Automation Documents that invokes Lambda function</code>.</li>
+</ul>
+</li>
+<li>You can set <code>Remediation Retries</code> if the resource is still non-compliant after autoremediation.</li>
+</ul>
+<h3 id="Config-Rules-–-Notifications"><a href="#Config-Rules-–-Notifications" class="headerlink" title="Config Rules – Notifications"></a>Config Rules – Notifications</h3><ul>
+<li>Use EventBridge to trigger notifications when AWS resources are noncompliant</li>
+<li>Ability to send configuration changes and compliance state notifications to SNS (all events – use SNS Filtering or filter at client-side)</li>
+</ul>
+<h3 id="AWS-Config-–-Aggregators"><a href="#AWS-Config-–-Aggregators" class="headerlink" title="AWS Config – Aggregators"></a>AWS Config – Aggregators</h3><ul>
+<li>The aggregator is created <code>in one central aggregator account</code>.</li>
+<li>Aggregates <code>rules, resources, etc... across multiple accounts &amp; regions</code>.</li>
+<li>If using <code>AWS Organizations</code>, no need for individual Authorization</li>
+<li>Rules are created in each individual source AWS account</li>
+<li>Can <code>deploy rules</code> to multiple target accounts using <code>CloudFormation StackSets</code></li>
+</ul>
+<h2 id="CloudWatch-vs-CloudTrail-vs-Config"><a href="#CloudWatch-vs-CloudTrail-vs-Config" class="headerlink" title="CloudWatch vs CloudTrail vs Config"></a>CloudWatch vs CloudTrail vs Config</h2><ul>
+<li>CloudWatch<ul>
+<li>Performance monitoring (metrics, CPU, network, etc…) &amp; dashboards</li>
+<li>Events &amp; Alerting</li>
+<li>Log Aggregation &amp; Analysis</li>
+</ul>
+</li>
+<li>CloudTrail<ul>
+<li>Record API calls made within your Account by everyone</li>
+<li>Can define trails for specific resources</li>
+<li>Global Service</li>
+</ul>
+</li>
+<li>Config<ul>
+<li>Record configuration changes</li>
+<li>Evaluate resources against compliance rules</li>
+<li>Get timeline of changes and compliance</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Q-AWS-Artifact"><a href="#Q-AWS-Artifact" class="headerlink" title="*Q AWS Artifact"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html">AWS Artifact</a></h2><p>AWS Artifact <code>keeps compliance-related reports and agreements</code>.</p>
 <h2 id="Q-AWS-Inspector"><a href="#Q-AWS-Inspector" class="headerlink" title="*Q AWS Inspector"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://aws.amazon.com/inspector/">AWS Inspector</a></h2><p>Amazon Inspector is <code>used for security compliance of instances and applications</code>.</p>
 <p>Amazon Inspector is an automated security assessment service that helps you <code>test</code> the <code>network accessibility</code> of your Amazon EC2 instances and the <code>security state of your applications running on the instances</code>.</p>
 <p>An Amazon Inspector assessment report can be generated for an assessment run once it has been successfully completed. An assessment report is a document that details what is tested in the assessment run, and the results of the assessment. The results of your assessment are formatted into a standard report, which can be generated to share results within your team for remediation actions, to enrich compliance audit data, or to store for future reference.</p>
@@ -333,6 +564,166 @@ information in the findings report and additionally provides the list of rules t
 <p><code>👀</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Correct. Amazon Inspector discovers potential security issues by using security rules to analyze AWS resources. Amazon Inspector also integrates with AWS Security Hub to provide a view of your security posture across multiple AWS accounts.</span><br><span class="line"></span><br><span class="line">For more information about Amazon Inspector, see Amazon Inspector Classic Assessment Templates and Assessment Runs.</span><br></pre></td></tr></table></figure>
 
+<hr>
+<h2 id="RDS"><a href="#RDS" class="headerlink" title="RDS"></a>RDS</h2><h3 id="Advantage-over-using-RDS-versus-deploying"><a href="#Advantage-over-using-RDS-versus-deploying" class="headerlink" title="Advantage over using RDS versus deploying"></a>Advantage over using RDS versus deploying</h3><ul>
+<li>RDS is a managed service:<ul>
+<li>Automated provisioning, OS patching</li>
+<li>Continuous backups and restore to specific timestamp (Point in Time Restore)!</li>
+<li>Monitoring dashboards</li>
+<li>Read replicas for improved read performance</li>
+<li>Multi AZ setup for DR (Disaster Recovery)</li>
+<li>Maintenance windows for upgrades</li>
+<li>Scaling capability (vertical and horizontal)</li>
+<li>Storage backed by EBS (gp2 or io1)</li>
+</ul>
+</li>
+<li>BUT you can’t SSH into your instances</li>
+</ul>
+<h3 id="RDS-Read-Replicas-for-read-scalability"><a href="#RDS-Read-Replicas-for-read-scalability" class="headerlink" title="RDS Read Replicas for read scalability"></a>RDS Read Replicas for read scalability</h3><ul>
+<li>Up to 15 Read Replicas</li>
+<li>Within <code>AZ, Cross AZ or Cross Region</code>.</li>
+<li>Replication is <code>ASYNC</code>.</li>
+<li>Replicas can be promoted to their own DB.</li>
+</ul>
+<h3 id="RDS-Read-Replicas-–-Network-Cost"><a href="#RDS-Read-Replicas-–-Network-Cost" class="headerlink" title="RDS Read Replicas – Network Cost"></a>RDS Read Replicas – Network Cost</h3><ul>
+<li>In AWS there’s a network cost when data goes from one AZ to another</li>
+<li><code>For RDS Read Replicas within the same region, you don’t pay that fee</code>.</li>
+</ul>
+<h3 id="RDS-Multi-AZ-Disaster-Recovery"><a href="#RDS-Multi-AZ-Disaster-Recovery" class="headerlink" title="RDS Multi AZ (Disaster Recovery)"></a>RDS Multi AZ (Disaster Recovery)</h3><ul>
+<li><code>SYNC</code> replication.</li>
+<li>One DNS name – automatic app failover to standby</li>
+<li>Increase <code>availability</code>.</li>
+<li>Failover in case of loss of AZ, loss of network, instance or storage failure</li>
+</ul>
+<p><code>👀 Exam</code> - <code>The Read Replicas be setup as Multi AZ for Disaster Recovery (DR)</code>.</p>
+<h3 id="Lambda-in-VPC"><a href="#Lambda-in-VPC" class="headerlink" title="Lambda in VPC"></a>Lambda in VPC</h3><ul>
+<li>You must define the VPC ID, the Subnets and the Security Groups</li>
+<li>Lambda will create an ENI (Elastic Network Interface) in your subnets</li>
+<li><code>AWSLambdaVPCAccessExecutionRole</code></li>
+</ul>
+<h3 id="RDS-Proxy-for-AWS-Lambda"><a href="#RDS-Proxy-for-AWS-Lambda" class="headerlink" title="RDS Proxy for AWS Lambda"></a>RDS Proxy for AWS Lambda</h3><ul>
+<li>When using Lambda functions with RDS, it opens and maintains a database connection</li>
+<li>This can result in a <code>“TooManyConnections”</code> exception</li>
+<li>With <code>RDS Proxy</code>, you no longer need code that handles cleaning up idle connections and managing connection pools</li>
+</ul>
+<h3 id="DB-Parameter-Groups"><a href="#DB-Parameter-Groups" class="headerlink" title="DB Parameter Groups"></a>DB Parameter Groups</h3><ul>
+<li><p>You can configure the DB engine using Parameter Groups</p>
+</li>
+<li><p>Dynamic parameters are applied immediately</p>
+</li>
+<li><p>Static parameters are applied after instance reboot</p>
+</li>
+<li><p>You can modify parameter group associated with a DB (must reboot)</p>
+</li>
+<li><p><em><code>Must-know parameter</code></em>:</p>
+<ul>
+<li>PostgreSQL &#x2F; SQL Server: <code>rds.force_ssl=1</code> &#x3D;&gt; force SSL connections</li>
+<li>MySQL &#x2F; MariaDB: <code>require_secure_transport</code>&#x3D;1 &#x3D;&gt; force SSL connections</li>
+</ul>
+</li>
+</ul>
+<h3 id="RDS-Events-amp-Event-Subscriptions"><a href="#RDS-Events-amp-Event-Subscriptions" class="headerlink" title="RDS Events &amp; Event Subscriptions"></a>RDS Events &amp; Event Subscriptions</h3><p>RDS keeps record of events related to:</p>
+<ul>
+<li><p>DB instances</p>
+</li>
+<li><p>Snapshots</p>
+</li>
+<li><p>Parameter groups, security groups …</p>
+</li>
+<li><p>RDS Event Subscriptions</p>
+<ul>
+<li>Subscribe to events to be notified when an event occurs using SNS</li>
+<li>Specify the Event Source (instances, SGs, …) and the Event Category (creation, failover, …)</li>
+</ul>
+</li>
+<li><p><code>RDS delivers events to EventBridge</code></p>
+</li>
+</ul>
+<h3 id="RDS-with-CloudWatch"><a href="#RDS-with-CloudWatch" class="headerlink" title="RDS with CloudWatch"></a>RDS with CloudWatch</h3><p>CloudWatch metrics associated with RDS (gathered from the hypervisor):</p>
+<ul>
+<li><p><code>DatabaseConnections</code></p>
+</li>
+<li><p><code>SwapUsage</code></p>
+</li>
+<li><p><code>ReadIOPS / WriteIOPS</code></p>
+</li>
+<li><p><code>ReadLatency / WriteLatency</code></p>
+</li>
+<li><p><code>ReadThroughPut / WriteThroughPut</code></p>
+</li>
+<li><p><code>DiskQueueDepth</code></p>
+</li>
+<li><p><code>FreeStorageSpace</code></p>
+</li>
+<li><p><code>Enhanced Monitoring</code> (gathered from an agent on the DB instance).</p>
+<ul>
+<li>Useful when you need to see how different processes or threads use the CPU</li>
+</ul>
+</li>
+<li><p>Access to over 50 new CPU, memory, file system, and disk I&#x2F;O metrics</p>
+</li>
+</ul>
+<h3 id="RDS-storage-autoscaling"><a href="#RDS-storage-autoscaling" class="headerlink" title="RDS storage autoscaling"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">RDS storage autoscaling</a></h3><p>With RDS storage autoscaling, you can set the desired maximum storage limit. Autoscaling will manage the storage size. RDS storage autoscaling monitors actual storage consumption and then scales capacity automatically when actual utilization approaches the provisioned storage capacity.</p>
+<h3 id="👀-Q-Enable-Enhanced-Monitoring"><a href="#👀-Q-Enable-Enhanced-Monitoring" class="headerlink" title="👀 *Q Enable Enhanced Monitoring"></a><code>👀</code> <code>*Q</code> Enable Enhanced Monitoring</h3><p>Amazon RDS provides <code>metrics</code> in real time for the operating system (OS) that your DB instance runs on. You can view the metrics for your DB instance using the console. Also, you can consume the Enhanced Monitoring JSON output from Amazon CloudWatch Logs in a monitoring system of your choice.</p>
+<hr>
+<h2 id="Amazon-Aurora-DB"><a href="#Amazon-Aurora-DB" class="headerlink" title="Amazon Aurora DB"></a>Amazon Aurora DB</h2><ul>
+<li>Aurora is a proprietary technology from AWS (not open sourced)</li>
+<li>Postgres and MySQL are both supported as Aurora DB (that means your drivers will work as if Aurora was a Postgres or MySQL database)</li>
+<li>Aurora is “AWS cloud optimized” and claims 5x performance improvement over MySQL on RDS, over 3x the performance of Postgres on RDS</li>
+<li><code>Aurora storage automatically grows in increments of 10GB, up to 128 TB</code>.</li>
+<li>Aurora can have up to 15 replicas and the replication process is faster than MySQL (sub 10 ms replica lag)</li>
+<li>Failover in Aurora is instantaneous. It’s HA (High Availability) native.</li>
+<li>Aurora costs more than RDS (20% more) – but is more efficient</li>
+</ul>
+<h3 id="Aurora-High-Availability-and-Read-Scaling"><a href="#Aurora-High-Availability-and-Read-Scaling" class="headerlink" title="Aurora High Availability and Read Scaling"></a>Aurora High Availability and Read Scaling</h3><ul>
+<li><p>One Aurora Instance takes writes (master)</p>
+</li>
+<li><p><code>Support for Cross Region Replication</code></p>
+<p>  <code>Shared storage Volume</code>: Replication + Self Healing + Auto expanding</p>
+<p>  Reader Endpoint Connection Load Balancing</p>
+</li>
+</ul>
+<h3 id="RDS-amp-Aurora-Security"><a href="#RDS-amp-Aurora-Security" class="headerlink" title="RDS &amp; Aurora Security"></a>RDS &amp; Aurora Security</h3><ul>
+<li><code>At-rest encryption</code>:<ul>
+<li>Database master &amp; replicas encryption using AWS KMS - must be defined as launch time</li>
+<li>If the master is not encrypted, the read replicas cannot be encrypted
+To encrypt an un-encrypted database, go through a DB snapshot &amp; restore as encrypted</li>
+</ul>
+</li>
+<li><code>In-flight encryption</code>: TLS-ready by default, use the AWS TLS root certificates client-side</li>
+<li><code>IAM Authentication: IAM roles</code> to connect to your database (instead of username&#x2F;pw)</li>
+<li><code>Security Groups</code>: Control Network access to your RDS &#x2F; Aurora DB</li>
+<li><code>No SSH available except on RDS Custom</code></li>
+<li><code>Audit Logs can be enabled and sent to CloudWatch Logs for longer retention</code></li>
+</ul>
+<h3 id="Aurora-for-SysOps"><a href="#Aurora-for-SysOps" class="headerlink" title="Aurora for SysOps"></a>Aurora for SysOps</h3><ul>
+<li><p>You can associate a priority tier (0-15) on each Read Replica</p>
+<ul>
+<li>Controls the failover priority</li>
+<li>RDS will promote the Read Replica with the highest priority (lowest tier)</li>
+<li>If replicas have the same priority, RDS promotes the largest in size</li>
+<li>If replicas have the same priority and size, RDS promotes arbitrary replica</li>
+</ul>
+</li>
+<li><p><code>You can migrate an RDS MySQL snapshot to Aurora MySQL Cluster</code></p>
+</li>
+</ul>
+<h3 id="Connect-to-Amazon-Aurora-DB-cluster-from-outside-a-VPC"><a href="#Connect-to-Amazon-Aurora-DB-cluster-from-outside-a-VPC" class="headerlink" title="Connect to Amazon Aurora DB cluster from outside a VPC"></a>Connect to Amazon Aurora DB cluster from outside a VPC</h3><p>To connect to an Amazon Aurora DB cluster directly from outside the VPC, the instances in the cluster must meet the following requirements:</p>
+<ol>
+<li>The DB instance must have a public IP address.</li>
+<li>The DB instance must be running in a publicly accessible subnet.</li>
+</ol>
+<p>For Amazon Aurora DB instances, you can’t choose a specific subnet. Instead, choose a DB subnet group when you create the instance. Create a DB subnet group with subnets of similar network configuration. For example, a DB subnet group for Public subnets.</p>
+<h3 id="Metrics-to-generate-reports-on-the-Aurora-DB-Cluster-and-its-replicas"><a href="#Metrics-to-generate-reports-on-the-Aurora-DB-Cluster-and-its-replicas" class="headerlink" title="Metrics to generate reports on the Aurora DB Cluster and its replicas"></a>Metrics to generate reports on the Aurora DB Cluster and its replicas</h3><ol>
+<li><code>AuroraReplicaLagMaximum</code> - This metric captures the <code>maximum amount of lag between the primary instance and each Aurora DB instance in the DB cluster</code>.</li>
+<li><code>AuroraBinlogReplicaLag</code> - This metric captures the <code>amount of time a replica DB cluster running</code> on Aurora MySQL-Compatible Edition lags behind the source DB cluster.
+This metric reports the value of the Seconds_Behind_Master field of the MySQL SHOW SLAVE STATUS command. This metric is useful for monitoring replica lag between Aurora DB clusters that are replicating across different AWS Regions.</li>
+<li><code>AuroraReplicaLag</code> - This metric captures the <code>amount of lag</code> an Aurora replica experiences <code>when replicating updates from the primary instance</code>.</li>
+<li><code>InsertLatency</code> - This metric captures <code>the average duration of insert operations</code>.</li>
+</ol>
+<h2 id="👀-Aurora-Reader-Endpoint"><a href="#👀-Aurora-Reader-Endpoint" class="headerlink" title="👀  Aurora Reader Endpoint"></a>👀  Aurora Reader Endpoint</h2><p>To <code>perform queries</code>, you can connect to the reader endpoint, with Aurora automatically performing load-balancing among all the Aurora <code>Replicas</code>.</p>
+<p>A reader endpoint for an Aurora DB cluster provides load-balancing support for read-only connections to the DB cluster. Use the reader endpoint <code>for read operations</code>, such as queries. By processing those statements on the read-only Aurora Replicas, this endpoint reduces the overhead on the primary instance. It also helps the cluster to scale the capacity to handle simultaneous SELECT queries, proportional to the number of Aurora Replicas in the cluster. Each Aurora DB cluster has one reader endpoint.</p>
+<p>Reference:<a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html">Amazon Aurora connection management</a></p>
 <h2 id="Q-AWS-Trusted-Advisor"><a href="#Q-AWS-Trusted-Advisor" class="headerlink" title="*Q AWS Trusted Advisor"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html">AWS Trusted Advisor</a></h2><p>Trusted Advisor provides real-time guidance to help users follow AWS best practices to provision their resources</p>
 <p>E.g. AWS Trusted Advisor checks for service <code>usage</code> that is more than 80% of the <code>service limit</code>.</p>
 <h3 id="Check-categories"><a href="#Check-categories" class="headerlink" title="Check categories"></a>Check categories</h3><ul>
@@ -345,6 +736,41 @@ information in the findings report and additionally provides the list of rules t
 <h3 id="AWS-Config-Auto-Remediation"><a href="#AWS-Config-Auto-Remediation" class="headerlink" title="AWS Config Auto Remediation"></a>AWS Config Auto Remediation</h3><p>Has auto remediate feature for any non-compliant S3 buckets using the following AWS Config rules:</p>
 <p>s3-bucket-logging-enabled s3-bucket-server-side-encryption-enabled s3-bucket-public-read-prohibited s3-bucket-public-write-prohibited</p>
 <p>These AWS Config rules act as controls to prevent any non-compliant S3 activities.</p>
+<hr>
+<h2 id="Amazon-ElastiCache-Overview"><a href="#Amazon-ElastiCache-Overview" class="headerlink" title="Amazon ElastiCache Overview"></a>Amazon ElastiCache Overview</h2><ul>
+<li><p>The same way RDS is to get managed Relational Databases…</p>
+</li>
+<li><p>ElastiCache is to get managed <code>Redis or Memcached</code></p>
+</li>
+<li><p>Caches are in-memory databases with really high performance, low latency</p>
+</li>
+<li><p><code>Helps reduce load off of databases for read intensive workloads</code></p>
+</li>
+<li><p><code>Helps make your application stateless</code></p>
+</li>
+<li><p>AWS takes care of OS maintenance &#x2F; patching, optimizations, setup, configuration, monitoring, failure recovery and backups</p>
+<pre><code>Using ElastiCache involves heavy application code changes
+</code></pre>
+</li>
+</ul>
+<h3 id="ElastiCache-Replication-Redis-Cluster-Mode-Disabled"><a href="#ElastiCache-Replication-Redis-Cluster-Mode-Disabled" class="headerlink" title="ElastiCache Replication (Redis): Cluster Mode Disabled"></a>ElastiCache Replication (Redis): Cluster Mode Disabled</h3><ul>
+<li>One primary node, up to 5 replicas</li>
+<li>Asynchronous Replication</li>
+<li>The primary node is used for read&#x2F;write</li>
+<li>The other nodes are read-only</li>
+<li><code>One shard, all nodes have all the data</code></li>
+<li>Guard against data loss if node failure</li>
+<li>Multi-AZ enabled by default for failover</li>
+<li>Helpful to scale read performance</li>
+<li>Horizontal and vertical</li>
+</ul>
+<h3 id="ElastiCache-Replication-Cluster-Mode-Enabled"><a href="#ElastiCache-Replication-Cluster-Mode-Enabled" class="headerlink" title="ElastiCache Replication: Cluster Mode Enabled"></a>ElastiCache Replication: Cluster Mode Enabled</h3><p>Data is partitioned across shards (helpful to scale writes)</p>
+<ul>
+<li>Automatically increase&#x2F;decrease the desired shards or replicas</li>
+<li>Supports both Target Tracking and Scheduled Scaling Policies</li>
+<li>Works only for Redis with Cluster Mode Enabled</li>
+</ul>
+<hr>
 <h2 id="Memcached"><a href="#Memcached" class="headerlink" title="Memcached"></a>Memcached</h2><h3 id="Fix-high-Memcached-evictions"><a href="#Fix-high-Memcached-evictions" class="headerlink" title="Fix high Memcached evictions"></a>Fix high Memcached evictions</h3><p>To fix the issue of high Memcached evictions in Amazon ElastiCache, the following actions should be taken:</p>
 <ol>
 <li><code>Increase</code> the <code>size of the nodes</code> in the cluster: This allows for more available memory in each node, reducing the likelihood of evictions due to limited cache space.</li>
@@ -928,24 +1354,6 @@ the instance is launched</p>
 <p>All current generation instance types support enhanced networking, except for T2 instances.</p>
 <h2 id="Cost-Allocation-Tags"><a href="#Cost-Allocation-Tags" class="headerlink" title="Cost Allocation Tags"></a>Cost Allocation Tags</h2><p>A tag is a label that you or AWS assigns to an AWS resource. Each tag consists of a key and a value. For each resource, each tag key must be unique, and each tag key can have only one value. You can use tags to organize your resources, and cost allocation tags to track your AWS costs on a detailed level. After you activate cost allocation tags, AWS uses the cost allocation tags to organize your resource costs on your cost allocation report, to make it easier for you to categorize and track your AWS costs.</p>
 <h2 id="👀-Q-AWS-Resource-Groups-Tag-Editor"><a href="#👀-Q-AWS-Resource-Groups-Tag-Editor" class="headerlink" title="👀 *Q AWS Resource Groups Tag Editor"></a>👀 <code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/ARG/latest/userguide/tag-editor.html">AWS Resource Groups Tag Editor</a></h2><p>With Resource Groups, you can create, maintain, and view a collection of resources that share common tags. Tag Editor manages <code>tags across services and AWS Regions</code>. Tag Editor can perform a global search and can edit a large number of tags at one time.</p>
-<h2 id="Aurora-DB"><a href="#Aurora-DB" class="headerlink" title="Aurora DB"></a>Aurora DB</h2><h3 id="Connect-to-Amazon-Aurora-DB-cluster-from-outside-a-VPC"><a href="#Connect-to-Amazon-Aurora-DB-cluster-from-outside-a-VPC" class="headerlink" title="Connect to Amazon Aurora DB cluster from outside a VPC"></a>Connect to Amazon Aurora DB cluster from outside a VPC</h3><p>To connect to an Amazon Aurora DB cluster directly from outside the VPC, the instances in the cluster must meet the following requirements:</p>
-<ol>
-<li>The DB instance must have a public IP address.</li>
-<li>The DB instance must be running in a publicly accessible subnet.</li>
-</ol>
-<p>For Amazon Aurora DB instances, you can’t choose a specific subnet. Instead, choose a DB subnet group when you create the instance. Create a DB subnet group with subnets of similar network configuration. For example, a DB subnet group for Public subnets.</p>
-<h3 id="Metrics-to-generate-reports-on-the-Aurora-DB-Cluster-and-its-replicas"><a href="#Metrics-to-generate-reports-on-the-Aurora-DB-Cluster-and-its-replicas" class="headerlink" title="Metrics to generate reports on the Aurora DB Cluster and its replicas"></a>Metrics to generate reports on the Aurora DB Cluster and its replicas</h3><ol>
-<li><code>AuroraReplicaLagMaximum</code> - This metric captures the <code>maximum amount of lag between the primary instance and each Aurora DB instance in the DB cluster</code>.</li>
-<li><code>AuroraBinlogReplicaLag</code> - This metric captures the <code>amount of time a replica DB cluster running</code> on Aurora MySQL-Compatible Edition lags behind the source DB cluster.
-This metric reports the value of the Seconds_Behind_Master field of the MySQL SHOW SLAVE STATUS command. This metric is useful for monitoring replica lag between Aurora DB clusters that are replicating across different AWS Regions.</li>
-<li><code>AuroraReplicaLag</code> - This metric captures the <code>amount of lag</code> an Aurora replica experiences <code>when replicating updates from the primary instance</code>.</li>
-<li><code>InsertLatency</code> - This metric captures <code>the average duration of insert operations</code>.</li>
-</ol>
-<h2 id="👀-Aurora-Reader-Endpoint"><a href="#👀-Aurora-Reader-Endpoint" class="headerlink" title="👀  Aurora Reader Endpoint"></a>👀  Aurora Reader Endpoint</h2><p>To <code>perform queries</code>, you can connect to the reader endpoint, with Aurora automatically performing load-balancing among all the Aurora <code>Replicas</code>.</p>
-<p>A reader endpoint for an Aurora DB cluster provides load-balancing support for read-only connections to the DB cluster. Use the reader endpoint <code>for read operations</code>, such as queries. By processing those statements on the read-only Aurora Replicas, this endpoint reduces the overhead on the primary instance. It also helps the cluster to scale the capacity to handle simultaneous SELECT queries, proportional to the number of Aurora Replicas in the cluster. Each Aurora DB cluster has one reader endpoint.</p>
-<p>Reference:<a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html">Amazon Aurora connection management</a></p>
-<h2 id="RDS"><a href="#RDS" class="headerlink" title="RDS"></a>RDS</h2><h3 id="RDS-storage-autoscaling"><a href="#RDS-storage-autoscaling" class="headerlink" title="RDS storage autoscaling"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">RDS storage autoscaling</a></h3><p>With RDS storage autoscaling, you can set the desired maximum storage limit. Autoscaling will manage the storage size. RDS storage autoscaling monitors actual storage consumption and then scales capacity automatically when actual utilization approaches the provisioned storage capacity.</p>
-<h3 id="👀-Q-Enable-Enhanced-Monitoring"><a href="#👀-Q-Enable-Enhanced-Monitoring" class="headerlink" title="👀 *Q Enable Enhanced Monitoring"></a><code>👀</code> <code>*Q</code> Enable Enhanced Monitoring</h3><p>Amazon RDS provides <code>metrics</code> in real time for the operating system (OS) that your DB instance runs on. You can view the metrics for your DB instance using the console. Also, you can consume the Enhanced Monitoring JSON output from Amazon CloudWatch Logs in a monitoring system of your choice.</p>
 <h2 id="OpsWorks"><a href="#OpsWorks" class="headerlink" title="OpsWorks"></a>OpsWorks</h2><p>AWS OpsWorks is a <code>configuration management service</code> that provides managed instances of <code>Chef</code> and <code>Puppet</code>.</p>
 <h3 id="👀-Chef-Server"><a href="#👀-Chef-Server" class="headerlink" title="👀 Chef Server"></a>👀 Chef Server</h3><p>You can <code>add nodes</code> automatically to your Chef Server using the <code>unattended method</code>. The recommended method of unattended (or automatic) association of new nodes is to <code>configure</code> the <code>Chef Client Cookbook</code>.</p>
 <h2 id="👀-Q-AWS-Personal-Health-Dashboard"><a href="#👀-Q-AWS-Personal-Health-Dashboard" class="headerlink" title="👀 *Q AWS Personal Health Dashboard"></a>👀 <code>*Q</code> AWS Personal Health Dashboard</h2><p>AWS Personal Health Dashboard provides <code>alerts</code> and <em><code>remediation guidance</code></em> when AWS is experiencing <code>events that may impact you</code>. While the Service Health Dashboard displays the general status of AWS services, Personal Health Dashboard gives you a personalized view into the <em>performance and availability</em> of the AWS services underlying your AWS resources.</p>
@@ -1390,7 +1798,7 @@ Target Groups</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="cljhs2j1e0004e2otfmmf6zwp" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="cljjjs55a0004bmoyd2gracfb" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1527,7 +1935,7 @@ leading cross-functional teams, coordinating resources, managing timelines, and 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/01/Prompts/" data-id="cljhs2j24001de2ot2d8w2y36" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/01/Prompts/" data-id="cljjjs56h001ebmoyekineuf8" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/05/01/Prompts/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1839,7 +2247,7 @@ leading cross-functional teams, coordinating resources, managing timelines, and 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/04/14/React-Hooks-All-React-Hooks-Explained/" data-id="cljhs2j27001ke2otgm1d9ltf" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/04/14/React-Hooks-All-React-Hooks-Explained/" data-id="cljjjs56j001jbmoygu2mcme5" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/04/14/React-Hooks-All-React-Hooks-Explained/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1904,7 +2312,7 @@ leading cross-functional teams, coordinating resources, managing timelines, and 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/04/03/Coding-Resources/" data-id="cljhs2j1i000ae2ot2cn75xwv" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/04/03/Coding-Resources/" data-id="cljjjs55d0006bmoy0xqvczii" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/04/03/Coding-Resources/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1934,7 +2342,7 @@ leading cross-functional teams, coordinating resources, managing timelines, and 
       <ul>
         
           <li>
-            <a href="/2023/06/29/Getting-Started-With-Hexo/">Getting started with Hexo</a>
+            <a href="/2023/07/01/Getting-Started-With-Hexo/">Getting started with Hexo</a>
           </li>
         
           <li>
