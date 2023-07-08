@@ -133,25 +133,35 @@ ga('send', 'pageview');
 <p><u><strong>RAM is NOT included in the AWS EC2 metrics</strong></u></p>
 <h4 id="CloudWatch-Custom-Metrics"><a href="#CloudWatch-Custom-Metrics" class="headerlink" title="CloudWatch Custom Metrics"></a>CloudWatch Custom Metrics</h4><p>You can retrieve custom metrics from your applications or services using the <code>StatsD</code> and <code>collectd</code> protocols. StatsD is supported on both Linux servers and servers running Windows Server. collectd is supported only on Linux</p>
 <ul>
-<li>Possibility to define and send your own custom metrics to CloudWatch</li>
-<li>Example: memory (RAM) usage, disk space, number of logged in users …</li>
-<li>Use API call <code>PutMetricData</code></li>
-<li>Ability to use dimensions (attributes) to segment metrics<ul>
+<li><p>Possibility to define and send your own custom metrics to CloudWatch</p>
+</li>
+<li><p>Example: memory (RAM) usage, disk space, number of logged in users …</p>
+</li>
+<li><p>Use API call <code>PutMetricData</code></p>
+</li>
+<li><p>Ability to use dimensions (attributes) to segment metrics</p>
+<ul>
 <li>Instance.id</li>
 <li>Environment.name</li>
 </ul>
 </li>
-<li>Metric resolution (<code>StorageResolution</code> API parameter – two possible value):<ul>
+<li><p>Metric resolution (<code>StorageResolution</code> API parameter – two possible value):</p>
+<ul>
 <li>Standard: 1 minute (60 seconds)</li>
 <li>High Resolution: 1&#x2F;5&#x2F;10&#x2F;30 second(s) – Higher cost</li>
 </ul>
 </li>
-<li>Important <code>👀 Exam</code>: <code>**Accepts metric data points two weeks in the past and two hours in the future (make sure to configure your EC2 instance time correctly)**</code></li>
+<li><p>Important <code>👀 Exam</code>: <strong><code>Accepts metric data points two weeks in the past and two hours in the future (make sure to configure your EC2 instance time correctly)</code></strong></p>
+</li>
+<li><p>You can <code>use AWS CLI or API</code> to <code>upload</code> the <code>data metrics</code> to CloudWatch.</p>
+</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aws cloudwatch put-metric-data --metric-name PageViewCount --namespace MyService --value 2 --timestamp 2023-01-01-14T08:00:00.000Z</span><br></pre></td></tr></table></figure>
+
 <h3 id="CloudWatch-Dashboards"><a href="#CloudWatch-Dashboards" class="headerlink" title="CloudWatch Dashboards"></a>CloudWatch Dashboards</h3><ul>
 <li>Great way to setup custom dashboards for quick access to key metrics and alarms</li>
-<li><code>**Dashboards are global**</code></li>
-<li><code>**Dashboards can include graphs from different AWS accounts and regions**</code> <code>👀 Exam</code></li>
+<li><strong><code>Dashboards are global</code></strong></li>
+<li><strong>&#96;&#96;Dashboards can include graphs from different AWS accounts and regions</strong>&#96;&#96;** <code>👀 Exam</code></li>
 <li>You can change the time zone &amp; time range of the dashboards</li>
 <li>You can setup automatic refresh (10s, 1m, 2m, 5m, 15m)</li>
 <li>Dashboards can be shared with people who don’t have an AWS account (public, email address, 3rd party SSO provider through Amazon Cognito)</li>
@@ -214,18 +224,18 @@ ga('send', 'pageview');
 <li>Event Pattern: Event rules to react to a service doing something - IAM Root User Sign in Event -&gt;  SNS Topic with Email Notification</li>
 <li>Trigger Lambda functions, send SQS&#x2F;SNS messages…</li>
 </ul>
-<p><img src="/./source/images/AWS-EventBridge-Rules.png" alt="EventBridge Rules" title="EventBridge Rules"></p>
+<p><img src="/../images/AWS-EventBridge-Rules.png" alt="EventBridge Rules"></p>
 <h3 id="Service-Quotas-CloudWatch-Alarms"><a href="#Service-Quotas-CloudWatch-Alarms" class="headerlink" title="Service Quotas CloudWatch Alarms"></a>Service Quotas CloudWatch Alarms</h3><ul>
 <li>Notify you when you’re close to a service quota value threshold</li>
 <li>Create CloudWatch Alarms on the Service Quotas console</li>
 <li>Example: Lambda concurrent executions</li>
 <li>Helps you know if you need to request a quota increase or shutdown resources before limit is reached</li>
 </ul>
-<h3 id="Alternative-Trusted-Advisor-252B-CW-Alarms"><a href="#Alternative-Trusted-Advisor-252B-CW-Alarms" class="headerlink" title="Alternative: Trusted Advisor %252B CW Alarms"></a>Alternative: Trusted Advisor %252B CW Alarms</h3><ul>
+<h3 id="Alternative-Trusted-Advisor-CW-Alarms"><a href="#Alternative-Trusted-Advisor-CW-Alarms" class="headerlink" title="Alternative: Trusted Advisor CW Alarms"></a>Alternative: Trusted Advisor CW Alarms</h3><ul>
 <li>Limited number of Service Limits checks in Trusted Advisor (~50)</li>
 <li>Trusted Advisor publishes its check results to CloudWatch</li>
 </ul>
-<h3 id="👀-For-each-production-EC2-instance-create-an-Amazon-CloudWatch-alarm-for-Status-Check-Failed-System-Set-the-alarm-action-to-recover-the-EC2-instance-Configure-the-alarm-notification-to-be-published-to-an-Amazon-Simple-Notification-Service-Amazon-SNS-topic"><a href="#👀-For-each-production-EC2-instance-create-an-Amazon-CloudWatch-alarm-for-Status-Check-Failed-System-Set-the-alarm-action-to-recover-the-EC2-instance-Configure-the-alarm-notification-to-be-published-to-an-Amazon-Simple-Notification-Service-Amazon-SNS-topic" class="headerlink" title="👀 For each production EC2 instance, create an Amazon CloudWatch alarm for Status Check Failed: System. Set the alarm action to recover the EC2 instance. Configure the alarm notification to be published to an Amazon Simple Notification Service (Amazon SNS) topic."></a><code>👀</code> For each production EC2 instance, create an <code>Amazon CloudWatch alar</code>m for Status <code>Check Failed: System</code>. Set the alarm action to <code>recover the EC2 instance</code>. Configure the alarm notification to be published to an Amazon Simple Notification Service (Amazon SNS) topic.</h3><p><code>Explanation</code>: By creating a <code>CloudWatch alarm</code> for Status <code>Check Failed: System</code>, you can<code> automate the recovery task of EC2 instances</code> (<code>stop, terminate, reboot, or recover your Amazon EC2 instances</code>). When the system health check fails for an EC2 instance, the alarm will be triggered and perform the configured action to recover the instance. This eliminates the need for manual intervention. Additionally, configuring the alarm to publish notifications to an SNS topic allows you to receive notifications whenever a system health check fails.</p>
+<h3 id="👀-For-each-production-EC2-instance-create-an-Amazon-CloudWatch-alarm-for-Status-Check-Failed-System-Set-the-alarm-action-to-recover-the-EC2-instance-Configure-the-alarm-notification-to-be-published-to-an-Amazon-Simple-Notification-Service-Amazon-SNS-topic"><a href="#👀-For-each-production-EC2-instance-create-an-Amazon-CloudWatch-alarm-for-Status-Check-Failed-System-Set-the-alarm-action-to-recover-the-EC2-instance-Configure-the-alarm-notification-to-be-published-to-an-Amazon-Simple-Notification-Service-Amazon-SNS-topic" class="headerlink" title="👀 For each production EC2 instance, create an Amazon CloudWatch alarm for Status Check Failed: System. Set the alarm action to recover the EC2 instance. Configure the alarm notification to be published to an Amazon Simple Notification Service (Amazon SNS) topic."></a><code>👀</code> For each production EC2 instance, create an <code>Amazon CloudWatch alarm</code> for Status <code>Check Failed: System</code>. Set the alarm action to <code>recover the EC2 instance</code>. Configure the alarm notification to be published to an Amazon Simple Notification Service (Amazon SNS) topic.</h3><p><code>Explanation</code>: By creating a <code>CloudWatch alarm</code> for Status <code>Check Failed: System</code>, you can<code> automate the recovery task of EC2 instances</code> (<code>stop, terminate, reboot, or recover your Amazon EC2 instances</code>). When the system health check fails for an EC2 instance, the alarm will be triggered and perform the configured action to recover the instance. This eliminates the need for manual intervention. Additionally, configuring the alarm to publish notifications to an SNS topic allows you to receive notifications whenever a system health check fails.</p>
 <h3 id="Status-Check"><a href="#Status-Check" class="headerlink" title="Status Check"></a>Status Check</h3><p>Automated checks to identify <code>hardware</code> and <code>software issues</code>.</p>
 <p>System Status Checks</p>
 <ul>
@@ -268,10 +278,11 @@ Instance Status Checks</li>
 <p>Snapshots are incremental backups, which means that only the blocks on the device that have changed after your most recent snapshot are saved. This minimizes the time required to create the snapshot and saves on storage costs by not duplicating data. Each snapshot contains all of the information that is needed to restore your data (from the moment when the snapshot was taken) to a new EBS volume.</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/TakeScheduledSnapshot.html">Schedule Automated Amazon EBS Snapshots Using CloudWatch Events</a></p>
 <h3 id="Q-Filters"><a href="#Q-Filters" class="headerlink" title="*Q Filters"></a>*Q <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringLogData.html">Filters</a></h3><p>You can create a <code>count</code> of <code>404</code> errors <code>and exclude</code> other <code>4xx</code> errors with a filter pattern on 404 errors.</p>
-<h3 id="Agents"><a href="#Agents" class="headerlink" title="Agents"></a>Agents</h3><h4 id="Install-Agents-to-track-the-state-of-each-of-the-instances"><a href="#Install-Agents-to-track-the-state-of-each-of-the-instances" class="headerlink" title="Install Agents to track the state of each of the instances"></a>Install Agents to track the state of each of the instances</h4><p>You must attach the <code>CloudWatchAgentServerRole</code> IAM role to the EC2 instance to be able to run the CloudWatch agent on the instance. This role enables the CloudWatch agent to perform actions on the instance.</p>
-<h3 id="Instal-CloudWatch-agent"><a href="#Instal-CloudWatch-agent" class="headerlink" title="Instal CloudWatch agent"></a>Instal CloudWatch agent</h3><p>If your AMI contains a CloudWatch agent, it’s automatically installed on EC2 instances when you create an EC2 Auto Scaling group. With the stock Amazon Linux AMI, you need to install it (AWS recommends to install via yum).</p>
+<h3 id="Agents"><a href="#Agents" class="headerlink" title="Agents"></a>Agents</h3><p>If your AMI contains a CloudWatch agent, it’s automatically installed on EC2 instances when you create an EC2 Auto Scaling group. With the stock Amazon Linux AMI, you need to install it (AWS recommends to install via yum).</p>
+<h4 id="Install-Agents-to-track-the-state-of-each-of-the-instances"><a href="#Install-Agents-to-track-the-state-of-each-of-the-instances" class="headerlink" title="Install Agents to track the state of each of the instances"></a>Install Agents to track the state of each of the instances</h4><p>You must attach the <code>CloudWatchAgentServerRole</code> IAM role to the EC2 instance to be able to run the CloudWatch agent on the instance. This role enables the CloudWatch agent to perform actions on the instance.</p>
 <h3 id="Publish-custom-metrics-to-CloudWatch"><a href="#Publish-custom-metrics-to-CloudWatch" class="headerlink" title="Publish custom metrics to CloudWatch."></a>Publish custom metrics to CloudWatch.</h3><p>You can publish your own metrics to CloudWatch using the AWS CLI or an API. You can view statistical graphs of your published metrics with the AWS Management Console. CloudWatch stores data about a metric as a series of data points. Each data point has an associated time stamp. You can even publish an aggregated set of data points called a statistic set.</p>
-<p>The <code>put-metric-data</code> <code>command</code> publishes metric data to Amazon CloudWatch, which associates it with the specified metric. If the specified metric does not exist, CloudWatch creates the metric which can take up to fifteen minutes for the metric to appear in calls to <code>ListMetrics</code>..</p>
+<p>The <code>put-metric-data</code> <code>command</code> publishes metric data to Amazon CloudWatch, which associates it with the specified metric. If the specified metric does not exist, CloudWatch creates the metric which can take up to fifteen minutes for the metric to appear in calls to <code>ListMetrics</code>.</p>
+<h3 id="Collect-process-metrics-with-the-procstat-plugin"><a href="#Collect-process-metrics-with-the-procstat-plugin" class="headerlink" title="Collect process metrics with the procstat plugin"></a>Collect process metrics with the <code>procstat</code> plugin</h3><p>The <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Agent-procstat-process-metrics.html">procstat</a> plugin enables you to <code>collect metrics from individual processes</code>. It is supported on Linux servers and on servers running Windows Server 2012 or later.</p>
 <hr>
 <h2 id="CloudTrail"><a href="#CloudTrail" class="headerlink" title="CloudTrail"></a>CloudTrail</h2><p><code>Provides governance, compliance and audit for your AWS Account</code></p>
 <ul>
@@ -373,14 +384,14 @@ Questions that can be solved by AWS Config:<ul>
 <ul>
 <li>there are AWS Config <code>rules</code> that <code>check</code> whether or not your <em><code>Amazon S3 buckets have logging enabled</code></em> or your <code>IAM users have an MFA device enabled</code>.</li>
 </ul>
-<p>AWS Config provides a number of AWS managed rules that address a wide range of security concerns such as checking if you <code>encrypted</code> your Amazon Elastic Block Store (Amazon EBS) volumes, tagged your resources appropriately, and enabled multi-factor authentication (MFA) for root accounts.</p>
 <p>👀 AWS Config is a service that <code>enables</code> you to <code>assess</code>, <code>audit</code>, and <code>evaluate</code> the <code>configurations</code> of your <code>AWS resources</code>. It provides detailed <code>inventory</code> and <code>configuration</code> history of your resources, as well as configuration change notifications. With AWS Config, you can track the configuration of your S3 bucket, including its bucket policy.</p>
 <p>AWS Config rules use AWS Lambda functions to perform the compliance evaluations, and the Lambda functions return the compliance status of the evaluated resources as compliant or noncompliant. The non-compliant resources are remediated using the remediation action associated with the AWS Config rule. With the Auto-Remediation feature of AWS Config rules, the remediation action can be executed automatically when a resource is found non-compliant.</p>
 <p><code>AWS Config Auto Remediation feature</code> has auto remediate feature for any non-compliant S3 buckets using the following AWS Config rules:
 s3-bucket-logging-enabled s3-bucket-server-side-encryption-enabled s3-bucket-public-read-prohibited s3-bucket-public-write-prohibited
 These AWS Config rules act as controls to prevent any non-compliant S3 activities.</p>
-<h3 id="Config-Rules"><a href="#Config-Rules" class="headerlink" title="Config Rules"></a>Config Rules</h3><ul>
-<li>Can use AWS managed config rules (over 75)</li>
+<h3 id="Config-Rules"><a href="#Config-Rules" class="headerlink" title="Config Rules"></a>Config Rules</h3><p>AWS Config provides a number of AWS managed rules that address a wide range of security concerns such as checking if you <code>encrypted</code> your Amazon Elastic Block Store (Amazon EBS) volumes, tagged your resources appropriately, and enabled multi-factor authentication (MFA) for root accounts.</p>
+<ul>
+<li>Can use AWS <code>managed</code> config <code>rules</code> (over 75)</li>
 <li>Can make <strong><code>custom config rules (must be defined in AWS Lambda)</code></strong>.<ul>
 <li>Ex: evaluate if each EBS disk is of type gp2</li>
 <li>Ex: evaluate if each EC2 instance is t2.micro</li>
@@ -393,7 +404,14 @@ These AWS Config rules act as controls to prevent any non-compliant S3 activitie
 </li>
 <li><strong><code>AWS Config Rules does not prevent actions from happening (no deny)</code></strong>.</li>
 </ul>
-<h3 id="Config-Rules-–-Remediations"><a href="#Config-Rules-–-Remediations" class="headerlink" title="Config Rules – Remediations"></a>Config Rules – Remediations</h3><ul>
+<p>Managed rules:</p>
+<ul>
+<li><code>require-tags</code>: managed rule in AWS Config. This rule checks if a resource contains the tags that you specify.</li>
+</ul>
+<h3 id="Config-Rules-–-Remediations"><a href="#Config-Rules-–-Remediations" class="headerlink" title="Config Rules – Remediations"></a>Config Rules – Remediations</h3><p>Has auto remediate feature for any non-compliant S3 buckets using the following AWS Config rules:</p>
+<p>s3-bucket-logging-enabled s3-bucket-server-side-encryption-enabled s3-bucket-public-read-prohibited s3-bucket-public-write-prohibited</p>
+<p>These AWS Config rules act as controls to prevent any non-compliant S3 activities.</p>
+<ul>
 <li><code>Automate remediation of non-compliant resources using SSM Automation Documents</code>.</li>
 <li>Use AWS-Managed Automation Documents or create custom Automation Documents<ul>
 <li><code>Tip: you can create custom Automation Documents that invokes Lambda function</code>.</li>
@@ -401,7 +419,7 @@ These AWS Config rules act as controls to prevent any non-compliant S3 activitie
 </li>
 <li>You can set <code>Remediation Retries</code> if the resource is still non-compliant after autoremediation.</li>
 </ul>
-<h3 id="Config-Rules-–-Notifications"><a href="#Config-Rules-–-Notifications" class="headerlink" title="Config Rules – Notifications"></a>Config Rules – Notifications</h3><ul>
+<h3 id="AWS-Config-Auto-Remediation"><a href="#AWS-Config-Auto-Remediation" class="headerlink" title="AWS Config Auto Remediation"></a>AWS Config Auto Remediation</h3><h3 id="Config-Rules-–-Notifications"><a href="#Config-Rules-–-Notifications" class="headerlink" title="Config Rules – Notifications"></a>Config Rules – Notifications</h3><ul>
 <li>Use EventBridge to trigger notifications when AWS resources are noncompliant</li>
 <li>Ability to send configuration changes and compliance state notifications to SNS (all events – use SNS Filtering or filter at client-side)</li>
 </ul>
@@ -434,14 +452,7 @@ These AWS Config rules act as controls to prevent any non-compliant S3 activitie
 </ul>
 <hr>
 <h2 id="Q-AWS-Artifact"><a href="#Q-AWS-Artifact" class="headerlink" title="*Q AWS Artifact"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html">AWS Artifact</a></h2><p>AWS Artifact <code>keeps compliance-related reports and agreements</code>.</p>
-<h2 id="Q-AWS-Inspector"><a href="#Q-AWS-Inspector" class="headerlink" title="*Q AWS Inspector"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://aws.amazon.com/inspector/">AWS Inspector</a></h2><p>Amazon Inspector is <code>used for security compliance of instances and applications</code>.</p>
-<p>Amazon Inspector is an automated security assessment service that helps you <code>test</code> the <code>network accessibility</code> of your Amazon EC2 instances and the <code>security state of your applications running on the instances</code>.</p>
-<p>An Amazon Inspector assessment report can be generated for an assessment run once it has been successfully completed. An assessment report is a document that details what is tested in the assessment run, and the results of the assessment. The results of your assessment are formatted into a standard report, which can be generated to share results within your team for remediation actions, to enrich compliance audit data, or to store for future reference.</p>
-<p>You can select from two types of report for your assessment, a findings report or a full report. The findings report contains an executive summary of the assessment, the instances targeted, the rules packages tested, the rules that generated findings, and detailed information about each of these rules along with the list of instances that failed the check. The full report contains all the
-information in the findings report and additionally provides the list of rules that were checked and passed on all instances in the assessment target.</p>
 <p><code>👀</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Correct. Amazon Inspector discovers potential security issues by using security rules to analyze AWS resources. Amazon Inspector also integrates with AWS Security Hub to provide a view of your security posture across multiple AWS accounts.</span><br><span class="line"></span><br><span class="line">For more information about Amazon Inspector, see Amazon Inspector Classic Assessment Templates and Assessment Runs.</span><br></pre></td></tr></table></figure>
-
 <hr>
 <h2 id="RDS"><a href="#RDS" class="headerlink" title="RDS"></a>RDS</h2><h3 id="Advantage-over-using-RDS-versus-deploying"><a href="#Advantage-over-using-RDS-versus-deploying" class="headerlink" title="Advantage over using RDS versus deploying"></a>Advantage over using RDS versus deploying</h3><ul>
 <li>RDS is a managed service:<ul>
@@ -533,17 +544,17 @@ information in the findings report and additionally provides the list of rules t
 </li>
 <li><p><code>FreeStorageSpace</code></p>
 </li>
-<li><p><code>Enhanced Monitoring</code> (gathered from an agent on the DB instance).</p>
+<li><p><code>Enhanced Monitoring</code> (gathered from an agent on the DB instance). <code>👀</code></p>
 <ul>
-<li>Useful when you need to see how different processes or threads use the CPU</li>
+<li>Useful when you need to see how <code>different processes or threads use the CPU</code>.</li>
 </ul>
 </li>
 <li><p>Access to over 50 new CPU, memory, file system, and disk I&#x2F;O metrics</p>
 </li>
 </ul>
+<p>Amazon RDS provides <code>metrics</code> in real time for the operating system (OS) that your DB instance runs on. You can view the metrics for your DB instance using the console. Also, you can consume the &#96;Enhanced Monitoring&#96;&#96; JSON output from Amazon CloudWatch Logs in a monitoring system of your choice.</p>
 <h3 id="RDS-storage-autoscaling"><a href="#RDS-storage-autoscaling" class="headerlink" title="RDS storage autoscaling"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">RDS storage autoscaling</a></h3><p>With RDS storage autoscaling, you can set the desired maximum storage limit. Autoscaling will manage the storage size. RDS storage autoscaling monitors actual storage consumption and then scales capacity automatically when actual utilization approaches the provisioned storage capacity.</p>
-<h3 id="👀-Q-Enable-Enhanced-Monitoring"><a href="#👀-Q-Enable-Enhanced-Monitoring" class="headerlink" title="👀 *Q Enable Enhanced Monitoring"></a><code>👀</code> <code>*Q</code> Enable Enhanced Monitoring</h3><p>Amazon RDS provides <code>metrics</code> in real time for the operating system (OS) that your DB instance runs on. You can view the metrics for your DB instance using the console. Also, you can consume the Enhanced Monitoring JSON output from Amazon CloudWatch Logs in a monitoring system of your choice.</p>
-<hr>
+<h3 id="👀-Q-Enable-Enhanced-Monitoring"><a href="#👀-Q-Enable-Enhanced-Monitoring" class="headerlink" title="👀 *Q Enable Enhanced Monitoring"></a><code>👀</code> <code>*Q</code> Enable Enhanced Monitoring</h3><hr>
 <h2 id="Amazon-Aurora-DB"><a href="#Amazon-Aurora-DB" class="headerlink" title="Amazon Aurora DB"></a>Amazon Aurora DB</h2><ul>
 <li>Aurora is a proprietary technology from AWS (not open sourced)</li>
 <li>Postgres and MySQL are both supported as Aurora DB (that means your drivers will work as if Aurora was a Postgres or MySQL database)</li>
@@ -602,18 +613,6 @@ This metric reports the value of the Seconds_Behind_Master field of the MySQL SH
 <h2 id="👀-Aurora-Reader-Endpoint"><a href="#👀-Aurora-Reader-Endpoint" class="headerlink" title="👀  Aurora Reader Endpoint"></a>👀  Aurora Reader Endpoint</h2><p>To <code>perform queries</code>, you can connect to the reader endpoint, with Aurora automatically performing load-balancing among all the Aurora <code>Replicas</code>.</p>
 <p>A reader endpoint for an Aurora DB cluster provides load-balancing support for read-only connections to the DB cluster. Use the reader endpoint <code>for read operations</code>, such as queries. By processing those statements on the read-only Aurora Replicas, this endpoint reduces the overhead on the primary instance. It also helps the cluster to scale the capacity to handle simultaneous SELECT queries, proportional to the number of Aurora Replicas in the cluster. Each Aurora DB cluster has one reader endpoint.</p>
 <p>Reference:<a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html">Amazon Aurora connection management</a></p>
-<h2 id="Q-AWS-Trusted-Advisor"><a href="#Q-AWS-Trusted-Advisor" class="headerlink" title="*Q AWS Trusted Advisor"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html">AWS Trusted Advisor</a></h2><p>Trusted Advisor provides real-time guidance to help users follow AWS best practices to provision their resources</p>
-<p>E.g. AWS Trusted Advisor checks for service <code>usage</code> that is more than 80% of the <code>service limit</code>.</p>
-<h3 id="Check-categories"><a href="#Check-categories" class="headerlink" title="Check categories"></a>Check categories</h3><ul>
-<li>Cost optimization</li>
-<li>Performance</li>
-<li>Security</li>
-<li>Fault tolerance</li>
-<li>Service limits</li>
-</ul>
-<h3 id="AWS-Config-Auto-Remediation"><a href="#AWS-Config-Auto-Remediation" class="headerlink" title="AWS Config Auto Remediation"></a>AWS Config Auto Remediation</h3><p>Has auto remediate feature for any non-compliant S3 buckets using the following AWS Config rules:</p>
-<p>s3-bucket-logging-enabled s3-bucket-server-side-encryption-enabled s3-bucket-public-read-prohibited s3-bucket-public-write-prohibited</p>
-<p>These AWS Config rules act as controls to prevent any non-compliant S3 activities.</p>
 <hr>
 <h2 id="Amazon-ElastiCache-Overview"><a href="#Amazon-ElastiCache-Overview" class="headerlink" title="Amazon ElastiCache Overview"></a>Amazon ElastiCache Overview</h2><ul>
 <li><p>The same way RDS is to get managed Relational Databases…</p>
@@ -719,10 +718,326 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">CreationPolicy:</span></span><br><span class="line">  <span class="attr">ResourceSignal:</span></span><br><span class="line">    <span class="attr">Count:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line">    <span class="attr">Timeout:</span> <span class="string">PT15M</span></span><br><span class="line"><span class="attr">UpdatePolicy:</span></span><br><span class="line">  <span class="attr">AutoScalingRollingUpdate:</span></span><br><span class="line">    <span class="attr">MinInstancesInService:</span> <span class="string">&#x27;1&#x27;</span></span><br><span class="line">    <span class="attr">MaxBatchSize:</span> <span class="string">&#x27;2&#x27;</span></span><br><span class="line">    <span class="attr">PauseTime:</span> <span class="string">PT1M</span></span><br><span class="line">    <span class="attr">WaitOnResourceSignals:</span> <span class="string">&#x27;true&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="👀-DependsOn-attribute"><a href="#👀-DependsOn-attribute" class="headerlink" title="👀 DependsOn attribute"></a>👀 <code>DependsOn</code> attribute</h3><p>With the DependsOn attribute, you can specify that the <code>creation</code> of a specific resource <code>follows another</code>. When you add a DependsOn attribute to a resource, that resource is created only after the creation of the resource specified in the DependsOn attribute.</p>
-<h2 id="AWS-Backup"><a href="#AWS-Backup" class="headerlink" title="AWS Backup"></a>AWS Backup</h2><p><code>*Q</code>
+<hr>
+<h2 id="AWS-Backup"><a href="#AWS-Backup" class="headerlink" title="AWS Backup"></a>AWS Backup</h2><ul>
+<li>Fully managed service</li>
+<li><code>Centrally manage and automate backups across AWS services</code>.</li>
+<li>No need to create custom scripts and manual processes</li>
+<li>Supported services:<ul>
+<li>Amazon <code>EC2 / Amazon EBS</code></li>
+<li>Amazon <code>S3</code></li>
+<li>Amazon <code>RDS (all DBs engines) / Amazon Aurora / Amazon DynamoDB</code></li>
+<li>Amazon <code>DocumentDB / Amazon Neptune</code></li>
+<li>Amazon <code>EFS / Amazon FSx (Lustre &amp; Windows File Server)</code></li>
+</ul>
+</li>
+<li>AWS Storage Gateway (Volume Gateway)</li>
+<li>Supports cross-region backups</li>
+<li>Supports cross-account backups</li>
+<li>On-Demand and Scheduled backups</li>
+<li>Tag-based backup policies</li>
+<li>You create backup policies known as <code>Backup Plans</code><ul>
+<li>Backup frequency (every 12 hours, daily, weekly, monthly, cron expression)</li>
+<li>Backup window</li>
+<li>Transition to Cold Storage (Never, Days, Weeks, Months, Years)</li>
+<li>Retention Period (Always, Days, Weeks, Months, Year</li>
+</ul>
+</li>
+</ul>
+<p><code>👀 *Q</code>
 AWS Backup is a fully managed and cost-effective backup service that simplifies and <code>automates data</code> backup across AWS services including <code>Amazon EBS</code>, <code>Amazon EC2</code>, <code>Amazon RDS</code>, <code>Amazon Aurora</code>, <code>Amazon DynamoDB</code>, <code>Amazon EFS</code>, and AWS <code>Storage Gateway</code>. In addition, AWS Backup <code>leverages</code> AWS <code>Organizations</code> to implement and maintain a central view of backup policy across resources in a multi-account AWS environment. Customers <code>simply tag</code> and associate their <code>AWS resources</code> with backup policies managed by AWS Backup for Cross-Region data replication.</p>
-<h3 id="Q-For-the-production-account-a-SysOps-administrator-must-ensure-that-all-data-is-backed-up-daily-for-all-current-and-future-Amazon-EC2-instances-and-Amazon-Elastic-File-System-Amazon-EFS-file-systems-Backups-must-be-retained-for-30-days"><a href="#Q-For-the-production-account-a-SysOps-administrator-must-ensure-that-all-data-is-backed-up-daily-for-all-current-and-future-Amazon-EC2-instances-and-Amazon-Elastic-File-System-Amazon-EFS-file-systems-Backups-must-be-retained-for-30-days" class="headerlink" title="*Q  For the production account, a SysOps administrator must ensure that all data is backed up daily for all current and future Amazon EC2 instances and Amazon Elastic File System (Amazon EFS) file systems. Backups must be retained for 30 days"></a><code>*Q</code>  For the production account, a SysOps administrator must ensure that all data is backed up daily for all current and future Amazon EC2 instances and Amazon Elastic File System (Amazon EFS) file systems. Backups must be retained for 30 days</h3><p>Create a backup plan in AWS Backup. Assign resources by resource ID, selecting all existing EC2 and EFS resources that are running in the account. Edit the backup plan daily to include any new resources. Schedule the backup plan to run every day with a lifecycle policy to expire backups after 30 days.</p>
+<h3 id="👀-Q-For-the-production-account-a-SysOps-administrator-must-ensure-that-all-data-is-backed-up-daily-for-all-current-and-future-Amazon-EC2-instances-and-Amazon-Elastic-File-System-Amazon-EFS-file-systems-Backups-must-be-retained-for-30-days"><a href="#👀-Q-For-the-production-account-a-SysOps-administrator-must-ensure-that-all-data-is-backed-up-daily-for-all-current-and-future-Amazon-EC2-instances-and-Amazon-Elastic-File-System-Amazon-EFS-file-systems-Backups-must-be-retained-for-30-days" class="headerlink" title="👀 *Q  For the production account, a SysOps administrator must ensure that all data is backed up daily for all current and future Amazon EC2 instances and Amazon Elastic File System (Amazon EFS) file systems. Backups must be retained for 30 days"></a><code>👀 *Q</code>  For the production account, a SysOps administrator must ensure that all data is backed up daily for all current and future Amazon EC2 instances and Amazon Elastic File System (Amazon EFS) file systems. Backups must be retained for 30 days</h3><p>Create a backup plan in AWS Backup. Assign resources by resource ID, selecting all existing EC2 and EFS resources that are running in the account. Edit the backup plan daily to include any new resources. Schedule the backup plan to run every day with a lifecycle policy to expire backups after 30 days.</p>
 <p><code>Explanation</code>: AWS Backup provides a centralized and automated solution for backing up data. By creating a backup plan and assigning resources by resource ID, you can easily include all existing EC2 instances and EFS file systems in the backup process. Editing the backup plan daily ensures that any new resources are automatically included in the backups. By scheduling the backup plan to run every day and configuring a lifecycle policy to expire backups after 30 days, you meet the requirement of daily backups with a retention period of 30 days.</p>
+<h3 id="AWS-Backup-Vault-Lock"><a href="#AWS-Backup-Vault-Lock" class="headerlink" title="AWS Backup Vault Lock"></a>AWS Backup Vault Lock</h3><ul>
+<li>Enforce a WORM (Write On1ce Read Many) state for all the backups that you store in your AWS Backup Vault</li>
+<li>Additional layer of defense to protect your backups against:<ul>
+<li>Inadvertent or malicious delete operations</li>
+<li>Updates that shorten or alter retention periods</li>
+</ul>
+</li>
+<li>Even the root user cannot delete backups when enabled</li>
+</ul>
+<hr>
+<h2 id="AWS-Shared-Responsibility-Model"><a href="#AWS-Shared-Responsibility-Model" class="headerlink" title="AWS Shared Responsibility Model"></a>AWS Shared Responsibility Model</h2><ul>
+<li>AWS responsibility - Security <code>of</code> the Cloud<ul>
+<li>Protecting infrastructure (hardware, software, facilities, and networking) that runs all the AWS services</li>
+<li>Managed services like S3, DynamoDB, RDS, etc.</li>
+</ul>
+</li>
+<li>Customer responsibility - Security <code>in</code> the Cloud<ul>
+<li>For EC2 instance, customer is responsible for management of the guest OS (including security patches and updates), firewall &amp; network configuration, IAM</li>
+<li>Encrypting application data</li>
+</ul>
+</li>
+<li>Shared controls:<ul>
+<li>Patch Management, Configuration Management, Awareness &amp; Training</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="DDoS-Distributed-Denial-of-service-Protection-on-AWS"><a href="#DDoS-Distributed-Denial-of-service-Protection-on-AWS" class="headerlink" title="DDoS (Distributed Denial-of-service ) Protection on AWS"></a>DDoS (Distributed Denial-of-service ) Protection on AWS</h2><ul>
+<li><code>AWS Shield Standard</code>: protects against DDoS attack for your website and applications, for all customers at no additional costs.</li>
+<li><code>AWS Shield Advanced</code>: 24&#x2F;7 premium DDoS protection.</li>
+<li><code>AWS WAF</code>: Filter specific requests based on rules.</li>
+<li><code>CloudFront and Route 53</code>:<ul>
+<li>Availability protection using global edge network</li>
+<li>Combined with AWS Shield, provides attack mitigation at the edge</li>
+</ul>
+</li>
+<li>Be ready to scale – leverage <code>AWS Auto Scaling</code>.</li>
+</ul>
+<h2 id="AWS-WAF-–-Web-Application-Firewall"><a href="#AWS-WAF-–-Web-Application-Firewall" class="headerlink" title="AWS WAF – Web Application Firewall"></a>AWS WAF – Web Application Firewall</h2><ul>
+<li><p>Protects your web applications from common web exploits (Layer 7)</p>
+</li>
+<li><p><code>Layer 7 is HTTP</code> (vs Layer 4 is TCP)</p>
+</li>
+<li><p>Deploy on <code>Application Load Balancer, API Gateway, CloudFront</code></p>
+</li>
+<li><p>Define Web ACL (Web Access Control List):</p>
+<ul>
+<li>Rules can include: <code>IP addresses</code>, HTTP headers, HTTP body, or URI strings</li>
+<li>Protects from common attack - <code>SQL injection</code> and <code>Cross-Site Scripting (XSS)</code>.</li>
+<li>Size constraints, <code>geo-match (block countries)</code></li>
+<li><code>Rate-based rules</code> (to count occurrences of events) – <code>for DDoS protection</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Penetration-Testing-on-AWS-Cloud"><a href="#Penetration-Testing-on-AWS-Cloud" class="headerlink" title="Penetration Testing on AWS Cloud"></a>Penetration Testing on AWS Cloud</h2><ul>
+<li>AWS customers are welcome to carry out security assessments or penetration tests against their AWS infrastructure <code>without prior approval for 8 services</code>:<ul>
+<li>Amazon EC2 instances, NAT Gateways, and Elastic Load Balancers</li>
+<li>Amazon RDS</li>
+<li>Amazon CloudFront</li>
+<li>Amazon Aurora</li>
+<li>Amazon API Gateways</li>
+<li>AWS Lambda and Lambda Edge functions</li>
+<li>Amazon Lightsail resources</li>
+<li>Amazon Elastic Beanstalk environments</li>
+</ul>
+</li>
+</ul>
+<h3 id="Penetration-Testing-on-your-AWS-Cloud"><a href="#Penetration-Testing-on-your-AWS-Cloud" class="headerlink" title="Penetration Testing on your AWS Cloud"></a>Penetration Testing on your AWS Cloud</h3><ul>
+<li><p><code>Prohibited Activities</code></p>
+<ul>
+<li>DNS zone walking via Amazon Route 53 Hosted Zones</li>
+<li>Denial of Service (DoS), Distributed Denial of Service (DDoS), Simulated DoS, Simulated DDoS</li>
+<li>Port flooding</li>
+<li>Protocol flooding</li>
+<li>Request flooding (login request flooding, API request flooding)</li>
+</ul>
+</li>
+<li><p>Read more: <a target="_blank" rel="noopener" href="https://aws.amazon.com/security/penetration-testing/">https://aws.amazon.com/security/penetration-testing/</a></p>
+</li>
+</ul>
+<h2 id="Q-AWS-Inspector"><a href="#Q-AWS-Inspector" class="headerlink" title="*Q AWS Inspector"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://aws.amazon.com/inspector/">AWS Inspector</a></h2><p>Amazon Inspector is <code>used for security compliance of instances and applications</code>.</p>
+<p>Amazon Inspector is an automated security assessment service that helps you <code>test</code> the <code>network accessibility</code> of your Amazon EC2 instances and the <code>security state of your applications running on the instances</code>.</p>
+<p>An Amazon Inspector assessment report can be generated for an assessment run once it has been successfully completed. An assessment report is a document that details what is tested in the assessment run, and the results of the assessment. The results of your assessment are formatted into a standard report, which can be generated to share results within your team for remediation actions, to enrich compliance audit data, or to store for future reference.</p>
+<p>You can select from two types of report for your assessment, a findings report or a full report. The findings report contains an executive summary of the assessment, the instances targeted, the rules packages tested, the rules that generated findings, and detailed information about each of these rules along with the list of instances that failed the check. The full report contains all the
+information in the findings report and additionally provides the list of rules that were checked and passed on all instances in the assessment target.</p>
+<ul>
+<li><code>Automated Security Assessments</code></li>
+<li><code>For EC2 instances</code></li>
+<li><code>For Container Images push to Amazon ECR</code></li>
+<li><code>For Lambda Functions</code></li>
+</ul>
+<p>-&gt; <code>Reporting &amp; integration with AWS Security Hub</code></p>
+<p>-&gt; <code>Send findings to Amazon Event Bridge</code></p>
+<h3 id="What-does-Amazon-Inspector-evaluate"><a href="#What-does-Amazon-Inspector-evaluate" class="headerlink" title="What does Amazon Inspector evaluate?"></a>What does Amazon Inspector evaluate?</h3><ul>
+<li><p><code>Only for EC2 instances, Container Images &amp; Lambda functions</code></p>
+</li>
+<li><p>Continuous scanning of the infrastructure, only when needed</p>
+</li>
+<li><p>Package vulnerabilities (EC2, ECR &amp; Lambda) – database of CVE</p>
+</li>
+<li><p>Network reachability (EC2)</p>
+</li>
+<li><p>A risk score is associated with all vulnerabilities for prioritization</p>
+</li>
+</ul>
+<p>Amazon Inspector discovers potential security issues by using security rules to analyze AWS resources. Amazon Inspector also integrates with AWS Security Hub to provide a view of your security posture across multiple AWS accounts.</p>
+<hr>
+<h2 id="Amazon-GuardDuty-👀"><a href="#Amazon-GuardDuty-👀" class="headerlink" title="Amazon GuardDuty -  👀"></a>Amazon GuardDuty -  👀</h2><ul>
+<li><code>Intelligent Threat discovery to protect your AWS Account</code>.</li>
+<li>Uses Machine Learning algorithms, anomaly detection, 3rd party data</li>
+<li>One click to enable (30 days trial), no need to install software</li>
+<li>Input data includes:<ul>
+<li><code>CloudTrail Events Logs</code> – unusual API calls, unauthorized deployments<ul>
+<li><code>CloudTrail Management Events</code> – create VPC subnet, create trail, …</li>
+<li><code>CloudTrail S3 Data Events</code> – get object, list objects, delete object, …</li>
+</ul>
+</li>
+<li><code>VPC Flow Logs</code> – unusual internal traffic, unusual IP address</li>
+<li><code>DNS Logs</code> – compromised EC2 instances sending encoded data within DNS queries</li>
+<li><code>Optional Feature</code> – EKS Audit Logs, RDS &amp; Aurora, EBS, Lambda, S3 Data Events…</li>
+</ul>
+</li>
+<li>Can setup <code>EventBridge rules</code> to be notified in case of findings</li>
+<li>EventBridge rules can target AWS Lambda or SNS</li>
+<li><code>Can protect against CryptoCurrency attacks (has a dedicated “finding” for it)</code> - Exam</li>
+</ul>
+<hr>
+<h2 id="AWS-Macie"><a href="#AWS-Macie" class="headerlink" title="AWS Macie"></a>AWS Macie</h2><ul>
+<li>Amazon Macie is a fully managed data security and data privacy service that uses <code>machine learning and pattern matching to discover andprotect your sensitive data in AWS</code>.</li>
+<li>Macie helps identify and alert you to <code>sensitive data, such as personally identifiable information (PII)</code>.</li>
+<li>Notify to Amazon EventBridge &#x3D;&gt; Integrations</li>
+</ul>
+<hr>
+<h2 id="Q-AWS-Trusted-Advisor"><a href="#Q-AWS-Trusted-Advisor" class="headerlink" title="*Q AWS Trusted Advisor"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html">AWS Trusted Advisor</a></h2><p>Trusted Advisor provides real-time guidance to help users follow AWS best practices to provision their resources. <code>Hight level account assessment</code>.</p>
+<p>E.g. AWS Trusted Advisor checks for service <code>usage</code> that is more than 80% of the <code>service limit</code>.</p>
+<h3 id="Check-categories-Exam"><a href="#Check-categories-Exam" class="headerlink" title="Check categories - Exam"></a>Check categories - Exam</h3><ul>
+<li><code>Cost optimization</code></li>
+<li><code>Performance</code></li>
+<li><code>Security</code></li>
+<li><code>Fault tolerance</code></li>
+<li><code>Service limits</code></li>
+</ul>
+<h3 id="Trusted-Advisor-–-Support-Plans-Exam"><a href="#Trusted-Advisor-–-Support-Plans-Exam" class="headerlink" title="Trusted Advisor – Support Plans - Exam"></a>Trusted Advisor – Support Plans - Exam</h3><ul>
+<li><p>7 CORES CHECKS for Basic &amp; Developer Support plan</p>
+<ul>
+<li>S3 Bucket Permissions</li>
+<li>Security Groups – Specific Ports Unrestricted</li>
+<li>IAM Use (one IAM user minimum)</li>
+<li>MFA on Root Account</li>
+<li>EBS Public Snapshots</li>
+<li>RDS Public Snapshots</li>
+<li>Service Limits</li>
+</ul>
+</li>
+<li><p>FULL CHECKS</p>
+<ul>
+<li>Full Checks available on the 5 categories</li>
+<li>Ability to set CloudWatch alarms when   reaching limits</li>
+<li><code>Programmatic Access using AWS Support API</code> - Exa,</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="AWS-KMS-Key-Management-Service"><a href="#AWS-KMS-Key-Management-Service" class="headerlink" title="AWS KMS (Key Management Service)"></a>AWS KMS (Key Management Service)</h2><ul>
+<li>Anytime you hear “encryption” for an AWS service, it’s most likely KMS</li>
+<li>AWS manages encryption keys for us</li>
+<li>Fully integrated with IAM for authorization</li>
+<li>Easy way to control access to your data</li>
+<li><code>Able to audit KMS Key usage using CloudTrail</code> - Exam</li>
+<li>Seamlessly integrated into most AWS services (EBS, S3, RDS, SSM…)</li>
+<li>Never ever store your secrets in plaintext, especially in your code!</li>
+<li>KMS Key Encryption also available through API calls (SDK, CLI)</li>
+<li>Encrypted secrets can be stored in the code &#x2F; environment variables</li>
+</ul>
+<h3 id="KMS-Automatic-Key-Rotation"><a href="#KMS-Automatic-Key-Rotation" class="headerlink" title="KMS Automatic Key Rotation"></a>KMS Automatic Key Rotation</h3><ul>
+<li><code>For Customer-managed CMK</code> (not AWS managed CMK)</li>
+<li>If enabled: automatic key rotation happens <code>every 1 year</code>.</li>
+<li>Previous key is kept active so you can decrypt old data</li>
+<li>New Key has the same CMK ID (only the backing key is changed)</li>
+</ul>
+<h3 id="KMS-Manual-Key-Rotation"><a href="#KMS-Manual-Key-Rotation" class="headerlink" title="KMS Manual Key Rotation"></a>KMS Manual Key Rotation</h3><ul>
+<li><code>When you want to rotate key every 90 days, 180 days, etc...</code></li>
+<li>New Key has a different CMK ID</li>
+<li>Keep the previous key active so you can decrypt old data</li>
+<li>Better to use aliases in this case (to hide the change of key for the application)</li>
+<li>Good solution to rotate CMK that are not eligible for automatic rotation (<code>like asymmetric CMK</code>)</li>
+</ul>
+<h3 id="Changing-The-KMS-Key-For-An-Encrypted-EBS-Volume"><a href="#Changing-The-KMS-Key-For-An-Encrypted-EBS-Volume" class="headerlink" title="Changing The KMS Key For An Encrypted EBS Volume"></a>Changing The KMS Key For An Encrypted EBS Volume</h3><ul>
+<li>You <code>can’t</code> change <code>the encryptionkeys used by an EBS volume</code>.</li>
+<li><code>Create an EBS snapshot</code> and create a new EBS volume and <code>specify the new KMS key</code>.</li>
+</ul>
+<h3 id="Sharing-KMS-Encrypted-RDS-DB-Snapshots"><a href="#Sharing-KMS-Encrypted-RDS-DB-Snapshots" class="headerlink" title="Sharing KMS Encrypted RDS DB Snapshots"></a>Sharing KMS Encrypted RDS DB Snapshots</h3><p>You can <code>share RDS DB snapshots encrypted with KMS CMK with other accounts</code>, but must f<code>irst share the KMS CMK</code> with the target account <code>using Key Policy</code>.</p>
+<h3 id="KMS-Key-Deletion-Considerations"><a href="#KMS-Key-Deletion-Considerations" class="headerlink" title="KMS Key Deletion Considerations"></a>KMS Key Deletion Considerations</h3><ul>
+<li>Schedule CMK for deletion with a waiting period of 7 to 30 days</li>
+<li>CMK’s status is “Pending deletion” during the waiting period</li>
+<li>During the CMK’s deletion waiting period:</li>
+<li>The CMK can’t be used for cryptographic operations (e.g., can’t decrypt KMS- encrypted objects in S3 – SSE-KMS)</li>
+<li>The key is not rotated even if planned</li>
+<li>You can cancel the key deletion during the waiting period</li>
+<li>Consider disabling your key instead of deleting it if you’re not sure!</li>
+</ul>
+<h2 id="👀"><a href="#👀" class="headerlink" title="👀"></a>👀</h2><p>You can allow IAM users or roles in one AWS account to use a customer master key (CMK) in a different AWS account. You can add these permissions when you create the CMK or change the permissions for an existing CMK.</p>
+<p><code>To permit the usage of a CMK to users and roles in another account, you must use two different types of policies</code>:</p>
+<ol>
+<li>The key policy for the CMK must give the external account (or users and roles in the external account) permission to use the CMK. The key policy is in the account that owns the CMK.</li>
+<li>IAM policies in the external account must delegate the key policy permissions to its users and roles. These policies are set in the external account and give permissions to users and roles in that account.</li>
+</ol>
+<hr>
+<h2 id="CloudHSM-Dedicated-Hardware-HSM-x3D-Hardware-Security-Module"><a href="#CloudHSM-Dedicated-Hardware-HSM-x3D-Hardware-Security-Module" class="headerlink" title="CloudHSM - Dedicated Hardware (HSM &#x3D; Hardware Security Module)"></a>CloudHSM - Dedicated Hardware (HSM &#x3D; Hardware Security Module)</h2><ul>
+<li>KMS &#x3D;&gt; AWS manages the <code>software</code> for encryption.</li>
+<li>CloudHSM &#x3D;&gt; AWS provisions encryption <code>hardware</code>.</li>
+<li><code>CUSTOMER MANAGED CMK</code>.</li>
+<li>You manage your own encryption keys entirely (not AWS)</li>
+<li><code>HSM device is tamper resistant, FIPS 140-2 Level 3 compliance</code>.</li>
+<li>Supports both <code>symmetric</code> and <code>asymmetric</code> encryption (SSL&#x2F;TLS keys)</li>
+<li>No free tier available</li>
+<li>Must use the CloudHSM Client Software</li>
+<li>Redshift supports CloudHSM for database encryption and key management</li>
+<li><code>Good option to use with SSE-C encryption</code>.</li>
+</ul>
+<h3 id="CloudHSM-–-High-Availability"><a href="#CloudHSM-–-High-Availability" class="headerlink" title="CloudHSM – High Availability"></a>CloudHSM – High Availability</h3><ul>
+<li>CloudHSM clusters are spread across Multi AZ (HA)</li>
+<li>Great for availability and durability</li>
+</ul>
+<hr>
+<h2 id="👀-AWS-Artifact-Not-really-a-service-EXAM"><a href="#👀-AWS-Artifact-Not-really-a-service-EXAM" class="headerlink" title="👀 AWS Artifact (Not really a service) - EXAM"></a>👀 <code>AWS Artifact</code> (Not really a service) - EXAM</h2><p>is a service that provides <code>on-demand</code> access to AWS <code>compliance reports</code> and other relevant documents.</p>
+<ul>
+<li><code>Artifact Reports</code> - Allows you to download AWS security and compliance documents from third-party auditors, like AWS ISO certifications, Payment Card Industry (PCI), and System and Organization Control (SOC) reports</li>
+<li><code>Artifact Agreements</code> - Allows you to review, accept, and track the status of AWS agreements such as the Business Associate Addendum (BAA) or the Health Insurance Portability and Accountability Act (HIPAA) for an individual account or in your organization -</li>
+</ul>
+<p>Can be used to <code>support internal audit or compliance</code>.</p>
+<hr>
+<h2 id="👀-AWS-Service-Catalog"><a href="#👀-AWS-Service-Catalog" class="headerlink" title="👀 AWS Service Catalog"></a>👀 AWS Service Catalog</h2><p>provides a <code>TagOption library</code>. A TagOption is a key-value pair managed in AWS Service Catalog. It is not an AWS tag but serves as a template for creating an AWS tag based on the TagOption.</p>
+<p>The TagOption library makes it easier to enforce the following:</p>
+<p>– A consistent <code>taxonomy</code>
+– Proper tagging of AWS Service Catalog resources
+– Defined, user-selectable options for allowed tags</p>
+<hr>
+<h2 id="AWS-Secrets-Manager"><a href="#AWS-Secrets-Manager" class="headerlink" title="AWS Secrets Manager"></a>AWS Secrets Manager</h2><ul>
+<li>Newer service, meant for storing secrets</li>
+<li>Capability to <code>force rotation of secrets</code> every X days</li>
+<li>Automate generation of secrets on rotation (uses Lambda)</li>
+<li><code>Integration with Amazon RDS</code> (MySQL, PostgreSQL, Aurora)</li>
+<li>Secrets are encrypted using KMS</li>
+<li>Mostly meant for RDS integration</li>
+</ul>
+<h3 id="AWS-Secrets-Manager-–-Multi-Region-Secrets"><a href="#AWS-Secrets-Manager-–-Multi-Region-Secrets" class="headerlink" title="AWS Secrets Manager – Multi-Region Secrets"></a>AWS Secrets Manager – Multi-Region Secrets</h3><ul>
+<li>Replicate Secrets across multiple AWS Regions</li>
+<li>Secrets Manager keeps read replicas in sync with the primary Secret</li>
+<li>Ability to promote a read replica Secret to a standalone Secret</li>
+<li>Use cases: multi-region apps, disaster recovery strategies, multi-region DB…</li>
+</ul>
+<h3 id="Secrets-Manager-–-Monitoring"><a href="#Secrets-Manager-–-Monitoring" class="headerlink" title="Secrets Manager – Monitoring"></a>Secrets Manager – Monitoring</h3><ul>
+<li><p>CloudTrail captures API calls to the Secrets Manager API</p>
+</li>
+<li><p>CloudTrail captures other related events that might have a security or compliance impact on your AWS account or might help you troubleshoot operational problems.</p>
+</li>
+<li><p><code>CloudTrail records these events as non-API service events</code>:</p>
+<ul>
+<li>RotationStarted event</li>
+<li>RotationSucceeded event</li>
+<li><code>RotationFailed event</code></li>
+<li>RotationAbandoned event – a manual change to a secret instead of automated rotation</li>
+<li>StartSecretVersionDelete event</li>
+<li>CancelSecretVersionDelete event</li>
+</ul>
+</li>
+<li><p>EndSecretVersionDelete event</p>
+</li>
+<li><p><code>Combine with CloudWatch Logs and CloudWatch alarms for automations</code>.</p>
+</li>
+</ul>
+<h3 id="SSM-Parameter-Store-vs-Secret-Manager"><a href="#SSM-Parameter-Store-vs-Secret-Manager" class="headerlink" title="SSM Parameter Store vs Secret Manager"></a>SSM Parameter Store vs Secret Manager</h3><ul>
+<li>Secret Manager ($$$):<ul>
+<li>Automatic rotation</li>
+<li>Lambda func is provided for RDS, Redshift, DocumentDB</li>
+<li>KMS enc is mandatory.</li>
+<li>Integration with CloudFormation</li>
+</ul>
+</li>
+<li>SSM Parameter Store ($)<ul>
+<li>Simple API</li>
+<li>No secret rotation</li>
+<li>KMS enc optional</li>
+<li>Integration with CloudFormation</li>
+<li>Pull screcte from SSM Parater Store</li>
+</ul>
+</li>
+</ul>
+<hr>
 <h2 id="EBS"><a href="#EBS" class="headerlink" title="EBS"></a>EBS</h2><p><code>*Q</code></p>
 <ul>
 <li>Use <code>separate</code> Amazon EBS <code>volumes</code> for the <code>operating system</code> and <code>your data</code>, even though root volume persistence feature is available.</li>
@@ -1137,8 +1452,227 @@ device (usually a mobile phone or hardware) before doing important operations on
 <li>Set a TTL to a value lesser than when the authentication cookie expire</li>
 </ul>
 <p><code>Cookie: AWSALB=...</code></p>
+<hr>
+<h3 id="AWS-Health-Dashboard-Service-History"><a href="#AWS-Health-Dashboard-Service-History" class="headerlink" title="AWS Health Dashboard - Service History"></a>AWS Health Dashboard - Service History</h3><ul>
+<li><p>Shows all regions, all services health</p>
+</li>
+<li><p>Shows historical information for each day</p>
+</li>
+<li><p>Has an RSS feed you can subscribe to</p>
+</li>
+<li><p>Previously called AWS Service Health Dashboard</p>
+</li>
+</ul>
+<h3 id="AWS-Health-Dashboard-–-Your-Account"><a href="#AWS-Health-Dashboard-–-Your-Account" class="headerlink" title="AWS Health Dashboard – Your Account"></a>AWS Health Dashboard – Your Account</h3><ul>
+<li><p>Previously called <code>AWS Personal Health Dashboard</code> (PHD).</p>
+</li>
+<li><p>AWS Account Health Dashboard provides <code>alerts and remediation guidance</code> when AWS is experiencing <code>events that may impact you</code>.</p>
+</li>
+<li><p>While the Service Health Dashboard displays the general status of AWS services, Account Health Dashboard gives you a <code>personalized view into the performance and availability of the AWS services underlying your AWS resources</code>.</p>
+</li>
+<li><p>The dashboard displays <code>relevant and timely information</code> to help you manage events in progress and <code>provides proactive</code> notification to help
+you plan for <code>scheduled activities</code>.</p>
+</li>
+<li><p><code>Can aggregate data from an entire AWS Organization</code></p>
+</li>
+<li><p>Global service</p>
+</li>
+<li><p>Shows how AWS outages directly impact you &amp; your AWS resources</p>
+</li>
+<li><p>Alert, remediation, proactive, scheduled activitie</p>
+</li>
+</ul>
+<h3 id="Health-Event-Notifications"><a href="#Health-Event-Notifications" class="headerlink" title="Health Event Notifications"></a>Health Event Notifications</h3><ul>
+<li>Use <code>EventBridge to react to changes for AWS Health events</code> in your AWS account</li>
+<li>Example: receive email notifications when EC2 instances in your AWS account are scheduled for updates</li>
+<li>This is possible for Account events (resources that are affected in your account) and Public Events (Regional availability of a service)</li>
+<li>Use cases: send notifications, capture event information, take corrective action…</li>
+</ul>
+<h2 id="👀-Q-AWS-Personal-Health-Dashboard"><a href="#👀-Q-AWS-Personal-Health-Dashboard" class="headerlink" title="👀 *Q AWS Personal Health Dashboard"></a>👀 <code>*Q</code> AWS Personal Health Dashboard</h2><p>AWS Personal Health Dashboard provides <code>alerts</code> and <em><code>remediation guidance</code></em> when AWS is experiencing <code>events that may impact you</code>. While the Service Health Dashboard displays the general status of AWS services, Personal Health Dashboard gives you a personalized view into the <em>performance and availability</em> of the AWS services underlying your AWS resources.</p>
+<p>What’s more, Personal Health Dashboard proactively notifies you when AWS experiences any events that may affect you, helping provide quick visibility and guidance to help you minimize the impact of events in progress, and plan for any scheduled changes, such as AWS hardware maintenance.AWS Inspector</p>
+<p>The <code>AWS Health API provides</code> programmatic <code>access</code> to the <code>AWS Health information</code> that appears in the AWS Personal Health Dashboard. You can use the API operations to get information about events that might affect your AWS services and resources.</p>
+<hr>
+<h2 id="AWS-Organizations"><a href="#AWS-Organizations" class="headerlink" title="AWS Organizations"></a>AWS Organizations</h2><p>If you have created an organization in AWS Organizations, you <code>can</code> also <code>create a trail</code> that will <code>log all events for all AWS accounts in that organization</code>. This is referred to as an organization trail.</p>
+<p>Offers <code>policy-based</code> management for multiple AWS accounts. With Organizations, you can create groups of accounts, automate account creation, and apply and manage policies for those groups. Organizations enable you to centrally manage policies across multiple accounts without requiring custom scripts and manual processes. It allows you to create Service Control Policies (SCPs) that centrally control AWS service use across multiple AWS accounts.</p>
+<ul>
+<li>Global service.</li>
+<li>Allows to manage multiple AWS accounts.</li>
+<li>The main account is the <code>management account</code>.</li>
+<li>Other accounts are <code>member accounts</code>.</li>
+<li>Member accounts can only be part of one organization.</li>
+<li>Consolidated Billing across all accounts - single payment method.</li>
+<li>Pricing benefits from <code>aggregated usage</code> (volume discount for EC2, S3…).</li>
+<li><code>Shared reserved instances and Savings Plans discounts across accounts</code>.</li>
+<li>API is available to automate AWS account creation.</li>
+</ul>
+<h3 id="Advantages"><a href="#Advantages" class="headerlink" title="Advantages"></a>Advantages</h3><ul>
+<li>Multi Account vs One Account Multi VPC.</li>
+<li>Use tagging standards for billing purposes.</li>
+<li>Enable CloudTrail on all accounts, send logs to central S3 account.</li>
+<li>Send CloudWatch Logs to central logging account.</li>
+<li>Establish Cross Account Roles for Admin purposes.</li>
+</ul>
+<h3 id="Security-Service-Control-Policies-SCP"><a href="#Security-Service-Control-Policies-SCP" class="headerlink" title="Security: Service Control Policies (SCP)"></a>Security: Service Control Policies (SCP)</h3><ul>
+<li>IAM policies applied to OU or Accounts to restrict Users and Roles.</li>
+<li>They do not apply to the management account (full admin power).</li>
+<li>Must have an explicit allow (does not allow anything by default – like IAM).</li>
+</ul>
+<h3 id="AWS-Organizations-–-Reserved-Instances"><a href="#AWS-Organizations-–-Reserved-Instances" class="headerlink" title="AWS Organizations – Reserved Instances"></a>AWS Organizations – Reserved Instances</h3><ul>
+<li>For billing purposes, the consolidated billing feature of AWS Organizations treats all the accounts in the organization as one account.</li>
+<li>This means that <code>all accounts</code> in the organization can receive the hourly cost benefit of Reserved Instances that are purchased <code>by any other account</code>.</li>
+<li><code>The payer account (master account) of an organization</code> can turn off Reserved Instance (RI) discount and Savings Plans discount sharing for any accounts in that organization, including the payer account</li>
+<li>This means that RIs and Savings Plans discounts aren’t shared between any accounts that have sharing turned off.</li>
+<li>To share an RI or Savings Plans discount with an account, <code>both accounts must have sharing turned on</code>.</li>
+</ul>
+<h3 id="AWS-Organizations-–-IAM-Policies"><a href="#AWS-Organizations-–-IAM-Policies" class="headerlink" title="AWS Organizations – IAM Policies"></a>AWS Organizations – IAM Policies</h3><p>Use <code>aws:PrincipalOrgID</code> condition key in your resource-based policies to restrict access to IAM principals from accounts in an AWS Organizat</p>
+<h2 id="AWS-Organizations-–-Tag-Policies"><a href="#AWS-Organizations-–-Tag-Policies" class="headerlink" title="AWS Organizations – Tag Policies"></a>AWS Organizations – Tag Policies</h2><ul>
+<li>Helps you standardize tags across resources in an AWS Organization</li>
+<li>Ensure consistent tags, audit tagged resources, maintain proper resources categorization, …</li>
+<li>You define tag keys and their allowed values</li>
+<li>Helps with AWS Cost Allocation Tags and Attribute-based Access Control</li>
+<li>Prevent any non-compliant tagging operations on specified services and resources (has no effect on resources without tags)</li>
+<li>Generate a report that lists all tagged&#x2F;non-compliant resources</li>
+<li>Use CloudWatch Events to monitor non-compliant tags</li>
+</ul>
+<hr>
+<h2 id="AWS-Control-Tower"><a href="#AWS-Control-Tower" class="headerlink" title="AWS Control Tower"></a>AWS Control Tower</h2><p>Offers the easiest way to <code>set up and govern a secure, multi-account AWS environment</code>. It establishes a landing zone that is <code>based on the best-practices</code> blueprints and enables governance using guardrails you can choose from a pre-packaged list. The landing zone is a well-architected, multi-account baseline that follows AWS best practices. Guardrails implement governance rules for security, compliance, and operations.</p>
+<ul>
+<li>Benefits:<ul>
+<li>Automate the set up of your environment in a few clicks</li>
+<li>Automate ongoing policy management using guardrails</li>
+<li>Detect policy violations and remediate them</li>
+<li>Monitor compliance through an interactive dashboard</li>
+</ul>
+</li>
+<li><code>AWS Control Tower runs on top of AWS Organizations</code>:<ul>
+<li>It automatically sets up AWS Organizations to organize accounts and implement SCPs (Service Control Policies)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="AWS-Service-Catalog"><a href="#AWS-Service-Catalog" class="headerlink" title="AWS Service Catalog"></a>AWS Service Catalog</h2><p>AWS Service Catalog allows <code>organizations to create and manage catalogs of IT services that are approved for use on AWS</code>. These IT services can include everything from virtual machine images, servers, software, and databases to complete multi-tier application architectures. AWS Service Catalog allows you to centrally manage deployed IT services and your applications, resources, and metadata. This helps you achieve <code>consistent governance</code> and <code>meet your compliance requirements</code> while enabling users to quickly deploy only the approved IT services they need.</p>
+<h4 id="Sharing-and-Importing-Portfolios"><a href="#Sharing-and-Importing-Portfolios" class="headerlink" title="Sharing and Importing Portfolios"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_sharing.html">Sharing and Importing Portfolios</a></h4><p>To make your Service Catalog products available to users who are not in your AWS accounts, such as users who belong to other organizations or to other AWS accounts in your organization, you share your portfolios with them. You can share in several ways, including <code>account-to-account</code> sharing, <code>organizational</code> sharing, and <code>deploying catalogs using stack sets</code>.</p>
+<p>Before you share your products and portfolios to other accounts, you must decide whether you want to share a reference of the catalog or to deploy a copy of the catalog into each recipient account. Note that if you deploy a copy, you must redeploy if there are updates you want to propagate to the recipient accounts.</p>
+<ul>
+<li><p>Users that are new to AWS have too many options, and may create stacks that are not compliant &#x2F; in line with the rest of the organization</p>
+</li>
+<li><p>Some users just want a quick <code>self-service portal</code> to launch a set of <code>authorized products</code> pre-defined <code>by admins</code></p>
+</li>
+<li><p>Includes: virtual machines, databases, storage options, etc…</p>
+</li>
+</ul>
+<h3 id="AWS-Service-Catalog-–-Sharing-Catalogs"><a href="#AWS-Service-Catalog-–-Sharing-Catalogs" class="headerlink" title="AWS Service Catalog – Sharing Catalogs"></a>AWS Service Catalog – Sharing Catalogs</h3><p>Share portfolios with individual AWS accounts or AWS Organizations.</p>
+<h3 id="AWS-Service-Catalog-–-TagOptions-Library"><a href="#AWS-Service-Catalog-–-TagOptions-Library" class="headerlink" title="AWS Service Catalog – TagOptions Library"></a>AWS Service Catalog – TagOptions Library</h3><ul>
+<li>Easily manage tags on provisioned products</li>
+<li><code>TagOption</code>:<ul>
+<li>Key-value pair managed in AWS Service Catalog</li>
+<li>Used to create an AWS Tag</li>
+</ul>
+</li>
+<li>Can be associated with Portfolios and Products.</li>
+<li>Use cases: proper resources tagging, defined allowed tags, …</li>
+<li>Can be shared with other AWS accounts and AWS Organizations.</li>
+</ul>
+<hr>
+<h2 id="Cost-Explorer"><a href="#Cost-Explorer" class="headerlink" title="Cost Explorer"></a>Cost Explorer</h2><ul>
+<li>Visualize, understand, and manage your AWS costs and usage over time</li>
+<li>Create custom reports that analyze cost and usage data.</li>
+<li>Analyze your data at a high level: total costs and usage across all accounts</li>
+<li>Or Monthly, hourly, resource level granularity</li>
+<li>Choose an optimal <code>Savings Plan</code> (to lower prices on your bill)</li>
+<li><code>Forecast usage up to 12 months based on previous usage</code></li>
+</ul>
+<h2 id="👀-Q-Collect-information-about-the-service-costs-of-each-developer"><a href="#👀-Q-Collect-information-about-the-service-costs-of-each-developer" class="headerlink" title="👀 *Q Collect information about the service costs of each developer"></a><code>👀</code> <code>*Q</code> Collect information about the service costs of each developer</h2><ul>
+<li>The AWS-generated <em>tag</em> <code>createdBy</code> defines and applies to supported AWS resources for cost allocation purposes. To use the AWS-generated tags, a management account owner must activate it in the Billing and Cost Management console. When a management account owner activates the tag, it is also activated for all member accounts.</li>
+<li><code>Cost Explorer</code> is a tool that enables you to view and <code>analyze your costs and usage</code>. You can explore your usage and costs using the main graph, the Cost Explorer cost and usage reports, or the Cost Explorer RI reports.</li>
+</ul>
+<p>AWS Cost Explorer provides the following prebuilt reports:</p>
+<p>– EC2 <code>RI Utilization %</code> offers relevant data to identify and act on opportunities to increase your Reserved Instance usage efficiency. It’s calculated by dividing Reserved Instance used hours by total Reserved Instance purchased hours.</p>
+<p>– EC2 <code>RI Coverage %</code> shows how much of your overall instance usage is covered by Reserved Instances. This lets you make informed decisions about when to purchase or modify a Reserved Instance to ensure</p>
+<hr>
+<h2 id="AWS-Budgets"><a href="#AWS-Budgets" class="headerlink" title="AWS Budgets"></a>AWS Budgets</h2><ul>
+<li><code>Create budget and send alarms when costs exceeds the budget</code>.</li>
+<li>4 types of budgets: <code>Usage, Cost, Reservation, Savings Plans</code>.</li>
+<li>For Reserved Instances (RI)<ul>
+<li>Track utilization</li>
+<li>Supports <code>EC2, ElastiCache, RDS, Redshift</code></li>
+</ul>
+</li>
+<li>Up to 5 SNS notifications per budget</li>
+<li>Can filter by: Service, Linked Account, Tag, Purchase Option, Instance Type, Region, Availability Zone, API Operation, etc…</li>
+<li><code>Same options as AWS Cost Explorer!</code></li>
+<li>2 budgets are free, then $0.02&#x2F;day&#x2F;budget</li>
+</ul>
+<h3 id="Cost-Allocation-Tags"><a href="#Cost-Allocation-Tags" class="headerlink" title="Cost Allocation Tags"></a>Cost Allocation Tags</h3><ul>
+<li>Use <code>cost allocation tags</code> to track your AWS costs on a detailed level</li>
+<li><code>AWS generated tags</code><ul>
+<li>Automatically applied to the resource you create</li>
+<li>Starts with Prefix <code>aws: (e.g. aws: createdBy)</code></li>
+</ul>
+</li>
+<li><code>User-defined tags</code><ul>
+<li>Defined by the user</li>
+<li>Starts with Prefix <code>user:</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Cost-and-Usage-Reports"><a href="#Cost-and-Usage-Reports" class="headerlink" title="Cost and Usage Reports"></a>Cost and Usage Reports</h3><ul>
+<li>Dive deeper into your AWS costs and usage</li>
+<li>The AWS Cost &amp; Usage Report contains <code>the most comprehensive set of AWS cost and usage data available</code></li>
+<li>Includes additional metadata about AWS services, pricing, and reservations (<code>e.g., Amazon EC2 Reserved Instances (RIs)</code>)</li>
+<li>The AWS Cost &amp; Usage Report lists AWS usage for each:<ul>
+<li>service category used by an account</li>
+<li>in hourly or daily line items</li>
+<li>any tags that you have activated for cost allocation purposes</li>
+</ul>
+</li>
+<li>Can be configured for daily exports to S3</li>
+<li>Can be integrated with Athena, Redshift or QuickSight</li>
+</ul>
+<h3 id="AWS-Compute-Optimizer"><a href="#AWS-Compute-Optimizer" class="headerlink" title="AWS Compute Optimizer"></a>AWS Compute Optimizer</h3><ul>
+<li><code>Reduce costs and improve performance by</code> recommending optimal AWS resources for your workloads</li>
+<li>Helps you choose optimal configurations and right-size your workloads (over&#x2F;under provisioned)</li>
+<li>Uses Machine Learning to analyze your <code>resources configurations and their utilization CloudWatch metrics</code></li>
+<li>Supported resources<ul>
+<li>EC2 instances</li>
+<li>EC2 Auto Scaling Groups</li>
+<li>EBS volumes</li>
+<li>Lambda functions</li>
+</ul>
+</li>
+<li>Lower your costs by up to 25%</li>
+<li>Recommendations can be exported to S3</li>
+</ul>
+<hr>
 <h2 id="IAM"><a href="#IAM" class="headerlink" title="IAM"></a>IAM</h2><h3 id="If-an-IAM-user-with-full-access-to-IAM-and-Amazon-S3-assigns-a-bucket-policy-to-an-Amazon-S3-bucket-and-doesn’t-specify-the-AWS-account-root-user-as-a-principal-the-root-user-is-denied-access-to-that-bucket"><a href="#If-an-IAM-user-with-full-access-to-IAM-and-Amazon-S3-assigns-a-bucket-policy-to-an-Amazon-S3-bucket-and-doesn’t-specify-the-AWS-account-root-user-as-a-principal-the-root-user-is-denied-access-to-that-bucket" class="headerlink" title="If an IAM user, with full access to IAM and Amazon S3, assigns a bucket policy to an Amazon S3 bucket and doesn’t specify the AWS account root user as a principal, the root user is denied access to that bucket."></a>If an IAM user, with full access to IAM and Amazon S3, assigns a bucket policy to an Amazon S3 bucket and doesn’t specify the AWS account root user as a principal, the root user is denied access to that bucket.</h3><p>To fix this issue, the CTO needs to ensure that an IAM user with full access to both IAM and Amazon S3 explicitly includes the AWS account root user as a principal in the bucket policy of the S3 bucket. By adding the root user as a principal, access will be granted to the CTO and they will be able to access the S3 bucket in their AWS account.</p>
 <h3 id="Reference-1"><a href="#Reference-1" class="headerlink" title="Reference:"></a>Reference:</h3><p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_iam-s3.html">https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_iam-s3.html</a></p>
+<h3 id="IAM-Security-Tools"><a href="#IAM-Security-Tools" class="headerlink" title="IAM Security Tools"></a>IAM Security Tools</h3><ul>
+<li><p><code>IAM Credentials Report (account-level)</code></p>
+<ul>
+<li>a report that lists all your account’s users and the status of their various credentials</li>
+</ul>
+</li>
+<li><p><code>IAM Access Advisor (user-level)</code></p>
+<ul>
+<li>Access advisor shows the service permissions granted to a user and when those services were last accessed.</li>
+<li>You can use this in1formation to revise your policies.</li>
+</ul>
+</li>
+</ul>
+<h3 id="IAM-Access-Analyzer"><a href="#IAM-Access-Analyzer" class="headerlink" title="IAM Access Analyzer"></a>IAM Access Analyzer</h3><p>helps you <code>identify the resources in your organization and accounts</code>, such as <code>Amazon S3 buckets</code> or <code>IAM roles</code>, <code>shared with an external entity</code>. This lets you identify unintended access to your resources and data, which is a security risk. Access Analyzer identifies resources shared with external principals by using logic-based reasoning to analyze the resource-based policies in your AWS environment. For each instance of a resource shared outside of your account, Access Analyzer generates a finding.</p>
+<ul>
+<li><code>Find out which resources are shared externally</code><ul>
+<li>S3 Buckets</li>
+<li>IAM Roles</li>
+<li>KMS Keys</li>
+<li>Lambda Functions and Layers</li>
+<li>SQS queues</li>
+<li>Secrets Manager Secrets</li>
+</ul>
+</li>
+<li>Define <code>Zone of Trust</code> &#x3D; AWS Account or AWS Organization</li>
+<li>Access outside zone of trusts &#x3D;&gt; findings</li>
+</ul>
 <h3 id="IAM-Policy-Types"><a href="#IAM-Policy-Types" class="headerlink" title="IAM Policy Types"></a>IAM Policy Types</h3><p>You manage access in AWS by creating policies and attaching them to IAM identities (users, groups of users, or roles) or AWS resources. A policy is an object in AWS that, when associated with an identity or resource, defines their permissions. Resource-based policies are JSON policy documents that you attach to a resource such as an Amazon S3 bucket. These policies grant the specified principal permission to perform specific actions on that resource and define under what conditions this applies.</p>
 <ul>
 <li><code>Identity-based</code> policies are attached to an IAM user, group, or role. These policies let you specify what that identity can do (its permissions).</li>
@@ -1147,12 +1681,346 @@ device (usually a mobile phone or hardware) before doing important operations on
 </ul>
 <h4 id="Trust-policy"><a href="#Trust-policy" class="headerlink" title="Trust policy"></a>Trust policy</h4><p>Defines which principal entities (accounts, users, roles, and federated users) can assume the role. An IAM role is both an identity and a resource that supports resource-based policies. For this reason, you <code>must attach both a trust policy and an identity-based policy to an IAM role</code>. The <code>IAM service</code> <code>supports only one</code> type of <code>resource-based</code> policy called a <code>role trust policy</code>, which is attached to an IAM role.</p>
 <p>References: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies</a></p>
+<hr>
+<h2 id="Identity-Federation"><a href="#Identity-Federation" class="headerlink" title="Identity Federation"></a>Identity Federation</h2><ul>
+<li>Federation <code>lets users outside of AWS to assume temporary role for accessing AWS resources</code>.</li>
+<li>These users assume identity provided access role.</li>
+<li><code>Federation assumes a form of 3rd party authentication</code><ul>
+<li>LDAP</li>
+<li>Microsoft Active Directory (~&#x3D; SAML) - EXAM</li>
+<li>Single Sign On - EXAM</li>
+<li>Open ID</li>
+<li>Cognito - EXAM</li>
+</ul>
+</li>
+<li><code>Using federation, you don’t need to create IAM users (user management is outside of AWS)</code>.</li>
+</ul>
+<h3 id="Custom-Identity-Broker-Application"><a href="#Custom-Identity-Broker-Application" class="headerlink" title="Custom Identity Broker Application"></a>Custom Identity Broker Application</h3><p><code>For Enterprises</code></p>
+<ul>
+<li>Use only if identity provider is <code>not compatible with SAML 2.0</code>.</li>
+<li><code>The identity broker must determine the appropriate IAM policy</code>.</li>
+</ul>
+<hr>
+<h2 id="AWS-DataSync"><a href="#AWS-DataSync" class="headerlink" title="AWS DataSync"></a>AWS DataSync</h2><ul>
+<li><code>Move large amount of data</code> to and from<ul>
+<li><code>On-premises</code> &#x2F; other cloud to AWS (NFS, SMB, HDFS, S3 API…) – needs agent</li>
+<li><code>AWS to AWS</code> (different storage services) – no agent needed</li>
+</ul>
+</li>
+<li>Can synchronize to:<ul>
+<li>Amazon S3 (any storage classes – including Glacier)</li>
+<li>Amazon EFS</li>
+<li>Amazon FSx (Windows, Lustre, NetApp, OpenZFS…)</li>
+</ul>
+</li>
+<li>Replication <code>tasks can be scheduled hourly, daily, weekly</code>.</li>
+<li><code>File permissions and metadata are preserved (NFS POSIX, SMB...)</code>. - Exam</li>
+<li>One agent task can use 10 Gbps, can setup a bandwidth limit</li>
+</ul>
+<p>Maybe for <code>large quantity of data</code> you can use <code>AWS Snowcone</code> with has the <code>DataSync agent pre-installed</code>.</p>
+<hr>
+<h2 id="AWS-STS-–-Security-Token-Service"><a href="#AWS-STS-–-Security-Token-Service" class="headerlink" title="AWS STS – Security Token Service"></a>AWS STS – Security Token Service</h2><ul>
+<li><code>Allows to grant limited and temporary access to AWS resources.</code></li>
+<li>Token is valid for up to one hour (must be refreshed)</li>
+<li><code>AssumeRole</code><ul>
+<li>Within your own account: for enhanced security</li>
+<li>Cross Account Access: assume role in target account to perform actions there</li>
+</ul>
+</li>
+<li><code>AssumeRoleWithSAML</code><ul>
+<li>return credentials for users logged with SAML</li>
+</ul>
+</li>
+<li><code>AssumeRoleWithWebIdentity</code><ul>
+<li>return creds for users logged with an IdP (Facebook Login, Google Login, OIDC compatible…)</li>
+<li>AWS recommends against using this, and using <code>Cognito</code> instead</li>
+</ul>
+</li>
+<li><code>GetSessionToken</code><ul>
+<li>for MFA, from a user or AWS account root user</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Cognito-Identity-Pools-–-IAM-Roles"><a href="#Cognito-Identity-Pools-–-IAM-Roles" class="headerlink" title="Cognito Identity Pools – IAM Roles"></a>Cognito Identity Pools – IAM Roles</h2><ul>
+<li><p>Default IAM roles for authenticated and guest users</p>
+</li>
+<li><p>Define rules to choose the role for each user based on the user’s ID</p>
+</li>
+<li><p>You can partition your users’ access using <code>policy variables</code>.</p>
+</li>
+<li><p>IAM credentials are obtained by Cognito Identity Pools through STS</p>
+</li>
+<li><p>The roles must have a “trust” policy of Cognito Identity Pools</p>
+</li>
+</ul>
+<h3 id="Cognito-User-Pools-vs-Identity-Pools"><a href="#Cognito-User-Pools-vs-Identity-Pools" class="headerlink" title="Cognito User Pools vs Identity Pools"></a>Cognito User Pools vs Identity Pools</h3><ul>
+<li><code>Cognito User Pools (for authentication = identity verification)</code>:<ul>
+<li>Database of users for your web and mobile application</li>
+<li>Allows to federate logins through Public Social, OIDC, SAML…</li>
+<li>Can customize the hosted UI for authentication (including the logo)]</li>
+<li>Has triggers with AWS Lambda during the authentication flow</li>
+<li>Adapt the sign-in experience to different risk levels (MFA, etc…)</li>
+</ul>
+</li>
+<li><code>Cognito Identity Pools (for authorization = access control)</code>:</li>
+<li>Obtain AWS credentials for your users</li>
+<li>Users can login through Public Social, OIDC, SAML &amp; Cognito User Pools</li>
+<li>Users can be unauthenticated (guests)</li>
+<li>Users are mapped to IAM roles &amp; policies, can leverage policy variables</li>
+<li><code>CUP + CIP = manage user / password + access AWS services</code></li>
+</ul>
+<hr>
+<h2 id="Amazon-Route-53"><a href="#Amazon-Route-53" class="headerlink" title="Amazon Route 53"></a>Amazon Route 53</h2><ul>
+<li>A highly available, scalable, fully managed and Authoritative DNS<ul>
+<li>Authoritative &#x3D; the customer (you) can update the DNS records</li>
+</ul>
+</li>
+<li>Route 53 is also a Domain Registrar</li>
+<li>Ability to check the health of your resources</li>
+<li>The only AWS service which provides 100% availability SLA</li>
+<li>Why Route 53? 53 is a reference to the traditional DNS port</li>
+</ul>
+<h3 id="Route-53-–-Records"><a href="#Route-53-–-Records" class="headerlink" title="Route 53 – Records"></a>Route 53 – Records</h3><ul>
+<li>How you want to route traffic for a domain</li>
+<li>Each record contains:<ul>
+<li><code>Domain/subdomain Name</code> – e.g., example.com</li>
+<li><code>Record Type</code> – e.g., A or AAAA</li>
+<li><code>Value</code> – e.g., 12.34.56.78</li>
+<li><code>Routing Policy</code> – how Route 53 responds to queries</li>
+<li><code>TTL</code> – amount of time the record cached at DNS Resolvers</li>
+</ul>
+</li>
+<li>Route 53 supports the following DNS record types:</li>
+<li>(must know) A &#x2F; AAAA &#x2F; CNAME &#x2F; NS</li>
+<li>(advanced) CAA &#x2F; DS &#x2F; MX &#x2F; NAPTR &#x2F; PTR &#x2F; SOA &#x2F; TXT &#x2F; SPF &#x2F; SRV</li>
+</ul>
+<h3 id="Route-53-–-Record-Types"><a href="#Route-53-–-Record-Types" class="headerlink" title="Route 53 – Record Types"></a>Route 53 – Record Types</h3><ul>
+<li><code>A</code> – maps a hostname to IPv4</li>
+<li><code>AAAA</code> – maps a hostname to IPv6</li>
+<li><code>CNAME</code> – maps a hostname to another hostname<ul>
+<li>The target is a domain name which must have an A or AAAA record</li>
+<li>Can’t create a CNAME record for the top node of a DNS namespace (Zone Apex)</li>
+<li>Example: you can’t create for example.com, but you can create for <a target="_blank" rel="noopener" href="http://www.example.com/">www.example.com</a></li>
+</ul>
+</li>
+<li><code>NS</code> – Name Servers for the Hosted Zone</li>
+<li>Control how traffic is routed for a domain</li>
+</ul>
+<h3 id="Route-53-–-Hosted-Zones"><a href="#Route-53-–-Hosted-Zones" class="headerlink" title="Route 53 – Hosted Zones"></a>Route 53 – Hosted Zones</h3><ul>
+<li>A container for records that define how to route traffic to a domain and its subdomains</li>
+<li><strong><code>Public Hosted Zones</code></strong> – contains records that specify how to route traffic on the Internet (public domain names)
+<em>application1.mypublicdomain.com</em></li>
+<li><strong><code>Private Hosted Zones</code></strong> – contain records that specify how you route traffic within one or more VPCs (private domain names)
+<em>application1.company.internal</em></li>
+<li>You pay $0.50 per month per hosted zone</li>
+</ul>
+<h3 id="Route-53-–-Records-TTL-Time-To-Live"><a href="#Route-53-–-Records-TTL-Time-To-Live" class="headerlink" title="Route 53 – Records TTL (Time To Live)"></a>Route 53 – Records TTL (Time To Live)</h3><ul>
+<li><code>High TTL – e.g., 24 hr</code><ul>
+<li>Less traffic on Route 53</li>
+<li>Possibly outdated records</li>
+</ul>
+</li>
+<li><code>Low TTL – e.g., 60 sec.</code><ul>
+<li>More traffic on Route 53 ($$)</li>
+<li>Records are outdated for less time</li>
+<li>Easy to change records</li>
+</ul>
+</li>
+<li><code>Except for Alias records, TTL is mandatory for each DNS record</code></li>
+</ul>
+<h3 id="CNAME-vs-Alias"><a href="#CNAME-vs-Alias" class="headerlink" title="CNAME vs Alias"></a>CNAME vs Alias</h3><ul>
+<li><p>AWS Resources (Load Balancer, CloudFront…) expose an AWS hostname:</p>
+<ul>
+<li><span style="color:blue">lb1-1234.us-east-2.elb.amazonaws.com</span> and you want <span style="color:blue">myapp.mydomain.com</span></li>
+</ul>
+</li>
+<li><p>CNAME:</p>
+<ul>
+<li>Points a hostname to any other hostname. (app.mydomain.com &#x3D;&gt; blabla.anything.com)</li>
+<li><u><strong>ONLY FOR NON ROOT DOMAIN (aka. something.mydomain.com)</strong></u></li>
+</ul>
+</li>
+<li><p>Alias:</p>
+<ul>
+<li>Points a hostname to an AWS Resource (app.mydomain.com &#x3D;&gt; blabla.amazonaws.com)</li>
+<li><u><strong>Works for ROOT DOMAIN and NON ROOT DOMAIN (aka mydomain.com)</strong></u></li>
+<li>Free of charge.</li>
+<li>Native health check.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Route-53-–-Alias-Records"><a href="#Route-53-–-Alias-Records" class="headerlink" title="Route 53 – Alias Records"></a>Route 53 – Alias Records</h3><ul>
+<li>Maps a hostname to an AWS resource</li>
+<li>An extension to DNS functionality</li>
+<li>Automatically recognizes changes in the resource’s IP addresses</li>
+<li>Unlike CNAME, it can be used for the top node of a DNS namespace (Zone Apex), e.g.: example.com</li>
+<li>Alias Record is always of type A&#x2F;AAAA for AWS resources (IPv4 &#x2F; IPv6)</li>
+<li><code>You can’t set the TTL</code></li>
+</ul>
+<h2 id="Route-53-–-Alias-Records-Targets"><a href="#Route-53-–-Alias-Records-Targets" class="headerlink" title="Route 53 – Alias Records Targets"></a>Route 53 – Alias Records Targets</h2><p><strong>You cannot set an ALIAS record for an EC2 DNS name</strong> - EXAM</p>
+<h2 id="Route-53-–-Routing-Policies"><a href="#Route-53-–-Routing-Policies" class="headerlink" title="Route 53 – Routing Policies"></a>Route 53 – Routing Policies</h2><ul>
+<li>Define how Route 53 responds to DNS queries</li>
+<li>Don’t get confused by the word “Routing”<ul>
+<li>It’s not the same as Load balancer routing which routes the traffic</li>
+<li>DNS does not route any traffic, it only responds to the DNS queries</li>
+</ul>
+</li>
+<li>Route 53 Supports the following Routing Policies<ul>
+<li>Simple</li>
+<li>Weighted</li>
+<li>Failover</li>
+<li>Latency based</li>
+<li>Geolocation</li>
+<li>Multi-Value Answer</li>
+<li>Geoproximity (using Route 53 Traffic Flow feature)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Types-of-health-checks"><a href="#Types-of-health-checks" class="headerlink" title="Types of health checks:"></a>Types of health checks:</h3><ol>
+<li><code>Health checks that monitor an endpoint</code> – You can configure a health check that monitors an endpoint that you specify either by IP address or by domain name. At regular intervals that you specify, Route 53 submits automated requests over the internet to your application, server, or other resources to verify that it’s reachable, available, and functional. Optionally, you can configure the health check to make requests similar to those that your users make, such as requesting a web page from a specific URL.</li>
+<li><code>Health checks that monitor other health checks</code> (calculated health checks) – You can create a health check that monitors whether Route 53 considers other health checks healthy or unhealthy. One situation where this might be useful is when you have multiple resources that perform the same function, such as multiple web servers, and your chief concern is whether some minimum number of your resources are healthy. You can create a  health check for each resource without configuring notifications for those health checks. Then you can create a health check that monitors the status of the other health checks, and that notifies you only when the number of available web resources drops below a specified threshold.</li>
+<li><code>Health checks that monitor CloudWatch alarms</code> – You can create CloudWatch alarms that monitor the status of CloudWatch metrics, such as the number of throttled read events for an Amazon DynamoDB database or the number of Elastic Load Balancing hosts that are considered healthy. After you create an alarm, you can create a health check that monitors the same data stream that CloudWatch monitors for the alarm.</li>
+</ol>
+<h3 id="“Evaluate-Target-Health”"><a href="#“Evaluate-Target-Health”" class="headerlink" title="“Evaluate Target Health”"></a>“Evaluate Target Health”</h3><p>You need to set the “Evaluate Target Health” <code>flag</code> to <code>true</code> on Route 53. This way, Route 53 will check both ALB entry to ensure that your ALBs are responding.</p>
+<h3 id="Routing-Policies-–-Weighted"><a href="#Routing-Policies-–-Weighted" class="headerlink" title="Routing Policies – Weighted"></a>Routing Policies – Weighted</h3><ul>
+<li>Control the % of the requests that go to each specific resource</li>
+<li>Assign each record a relative weight:<ul>
+<li>traffic (%) &#x3D; weight for a specific record &#x2F;sum of all weight records</li>
+<li>Weights don’t need to sum up to 100</li>
+</ul>
+</li>
+<li>DNS records must have the same name and type</li>
+<li><code>Can be associated with Health Checks</code>.</li>
+<li><code>Use cases: load balancing between regions, testing new application versions</code>…</li>
+<li><code>Assign a weight of 0 to a record to stop sending traffic to a resource</code>.</li>
+<li><code>If all records have weight of 0, then all records will be returned equally</code>.</li>
+</ul>
+<h3 id="Routing-Policies-–-Latency-based"><a href="#Routing-Policies-–-Latency-based" class="headerlink" title="Routing Policies – Latency-based"></a>Routing Policies – Latency-based</h3><ul>
+<li>Redirect to the resource that has the least latency close to us</li>
+<li>Super helpful when latency for users is a priority</li>
+<li>Latency is based on traffic between users and AWS Regions</li>
+<li>Germany users may be directed to the US (if that’s the lowest latency)</li>
+<li>Can be associated with Health Checks (has a failover capability)</li>
+</ul>
+<h3 id="Route-53-–-Health-Checks"><a href="#Route-53-–-Health-Checks" class="headerlink" title="Route 53 – Health Checks"></a>Route 53 – Health Checks</h3><ul>
+<li><p>HTTP Health Checks are only for <code>public resources</code></p>
+</li>
+<li><p>Health Check &#x3D;&gt; Automated DNS Failover:</p>
+<ol>
+<li>Health checks that monitor an endpoint (application, server, other AWS resource)</li>
+<li>Health checks that monitor other health checks (Calculated Health Checks)</li>
+<li>Health checks that monitor CloudWatch Alarms (full control !!) – e.g., throttles of DynamoDB, alarms on RDS, custom metrics,
+… (helpful for private resources)</li>
+</ol>
+</li>
+<li><p>Health Checks are integrated with CW metrics</p>
+</li>
+</ul>
+<h3 id="Health-Checks-–-Private-Hosted-Zones"><a href="#Health-Checks-–-Private-Hosted-Zones" class="headerlink" title="Health Checks – Private Hosted Zones"></a>Health Checks – Private Hosted Zones</h3><ul>
+<li>Route 53 health checkers are outside the VPC.</li>
+<li>They <code>can’t access private</code> endpoints (private VPC or on-premises resource)</li>
+<li>You can create a <code>CloudWatch Metric</code> and associate a <code>CloudWatch Alarm</code>, then create a Health Check that checks the alarm itself.</li>
+</ul>
+<h3 id="Routing-Policies-–-Geolocation"><a href="#Routing-Policies-–-Geolocation" class="headerlink" title="Routing Policies – Geolocation"></a>Routing Policies – Geolocation</h3><ul>
+<li>Different from Latency-based!</li>
+<li>This routing is <code>based on user location</code></li>
+<li>Specify location by Continent, Country or by US State (if there’s overlapping, most precise location selected)</li>
+<li>Should create a “<code>Default”</code> record (in case there’s no match on location)</li>
+<li>Use cases: website localization, restrict content distribution, load balancing, …</li>
+<li>Can be associated with Health Checks</li>
+</ul>
+<h3 id="Routing-Policies-–-Geoproximity"><a href="#Routing-Policies-–-Geoproximity" class="headerlink" title="Routing Policies – Geoproximity"></a>Routing Policies – Geoproximity</h3><ul>
+<li><p>Route traffic to your resources based on the geographic location of users and resources</p>
+</li>
+<li><p>Ability <code>to shift more traffic to resources based</code> on the defined <code>bias</code></p>
+</li>
+<li><p>To change the size of the geographic region, specify <code>bias</code> values:</p>
+<ul>
+<li>To expand (1 to 99) – more traffic to the resource</li>
+<li>To shrink (-1 to -99) – less traffic to the resource</li>
+</ul>
+</li>
+<li><p>Resources can be:</p>
+<ul>
+<li>AWS resources (specify AWS region)</li>
+<li>Non-AWS resources (specify Latitude and Longitude)</li>
+</ul>
+</li>
+<li><p>You must use Route 53 <code>Traffic Flow</code> to use this feature</p>
+</li>
+</ul>
+<h3 id="Route-53-–-Traffic-flow"><a href="#Route-53-–-Traffic-flow" class="headerlink" title="Route 53 – Traffic flow"></a>Route 53 – Traffic flow</h3><ul>
+<li>Simplify the process of creating and maintaining records in large and complex configurations</li>
+<li>Visual editor to manage complex routing decision trees</li>
+<li>Configurations can be saved as <code>Traffic Flow Policy</code><ul>
+<li>Can be applied to different Route 53 Hosted Zones (different domain names)</li>
+<li>Supports versioning</li>
+</ul>
+</li>
+</ul>
+<h3 id="Route-53-–-Hybrid-DNS-OJO"><a href="#Route-53-–-Hybrid-DNS-OJO" class="headerlink" title="Route 53 – Hybrid DNS - OJO"></a>Route 53 – Hybrid DNS - OJO</h3><ul>
+<li>By default, Route 53 Resolver automatically answers DNS queries for:<ul>
+<li>Local domain names for EC2 instances</li>
+<li>Records in Private Hosted Zones</li>
+<li>Records in public Name Servers</li>
+</ul>
+</li>
+<li><code>Hybrid DNS</code> – resolving DNS queries between VPC (Route 53 Resolver) and your networks (other DNS Resolvers)</li>
+<li>Networks can be:<ul>
+<li>VPC itself &#x2F; Peered VPC</li>
+<li>On-premises Network (connected through Direct Connect or AWS VPN)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Route-53-–-Resolver-Endpoints"><a href="#Route-53-–-Resolver-Endpoints" class="headerlink" title="Route 53 – Resolver Endpoints"></a>Route 53 – Resolver Endpoints</h3><ul>
+<li><p><code>Inbound Endpoint</code></p>
+<ul>
+<li>DNS Resolvers on your network can forward DNS queries to Route 53 Resolver</li>
+<li>Allows your DNS Resolvers to resolve domain names for AWS resources (e.g., EC2 instances) and records in Route 53 Private Hosted Zones</li>
+</ul>
+</li>
+<li><p><code>Outbound Endpoint</code></p>
+<ul>
+<li>Route 53 Resolver conditionally forwards DNS queries to your DNS Resolvers</li>
+<li>Use <code>Resolver</code> Rules to forward DNS queries to your DNS Resolvers</li>
+</ul>
+</li>
+<li><p>Associated with one or more VPCs in the same AWS Region</p>
+</li>
+<li><p>Create in two AZs for high availability</p>
+</li>
+<li><p>Each Endpoint supports 10,000 queries per second per IP address</p>
+</li>
+</ul>
+<h3 id="Route-53-–-Resolver-Rules"><a href="#Route-53-–-Resolver-Rules" class="headerlink" title="Route 53 – Resolver Rules"></a>Route 53 – Resolver Rules</h3><ul>
+<li>Control which DNS queries are forwarded to DNS Resolvers on your network</li>
+<li><code>Conditional Forwarding Rules (Forwarding Rules)</code><ul>
+<li>Forward DNS queries for a specified domain and all its subdomains <code>to target IP addresses</code></li>
+</ul>
+</li>
+<li><code>System Rules</code><ul>
+<li>Selectively overriding the behavior defined in Forwarding Rules (e.g., don’t forward DNS queries for a subdomain acme.example.com)</li>
+</ul>
+</li>
+<li><code>Auto-defined System Rules</code><ul>
+<li>Defines how DNS queries for selected domains are resolved (e.g., AWS internal domain names, Privated Hosted Zones)</li>
+</ul>
+</li>
+<li>If multiple rules matched, Route 53 Resolver chooses the most specific match</li>
+<li><code>Resolver Rules can be shared across accounts using AWS RAM</code><ul>
+<li>Manage them centrally in one account</li>
+<li>Send DNS queries from multiple VPC to the target IP defined in the rule</li>
+</ul>
+</li>
+</ul>
+<hr>
 <h2 id="ELB"><a href="#ELB" class="headerlink" title="ELB"></a>ELB</h2><h3 id="Elastic-Load-Balancing-and-AWS-X-Ray"><a href="#Elastic-Load-Balancing-and-AWS-X-Ray" class="headerlink" title="Elastic Load Balancing and AWS X-Ray"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/xray/latest/devguide/xray-services-elb.html">Elastic Load Balancing and AWS X-Ray</a></h3><p>Elastic Load Balancing application load balancers add a trace ID to incoming HTTP requests in a header named X-Amzn-Trace-Id.</p>
 <pre><code>  X-Amzn-Trace-Id: Root=1-5759e988-bd862e3fe1be46a994272793
 </code></pre>
 <p><code>Load balancers do not send data to X-Ray</code>, and do not appear as a node on your service map.</p>
 <h3 id="ELB-access-logs"><a href="#ELB-access-logs" class="headerlink" title="ELB access logs"></a>ELB access logs</h3><p>ELB access logs is an optional feature of Elastic Load Balancing that is disabled by default. The access logs capture detailed information about requests sent to your load balancer. Each log contains information such as the time the request was received, the client’s IP address, latencies, request paths, and server responses. You can use these access logs to analyze traffic patterns and troubleshoot issues. Each access log file is automatically encrypted using SSE-S3 before it is stored in your S3 bucket and decrypted when you access it. You do not need to take any action; the encryption and decryption is performed transparently</p>
-<p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html">Access logs for your Application Load Balancer</a></p>
+<h4 id="VPC-Flow-Logs-only-captures-information-about-the-IP-traffic-going-to-and-from-network-interfaces-in-a-VPC"><a href="#VPC-Flow-Logs-only-captures-information-about-the-IP-traffic-going-to-and-from-network-interfaces-in-a-VPC" class="headerlink" title="VPC Flow Logs only captures information about the IP traffic going to and from network interfaces in a VPC"></a><code>VPC Flow Logs</code> only captures information about the <code>IP traffic</code> going to and from network interfaces in a VPC</h4><p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html">Access logs for your Application Load Balancer</a></p>
 <h3 id="CloudTrail-logs"><a href="#CloudTrail-logs" class="headerlink" title="CloudTrail logs"></a>CloudTrail logs</h3><p><code>Elastic Load Balancing</code> is <code>integrated</code> with <code>AWS CloudTrail</code>, a service that provides a record of actions taken by a user, role, or an AWS service in Elastic Load Balancing. <code>CloudTrail captures</code> all <code>API calls for Elastic Load Balancing as events</code>. The calls captured include calls from the AWS Management Console and code calls to the Elastic Load Balancing API operations.</p>
 <h2 id="Amazon-Machine-Images-AMIs"><a href="#Amazon-Machine-Images-AMIs" class="headerlink" title="Amazon Machine Images (AMIs)"></a>Amazon Machine Images (AMIs)</h2><h3 id="Sharing"><a href="#Sharing" class="headerlink" title="Sharing"></a>Sharing</h3><p>The key points to consider before planning the expansion and sharing of Amazon Machine Images (AMIs) are:</p>
 <ol>
@@ -1230,13 +2098,10 @@ the instance is launched</p>
 <li>If your throughput is near or exceeding 20K packets per second (PPS) on the VIF driver, it’s a best practice to use enhanced networking.</li>
 </ol>
 <p>All current generation instance types support enhanced networking, except for T2 instances.</p>
-<h2 id="Cost-Allocation-Tags"><a href="#Cost-Allocation-Tags" class="headerlink" title="Cost Allocation Tags"></a>Cost Allocation Tags</h2><p>A tag is a label that you or AWS assigns to an AWS resource. Each tag consists of a key and a value. For each resource, each tag key must be unique, and each tag key can have only one value. You can use tags to organize your resources, and cost allocation tags to track your AWS costs on a detailed level. After you activate cost allocation tags, AWS uses the cost allocation tags to organize your resource costs on your cost allocation report, to make it easier for you to categorize and track your AWS costs.</p>
+<h2 id="Cost-Allocation-Tags-1"><a href="#Cost-Allocation-Tags-1" class="headerlink" title="Cost Allocation Tags"></a>Cost Allocation Tags</h2><p>A tag is a label that you or AWS assigns to an AWS resource. Each tag consists of a key and a value. For each resource, each tag key must be unique, and each tag key can have only one value. You can use tags to organize your resources, and cost allocation tags to track your AWS costs on a detailed level. After you activate cost allocation tags, AWS uses the cost allocation tags to organize your resource costs on your cost allocation report, to make it easier for you to categorize and track your AWS costs.</p>
 <h2 id="👀-Q-AWS-Resource-Groups-Tag-Editor"><a href="#👀-Q-AWS-Resource-Groups-Tag-Editor" class="headerlink" title="👀 *Q AWS Resource Groups Tag Editor"></a>👀 <code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/ARG/latest/userguide/tag-editor.html">AWS Resource Groups Tag Editor</a></h2><p>With Resource Groups, you can create, maintain, and view a collection of resources that share common tags. Tag Editor manages <code>tags across services and AWS Regions</code>. Tag Editor can perform a global search and can edit a large number of tags at one time.</p>
 <h2 id="OpsWorks"><a href="#OpsWorks" class="headerlink" title="OpsWorks"></a>OpsWorks</h2><p>AWS OpsWorks is a <code>configuration management service</code> that provides managed instances of <code>Chef</code> and <code>Puppet</code>.</p>
 <h3 id="👀-Chef-Server"><a href="#👀-Chef-Server" class="headerlink" title="👀 Chef Server"></a>👀 Chef Server</h3><p>You can <code>add nodes</code> automatically to your Chef Server using the <code>unattended method</code>. The recommended method of unattended (or automatic) association of new nodes is to <code>configure</code> the <code>Chef Client Cookbook</code>.</p>
-<h2 id="👀-Q-AWS-Personal-Health-Dashboard"><a href="#👀-Q-AWS-Personal-Health-Dashboard" class="headerlink" title="👀 *Q AWS Personal Health Dashboard"></a>👀 <code>*Q</code> AWS Personal Health Dashboard</h2><p>AWS Personal Health Dashboard provides <code>alerts</code> and <em><code>remediation guidance</code></em> when AWS is experiencing <code>events that may impact you</code>. While the Service Health Dashboard displays the general status of AWS services, Personal Health Dashboard gives you a personalized view into the <em>performance and availability</em> of the AWS services underlying your AWS resources.</p>
-<p>What’s more, Personal Health Dashboard proactively notifies you when AWS experiences any events that may affect you, helping provide quick visibility and guidance to help you minimize the impact of events in progress, and plan for any scheduled changes, such as AWS hardware maintenance.AWS Inspector</p>
-<p>The <code>AWS Health API provides</code> programmatic <code>access</code> to the <code>AWS Health information</code> that appears in the AWS Personal Health Dashboard. You can use the API operations to get information about events that might affect your AWS services and resources.</p>
 <h2 id="Q-AWS-Service-Health-Dashboard"><a href="#Q-AWS-Service-Health-Dashboard" class="headerlink" title="*Q AWS Service Health Dashboard"></a><code>*Q</code> AWS Service Health Dashboard</h2><p>Publishes the most up-to-the-minute information on the status and availability of all AWS services in tabular form for all Regions that AWS is present in. You can check on this page <a target="_blank" rel="noopener" href="https://status.aws.amazon.com/">https://status.aws.amazon.com/</a> to get current status information.</p>
 <h2 id="👀-Cost-Allocation-Tags-Account-Level"><a href="#👀-Cost-Allocation-Tags-Account-Level" class="headerlink" title="👀 Cost Allocation Tags - Account Level"></a>👀 Cost Allocation Tags - Account Level</h2><p>A tag is a label that you or AWS assigns to an AWS resource. Each tag consists of a key and a value. For each resource, each tag key must be unique, and each tag key can have only one value. You can use tags to organize your resources, and cost allocation tags to track your AWS costs on a detailed level. After you activate cost allocation tags, AWS uses the cost allocation tags to organize your resource costs on your cost allocation report, to make it easier for you to categorize and track your AWS costs.</p>
 <h2 id="Protecting-data-using-encryption"><a href="#Protecting-data-using-encryption" class="headerlink" title="Protecting data using encryption"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingEncryption.html">Protecting data using encryption</a></h2><h3 id="SSE-S3-Server-Side-Encryption-with-Amazon-S3-Managed-Keys-SSE-S3"><a href="#SSE-S3-Server-Side-Encryption-with-Amazon-S3-Managed-Keys-SSE-S3" class="headerlink" title="SSE-S3 - Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3)"></a>SSE-S3 - Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3)</h3><p>Using SSE-S3 each object is encrypted with a unique key employing strong multi-factor encryption. As an additional safeguard, it encrypts the key itself with a master key that it regularly rotates. Amazon S3 server-side encryption uses one of the strongest block ciphers available, 256-bit Advanced Encryption Standard (AES-256), to encrypt your data.</p>
@@ -1253,13 +2118,8 @@ the instance is launched</p>
 <li>Dedicated Hosts allow you to use your existing <code>per-socket</code>, <code>per-core</code>, or <code>per-VM software licenses</code>, including <code>Windows Server</code>, <code>Microsoft SQL Server</code>, <code>SUSE</code>, and <code>Linux Enterprise Server</code>.</li>
 </ul>
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html#dedicated-hosts-dedicated-instances">Dedicated Hosts</a></p>
-<h2 id="AWS-Organizations"><a href="#AWS-Organizations" class="headerlink" title="AWS Organizations"></a>AWS Organizations</h2><p>If you have created an organization in AWS Organizations, you <code>can</code> also <code>create a trail</code> that will <code>log all events for all AWS accounts in that organization</code>. This is referred to as an organization trail.</p>
-<p>Offers <code>policy-based</code> management for multiple AWS accounts. With Organizations, you can create groups of accounts, automate account creation, and apply and manage policies for those groups. Organizations enable you to centrally manage policies across multiple accounts without requiring custom scripts and manual processes. It allows you to create Service Control Policies (SCPs) that centrally control AWS service use across multiple AWS accounts.</p>
 <h2 id="AWS-CloudHSM-Hardware-Security-Module"><a href="#AWS-CloudHSM-Hardware-Security-Module" class="headerlink" title="AWS CloudHSM (Hardware Security Module)"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/clusters.html">AWS CloudHSM (Hardware Security Module)</a></h2><p>CloudHSM provides <code>tamper-resistant hardware</code> that is <code>available</code> in <code>multiple Availability Zones</code> (AZs), ensuring <code>high availability</code> and <code>durability of the keys</code>.</p>
 <p>AWS CloudHSM provides dedicated <code>hardware security</code> modules to store and <code>manage cryptographic KEYS securely</code>. It offers <code>FIPS 140-2 Level 3</code> validated HSMs, which are ideal for meeting compliance requirements. With CloudHSM, you have full control over the key lifecycle and can perform key operations within the HSM, ensuring strong security and compliance for your keys.</p>
-<h2 id="AWS-Service-Catalog"><a href="#AWS-Service-Catalog" class="headerlink" title="AWS Service Catalog"></a>AWS Service Catalog</h2><p>AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS. These IT services can include everything from virtual machine images, servers, software, and databases to complete multi-tier application architectures. AWS Service Catalog allows you to centrally manage deployed IT services and your applications, resources, and metadata. This helps you achieve consistent governance and meet your compliance requirements while enabling users to quickly deploy only the approved IT services they need.</p>
-<h4 id="Sharing-and-Importing-Portfolios"><a href="#Sharing-and-Importing-Portfolios" class="headerlink" title="Sharing and Importing Portfolios"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_sharing.html">Sharing and Importing Portfolios</a></h4><p>To make your Service Catalog products available to users who are not in your AWS accounts, such as users who belong to other organizations or to other AWS accounts in your organization, you share your portfolios with them. You can share in several ways, including <code>account-to-account</code> sharing, <code>organizational</code> sharing, and <code>deploying catalogs using stack sets</code>.</p>
-<p>Before you share your products and portfolios to other accounts, you must decide whether you want to share a reference of the catalog or to deploy a copy of the catalog into each recipient account. Note that if you deploy a copy, you must redeploy if there are updates you want to propagate to the recipient accounts.</p>
 <p>You can use stack sets to deploy your catalog to many accounts at the same time. If you want to share a reference (an imported version of your portfolio that stays in sync with the original), you can use account-to-account sharing or you can share using AWS Organizations.</p>
 <h2 id="Amazon-EFS-–-Elastic-File-System"><a href="#Amazon-EFS-–-Elastic-File-System" class="headerlink" title="Amazon EFS – Elastic File System"></a>Amazon EFS – Elastic File System</h2><ul>
 <li><p>Use cases: content management, web serving, data sharing, Wordpress</p>
@@ -1346,7 +2206,7 @@ To connect your Amazon EFS file system to your Amazon EC2 instance, you <code>mu
 <h2 id="👀-Amazon-Inspector"><a href="#👀-Amazon-Inspector" class="headerlink" title="👀 Amazon Inspector"></a>👀 Amazon Inspector</h2><p>It is an automated security assessment <code>service</code> that <code>helps improve the security and compliance</code> of <code>applications deployed on AWS</code>.
 Amazon Inspector <code>checks</code> for <code>unintended network accessibility</code> of your Amazon EC2 instances and <em><code>vulnerabilities</code></em> on those EC2 instances.</p>
 <p>Amazon Inspector also <code>integrates</code> with <code>AWS Security Hub</code> to provide a <code>view</code> of your <code>security posture across multiple AWS accounts</code>.</p>
-<h2 id="AWS-Control-Tower"><a href="#AWS-Control-Tower" class="headerlink" title="AWS Control Tower"></a>AWS Control Tower</h2><p>Offers the easiest way to <code>set up</code> and <code>govern</code> a <code>secure, multi-account AWS environment</code>. It establishes a landing zone that is based on the best-practices blueprints and enables governance using guardrails you can choose from a pre-packaged list. The landing zone is a well-architected, multi-account baseline that follows AWS best practices. Guardrails implement governance rules for security, compliance, and operations.</p>
+<h2 id="AWS-Control-Tower-1"><a href="#AWS-Control-Tower-1" class="headerlink" title="AWS Control Tower"></a>AWS Control Tower</h2><p>Offers the easiest way to <code>set up</code> and <code>govern</code> a <code>secure, multi-account AWS environment</code>. It establishes a landing zone that is based on the best-practices blueprints and enables governance using guardrails you can choose from a pre-packaged list. The landing zone is a well-architected, multi-account baseline that follows AWS best practices. Guardrails implement governance rules for security, compliance, and operations.</p>
 <h2 id="AWS-X-Ray"><a href="#AWS-X-Ray" class="headerlink" title="AWS X-Ray"></a>AWS X-Ray</h2><ol>
 <li><code>S3</code> - AWS X-Ray integrates with Amazon S3 to trace upstream requests to update your application’s S3 buckets.</li>
 <li><code>Lambda functions</code> - Lambda runs the X-Ray daemon and records a segment with details about the function invocation and execution.</li>
@@ -1372,28 +2232,6 @@ Amazon Inspector <code>checks</code> for <code>unintended network accessibility<
 <h2 id="👀-AWS-Cost"><a href="#👀-AWS-Cost" class="headerlink" title="👀 AWS Cost"></a>👀 AWS Cost</h2><p>In <code>AWS Cost</code> and <code>Usage Reports</code>, you can choose to have AWS <code>publish billing reports</code> to an <code>Amazon Simple Storage</code> Service (Amazon S3) bucket that you own. You can receive reports that break down your costs by the hour or month, by product or product resource, or by tags that you define yourself. AWS updates the report in your bucket once a day in a comma-separated value (CSV) format. You can view the reports using spreadsheet software such as Microsoft Excel or Apache OpenOffice Calc or access them from an application using the Amazon S3 API.</p>
 <h2 id="AWS-Database-Migration-Service-DMS"><a href="#AWS-Database-Migration-Service-DMS" class="headerlink" title="AWS Database Migration Service (DMS)"></a>AWS Database Migration Service (DMS)</h2><h2 id="Amazon-Macie"><a href="#Amazon-Macie" class="headerlink" title="Amazon Macie"></a>Amazon Macie</h2><p>is a fully managed data security and data privacy service that uses <code>machine learning</code> and pattern matching to help you discover, monitor, and protect sensitive data in your AWS environment. Macie automates the discovery of sensitive data, such as <code>personally identifiable information (PII)</code> and financial data, to provide you with a better understanding of the data that your organization stores in Amazon S3.
 Amazon Macie <code>only supports S3 as a data source</code>.</p>
-<h2 id="Amazon-Route-53"><a href="#Amazon-Route-53" class="headerlink" title="Amazon Route 53"></a>Amazon Route 53</h2><h3 id="Types-of-health-checks"><a href="#Types-of-health-checks" class="headerlink" title="Types of health checks:"></a>Types of health checks:</h3><ol>
-<li><code>Health checks that monitor an endpoint</code> – You can configure a health check that monitors an endpoint that you specify either by IP address or by domain name. At regular intervals that you specify, Route 53 submits automated requests over the internet to your application, server, or other resources to verify that it’s reachable, available, and functional. Optionally, you can configure the health check to make requests similar to those that your users make, such as requesting a web page from a specific URL.</li>
-<li><code>Health checks that monitor other health checks</code> (calculated health checks) – You can create a health check that monitors whether Route 53 considers other health checks healthy or unhealthy. One situation where this might be useful is when you have multiple resources that perform the same function, such as multiple web servers, and your chief concern is whether some minimum number of your resources are healthy. You can create a  health check for each resource without configuring notifications for those health checks. Then you can create a health check that monitors the status of the other health checks, and that notifies you only when the number of available web resources drops below a specified threshold.</li>
-<li><code>Health checks that monitor CloudWatch alarms</code> – You can create CloudWatch alarms that monitor the status of CloudWatch metrics, such as the number of throttled read events for an Amazon DynamoDB database or the number of Elastic Load Balancing hosts that are considered healthy. After you create an alarm, you can create a health check that monitors the same data stream that CloudWatch monitors for the alarm.</li>
-</ol>
-<h3 id="“Evaluate-Target-Health”"><a href="#“Evaluate-Target-Health”" class="headerlink" title="“Evaluate Target Health”"></a>“Evaluate Target Health”</h3><p>You need to set the “Evaluate Target Health” <code>flag</code> to <code>true</code> on Route 53. This way, Route 53 will check both ALB entry to ensure that your ALBs are responding.</p>
-<h2 id="Access-Analyzer"><a href="#Access-Analyzer" class="headerlink" title="Access Analyzer"></a>Access Analyzer</h2><p>helps you identify the resources in your organization and accounts, such as Amazon S3 buckets or IAM roles, shared with an external entity. This lets you identify unintended access to your resources and data, which is a security risk. Access Analyzer identifies resources shared with external principals by using logic-based reasoning to analyze the resource-based policies in your AWS environment. For each instance of a resource shared outside of your account, Access Analyzer generates a finding.</p>
-<h2 id="👀"><a href="#👀" class="headerlink" title="👀"></a>👀</h2><p>You can allow IAM users or roles in one AWS account to use a customer master key (CMK) in a different AWS account. You can add these permissions when you create the CMK or change the permissions for an existing CMK.</p>
-<p><code>To permit the usage of a CMK to users and roles in another account, you must use two different types of policies</code>:</p>
-<ol>
-<li>The key policy for the CMK must give the external account (or users and roles in the external account) permission to use the CMK. The key policy is in the account that owns the CMK.</li>
-<li>IAM policies in the external account must delegate the key policy permissions to its users and roles. These policies are set in the external account and give permissions to users and roles in that account.</li>
-</ol>
-<p>The cfn-signal helper script signals AWS CloudFormation to indicate whether Amazon EC2 instances have been successfully created or updated. If you install and configure software applications on instances, you can signal AWS CloudFormation when those software applications are ready.</p>
-<p>You use the cfn-signal script in conjunction with a CreationPolicy or an Auto Scaling group with a WaitOnResourceSignals update policy. When AWS CloudFormation creates or updates resources with those policies, it suspends work on the stack until the resource receives the requisite number of signals or until the timeout period is exceeded. For each valid signal that AWS CloudFormation receives, AWS CloudFormation publishes the signals to the stack events so that you track each signal.</p>
-<h2 id="👀-Q-Collect-information-about-the-service-costs-of-each-developer"><a href="#👀-Q-Collect-information-about-the-service-costs-of-each-developer" class="headerlink" title="👀 *Q Collect information about the service costs of each developer"></a><code>👀</code> <code>*Q</code> Collect information about the service costs of each developer</h2><ul>
-<li>The AWS-generated <em>tag</em> <code>createdBy</code> defines and applies to supported AWS resources for cost allocation purposes. To use the AWS-generated tags, a management account owner must activate it in the Billing and Cost Management console. When a management account owner activates the tag, it is also activated for all member accounts.</li>
-<li><code>Cost Explorer</code> is a tool that enables you to view and <code>analyze your costs and usage</code>. You can explore your usage and costs using the main graph, the Cost Explorer cost and usage reports, or the Cost Explorer RI reports.</li>
-</ul>
-<p>AWS Cost Explorer provides the following prebuilt reports:</p>
-<p>– EC2 <code>RI Utilization %</code> offers relevant data to identify and act on opportunities to increase your Reserved Instance usage efficiency. It’s calculated by dividing Reserved Instance used hours by total Reserved Instance purchased hours.</p>
-<p>– EC2 <code>RI Coverage %</code> shows how much of your overall instance usage is covered by Reserved Instances. This lets you make informed decisions about when to purchase or modify a Reserved Instance to ensure maximum coverage. It’s calculated by dividing Reserved Instance used hours by total EC2 On-Demand and Reserved Instance hours.</p>
 <h2 id="👀-Run-Command"><a href="#👀-Run-Command" class="headerlink" title="👀 Run Command"></a>👀 Run Command</h2><h2 id="👀EC2Rescue"><a href="#👀EC2Rescue" class="headerlink" title="👀EC2Rescue"></a><code>👀</code><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-ec2rescue.html">EC2Rescue</a></h2><p>EC2Rescue can help you diagnose and troubleshoot problems on Amazon EC2 Linux and Windows Server instances. You can run the tool manually, as described in Using EC2Rescue for Linux Server and Using EC2Rescue for Windows Server. Or, you can run the tool automatically by using Systems Manager Automation and the AWSSupport-ExecuteEC2Rescue document. The AWSSupport-ExecuteEC2Rescue document is designed to perform a combination of Systems Manager actions, AWS CloudFormation actions, and Lambda functions that automate the steps normally required to use EC2Rescue.</p>
 <p>EC2Rescue for EC2 Windows is a convenient, straightforward, GUI-based troubleshooting tool that can be run on your Amazon EC2 Windows Server instances to troubleshoot operating system-level issues and collect advanced logs and configuration files for further analysis. EC2Rescue simplifies and expedites the troubleshooting of EC2 Windows instances.</p>
 <h2 id="Service-Control-Policies"><a href="#Service-Control-Policies" class="headerlink" title="Service Control Policies"></a>Service Control Policies</h2><h3 id="Groups"><a href="#Groups" class="headerlink" title="Groups"></a>Groups</h3><p>Can be granted permissions using access control policies - Groups can be granted permissions using access control policies. This makes it easier to manage permissions for a collection of users, rather than having to manage permissions for each user.<a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html">https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html</a></p>
@@ -1458,12 +2296,6 @@ AWS <code>Service Catalog</code> allows you to create and manage catalogs of IT 
 AWS &#96;&#96;Systems Manager Automation provides a way to automate common operational tasks across AWS resources. You can create automation workflows that include tagging resources with the desired set of tags. By utilizing Systems Manager Automation, you can enforce consistent tagging practices during resource creation.</p>
 </li>
 </ul>
-<h2 id="👀-AWS-Artifact"><a href="#👀-AWS-Artifact" class="headerlink" title="👀 AWS Artifact"></a>👀 <code>AWS Artifact</code></h2><p>is a service that provides <code>on-demand</code> access to AWS <code>compliance</code> reports and other relevant documents.</p>
-<h2 id="👀-AWS-Service-Catalog"><a href="#👀-AWS-Service-Catalog" class="headerlink" title="👀 AWS Service Catalog"></a>👀 AWS Service Catalog</h2><p>provides a <code>TagOption library</code>. A TagOption is a key-value pair managed in AWS Service Catalog. It is not an AWS tag but serves as a template for creating an AWS tag based on the TagOption.</p>
-<p>The TagOption library makes it easier to enforce the following:</p>
-<p>– A consistent <code>taxonomy</code>
-– Proper tagging of AWS Service Catalog resources
-– Defined, user-selectable options for allowed tags</p>
 <h2 id="AWS-System-Manager"><a href="#AWS-System-Manager" class="headerlink" title="AWS System Manager"></a>AWS System Manager</h2><p>👀 AWS Systems Manager provides a unified, centralized way to manage both your Amazon EC2 instances and on-premises servers (including <code>Raspbian</code> systems, devices such as <code>Raspberry Pi</code> through a single interface). It offers a wide range of capabilities, including <code>inventory management</code>, <code>patch management</code>, <code>automation</code>, and <code>configuration management</code>, allowing you to efficiently manage your hybrid infrastructure from a single console. With Systems Manager, you can maintain consistent configurations, apply patches, and automate administrative tasks for your on-premises servers, just like you would for your EC2 instances.</p>
 <p>TODO
 gives you visibility and control of your infrastructure on AWS. Systems Manager provides a unified user interface so you can view operational data from multiple AWS services and allows you to automate operational tasks across your AWS resources. With Systems Manager, you can group resources, like Amazon EC2 instances, Amazon S3 buckets, or Amazon RDS instances, by application, view operational data for monitoring and troubleshooting, and take action on your groups of resources. Systems Manager simplifies resource and application management, shortens the time to detect and resolve operational problems, and makes it easy to operate and manage your infrastructure securely at scale.</p>
@@ -1672,11 +2504,15 @@ Target Groups</p>
 <li><code>IteratorAge</code> – time between when a Stream receives a record and when the Event Source Mapping sends the event to the function (for Event Source Mapping that reads from Stream)</li>
 <li><code>ConcurrentExecutions</code> – number of function instances that are processing events</li>
 </ul>
+<hr>
+<h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p>The cfn-signal helper script signals AWS CloudFormation to indicate whether Amazon EC2 instances have been successfully created or updated. If you install and configure software applications on instances, you can signal AWS CloudFormation when those software applications are ready.</p>
+<p>You use the cfn-signal script in conjunction with a CreationPolicy or an Auto Scaling group with a WaitOnResourceSignals update policy. When AWS CloudFormation creates or updates resources with those policies, it suspends work on the stack until the resource receives the requisite number of signals or until the timeout period is exceeded. For each valid signal that AWS CloudFormation receives, AWS CloudFormation publishes the signals to the stack events so that you track each signal.</p>
+<p> maximum coverage. It’s calculated by dividing Reserved Instance used hours by total EC2 On-Demand and Reserved Instance hours.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="cljjjs55a0004bmoyd2gracfb" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="cljtprqzo0004fbop93j06gye" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1702,7 +2538,7 @@ Target Groups</p>
       <ul>
         
           <li>
-            <a href="/2023/07/01/Getting-Started-With-Hexo/">Getting started with Hexo</a>
+            <a href="/2023/07/08/Getting-Started-With-Hexo/">Getting started with Hexo</a>
           </li>
         
           <li>
