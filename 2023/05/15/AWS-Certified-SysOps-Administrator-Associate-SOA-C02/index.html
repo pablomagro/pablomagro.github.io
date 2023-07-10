@@ -13,8 +13,9 @@
 <meta property="og:description" content="Summary of concepts for AWS SysOps Administrator Certification.CloudWatchAWS CloudWatch MetricsCloudWatch provides metrics for every services in AWS  Metric is a variable to monitor (CPUUtilization, N">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog.pablo-magro-gaspar.site/images/AWS-EventBridge-Rules.png">
+<meta property="og:image" content="https://blog.pablo-magro-gaspar.site/images/AWS-VPC-Diagram.png">
 <meta property="article:published_time" content="2023-05-15T01:27:03.000Z">
-<meta property="article:modified_time" content="2023-07-08T07:58:18.961Z">
+<meta property="article:modified_time" content="2023-07-10T06:28:27.153Z">
 <meta property="article:author" content="Pablo Magro Gaspar">
 <meta property="article:tag" content="Certifications">
 <meta property="article:tag" content="SysOps">
@@ -456,6 +457,8 @@ These AWS Config rules act as controls to prevent any non-compliant S3 activitie
 </li>
 </ul>
 <hr>
+<h2 id="👀-Q-AWS-Task-Orchestrator-and-Executor-AWSTOE"><a href="#👀-Q-AWS-Task-Orchestrator-and-Executor-AWSTOE" class="headerlink" title="👀 Q AWS Task Orchestrator and Executor (AWSTOE)"></a>👀 Q AWS Task Orchestrator and Executor (AWSTOE)</h2><p>Use the <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/toe-get-started.html">AWS Task Orchestrator and Executor (AWSTOE)</a> application <code>to orchestrate complex workflows</code>, <code>modify system configurations</code>, and <code>test your systems without writing code</code>. This application uses a declarative document schema. Because it is a standalone application, it does not require additional server setup.</p>
+<hr>
 <h2 id="Q-AWS-Artifact"><a href="#Q-AWS-Artifact" class="headerlink" title="*Q AWS Artifact"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html">AWS Artifact</a></h2><p>AWS Artifact <code>keeps compliance-related reports and agreements</code>.</p>
 <p><code>👀</code></p>
 <hr>
@@ -615,7 +618,7 @@ This metric reports the value of the Seconds_Behind_Master field of the MySQL SH
 <li><code>AuroraReplicaLag</code> - This metric captures the <code>amount of lag</code> an Aurora replica experiences <code>when replicating updates from the primary instance</code>.</li>
 <li><code>InsertLatency</code> - This metric captures <code>the average duration of insert operations</code>.</li>
 </ol>
-<h2 id="👀-Aurora-Reader-Endpoint"><a href="#👀-Aurora-Reader-Endpoint" class="headerlink" title="👀  Aurora Reader Endpoint"></a>👀  Aurora Reader Endpoint</h2><p>To <code>perform queries</code>, you can connect to the reader endpoint, with Aurora automatically performing load-balancing among all the Aurora <code>Replicas</code>.</p>
+<h2 id="👀-Aurora-Reader-Endpoint"><a href="#👀-Aurora-Reader-Endpoint" class="headerlink" title="👀 Aurora Reader Endpoint"></a>👀 Aurora Reader Endpoint</h2><p>To <code>perform queries</code>, you can connect to the reader endpoint, with Aurora automatically performing load-balancing among all the Aurora <code>Replicas</code>.</p>
 <p>A reader endpoint for an Aurora DB cluster provides load-balancing support for read-only connections to the DB cluster. Use the reader endpoint <code>for read operations</code>, such as queries. By processing those statements on the read-only Aurora Replicas, this endpoint reduces the overhead on the primary instance. It also helps the cluster to scale the capacity to handle simultaneous SELECT queries, proportional to the number of Aurora Replicas in the cluster. Each Aurora DB cluster has one reader endpoint.</p>
 <p>Reference:<a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html">Amazon Aurora connection management</a></p>
 <hr>
@@ -660,29 +663,513 @@ This metric reports the value of the Seconds_Behind_Master field of the MySQL SH
 </ol>
 <p>The <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheMetrics.WhichShouldIMonitor.html#metrics-evictions">Evictions metric</a> for Amazon ElastiCache for Memcached represents the number of nonexpired items that the cache evicted to provide space for new items. If you are experiencing evictions with your cluster, it is usually a sign that you need to scale up (use a node that has a larger memory footprint)
 or scale out (add additional nodes to the cluster) to accommodate the additional data</p>
+<hr>
 <h2 id="VPC"><a href="#VPC" class="headerlink" title="VPC"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html#what-is-privatelink">VPC</a></h2><p>With Amazon Virtual Private Cloud (Amazon VPC), you can launch AWS resources in a logically isolated virtual network that you’ve defined. This virtual network closely resembles a traditional network that you’d operate in your own data center, with the benefits of using the scalable infrastructure of AWS.</p>
-<p><code>enableDnsHostnames</code> – Indicates whether the instances launched in the VPC get public DNS hostnames. If this attribute is true, instances in the VPC get public DNS hostnames, but only <code>if</code> the <code>enableDnsSupport</code> attribute is also set to <code>true</code>.</p>
-<p><code>enableDnsSupport</code> – Indicates whether the DNS resolution is supported for the VPC. If this attribute is false, the Amazon-provided DNS server in the VPC that resolves public DNS hostnames to IP addresses is not enabled. If this attribute is true, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC IPv4 network range plus two will succeed.</p>
-<p>By default, both attributes are set to <code>true</code> in a default VPC or a VPC created by the VPC wizard. By default, only the <code>enableDnsSupport</code> attribute is set to true in a VPC created on the Your VPCs page of the VPC console or using the AWS CLI, API, or an AWS SDK.</p>
 <h3 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h3><p><code>Regardless of the type of subnet, the internal IPv4 address range of the subnet is always private</code>. AWS never announces these address blocks to the internet.</p>
 <p><code>When you create a VPC, you must specify a range of IPv4 addresses for the VPC</code> in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0&#x2F;16. This is the primary CIDR block for your VPC.</p>
 <p><code>Subnets created in a VPC can communicate with each other</code>, this is default behaviour. The main route table facilitates this communication.</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html">How Amazon VPC works</a></p>
+<p><img src="/../images/AWS-VPC-Diagram.png" alt="VCP Diagram"></p>
+<h3 id="CIDR-–-IPv4"><a href="#CIDR-–-IPv4" class="headerlink" title="CIDR – IPv4"></a>CIDR – IPv4</h3><ul>
+<li><p>Classless <code>Inter-Domain Routing</code> – a method for allocating IP addresses</p>
+</li>
+<li><p><code>Used in Security Groups</code> rules and <code>AWS networking</code> in general</p>
+</li>
+<li><p>A CIDR consists of two components</p>
+</li>
+<li><p><em>Base IP</em></p>
+<ul>
+<li>Represents an IP contained in the range (XX.XX.XX.XX)</li>
+<li>Example: 10.0.0.0, 192.168.0.0, …</li>
+</ul>
+</li>
+<li><p><em>Subnet Mask</em></p>
+<ul>
+<li>Defines how many bits can change in the IP</li>
+<li>Example: &#x2F;0, &#x2F;24, &#x2F;32</li>
+<li>Can take two forms:<ul>
+<li>&#x2F;8 ó 255.0.0.0</li>
+<li>&#x2F;16 ó 255.255.0.0</li>
+<li>&#x2F;24 ó 255.255.255.0</li>
+<li>&#x2F;32 ó 255.255.255.255</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Public-vs-Private-IP-IPv4"><a href="#Public-vs-Private-IP-IPv4" class="headerlink" title="Public vs. Private IP (IPv4)"></a>Public vs. Private IP (IPv4)</h3><ul>
+<li><p>The Internet Assigned Numbers Authority (IANA) established certain blocks of IPv4 addresses for the use of private (LAN) and public (Internet) addresses</p>
+</li>
+<li><p><code>Private IP</code> can only allow certain values:</p>
+<ul>
+<li>10.0.0.0 – 10.255.255.255 (10.0.0.0&#x2F;8) &lt;- in big networks</li>
+<li>172.16.0.0 – 172.31.255.255 (172.16.0.0&#x2F;12) &lt;- <em>AWS default VPC in that range</em></li>
+<li>192.168.0.0 – 192.168.255.255 (192.168.0.0&#x2F;16) &lt;- e.g., home networks</li>
+</ul>
+</li>
+<li><p>All the rest of the IP addresses on the Internet are Public</p>
+</li>
+</ul>
+<h3 id="VPC-in-AWS-–-IPv4"><a href="#VPC-in-AWS-–-IPv4" class="headerlink" title="VPC in AWS – IPv4"></a>VPC in AWS – IPv4</h3><ul>
+<li><p><code>VPC = Virtual Private Cloud</code></p>
+</li>
+<li><p>You can have multiple VPCs in an AWS region (max. 5 per region – soft limit)</p>
+<ul>
+<li>Max. CIDR per VPC is 5, for each CIDR:</li>
+<li>Min. size is &#x2F;28 (16 IP addresses)</li>
+</ul>
+</li>
+<li><p>Max. size is &#x2F;16 (65536 IP addresses)</p>
+</li>
+<li><p>Because VPC is private, only the Private IPv4 ranges are allowed:</p>
+<ul>
+<li>10.0.0.0 – 10.255.255.255 (10.0.0.0&#x2F;8)</li>
+<li>172.16.0.0 – 172.31.255.255 (172.16.0.0&#x2F;12)</li>
+<li>192.168.0.0 – 192.168.255.255 (192.168.0.0&#x2F;16)</li>
+</ul>
+</li>
+<li><p><u><code>Your VPC CIDR should NOT overlap with your other networks (e.g., corporate)</code></u></p>
+</li>
+</ul>
+<h3 id="VPC-–-Subnet-IPv4"><a href="#VPC-–-Subnet-IPv4" class="headerlink" title="VPC – Subnet (IPv4)"></a>VPC – Subnet (IPv4)</h3><ul>
+<li>AWS reserves <code>5 IP addresses</code> (<code>first 4 &amp; last 1</code>) in each subnet</li>
+<li>These 5 IP addresses are not available for use and can’t be assigned to anEC2 instance</li>
+<li>Example: if CIDR block 10.0.0.0&#x2F;24, then reserved IP addresses are:<ul>
+<li><strong>10.0.0.0</strong> – Network Address</li>
+<li><strong>10.0.0.1</strong> – reserved by AWS for the VPC router</li>
+<li><strong>10.0.0.2</strong> – reserved by AWS for mapping to Amazon-provided DNS</li>
+<li><strong>10.0.0.3</strong> – reserved by AWS for future use</li>
+<li><strong>10.0.0.255</strong> – Network Broadcast Address. AWS does not support broadcast in a VPC, therefore the address is reserved</li>
+</ul>
+</li>
+<li><code>Exam Tip</code>, if you need 29 IP addresses for EC2 instances:<ul>
+<li>You can’t choose a subnet of size &#x2F;27 (32 IP addresses, 32 – 5 &#x3D; 27 &lt; 29)</li>
+<li>You need to choose a subnet of size &#x2F;26 (64 IP addresses, 64 – 5 &#x3D; 59 &gt; 29)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Internet-Gateway-IGW"><a href="#Internet-Gateway-IGW" class="headerlink" title="Internet Gateway (IGW)"></a>Internet Gateway (IGW)</h3><ul>
+<li><p>Allows resources (e.g., EC2 instances) in a VPC connect to the Internet</p>
+</li>
+<li><p>It scales horizontally and is highly available and redundant</p>
+</li>
+<li><p>Must be created separately from a VPC</p>
+</li>
+<li><p>One VPC can only be attached to one IGW and vice versa</p>
+</li>
+<li><p>Internet Gateways on their own do not allow Internet access…</p>
+</li>
+<li><p>Route tables must also be edited!</p>
+</li>
+</ul>
+<h3 id="Bastion-Hosts"><a href="#Bastion-Hosts" class="headerlink" title="Bastion Hosts"></a>Bastion Hosts</h3><p>Is an ec2 instance, it’s espcial because it’s in a public subnet, with its segurity group</p>
+<ul>
+<li>We can use a Bastion Host to SSH into our private EC2 instances</li>
+<li>The bastion is in the public subnet which is then connected to all other private subnets</li>
+<li><code>Bastion Host security group must allow</code> inbound from the internet on port 22 from restricted CIDR, for example the public CIDR of your corporation</li>
+<li><code>Security Group of the EC2 Instances</code> must allow the Security Group of the Bastion Host, or the <em>private IP</em> of the Bastion host</li>
+</ul>
+<h3 id="NAT-Instance-outdated-but-still-at-the-exam"><a href="#NAT-Instance-outdated-but-still-at-the-exam" class="headerlink" title="NAT Instance (outdated, but still at the exam)"></a>NAT Instance (outdated, but still at the exam)</h3><ul>
+<li>NAT &#x3D; Network Address Translation</li>
+<li>Allows EC2 instances in private subnets toconnect to the Interne</li>
+<li>Must be launched in a public subnet</li>
+<li>Must disable EC2 setting: <code>Source / destination Check</code></li>
+<li>Must have Elastic IP attached to it</li>
+<li>Route Tables must be configured to route traffic from private subnets to the NAT instance</li>
+</ul>
+<h3 id="NAT-Gateway"><a href="#NAT-Gateway" class="headerlink" title="NAT Gateway"></a>NAT Gateway</h3><ul>
+<li>AWS-managed NAT, higher bandwidth, high availability, no administration</li>
+<li>Pay per hour for usage and bandwidth</li>
+<li>NATGW is created in a specific Availability Zone, uses an Elastic IP</li>
+<li>Can’t be used by EC2 instance in the same subnet (only from other subnets)</li>
+<li>Requires an IGW (Private Subnet &#x3D;&gt; NATGW &#x3D;&gt; IGW)</li>
+<li>5 Gbps of bandwidth with automatic scaling up to 45 Gbps</li>
+<li>No Security Groups to manage &#x2F; required</li>
+</ul>
+<h3 id="NAT-Gateway-with-High-Availability"><a href="#NAT-Gateway-with-High-Availability" class="headerlink" title="NAT Gateway with High Availability"></a>NAT Gateway with High Availability</h3><ul>
+<li><code>NAT Gateway is resilient within a single Availability Zone</code></li>
+<li>Must create <code>multiple NAT Gateways</code> in <code>multiple AZs</code> for fault-tolerance</li>
+<li>There is no cross-AZ failover needed because if an AZ goes down it doesn’t need NAT</li>
+</ul>
 <h3 id="Connect-the-Lambda-function-to-a-private-subnet-that-has-a-route-to-a-NAT-gateway-deployed-in-a-public-subnet-of-the-VPC"><a href="#Connect-the-Lambda-function-to-a-private-subnet-that-has-a-route-to-a-NAT-gateway-deployed-in-a-public-subnet-of-the-VPC" class="headerlink" title="Connect the Lambda function to a private subnet that has a route to a NAT gateway deployed in a public subnet of the VPC."></a>Connect the Lambda function to a private subnet that has a route to a NAT gateway deployed in a public subnet of the VPC.</h3><p><code>Explanation</code>: By connecting the Lambda function to a private subnet with a route to a NAT gateway, the function can access resources within the VPC while also leveraging the NAT gateway to access the internet and communicate with third-party APIs. The NAT gateway acts as a bridge between the private subnet and the internet, allowing the Lambda function to securely access external resources.</p>
-<h3 id="VPC-Endpoint"><a href="#VPC-Endpoint" class="headerlink" title="VPC Endpoint"></a>VPC Endpoint</h3><p>A VPC Endpoint allows you to <code>connect</code> your <code>VPC</code> directly <code>to AWS services</code> without the need for <code>internet gateways</code>, <code>NAT gateways</code>, or <code>VPN connections</code>. It enables private communication between your VPC and the AWS service without going over the internet.</p>
+<h4 id="DNS-Resolution-in-VPC"><a href="#DNS-Resolution-in-VPC" class="headerlink" title="DNS Resolution in VPC"></a>DNS Resolution in VPC</h4><ul>
+<li><code>DNS Resolution (enableDnsSupport)</code><ul>
+<li>Decides if DNS resolution from Route 53 Resolver server is supported for the VPC</li>
+<li>True (default): it queries the Amazon Provider DNS Server at <code>169.254.169.253</code> or the reserved IP address at the base of the <code>VPC IPv4 network range plus two (.2)</code>.</li>
+</ul>
+</li>
+</ul>
+<p><code>enableDnsSupport</code> – Indicates whether the DNS resolution is supported for the VPC. If this attribute is false, the Amazon-provided DNS server in the VPC that resolves public DNS hostnames to IP addresses is not enabled. If this attribute is true, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC IPv4 network range plus two will succeed.</p>
+<ul>
+<li><code>DNS Hostnames (enableDnsHostnames)</code><ul>
+<li>By default,</li>
+<li>True &#x3D;&gt; default VPC</li>
+<li>False &#x3D;&gt; newly created VPCs</li>
+</ul>
+</li>
+<li>Won’t do anything unless enableDnsSupport&#x3D;true</li>
+<li>If True, assigns public hostname to EC2 instance if it has a public IPv4</li>
+</ul>
+<p><code>enableDnsHostnames</code> – Indicates whether the instances launched in the VPC get public DNS hostnames. If this attribute is true, instances in the VPC get public DNS hostnames, but only <code>if</code> the <code>enableDnsSupport</code> attribute is also set to <code>true</code>.</p>
+<p>By default, both attributes are set to <code>true</code> in a default VPC or a VPC created by the VPC wizard. By default, only the <code>enableDnsSupport</code> attribute is set to true in a VPC created on the Your VPCs page of the VPC console or using the AWS CLI, API, or an AWS SDK.</p>
+<h3 id="DNS-Resolution-in-VPC-1"><a href="#DNS-Resolution-in-VPC-1" class="headerlink" title="DNS Resolution in VPC"></a>DNS Resolution in VPC</h3><ul>
+<li>If you use custom DNS domain names in a Private Hosted Zone in Route 53, you must set both these attributes (enableDnsSupport &amp; enableDnsHostname) to true</li>
+</ul>
+<h3 id="Network-Access-Control-List-NACL"><a href="#Network-Access-Control-List-NACL" class="headerlink" title="Network Access Control List (NACL)"></a>Network Access Control List (NACL)</h3><ul>
+<li>NACL are like a firewall which control traffic from and <strong>to subnets</strong></li>
+<li><strong>One NACL per subnet</strong>, new subnets are assigned the <strong>Default NACL</strong></li>
+<li>You define <strong>NACL Rules</strong>:<ul>
+<li>Rules have a number (1-32766), higher precedence with a lower number</li>
+<li>First rule match will drive the decision</li>
+<li>Example: if you define #100 ALLOW 10.0.0.10&#x2F;32 and #200 DENY 10.0.0.10&#x2F;32, the IP address will be allowed because 100 has a higher precedence over 200</li>
+<li>The last rule is an asterisk (*) and denies a request in case of no rule match</li>
+<li>AWS recommends adding rules by increment of 100</li>
+</ul>
+</li>
+<li>Newly created NACLs will deny everything</li>
+<li>NACL are a <code>great way of blocking a specific IP address</code> at the subnet level</li>
+</ul>
+<h3 id="Default-NACL"><a href="#Default-NACL" class="headerlink" title="Default NACL"></a>Default NACL</h3><ul>
+<li><code>Accepts everything inbound/outbound</code> with the subnets it’s associated with</li>
+</ul>
+<h3 id="Ephemeral-Ports"><a href="#Ephemeral-Ports" class="headerlink" title="Ephemeral Ports"></a>Ephemeral Ports</h3><ul>
+<li>For any two endpoints to establish a connection, they must use ports</li>
+<li>Clients connect to a <code>defined port</code>, and expect a response on an <code>ephemeral port</code></li>
+<li>Different Operating Systems use different port ranges, examples:<ul>
+<li>IANA &amp; MS Windows 10 -&gt; 49152 – 65535</li>
+<li>Many Linux Kernels -&gt; 32768 – 60999</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Security Group</th>
+<th>NACL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Operates at the instance level</td>
+<td>Operates at the subnet level</td>
+</tr>
+<tr>
+<td>Supports allow rules only</td>
+<td>Supports allow rules and deny rules</td>
+</tr>
+<tr>
+<td><code>Stateful</code>: return traffic is automatically allowed, regardless of any rules</td>
+<td><code>Stateless</code>: return traffic must be explicitly allowed by rules (think of ephemeral ports)</td>
+</tr>
+<tr>
+<td>All rules are evaluated before deciding whether to allow traffic</td>
+<td>Rules are evaluated in order (lowest to highest) when deciding whether to allow traffic, first match wins</td>
+</tr>
+<tr>
+<td>Applies to an EC2 instance when specified by someone</td>
+<td>Automatically applies to all EC2 instances in the subnet that it’s associated with</td>
+</tr>
+</tbody></table>
+<h3 id="VPC-–-Reachability-Analyzer"><a href="#VPC-–-Reachability-Analyzer" class="headerlink" title="VPC – Reachability Analyzer"></a>VPC – Reachability Analyzer</h3><ul>
+<li>A network diagnostics tool that troubleshoots network connectivity between two endpoints in your VPC(s)</li>
+<li>It builds a model of the network configuration, then checks the reachability based on these configurations (<code>it doesn’t send packets</code>)</li>
+<li>When the destination is<ul>
+<li><code>Reachable</code> – it produces hop-by-hop details of the virtual network path</li>
+<li><code>Not reachable</code> – it identifies the blocking component(s) (e.g., configuration issues in SGs, NACLs, Route Tables, …)</li>
+</ul>
+</li>
+<li>Use cases: troubleshoot connectivity issues, ensure network configuration is as intended, …</li>
+</ul>
+<h3 id="VPC-Peering"><a href="#VPC-Peering" class="headerlink" title="VPC Peering"></a>VPC Peering</h3><ul>
+<li><p>Privately connect two VPCs using AWS’ network</p>
+</li>
+<li><p>Make them behave as if they were in the same network</p>
+</li>
+<li><p>Must not have overlapping CIDRs</p>
+</li>
+<li><p>VPC Peering connection is <code>NOT transitive</code> (must be established for each VPC that need to communicate with one another)</p>
+</li>
+<li><p><code>You must update route tables in each VPC’s subnets to ensure EC2 instances can communicate with each other</code></p>
+</li>
+<li><p>You can create VPC Peering connection between VPCs in <code>different AWS accounts/regions</code></p>
+</li>
+<li><p>You can reference a security group in a peered VPC (<code>works cross accounts – same region</code>)</p>
+</li>
+</ul>
+<h3 id="VPC-Endpoint-AWS-PrivateLink"><a href="#VPC-Endpoint-AWS-PrivateLink" class="headerlink" title="VPC Endpoint (AWS PrivateLink)"></a>VPC Endpoint (AWS PrivateLink)</h3><p>A VPC Endpoint allows you to <code>connect</code> your <code>VPC</code> directly <code>to AWS services</code> without the need for <code>internet gateways</code>, <code>NAT gateways</code>, or <code>VPN connections</code>. It enables private communication between your VPC and the AWS service without going over the internet.</p>
+<ul>
+<li>Most secure &amp; scalable way to <code>expose a service to 1000s of VPC</code> (own or other accounts)</li>
+<li>Does &#96;not require VPC peering, internet gateway, NAT, route tables… (magical..)</li>
+<li>Requires a <code>network load balancer</code> (Service VPC) and <code>ENI</code> (Customer VPC) <code>or GWLB</code></li>
+<li>If the NLB is in multiple AZ, and the ENIs in multiple AZ, the solution is fault tolerant!</li>
+</ul>
 <p>To configure a VPC Endpoint for accessing AWS Systems Manager APIs, you can follow these steps:</p>
 <ol>
 <li>Create a VPC Endpoint for AWS Systems Manager in your Amazon VPC. This creates an elastic network interface with a private IP address within your VPC.</li>
 <li>Update the route tables in your VPC to route traffic destined for the AWS Systems Manager API endpoints to the VPC Endpoint. This ensures that traffic is directed through the VPC Endpoint instead of going over the internet.</li>
 <li>Verify that your on-premises instances and AWS managed instances are configured to use the appropriate VPC and route tables.</li>
 </ol>
-<h3 id="Egress-only-Internet-Gateway"><a href="#Egress-only-Internet-Gateway" class="headerlink" title="Egress-only Internet Gateway"></a>Egress-only Internet Gateway</h3><p>An egress-only internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows outbound communication over IPv6 from instances in your VPC to the internet, and prevents the internet from initiating an IPv6 connection with your instances.</p>
+<h4 id="Types-of-Endpoints"><a href="#Types-of-Endpoints" class="headerlink" title="Types of Endpoints"></a>Types of Endpoints</h4><ul>
+<li><code>Interface Endpoints (powered by PrivateLink)</code><ul>
+<li>Provisions an ENI (private IP address) as an entry point (must attach a Security Group)</li>
+<li>Supports most AWS services</li>
+<li>$ per hour + $ per GB of data processed</li>
+</ul>
+</li>
+<li><code>Gateway Endpoints</code><ul>
+<li>Provisions a gateway and must be used as <code>a target in a route table (does not use security groups)</code></li>
+<li>Supports both S3 and DynamoDB</li>
+<li>Free</li>
+</ul>
+</li>
+</ul>
+<h3 id="Gateway-or-Interface-Endpoint-for-S3"><a href="#Gateway-or-Interface-Endpoint-for-S3" class="headerlink" title="Gateway or Interface Endpoint for S3?"></a>Gateway or Interface Endpoint for S3?</h3><ul>
+<li><code>Gateway is most likely going to be preferred all the time at the exam</code>.</li>
+<li>Cost: free for Gateway, $ for interface endpoint</li>
+<li>Interface Endpoint is preferred access is <code>required</code> from <code>on premises</code> (Site to Site VPN or Direct Connect), a different VPC or a different region.</li>
+</ul>
+<h3 id="VPC-Flow-Logs"><a href="#VPC-Flow-Logs" class="headerlink" title="VPC Flow Logs"></a>VPC Flow Logs</h3><ul>
+<li>Capture information about IP traffic going into your interfaces:<ul>
+<li>VPC Flow Logs</li>
+<li>Subnet Flow Logs</li>
+<li>Elastic Network Interface (ENI) Flow Logs</li>
+</ul>
+</li>
+<li>Helps to monitor &amp; troubleshoot connectivity issues</li>
+<li>Flow logs data can go to S3, CloudWatch Logs, and Kinesis Data Firehose</li>
+<li>Captures network information from AWS managed interfaces too: ELB, RDS, ElastiCache, Redshift, WorkSpaces, NATGW, Transit Gateway…</li>
+</ul>
+<h3 id="VPC-Flow-Logs-Syntax"><a href="#VPC-Flow-Logs-Syntax" class="headerlink" title="VPC Flow Logs Syntax"></a>VPC Flow Logs Syntax</h3><ul>
+<li><code>srcaddr &amp; dstaddr</code> – help identify problematic IP</li>
+<li><code>srcport &amp; dstport</code> – help identity problematic ports</li>
+<li><code>Action</code> – success or failure of the request due to Security Group &#x2F; NACL</li>
+<li>Can be used for analytics on usage patterns, or malicious behavior</li>
+<li><code>Query VPC flow logs using Athena on S3 or CloudWatch Logs Insights</code></li>
+<li>Flow Logs examples: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-records-examples.html">https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-records-examples.html</a></li>
+</ul>
+<hr>
+<h3 id="AWS-Site-to-Site-VPN"><a href="#AWS-Site-to-Site-VPN" class="headerlink" title="AWS Site-to-Site VPN"></a>AWS Site-to-Site VPN</h3><ul>
+<li><code>Virtual Private Gateway (VGW)</code><ul>
+<li>VPN concentrator on the AWS side of the VPN connection</li>
+<li>VGW is created and attached to the VPC from which you want to create the Site-to-Site VPN connection</li>
+<li>Possibility to customize the ASN (Autonomous System Number)</li>
+</ul>
+</li>
+<li><code>Customer Gateway (CGW)</code><ul>
+<li>Software application or physical device on customer side of the VPN connection</li>
+<li><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html#DevicesTested">https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html#DevicesTested</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="Site-to-Site-VPN-Connections"><a href="#Site-to-Site-VPN-Connections" class="headerlink" title="Site-to-Site VPN Connections"></a>Site-to-Site VPN Connections</h3><ul>
+<li><code>Customer Gateway Device (On-premises)</code><ul>
+<li>👀 What IP address to use?<ul>
+<li>Public Internet-routable IP address for your Customer Gateway device</li>
+<li>If it’s behind a NAT device that’s enabled for NAT traversal (NAT-T), use the public IP address of the NAT device</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>👀 <code>Important step</code>: enable <code>Route Propagation</code> for the Virtual Private Gateway in the route table that is associated with your subnets</li>
+<li>👀 If you need to <code>ping your EC2 instances</code> from on-premises, make sure you add the <code>ICMP protocol on the inbound of your security groups</code>.</li>
+</ul>
+<h4 id="AWS-VPN-CloudHub"><a href="#AWS-VPN-CloudHub" class="headerlink" title="AWS VPN CloudHub"></a>AWS VPN CloudHub</h4><ul>
+<li>Provide secure communication between multiple sites, if you have multiple VPN connections</li>
+<li><code>Low-cost</code> hub-and-spoke model for primary or secondary network connectivity between different locations (<code>VPN only</code>)</li>
+<li>It’s a VPN connection so it goes over the <code>public Internet</code></li>
+<li>To set it up, connect multiple VPN connections on the same VGW, setup dynamic routing and configure route tables</li>
+</ul>
+<h2 id="To-create-a-VPN"><a href="#To-create-a-VPN" class="headerlink" title="To create a VPN"></a>To create a VPN</h2><ol>
+<li>Create Customer Gateway</li>
+<li>Create Virtual Private Gateway</li>
+<li>Use Site-to-Site VPN connection for both VGW and customers Gateway.</li>
+</ol>
+<hr>
+<h3 id="Direct-Connect-DX"><a href="#Direct-Connect-DX" class="headerlink" title="Direct Connect (DX)"></a>Direct Connect (DX)</h3><ul>
+<li>Provides a dedicated <code>private</code> connection from a <code>remote network to your VPC</code>.</li>
+<li>Dedicated connection must be setup between your DC and AWS Direct Connect locations</li>
+<li>You <code>need</code> to setup a <code>Virtual Private Gateway</code> on your VPC</li>
+<li>Access public resources (S3) and private (EC2) on same connection</li>
+<li>Use Cases:<ul>
+<li>Increase bandwidth throughput - working with large data sets – lower cost</li>
+<li>More consistent network experience - applications using real-time data feeds</li>
+<li>Hybrid Environments (on prem + cloud)</li>
+</ul>
+</li>
+<li>Supports both IPv4 and IPv6</li>
+</ul>
+<h4 id="Direct-Connect-Gateway"><a href="#Direct-Connect-Gateway" class="headerlink" title="Direct Connect Gateway"></a>Direct Connect Gateway</h4><p><code>If you want to setup a Direct Connect to one or more VPC in many different regions (same account), you must use a Direct Connect Gateway</code>.</p>
+<h3 id="Direct-Connect-–-Connection-Types"><a href="#Direct-Connect-–-Connection-Types" class="headerlink" title="Direct Connect – Connection Types"></a>Direct Connect – Connection Types</h3><ul>
+<li><code>Dedicated Connections</code>: 1Gbps,10 Gbps and 100 Gbps capacity<ul>
+<li>Physical ethernet port dedicated to a customer</li>
+<li>Request made to AWS first, then completed by AWS Direct Connect Partners</li>
+</ul>
+</li>
+<li><code>Hosted Connections</code>: 50Mbps, 500 Mbps, to 10 Gbps<ul>
+<li>Connection requests are made via AWS Direct Connect Partners</li>
+<li>Capacity can be <code>added or removed on demand</code></li>
+<li>1, 2, 5, 10 Gbps available at select AWS Direct Connect Partners</li>
+</ul>
+</li>
+<li>Lead times are often longer than 1 <code>month to establish a new connection</code> - EXAM</li>
+</ul>
+<h3 id="Direct-Connect-–-Encryption"><a href="#Direct-Connect-–-Encryption" class="headerlink" title="Direct Connect – Encryption"></a>Direct Connect – Encryption</h3><ul>
+<li>Data in transit is <code>not encrypted</code> but is private</li>
+<li><code>AWS Direct Connect + VPN provides</code> an IPsec-encrypted private connection</li>
+</ul>
+<h3 id="Direct-Connect-Resiliency"><a href="#Direct-Connect-Resiliency" class="headerlink" title="Direct Connect - Resiliency"></a>Direct Connect - Resiliency</h3><p><code>High Resiliency for Critical Workloads</code></p>
+<p><code>Maximum Resiliency for Critical Workloads</code></p>
+<h3 id="Site-to-Site-VPN-connection-as-a-backup"><a href="#Site-to-Site-VPN-connection-as-a-backup" class="headerlink" title="Site-to-Site VPN connection as a backup"></a>Site-to-Site VPN connection as a backup</h3><p>In case Direct Connect fails, you can <code>set up a backup Direct Connect</code> connection (<code>expensive</code>), or a <code>Site-to-Site</code> VPN connection.</p>
+<h3 id="Transit-Gateway"><a href="#Transit-Gateway" class="headerlink" title="Transit Gateway"></a>Transit Gateway</h3><ul>
+<li><code>For having transitive peering between thousands of VPC and on-premises, hub-and-spoke (star) connection</code></li>
+<li><code>Regional resource</code>, can work cross-region</li>
+<li>Share cross-account using Resource Access Manager (RAM)</li>
+<li>You can peer Transit Gateways across regions</li>
+<li>Route Tables: limit which VPC can talk with other VPC</li>
+<li>Works with Direct Connect Gateway, VPN connections</li>
+<li>Supports <code>IP Multicast</code> (not supported by any other AWS service)1</li>
+</ul>
+<h4 id="Transit-Gateway-Site-to-Site-VPN-ECMP"><a href="#Transit-Gateway-Site-to-Site-VPN-ECMP" class="headerlink" title="Transit Gateway: Site-to-Site VPN ECMP"></a>Transit Gateway: Site-to-Site VPN ECMP</h4><ul>
+<li><code>ECMP = Equal-cost multi-path routing</code>.</li>
+<li>Routing strategy to allow to forward a packet over multiple best path.</li>
+</ul>
+<ul>
+<li>Use case: create multiple Site-to-Site VPN connections <code>to increase the bandwidth of your connection to AWS</code>.</li>
+</ul>
+<h3 id="VPC-–-Traffic-Mirroring"><a href="#VPC-–-Traffic-Mirroring" class="headerlink" title="VPC – Traffic Mirroring"></a>VPC – Traffic Mirroring</h3><ul>
+<li>Capture the traffic<ul>
+<li>From (Source) – ENIs</li>
+<li>To (Targets) – an ENI or a Network Load Balancer</li>
+</ul>
+</li>
+<li>Source and Target can be in the same VPC or different VPCs (VPC Peering)</li>
+<li>Use cases: content inspection, threat  Auto Scaling group monitoring, troubleshooting, …</li>
+</ul>
+<h3 id="IPv6-in-VPC"><a href="#IPv6-in-VPC" class="headerlink" title="IPv6 in VPC"></a>IPv6 in VPC</h3><ul>
+<li><code>IPv4 cannot be disabled for your VPC and subnets</code></li>
+<li>You <code>can enable IPv6</code> (they’re public IP addresses) to operate in <code>dual-stack mode</code>.</li>
+<li>Your EC2 instances</li>
+<li>They can communicate using either IPv4 or IPv6
+to the internet through an Internet Gatewaywill get at least a private internal IPv4 and a public IPv6</li>
+</ul>
+<h2 id="IPv6-Troubleshooting"><a href="#IPv6-Troubleshooting" class="headerlink" title="IPv6 Troubleshooting"></a>IPv6 Troubleshooting</h2><ul>
+<li><code>IPv4 cannot be disabled for your VPC and subnets</code></li>
+<li><em>So, if you cannot launch an EC2 instance in your subnet</em><ul>
+<li>It’s not because it cannot acquire an IPv6 (the space is very large)</li>
+<li>It’s because <em>there are no available IPv4 in your subnet</em></li>
+</ul>
+</li>
+<li><code>Solution</code>: create a new IPv4 CIDR in your subnet</li>
+</ul>
+<h3 id="Egress-only-Internet-Gateway"><a href="#Egress-only-Internet-Gateway" class="headerlink" title="Egress-only Internet Gateway"></a>Egress-only Internet Gateway</h3><p>An egress-only internet gateway is a horizontally scaled, redundant, and highly available VPC component that <code>allows outbound communication over IPv6 from instances in your VPC to the internet</code>, and prevents the internet from initiating an IPv6 connection with your instances. You must <code>update the Route Tables</code></p>
 <p>An egress-only internet gateway is for use with <code>IPv6 traffic only</code>. To enable outbound-only internet communication <code>over IPv4</code>, use a <code>NAT gateway</code> instead.</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html">Enable outbound IPv6 traffic using an egress-only internet gateway</a></p>
 <h3 id="Carrier-gateway"><a href="#Carrier-gateway" class="headerlink" title="Carrier gateway"></a>Carrier gateway</h3><p>A Carrier gateway is a highly available virtual appliance that <code>provides outbound IPv6 internet connectivity for instances in your VPC</code>. It acts as a gateway between your VPC and the internet, <code>allowing</code> IPv6 <code>traffic</code> to flow <code>in and out</code> of your <code>VPC</code>. By configuring a Carrier gateway, you can enable outbound communication over IPv6 for the EC2 instances in the private subnets while keeping them isolated from direct internet access.</p>
 <h2 id="Security-Groups"><a href="#Security-Groups" class="headerlink" title="Security Groups"></a>Security Groups</h2><h3 id="The-reason-for-the-issue-where-the-new-EC2-instances-are-unable-to-mount-the-Amazon-EFS-file-system-in-a-new-Availability-Zone-could-be"><a href="#The-reason-for-the-issue-where-the-new-EC2-instances-are-unable-to-mount-the-Amazon-EFS-file-system-in-a-new-Availability-Zone-could-be" class="headerlink" title="The reason for the issue where the new EC2 instances are unable to mount the Amazon EFS file system in a new Availability Zone could be:"></a>The reason for the issue where the new EC2 instances are unable to mount the Amazon EFS file system in a new Availability Zone could be:</h3><p>The security group for the mount target does not allow inbound NFS connections from the security group used by the EC2 instances.</p>
 <p><code>Explanation</code>: When mounting an Amazon EFS file system from EC2 instances, the security group associated with the mount target should allow inbound NFS (Network File System) connections from the security group used by the EC2 instances. By default, the security group associated with the mount target allows inbound connections from the default security group of the VPC. If the EC2 instances are using a different security group, it needs to be added to the mount target’s security group’s inbound rules to allow NFS connections.</p>
 <p>👀 - Only support <code>allow</code> rules. You have to allow incoming traffic from your customers to your instances</p>
+<h3 id="The-following-provides-an-overview-of-the-steps-to-enable-your-VPC-and-subnets-to-use-IPv6"><a href="#The-following-provides-an-overview-of-the-steps-to-enable-your-VPC-and-subnets-to-use-IPv6" class="headerlink" title="The following provides an overview of the steps to enable your VPC and subnets to use IPv6:"></a>The following provides an overview of the steps to enable your VPC and subnets to use IPv6:</h3><ul>
+<li><p><code>Step 1</code>:
+Associate an IPv6 CIDR Block with Your VPC and Subnets – Associate an Amazon-provided IPv6 CIDR block with your VPC and with your subnets.</p>
+</li>
+<li><p><code>Step 2</code>:
+Update Your Route Tables – Update your route tables to route your IPv6 traffic. For a public subnet, create a route that routes all IPv6 traffic from the subnet to the Internet gateway. For a private subnet, create a route that routes all Internet-bound IPv6 traffic from the subnet to an egress-only Internet gateway.</p>
+</li>
+<li><p><code>Step 3</code>:
+Update Your Security Group Rules – Update your security group rules to include rules for IPv6 addresses. This enables IPv6 traffic to flow to and from your instances. If you’ve created custom network ACL rules to control the flow of traffic to and from your subnet, you must include rules for IPv6 traffic.</p>
+</li>
+<li><p><code>Step 4</code>:
+Change Your Instance Type – If your instance type does not support IPv6, change the instance type. If your instance type does not support IPv6, you must resize the instance to a supported instance type. In the example, the instance is an m3.large instance type, which does not support IPv6. You must resize the instance to a supported instance type, for example, m4.large.</p>
+</li>
+<li><p><code>Step 5</code>:
+Assign IPv6 Addresses to Your Instances – Assign IPv6 addresses to your instances from the IPv6 address range of your subnet.</p>
+</li>
+<li><p><code>Step 6</code>: (Optional)
+Configure IPv6 on Your Instances – If your instance was launched from an AMI that is not configured to use DHCPv6, you must manually configure your instance to recognize an IPv6 address assigned to the instance.</p>
+</li>
+</ul>
+<h3 id="VPC-Section-Summary"><a href="#VPC-Section-Summary" class="headerlink" title="VPC Section Summary"></a>VPC Section Summary</h3><ul>
+<li><code>CIDR</code> – IP Range</li>
+<li><code>VPC</code> – Virtual Private Cloud &#x3D;&gt; we define a list of IPv4 &amp; IPv6 CIDR</li>
+<li><code>Subnets</code> – tied to an AZ, we define a CIDR</li>
+<li><code>Internet Gateway</code> – at the VPC level, provide IPv4 &amp; IPv6 Internet Access</li>
+<li><code>Route Tables</code> – must be edited to add routes from subnets to the IGW, VPC Peering Connections, VPC Endpoints, …</li>
+<li><code>Bastion Host</code> – public EC2 instance to SSH into, that has SSH connectivity to EC2 instances in private subnets</li>
+<li><code>NAT Instances</code> – gives Internet access to EC2 instances in private subnets. Old, must be setup in a public subnet, disable Source &#x2F; Destination check flag</li>
+<li><code>NAT Gateway</code> – managed by AWS, provides scalable Internet access to private EC2 instances, IPv4 only</li>
+<li><code>Private DNS</code> + Route 53 – enable DNS Resolution + DNS Hostnames (VPC)
+-<code> NACL</code> – stateless, subnet rules for inbound and outbound, don’t forget Ephemeral Ports</li>
+<li><code>Security Groups</code> – stateful, operate at the EC2 instance level</li>
+<li><code>Reachability Analyzer</code> – perform network connectivity testing between AWS resources</li>
+<li><code>VPC Peering</code> – connect two VPCs with non overlapping CIDR, non-transitive</li>
+<li><code>VPC Endpoints</code> – provide private access to AWS Services (S3, DynamoDB, CloudFormation, SSM) within a VPC</li>
+<li><code>VPC Flow Logs</code> – can be setup at the VPC &#x2F; Subnet &#x2F; ENI Level, for ACCEPT and REJECT traffic, helps identifying attacks, analyze using Athena or CloudWatch Logs Insights</li>
+<li><code>Site-to-Site VPN</code> – setup a Customer Gateway on DC, a Virtual Private Gateway on VPC, and site-to-site VPN over public Internet</li>
+<li><code>AWS VPN CloudHub</code> – hub-and-spoke VPN model to connect your sites</li>
+<li><code>Direct Connect</code> – setup a Virtual Private Gateway on VPC, and establish a direct private connection to an AWS Direct Connect Location</li>
+<li><code>Direct Connect Gateway</code> – setup a Direct Connect to many VPCs in different AWS regions</li>
+<li><code>AWS PrivateLink / VPC Endpoint Services</code>:<ul>
+<li>Connect services privately from your service VPC to customers VPC</li>
+<li>Doesn’t need VPC Peering, public Internet, NAT Gateway, Route Tables</li>
+<li>Must be used with Network Load Balancer &amp; ENI</li>
+</ul>
+</li>
+<li><code>ClassicLink</code> – connect EC2-Classic EC2 instances privately to your VPC</li>
+<li><code>Transit Gateway</code> – transitive peering connections for VPC, VPN &amp; DX</li>
+<li><code>Traffic Mirroring</code> – copy network traffic from ENIs for further analysis</li>
+<li><code>Egress-only Internet Gateway</code> – like a NAT Gateway, but for IPv6</li>
+</ul>
+<h3 id="Networking-Costs-in-AWS-per-GB"><a href="#Networking-Costs-in-AWS-per-GB" class="headerlink" title="Networking Costs in AWS per GB"></a>Networking Costs in AWS per GB</h3><ul>
+<li>Use Private IP instead of Public IP for good savings and better network  performance</li>
+<li>Use same AZ for maximum savings (at the cost of high availability) - Exam 👀</li>
+</ul>
+<h3 id="S3-Data-Transfer-Pricing-–-Analysis-for-USA"><a href="#S3-Data-Transfer-Pricing-–-Analysis-for-USA" class="headerlink" title="S3 Data Transfer Pricing – Analysis for USA"></a>S3 Data Transfer Pricing – Analysis for USA</h3><ul>
+<li><code>S3 ingress</code>: free</li>
+<li><code>S3 to Internet</code>: $0.09 per GB</li>
+<li><code>S3 Transfer Acceleration</code>:<ul>
+<li>Faster transfer times (50 to 500% better)</li>
+<li>Additional cost on top of Data Transfer Pricing: +$0.04 to $0.08 per GB</li>
+</ul>
+</li>
+<li><code>S3 to CloudFront</code>: $0.00 per GB</li>
+<li><code>CloudFront to Internet</code>: $0.085 per GB (slightly cheaper than S3)<ul>
+<li>Caching capability (lower latency)</li>
+<li>Reduce costs associated with S3 Requests Pricing (7x cheaper with CloudFront)</li>
+</ul>
+</li>
+<li><code>S3 Cross Region Replication</code>: $0.02 per GB</li>
+</ul>
+<h3 id="AWS-Network-Firewall"><a href="#AWS-Network-Firewall" class="headerlink" title="AWS Network Firewall"></a>AWS Network Firewall</h3><ul>
+<li>Protect your entire Amazon VPC</li>
+<li>From Layer 3 to Layer 7 protection</li>
+<li>Any direction, you can inspect<ul>
+<li>VPC to VPC traffic</li>
+<li>Outbound to internet</li>
+<li>Inbound from internet</li>
+<li>To &#x2F; from Direct Connect &amp; Site-to-Site VPN</li>
+</ul>
+</li>
+<li>Internally, the AWS Network Firewall uses the AWS Gateway Load Balancer</li>
+<li>Rules can be centrally managed cross-account by AWS Firewall Manager to apply to many VPCs</li>
+</ul>
+<h3 id="Network-Firewall-–-Fine-Grained-Controls"><a href="#Network-Firewall-–-Fine-Grained-Controls" class="headerlink" title="Network Firewall – Fine Grained Controls"></a>Network Firewall – Fine Grained Controls</h3><ul>
+<li><p>Supports 1000s of rules</p>
+</li>
+<li><p>IP &amp; port - example: 10,000s of IPs filtering</p>
+</li>
+<li><p>Protocol – example: block the SMB protocol for outbound communications</p>
+</li>
+<li><p>Stateful domain list rule groups: only allow outbound traffic to *.mycorp.com or third-party software repo</p>
+</li>
+<li><p>General pattern matching using regex</p>
+</li>
+<li><p><code>Traffic filtering: Allow, drop, or alert for the traffic that matches the rules</code></p>
+</li>
+<li><p><code>Active flow inspection</code> to protect against network threats with intrusion-prevention capabilities (like Gateway Load Balancer, but all managed by AWS)</p>
+</li>
+<li><p>Send logs of rule matches to Amazon S3, CloudWatch Logs, Kinesis Data Firehose</p>
+</li>
+</ul>
+<hr>
 <h2 id="CloudFormation"><a href="#CloudFormation" class="headerlink" title="CloudFormation"></a>CloudFormation</h2><h3 id="cfn-init"><a href="#cfn-init" class="headerlink" title="cfn-init"></a>cfn-init</h3><ul>
 <li>AWS::CloudFormation::Init must be in the Metadata of a resource</li>
 <li>With the cfn-init script, it helps make complex EC2 configurations readable</li>
@@ -716,7 +1203,7 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 <p><code>Explanation</code>: AWS CloudFormation StackSets allows you to deploy a CloudFormation template across multiple AWS accounts. By using StackSets, you can create and manage the same IAM roles in each account within the organization. This ensures consistent deployment of roles across accounts and simplifies the management process.</p>
 <p><code>Reference</code>: <a target="_blank" rel="noopener" href="https://aws.amazon.com/blogs/aws/new-use-aws-cloudformation-stacksets-for-multiple-accounts-in-an-aws-organization/">New: Use AWS CloudFormation StackSets for Multiple Accounts in an AWS Organization</a></p>
 <h3 id="Q-To-lunch-the-last-AMI"><a href="#Q-To-lunch-the-last-AMI" class="headerlink" title="*Q To lunch the last AMI."></a><code>*Q</code> To lunch the last AMI.</h3><p>Use the Parameters section in the template to specify the Systems Manager (SSM) Parameter, which contains the latest version of the Windows regional AMI ID.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Parameters:</span></span><br><span class="line">  <span class="attr">LatestWindowsAMIParameter:</span></span><br><span class="line">    <span class="attr">Type:</span> <span class="string">AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;</span></span><br><span class="line">    <span class="attr">Default:</span> <span class="string">/LatestWindowsAMI</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">Parameters:</span></span><br><span class="line">  <span class="attr">LatestWindowsAMIParameter:</span></span><br><span class="line">    <span class="attr">Type:</span> <span class="string">AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;</span></span><br><span class="line">    <span class="attr">Default:</span> <span class="string">/LatestWindowsAMI</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Parameters:</span></span><br><span class="line">  <span class="attr">LatestWindowsAMIParameter:</span></span><br><span class="line">    <span class="attr">Type:</span> <span class="string">AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;</span></span><br><span class="line">    <span class="attr">Default:</span> <span class="string">/LatestWindowsAMI</span></span><br><span class="line"></span><br><span class="line"><span class="attr">Parameters:</span></span><br><span class="line">  <span class="attr">LatestWindowsAMIParameter:</span></span><br><span class="line">    <span class="attr">Type:</span> <span class="string">AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;</span></span><br><span class="line">    <span class="attr">Default:</span> <span class="string">/LatestWindowsAMI</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="Q-UpdatePolicy-attribute"><a href="#Q-UpdatePolicy-attribute" class="headerlink" title="*Q UpdatePolicy attribute"></a><code>*Q</code> <code>UpdatePolicy</code> attribute</h3><p>By adding the <code>UpdatePolicy</code> attribute in CloudFormation and enabling the WaitOnResourceSignals property, the Auto Scaling group update process will be handled more gracefully. This approach allows CloudFormation to monitor the health and success of each instance during the update process before moving on to the next instance.</p>
 <p>Appending a health check at the end of the user data script allows the instance to signal CloudFormation that it has successfully completed its initialization. This helps ensure that the instance is fully operational before proceeding to the next instance in the Auto Scaling group update process.</p>
@@ -833,12 +1320,15 @@ AWS Backup is a fully managed and cost-effective backup service that simplifies 
 <li><p>Read more: <a target="_blank" rel="noopener" href="https://aws.amazon.com/security/penetration-testing/">https://aws.amazon.com/security/penetration-testing/</a></p>
 </li>
 </ul>
-<h2 id="Q-AWS-Inspector"><a href="#Q-AWS-Inspector" class="headerlink" title="*Q AWS Inspector"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://aws.amazon.com/inspector/">AWS Inspector</a></h2><p>Amazon Inspector is <code>used for security compliance of instances and applications</code>.</p>
+<hr>
+<h2 id="Q-AWS-Inspector"><a href="#Q-AWS-Inspector" class="headerlink" title="*Q AWS Inspector"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://aws.amazon.com/inspector/">AWS Inspector</a></h2><p>Amazon Inspector is <code>used for security compliance of instances and applications deployed on AWS</code>.</p>
+<p>Amazon Inspector <code>checks</code> for <code>unintended network accessibility</code> of your Amazon EC2 instances and <em><code>vulnerabilities</code></em> on those EC2 instances.</p>
+<p>Amazon Inspector also <code>integrates</code> with <code>AWS Security Hub</code> to provide a <code>view</code> of your <code>security posture across multiple AWS accounts</code>.</p>
 <p>Amazon Inspector is an automated security assessment service that helps you <code>test</code> the <code>network accessibility</code> of your Amazon EC2 instances and the <code>security state of your applications running on the instances</code>.</p>
 <p>An Amazon Inspector assessment report can be generated for an assessment run once it has been successfully completed. An assessment report is a document that details what is tested in the assessment run, and the results of the assessment. The results of your assessment are formatted into a standard report, which can be generated to share results within your team for remediation actions, to enrich compliance audit data, or to store for future reference.</p>
 <p>You can select from two types of report for your assessment, a findings report or a full report. The findings report contains an executive summary of the assessment, the instances targeted, the rules packages tested, the rules that generated findings, and detailed information about each of these rules along with the list of instances that failed the check. The full report contains all the
 information in the findings report and additionally provides the list of rules that were checked and passed on all instances in the assessment target.</p>
-<ul>
+<h2 id="👀-Amazon-Inspector"><a href="#👀-Amazon-Inspector" class="headerlink" title="👀 Amazon Inspector"></a>👀 Amazon Inspector</h2><ul>
 <li><code>Automated Security Assessments</code></li>
 <li><code>For EC2 instances</code></li>
 <li><code>For Container Images push to Amazon ECR</code></li>
@@ -847,7 +1337,7 @@ information in the findings report and additionally provides the list of rules t
 <p>-&gt; <code>Reporting &amp; integration with AWS Security Hub</code></p>
 <p>-&gt; <code>Send findings to Amazon Event Bridge</code></p>
 <h3 id="What-does-Amazon-Inspector-evaluate"><a href="#What-does-Amazon-Inspector-evaluate" class="headerlink" title="What does Amazon Inspector evaluate?"></a>What does Amazon Inspector evaluate?</h3><ul>
-<li><p><code>Only for EC2 instances, Container Images &amp; Lambda functions</code></p>
+<li><p><code>Only for EC2 instances, Container Images &amp; Lambda functions</code> - <code>EXAM</code></p>
 </li>
 <li><p>Continuous scanning of the infrastructure, only when needed</p>
 </li>
@@ -2027,11 +2517,17 @@ you plan for <code>scheduled activities</code>.</p>
 <h3 id="ELB-access-logs"><a href="#ELB-access-logs" class="headerlink" title="ELB access logs"></a>ELB access logs</h3><p>ELB access logs is an optional feature of Elastic Load Balancing that is disabled by default. The access logs capture detailed information about requests sent to your load balancer. Each log contains information such as the time the request was received, the client’s IP address, latencies, request paths, and server responses. You can use these access logs to analyze traffic patterns and troubleshoot issues. Each access log file is automatically encrypted using SSE-S3 before it is stored in your S3 bucket and decrypted when you access it. You do not need to take any action; the encryption and decryption is performed transparently</p>
 <h4 id="VPC-Flow-Logs-only-captures-information-about-the-IP-traffic-going-to-and-from-network-interfaces-in-a-VPC"><a href="#VPC-Flow-Logs-only-captures-information-about-the-IP-traffic-going-to-and-from-network-interfaces-in-a-VPC" class="headerlink" title="VPC Flow Logs only captures information about the IP traffic going to and from network interfaces in a VPC"></a><code>VPC Flow Logs</code> only captures information about the <code>IP traffic</code> going to and from network interfaces in a VPC</h4><p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html">Access logs for your Application Load Balancer</a></p>
 <h3 id="CloudTrail-logs"><a href="#CloudTrail-logs" class="headerlink" title="CloudTrail logs"></a>CloudTrail logs</h3><p><code>Elastic Load Balancing</code> is <code>integrated</code> with <code>AWS CloudTrail</code>, a service that provides a record of actions taken by a user, role, or an AWS service in Elastic Load Balancing. <code>CloudTrail captures</code> all <code>API calls for Elastic Load Balancing as events</code>. The calls captured include calls from the AWS Management Console and code calls to the Elastic Load Balancing API operations.</p>
+<hr>
 <h2 id="Amazon-Machine-Images-AMIs"><a href="#Amazon-Machine-Images-AMIs" class="headerlink" title="Amazon Machine Images (AMIs)"></a>Amazon Machine Images (AMIs)</h2><h3 id="Sharing"><a href="#Sharing" class="headerlink" title="Sharing"></a>Sharing</h3><p>The key points to consider before planning the expansion and sharing of Amazon Machine Images (AMIs) are:</p>
 <ol>
 <li>AMIs are regional resources and can be shared across Regions: AMIs are specific to a particular AWS Region. If you want to use an AMI in a different Region, you need to copy the AMI to that Region. Sharing an AMI across Regions requires creating a new copy in each desired Region.
 2&#x2F; You need to share any CMKs used to encrypt snapshots and any Amazon EBS snapshots that the AMI references: If the AMI references Amazon Elastic Block Store (EBS) snapshots, you must also share those snapshots. Additionally, if the snapshots are encrypted using customer-managed customer master keys (CMKs), you need to share the CMKs as well.</li>
 </ol>
+<ul>
+<li><code>Application-consistent AMI</code>: Create the AMI by disabling the <code>No reboot</code> option.</li>
+<li><code>Crash-consistent AMI</code>: If <code>No reboot</code> option is selected, the AMI will be crash-consistent (all the volumes are snapshotted at the same time), but not application-consistent (all the operating system buffers are not flushed to disk before the snapshots are created).</li>
+</ul>
+<hr>
 <h2 id="EC2"><a href="#EC2" class="headerlink" title="EC2"></a>EC2</h2><h3 id="Errors"><a href="#Errors" class="headerlink" title="Errors"></a>Errors</h3><h4 id="Client-InternalError-Client-error-on-launch"><a href="#Client-InternalError-Client-error-on-launch" class="headerlink" title="Client.InternalError: Client error on launch"></a><code>Client.InternalError: Client error on launch</code></h4><ol>
 <li>error is caused when an Auto Scaling group attempts to launch an instance that has an encrypted EBS volume, but the service-linked role does not have access to the customer-managed CMK used to encrypt it. Additional setup is required to allow the Auto Scaling group to launch instances.</li>
 </ol>
@@ -2091,6 +2587,9 @@ the instance is launched</p>
 <h3 id="File-Gateway"><a href="#File-Gateway" class="headerlink" title="File Gateway"></a>File Gateway</h3><p>File Gateway provides a seamless way to connect to the cloud in order to store application data files and backup images as durable objects in Amazon S3 cloud storage. File Gateway offers <code>SMB or NFS-based</code> access to data in Amazon S3 with local caching.</p>
 <h3 id="Volume-Gateway"><a href="#Volume-Gateway" class="headerlink" title="Volume Gateway"></a>Volume Gateway</h3><p>You can configure the AWS Storage Gateway service as a Volume Gateway to present <code>cloud-based iSCSI block</code> storage volumes to your <code>on-premises</code> applications. The Volume Gateway provides either a local cache or full volumes on-premises while also storing full copies of your volumes in the AWS cloud. Volume Gateway also provides Amazon EBS Snapshots of your data for backup, disaster recovery, and migration. It’s easy to get started with the Volume Gateway: Deploy it as a virtual machine or hardware appliance, give it local disk resources, connect it to your applications, and start using your hybrid cloud storage for block data.</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://aws.amazon.com/storagegateway/">AWS Storage Gateway</a></p>
+<h3 id="👀-Storage-Optimized-Instances"><a href="#👀-Storage-Optimized-Instances" class="headerlink" title="👀 Storage Optimized Instances"></a>👀 Storage Optimized Instances</h3><p>Designed for workloads that require high, sequential read and write access to very large data sets on local storage.
+They are optimized to deliver tens of thousands of <code>low-latency</code>, <code>random I/O operations per second (IOPS)</code> to applications compared with EBS-backed EC2 instances.</p>
+<hr>
 <h2 id="Posts"><a href="#Posts" class="headerlink" title="Posts"></a>Posts</h2><ol>
 <li><code>RDP traffic</code>: Port 3389, TCP protocol.</li>
 </ol>
@@ -2113,11 +2612,15 @@ the instance is launched</p>
 <h3 id="SSE-KMS"><a href="#SSE-KMS" class="headerlink" title="SSE-KMS"></a>SSE-KMS</h3><p>Similar to SSE-S3 and also <code>provides</code> you with an <code>audit trail</code> of when your key was used and by whom. Additionally, you have the <code>option</code> to <code>create</code> and <code>manage encryption keys yourself</code>.</p>
 <h3 id="SSE-C"><a href="#SSE-C" class="headerlink" title="SSE-C"></a>SSE-C</h3><p><code>You manage the encryption keys</code> and <code>Amazon S3 manages the encryption</code> as it writes to disks and decryption when you access your objects.</p>
 <h3 id="Client-Side-Encryption"><a href="#Client-Side-Encryption" class="headerlink" title="Client-Side Encryption"></a>Client-Side Encryption</h3><p>You can encrypt data client-side and upload the encrypted data to Amazon S3. In this case, you manage the encryption process, the encryption keys, and related tools.</p>
-<h2 id="AWS-Elastic-Beanstalk"><a href="#AWS-Elastic-Beanstalk" class="headerlink" title="AWS Elastic Beanstalk"></a>AWS Elastic Beanstalk</h2><p>With deployment policies such as ‘All at once’, AWS Elastic Beanstalk performs an in-place update when you update your application versions and your application can become unavailable to users for a short period of time. You can avoid this downtime by performing a blue&#x2F;green deployment, where you deploy the new version to a separate environment, and then swap CNAMEs (via Route 53) of the two environments to redirect traffic to the new version instantly. In case of any deployment issues, the rollback process is very quick via swapping the URLs for the two environments.</p>
+<h2 id="AWS-Elastic-Beanstalk"><a href="#AWS-Elastic-Beanstalk" class="headerlink" title="AWS Elastic Beanstalk"></a>AWS Elastic Beanstalk</h2><h3 id="deployment-policy-in-Elastic-Beanstalk"><a href="#deployment-policy-in-Elastic-Beanstalk" class="headerlink" title="deployment policy in Elastic Beanstalk:"></a>deployment policy in Elastic Beanstalk:</h3><p>– <code>All at once</code>: Deploy the new version to all instances simultaneously. All instances in your environment are out of service for a short time while the deployment occurs.</p>
+<p>– <code>Rolling</code>: Deploy the new version in batches. Each batch is taken out of service during the deployment phase, reducing your environment’s capacity by the number of instances in a batch.</p>
+<p>– <code>Rolling with additional batch</code>: Deploy the new version in batches, but first launch a new batch of instances to ensure full capacity during the deployment process.</p>
+<p>– <code>Immutable</code>: Deploy the new version to a fresh group of instances by performing an immutable update.</p>
+<p>With deployment policies such as ‘All at once’, AWS Elastic Beanstalk performs an in-place update when you update your application versions and your application can become unavailable to users for a short period of time. You can avoid this downtime by performing a blue&#x2F;green deployment, where you deploy the new version to a separate environment, and then swap CNAMEs (via Route 53) of the two environments to redirect traffic to the new version instantly. In case of any deployment issues, the rollback process is very quick via swapping the URLs for the two environments.</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html">Deploying applications to Elastic Beanstalk environments</a></p>
 <h2 id="Dedicated-Hosts-and-Dedicated-Instances"><a href="#Dedicated-Hosts-and-Dedicated-Instances" class="headerlink" title="Dedicated Hosts and Dedicated Instances"></a>Dedicated Hosts and Dedicated Instances</h2><h2 id="Dedicated-Instances"><a href="#Dedicated-Instances" class="headerlink" title="Dedicated Instances"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a></h2><p>Are Amazon EC2 instances that run in a virtual private cloud (VPC) on <code>hardware</code> that’s <code>dedicated</code> to a <code>single customer</code>. Dedicated Instances that belong to different AWS accounts are physically isolated at a hardware level, even if those accounts are linked to a single-payer account. <code>Note</code> that Dedicated Instances may share hardware with other instances from the same AWS account that are not Dedicated Instances.</p>
-<p>Dedicated Hosts allow you to use your existing per-socket, per-core, or per-VM software licenses, including Windows Server, Microsoft SQL Server, SUSE, and Linux Enterprise Server</p>
-<h2 id="Dedicated-Host"><a href="#Dedicated-Host" class="headerlink" title="Dedicated Host"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a></h2><p>Is a <code>physical server</code> with EC2 instance capacity fully dedicated to your use</p>
+<h2 id="Dedicated-Host"><a href="#Dedicated-Host" class="headerlink" title="Dedicated Host"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a></h2><p>Is a <code>physical server</code> with EC2 instance capacity fully dedicated to your use.</p>
+<p>Dedicated Hosts allow you to <code>use your existing per-socket, per-core, or per-VM software licenses, including Windows Server, Microsoft SQL Server, SUSE, and Linux Enterprise Server</code>.</p>
 <ul>
 <li>Dedicated Hosts <code>allow</code> you to <code>use</code> your <code>existing software licenses</code> on EC2 instances. With a Dedicated Host, you have <code>visibility and control</code> over how <code>instances</code> are placed on the server.</li>
 <li>Dedicated Hosts allow you to use your existing <code>per-socket</code>, <code>per-core</code>, or <code>per-VM software licenses</code>, including <code>Windows Server</code>, <code>Microsoft SQL Server</code>, <code>SUSE</code>, and <code>Linux Enterprise Server</code>.</li>
@@ -2208,15 +2711,36 @@ the instance is launched</p>
 <h3 id="EC2-instances-are-unable-to-mount-the-file-system"><a href="#EC2-instances-are-unable-to-mount-the-file-system" class="headerlink" title="EC2 instances are unable to mount the file system."></a>EC2 instances are unable to mount the file system.</h3><p>The <code>security groups</code> that you associate with a mount target must allow inbound access for the <code>TCP protocol</code> on the <code>NFS port</code> <code>from</code> the <code>security group</code> used by the instances.
 To connect your Amazon EFS file system to your Amazon EC2 instance, you <code>must create two security groups</code>: <code>one</code> for your Amazon <code>EC2 instance</code> and <code>another</code> for your Amazon <code>EFS mount target</code>.</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/efs/latest/ug/accessing-fs-create-security-groups.html">Creating security groups</a></p>
-<h2 id="👀-Amazon-Inspector"><a href="#👀-Amazon-Inspector" class="headerlink" title="👀 Amazon Inspector"></a>👀 Amazon Inspector</h2><p>It is an automated security assessment <code>service</code> that <code>helps improve the security and compliance</code> of <code>applications deployed on AWS</code>.
-Amazon Inspector <code>checks</code> for <code>unintended network accessibility</code> of your Amazon EC2 instances and <em><code>vulnerabilities</code></em> on those EC2 instances.</p>
-<p>Amazon Inspector also <code>integrates</code> with <code>AWS Security Hub</code> to provide a <code>view</code> of your <code>security posture across multiple AWS accounts</code>.</p>
+<hr>
 <h2 id="AWS-Control-Tower-1"><a href="#AWS-Control-Tower-1" class="headerlink" title="AWS Control Tower"></a>AWS Control Tower</h2><p>Offers the easiest way to <code>set up</code> and <code>govern</code> a <code>secure, multi-account AWS environment</code>. It establishes a landing zone that is based on the best-practices blueprints and enables governance using guardrails you can choose from a pre-packaged list. The landing zone is a well-architected, multi-account baseline that follows AWS best practices. Guardrails implement governance rules for security, compliance, and operations.</p>
-<h2 id="AWS-X-Ray"><a href="#AWS-X-Ray" class="headerlink" title="AWS X-Ray"></a>AWS X-Ray</h2><ol>
+<hr>
+<h2 id="AWS-X-Ray"><a href="#AWS-X-Ray" class="headerlink" title="AWS X-Ray"></a>AWS X-Ray</h2><ul>
+<li>Debugging in Production, the good old way:<ul>
+<li>Test locally</li>
+<li>Add log statements everywhere</li>
+<li>Re-deploy in production</li>
+</ul>
+</li>
+<li>Log formats differ across applications and log analysis is hard.</li>
+<li>Debugging: one big monolith “easy”, distributed services “hard”</li>
+<li>No common views of your entire architecture</li>
+</ul>
+<ol>
 <li><code>S3</code> - AWS X-Ray integrates with Amazon S3 to trace upstream requests to update your application’s S3 buckets.</li>
 <li><code>Lambda functions</code> - Lambda runs the X-Ray daemon and records a segment with details about the function invocation and execution.</li>
 <li><code>API Gateway APIs</code> - You can use X-Ray to trace and analyze user requests as they travel through your Amazon API Gateway APIs to the underlying services.</li>
 </ol>
+<h3 id="AWS-X-Ray-advantages"><a href="#AWS-X-Ray-advantages" class="headerlink" title="AWS X-Ray advantages"></a>AWS X-Ray advantages</h3><ul>
+<li>Troubleshooting performance (bottlenecks)</li>
+<li>Understand dependencies in a microservice architecture</li>
+<li>Pinpoint service issues</li>
+<li>Review request behavior</li>
+<li>Find errors and exceptions</li>
+<li>Are we meeting time SLA?</li>
+<li>Where I am throttled?</li>
+<li>Identify users that are impacted</li>
+</ul>
+<hr>
 <h2 id="DNS-Resolution"><a href="#DNS-Resolution" class="headerlink" title="DNS Resolution"></a>DNS Resolution</h2><p>DNS Resolution is used to enable resolution of public DNS hostnames to private IP addresses when queried from the <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html">peered VPC</a>.</p>
 <h2 id="👀-Traffic-Mirroring"><a href="#👀-Traffic-Mirroring" class="headerlink" title="👀 Traffic Mirroring"></a><code>👀</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/vpc/latest/mirroring/what-is-traffic-mirroring.html">Traffic Mirroring</a></h2><p><code>Traffic Mirroring provides</code> the ability to create a copy of a packet flow to examine the contents of a packet. This feature is useful for <code>threat monitoring</code>, <code>content inspection</code>, and <code>troubleshooting</code>.</p>
 <p>A packet is truncated to the <code>MTU</code> value when both of the following are true:</p>
@@ -2233,7 +2757,6 @@ Amazon Inspector <code>checks</code> for <code>unintended network accessibility<
 <h2 id="ClientConnections-Metric"><a href="#ClientConnections-Metric" class="headerlink" title="ClientConnections Metric"></a><code>ClientConnections</code> Metric</h2><p>To track the number of Amazon EC2 instances that are connected to a file system, you can monitor the Sum statistic of the ClientConnections metric. To calculate the average ClientConnections for periods greater than one minute, divide the sum by the number of minutes in the period.</p>
 <h2 id="👀-AWS-Budgets"><a href="#👀-AWS-Budgets" class="headerlink" title="👀 AWS Budgets"></a>👀 AWS Budgets</h2><p>Give you the ability to <code>set custom budgets that alert you</code> when your costs or <code>usage exceed</code> (or are <code>forecasted</code> to exceed) your budgeted amount.</p>
 <p>You can also use AWS Budgets to <code>set reservation utilization or coverage targets and receive alerts</code> when your utilization drops below the threshold you define. Reservation alerts are supported for <code>Amazon EC2, Amazon RDS, Amazon Redshift, Amazon ElastiCache, and Amazon Elasticsearch reservations</code>.</p>
-<h2 id="👀-Q-AWS-Task-Orchestrator-and-Executor-AWSTOE"><a href="#👀-Q-AWS-Task-Orchestrator-and-Executor-AWSTOE" class="headerlink" title="👀 Q AWS Task Orchestrator and Executor (AWSTOE)"></a>👀 Q AWS Task Orchestrator and Executor (AWSTOE)</h2><p>Use the AWS Task Orchestrator and Executor (AWSTOE) application <code>to orchestrate complex workflows</code>, <code>modify system configurations</code>, and <code>test your systems without writing code</code>. This application uses a declarative document schema. Because it is a standalone application, it does not require additional server setup.</p>
 <h2 id="👀-AWS-Cost"><a href="#👀-AWS-Cost" class="headerlink" title="👀 AWS Cost"></a>👀 AWS Cost</h2><p>In <code>AWS Cost</code> and <code>Usage Reports</code>, you can choose to have AWS <code>publish billing reports</code> to an <code>Amazon Simple Storage</code> Service (Amazon S3) bucket that you own. You can receive reports that break down your costs by the hour or month, by product or product resource, or by tags that you define yourself. AWS updates the report in your bucket once a day in a comma-separated value (CSV) format. You can view the reports using spreadsheet software such as Microsoft Excel or Apache OpenOffice Calc or access them from an application using the Amazon S3 API.</p>
 <h2 id="AWS-Database-Migration-Service-DMS"><a href="#AWS-Database-Migration-Service-DMS" class="headerlink" title="AWS Database Migration Service (DMS)"></a>AWS Database Migration Service (DMS)</h2><h2 id="Amazon-Macie"><a href="#Amazon-Macie" class="headerlink" title="Amazon Macie"></a>Amazon Macie</h2><p>is a fully managed data security and data privacy service that uses <code>machine learning</code> and pattern matching to help you discover, monitor, and protect sensitive data in your AWS environment. Macie automates the discovery of sensitive data, such as <code>personally identifiable information (PII)</code> and financial data, to provide you with a better understanding of the data that your organization stores in Amazon S3.
 Amazon Macie <code>only supports S3 as a data source</code>.</p>
@@ -2259,7 +2782,7 @@ Amazon Macie <code>only supports S3 as a data source</code>.</p>
 <li><code>Use</code> case: Big Data job that needs to complete fast</li>
 </ul>
 </li>
-<li><code>Spread—spreads</code> instances across underlying hardware (max 7 instances per group per AZ) – critical applications<ul>
+<li><code>Spread—spreads</code> instances across <code>underlying hardware</code> (max 7 instances per group per AZ) – critical applications<ul>
 <li><code>Pros</code>:<ul>
 <li>Can span across Availability Zones (AZ)</li>
 <li>Reduced risk is simultaneous failure</li>
@@ -2277,7 +2800,7 @@ Amazon Macie <code>only supports S3 as a data source</code>.</p>
 </li>
 </ul>
 </li>
-<li><code>Partition—spreads</code> instances across many different partitions (which rely on different sets of racks) within an AZ. Scales to 100s of EC2 instances per group (Hadoop, Cassandra, Kafka)<ul>
+<li><code>Partition—spreads</code> <code>instances across many different partitions</code> (which rely on different sets of racks) within an AZ. Scales to 100s of EC2 instances per group (Hadoop, Cassandra, Kafka)<ul>
 <li>Up to 7 partitions per AZ  Can span across multiple AZs in the same region</li>
 <li>Up to 100s of EC2 instances</li>
 <li>The instances in a partition do not share racks with the instances in the other partitions</li>
@@ -2302,8 +2825,6 @@ AWS &#96;&#96;Systems Manager Automation provides a way to automate common opera
 </li>
 </ul>
 <h2 id="AWS-System-Manager"><a href="#AWS-System-Manager" class="headerlink" title="AWS System Manager"></a>AWS System Manager</h2><p>👀 AWS Systems Manager provides a unified, centralized way to manage both your Amazon EC2 instances and on-premises servers (including <code>Raspbian</code> systems, devices such as <code>Raspberry Pi</code> through a single interface). It offers a wide range of capabilities, including <code>inventory management</code>, <code>patch management</code>, <code>automation</code>, and <code>configuration management</code>, allowing you to efficiently manage your hybrid infrastructure from a single console. With Systems Manager, you can maintain consistent configurations, apply patches, and automate administrative tasks for your on-premises servers, just like you would for your EC2 instances.</p>
-<p>TODO
-gives you visibility and control of your infrastructure on AWS. Systems Manager provides a unified user interface so you can view operational data from multiple AWS services and allows you to automate operational tasks across your AWS resources. With Systems Manager, you can group resources, like Amazon EC2 instances, Amazon S3 buckets, or Amazon RDS instances, by application, view operational data for monitoring and troubleshooting, and take action on your groups of resources. Systems Manager simplifies resource and application management, shortens the time to detect and resolve operational problems, and makes it easy to operate and manage your infrastructure securely at scale.</p>
 <ul>
 <li>Helps you manage your <strong>EC2</strong> and <strong>On-Premises</strong> systems at scale.</li>
 <li>Get operational insights about the state of your infrastructure.</li>
@@ -2416,9 +2937,7 @@ To solve this use-case, you need to configure the Auto Scaling groups to scale y
 <li>Average Network In &#x2F; Out (if you’re application is network bound)</li>
 <li>Any custom metric (that you push using CloudWatch)</li>
 </ul>
-<p>advice
-exam</p>
-<p>ApproximateNumberOfMessages</p>
+<p>ApproximateNumberOfMessages -</p>
 <h2 id="AWS-Auto-Scaling"><a href="#AWS-Auto-Scaling" class="headerlink" title="AWS Auto Scaling"></a>AWS Auto Scaling</h2><p>Backbone service of auto scaling for scalable resources in AWS:</p>
 <ul>
 <li><code>Amazon EC2 Auto Scaling groups</code>: Launch or terminate EC2 instances</li>
@@ -2427,9 +2946,7 @@ exam</p>
 <li><code>Amazon DynamoDB</code> (table or global secondary index):WCU &amp; RCU</li>
 <li><code>Amazon Aurora</code>: Dynamic Read Replicas Auto Scaling</li>
 </ul>
-<p>Application Load Balancer (v2)
-Target Groups</p>
-<ul>
+<h3 id="Target-Groups"><a href="#Target-Groups" class="headerlink" title="Target Groups"></a>Target Groups</h3><ul>
 <li><p>EC2 instances (can be managed by an Auto Scaling Group) – HTTP</p>
 </li>
 <li><p>ECS tasks (managed by ECS itself) – HTTP</p>
@@ -2510,14 +3027,66 @@ Target Groups</p>
 <li><code>ConcurrentExecutions</code> – number of function instances that are processing events</li>
 </ul>
 <hr>
-<h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p>The cfn-signal helper script signals AWS CloudFormation to indicate whether Amazon EC2 instances have been successfully created or updated. If you install and configure software applications on instances, you can signal AWS CloudFormation when those software applications are ready.</p>
-<p>You use the cfn-signal script in conjunction with a CreationPolicy or an Auto Scaling group with a WaitOnResourceSignals update policy. When AWS CloudFormation creates or updates resources with those policies, it suspends work on the stack until the resource receives the requisite number of signals or until the timeout period is exceeded. For each valid signal that AWS CloudFormation receives, AWS CloudFormation publishes the signals to the stack events so that you track each signal.</p>
-<p> maximum coverage. It’s calculated by dividing Reserved Instance used hours by total EC2 On-Demand and Reserved Instance hours.</p>
+<h2 id="CodeDeploy"><a href="#CodeDeploy" class="headerlink" title="CodeDeploy"></a>CodeDeploy</h2><p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html">CodeDeploy</a> is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances, or serverless Lambda functions. It allows you to rapidly release new features, update Lambda function versions, avoid downtime during application deployment, and handle the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.</p>
+<ul>
+<li><p><em>Application</em>: Container</p>
+</li>
+<li><p><em>Deployment Group</em> : Setup config setting in code deploy</p>
+<ul>
+<li>Refers to the set of instances of Lambda functions where you deply the code revision</li>
+<li>You can create multiple deployment groups within the application</li>
+</ul>
+</li>
+<li><p><em>Deployment Configuration</em></p>
+<ul>
+<li>Set of conditions and deployment rules that CodeDeploy applies during a deployment.</li>
+</ul>
+</li>
+<li><p><em>Application Specificaton (AppSpec) file</em></p>
+<ul>
+<li>manages deployment stages as lifecycle event hooks.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="ElasticSearch-OpenSearch"><a href="#ElasticSearch-OpenSearch" class="headerlink" title="ElasticSearch - OpenSearch"></a>ElasticSearch - OpenSearch</h2><p><code>Amazon ElasticSearch Service</code> is now <code>Amazon OpenSearch Service</code></p>
+<ul>
+<li><p>May be called <code>Amazon ES at the exam</code></p>
+</li>
+<li><p>Managed version of ElasticSearch (open source project)</p>
+</li>
+<li><p>Needs to run on servers (not a serverless offering)</p>
+</li>
+<li><p>Use cases:</p>
+<ul>
+<li>Log Analytics</li>
+<li>Real Time application monitoring</li>
+<li>Security Analytics</li>
+<li>Full Text Search</li>
+<li>Clickstream Analytics</li>
+<li>Indexing</li>
+</ul>
+</li>
+</ul>
+<h3 id="ElasticSearch-Access-Policy"><a href="#ElasticSearch-Access-Policy" class="headerlink" title="ElasticSearch Access Policy"></a>ElasticSearch Access Policy</h3><ul>
+<li><code>IP-based Policies</code><ul>
+<li>Resource-based policies used to restrict access to an ES domain to IP address(es) or CIDR blocks</li>
+<li>Allows unsigned requests to an ES domain (e.g., curl, Kibana, …)</li>
+</ul>
+</li>
+</ul>
+<h3 id="ElasticSearch-–-Production-Setup"><a href="#ElasticSearch-–-Production-Setup" class="headerlink" title="ElasticSearch – Production Setup"></a>ElasticSearch – Production Setup</h3><p>It’s recommended to:</p>
+<ul>
+<li>Use <em>3 dedicated Master nodes</em></li>
+<li>Use at least <em>2 Data nodes per AZ</em> (for replication)</li>
+<li><em>Deploy</em> the domain across <em>3 AZ</em></li>
+<li><em>Create</em> at least <em>one replica or each index in the cluster</em></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="cljtprqzo0004fbop93j06gye" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="cljwhfp890004d2or02zf0d0w" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -2530,7 +3099,7 @@ Target Groups</p>
     
 <nav id="article-nav">
   
-    <a href="/2023/07/08/Getting-Started-With-Hexo/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/07/10/Getting-Started-With-Hexo/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -2567,7 +3136,7 @@ Target Groups</p>
       <ul>
         
           <li>
-            <a href="/2023/07/08/Getting-Started-With-Hexo/">Getting started with Hexo</a>
+            <a href="/2023/07/10/Getting-Started-With-Hexo/">Getting started with Hexo</a>
           </li>
         
           <li>

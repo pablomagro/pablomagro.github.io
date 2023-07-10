@@ -2,162 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2018/08/22/KDE-connect/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/02/28/Kubernetes-Notes/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2018/08/23/Node-best-and-useful-global-CLIs/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2018/01/04/Obtain-a-refresh-token-at-Google-OAuth2-Playground/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2016/09/17/Post-Installing-GNU-Linux-Debian-based/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2017/11/21/Productive-VS-Code-Extensions/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/05/01/Prompts/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/Protractor-Locators/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/04/14/React-Hooks-All-React-Hooks-Explained/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2018/09/13/Reducing-PDF-file-size-in-GNU-Linux/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/02/15/free-host-for-web-application-sites/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/youtube-dl/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/03/08/Refranes-Citas-y-Proverbios/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/ServletContextListener/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2018/08/23/Try-a-new-OS/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/02/16/AI-Websites-to-make-your-Life-Easier/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/</loc>
-    
-    <lastmod>2023-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/</loc>
     
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -166,7 +13,7 @@
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/Anchor-Links-in-Markdown/</loc>
     
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -175,7 +22,7 @@
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/2016/09/14/Bootable-CD-from-ISO/</loc>
     
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -184,7 +31,7 @@
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/2023/04/03/Coding-Resources/</loc>
     
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -193,7 +40,7 @@
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/2017/11/15/Disable-baloo-file-extractor/</loc>
     
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -202,16 +49,16 @@
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/2020/04/12/Find%20out%20what%20package%20produced%20a%20particular%20file/</loc>
     
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/07/08/Getting-Started-With-Hexo/</loc>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/07/10/Getting-Started-With-Hexo/</loc>
     
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -220,7 +67,7 @@
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/Git-Documentation/</loc>
     
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -229,7 +76,7 @@
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/How-do-I-reset-a-monitor-settings/</loc>
     
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -238,7 +85,7 @@
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/2023/02/17/How-to-add-Open-Folder-with-X-when-I-right-click-in-an-folder-in-Dolphin/</loc>
     
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -247,7 +94,7 @@
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/</loc>
     
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -256,7 +103,160 @@
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/2017/12/28/Install-latest-hplip-version-on-Debian-9/</loc>
     
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2018/08/22/KDE-connect/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/02/28/Kubernetes-Notes/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2018/08/23/Node-best-and-useful-global-CLIs/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2018/01/04/Obtain-a-refresh-token-at-Google-OAuth2-Playground/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2016/09/17/Post-Installing-GNU-Linux-Debian-based/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2017/11/21/Productive-VS-Code-Extensions/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/05/01/Prompts/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/Protractor-Locators/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/04/14/React-Hooks-All-React-Hooks-Explained/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2018/09/13/Reducing-PDF-file-size-in-GNU-Linux/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/03/08/Refranes-Citas-y-Proverbios/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/ServletContextListener/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2018/08/23/Try-a-new-OS/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/02/15/free-host-for-web-application-sites/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/youtube-dl/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/02/16/AI-Websites-to-make-your-Life-Easier/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -265,7 +265,7 @@
 
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -273,245 +273,245 @@
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Websites/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Certifications/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/SysOps/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/SOA-C02/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Bitbucket/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Bootable/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/ISO/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Resources/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/File/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Packages/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Hexo/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Git/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Commands/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Monitor/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Menu-Option/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Debian/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Install/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/hplip/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Applications/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Doc/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Node/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Token/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Post-Install/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Extensions/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Prompts/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Protractor/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Hooks/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/PDF/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Ghostscript/</loc>
-    <lastmod>2023-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/tags/Free/</loc>
-    <lastmod>2023-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/tags/youtube-dl/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/ServletContextListener/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Java/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Filter/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/GNU-Linux/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/tags/Free/</loc>
+    <lastmod>2023-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/tags/youtube-dl/</loc>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -520,196 +520,196 @@
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/AI/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/AWS/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/Markdown/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/GNU-Linux/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/Coding/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/Hexo/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/Git/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/KDE/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/GNU-Linux/CLI/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/GNU-Linux/Installer/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/GNU-Linux/Debian/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/GNU-Linux/KDE/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/Kubernetes/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/Global/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/Google/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/VS-Code/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/Open-AI/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/Protractor/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/React/</loc>
-    <lastmod>2023-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/categories/Hosting/</loc>
-    <lastmod>2023-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/categories/CLI/</loc>
-    <lastmod>2023-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/categories/KDE/Dolphin/</loc>
-    <lastmod>2023-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/categories/Google/OAuth2-0/</loc>
-    <lastmod>2023-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/categories/CLI/youtube-dl/</loc>
-    <lastmod>2023-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/categories/Google/OAuth2-0/Nodemailer/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/Refranes-Citas-Proverbios/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/Java/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/OS/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/categories/Hosting/</loc>
+    <lastmod>2023-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/categories/KDE/Dolphin/</loc>
+    <lastmod>2023-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/categories/CLI/</loc>
+    <lastmod>2023-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/categories/Google/OAuth2-0/</loc>
+    <lastmod>2023-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/categories/CLI/youtube-dl/</loc>
+    <lastmod>2023-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/categories/Google/OAuth2-0/Nodemailer/</loc>
+    <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
