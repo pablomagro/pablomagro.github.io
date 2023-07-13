@@ -14,8 +14,12 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog.pablo-magro-gaspar.site/images/AWS-EventBridge-Rules.png">
 <meta property="og:image" content="https://blog.pablo-magro-gaspar.site/images/AWS-VPC-Diagram.png">
+<meta property="og:image" content="https://blog.pablo-magro-gaspar.site/images/AWS-Site-to-Site-Connection.png">
+<meta property="og:image" content="https://blog.pablo-magro-gaspar.site/images/AWS-Direct-Connect-Diagram.png">
+<meta property="og:image" content="https://blog.pablo-magro-gaspar.site/images/AWS-Direct-Connet-Gateway.png">
+<meta property="og:image" content="https://blog.pablo-magro-gaspar.site/images/AWS-Store-Gateway-Architecture.png">
 <meta property="article:published_time" content="2023-05-15T01:27:03.000Z">
-<meta property="article:modified_time" content="2023-07-10T06:28:27.153Z">
+<meta property="article:modified_time" content="2023-07-13T05:22:53.958Z">
 <meta property="article:author" content="Pablo Magro Gaspar">
 <meta property="article:tag" content="Certifications">
 <meta property="article:tag" content="SysOps">
@@ -960,6 +964,7 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 </ul>
 </li>
 </ul>
+<p><img src="/../images/AWS-Site-to-Site-Connection.png" alt="AWS Site-to-Site VPN"></p>
 <h3 id="Site-to-Site-VPN-Connections"><a href="#Site-to-Site-VPN-Connections" class="headerlink" title="Site-to-Site VPN Connections"></a>Site-to-Site VPN Connections</h3><ul>
 <li><code>Customer Gateway Device (On-premises)</code><ul>
 <li>👀 What IP address to use?<ul>
@@ -997,7 +1002,9 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 </li>
 <li>Supports both IPv4 and IPv6</li>
 </ul>
-<h4 id="Direct-Connect-Gateway"><a href="#Direct-Connect-Gateway" class="headerlink" title="Direct Connect Gateway"></a>Direct Connect Gateway</h4><p><code>If you want to setup a Direct Connect to one or more VPC in many different regions (same account), you must use a Direct Connect Gateway</code>.</p>
+<p><img src="/../images/AWS-Direct-Connect-Diagram.png" alt="Direct Connect"></p>
+<h4 id="Direct-Connect-Gateway"><a href="#Direct-Connect-Gateway" class="headerlink" title="Direct Connect Gateway"></a>Direct Connect Gateway</h4><p><code>If you want to setup a Direct Connect to one or more VPC in many different regions (same account), you must use a Direct Connect Gateway</code>. - Exam 👀</p>
+<p><img src="/../images/AWS-Direct-Connet-Gateway.png" alt="Direct Connect Gateway"></p>
 <h3 id="Direct-Connect-–-Connection-Types"><a href="#Direct-Connect-–-Connection-Types" class="headerlink" title="Direct Connect – Connection Types"></a>Direct Connect – Connection Types</h3><ul>
 <li><code>Dedicated Connections</code>: 1Gbps,10 Gbps and 100 Gbps capacity<ul>
 <li>Physical ethernet port dedicated to a customer</li>
@@ -1199,17 +1206,25 @@ Configure IPv6 on Your Instances – If your instance was launched from an AMI t
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Start cfn-signal to the wait condition</span></span><br><span class="line"><span class="string">/opt/aws/bin/cfn-signal</span> <span class="string">-e</span> <span class="string">$?</span> <span class="string">--stack</span> <span class="string">$&#123;AWS::StackId&#125;</span> <span class="string">--resource</span> <span class="string">SampleWaitCondition</span> <span class="string">--region</span> <span class="string">$&#123;AWS::Region&#125;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">SampleWaitCondition:</span></span><br><span class="line">  <span class="attr">Type:</span> <span class="string">AWS::CloudFormation::WaitCondition</span></span><br><span class="line">  <span class="attr">CreationPolicy:</span></span><br><span class="line">    <span class="attr">ResourceSignal:</span></span><br><span class="line">      <span class="attr">Timeout:</span> <span class="string">PT2M</span></span><br><span class="line">      <span class="attr">Count:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="StackSets"><a href="#StackSets" class="headerlink" title="StackSets"></a>StackSets</h3><h4 id="Use-AWS-CloudFormation-StackSets-for-Multiple-Accounts-in-an-AWS-Organization"><a href="#Use-AWS-CloudFormation-StackSets-for-Multiple-Accounts-in-an-AWS-Organization" class="headerlink" title="Use AWS CloudFormation StackSets for Multiple Accounts in an AWS Organization:"></a><code>Use</code> AWS CloudFormation <code>StackSets for Multiple Accounts in an AWS Organization</code>:</h4><p>Use AWS CloudFormation <code>StackSets</code> to <code>deploy a template</code> to <code>each account</code> to create the new IAM roles.</p>
+<h3 id="CloudFormation-StackSets"><a href="#CloudFormation-StackSets" class="headerlink" title="CloudFormation StackSets"></a>CloudFormation StackSets</h3><ul>
+<li>Create, update, or delete stacks across multiple accounts and regions with a single operation</li>
+<li>Administrator account to create StackSets</li>
+<li>Trusted accounts to create, update, delete stack instances from StackSets</li>
+</ul>
+<h4 id="Use-AWS-CloudFormation-StackSets-for-Multiple-Accounts-in-an-AWS-Organization"><a href="#Use-AWS-CloudFormation-StackSets-for-Multiple-Accounts-in-an-AWS-Organization" class="headerlink" title="Use AWS CloudFormation StackSets for Multiple Accounts in an AWS Organization:"></a><code>Use</code> AWS CloudFormation <code>StackSets for Multiple Accounts in an AWS Organization</code>:</h4><p>Use AWS CloudFormation <code>StackSets</code> to <code>deploy a template</code> to <code>each account</code> to create the new IAM roles.</p>
 <p><code>Explanation</code>: AWS CloudFormation StackSets allows you to deploy a CloudFormation template across multiple AWS accounts. By using StackSets, you can create and manage the same IAM roles in each account within the organization. This ensures consistent deployment of roles across accounts and simplifies the management process.</p>
 <p><code>Reference</code>: <a target="_blank" rel="noopener" href="https://aws.amazon.com/blogs/aws/new-use-aws-cloudformation-stacksets-for-multiple-accounts-in-an-aws-organization/">New: Use AWS CloudFormation StackSets for Multiple Accounts in an AWS Organization</a></p>
 <h3 id="Q-To-lunch-the-last-AMI"><a href="#Q-To-lunch-the-last-AMI" class="headerlink" title="*Q To lunch the last AMI."></a><code>*Q</code> To lunch the last AMI.</h3><p>Use the Parameters section in the template to specify the Systems Manager (SSM) Parameter, which contains the latest version of the Windows regional AMI ID.</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Parameters:</span></span><br><span class="line">  <span class="attr">LatestWindowsAMIParameter:</span></span><br><span class="line">    <span class="attr">Type:</span> <span class="string">AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;</span></span><br><span class="line">    <span class="attr">Default:</span> <span class="string">/LatestWindowsAMI</span></span><br><span class="line"></span><br><span class="line"><span class="attr">Parameters:</span></span><br><span class="line">  <span class="attr">LatestWindowsAMIParameter:</span></span><br><span class="line">    <span class="attr">Type:</span> <span class="string">AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;</span></span><br><span class="line">    <span class="attr">Default:</span> <span class="string">/LatestWindowsAMI</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="Q-UpdatePolicy-attribute"><a href="#Q-UpdatePolicy-attribute" class="headerlink" title="*Q UpdatePolicy attribute"></a><code>*Q</code> <code>UpdatePolicy</code> attribute</h3><p>By adding the <code>UpdatePolicy</code> attribute in CloudFormation and enabling the WaitOnResourceSignals property, the Auto Scaling group update process will be handled more gracefully. This approach allows CloudFormation to monitor the health and success of each instance during the update process before moving on to the next instance.</p>
+<h3 id="👀-UpdatePolicy-96-attribute"><a href="#👀-UpdatePolicy-96-attribute" class="headerlink" title="👀 UpdatePolicy&#96; attribute"></a><code>👀 </code>UpdatePolicy&#96; attribute</h3><p>By adding the <code>UpdatePolicy</code> attribute in CloudFormation and enabling the WaitOnResourceSignals property, the Auto Scaling group update process will be handled more gracefully. This approach allows CloudFormation to monitor the health and success of each instance during the update process before moving on to the next instance.</p>
 <p>Appending a health check at the end of the user data script allows the instance to signal CloudFormation that it has successfully completed its initialization. This helps ensure that the instance is fully operational before proceeding to the next instance in the Auto Scaling group update process.</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">CreationPolicy:</span></span><br><span class="line">  <span class="attr">ResourceSignal:</span></span><br><span class="line">    <span class="attr">Count:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line">    <span class="attr">Timeout:</span> <span class="string">PT15M</span></span><br><span class="line"><span class="attr">UpdatePolicy:</span></span><br><span class="line">  <span class="attr">AutoScalingRollingUpdate:</span></span><br><span class="line">    <span class="attr">MinInstancesInService:</span> <span class="string">&#x27;1&#x27;</span></span><br><span class="line">    <span class="attr">MaxBatchSize:</span> <span class="string">&#x27;2&#x27;</span></span><br><span class="line">    <span class="attr">PauseTime:</span> <span class="string">PT1M</span></span><br><span class="line">    <span class="attr">WaitOnResourceSignals:</span> <span class="string">&#x27;true&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="👀-DependsOn-attribute"><a href="#👀-DependsOn-attribute" class="headerlink" title="👀 DependsOn attribute"></a>👀 <code>DependsOn</code> attribute</h3><p>With the DependsOn attribute, you can specify that the <code>creation</code> of a specific resource <code>follows another</code>. When you add a DependsOn attribute to a resource, that resource is created only after the creation of the resource specified in the DependsOn attribute.</p>
+<h3 id="Set-Tags-consistently-in-AWS-across-all-accounts"><a href="#Set-Tags-consistently-in-AWS-across-all-accounts" class="headerlink" title="Set Tags consistently in AWS across all accounts"></a>Set Tags consistently in AWS across all accounts</h3><p>Use the CloudFormation <code>Resource Tags property</code> to apply tags to certain resource types upon creation.</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Resources:</span></span><br><span class="line">  <span class="attr">MyEC2Instance:</span></span><br><span class="line">    <span class="attr">Type:</span> <span class="string">AWS::EC2::Instance</span></span><br><span class="line">    <span class="attr">Properties:</span></span><br><span class="line">      <span class="attr">ImageId:</span> <span class="string">ami-0123456789abcdef0</span></span><br><span class="line">      <span class="attr">InstanceType:</span> <span class="string">t2.micro</span></span><br><span class="line">      <span class="attr">Tags:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">Key:</span> <span class="string">Name</span></span><br><span class="line">          <span class="attr">Value:</span> <span class="string">MyEC2Instance</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">Key:</span> <span class="string">Environment</span></span><br><span class="line">          <span class="attr">Value:</span> <span class="string">Production</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">Key:</span> <span class="string">CostCenter</span></span><br><span class="line">          <span class="attr">Value:</span> <span class="string">MyCostCenter</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <hr>
 <h2 id="AWS-Backup"><a href="#AWS-Backup" class="headerlink" title="AWS Backup"></a>AWS Backup</h2><ul>
 <li>Fully managed service</li>
@@ -1474,12 +1489,6 @@ information in the findings report and additionally provides the list of rules t
 <li><code>Artifact Agreements</code> - Allows you to review, accept, and track the status of AWS agreements such as the Business Associate Addendum (BAA) or the Health Insurance Portability and Accountability Act (HIPAA) for an individual account or in your organization -</li>
 </ul>
 <p>Can be used to <code>support internal audit or compliance</code>.</p>
-<hr>
-<h2 id="👀-AWS-Service-Catalog"><a href="#👀-AWS-Service-Catalog" class="headerlink" title="👀 AWS Service Catalog"></a>👀 AWS Service Catalog</h2><p>provides a <code>TagOption library</code>. A TagOption is a key-value pair managed in AWS Service Catalog. It is not an AWS tag but serves as a template for creating an AWS tag based on the TagOption.</p>
-<p>The TagOption library makes it easier to enforce the following:</p>
-<p>– A consistent <code>taxonomy</code>
-– Proper tagging of AWS Service Catalog resources
-– Defined, user-selectable options for allowed tags</p>
 <hr>
 <h2 id="AWS-Secrets-Manager"><a href="#AWS-Secrets-Manager" class="headerlink" title="AWS Secrets Manager"></a>AWS Secrets Manager</h2><ul>
 <li>Newer service, meant for storing secrets</li>
@@ -1758,6 +1767,11 @@ device (usually a mobile phone or hardware) before doing important operations on
 <li><p><strong><code>Only the bucket owner (root account) can enable/disable MFA Delete</code></strong></p>
 </li>
 </ul>
+<h4 id="Allow-access-if-users-are-MFA-authenticated"><a href="#Allow-access-if-users-are-MFA-authenticated" class="headerlink" title="Allow access if users are MFA authenticated"></a>Allow access if users are MFA authenticated</h4><p>use an MFA condition in a policy to check the following properties:</p>
+<p>– Existence—To simply verify that the user did authenticate with MFA, check that the <code>aws:MultiFactorAuthPresent</code> key is True in a Bool condition. The key is only present when the user authenticates with short-term credentials. Long-term credentials, such as access keys, do not include this key.</p>
+<p>– Duration—If you want to grant access only within a specified time after MFA authentication, use a numeric condition type to compare the aws:MultiFactorAuthAge key’s age to a value (such as 3600 seconds). Note that the <code>aws:MultiFactorAuthAge</code> key is not present if MFA was not used.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;Condition&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;Bool&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;</span></span><br><span class="line"><span class="string">    &quot;</span>aws<span class="punctuation">:</span>MultiFactorAuthPresent<span class="string">&quot;: &quot;</span><span class="literal"><span class="keyword">true</span></span><span class="string">&quot;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="S3-Access-Logs"><a href="#S3-Access-Logs" class="headerlink" title="S3 Access Logs"></a>S3 Access Logs</h3><ul>
 <li>For audit purpose, you may want to log all access to S3 buckets</li>
 <li>Any request made to S3, from any account, authorized or denied, will be logged into another S3 bucket</li>
@@ -1832,6 +1846,7 @@ device (usually a mobile phone or hardware) before doing important operations on
 </ul>
 <hr>
 <h2 id="AWS-Storage-Gateway"><a href="#AWS-Storage-Gateway" class="headerlink" title="AWS Storage Gateway"></a>AWS Storage Gateway</h2><p>Bridge between on-premises data and cloud data</p>
+<p><img src="/../images/AWS-Store-Gateway-Architecture.png" alt="AWS Storage Gateway"></p>
 <ul>
 <li><p><code>File Gateway is POSIX compliant (Linux file system)</code></p>
 <ul>
@@ -1984,7 +1999,7 @@ you plan for <code>scheduled activities</code>.</p>
 <li>Use cases: send notifications, capture event information, take corrective action…</li>
 </ul>
 <h2 id="👀-Q-AWS-Personal-Health-Dashboard"><a href="#👀-Q-AWS-Personal-Health-Dashboard" class="headerlink" title="👀 *Q AWS Personal Health Dashboard"></a>👀 <code>*Q</code> AWS Personal Health Dashboard</h2><p>AWS Personal Health Dashboard provides <code>alerts</code> and <em><code>remediation guidance</code></em> when AWS is experiencing <code>events that may impact you</code>. While the Service Health Dashboard displays the general status of AWS services, Personal Health Dashboard gives you a personalized view into the <em>performance and availability</em> of the AWS services underlying your AWS resources.</p>
-<p>What’s more, Personal Health Dashboard proactively notifies you when AWS experiences any events that may affect you, helping provide quick visibility and guidance to help you minimize the impact of events in progress, and plan for any scheduled changes, such as AWS hardware maintenance.AWS Inspector</p>
+<p>What’s more, Personal Health Dashboard proactively notifies you when AWS experiences any events that may affect you, helping provide quick visibility and guidance to help you minimize the impact of events in progress, and plan for any scheduled changes, such as AWS hardware maintenance.</p>
 <p>The <code>AWS Health API provides</code> programmatic <code>access</code> to the <code>AWS Health information</code> that appears in the AWS Personal Health Dashboard. You can use the API operations to get information about events that might affect your AWS services and resources.</p>
 <hr>
 <h2 id="AWS-Organizations"><a href="#AWS-Organizations" class="headerlink" title="AWS Organizations"></a>AWS Organizations</h2><p>If you have created an organization in AWS Organizations, you <code>can</code> also <code>create a trail</code> that will <code>log all events for all AWS accounts in that organization</code>. This is referred to as an organization trail.</p>
@@ -2045,7 +2060,7 @@ you plan for <code>scheduled activities</code>.</p>
 </li>
 </ul>
 <hr>
-<h2 id="AWS-Service-Catalog"><a href="#AWS-Service-Catalog" class="headerlink" title="AWS Service Catalog"></a>AWS Service Catalog</h2><p>AWS Service Catalog allows <code>organizations to create and manage catalogs of IT services that are approved for use on AWS</code>. These IT services can include everything from virtual machine images, servers, software, and databases to complete multi-tier application architectures. AWS Service Catalog allows you to centrally manage deployed IT services and your applications, resources, and metadata. This helps you achieve <code>consistent governance</code> and <code>meet your compliance requirements</code> while enabling users to quickly deploy only the approved IT services they need.</p>
+<h2 id="👀-AWS-Service-Catalog"><a href="#👀-AWS-Service-Catalog" class="headerlink" title="👀 AWS Service Catalog"></a>👀 AWS Service Catalog</h2><p>AWS Service Catalog allows <code>organizations to create and manage catalogs of IT services that are approved for use on AWS</code>. These IT services can include everything from virtual machine images, servers, software, and databases to complete multi-tier application architectures. AWS Service Catalog allows you to centrally manage deployed IT services and your applications, resources, and metadata. This helps you achieve <code>consistent governance</code> and <code>meet your compliance requirements</code> while enabling users to quickly deploy only the approved IT services they need.</p>
 <h4 id="Sharing-and-Importing-Portfolios"><a href="#Sharing-and-Importing-Portfolios" class="headerlink" title="Sharing and Importing Portfolios"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_sharing.html">Sharing and Importing Portfolios</a></h4><p>To make your Service Catalog products available to users who are not in your AWS accounts, such as users who belong to other organizations or to other AWS accounts in your organization, you share your portfolios with them. You can share in several ways, including <code>account-to-account</code> sharing, <code>organizational</code> sharing, and <code>deploying catalogs using stack sets</code>.</p>
 <p>Before you share your products and portfolios to other accounts, you must decide whether you want to share a reference of the catalog or to deploy a copy of the catalog into each recipient account. Note that if you deploy a copy, you must redeploy if there are updates you want to propagate to the recipient accounts.</p>
 <ul>
@@ -2065,8 +2080,9 @@ you plan for <code>scheduled activities</code>.</p>
 </ul>
 </li>
 <li>Can be associated with Portfolios and Products.</li>
-<li>Use cases: proper resources tagging, defined allowed tags, …</li>
-<li>Can be shared with other AWS accounts and AWS Organizations.</li>
+<li>Use cases: <code>proper resources tagging</code>, <code>defined allowed</code> tags, …</li>
+<li>Can be shared with other AWS accounts and AWS Organizations.
+– A consistent <code>taxonomy</code></li>
 </ul>
 <hr>
 <h2 id="Cost-Explorer"><a href="#Cost-Explorer" class="headerlink" title="Cost Explorer"></a>Cost Explorer</h2><ul>
@@ -2596,6 +2612,9 @@ They are optimized to deliver tens of thousands of <code>low-latency</code>, <co
 <h2 id="👀-AWS-Directory-Services"><a href="#👀-AWS-Directory-Services" class="headerlink" title="👀 AWS Directory Services"></a>👀 AWS Directory Services</h2><p>service that automatically <code>creates</code> an AWS <code>security group</code> in your VPC with network rules for traffic in and out of AWS managed domain controllers. The default inbound rules <code>allow traffic from any source (0.0.0.0/0) to ports required by Active Directory</code>. These rules do not introduce security vulnerabilities, as traffic to the domain controllers is limited to traffic from your VPC, other peered VPCs, or networks connected using AWS Direct Connect, AWS Transit Gateway or Virtual Private Network.</p>
 <p><code>By default</code>, AWS Directory Services creates security groups that <em><code>allow unrestricted access</code></em>, which can be &#96;flagged as a security concern. To address this issue, you need to review the security group rules and make necessary adjustments to restrict access based on your specific requirements and security best practices.</p>
 <p>Using <code>AWS Trusted Advisor</code> can provide additional insights into security best practices and potential misconfigurations, but it may not specifically highlight the security group issue related to AWS Directory Services.</p>
+<h2 id="Q-SAML-federation"><a href="#Q-SAML-federation" class="headerlink" title="*Q SAML federation"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">SAML federation</a></h2><ul>
+<li><code>SAML federation between AWS and</code> the corporate <code>Active Directory and mapping Active Directory groups to IAM groups</code> is the recommended way to make access more secure and streamlined.</li>
+</ul>
 <h2 id="Enhanced-networking"><a href="#Enhanced-networking" class="headerlink" title="Enhanced networking"></a>Enhanced networking</h2><p><code>*Q</code> Consider using enhanced networking for the following scenarios of <code>network performance issues</code>:</p>
 <ol>
 <li>If your packets-per-second rate reaches its ceiling, consider moving to enhanced networking. If your rate reaches its ceiling, you’ve likely reached the upper thresholds of the virtual network interface driver.</li>
@@ -2605,7 +2624,8 @@ They are optimized to deliver tens of thousands of <code>low-latency</code>, <co
 <h2 id="Cost-Allocation-Tags-1"><a href="#Cost-Allocation-Tags-1" class="headerlink" title="Cost Allocation Tags"></a>Cost Allocation Tags</h2><p>A tag is a label that you or AWS assigns to an AWS resource. Each tag consists of a key and a value. For each resource, each tag key must be unique, and each tag key can have only one value. You can use tags to organize your resources, and cost allocation tags to track your AWS costs on a detailed level. After you activate cost allocation tags, AWS uses the cost allocation tags to organize your resource costs on your cost allocation report, to make it easier for you to categorize and track your AWS costs.</p>
 <h2 id="👀-Q-AWS-Resource-Groups-Tag-Editor"><a href="#👀-Q-AWS-Resource-Groups-Tag-Editor" class="headerlink" title="👀 *Q AWS Resource Groups Tag Editor"></a>👀 <code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/ARG/latest/userguide/tag-editor.html">AWS Resource Groups Tag Editor</a></h2><p>With Resource Groups, you can create, maintain, and view a collection of resources that share common tags. Tag Editor manages <code>tags across services and AWS Regions</code>. Tag Editor can perform a global search and can edit a large number of tags at one time.</p>
 <h2 id="OpsWorks"><a href="#OpsWorks" class="headerlink" title="OpsWorks"></a>OpsWorks</h2><p>AWS OpsWorks is a <code>configuration management service</code> that provides managed instances of <code>Chef</code> and <code>Puppet</code>.</p>
-<h3 id="👀-Chef-Server"><a href="#👀-Chef-Server" class="headerlink" title="👀 Chef Server"></a>👀 Chef Server</h3><p>You can <code>add nodes</code> automatically to your Chef Server using the <code>unattended method</code>. The recommended method of unattended (or automatic) association of new nodes is to <code>configure</code> the <code>Chef Client Cookbook</code>.</p>
+<h3 id="👀-Chef-Server"><a href="#👀-Chef-Server" class="headerlink" title="👀 Chef Server"></a>👀 Chef Server</h3><p>You can <code>add nodes</code> automatically to your Chef Server using the <code>unattended method</code>. The recommended method of unattended (or automatic) association of new nodes is to <code>configure</code> the <code>Chef Client Cookbook</code>.
+With this method, a script is used to run the opsworks-cm API associate-node command to associate a new node with your Chef server. Steps are found in the references.</p>
 <h2 id="Q-AWS-Service-Health-Dashboard"><a href="#Q-AWS-Service-Health-Dashboard" class="headerlink" title="*Q AWS Service Health Dashboard"></a><code>*Q</code> AWS Service Health Dashboard</h2><p>Publishes the most up-to-the-minute information on the status and availability of all AWS services in tabular form for all Regions that AWS is present in. You can check on this page <a target="_blank" rel="noopener" href="https://status.aws.amazon.com/">https://status.aws.amazon.com/</a> to get current status information.</p>
 <h2 id="👀-Cost-Allocation-Tags-Account-Level"><a href="#👀-Cost-Allocation-Tags-Account-Level" class="headerlink" title="👀 Cost Allocation Tags - Account Level"></a>👀 Cost Allocation Tags - Account Level</h2><p>A tag is a label that you or AWS assigns to an AWS resource. Each tag consists of a key and a value. For each resource, each tag key must be unique, and each tag key can have only one value. You can use tags to organize your resources, and cost allocation tags to track your AWS costs on a detailed level. After you activate cost allocation tags, AWS uses the cost allocation tags to organize your resource costs on your cost allocation report, to make it easier for you to categorize and track your AWS costs.</p>
 <h2 id="Protecting-data-using-encryption"><a href="#Protecting-data-using-encryption" class="headerlink" title="Protecting data using encryption"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingEncryption.html">Protecting data using encryption</a></h2><h3 id="SSE-S3-Server-Side-Encryption-with-Amazon-S3-Managed-Keys-SSE-S3"><a href="#SSE-S3-Server-Side-Encryption-with-Amazon-S3-Managed-Keys-SSE-S3" class="headerlink" title="SSE-S3 - Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3)"></a>SSE-S3 - Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3)</h3><p>Using SSE-S3 each object is encrypted with a unique key employing strong multi-factor encryption. As an additional safeguard, it encrypts the key itself with a master key that it regularly rotates. Amazon S3 server-side encryption uses one of the strongest block ciphers available, 256-bit Advanced Encryption Standard (AES-256), to encrypt your data.</p>
@@ -2747,9 +2767,6 @@ To connect your Amazon EFS file system to your Amazon EC2 instance, you <code>mu
 <ul>
 <li>The traffic <code>mirror target is a standalone instance</code>.</li>
 <li>The traffic <code>packet size from the mirror source is greater</code> than the MTU size for the traffic mirror <code>target</code>.</li>
-</ul>
-<h2 id="Q-SAML-federation"><a href="#Q-SAML-federation" class="headerlink" title="*Q SAML federation"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">SAML federation</a></h2><ul>
-<li><code>SAML federation between AWS and</code> the corporate <code>Active Directory and mapping Active Directory groups to IAM groups</code> is the recommended way to make access more secure and streamlined.</li>
 </ul>
 <hr>
 <h2 id="👀-IMPORTANT-NOTES-👀"><a href="#👀-IMPORTANT-NOTES-👀" class="headerlink" title="👀 IMPORTANT NOTES 👀"></a>👀 IMPORTANT NOTES 👀</h2><h3 id="By-default-Amazon-EC2-and-Amazon-VPC-use-the-IPv4-addressing-protocol"><a href="#By-default-Amazon-EC2-and-Amazon-VPC-use-the-IPv4-addressing-protocol" class="headerlink" title="By default, Amazon EC2 and Amazon VPC use the IPv4 addressing protocol"></a>By default, Amazon EC2 and Amazon VPC use the IPv4 addressing protocol</h3><p>Amazon EC2 and Amazon VPC support both the IPv4 and IPv6 addressing protocols. By default, Amazon EC2 and Amazon VPC use the IPv4 addressing protocol; you can’t disable this behavior. When you create a VPC, you must specify an IPv4 CIDR block (a range of private IPv4 addresses). You can optionally assign an IPv6 CIDR block to your VPC and subnets, and assign IPv6 addresses from that block to instances in your subnet.</p>
@@ -2893,6 +2910,7 @@ Documents</li>
 <li>Query data from multiple AWS accounts and regions</li>
 <li>Create Custom Inventory for your custom metadata (e.g., rack location of each managed instance)</li>
 </ol>
+<hr>
 <h2 id="Scalability-amp-High-Availability"><a href="#Scalability-amp-High-Availability" class="headerlink" title="Scalability &amp; High Availability"></a>Scalability &amp; High Availability</h2><p>Scalability means that an application &#x2F; system can handle greater loads by adapting.</p>
 <p><strong>Scalability is linked but different to High Availability</strong></p>
 <h3 id="Vertical-Scalability"><a href="#Vertical-Scalability" class="headerlink" title="Vertical Scalability"></a>Vertical Scalability</h3><p>Vertically scalability means increasing the size of the resource (instance)</p>
@@ -2971,11 +2989,6 @@ To solve this use-case, you need to configure the Auto Scaling groups to scale y
 </ul>
 <h3 id="AutoScalingReplacingUpdate-policy-EXAM"><a href="#AutoScalingReplacingUpdate-policy-EXAM" class="headerlink" title="AutoScalingReplacingUpdate policy - *EXAM"></a>AutoScalingReplacingUpdate policy - <code>*EXAM</code></h3><h3 id="AutoScalingRollingUpdate-policy"><a href="#AutoScalingRollingUpdate-policy" class="headerlink" title="AutoScalingRollingUpdate policy"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html">AutoScalingRollingUpdate policy</a></h3><p>With rolling updates, you can specify whether CloudFormation performs updates in batches or all at once for instances that are in an Auto Scaling group. The <code>AutoScalingRollingUpdate</code> policy is the only CloudFormation feature that provides such an incremental update throughout the Auto Scaling group.</p>
 <h3 id="AutoScalingScheduledAction-policy"><a href="#AutoScalingScheduledAction-policy" class="headerlink" title="AutoScalingScheduledAction policy"></a>AutoScalingScheduledAction policy</h3><p>Applies when you update a stack that includes an Auto Scalling group with an associated scheduled action.</p>
-<h3 id="CloudFormation-StackSets"><a href="#CloudFormation-StackSets" class="headerlink" title="CloudFormation StackSets"></a>CloudFormation StackSets</h3><ul>
-<li>Create, update, or delete stacks across multiple accounts and regions with a single operation</li>
-<li>Administrator account to create StackSets</li>
-<li>Trusted accounts to create, update, delete stack instances from StackSets</li>
-</ul>
 <h3 id="Lambda-Tracing-with-X-Ray"><a href="#Lambda-Tracing-with-X-Ray" class="headerlink" title="Lambda Tracing with X-Ray"></a>Lambda Tracing with X-Ray</h3><ul>
 <li>Enable in Lambda configuration (<code>Active Tracing</code>)</li>
 <li>Environment variables to communicate with X-Ray<ul>
@@ -3086,7 +3099,7 @@ To solve this use-case, you need to configure the Auto Scaling groups to scale y
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="cljwhfp890004d2or02zf0d0w" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="clk0pf1580004f6ptgukx1i48" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3099,7 +3112,7 @@ To solve this use-case, you need to configure the Auto Scaling groups to scale y
     
 <nav id="article-nav">
   
-    <a href="/2023/07/10/Getting-Started-With-Hexo/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/07/13/Getting-Started-With-Hexo/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -3136,7 +3149,7 @@ To solve this use-case, you need to configure the Auto Scaling groups to scale y
       <ul>
         
           <li>
-            <a href="/2023/07/10/Getting-Started-With-Hexo/">Getting started with Hexo</a>
+            <a href="/2023/07/13/Getting-Started-With-Hexo/">Getting started with Hexo</a>
           </li>
         
           <li>
