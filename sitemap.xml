@@ -2,96 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/07/18/Getting-Started-With-Hexo/</loc>
-    
-    <lastmod>2023-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/Git-Documentation/</loc>
-    
-    <lastmod>2023-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/How-do-I-reset-a-monitor-settings/</loc>
-    
-    <lastmod>2023-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/02/17/How-to-add-Open-Folder-with-X-when-I-right-click-in-an-folder-in-Dolphin/</loc>
-    
-    <lastmod>2023-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/</loc>
-    
-    <lastmod>2023-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2017/12/28/Install-latest-hplip-version-on-Debian-9/</loc>
-    
-    <lastmod>2023-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2018/08/22/KDE-connect/</loc>
-    
-    <lastmod>2023-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/02/28/Kubernetes-Notes/</loc>
-    
-    <lastmod>2023-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2018/08/23/Node-best-and-useful-global-CLIs/</loc>
-    
-    <lastmod>2023-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2018/01/04/Obtain-a-refresh-token-at-Google-OAuth2-Playground/</loc>
-    
-    <lastmod>2023-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.pablo-magro-gaspar.site/2016/09/17/Post-Installing-GNU-Linux-Debian-based/</loc>
     
     <lastmod>2023-07-18</lastmod>
@@ -200,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/02/16/AI-Websites-to-make-your-Life-Easier/</loc>
+    <loc>https://blog.pablo-magro-gaspar.site/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/</loc>
     
     <lastmod>2023-07-18</lastmod>
     
@@ -227,25 +137,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/</loc>
-    
-    <lastmod>2023-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.pablo-magro-gaspar.site/2016/09/14/Bootable-CD-from-ISO/</loc>
-    
-    <lastmod>2023-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2017/11/15/Disable-baloo-file-extractor/</loc>
     
     <lastmod>2023-07-18</lastmod>
     
@@ -263,7 +155,115 @@
   </url>
   
   <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2017/11/15/Disable-baloo-file-extractor/</loc>
+    
+    <lastmod>2023-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.pablo-magro-gaspar.site/2020/04/12/Find%20out%20what%20package%20produced%20a%20particular%20file/</loc>
+    
+    <lastmod>2023-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/07/18/Getting-Started-With-Hexo/</loc>
+    
+    <lastmod>2023-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/Git-Documentation/</loc>
+    
+    <lastmod>2023-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/How-do-I-reset-a-monitor-settings/</loc>
+    
+    <lastmod>2023-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/02/17/How-to-add-Open-Folder-with-X-when-I-right-click-in-an-folder-in-Dolphin/</loc>
+    
+    <lastmod>2023-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/</loc>
+    
+    <lastmod>2023-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2017/12/28/Install-latest-hplip-version-on-Debian-9/</loc>
+    
+    <lastmod>2023-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2018/08/22/KDE-connect/</loc>
+    
+    <lastmod>2023-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/02/28/Kubernetes-Notes/</loc>
+    
+    <lastmod>2023-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2018/08/23/Node-best-and-useful-global-CLIs/</loc>
+    
+    <lastmod>2023-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2018/01/04/Obtain-a-refresh-token-at-Google-OAuth2-Playground/</loc>
+    
+    <lastmod>2023-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/02/16/AI-Websites-to-make-your-Life-Easier/</loc>
     
     <lastmod>2023-07-18</lastmod>
     
@@ -330,14 +330,14 @@
   </url>
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/tags/File/</loc>
+    <loc>https://blog.pablo-magro-gaspar.site/tags/Resources/</loc>
     <lastmod>2023-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/tags/Resources/</loc>
+    <loc>https://blog.pablo-magro-gaspar.site/tags/File/</loc>
     <lastmod>2023-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
