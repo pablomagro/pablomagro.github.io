@@ -100,7 +100,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/">AWS Certified SysOps Administrator – Associate (SOA-C02)</a>
+      <a class="article-title" href="/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/">AWS Certified SysOps Administrator - Associate (SOA-C02)</a>
     </h1>
   
 
@@ -145,10 +145,10 @@ ga('send', 'pageview');
 <li>Environment.name</li>
 </ul>
 </li>
-<li><p>Metric resolution (<code>StorageResolution</code> API parameter – two possible value):</p>
+<li><p>Metric resolution (<code>StorageResolution</code> API parameter - two possible value):</p>
 <ul>
 <li>Standard: 1 minute (60 seconds)</li>
-<li>High Resolution: 1&#x2F;5&#x2F;10&#x2F;30 second(s) – Higher cost</li>
+<li>High Resolution: 1&#x2F;5&#x2F;10&#x2F;30 second(s) - Higher cost</li>
 </ul>
 </li>
 <li><p>Important <code>👀 Exam</code>: <strong><code>Accepts metric data points two weeks in the past and two hours in the future (make sure to configure your EC2 instance time correctly)</code></strong></p>
@@ -158,6 +158,10 @@ ga('send', 'pageview');
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aws cloudwatch put-metric-data --metric-name PageViewCount --namespace MyService --value 2 --timestamp 2023-01-01-14T08:00:00.000Z</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li><a target="_blank" rel="noopener" href="https://aws.amazon.com/blogs/aws/new-high-resolution-custom-metrics-and-alarms-for-amazon-cloudwatch/">high-resolution</a>: high-resolution custom metric, your applications can publish metrics to CloudWatch with 1-second resolution.
+  High-Resolution Alarms allow you to react and take actions faster and support the same actions available today with standard 1-minute alarms.</li>
+</ul>
 <h3 id="CloudWatch-Dashboards"><a href="#CloudWatch-Dashboards" class="headerlink" title="CloudWatch Dashboards"></a>CloudWatch Dashboards</h3><ul>
 <li>Great way to setup custom dashboards for quick access to key metrics and alarms</li>
 <li><strong><code>Dashboards are global</code></strong></li>
@@ -182,9 +186,9 @@ ga('send', 'pageview');
 </li>
 <li><p>Send to Kinesis Data Streams, Kinesis Data Firehose, or Lambda</p>
 </li>
-<li><p><code>Subscription Filter </code>– filter which logs are events delivered to your destination</p>
+<li><p><code>Subscription Filter </code>- filter which logs are events delivered to your destination</p>
 </li>
-<li><p><code>Cross-Account Subscription</code> – send log events to resources in a different AWS account (KDS, KDF)</p>
+<li><p><code>Cross-Account Subscription</code> - send log events to resources in a different AWS account (KDS, KDF)</p>
 </li>
 </ul>
 <h3 id="Alarms"><a href="#Alarms" class="headerlink" title="Alarms"></a>Alarms</h3><p>CloudWatch alarms allow you to monitor metrics and trigger actions based on defined thresholds. In this case, you can create a CloudWatch alarm that monitors the CPU utilization metric of the EC2 instance. When the CPU utilization reaches 100%, the alarm will be triggered, and you can configure actions such as sending notifications or executing automated actions to address the unresponsiveness issue.</p>
@@ -314,7 +318,7 @@ Instance Status Checks</li>
 </ul>
 </li>
 </ul>
-<h3 id="CloudTrail-–-Integration-with-EventBridge"><a href="#CloudTrail-–-Integration-with-EventBridge" class="headerlink" title="CloudTrail – Integration with EventBridge"></a>CloudTrail – Integration with EventBridge</h3><ul>
+<h3 id="CloudTrail-Integration-with-EventBridge"><a href="#CloudTrail-Integration-with-EventBridge" class="headerlink" title="CloudTrail - Integration with EventBridge"></a>CloudTrail - Integration with EventBridge</h3><ul>
 <li>Used to react to any API call being made in your account</li>
 <li>CloudTrail is not “real-time”:<ul>
 <li>Delivers an event within 15 minutes of an API call</li>
@@ -322,7 +326,7 @@ Instance Status Checks</li>
 </ul>
 </li>
 </ul>
-<h3 id="CloudTrail-–-Organizations-Trails"><a href="#CloudTrail-–-Organizations-Trails" class="headerlink" title="CloudTrail – Organizations Trails"></a>CloudTrail – Organizations Trails</h3><ul>
+<h3 id="CloudTrail-Organizations-Trails"><a href="#CloudTrail-Organizations-Trails" class="headerlink" title="CloudTrail - Organizations Trails"></a>CloudTrail - Organizations Trails</h3><ul>
 <li>A trail that will log all events for all AWS accounts in an AWS Organization</li>
 <li>Log events for management and member accounts</li>
 <li>Trail with the same name will be created in every AWS account (IAM permissions)</li>
@@ -353,7 +357,7 @@ Instance Status Checks</li>
 </ul>
 </li>
 </ul>
-<h3 id="CloudTrail-–-Organizations-Trails-1"><a href="#CloudTrail-–-Organizations-Trails-1" class="headerlink" title="CloudTrail – Organizations Trails"></a>CloudTrail – Organizations Trails</h3><ul>
+<h3 id="CloudTrail-Organizations-Trails-1"><a href="#CloudTrail-Organizations-Trails-1" class="headerlink" title="CloudTrail - Organizations Trails"></a>CloudTrail - Organizations Trails</h3><ul>
 <li>A trail that will log all events for all AWS accounts in an AWS Organization</li>
 <li>Log events for management and member accounts</li>
 <li>Trail with the same name will be created in every AWS account (IAM permissions)</li>
@@ -408,7 +412,7 @@ These AWS Config rules act as controls to prevent any non-compliant S3 activitie
 <ul>
 <li><code>require-tags</code>: managed rule in AWS Config. This rule checks if a resource contains the tags that you specify.</li>
 </ul>
-<h3 id="Config-Rules-–-Remediations"><a href="#Config-Rules-–-Remediations" class="headerlink" title="Config Rules – Remediations"></a>Config Rules – Remediations</h3><p>Has auto remediate feature for any non-compliant S3 buckets using the following AWS Config rules:</p>
+<h3 id="Config-Rules-Remediations"><a href="#Config-Rules-Remediations" class="headerlink" title="Config Rules - Remediations"></a>Config Rules - Remediations</h3><p>Has auto remediate feature for any non-compliant S3 buckets using the following AWS Config rules:</p>
 <p>s3-bucket-logging-enabled s3-bucket-server-side-encryption-enabled s3-bucket-public-read-prohibited s3-bucket-public-write-prohibited</p>
 <p>These AWS Config rules act as controls to prevent any non-compliant S3 activities.</p>
 <ul>
@@ -419,11 +423,11 @@ These AWS Config rules act as controls to prevent any non-compliant S3 activitie
 </li>
 <li>You can set <code>Remediation Retries</code> if the resource is still non-compliant after autoremediation.</li>
 </ul>
-<h3 id="AWS-Config-Auto-Remediation"><a href="#AWS-Config-Auto-Remediation" class="headerlink" title="AWS Config Auto Remediation"></a>AWS Config Auto Remediation</h3><h3 id="Config-Rules-–-Notifications"><a href="#Config-Rules-–-Notifications" class="headerlink" title="Config Rules – Notifications"></a>Config Rules – Notifications</h3><ul>
+<h3 id="AWS-Config-Auto-Remediation"><a href="#AWS-Config-Auto-Remediation" class="headerlink" title="AWS Config Auto Remediation"></a>AWS Config Auto Remediation</h3><h3 id="Config-Rules-Notifications"><a href="#Config-Rules-Notifications" class="headerlink" title="Config Rules - Notifications"></a>Config Rules - Notifications</h3><ul>
 <li>Use EventBridge to trigger notifications when AWS resources are noncompliant</li>
-<li>Ability to send configuration changes and compliance state notifications to SNS (all events – use SNS Filtering or filter at client-side)</li>
+<li>Ability to send configuration changes and compliance state notifications to SNS (all events - use SNS Filtering or filter at client-side)</li>
 </ul>
-<h3 id="AWS-Config-–-Aggregators"><a href="#AWS-Config-–-Aggregators" class="headerlink" title="AWS Config – Aggregators"></a>AWS Config – Aggregators</h3><ul>
+<h3 id="AWS-Config-Aggregators"><a href="#AWS-Config-Aggregators" class="headerlink" title="AWS Config - Aggregators"></a>AWS Config - Aggregators</h3><ul>
 <li>The aggregator is created <code>in one central aggregator account</code>.</li>
 <li>Aggregates <code>rules, resources, etc... across multiple accounts &amp; regions</code>.</li>
 <li>If using <code>AWS Organizations</code>, no need for individual Authorization</li>
@@ -453,8 +457,7 @@ These AWS Config rules act as controls to prevent any non-compliant S3 activitie
 <hr>
 <h2 id="👀-Q-AWS-Task-Orchestrator-and-Executor-AWSTOE"><a href="#👀-Q-AWS-Task-Orchestrator-and-Executor-AWSTOE" class="headerlink" title="👀 Q AWS Task Orchestrator and Executor (AWSTOE)"></a>👀 Q AWS Task Orchestrator and Executor (AWSTOE)</h2><p>Use the <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/toe-get-started.html">AWS Task Orchestrator and Executor (AWSTOE)</a> application <code>to orchestrate complex workflows</code>, <code>modify system configurations</code>, and <code>test your systems without writing code</code>. This application uses a declarative document schema. Because it is a standalone application, it does not require additional server setup.</p>
 <hr>
-<h2 id="Q-AWS-Artifact"><a href="#Q-AWS-Artifact" class="headerlink" title="*Q AWS Artifact"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html">AWS Artifact</a></h2><p>AWS Artifact <code>keeps compliance-related reports and agreements</code>.</p>
-<p><code>👀</code></p>
+<h2 id="👀-AWS-Artifact"><a href="#👀-AWS-Artifact" class="headerlink" title="👀 AWS Artifact"></a><code>👀</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html">AWS Artifact</a></h2><p>AWS Artifact <code>keeps compliance-related reports and agreements</code>.</p>
 <hr>
 <h2 id="RDS"><a href="#RDS" class="headerlink" title="RDS"></a>RDS</h2><h3 id="Advantage-over-using-RDS-versus-deploying"><a href="#Advantage-over-using-RDS-versus-deploying" class="headerlink" title="Advantage over using RDS versus deploying"></a>Advantage over using RDS versus deploying</h3><ul>
 <li>RDS is a managed service:<ul>
@@ -476,13 +479,13 @@ These AWS Config rules act as controls to prevent any non-compliant S3 activitie
 <li>Replication is <code>ASYNC</code>.</li>
 <li>Replicas can be promoted to their own DB.</li>
 </ul>
-<h3 id="RDS-Read-Replicas-–-Network-Cost"><a href="#RDS-Read-Replicas-–-Network-Cost" class="headerlink" title="RDS Read Replicas – Network Cost"></a>RDS Read Replicas – Network Cost</h3><ul>
+<h3 id="RDS-Read-Replicas-Network-Cost"><a href="#RDS-Read-Replicas-Network-Cost" class="headerlink" title="RDS Read Replicas - Network Cost"></a>RDS Read Replicas - Network Cost</h3><ul>
 <li>In AWS there’s a network cost when data goes from one AZ to another</li>
 <li><code>For RDS Read Replicas within the same region, you don’t pay that fee</code>.</li>
 </ul>
 <h3 id="RDS-Multi-AZ-Disaster-Recovery"><a href="#RDS-Multi-AZ-Disaster-Recovery" class="headerlink" title="RDS Multi AZ (Disaster Recovery)"></a>RDS Multi AZ (Disaster Recovery)</h3><ul>
 <li><code>SYNC</code> replication.</li>
-<li>One DNS name – automatic app failover to standby</li>
+<li>One DNS name - automatic app failover to standby</li>
 <li>Increase <code>availability</code>.</li>
 <li>Failover in case of loss of AZ, loss of network, instance or storage failure</li>
 </ul>
@@ -544,7 +547,13 @@ These AWS Config rules act as controls to prevent any non-compliant S3 activitie
 </li>
 <li><p><code>DiskQueueDepth</code></p>
 </li>
-<li><p><code>FreeStorageSpace</code></p>
+<li><p><code>FreeStorageSpace</code> - To monitor the available storage space for an RDS DB instance</p>
+</li>
+<li><p>BinLogDiskUsage: Tracks the amount of disk space occupied by binary logs on the master.</p>
+</li>
+<li><p>FreeableMemory: Tracks the amount of available random access memory and not the available storage space.</p>
+</li>
+<li><p>DiskQueueDepth:  Provides the number of outstanding IOs (read&#x2F;write requests) waiting to access the disk.</p>
 </li>
 <li><p><code>Enhanced Monitoring</code> (gathered from an agent on the DB instance). <code>👀</code></p>
 <ul>
@@ -564,7 +573,7 @@ These AWS Config rules act as controls to prevent any non-compliant S3 activitie
 <li><code>Aurora storage automatically grows in increments of 10GB, up to 128 TB</code>.</li>
 <li>Aurora can have up to 15 replicas and the replication process is faster than MySQL (sub 10 ms replica lag)</li>
 <li>Failover in Aurora is instantaneous. It’s HA (High Availability) native.</li>
-<li>Aurora costs more than RDS (20% more) – but is more efficient</li>
+<li>Aurora costs more than RDS (20% more) - but is more efficient</li>
 </ul>
 <h3 id="Aurora-High-Availability-and-Read-Scaling"><a href="#Aurora-High-Availability-and-Read-Scaling" class="headerlink" title="Aurora High Availability and Read Scaling"></a>Aurora High Availability and Read Scaling</h3><ul>
 <li><p>One Aurora Instance takes writes (master)</p>
@@ -664,8 +673,8 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 <p><code>Subnets created in a VPC can communicate with each other</code>, this is default behaviour. The main route table facilitates this communication.</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html">How Amazon VPC works</a></p>
 <p><img src="/../images/AWS-VPC-Diagram.png" alt="VCP Diagram"></p>
-<h3 id="CIDR-–-IPv4"><a href="#CIDR-–-IPv4" class="headerlink" title="CIDR – IPv4"></a>CIDR – IPv4</h3><ul>
-<li><p>Classless <code>Inter-Domain Routing</code> – a method for allocating IP addresses</p>
+<h3 id="CIDR-IPv4"><a href="#CIDR-IPv4" class="headerlink" title="CIDR - IPv4"></a>CIDR - IPv4</h3><ul>
+<li><p>Classless <code>Inter-Domain Routing</code> - a method for allocating IP addresses</p>
 </li>
 <li><p><code>Used in Security Groups</code> rules and <code>AWS networking</code> in general</p>
 </li>
@@ -696,18 +705,18 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 </li>
 <li><p><code>Private IP</code> can only allow certain values:</p>
 <ul>
-<li>10.0.0.0 – 10.255.255.255 (10.0.0.0&#x2F;8) &lt;- in big networks</li>
-<li>172.16.0.0 – 172.31.255.255 (172.16.0.0&#x2F;12) &lt;- <em>AWS default VPC in that range</em></li>
-<li>192.168.0.0 – 192.168.255.255 (192.168.0.0&#x2F;16) &lt;- e.g., home networks</li>
+<li>10.0.0.0 - 10.255.255.255 (10.0.0.0&#x2F;8) &lt;- in big networks</li>
+<li>172.16.0.0 - 172.31.255.255 (172.16.0.0&#x2F;12) &lt;- <em>AWS default VPC in that range</em></li>
+<li>192.168.0.0 - 192.168.255.255 (192.168.0.0&#x2F;16) &lt;- e.g., home networks</li>
 </ul>
 </li>
 <li><p>All the rest of the IP addresses on the Internet are Public</p>
 </li>
 </ul>
-<h3 id="VPC-in-AWS-–-IPv4"><a href="#VPC-in-AWS-–-IPv4" class="headerlink" title="VPC in AWS – IPv4"></a>VPC in AWS – IPv4</h3><ul>
+<h3 id="VPC-in-AWS-IPv4"><a href="#VPC-in-AWS-IPv4" class="headerlink" title="VPC in AWS - IPv4"></a>VPC in AWS - IPv4</h3><ul>
 <li><p><code>VPC = Virtual Private Cloud</code></p>
 </li>
-<li><p>You can have multiple VPCs in an AWS region (max. 5 per region – soft limit)</p>
+<li><p>You can have multiple VPCs in an AWS region (max. 5 per region - soft limit)</p>
 <ul>
 <li>Max. CIDR per VPC is 5, for each CIDR:</li>
 <li>Min. size is &#x2F;28 (16 IP addresses)</li>
@@ -717,28 +726,28 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 </li>
 <li><p>Because VPC is private, only the Private IPv4 ranges are allowed:</p>
 <ul>
-<li>10.0.0.0 – 10.255.255.255 (10.0.0.0&#x2F;8)</li>
-<li>172.16.0.0 – 172.31.255.255 (172.16.0.0&#x2F;12)</li>
-<li>192.168.0.0 – 192.168.255.255 (192.168.0.0&#x2F;16)</li>
+<li>10.0.0.0 - 10.255.255.255 (10.0.0.0&#x2F;8)</li>
+<li>172.16.0.0 - 172.31.255.255 (172.16.0.0&#x2F;12)</li>
+<li>192.168.0.0 - 192.168.255.255 (192.168.0.0&#x2F;16)</li>
 </ul>
 </li>
 <li><p><u><code>Your VPC CIDR should NOT overlap with your other networks (e.g., corporate)</code></u></p>
 </li>
 </ul>
-<h3 id="VPC-–-Subnet-IPv4"><a href="#VPC-–-Subnet-IPv4" class="headerlink" title="VPC – Subnet (IPv4)"></a>VPC – Subnet (IPv4)</h3><ul>
+<h3 id="VPC-Subnet-IPv4"><a href="#VPC-Subnet-IPv4" class="headerlink" title="VPC - Subnet (IPv4)"></a>VPC - Subnet (IPv4)</h3><ul>
 <li>AWS reserves <code>5 IP addresses</code> (<code>first 4 &amp; last 1</code>) in each subnet</li>
 <li>These 5 IP addresses are not available for use and can’t be assigned to anEC2 instance</li>
 <li>Example: if CIDR block 10.0.0.0&#x2F;24, then reserved IP addresses are:<ul>
-<li><strong>10.0.0.0</strong> – Network Address</li>
-<li><strong>10.0.0.1</strong> – reserved by AWS for the VPC router</li>
-<li><strong>10.0.0.2</strong> – reserved by AWS for mapping to Amazon-provided DNS</li>
-<li><strong>10.0.0.3</strong> – reserved by AWS for future use</li>
-<li><strong>10.0.0.255</strong> – Network Broadcast Address. AWS does not support broadcast in a VPC, therefore the address is reserved</li>
+<li><strong>10.0.0.0</strong> - Network Address</li>
+<li><strong>10.0.0.1</strong> - reserved by AWS for the VPC router</li>
+<li><strong>10.0.0.2</strong> - reserved by AWS for mapping to Amazon-provided DNS</li>
+<li><strong>10.0.0.3</strong> - reserved by AWS for future use</li>
+<li><strong>10.0.0.255</strong> - Network Broadcast Address. AWS does not support broadcast in a VPC, therefore the address is reserved</li>
 </ul>
 </li>
 <li><code>Exam Tip</code>, if you need 29 IP addresses for EC2 instances:<ul>
-<li>You can’t choose a subnet of size &#x2F;27 (32 IP addresses, 32 – 5 &#x3D; 27 &lt; 29)</li>
-<li>You need to choose a subnet of size &#x2F;26 (64 IP addresses, 64 – 5 &#x3D; 59 &gt; 29)</li>
+<li>You can’t choose a subnet of size &#x2F;27 (32 IP addresses, 32 - 5 &#x3D; 27 &lt; 29)</li>
+<li>You need to choose a subnet of size &#x2F;26 (64 IP addresses, 64 - 5 &#x3D; 59 &gt; 29)</li>
 </ul>
 </li>
 </ul>
@@ -765,7 +774,7 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 </ul>
 <h3 id="NAT-Instance-outdated-but-still-at-the-exam"><a href="#NAT-Instance-outdated-but-still-at-the-exam" class="headerlink" title="NAT Instance (outdated, but still at the exam)"></a>NAT Instance (outdated, but still at the exam)</h3><ul>
 <li>NAT &#x3D; Network Address Translation</li>
-<li>Allows EC2 instances in private subnets toconnect to the Interne</li>
+<li>Allows EC2 instances in private subnets toconnect to the Internet</li>
 <li>Must be launched in a public subnet</li>
 <li>Must disable EC2 setting: <code>Source / destination Check</code></li>
 <li>Must have Elastic IP attached to it</li>
@@ -793,7 +802,7 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 </ul>
 </li>
 </ul>
-<p><code>enableDnsSupport</code> – Indicates whether the DNS resolution is supported for the VPC. If this attribute is false, the Amazon-provided DNS server in the VPC that resolves public DNS hostnames to IP addresses is not enabled. If this attribute is true, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC IPv4 network range plus two will succeed.</p>
+<p><code>enableDnsSupport</code> - Indicates whether the DNS resolution is supported for the VPC. If this attribute is false, the Amazon-provided DNS server in the VPC that resolves public DNS hostnames to IP addresses is not enabled. If this attribute is true, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC IPv4 network range plus two will succeed.</p>
 <ul>
 <li><code>DNS Hostnames (enableDnsHostnames)</code><ul>
 <li>By default,</li>
@@ -804,7 +813,7 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 <li>Won’t do anything unless enableDnsSupport&#x3D;true</li>
 <li>If True, assigns public hostname to EC2 instance if it has a public IPv4</li>
 </ul>
-<p><code>enableDnsHostnames</code> – Indicates whether the instances launched in the VPC get public DNS hostnames. If this attribute is true, instances in the VPC get public DNS hostnames, but only <code>if</code> the <code>enableDnsSupport</code> attribute is also set to <code>true</code>.</p>
+<p><code>enableDnsHostnames</code> - Indicates whether the instances launched in the VPC get public DNS hostnames. If this attribute is true, instances in the VPC get public DNS hostnames, but only <code>if</code> the <code>enableDnsSupport</code> attribute is also set to <code>true</code>.</p>
 <p>By default, both attributes are set to <code>true</code> in a default VPC or a VPC created by the VPC wizard. By default, only the <code>enableDnsSupport</code> attribute is set to true in a VPC created on the Your VPCs page of the VPC console or using the AWS CLI, API, or an AWS SDK.</p>
 <h3 id="DNS-Resolution-in-VPC-1"><a href="#DNS-Resolution-in-VPC-1" class="headerlink" title="DNS Resolution in VPC"></a>DNS Resolution in VPC</h3><ul>
 <li>If you use custom DNS domain names in a Private Hosted Zone in Route 53, you must set both these attributes (enableDnsSupport &amp; enableDnsHostname) to true</li>
@@ -830,8 +839,8 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 <li>For any two endpoints to establish a connection, they must use ports</li>
 <li>Clients connect to a <code>defined port</code>, and expect a response on an <code>ephemeral port</code></li>
 <li>Different Operating Systems use different port ranges, examples:<ul>
-<li>IANA &amp; MS Windows 10 -&gt; 49152 – 65535</li>
-<li>Many Linux Kernels -&gt; 32768 – 60999</li>
+<li>IANA &amp; MS Windows 10 -&gt; 49152 - 65535</li>
+<li>Many Linux Kernels -&gt; 32768 - 60999</li>
 </ul>
 </li>
 </ul>
@@ -863,12 +872,12 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 <td>Automatically applies to all EC2 instances in the subnet that it’s associated with</td>
 </tr>
 </tbody></table>
-<h3 id="VPC-–-Reachability-Analyzer"><a href="#VPC-–-Reachability-Analyzer" class="headerlink" title="VPC – Reachability Analyzer"></a>VPC – Reachability Analyzer</h3><ul>
+<h3 id="VPC-Reachability-Analyzer"><a href="#VPC-Reachability-Analyzer" class="headerlink" title="VPC - Reachability Analyzer"></a>VPC - Reachability Analyzer</h3><ul>
 <li>A network diagnostics tool that troubleshoots network connectivity between two endpoints in your VPC(s)</li>
 <li>It builds a model of the network configuration, then checks the reachability based on these configurations (<code>it doesn’t send packets</code>)</li>
 <li>When the destination is<ul>
-<li><code>Reachable</code> – it produces hop-by-hop details of the virtual network path</li>
-<li><code>Not reachable</code> – it identifies the blocking component(s) (e.g., configuration issues in SGs, NACLs, Route Tables, …)</li>
+<li><code>Reachable</code> - it produces hop-by-hop details of the virtual network path</li>
+<li><code>Not reachable</code> - it identifies the blocking component(s) (e.g., configuration issues in SGs, NACLs, Route Tables, …)</li>
 </ul>
 </li>
 <li>Use cases: troubleshoot connectivity issues, ensure network configuration is as intended, …</li>
@@ -886,7 +895,7 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 </li>
 <li><p>You can create VPC Peering connection between VPCs in <code>different AWS accounts/regions</code></p>
 </li>
-<li><p>You can reference a security group in a peered VPC (<code>works cross accounts – same region</code>)</p>
+<li><p>You can reference a security group in a peered VPC (<code>works cross accounts - same region</code>)</p>
 </li>
 </ul>
 <h3 id="VPC-Endpoint-AWS-PrivateLink"><a href="#VPC-Endpoint-AWS-PrivateLink" class="headerlink" title="VPC Endpoint (AWS PrivateLink)"></a>VPC Endpoint (AWS PrivateLink)</h3><p>A VPC Endpoint allows you to <code>connect</code> your <code>VPC</code> directly <code>to AWS services</code> without the need for <code>internet gateways</code>, <code>NAT gateways</code>, or <code>VPN connections</code>. It enables private communication between your VPC and the AWS service without going over the internet.</p>
@@ -933,9 +942,9 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 <li>Captures network information from AWS managed interfaces too: ELB, RDS, ElastiCache, Redshift, WorkSpaces, NATGW, Transit Gateway…</li>
 </ul>
 <h3 id="VPC-Flow-Logs-Syntax"><a href="#VPC-Flow-Logs-Syntax" class="headerlink" title="VPC Flow Logs Syntax"></a>VPC Flow Logs Syntax</h3><ul>
-<li><code>srcaddr &amp; dstaddr</code> – help identify problematic IP</li>
-<li><code>srcport &amp; dstport</code> – help identity problematic ports</li>
-<li><code>Action</code> – success or failure of the request due to Security Group &#x2F; NACL</li>
+<li><code>srcaddr &amp; dstaddr</code> - help identify problematic IP</li>
+<li><code>srcport &amp; dstport</code> - help identity problematic ports</li>
+<li><code>Action</code> - success or failure of the request due to Security Group &#x2F; NACL</li>
 <li>Can be used for analytics on usage patterns, or malicious behavior</li>
 <li><code>Query VPC flow logs using Athena on S3 or CloudWatch Logs Insights</code></li>
 <li>Flow Logs examples: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-records-examples.html">https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-records-examples.html</a></li>
@@ -985,7 +994,7 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 <li>You <code>need</code> to setup a <code>Virtual Private Gateway</code> on your VPC</li>
 <li>Access public resources (S3) and private (EC2) on same connection</li>
 <li>Use Cases:<ul>
-<li>Increase bandwidth throughput - working with large data sets – lower cost</li>
+<li>Increase bandwidth throughput - working with large data sets - lower cost</li>
 <li>More consistent network experience - applications using real-time data feeds</li>
 <li>Hybrid Environments (on prem + cloud)</li>
 </ul>
@@ -995,7 +1004,7 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 <p><img src="/../images/AWS-Direct-Connect-Diagram.png" alt="Direct Connect"></p>
 <h4 id="Direct-Connect-Gateway"><a href="#Direct-Connect-Gateway" class="headerlink" title="Direct Connect Gateway"></a>Direct Connect Gateway</h4><p><code>If you want to setup a Direct Connect to one or more VPC in many different regions (same account), you must use a Direct Connect Gateway</code>. - Exam 👀</p>
 <p><img src="/../images/AWS-Direct-Connet-Gateway.png" alt="Direct Connect Gateway"></p>
-<h3 id="Direct-Connect-–-Connection-Types"><a href="#Direct-Connect-–-Connection-Types" class="headerlink" title="Direct Connect – Connection Types"></a>Direct Connect – Connection Types</h3><ul>
+<h3 id="Direct-Connect-Connection-Types"><a href="#Direct-Connect-Connection-Types" class="headerlink" title="Direct Connect - Connection Types"></a>Direct Connect - Connection Types</h3><ul>
 <li><code>Dedicated Connections</code>: 1Gbps,10 Gbps and 100 Gbps capacity<ul>
 <li>Physical ethernet port dedicated to a customer</li>
 <li>Request made to AWS first, then completed by AWS Direct Connect Partners</li>
@@ -1009,7 +1018,7 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 </li>
 <li>Lead times are often longer than 1 <code>month to establish a new connection</code> - EXAM</li>
 </ul>
-<h3 id="Direct-Connect-–-Encryption"><a href="#Direct-Connect-–-Encryption" class="headerlink" title="Direct Connect – Encryption"></a>Direct Connect – Encryption</h3><ul>
+<h3 id="Direct-Connect-Encryption"><a href="#Direct-Connect-Encryption" class="headerlink" title="Direct Connect - Encryption"></a>Direct Connect - Encryption</h3><ul>
 <li>Data in transit is <code>not encrypted</code> but is private</li>
 <li><code>AWS Direct Connect + VPN provides</code> an IPsec-encrypted private connection</li>
 </ul>
@@ -1032,10 +1041,10 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 <ul>
 <li>Use case: create multiple Site-to-Site VPN connections <code>to increase the bandwidth of your connection to AWS</code>.</li>
 </ul>
-<h3 id="VPC-–-Traffic-Mirroring"><a href="#VPC-–-Traffic-Mirroring" class="headerlink" title="VPC – Traffic Mirroring"></a>VPC – Traffic Mirroring</h3><ul>
+<h3 id="VPC-Traffic-Mirroring"><a href="#VPC-Traffic-Mirroring" class="headerlink" title="VPC - Traffic Mirroring"></a>VPC - Traffic Mirroring</h3><ul>
 <li>Capture the traffic<ul>
-<li>From (Source) – ENIs</li>
-<li>To (Targets) – an ENI or a Network Load Balancer</li>
+<li>From (Source) - ENIs</li>
+<li>To (Targets) - an ENI or a Network Load Balancer</li>
 </ul>
 </li>
 <li>Source and Target can be in the same VPC or different VPCs (VPC Peering)</li>
@@ -1061,65 +1070,70 @@ to the internet through an Internet Gatewaywill get at least a private internal 
 <p>An egress-only internet gateway is for use with <code>IPv6 traffic only</code>. To enable outbound-only internet communication <code>over IPv4</code>, use a <code>NAT gateway</code> instead.</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html">Enable outbound IPv6 traffic using an egress-only internet gateway</a></p>
 <h3 id="Carrier-gateway"><a href="#Carrier-gateway" class="headerlink" title="Carrier gateway"></a>Carrier gateway</h3><p>A Carrier gateway is a highly available virtual appliance that <code>provides outbound IPv6 internet connectivity for instances in your VPC</code>. It acts as a gateway between your VPC and the internet, <code>allowing</code> IPv6 <code>traffic</code> to flow <code>in and out</code> of your <code>VPC</code>. By configuring a Carrier gateway, you can enable outbound communication over IPv6 for the EC2 instances in the private subnets while keeping them isolated from direct internet access.</p>
-<h2 id="Security-Groups"><a href="#Security-Groups" class="headerlink" title="Security Groups"></a>Security Groups</h2><h3 id="The-reason-for-the-issue-where-the-new-EC2-instances-are-unable-to-mount-the-Amazon-EFS-file-system-in-a-new-Availability-Zone-could-be"><a href="#The-reason-for-the-issue-where-the-new-EC2-instances-are-unable-to-mount-the-Amazon-EFS-file-system-in-a-new-Availability-Zone-could-be" class="headerlink" title="The reason for the issue where the new EC2 instances are unable to mount the Amazon EFS file system in a new Availability Zone could be:"></a>The reason for the issue where the new EC2 instances are unable to mount the Amazon EFS file system in a new Availability Zone could be:</h3><p>The security group for the mount target does not allow inbound NFS connections from the security group used by the EC2 instances.</p>
+<h2 id="Security-Groups"><a href="#Security-Groups" class="headerlink" title="Security Groups"></a>Security Groups</h2><ul>
+<li><code>By default</code>, security groups <code>allow all outbound traffic</code>.</li>
+<li>Security group <code>rules are always permissive</code>; you can’t create rules that deny access.</li>
+<li>Security groups are <code>stateful</code></li>
+</ul>
+<h3 id="The-reason-for-the-issue-where-the-new-EC2-instances-are-unable-to-mount-the-Amazon-EFS-file-system-in-a-new-Availability-Zone-could-be"><a href="#The-reason-for-the-issue-where-the-new-EC2-instances-are-unable-to-mount-the-Amazon-EFS-file-system-in-a-new-Availability-Zone-could-be" class="headerlink" title="The reason for the issue where the new EC2 instances are unable to mount the Amazon EFS file system in a new Availability Zone could be:"></a>The reason for the issue where the new EC2 instances are unable to mount the Amazon EFS file system in a new Availability Zone could be:</h3><p>The security group for the mount target does not allow inbound NFS connections from the security group used by the EC2 instances.</p>
 <p><code>Explanation</code>: When mounting an Amazon EFS file system from EC2 instances, the security group associated with the mount target should allow inbound NFS (Network File System) connections from the security group used by the EC2 instances. By default, the security group associated with the mount target allows inbound connections from the default security group of the VPC. If the EC2 instances are using a different security group, it needs to be added to the mount target’s security group’s inbound rules to allow NFS connections.</p>
 <p>👀 - Only support <code>allow</code> rules. You have to allow incoming traffic from your customers to your instances</p>
 <h3 id="The-following-provides-an-overview-of-the-steps-to-enable-your-VPC-and-subnets-to-use-IPv6"><a href="#The-following-provides-an-overview-of-the-steps-to-enable-your-VPC-and-subnets-to-use-IPv6" class="headerlink" title="The following provides an overview of the steps to enable your VPC and subnets to use IPv6:"></a>The following provides an overview of the steps to enable your VPC and subnets to use IPv6:</h3><ul>
 <li><p><code>Step 1</code>:
-Associate an IPv6 CIDR Block with Your VPC and Subnets – Associate an Amazon-provided IPv6 CIDR block with your VPC and with your subnets.</p>
+Associate an IPv6 CIDR Block with Your VPC and Subnets - Associate an Amazon-provided IPv6 CIDR block with your VPC and with your subnets.</p>
 </li>
 <li><p><code>Step 2</code>:
-Update Your Route Tables – Update your route tables to route your IPv6 traffic. For a public subnet, create a route that routes all IPv6 traffic from the subnet to the Internet gateway. For a private subnet, create a route that routes all Internet-bound IPv6 traffic from the subnet to an egress-only Internet gateway.</p>
+Update Your Route Tables - Update your route tables to route your IPv6 traffic. For a public subnet, create a route that routes all IPv6 traffic from the subnet to the Internet gateway. For a private subnet, create a route that routes all Internet-bound IPv6 traffic from the subnet to an egress-only Internet gateway.</p>
 </li>
 <li><p><code>Step 3</code>:
-Update Your Security Group Rules – Update your security group rules to include rules for IPv6 addresses. This enables IPv6 traffic to flow to and from your instances. If you’ve created custom network ACL rules to control the flow of traffic to and from your subnet, you must include rules for IPv6 traffic.</p>
+Update Your Security Group Rules - Update your security group rules to include rules for IPv6 addresses. This enables IPv6 traffic to flow to and from your instances. If you’ve created custom network ACL rules to control the flow of traffic to and from your subnet, you must include rules for IPv6 traffic.</p>
 </li>
 <li><p><code>Step 4</code>:
-Change Your Instance Type – If your instance type does not support IPv6, change the instance type. If your instance type does not support IPv6, you must resize the instance to a supported instance type. In the example, the instance is an m3.large instance type, which does not support IPv6. You must resize the instance to a supported instance type, for example, m4.large.</p>
+Change Your Instance Type - If your instance type does not support IPv6, change the instance type. If your instance type does not support IPv6, you must resize the instance to a supported instance type. In the example, the instance is an m3.large instance type, which does not support IPv6. You must resize the instance to a supported instance type, for example, m4.large.</p>
 </li>
 <li><p><code>Step 5</code>:
-Assign IPv6 Addresses to Your Instances – Assign IPv6 addresses to your instances from the IPv6 address range of your subnet.</p>
+Assign IPv6 Addresses to Your Instances - Assign IPv6 addresses to your instances from the IPv6 address range of your subnet.</p>
 </li>
 <li><p><code>Step 6</code>: (Optional)
-Configure IPv6 on Your Instances – If your instance was launched from an AMI that is not configured to use DHCPv6, you must manually configure your instance to recognize an IPv6 address assigned to the instance.</p>
+Configure IPv6 on Your Instances - If your instance was launched from an AMI that is not configured to use DHCPv6, you must manually configure your instance to recognize an IPv6 address assigned to the instance.</p>
 </li>
 </ul>
 <h3 id="VPC-Section-Summary"><a href="#VPC-Section-Summary" class="headerlink" title="VPC Section Summary"></a>VPC Section Summary</h3><ul>
-<li><code>CIDR</code> – IP Range</li>
-<li><code>VPC</code> – Virtual Private Cloud &#x3D;&gt; we define a list of IPv4 &amp; IPv6 CIDR</li>
-<li><code>Subnets</code> – tied to an AZ, we define a CIDR</li>
-<li><code>Internet Gateway</code> – at the VPC level, provide IPv4 &amp; IPv6 Internet Access</li>
-<li><code>Route Tables</code> – must be edited to add routes from subnets to the IGW, VPC Peering Connections, VPC Endpoints, …</li>
-<li><code>Bastion Host</code> – public EC2 instance to SSH into, that has SSH connectivity to EC2 instances in private subnets</li>
-<li><code>NAT Instances</code> – gives Internet access to EC2 instances in private subnets. Old, must be setup in a public subnet, disable Source &#x2F; Destination check flag</li>
-<li><code>NAT Gateway</code> – managed by AWS, provides scalable Internet access to private EC2 instances, IPv4 only</li>
-<li><code>Private DNS</code> + Route 53 – enable DNS Resolution + DNS Hostnames (VPC)
--<code> NACL</code> – stateless, subnet rules for inbound and outbound, don’t forget Ephemeral Ports</li>
-<li><code>Security Groups</code> – stateful, operate at the EC2 instance level</li>
-<li><code>Reachability Analyzer</code> – perform network connectivity testing between AWS resources</li>
-<li><code>VPC Peering</code> – connect two VPCs with non overlapping CIDR, non-transitive</li>
-<li><code>VPC Endpoints</code> – provide private access to AWS Services (S3, DynamoDB, CloudFormation, SSM) within a VPC</li>
-<li><code>VPC Flow Logs</code> – can be setup at the VPC &#x2F; Subnet &#x2F; ENI Level, for ACCEPT and REJECT traffic, helps identifying attacks, analyze using Athena or CloudWatch Logs Insights</li>
-<li><code>Site-to-Site VPN</code> – setup a Customer Gateway on DC, a Virtual Private Gateway on VPC, and site-to-site VPN over public Internet</li>
-<li><code>AWS VPN CloudHub</code> – hub-and-spoke VPN model to connect your sites</li>
-<li><code>Direct Connect</code> – setup a Virtual Private Gateway on VPC, and establish a direct private connection to an AWS Direct Connect Location</li>
-<li><code>Direct Connect Gateway</code> – setup a Direct Connect to many VPCs in different AWS regions</li>
+<li><code>CIDR</code> - IP Range</li>
+<li><code>VPC</code> - Virtual Private Cloud &#x3D;&gt; we define a list of IPv4 &amp; IPv6 CIDR</li>
+<li><code>Subnets</code> - tied to an AZ, we define a CIDR</li>
+<li><code>Internet Gateway</code> - at the VPC level, provide IPv4 &amp; IPv6 Internet Access</li>
+<li><code>Route Tables</code> - must be edited to add routes from subnets to the IGW, VPC Peering Connections, VPC Endpoints, …</li>
+<li><code>Bastion Host</code> - public EC2 instance to SSH into, that has SSH connectivity to EC2 instances in private subnets</li>
+<li><code>NAT Instances</code> - gives Internet access to EC2 instances in private subnets. Old, must be setup in a public subnet, disable Source &#x2F; Destination check flag</li>
+<li><code>NAT Gateway</code> - managed by AWS, provides scalable Internet access to private EC2 instances, IPv4 only</li>
+<li><code>Private DNS</code> + Route 53 - enable DNS Resolution + DNS Hostnames (VPC)
+-<code> NACL</code> - stateless, subnet rules for inbound and outbound, don’t forget Ephemeral Ports</li>
+<li><code>Security Groups</code> - stateful, operate at the EC2 instance level</li>
+<li><code>Reachability Analyzer</code> - perform network connectivity testing between AWS resources</li>
+<li><code>VPC Peering</code> - connect two VPCs with non overlapping CIDR, non-transitive</li>
+<li><code>VPC Endpoints</code> - provide private access to AWS Services (S3, DynamoDB, CloudFormation, SSM) within a VPC</li>
+<li><code>VPC Flow Logs</code> - can be setup at the VPC &#x2F; Subnet &#x2F; ENI Level, for ACCEPT and REJECT traffic, helps identifying attacks, analyze using Athena or CloudWatch Logs Insights</li>
+<li><code>Site-to-Site VPN</code> - setup a Customer Gateway on DC, a Virtual Private Gateway on VPC, and site-to-site VPN over public Internet</li>
+<li><code>AWS VPN CloudHub</code> - hub-and-spoke VPN model to connect your sites</li>
+<li><code>Direct Connect</code> - setup a Virtual Private Gateway on VPC, and establish a direct private connection to an AWS Direct Connect Location</li>
+<li><code>Direct Connect Gateway</code> - setup a Direct Connect to many VPCs in different AWS regions</li>
 <li><code>AWS PrivateLink / VPC Endpoint Services</code>:<ul>
 <li>Connect services privately from your service VPC to customers VPC</li>
 <li>Doesn’t need VPC Peering, public Internet, NAT Gateway, Route Tables</li>
 <li>Must be used with Network Load Balancer &amp; ENI</li>
 </ul>
 </li>
-<li><code>ClassicLink</code> – connect EC2-Classic EC2 instances privately to your VPC</li>
-<li><code>Transit Gateway</code> – transitive peering connections for VPC, VPN &amp; DX</li>
-<li><code>Traffic Mirroring</code> – copy network traffic from ENIs for further analysis</li>
-<li><code>Egress-only Internet Gateway</code> – like a NAT Gateway, but for IPv6</li>
+<li><code>ClassicLink</code> - connect EC2-Classic EC2 instances privately to your VPC</li>
+<li><code>Transit Gateway</code> - transitive peering connections for VPC, VPN &amp; DX</li>
+<li><code>Traffic Mirroring</code> - copy network traffic from ENIs for further analysis</li>
+<li><code>Egress-only Internet Gateway</code> - like a NAT Gateway, but for IPv6</li>
 </ul>
 <h3 id="Networking-Costs-in-AWS-per-GB"><a href="#Networking-Costs-in-AWS-per-GB" class="headerlink" title="Networking Costs in AWS per GB"></a>Networking Costs in AWS per GB</h3><ul>
 <li>Use Private IP instead of Public IP for good savings and better network  performance</li>
 <li>Use same AZ for maximum savings (at the cost of high availability) - Exam 👀</li>
 </ul>
-<h3 id="S3-Data-Transfer-Pricing-–-Analysis-for-USA"><a href="#S3-Data-Transfer-Pricing-–-Analysis-for-USA" class="headerlink" title="S3 Data Transfer Pricing – Analysis for USA"></a>S3 Data Transfer Pricing – Analysis for USA</h3><ul>
+<h3 id="S3-Data-Transfer-Pricing-Analysis-for-USA"><a href="#S3-Data-Transfer-Pricing-Analysis-for-USA" class="headerlink" title="S3 Data Transfer Pricing - Analysis for USA"></a>S3 Data Transfer Pricing - Analysis for USA</h3><ul>
 <li><code>S3 ingress</code>: free</li>
 <li><code>S3 to Internet</code>: $0.09 per GB</li>
 <li><code>S3 Transfer Acceleration</code>:<ul>
@@ -1148,12 +1162,12 @@ Configure IPv6 on Your Instances – If your instance was launched from an AMI t
 <li>Internally, the AWS Network Firewall uses the AWS Gateway Load Balancer</li>
 <li>Rules can be centrally managed cross-account by AWS Firewall Manager to apply to many VPCs</li>
 </ul>
-<h3 id="Network-Firewall-–-Fine-Grained-Controls"><a href="#Network-Firewall-–-Fine-Grained-Controls" class="headerlink" title="Network Firewall – Fine Grained Controls"></a>Network Firewall – Fine Grained Controls</h3><ul>
+<h3 id="Network-Firewall-Fine-Grained-Controls"><a href="#Network-Firewall-Fine-Grained-Controls" class="headerlink" title="Network Firewall - Fine Grained Controls"></a>Network Firewall - Fine Grained Controls</h3><ul>
 <li><p>Supports 1000s of rules</p>
 </li>
 <li><p>IP &amp; port - example: 10,000s of IPs filtering</p>
 </li>
-<li><p>Protocol – example: block the SMB protocol for outbound communications</p>
+<li><p>Protocol - example: block the SMB protocol for outbound communications</p>
 </li>
 <li><p>Stateful domain list rule groups: only allow outbound traffic to *.mycorp.com or third-party software repo</p>
 </li>
@@ -1209,7 +1223,7 @@ Configure IPv6 on Your Instances – If your instance was launched from an AMI t
 
 <h3 id="👀-UpdatePolicy-96-attribute"><a href="#👀-UpdatePolicy-96-attribute" class="headerlink" title="👀 UpdatePolicy&#96; attribute"></a><code>👀 </code>UpdatePolicy&#96; attribute</h3><p>By adding the <code>UpdatePolicy</code> attribute in CloudFormation and enabling the WaitOnResourceSignals property, the Auto Scaling group update process will be handled more gracefully. This approach allows CloudFormation to monitor the health and success of each instance during the update process before moving on to the next instance.</p>
 <p>Appending a health check at the end of the user data script allows the instance to signal CloudFormation that it has successfully completed its initialization. This helps ensure that the instance is fully operational before proceeding to the next instance in the Auto Scaling group update process.</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">CreationPolicy:</span></span><br><span class="line">  <span class="attr">ResourceSignal:</span></span><br><span class="line">    <span class="attr">Count:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line">    <span class="attr">Timeout:</span> <span class="string">PT15M</span></span><br><span class="line"><span class="attr">UpdatePolicy:</span></span><br><span class="line">  <span class="attr">AutoScalingRollingUpdate:</span></span><br><span class="line">    <span class="attr">MinInstancesInService:</span> <span class="string">&#x27;1&#x27;</span></span><br><span class="line">    <span class="attr">MaxBatchSize:</span> <span class="string">&#x27;2&#x27;</span></span><br><span class="line">    <span class="attr">PauseTime:</span> <span class="string">PT1M</span></span><br><span class="line">    <span class="attr">WaitOnResourceSignals:</span> <span class="string">&#x27;true&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">CreationPolicy:</span></span><br><span class="line">  <span class="attr">AutoScalingCreationPolicy:</span></span><br><span class="line">    <span class="attr">MinSuccessfulInstancesPercent:</span> <span class="string">Integer</span></span><br><span class="line">  <span class="attr">ResourceSignal:</span></span><br><span class="line">    <span class="attr">Count:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line">    <span class="attr">Timeout:</span> <span class="string">PT15M</span></span><br><span class="line"><span class="attr">UpdatePolicy:</span></span><br><span class="line">  <span class="attr">AutoScalingRollingUpdate:</span></span><br><span class="line">    <span class="attr">MinInstancesInService:</span> <span class="string">&#x27;1&#x27;</span></span><br><span class="line">    <span class="attr">MaxBatchSize:</span> <span class="string">&#x27;2&#x27;</span></span><br><span class="line">    <span class="attr">PauseTime:</span> <span class="string">PT1M</span></span><br><span class="line">    <span class="attr">WaitOnResourceSignals:</span> <span class="string">&#x27;true&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="👀-DependsOn-attribute"><a href="#👀-DependsOn-attribute" class="headerlink" title="👀 DependsOn attribute"></a>👀 <code>DependsOn</code> attribute</h3><p>With the DependsOn attribute, you can specify that the <code>creation</code> of a specific resource <code>follows another</code>. When you add a DependsOn attribute to a resource, that resource is created only after the creation of the resource specified in the DependsOn attribute.</p>
 <h3 id="Set-Tags-consistently-in-AWS-across-all-accounts"><a href="#Set-Tags-consistently-in-AWS-across-all-accounts" class="headerlink" title="Set Tags consistently in AWS across all accounts"></a>Set Tags consistently in AWS across all accounts</h3><p>Use the CloudFormation <code>Resource Tags property</code> to apply tags to certain resource types upon creation.</p>
@@ -1272,7 +1286,7 @@ AWS Backup is a fully managed and cost-effective backup service that simplifies 
 </li>
 </ul>
 <hr>
-<h2 id="DDoS-Distributed-Denial-of-service-Protection-on-AWS"><a href="#DDoS-Distributed-Denial-of-service-Protection-on-AWS" class="headerlink" title="DDoS (Distributed Denial-of-service ) Protection on AWS"></a>DDoS (Distributed Denial-of-service ) Protection on AWS</h2><ul>
+<h2 id="DDoS-Distributed-Denial-of-service-Protection-on-AWS"><a href="#DDoS-Distributed-Denial-of-service-Protection-on-AWS" class="headerlink" title="DDoS (Distributed Denial-of-service) Protection on AWS"></a>DDoS (Distributed Denial-of-service) Protection on AWS</h2><ul>
 <li><code>AWS Shield Standard</code>: protects against DDoS attack for your website and applications, for all customers at no additional costs.</li>
 <li><code>AWS Shield Advanced</code>: 24&#x2F;7 premium DDoS protection.</li>
 <li><code>AWS WAF</code>: Filter specific requests based on rules.</li>
@@ -1281,9 +1295,9 @@ AWS Backup is a fully managed and cost-effective backup service that simplifies 
 <li>Combined with AWS Shield, provides attack mitigation at the edge</li>
 </ul>
 </li>
-<li>Be ready to scale – leverage <code>AWS Auto Scaling</code>.</li>
+<li>Be ready to scale - leverage <code>AWS Auto Scaling</code>.</li>
 </ul>
-<h2 id="AWS-WAF-–-Web-Application-Firewall"><a href="#AWS-WAF-–-Web-Application-Firewall" class="headerlink" title="AWS WAF – Web Application Firewall"></a>AWS WAF – Web Application Firewall</h2><ul>
+<h2 id="AWS-WAF-Web-Application-Firewall"><a href="#AWS-WAF-Web-Application-Firewall" class="headerlink" title="AWS WAF - Web Application Firewall"></a>AWS WAF - Web Application Firewall</h2><ul>
 <li><p>Protects your web applications from common web exploits (Layer 7)</p>
 </li>
 <li><p><code>Layer 7 is HTTP</code> (vs Layer 4 is TCP)</p>
@@ -1295,7 +1309,7 @@ AWS Backup is a fully managed and cost-effective backup service that simplifies 
 <li>Rules can include: <code>IP addresses</code>, HTTP headers, HTTP body, or URI strings</li>
 <li>Protects from common attack - <code>SQL injection</code> and <code>Cross-Site Scripting (XSS)</code>.</li>
 <li>Size constraints, <code>geo-match (block countries)</code></li>
-<li><code>Rate-based rules</code> (to count occurrences of events) – <code>for DDoS protection</code></li>
+<li><code>Rate-based rules</code> (to count occurrences of events) - <code>for DDoS protection</code></li>
 </ul>
 </li>
 </ul>
@@ -1346,7 +1360,7 @@ information in the findings report and additionally provides the list of rules t
 </li>
 <li><p>Continuous scanning of the infrastructure, only when needed</p>
 </li>
-<li><p>Package vulnerabilities (EC2, ECR &amp; Lambda) – database of CVE</p>
+<li><p>Package vulnerabilities (EC2, ECR &amp; Lambda) - database of CVE</p>
 </li>
 <li><p>Network reachability (EC2)</p>
 </li>
@@ -1360,14 +1374,14 @@ information in the findings report and additionally provides the list of rules t
 <li>Uses Machine Learning algorithms, anomaly detection, 3rd party data</li>
 <li>One click to enable (30 days trial), no need to install software</li>
 <li>Input data includes:<ul>
-<li><code>CloudTrail Events Logs</code> – unusual API calls, unauthorized deployments<ul>
-<li><code>CloudTrail Management Events</code> – create VPC subnet, create trail, …</li>
-<li><code>CloudTrail S3 Data Events</code> – get object, list objects, delete object, …</li>
+<li><code>CloudTrail Events Logs</code> - unusual API calls, unauthorized deployments<ul>
+<li><code>CloudTrail Management Events</code> - create VPC subnet, create trail, …</li>
+<li><code>CloudTrail S3 Data Events</code> - get object, list objects, delete object, …</li>
 </ul>
 </li>
-<li><code>VPC Flow Logs</code> – unusual internal traffic, unusual IP address</li>
-<li><code>DNS Logs</code> – compromised EC2 instances sending encoded data within DNS queries</li>
-<li><code>Optional Feature</code> – EKS Audit Logs, RDS &amp; Aurora, EBS, Lambda, S3 Data Events…</li>
+<li><code>VPC Flow Logs</code> - unusual internal traffic, unusual IP address</li>
+<li><code>DNS Logs</code> - compromised EC2 instances sending encoded data within DNS queries</li>
+<li><code>Optional Feature</code> - EKS Audit Logs, RDS &amp; Aurora, EBS, Lambda, S3 Data Events…</li>
 </ul>
 </li>
 <li>Can setup <code>EventBridge rules</code> to be notified in case of findings</li>
@@ -1390,11 +1404,11 @@ information in the findings report and additionally provides the list of rules t
 <li><code>Fault tolerance</code></li>
 <li><code>Service limits</code></li>
 </ul>
-<h3 id="Trusted-Advisor-–-Support-Plans-Exam"><a href="#Trusted-Advisor-–-Support-Plans-Exam" class="headerlink" title="Trusted Advisor – Support Plans - Exam"></a>Trusted Advisor – Support Plans - Exam</h3><ul>
+<h3 id="Trusted-Advisor-Support-Plans-Exam"><a href="#Trusted-Advisor-Support-Plans-Exam" class="headerlink" title="Trusted Advisor - Support Plans - Exam"></a>Trusted Advisor - Support Plans - Exam</h3><ul>
 <li><p>7 CORES CHECKS for Basic &amp; Developer Support plan</p>
 <ul>
 <li>S3 Bucket Permissions</li>
-<li>Security Groups – Specific Ports Unrestricted</li>
+<li>Security Groups - Specific Ports Unrestricted</li>
 <li>IAM Use (one IAM user minimum)</li>
 <li>MFA on Root Account</li>
 <li>EBS Public Snapshots</li>
@@ -1444,7 +1458,7 @@ information in the findings report and additionally provides the list of rules t
 <li>Schedule CMK for deletion with a waiting period of 7 to 30 days</li>
 <li>CMK’s status is “Pending deletion” during the waiting period</li>
 <li>During the CMK’s deletion waiting period:</li>
-<li>The CMK can’t be used for cryptographic operations (e.g., can’t decrypt KMS- encrypted objects in S3 – SSE-KMS)</li>
+<li>The CMK can’t be used for cryptographic operations (e.g., can’t decrypt KMS- encrypted objects in S3 - SSE-KMS)</li>
 <li>The key is not rotated even if planned</li>
 <li>You can cancel the key deletion during the waiting period</li>
 <li>Consider disabling your key instead of deleting it if you’re not sure!</li>
@@ -1468,7 +1482,7 @@ information in the findings report and additionally provides the list of rules t
 <li>Redshift supports CloudHSM for database encryption and key management</li>
 <li><code>Good option to use with SSE-C encryption</code>.</li>
 </ul>
-<h3 id="CloudHSM-–-High-Availability"><a href="#CloudHSM-–-High-Availability" class="headerlink" title="CloudHSM – High Availability"></a>CloudHSM – High Availability</h3><ul>
+<h3 id="CloudHSM-High-Availability"><a href="#CloudHSM-High-Availability" class="headerlink" title="CloudHSM - High Availability"></a>CloudHSM - High Availability</h3><ul>
 <li>CloudHSM clusters are spread across Multi AZ (HA)</li>
 <li>Great for availability and durability</li>
 </ul>
@@ -1488,13 +1502,13 @@ information in the findings report and additionally provides the list of rules t
 <li>Secrets are encrypted using KMS</li>
 <li>Mostly meant for RDS integration</li>
 </ul>
-<h3 id="AWS-Secrets-Manager-–-Multi-Region-Secrets"><a href="#AWS-Secrets-Manager-–-Multi-Region-Secrets" class="headerlink" title="AWS Secrets Manager – Multi-Region Secrets"></a>AWS Secrets Manager – Multi-Region Secrets</h3><ul>
+<h3 id="AWS-Secrets-Manager-Multi-Region-Secrets"><a href="#AWS-Secrets-Manager-Multi-Region-Secrets" class="headerlink" title="AWS Secrets Manager - Multi-Region Secrets"></a>AWS Secrets Manager - Multi-Region Secrets</h3><ul>
 <li>Replicate Secrets across multiple AWS Regions</li>
 <li>Secrets Manager keeps read replicas in sync with the primary Secret</li>
 <li>Ability to promote a read replica Secret to a standalone Secret</li>
 <li>Use cases: multi-region apps, disaster recovery strategies, multi-region DB…</li>
 </ul>
-<h3 id="Secrets-Manager-–-Monitoring"><a href="#Secrets-Manager-–-Monitoring" class="headerlink" title="Secrets Manager – Monitoring"></a>Secrets Manager – Monitoring</h3><ul>
+<h3 id="Secrets-Manager-Monitoring"><a href="#Secrets-Manager-Monitoring" class="headerlink" title="Secrets Manager - Monitoring"></a>Secrets Manager - Monitoring</h3><ul>
 <li><p>CloudTrail captures API calls to the Secrets Manager API</p>
 </li>
 <li><p>CloudTrail captures other related events that might have a security or compliance impact on your AWS account or might help you troubleshoot operational problems.</p>
@@ -1504,7 +1518,7 @@ information in the findings report and additionally provides the list of rules t
 <li>RotationStarted event</li>
 <li>RotationSucceeded event</li>
 <li><code>RotationFailed event</code></li>
-<li>RotationAbandoned event – a manual change to a secret instead of automated rotation</li>
+<li>RotationAbandoned event - a manual change to a secret instead of automated rotation</li>
 <li>StartSecretVersionDelete event</li>
 <li>CancelSecretVersionDelete event</li>
 </ul>
@@ -1547,12 +1561,16 @@ information in the findings report and additionally provides the list of rules t
 <ul>
 <li><code>gp2 / gp3</code> (SSD): <code>General purpose</code> SSD volume that balances price and performance for a wide variety of workloads.</li>
 <li><code>io1 / io2</code> (SSD): <code>Highest-performance</code> SSD volume for <strong>mission-critical low-latency or high-throughput workloads</strong>. <code>Only multi-attach 16 instances at a time</code></li>
-<li><code>st1</code> (HDD): <code>Low cost</code> HDD volume designed for <strong>frequently accessed, throughput- intensive workloads</strong></li>
+<li><code>st1</code> (HDD): <code>Low cost</code> HDD volume designed for <strong>frequently accessed, throughput intensive workloads</strong></li>
 <li><code>sc1</code> (HDD): <code>Lowest cost</code> HDD volume designed for <strong>less frequently accessed workloads</strong></li>
 </ul>
+<p><img src="/../images/AWS-EBS-Types.png" alt="AWS EBS Types"></p>
 <p>EBS Volumes are characterized in Size | Throughput | IOPS (I&#x2F;O Ops Per Sec).</p>
 <p><strong><code>Only gp2/gp3 and io1/io2 can be used as boot volumes</code></strong></p>
-<h2 id="Provisioned-IOPS-SSD-io2-Block-Express-io2-amp-io1-volumes"><a href="#Provisioned-IOPS-SSD-io2-Block-Express-io2-amp-io1-volumes" class="headerlink" title="Provisioned IOPS SSD (io2 Block Express, io2 &amp; io1) volumes"></a>Provisioned IOPS SSD (io2 Block Express, io2 &amp; <code>io1</code>) volumes</h2><p>Provisioned IOPS SSD volumes are designed to deliver a maximum of 256,000 IOPS, 4,000 MB&#x2F;s of throughput, and 64 TiB in size per volume1. io2 Block Express is the latest generation of the Provisioned IOPS SSD volumes that delivers 4x higher throughput, IOPS, and capacity than regular io2 volumes, along with sub-millisecond latency – at the same price as io2. io2 Block Express provides highest block storage performance for the largest, most I&#x2F;O- intensive, mission-critical deployments of Oracle, Microsoft SQL Server, SAP HANA, and SAS Analytics</p>
+<ul>
+<li><code>EBS-optimized</code> <code>instance</code> uses an optimized configuration stack and provides additional, dedicated capacity for Amazon<code> EBS I/O</code>. This optimization provides the best performance for your EBS volumes by minimizing contention between Amazon EBS I&#x2F;O and other traffic from your instance.</li>
+</ul>
+<h2 id="Provisioned-IOPS-SSD-io2-Block-Express-io2-amp-io1-volumes"><a href="#Provisioned-IOPS-SSD-io2-Block-Express-io2-amp-io1-volumes" class="headerlink" title="Provisioned IOPS SSD (io2 Block Express, io2 &amp; io1) volumes"></a>Provisioned IOPS SSD (io2 Block Express, io2 &amp; <code>io1</code>) volumes</h2><p>Provisioned IOPS SSD volumes are designed to deliver a maximum of 256,000 IOPS, 4,000 MB&#x2F;s of throughput, and 64 TiB in size per volume1. io2 Block Express is the latest generation of the Provisioned IOPS SSD volumes that delivers 4x higher throughput, IOPS, and capacity than regular io2 volumes, along with sub-millisecond latency - at the same price as io2. io2 Block Express provides highest block storage performance for the largest, most I&#x2F;O- intensive, mission-critical deployments of Oracle, Microsoft SQL Server, SAP HANA, and SAS Analytics</p>
 <h4 id="General-purpose-SSD-gp3-and-gp2-volumes"><a href="#General-purpose-SSD-gp3-and-gp2-volumes" class="headerlink" title="General purpose SSD (gp3 and gp2) volumes"></a>General purpose SSD (<code>gp3 and gp2</code>) volumes</h4><p>General-purpose volumes are backed by solid-state drives (SSDs) and are suitable for a broad range of transactional workloads, virtual desktops, medium sized single instance databases, latency sensitive interactive applications, dev&#x2F;test environments, and boot volumes.</p>
 <h3 id="HDD-backed-volumes-MB-x2F-s-intensive"><a href="#HDD-backed-volumes-MB-x2F-s-intensive" class="headerlink" title="HDD-backed volumes (MB&#x2F;s-intensive)"></a>HDD-backed volumes (MB&#x2F;s-intensive)</h3><h3 id="Throughput-optimized-HDD-st1-volumes"><a href="#Throughput-optimized-HDD-st1-volumes" class="headerlink" title="Throughput optimized HDD (st1) volumes"></a>Throughput optimized HDD (<code>st1</code>) volumes</h3><p>ST1 is backed by hard disk drives (HDDs) and is ideal for frequently accessed, throughput intensive workloads with large datasets and large I&#x2F;O sizes, such as MapReduce, Kafka, log processing, data warehouse, and ETL workloads.</p>
 <h3 id="Cold-HDD-sc1-volumes"><a href="#Cold-HDD-sc1-volumes" class="headerlink" title="Cold HDD (sc1) volumes"></a>Cold HDD (<code>sc1</code>) volumes</h3><p>SC1 is backed by hard disk drives (HDDs) and provides the lowest cost per GB of all EBS volume types. It is ideal for less frequently accessed workloads with large, cold datasets.</p>
@@ -1571,7 +1589,7 @@ You can also simplify and speed up business workflows and big data jobs using Am
 <li><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html">https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html</a></li>
 <li><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html</a></li>
 </ol>
-<h3 id="S3-RTC-S3-Replication-Time-Control"><a href="#S3-RTC-S3-Replication-Time-Control" class="headerlink" title="S3 RTC S3 (Replication Time Control)"></a>S3 RTC S3 (Replication Time Control)</h3><p>S3 Replication Time Control (S3 RTC) helps you meet compliance or business requirements for data replication and provides visibility into Amazon S3 replication times. S3 RTC replicates most objects that you upload to Amazon S3 in seconds, and 99.99 percent of those objects within 15 minutes.</p>
+<h3 id="S3-RTC-S3-Replication-Time-Control"><a href="#S3-RTC-S3-Replication-Time-Control" class="headerlink" title="S3 RTC S3 (Replication Time Control)"></a>S3 RTC S3 (Replication Time Control)</h3><p>S3 Replication Time Control (S3 RTC) helps you meet compliance or business requirements for data replication and provides visibility into Amazon S3 replication times. S3 RTC replicates most objects that you upload to Amazon S3 in seconds, and 99.99 percent of those objects within 15 minutes. Amazon S3 events are available through Amazon SQS, Amazon SNS, or AWS Lambda.</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-time-control.html#using-s3-events-to-track-rtc">Using S3 Replication Time Control</a></p>
 <h3 id="Amazon-S3-Access-Points"><a href="#Amazon-S3-Access-Points" class="headerlink" title="Amazon S3 Access Points"></a>Amazon S3 Access Points</h3><p>Allow you to <code>create unique entry points for accessing your S3 buckets</code>. Each access point can have its own access policy, allowing you to control access at a granular level. By using access points, you can assign specific permissions to each application or team accessing the shared bucket without affecting other applications. This helps in maintaining access control and minimizing the risk of unintended changes to the bucket policy.</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://aws.amazon.com/s3/features/access-points/">Amazon S3 Access Points</a></p>
@@ -1593,17 +1611,17 @@ You can also simplify and speed up business workflows and big data jobs using Am
 <li>Configure an end router for use with the public virtual interface.</li>
 </ol>
 <p>After the BGP is up and established, the Direct Connect router advertises all global public IP prefixes, including Amazon S3 prefixes. Traffic heading to Amazon S3 is routed through the Direct Connect public virtual interface through a private network connection between AWS and your data center or corporate network.</p>
-<h3 id="Amazon-S3-–-Security-👀"><a href="#Amazon-S3-–-Security-👀" class="headerlink" title="Amazon S3 – Security 👀"></a>Amazon S3 – Security 👀</h3><ul>
+<h3 id="Amazon-S3-Security-👀"><a href="#Amazon-S3-Security-👀" class="headerlink" title="Amazon S3 - Security 👀"></a>Amazon S3 - Security 👀</h3><ul>
 <li><p><strong><code>User-Based</code></strong></p>
 <ul>
-<li><strong>IAM Policies</strong> – which API calls should be allowed for a specific user from IAM</li>
+<li><strong>IAM Policies</strong> - which API calls should be allowed for a specific user from IAM</li>
 </ul>
 </li>
 <li><p><strong><code>Resource-Based</code></strong></p>
 <ul>
-<li><strong>Bucket Policies</strong> – bucket wide rules from the S3 console - <code>allows cross account</code></li>
-<li><strong>Object Access Control List (ACL)</strong> – finer grain (can be disabled)</li>
-<li><strong>Bucket Access Control List (ACL)</strong> – less common (can be disabled)</li>
+<li><strong>Bucket Policies</strong> - bucket wide rules from the S3 console - <code>allows cross account</code></li>
+<li><strong>Object Access Control List (ACL)</strong> - finer grain (can be disabled)</li>
+<li><strong>Bucket Access Control List (ACL)</strong> - less common (can be disabled)</li>
 </ul>
 </li>
 <li><p><strong><code>Note</code></strong>: an IAM principal can access an S3 object if</p>
@@ -1626,7 +1644,7 @@ You can also simplify and speed up business workflows and big data jobs using Am
 <li><p>Optional Conditions on:</p>
 <ul>
 <li>Public IP or Elastic IP (not on Private IP)</li>
-<li>Source VPC or Source VPC Endpoint – only works with VPC Endpoints</li>
+<li>Source VPC or Source VPC Endpoint - only works with VPC Endpoints</li>
 <li>CloudFront Origin Identity</li>
 <li>MFA</li>
 </ul>
@@ -1664,7 +1682,7 @@ You can also simplify and speed up business workflows and big data jobs using Am
 <li>You can filter generated report using S3 Select</li>
 <li>Use cases: <code>Business</code>, <code>Compliance</code>, <code>Regulatory</code> needs, …</li>
 </ul>
-<h3 id="Amazon-S3-Analytics-–-Storage-Class-Analysis-👀-OJO"><a href="#Amazon-S3-Analytics-–-Storage-Class-Analysis-👀-OJO" class="headerlink" title="Amazon S3 Analytics – Storage Class Analysis 👀 OJO"></a>Amazon S3 Analytics – Storage Class Analysis 👀 OJO</h3><ul>
+<h3 id="Amazon-S3-Analytics-Storage-Class-Analysis-👀-OJO"><a href="#Amazon-S3-Analytics-Storage-Class-Analysis-👀-OJO" class="headerlink" title="Amazon S3 Analytics - Storage Class Analysis 👀 OJO"></a>Amazon S3 Analytics - Storage Class Analysis 👀 OJO</h3><ul>
 <li><p>Help you <strong><code>decide when to transition objects to the right storage class</code></strong></p>
 </li>
 <li><p>Recommendations for <code>Standard</code> and <code>Standard IA</code></p>
@@ -1693,16 +1711,16 @@ You can also simplify and speed up business workflows and big data jobs using Am
 </ul>
 </li>
 </ul>
-<h3 id="Glacier-–-Notifications-for-Restore-Operations"><a href="#Glacier-–-Notifications-for-Restore-Operations" class="headerlink" title="Glacier – Notifications for Restore Operations"></a>Glacier – Notifications for Restore Operations</h3><p>S3 Event Notifications</p>
+<h3 id="Glacier-Notifications-for-Restore-Operations"><a href="#Glacier-Notifications-for-Restore-Operations" class="headerlink" title="Glacier - Notifications for Restore Operations"></a>Glacier - Notifications for Restore Operations</h3><p>S3 Event Notifications</p>
 <ul>
 <li>S3 supports the restoration of objects archivedto S3 Glacier storage classes</li>
 <li><strong><code>s3:ObjectRestore:Post</code></strong> &#x3D;&gt; notify when object restoration initiated</li>
 <li><strong><code>s3:ObjectRestore:Completed</code></strong> &#x3D;&gt; notify whenobject restoration completed</li>
 </ul>
-<h3 id="Amazon-S3-–-Object-Encryption"><a href="#Amazon-S3-–-Object-Encryption" class="headerlink" title="Amazon S3 – Object Encryption"></a>Amazon S3 – Object Encryption</h3><p>You can encrypt objects in S3 buckets using one of 4 methods</p>
+<h3 id="Amazon-S3-Object-Encryption"><a href="#Amazon-S3-Object-Encryption" class="headerlink" title="Amazon S3 - Object Encryption"></a>Amazon S3 - Object Encryption</h3><p>You can encrypt objects in S3 buckets using one of 4 methods</p>
 <p>Server-Side Encryption (SSE)</p>
 <ol>
-<li><strong><code>Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3)</code></strong> – Enabled by Default<ul>
+<li><strong><code>Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3)</code></strong> - Enabled by Default<ul>
 <li>Encrypts S3 objects using keys handled, managed, and owned by AWS</li>
 <li>Must set header <code>&quot;x-amz-server-side-encryption&quot;: &quot;AES256&quot;</code></li>
 </ul>
@@ -1719,7 +1737,7 @@ You can also simplify and speed up business workflows and big data jobs using Am
 </li>
 <li>Client-Side Encryption</li>
 </ol>
-<p>Amazon S3 – Force Encryption in Transit
+<p>Amazon S3 - Force Encryption in Transit
 aws:SecureTransport</p>
 <h2 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h2><ul>
 <li><strong><code>Cross-Origin Resource Sharing (CORS)</code></strong></li>
@@ -1736,8 +1754,8 @@ aws:SecureTransport</p>
 <li>If a client makes a cross-origin request on our S3 bucket, we need to enable the correct CORS headers.
 You can allow for a specific origin or for * (all origins)</li>
 </ul>
-<h3 id="Amazon-S3-–-MFA-Delete"><a href="#Amazon-S3-–-MFA-Delete" class="headerlink" title="Amazon S3 – MFA Delete"></a>Amazon S3 – MFA Delete</h3><ul>
-<li><p><strong>MFA (Multi-Factor Authentication)</strong> – force users to generate a code on a
+<h3 id="Amazon-S3-MFA-Delete"><a href="#Amazon-S3-MFA-Delete" class="headerlink" title="Amazon S3 - MFA Delete"></a>Amazon S3 - MFA Delete</h3><ul>
+<li><p><strong>MFA (Multi-Factor Authentication)</strong> - force users to generate a code on a
 device (usually a mobile phone or hardware) before doing important operations on S3</p>
 </li>
 <li><p>MFA will be required to:</p>
@@ -1758,8 +1776,12 @@ device (usually a mobile phone or hardware) before doing important operations on
 </li>
 </ul>
 <h4 id="Allow-access-if-users-are-MFA-authenticated"><a href="#Allow-access-if-users-are-MFA-authenticated" class="headerlink" title="Allow access if users are MFA authenticated"></a>Allow access if users are MFA authenticated</h4><p>use an MFA condition in a policy to check the following properties:</p>
-<p>– Existence—To simply verify that the user did authenticate with MFA, check that the <code>aws:MultiFactorAuthPresent</code> key is True in a Bool condition. The key is only present when the user authenticates with short-term credentials. Long-term credentials, such as access keys, do not include this key.</p>
-<p>– Duration—If you want to grant access only within a specified time after MFA authentication, use a numeric condition type to compare the aws:MultiFactorAuthAge key’s age to a value (such as 3600 seconds). Note that the <code>aws:MultiFactorAuthAge</code> key is not present if MFA was not used.</p>
+<ul>
+<li><p>Existence—To simply verify that the user did authenticate with MFA, check that the <code>aws:MultiFactorAuthPresent</code> key is True in a Bool condition. The key is only present when the user authenticates with short-term credentials. Long-term credentials, such as access keys, do not include this key.</p>
+</li>
+<li><p>Duration—If you want to grant access only within a specified time after MFA authentication, use a numeric condition type to compare the aws:MultiFactorAuthAge key’s age to a value (such as 3600 seconds). Note that the <code>aws:MultiFactorAuthAge</code> key is not present if MFA was not used.</p>
+</li>
+</ul>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;Condition&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;Bool&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;</span></span><br><span class="line"><span class="string">    &quot;</span>aws<span class="punctuation">:</span>MultiFactorAuthPresent<span class="string">&quot;: &quot;</span><span class="literal"><span class="keyword">true</span></span><span class="string">&quot;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="S3-Access-Logs"><a href="#S3-Access-Logs" class="headerlink" title="S3 Access Logs"></a>S3 Access Logs</h3><ul>
@@ -1784,20 +1806,20 @@ device (usually a mobile phone or hardware) before doing important operations on
 <li><p><strong><code>Exam Tip</code></strong>: analyze data in S3 using serverless SQL, use Athena</p>
 </li>
 </ul>
-<h3 id="Amazon-Athena-–-Performance-Improvement"><a href="#Amazon-Athena-–-Performance-Improvement" class="headerlink" title="Amazon Athena – Performance Improvement"></a>Amazon Athena – Performance Improvement</h3><ul>
+<h3 id="Amazon-Athena-Performance-Improvement"><a href="#Amazon-Athena-Performance-Improvement" class="headerlink" title="Amazon Athena - Performance Improvement"></a>Amazon Athena - Performance Improvement</h3><ul>
 <li><strong><code>Use columnar</code></strong> data for cost-savings (less scan).</li>
 <li><strong><code>Compress data</code></strong> for smaller retrievals (bzip2, gzip, lz4, snappy, zlip, zstd…).</li>
 <li><strong><code>Partition</code></strong> datasets in S3 for easy querying on virtual columns.</li>
 <li><strong><code>Use larger files</code></strong> (&gt; 128 MB) to minimize overhead.</li>
 </ul>
-<h3 id="Amazon-Athena-–-Federated-Query"><a href="#Amazon-Athena-–-Federated-Query" class="headerlink" title="Amazon Athena – Federated Query"></a>Amazon Athena – Federated Query</h3><p>Allows you to run SQL queries across data stored in relational, non-relational, object, and custom data sources (AWS or on-premises)</p>
+<h3 id="Amazon-Athena-Federated-Query"><a href="#Amazon-Athena-Federated-Query" class="headerlink" title="Amazon Athena - Federated Query"></a>Amazon Athena - Federated Query</h3><p>Allows you to run SQL queries across data stored in relational, non-relational, object, and custom data sources (AWS or on-premises)</p>
 <p>Uses Data Source Connectors that run on AWS Lambda to run Federated Queries (e.g., CloudWatch Logs, DynamoDB, RDS, …)</p>
 <p>Store the results back in Amazon S3</p>
 <h2 id="AWS-OpsHub"><a href="#AWS-OpsHub" class="headerlink" title="AWS OpsHub"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-opshub.html">AWS OpsHub</a></h2><p>AWS OpsHub for <code>Snow Family</code>, that you can use to <code>manage your devices and local AWS services</code>. You use AWS OpsHub on a client computer to perform tasks such as unlocking and configuring single or clustered devices, transferring files, and launching and managing instances running on Snow Family Devices. You can use AWS OpsHub to manage both the Storage Optimized and Compute Optimized device types and the Snow device. The AWS OpsHub application is available at no additional cost to you.</p>
 <p>AWS OpsHub takes all the existing operations available in the Snowball API and presents them as a graphical user interface. This interface helps you quickly migrate data to the AWS Cloud and deploy edge computing applications on Snow Family Devices.</p>
 <p>When your Snow device arrives at your site, you download, install, and launch the AWS OpsHub application on a client machine, such as a laptop. After installation, you can unlock the device and start managing it and using supported AWS services locally. AWS OpsHub provides a dashboard that summarizes key metrics such as storage capacity and active instances on your device. It also provides a selection of AWS services that are supported on the Snow Family Devices. Within minutes, you can begin transferring files to the device.</p>
 <hr>
-<h2 id="Amazon-FSx-–-Overview"><a href="#Amazon-FSx-–-Overview" class="headerlink" title="Amazon FSx – Overview"></a>Amazon FSx – Overview</h2><p><strong><code>Launch 3rd party high-performance file systems on AWS</code></strong></p>
+<h2 id="Amazon-FSx-Overview"><a href="#Amazon-FSx-Overview" class="headerlink" title="Amazon FSx - Overview"></a>Amazon FSx - Overview</h2><p><strong><code>Launch 3rd party high-performance file systems on AWS</code></strong></p>
 <h3 id="FSx-for-Lustre"><a href="#FSx-for-Lustre" class="headerlink" title="FSx for Lustre"></a>FSx for Lustre</h3><p>Lustre is a type of <code>parallel distributed</code> file system, for large-scale computing. The name Lustre is derived from “Linux” and “cluster.</p>
 <ul>
 <li><strong><code>Machine Learning, High Performance Computing (HPC)</code></strong></li>
@@ -1836,7 +1858,7 @@ device (usually a mobile phone or hardware) before doing important operations on
 </ul>
 <hr>
 <h2 id="AWS-Storage-Gateway"><a href="#AWS-Storage-Gateway" class="headerlink" title="AWS Storage Gateway"></a>AWS Storage Gateway</h2><p>Bridge between on-premises data and cloud data</p>
-<p><img src="/../images/AWS-Store-Gateway-Architecture.png" alt="AWS Storage Gateway"></p>
+<p><img src="/../images/AWS-Store-Gateway-Architecture.png" alt="AWS Storage Gateway Architecture"></p>
 <ul>
 <li><p><code>File Gateway is POSIX compliant (Linux file system)</code></p>
 <ul>
@@ -1855,6 +1877,7 @@ device (usually a mobile phone or hardware) before doing important operations on
 </ul>
 </li>
 </ul>
+<p><img src="/../images/AWS-Store-Gateway.png" alt="AWS Storage Gateway"></p>
 <p>Types of Storage Gateway:</p>
 <ol>
 <li><code>S3 File Gateway</code></li>
@@ -1893,7 +1916,7 @@ device (usually a mobile phone or hardware) before doing important operations on
 <li>Back up data using existing tape-based processes (and iSCSI interface)</li>
 <li>Works with leading backup software vendors</li>
 </ul>
-<h3 id="Storage-Gateway-–-Activations"><a href="#Storage-Gateway-–-Activations" class="headerlink" title="Storage Gateway – Activations"></a>Storage Gateway – Activations</h3><p>Two ways to get Activation Key:</p>
+<h3 id="Storage-Gateway-Activations"><a href="#Storage-Gateway-Activations" class="headerlink" title="Storage Gateway - Activations"></a>Storage Gateway - Activations</h3><p>Two ways to get Activation Key:</p>
 <ul>
 <li>Using the Gateway VM CLI</li>
 <li>Make a web request to the Gateway VM (Port 80) old way</li>
@@ -1911,7 +1934,7 @@ device (usually a mobile phone or hardware) before doing important operations on
 <li>216 Point of Presence globally (edge locations)</li>
 <li><strong><code>DDoS protection (because worldwide), integration with Shield, AWS Web Application Firewall</code></strong></li>
 </ul>
-<h3 id="CloudFront-–-Origins"><a href="#CloudFront-–-Origins" class="headerlink" title="CloudFront – Origins"></a>CloudFront – Origins</h3><p><code>S3 bucket</code></p>
+<h3 id="CloudFront-Origins"><a href="#CloudFront-Origins" class="headerlink" title="CloudFront - Origins"></a>CloudFront - Origins</h3><p><code>S3 bucket</code></p>
 <ul>
 <li>For distributing files and caching them at the edge</li>
 <li>Enhanced security with CloudFront <strong><code>Origin Access Control (OAC)</code></strong></li>
@@ -1926,7 +1949,7 @@ device (usually a mobile phone or hardware) before doing important operations on
 <li>Any HTTP backend you want</li>
 </ul>
 <h2 id="Q-AwS-Origin-Shield"><a href="#Q-AwS-Origin-Shield" class="headerlink" title="*Q AwS Origin Shield"></a><code>*Q</code> AwS Origin Shield</h2><p>Enabling the Origin Shield <code>feature</code> in <code>CloudFront</code> helps reduce the load on the origin server by <code>adding</code> an additional <code>caching layer</code> <em>between</em> <code>CloudFront edge locations</code> and &#96;the origin. It improves cache hit ratios and reduces the number of requests hitting the origin by serving content from the Origin Shield cache.</p>
-<h2 id="AWS-WAF-Web-Application-Firewall"><a href="#AWS-WAF-Web-Application-Firewall" class="headerlink" title="AWS WAF (Web Application Firewall)"></a>AWS WAF (Web Application Firewall)</h2><p>AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to an Amazon <code>CloudFront</code> distribution, an Amazon <code>API Gateway</code> REST API, an <code>Application Load Balancer</code>, or an <code>AWS AppSync GraphQL API</code>.</p>
+<h2 id="AWS-WAF-Web-Application-Firewall-1"><a href="#AWS-WAF-Web-Application-Firewall-1" class="headerlink" title="AWS WAF (Web Application Firewall)"></a>AWS WAF (Web Application Firewall)</h2><p>AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to an Amazon <code>CloudFront</code> distribution, an Amazon <code>API Gateway</code> REST API, an <code>Application Load Balancer</code>, or an <code>AWS AppSync GraphQL API</code>.</p>
 <h3 id="Q-Change-AWS-Firewall-Manager-administration-account"><a href="#Q-Change-AWS-Firewall-Manager-administration-account" class="headerlink" title="*Q Change AWS Firewall Manager administration account"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-change-administrator.html">Change AWS Firewall Manager administration account</a></h3><p>You can designate <code>only one account in</code> an <code>organization as a Firewall Manager administrator account</code>. To create a new Firewall Manager administrator account, you must revoke the original administrator account first.</p>
 <h3 id="CloudFront-Origin-Headers-vs-Cache-Behavior"><a href="#CloudFront-Origin-Headers-vs-Cache-Behavior" class="headerlink" title="CloudFront Origin Headers vs Cache Behavior"></a>CloudFront Origin Headers vs Cache Behavior</h3><p><code>Origin Custom Headers</code>:</p>
 <ul>
@@ -1939,7 +1962,7 @@ device (usually a mobile phone or hardware) before doing important operations on
 <li>Contains the whitelist of headers to forward</li>
 </ul>
 <h3 id="CloudFront-Caching-TTL"><a href="#CloudFront-Caching-TTL" class="headerlink" title="CloudFront Caching TTL"></a>CloudFront Caching TTL</h3><p><code>**“Cache-Control: max-age”**</code> is preferred to “Expires” header</p>
-<h3 id="CloudFront-–-Increasing-Cache-Ratio"><a href="#CloudFront-–-Increasing-Cache-Ratio" class="headerlink" title="CloudFront – Increasing Cache Ratio"></a>CloudFront – Increasing Cache Ratio</h3><p>Monitor the CloudWatch metric <code>CacheHitRate</code></p>
+<h3 id="CloudFront-Increasing-Cache-Ratio"><a href="#CloudFront-Increasing-Cache-Ratio" class="headerlink" title="CloudFront - Increasing Cache Ratio"></a>CloudFront - Increasing Cache Ratio</h3><p>Monitor the CloudWatch metric <code>CacheHitRate</code></p>
 <ul>
 <li>Specify how long to cache your objects: <code>Cache-Control max-age</code> header</li>
 <li>Specify none or the minimally required <code>headers</code></li>
@@ -1963,7 +1986,7 @@ device (usually a mobile phone or hardware) before doing important operations on
 <li><p>Previously called AWS Service Health Dashboard</p>
 </li>
 </ul>
-<h3 id="AWS-Health-Dashboard-–-Your-Account"><a href="#AWS-Health-Dashboard-–-Your-Account" class="headerlink" title="AWS Health Dashboard – Your Account"></a>AWS Health Dashboard – Your Account</h3><ul>
+<h3 id="AWS-Health-Dashboard-Your-Account"><a href="#AWS-Health-Dashboard-Your-Account" class="headerlink" title="AWS Health Dashboard - Your Account"></a>AWS Health Dashboard - Your Account</h3><ul>
 <li><p>Previously called <code>AWS Personal Health Dashboard</code> (PHD).</p>
 </li>
 <li><p>AWS Account Health Dashboard provides <code>alerts and remediation guidance</code> when AWS is experiencing <code>events that may impact you</code>.</p>
@@ -1982,7 +2005,7 @@ you plan for <code>scheduled activities</code>.</p>
 <li><p>Alert, remediation, proactive, scheduled activitie</p>
 </li>
 </ul>
-<h3 id="Health-Event-Notifications"><a href="#Health-Event-Notifications" class="headerlink" title="Health Event Notifications"></a>Health Event Notifications</h3><ul>
+<h3 id="Health-Event-NotificationsC"><a href="#Health-Event-NotificationsC" class="headerlink" title="Health Event NotificationsC"></a>Health Event NotificationsC</h3><ul>
 <li>Use <code>EventBridge to react to changes for AWS Health events</code> in your AWS account</li>
 <li>Example: receive email notifications when EC2 instances in your AWS account are scheduled for updates</li>
 <li>This is possible for Account events (resources that are affected in your account) and Public Events (Regional availability of a service)</li>
@@ -2015,17 +2038,17 @@ you plan for <code>scheduled activities</code>.</p>
 <h3 id="Security-Service-Control-Policies-SCP"><a href="#Security-Service-Control-Policies-SCP" class="headerlink" title="Security: Service Control Policies (SCP)"></a>Security: Service Control Policies (SCP)</h3><ul>
 <li>IAM policies applied to OU or Accounts to restrict Users and Roles.</li>
 <li>They do not apply to the management account (full admin power).</li>
-<li>Must have an explicit allow (does not allow anything by default – like IAM).</li>
+<li>Must have an explicit allow (does not allow anything by default - like IAM).</li>
 </ul>
-<h3 id="AWS-Organizations-–-Reserved-Instances"><a href="#AWS-Organizations-–-Reserved-Instances" class="headerlink" title="AWS Organizations – Reserved Instances"></a>AWS Organizations – Reserved Instances</h3><ul>
+<h3 id="AWS-Organizations-Reserved-Instances"><a href="#AWS-Organizations-Reserved-Instances" class="headerlink" title="AWS Organizations - Reserved Instances"></a>AWS Organizations - Reserved Instances</h3><ul>
 <li>For billing purposes, the consolidated billing feature of AWS Organizations treats all the accounts in the organization as one account.</li>
 <li>This means that <code>all accounts</code> in the organization can receive the hourly cost benefit of Reserved Instances that are purchased <code>by any other account</code>.</li>
 <li><code>The payer account (master account) of an organization</code> can turn off Reserved Instance (RI) discount and Savings Plans discount sharing for any accounts in that organization, including the payer account</li>
 <li>This means that RIs and Savings Plans discounts aren’t shared between any accounts that have sharing turned off.</li>
 <li>To share an RI or Savings Plans discount with an account, <code>both accounts must have sharing turned on</code>.</li>
 </ul>
-<h3 id="AWS-Organizations-–-IAM-Policies"><a href="#AWS-Organizations-–-IAM-Policies" class="headerlink" title="AWS Organizations – IAM Policies"></a>AWS Organizations – IAM Policies</h3><p>Use <code>aws:PrincipalOrgID</code> condition key in your resource-based policies to restrict access to IAM principals from accounts in an AWS Organizat</p>
-<h2 id="AWS-Organizations-–-Tag-Policies"><a href="#AWS-Organizations-–-Tag-Policies" class="headerlink" title="AWS Organizations – Tag Policies"></a>AWS Organizations – Tag Policies</h2><ul>
+<h3 id="AWS-Organizations-IAM-Policies"><a href="#AWS-Organizations-IAM-Policies" class="headerlink" title="AWS Organizations - IAM Policies"></a>AWS Organizations - IAM Policies</h3><p>Use <code>aws:PrincipalOrgID</code> condition key in your resource-based policies to restrict access to IAM principals from accounts in an AWS Organizat</p>
+<h2 id="AWS-Organizations-Tag-Policies"><a href="#AWS-Organizations-Tag-Policies" class="headerlink" title="AWS Organizations - Tag Policies"></a>AWS Organizations - Tag Policies</h2><ul>
 <li>Helps you standardize tags across resources in an AWS Organization</li>
 <li>Ensure consistent tags, audit tagged resources, maintain proper resources categorization, …</li>
 <li>You define tag keys and their allowed values</li>
@@ -2061,8 +2084,8 @@ you plan for <code>scheduled activities</code>.</p>
 <li><p>Includes: virtual machines, databases, storage options, etc…</p>
 </li>
 </ul>
-<h3 id="AWS-Service-Catalog-–-Sharing-Catalogs"><a href="#AWS-Service-Catalog-–-Sharing-Catalogs" class="headerlink" title="AWS Service Catalog – Sharing Catalogs"></a>AWS Service Catalog – Sharing Catalogs</h3><p>Share portfolios with individual AWS accounts or AWS Organizations.</p>
-<h3 id="AWS-Service-Catalog-–-TagOptions-Library"><a href="#AWS-Service-Catalog-–-TagOptions-Library" class="headerlink" title="AWS Service Catalog – TagOptions Library"></a>AWS Service Catalog – TagOptions Library</h3><ul>
+<h3 id="AWS-Service-Catalog-Sharing-Catalogs"><a href="#AWS-Service-Catalog-Sharing-Catalogs" class="headerlink" title="AWS Service Catalog - Sharing Catalogs"></a>AWS Service Catalog - Sharing Catalogs</h3><p>Share portfolios with individual AWS accounts or AWS Organizations.</p>
+<h3 id="AWS-Service-Catalog-TagOptions-Library"><a href="#AWS-Service-Catalog-TagOptions-Library" class="headerlink" title="AWS Service Catalog - TagOptions Library"></a>AWS Service Catalog - TagOptions Library</h3><ul>
 <li>Easily manage tags on provisioned products</li>
 <li><code>TagOption</code>:<ul>
 <li>Key-value pair managed in AWS Service Catalog</li>
@@ -2071,8 +2094,8 @@ you plan for <code>scheduled activities</code>.</p>
 </li>
 <li>Can be associated with Portfolios and Products.</li>
 <li>Use cases: <code>proper resources tagging</code>, <code>defined allowed</code> tags, …</li>
-<li>Can be shared with other AWS accounts and AWS Organizations.
-– A consistent <code>taxonomy</code></li>
+<li>Can be shared with other AWS accounts and AWS Organizations.</li>
+<li>A consistent <code>taxonomy</code></li>
 </ul>
 <hr>
 <h2 id="Cost-Explorer"><a href="#Cost-Explorer" class="headerlink" title="Cost Explorer"></a>Cost Explorer</h2><ul>
@@ -2084,12 +2107,17 @@ you plan for <code>scheduled activities</code>.</p>
 <li><code>Forecast usage up to 12 months based on previous usage</code></li>
 </ul>
 <h2 id="👀-Q-Collect-information-about-the-service-costs-of-each-developer"><a href="#👀-Q-Collect-information-about-the-service-costs-of-each-developer" class="headerlink" title="👀 *Q Collect information about the service costs of each developer"></a><code>👀</code> <code>*Q</code> Collect information about the service costs of each developer</h2><ul>
-<li>The AWS-generated <em>tag</em> <code>createdBy</code> defines and applies to supported AWS resources for cost allocation purposes. To use the AWS-generated tags, a management account owner must activate it in the Billing and Cost Management console. When a management account owner activates the tag, it is also activated for all member accounts.</li>
-<li><code>Cost Explorer</code> is a tool that enables you to view and <code>analyze your costs and usage</code>. You can explore your usage and costs using the main graph, the Cost Explorer cost and usage reports, or the Cost Explorer RI reports.</li>
+<li><p>The AWS-generated <em>tag</em> <code>createdBy</code> defines and applies to supported AWS resources for cost allocation purposes. To use the AWS-generated tags, a management account owner must activate it in the Billing and Cost Management console. When a management account owner activates the tag, it is also activated for all member accounts.</p>
+</li>
+<li><p><code>Cost Explorer</code> is a tool that enables you to view and <code>analyze your costs and usage</code>. You can explore your usage and costs using the main graph, the Cost Explorer cost and usage reports, or the Cost Explorer RI reports.</p>
+</li>
+<li><p>AWS Cost Explorer provides the following prebuilt reports:</p>
+<ul>
+<li>EC2 <code>RI Utilization %</code> offers relevant data to identify and act on opportunities to increase your Reserved Instance usage efficiency. It’s calculated by dividing Reserved Instance used hours by total Reserved Instance purchased hours.</li>
+<li>EC2 <code>RI Coverage %</code> shows how much of your overall instance usage is covered by Reserved Instances. This lets you make informed decisions about when to purchase or modify a Reserved Instance to ensure</li>
 </ul>
-<p>AWS Cost Explorer provides the following prebuilt reports:</p>
-<p>– EC2 <code>RI Utilization %</code> offers relevant data to identify and act on opportunities to increase your Reserved Instance usage efficiency. It’s calculated by dividing Reserved Instance used hours by total Reserved Instance purchased hours.</p>
-<p>– EC2 <code>RI Coverage %</code> shows how much of your overall instance usage is covered by Reserved Instances. This lets you make informed decisions about when to purchase or modify a Reserved Instance to ensure</p>
+</li>
+</ul>
 <hr>
 <h2 id="AWS-Budgets"><a href="#AWS-Budgets" class="headerlink" title="AWS Budgets"></a>AWS Budgets</h2><ul>
 <li><code>Create budget and send alarms when costs exceeds the budget</code>.</li>
@@ -2162,7 +2190,7 @@ you plan for <code>scheduled activities</code>.</p>
 </ul>
 <h3 id="IAM-Access-Analyzer"><a href="#IAM-Access-Analyzer" class="headerlink" title="IAM Access Analyzer"></a>IAM Access Analyzer</h3><p>helps you <code>identify the resources in your organization and accounts</code>, such as <code>Amazon S3 buckets</code> or <code>IAM roles</code>, <code>shared with an external entity</code>. This lets you identify unintended access to your resources and data, which is a security risk. Access Analyzer identifies resources shared with external principals by using logic-based reasoning to analyze the resource-based policies in your AWS environment. For each instance of a resource shared outside of your account, Access Analyzer generates a finding.</p>
 <ul>
-<li><code>Find out which resources are shared externally</code><ul>
+<li><code>Find out which resources are shared externally</code> - OJO<ul>
 <li>S3 Buckets</li>
 <li>IAM Roles</li>
 <li>KMS Keys</li>
@@ -2204,12 +2232,12 @@ you plan for <code>scheduled activities</code>.</p>
 <hr>
 <h2 id="AWS-DataSync"><a href="#AWS-DataSync" class="headerlink" title="AWS DataSync"></a>AWS DataSync</h2><ul>
 <li><code>Move large amount of data</code> to and from<ul>
-<li><code>On-premises</code> &#x2F; other cloud to AWS (NFS, SMB, HDFS, S3 API…) – needs agent</li>
-<li><code>AWS to AWS</code> (different storage services) – no agent needed</li>
+<li><code>On-premises</code> &#x2F; other cloud to AWS (NFS, SMB, HDFS, S3 API…) - needs agent</li>
+<li><code>AWS to AWS</code> (different storage services) - no agent needed</li>
 </ul>
 </li>
 <li>Can synchronize to:<ul>
-<li>Amazon S3 (any storage classes – including Glacier)</li>
+<li>Amazon S3 (any storage classes - including Glacier)</li>
 <li>Amazon EFS</li>
 <li>Amazon FSx (Windows, Lustre, NetApp, OpenZFS…)</li>
 </ul>
@@ -2220,7 +2248,7 @@ you plan for <code>scheduled activities</code>.</p>
 </ul>
 <p>Maybe for <code>large quantity of data</code> you can use <code>AWS Snowcone</code> with has the <code>DataSync agent pre-installed</code>.</p>
 <hr>
-<h2 id="AWS-STS-–-Security-Token-Service"><a href="#AWS-STS-–-Security-Token-Service" class="headerlink" title="AWS STS – Security Token Service"></a>AWS STS – Security Token Service</h2><ul>
+<h2 id="AWS-STS-Security-Token-Service"><a href="#AWS-STS-Security-Token-Service" class="headerlink" title="AWS STS - Security Token Service"></a>AWS STS - Security Token Service</h2><ul>
 <li><code>Allows to grant limited and temporary access to AWS resources.</code></li>
 <li>Token is valid for up to one hour (must be refreshed)</li>
 <li><code>AssumeRole</code><ul>
@@ -2243,7 +2271,7 @@ you plan for <code>scheduled activities</code>.</p>
 </li>
 </ul>
 <hr>
-<h2 id="Cognito-Identity-Pools-–-IAM-Roles"><a href="#Cognito-Identity-Pools-–-IAM-Roles" class="headerlink" title="Cognito Identity Pools – IAM Roles"></a>Cognito Identity Pools – IAM Roles</h2><ul>
+<h2 id="Cognito-Identity-Pools-IAM-Roles"><a href="#Cognito-Identity-Pools-IAM-Roles" class="headerlink" title="Cognito Identity Pools - IAM Roles"></a>Cognito Identity Pools - IAM Roles</h2><ul>
 <li><p>Default IAM roles for authenticated and guest users</p>
 </li>
 <li><p>Define rules to choose the role for each user based on the user’s ID</p>
@@ -2282,47 +2310,47 @@ you plan for <code>scheduled activities</code>.</p>
 <li>The only AWS service which provides 100% availability SLA</li>
 <li>Why Route 53? 53 is a reference to the traditional DNS port</li>
 </ul>
-<h3 id="Route-53-–-Records"><a href="#Route-53-–-Records" class="headerlink" title="Route 53 – Records"></a>Route 53 – Records</h3><ul>
+<h3 id="Route-53-Records"><a href="#Route-53-Records" class="headerlink" title="Route 53 - Records"></a>Route 53 - Records</h3><ul>
 <li>How you want to route traffic for a domain</li>
 <li>Each record contains:<ul>
-<li><code>Domain/subdomain Name</code> – e.g., example.com</li>
-<li><code>Record Type</code> – e.g., A or AAAA</li>
-<li><code>Value</code> – e.g., 12.34.56.78</li>
-<li><code>Routing Policy</code> – how Route 53 responds to queries</li>
-<li><code>TTL</code> – amount of time the record cached at DNS Resolvers</li>
+<li><code>Domain/subdomain Name</code> - e.g., example.com</li>
+<li><code>Record Type</code> - e.g., A or AAAA</li>
+<li><code>Value</code> - e.g., 12.34.56.78</li>
+<li><code>Routing Policy</code> - how Route 53 responds to queries</li>
+<li><code>TTL</code> - amount of time the record cached at DNS Resolvers</li>
 </ul>
 </li>
 <li>Route 53 supports the following DNS record types:</li>
 <li>(must know) A &#x2F; AAAA &#x2F; CNAME &#x2F; NS</li>
 <li>(advanced) CAA &#x2F; DS &#x2F; MX &#x2F; NAPTR &#x2F; PTR &#x2F; SOA &#x2F; TXT &#x2F; SPF &#x2F; SRV</li>
 </ul>
-<h3 id="Route-53-–-Record-Types"><a href="#Route-53-–-Record-Types" class="headerlink" title="Route 53 – Record Types"></a>Route 53 – Record Types</h3><ul>
-<li><code>A</code> – maps a hostname to IPv4</li>
-<li><code>AAAA</code> – maps a hostname to IPv6</li>
-<li><code>CNAME</code> – maps a hostname to another hostname<ul>
+<h3 id="Route-53-Record-Types"><a href="#Route-53-Record-Types" class="headerlink" title="Route 53 - Record Types"></a>Route 53 - Record Types</h3><ul>
+<li><code>A</code> - maps a hostname to IPv4</li>
+<li><code>AAAA</code> - maps a hostname to IPv6</li>
+<li><code>CNAME</code> - maps a hostname to another hostname<ul>
 <li>The target is a domain name which must have an A or AAAA record</li>
 <li>Can’t create a CNAME record for the top node of a DNS namespace (Zone Apex)</li>
 <li>Example: you can’t create for example.com, but you can create for <a target="_blank" rel="noopener" href="http://www.example.com/">www.example.com</a></li>
 </ul>
 </li>
-<li><code>NS</code> – Name Servers for the Hosted Zone</li>
+<li><code>NS</code> - Name Servers for the Hosted Zone</li>
 <li>Control how traffic is routed for a domain</li>
 </ul>
-<h3 id="Route-53-–-Hosted-Zones"><a href="#Route-53-–-Hosted-Zones" class="headerlink" title="Route 53 – Hosted Zones"></a>Route 53 – Hosted Zones</h3><ul>
+<h3 id="Route-53-Hosted-Zones"><a href="#Route-53-Hosted-Zones" class="headerlink" title="Route 53 - Hosted Zones"></a>Route 53 - Hosted Zones</h3><ul>
 <li>A container for records that define how to route traffic to a domain and its subdomains</li>
-<li><strong><code>Public Hosted Zones</code></strong> – contains records that specify how to route traffic on the Internet (public domain names)
+<li><strong><code>Public Hosted Zones</code></strong> - contains records that specify how to route traffic on the Internet (public domain names)
 <em>application1.mypublicdomain.com</em></li>
-<li><strong><code>Private Hosted Zones</code></strong> – contain records that specify how you route traffic within one or more VPCs (private domain names)
+<li><strong><code>Private Hosted Zones</code></strong> - contain records that specify how you route traffic within one or more VPCs (private domain names)
 <em>application1.company.internal</em></li>
 <li>You pay $0.50 per month per hosted zone</li>
 </ul>
-<h3 id="Route-53-–-Records-TTL-Time-To-Live"><a href="#Route-53-–-Records-TTL-Time-To-Live" class="headerlink" title="Route 53 – Records TTL (Time To Live)"></a>Route 53 – Records TTL (Time To Live)</h3><ul>
-<li><code>High TTL – e.g., 24 hr</code><ul>
+<h3 id="Route-53-Records-TTL-Time-To-Live"><a href="#Route-53-Records-TTL-Time-To-Live" class="headerlink" title="Route 53 - Records TTL (Time To Live)"></a>Route 53 - Records TTL (Time To Live)</h3><ul>
+<li><code>High TTL - e.g., 24 hr</code><ul>
 <li>Less traffic on Route 53</li>
 <li>Possibly outdated records</li>
 </ul>
 </li>
-<li><code>Low TTL – e.g., 60 sec.</code><ul>
+<li><code>Low TTL - e.g., 60 sec.</code><ul>
 <li>More traffic on Route 53 ($$)</li>
 <li>Records are outdated for less time</li>
 <li>Easy to change records</li>
@@ -2351,7 +2379,7 @@ you plan for <code>scheduled activities</code>.</p>
 </ul>
 </li>
 </ul>
-<h3 id="Route-53-–-Alias-Records"><a href="#Route-53-–-Alias-Records" class="headerlink" title="Route 53 – Alias Records"></a>Route 53 – Alias Records</h3><ul>
+<h3 id="Route-53-Alias-Records"><a href="#Route-53-Alias-Records" class="headerlink" title="Route 53 - Alias Records"></a>Route 53 - Alias Records</h3><ul>
 <li>Maps a hostname to an AWS resource</li>
 <li>An extension to DNS functionality</li>
 <li>Automatically recognizes changes in the resource’s IP addresses</li>
@@ -2359,8 +2387,8 @@ you plan for <code>scheduled activities</code>.</p>
 <li>Alias Record is always of type A&#x2F;AAAA for AWS resources (IPv4 &#x2F; IPv6)</li>
 <li><code>You can’t set the TTL</code></li>
 </ul>
-<h2 id="Route-53-–-Alias-Records-Targets"><a href="#Route-53-–-Alias-Records-Targets" class="headerlink" title="Route 53 – Alias Records Targets"></a>Route 53 – Alias Records Targets</h2><p><strong>You cannot set an ALIAS record for an EC2 DNS name</strong> - EXAM</p>
-<h2 id="Route-53-–-Routing-Policies"><a href="#Route-53-–-Routing-Policies" class="headerlink" title="Route 53 – Routing Policies"></a>Route 53 – Routing Policies</h2><ul>
+<h2 id="Route-53-Alias-Records-Targets"><a href="#Route-53-Alias-Records-Targets" class="headerlink" title="Route 53 - Alias Records Targets"></a>Route 53 - Alias Records Targets</h2><p><strong>You cannot set an ALIAS record for an EC2 DNS name</strong> - EXAM</p>
+<h2 id="Route-53-Routing-Policies"><a href="#Route-53-Routing-Policies" class="headerlink" title="Route 53 - Routing Policies"></a>Route 53 - Routing Policies</h2><ul>
 <li>Define how Route 53 responds to DNS queries</li>
 <li>Don’t get confused by the word “Routing”<ul>
 <li>It’s not the same as Load balancer routing which routes the traffic</li>
@@ -2378,13 +2406,13 @@ you plan for <code>scheduled activities</code>.</p>
 </ul>
 </li>
 </ul>
-<h3 id="Types-of-health-checks"><a href="#Types-of-health-checks" class="headerlink" title="Types of health checks:"></a>Types of health checks:</h3><ol>
-<li><code>Health checks that monitor an endpoint</code> – You can configure a health check that monitors an endpoint that you specify either by IP address or by domain name. At regular intervals that you specify, Route 53 submits automated requests over the internet to your application, server, or other resources to verify that it’s reachable, available, and functional. Optionally, you can configure the health check to make requests similar to those that your users make, such as requesting a web page from a specific URL.</li>
-<li><code>Health checks that monitor other health checks</code> (calculated health checks) – You can create a health check that monitors whether Route 53 considers other health checks healthy or unhealthy. One situation where this might be useful is when you have multiple resources that perform the same function, such as multiple web servers, and your chief concern is whether some minimum number of your resources are healthy. You can create a  health check for each resource without configuring notifications for those health checks. Then you can create a health check that monitors the status of the other health checks, and that notifies you only when the number of available web resources drops below a specified threshold.</li>
-<li><code>Health checks that monitor CloudWatch alarms</code> – You can create CloudWatch alarms that monitor the status of CloudWatch metrics, such as the number of throttled read events for an Amazon DynamoDB database or the number of Elastic Load Balancing hosts that are considered healthy. After you create an alarm, you can create a health check that monitors the same data stream that CloudWatch monitors for the alarm.</li>
+<h3 id="Types-of-health-checks-OJO"><a href="#Types-of-health-checks-OJO" class="headerlink" title="Types of health checks - OJO"></a>Types of health checks - OJO</h3><ol>
+<li><code>Health checks that monitor an endpoint</code> - You can configure a health check that monitors an endpoint that you specify either by IP address or by domain name. At regular intervals that you specify, Route 53 submits automated requests over the internet to your application, server, or other resources to verify that it’s reachable, available, and functional. Optionally, you can configure the health check to make requests similar to those that your users make, such as requesting a web page from a specific URL.</li>
+<li><code>Health checks that monitor other health checks</code> (calculated health checks) - You can create a health check that monitors whether Route 53 considers other health checks healthy or unhealthy. One situation where this might be useful is when you have multiple resources that perform the same function, such as multiple web servers, and your chief concern is whether some minimum number of your resources are healthy. You can create a  health check for each resource without configuring notifications for those health checks. Then you can create a health check that monitors the status of the other health checks, and that notifies you only when the number of available web resources drops below a specified threshold.</li>
+<li><code>Health checks that monitor CloudWatch alarms</code> - You can create CloudWatch alarms that monitor the status of CloudWatch metrics, such as the number of throttled read events for an Amazon DynamoDB database or the number of Elastic Load Balancing hosts that are considered healthy. After you create an alarm, you can create a health check that monitors the same data stream that CloudWatch monitors for the alarm.</li>
 </ol>
-<h3 id="“Evaluate-Target-Health”"><a href="#“Evaluate-Target-Health”" class="headerlink" title="“Evaluate Target Health”"></a>“Evaluate Target Health”</h3><p>You need to set the “Evaluate Target Health” <code>flag</code> to <code>true</code> on Route 53. This way, Route 53 will check both ALB entry to ensure that your ALBs are responding.</p>
-<h3 id="Routing-Policies-–-Weighted"><a href="#Routing-Policies-–-Weighted" class="headerlink" title="Routing Policies – Weighted"></a>Routing Policies – Weighted</h3><ul>
+<h3 id="“Evaluate-Target-Health”-OJO"><a href="#“Evaluate-Target-Health”-OJO" class="headerlink" title="“Evaluate Target Health” - OJO"></a>“Evaluate Target Health” - OJO</h3><p>You need to set the <code>Evaluate Target Health</code> flag to <code>true</code> on Route 53. This way, Route 53 will check both ALB entry to ensure that your ALBs are responding.</p>
+<h3 id="Routing-Policies-Weighted"><a href="#Routing-Policies-Weighted" class="headerlink" title="Routing Policies - Weighted"></a>Routing Policies - Weighted</h3><ul>
 <li>Control the % of the requests that go to each specific resource</li>
 <li>Assign each record a relative weight:<ul>
 <li>traffic (%) &#x3D; weight for a specific record &#x2F;sum of all weight records</li>
@@ -2397,33 +2425,33 @@ you plan for <code>scheduled activities</code>.</p>
 <li><code>Assign a weight of 0 to a record to stop sending traffic to a resource</code>.</li>
 <li><code>If all records have weight of 0, then all records will be returned equally</code>.</li>
 </ul>
-<h3 id="Routing-Policies-–-Latency-based"><a href="#Routing-Policies-–-Latency-based" class="headerlink" title="Routing Policies – Latency-based"></a>Routing Policies – Latency-based</h3><ul>
+<h3 id="Routing-Policies-Latency-based"><a href="#Routing-Policies-Latency-based" class="headerlink" title="Routing Policies - Latency-based"></a>Routing Policies - Latency-based</h3><ul>
 <li>Redirect to the resource that has the least latency close to us</li>
 <li>Super helpful when latency for users is a priority</li>
 <li>Latency is based on traffic between users and AWS Regions</li>
 <li>Germany users may be directed to the US (if that’s the lowest latency)</li>
 <li>Can be associated with Health Checks (has a failover capability)</li>
 </ul>
-<h3 id="Route-53-–-Health-Checks"><a href="#Route-53-–-Health-Checks" class="headerlink" title="Route 53 – Health Checks"></a>Route 53 – Health Checks</h3><ul>
+<h3 id="Route-53-Health-Checks"><a href="#Route-53-Health-Checks" class="headerlink" title="Route 53 - Health Checks"></a>Route 53 - Health Checks</h3><ul>
 <li><p>HTTP Health Checks are only for <code>public resources</code></p>
 </li>
 <li><p>Health Check &#x3D;&gt; Automated DNS Failover:</p>
 <ol>
 <li>Health checks that monitor an endpoint (application, server, other AWS resource)</li>
 <li>Health checks that monitor other health checks (Calculated Health Checks)</li>
-<li>Health checks that monitor CloudWatch Alarms (full control !!) – e.g., throttles of DynamoDB, alarms on RDS, custom metrics,
+<li>Health checks that monitor CloudWatch Alarms (full control !!) - e.g., throttles of DynamoDB, alarms on RDS, custom metrics,
 … (helpful for private resources)</li>
 </ol>
 </li>
 <li><p>Health Checks are integrated with CW metrics</p>
 </li>
 </ul>
-<h3 id="Health-Checks-–-Private-Hosted-Zones"><a href="#Health-Checks-–-Private-Hosted-Zones" class="headerlink" title="Health Checks – Private Hosted Zones"></a>Health Checks – Private Hosted Zones</h3><ul>
+<h3 id="Health-Checks-Private-Hosted-Zones"><a href="#Health-Checks-Private-Hosted-Zones" class="headerlink" title="Health Checks - Private Hosted Zones"></a>Health Checks - Private Hosted Zones</h3><ul>
 <li>Route 53 health checkers are outside the VPC.</li>
 <li>They <code>can’t access private</code> endpoints (private VPC or on-premises resource)</li>
 <li>You can create a <code>CloudWatch Metric</code> and associate a <code>CloudWatch Alarm</code>, then create a Health Check that checks the alarm itself.</li>
 </ul>
-<h3 id="Routing-Policies-–-Geolocation"><a href="#Routing-Policies-–-Geolocation" class="headerlink" title="Routing Policies – Geolocation"></a>Routing Policies – Geolocation</h3><ul>
+<h3 id="Routing-Policies-Geolocation"><a href="#Routing-Policies-Geolocation" class="headerlink" title="Routing Policies - Geolocation"></a>Routing Policies - Geolocation</h3><ul>
 <li>Different from Latency-based!</li>
 <li>This routing is <code>based on user location</code></li>
 <li>Specify location by Continent, Country or by US State (if there’s overlapping, most precise location selected)</li>
@@ -2431,15 +2459,15 @@ you plan for <code>scheduled activities</code>.</p>
 <li>Use cases: website localization, restrict content distribution, load balancing, …</li>
 <li>Can be associated with Health Checks</li>
 </ul>
-<h3 id="Routing-Policies-–-Geoproximity"><a href="#Routing-Policies-–-Geoproximity" class="headerlink" title="Routing Policies – Geoproximity"></a>Routing Policies – Geoproximity</h3><ul>
+<h3 id="Routing-Policies-Geoproximity"><a href="#Routing-Policies-Geoproximity" class="headerlink" title="Routing Policies - Geoproximity"></a>Routing Policies - Geoproximity</h3><ul>
 <li><p>Route traffic to your resources based on the geographic location of users and resources</p>
 </li>
 <li><p>Ability <code>to shift more traffic to resources based</code> on the defined <code>bias</code></p>
 </li>
 <li><p>To change the size of the geographic region, specify <code>bias</code> values:</p>
 <ul>
-<li>To expand (1 to 99) – more traffic to the resource</li>
-<li>To shrink (-1 to -99) – less traffic to the resource</li>
+<li>To expand (1 to 99) - more traffic to the resource</li>
+<li>To shrink (-1 to -99) - less traffic to the resource</li>
 </ul>
 </li>
 <li><p>Resources can be:</p>
@@ -2451,7 +2479,7 @@ you plan for <code>scheduled activities</code>.</p>
 <li><p>You must use Route 53 <code>Traffic Flow</code> to use this feature</p>
 </li>
 </ul>
-<h3 id="Route-53-–-Traffic-flow"><a href="#Route-53-–-Traffic-flow" class="headerlink" title="Route 53 – Traffic flow"></a>Route 53 – Traffic flow</h3><ul>
+<h3 id="Route-53-Traffic-flow"><a href="#Route-53-Traffic-flow" class="headerlink" title="Route 53 - Traffic flow"></a>Route 53 - Traffic flow</h3><ul>
 <li>Simplify the process of creating and maintaining records in large and complex configurations</li>
 <li>Visual editor to manage complex routing decision trees</li>
 <li>Configurations can be saved as <code>Traffic Flow Policy</code><ul>
@@ -2460,21 +2488,21 @@ you plan for <code>scheduled activities</code>.</p>
 </ul>
 </li>
 </ul>
-<h3 id="Route-53-–-Hybrid-DNS-OJO"><a href="#Route-53-–-Hybrid-DNS-OJO" class="headerlink" title="Route 53 – Hybrid DNS - OJO"></a>Route 53 – Hybrid DNS - OJO</h3><ul>
+<h3 id="Route-53-Hybrid-DNS-OJO"><a href="#Route-53-Hybrid-DNS-OJO" class="headerlink" title="Route 53 - Hybrid DNS - OJO"></a>Route 53 - Hybrid DNS - OJO</h3><ul>
 <li>By default, Route 53 Resolver automatically answers DNS queries for:<ul>
 <li>Local domain names for EC2 instances</li>
 <li>Records in Private Hosted Zones</li>
 <li>Records in public Name Servers</li>
 </ul>
 </li>
-<li><code>Hybrid DNS</code> – resolving DNS queries between VPC (Route 53 Resolver) and your networks (other DNS Resolvers)</li>
+<li><code>Hybrid DNS</code> - resolving DNS queries between VPC (Route 53 Resolver) and your networks (other DNS Resolvers)</li>
 <li>Networks can be:<ul>
 <li>VPC itself &#x2F; Peered VPC</li>
 <li>On-premises Network (connected through Direct Connect or AWS VPN)</li>
 </ul>
 </li>
 </ul>
-<h3 id="Route-53-–-Resolver-Endpoints"><a href="#Route-53-–-Resolver-Endpoints" class="headerlink" title="Route 53 – Resolver Endpoints"></a>Route 53 – Resolver Endpoints</h3><ul>
+<h3 id="Route-53-Resolver-Endpoints"><a href="#Route-53-Resolver-Endpoints" class="headerlink" title="Route 53 - Resolver Endpoints"></a>Route 53 - Resolver Endpoints</h3><ul>
 <li><p><code>Inbound Endpoint</code></p>
 <ul>
 <li>DNS Resolvers on your network can forward DNS queries to Route 53 Resolver</li>
@@ -2494,7 +2522,7 @@ you plan for <code>scheduled activities</code>.</p>
 <li><p>Each Endpoint supports 10,000 queries per second per IP address</p>
 </li>
 </ul>
-<h3 id="Route-53-–-Resolver-Rules"><a href="#Route-53-–-Resolver-Rules" class="headerlink" title="Route 53 – Resolver Rules"></a>Route 53 – Resolver Rules</h3><ul>
+<h3 id="Route-53-Resolver-Rules"><a href="#Route-53-Resolver-Rules" class="headerlink" title="Route 53 - Resolver Rules"></a>Route 53 - Resolver Rules</h3><ul>
 <li>Control which DNS queries are forwarded to DNS Resolvers on your network</li>
 <li><code>Conditional Forwarding Rules (Forwarding Rules)</code><ul>
 <li>Forward DNS queries for a specified domain and all its subdomains <code>to target IP addresses</code></li>
@@ -2520,8 +2548,8 @@ you plan for <code>scheduled activities</code>.</p>
 <pre><code>  X-Amzn-Trace-Id: Root=1-5759e988-bd862e3fe1be46a994272793
 </code></pre>
 <p><code>Load balancers do not send data to X-Ray</code>, and do not appear as a node on your service map.</p>
-<h3 id="ELB-access-logs"><a href="#ELB-access-logs" class="headerlink" title="ELB access logs"></a>ELB access logs</h3><p>ELB access logs is an optional feature of Elastic Load Balancing that is disabled by default. The access logs capture detailed information about requests sent to your load balancer. Each log contains information such as the time the request was received, the client’s IP address, latencies, request paths, and server responses. You can use these access logs to analyze traffic patterns and troubleshoot issues. Each access log file is automatically encrypted using SSE-S3 before it is stored in your S3 bucket and decrypted when you access it. You do not need to take any action; the encryption and decryption is performed transparently</p>
-<h4 id="VPC-Flow-Logs-only-captures-information-about-the-IP-traffic-going-to-and-from-network-interfaces-in-a-VPC"><a href="#VPC-Flow-Logs-only-captures-information-about-the-IP-traffic-going-to-and-from-network-interfaces-in-a-VPC" class="headerlink" title="VPC Flow Logs only captures information about the IP traffic going to and from network interfaces in a VPC"></a><code>VPC Flow Logs</code> only captures information about the <code>IP traffic</code> going to and from network interfaces in a VPC</h4><p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html">Access logs for your Application Load Balancer</a></p>
+<h3 id="ELB-access-logs"><a href="#ELB-access-logs" class="headerlink" title="ELB access logs"></a>ELB access logs</h3><p>ELB access logs is an optional feature of Elastic Load Balancing that is disabled by default. The access logs capture detailed information about requests sent to your load balancer. Each log contains information such as the time the request was received, the <code>client&#39;s IP address, latencies, request paths, and server responses</code>. You can use these access logs to analyze traffic patterns and troubleshoot issues. Each access log file is automatically encrypted using SSE-S3 before it is stored in your S3 bucket and decrypted when you access it. You do not need to take any action; the encryption and decryption is performed transparently</p>
+<h4 id="VPC-Flow-Logs-only-captures-information-about-the-IP-traffic-going-to-and-from-network-interfaces-in-a-VPC-0JO"><a href="#VPC-Flow-Logs-only-captures-information-about-the-IP-traffic-going-to-and-from-network-interfaces-in-a-VPC-0JO" class="headerlink" title="VPC Flow Logs only captures information about the IP traffic going to and from network interfaces in a VPC - 0JO"></a><code>VPC Flow Logs</code> only captures information about the <code>IP traffic</code> going to and from network interfaces in a VPC - 0JO</h4><p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html">Access logs for your Application Load Balancer</a></p>
 <h3 id="CloudTrail-logs"><a href="#CloudTrail-logs" class="headerlink" title="CloudTrail logs"></a>CloudTrail logs</h3><p><code>Elastic Load Balancing</code> is <code>integrated</code> with <code>AWS CloudTrail</code>, a service that provides a record of actions taken by a user, role, or an AWS service in Elastic Load Balancing. <code>CloudTrail captures</code> all <code>API calls for Elastic Load Balancing as events</code>. The calls captured include calls from the AWS Management Console and code calls to the Elastic Load Balancing API operations.</p>
 <hr>
 <h2 id="Amazon-Machine-Images-AMIs"><a href="#Amazon-Machine-Images-AMIs" class="headerlink" title="Amazon Machine Images (AMIs)"></a>Amazon Machine Images (AMIs)</h2><h3 id="Sharing"><a href="#Sharing" class="headerlink" title="Sharing"></a>Sharing</h3><p>The key points to consider before planning the expansion and sharing of Amazon Machine Images (AMIs) are:</p>
@@ -2557,7 +2585,7 @@ you plan for <code>scheduled activities</code>.</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch-new.html">Enable or turn off detailed monitoring for your instances</a></p>
 <h3 id="👀-EC2-Launch-Troubleshooting-👀"><a href="#👀-EC2-Launch-Troubleshooting-👀" class="headerlink" title="👀 EC2 Launch Troubleshooting 👀"></a>👀 EC2 Launch Troubleshooting 👀</h3><p><code>InstanceLimitExceeded</code>: if you get this error, it means that you have reached your limit of <code>max number of vCPUs</code> per <code>region</code>.</p>
 <p><code>InsufficientInstanceCapacity</code> : if you get this error, it means &#96;AWS does not have that enough On-Demand capacity&#96;&#96; in the particular AZ where
-the instance is launched</p>
+the instance is launched.</p>
 <p><code>Instance Terminates Immediately</code> <strong>(goes from pending to terminated)</strong></p>
 <ol>
 <li>You’ve reached your EBS volume limit.</li>
@@ -2573,22 +2601,22 @@ the instance is launched</p>
 <li>CPU load of the instance is high</li>
 </ol>
 <h3 id="EC2-Instances-Purchasing-Options"><a href="#EC2-Instances-Purchasing-Options" class="headerlink" title="EC2 Instances Purchasing Options"></a>EC2 Instances Purchasing Options</h3><ol>
-<li><code>On-Demand</code> Instances – short workload, predictable pricing, pay by second</li>
+<li><code>On-Demand</code> Instances - short workload, predictable pricing, pay by second</li>
 <li><code>Reserved</code> (1 &amp; 3 years)</li>
-<li><code>Reserved Instances</code> – long workloads</li>
-<li><code>Convertible Reserved Instances</code> – long workloads with flexible instances</li>
-<li><code>Savings Plans (1 &amp; 3 years)</code> –commitment to an amount of usage, long workload</li>
-<li><code>Spot Instances</code> – short workloads, cheap, can lose instances (less reliable)</li>
-<li><code>Dedicated Hosts</code> – book an entire physical server, control instance placement</li>
-<li><code>Dedicated Instances</code> – no other customers will share your hardware</li>
-<li><code>Capacity Reservations</code> – reserve capacity in a specific AZ for any duration</li>
+<li><code>Reserved Instances</code> - long workloads</li>
+<li><code>Convertible Reserved Instances</code> - long workloads with flexible instances</li>
+<li><code>Savings Plans (1 &amp; 3 years)</code> -commitment to an amount of usage, long workload</li>
+<li><code>Spot Instances</code> - short workloads, cheap, can lose instances (less reliable)</li>
+<li><code>Dedicated Hosts</code> - book an entire physical server, control instance placement</li>
+<li><code>Dedicated Instances</code> - no other customers will share your hardware</li>
+<li><code>Capacity Reservations</code> - reserve capacity in a specific AZ for any duration</li>
 </ol>
 <h2 id="AWS-Storage-Gateway-1"><a href="#AWS-Storage-Gateway-1" class="headerlink" title="AWS Storage Gateway"></a>AWS Storage Gateway</h2><p>AWS Storage Gateway is a set of hybrid cloud storage services that provide on-premises access to virtually unlimited cloud storage.</p>
 <p>AWS Storage Gateway <code>uses SSL/TLS</code> (Secure Socket Layers&#x2F;Transport Layer Security) <code>to encrypt data</code> that is transferred <code>between your gateway appliance and AWS storage</code>. By default, Storage Gateway uses Amazon S3-Managed Encryption Keys (SSE-S3) to server-side encrypt all data it stores in Amazon S3. You have an option to use the Storage Gateway API to configure your gateway to encrypt data stored in the cloud using server-side encryption with AWS Key Management Service (SSE-KMS) customer master keys (CMKs).</p>
 <p>File, Volume and Tape Gateway data is stored in Amazon S3 buckets by AWS Storage Gateway. Tape Gateway supports backing data to Amazon S3 Glacier apart from the standard storage.</p>
-<p>Encrypting a file share: For a file share, you can configure your gateway to encrypt your objects with AWS KMS–managed keys by using SSE-KMS.</p>
-<p>Encrypting a volume: For cached and stored volumes, you can configure your gateway to encrypt volume data stored in the cloud with AWS KMS–managed keys by using the Storage Gateway API.</p>
-<p>Encrypting a tape: For a virtual tape, you can configure your gateway to encrypt tape data stored in the cloud with AWS KMS–managed keys by using the Storage Gateway API.</p>
+<p>Encrypting a file share: For a file share, you can configure your gateway to encrypt your objects with AWS KMS-managed keys by using SSE-KMS.</p>
+<p>Encrypting a volume: For cached and stored volumes, you can configure your gateway to encrypt volume data stored in the cloud with AWS KMS-managed keys by using the Storage Gateway API.</p>
+<p>Encrypting a tape: For a virtual tape, you can configure your gateway to encrypt tape data stored in the cloud with AWS KMS-managed keys by using the Storage Gateway API.</p>
 <h3 id="Tape-Gateway"><a href="#Tape-Gateway" class="headerlink" title="Tape Gateway"></a>Tape Gateway</h3><p>Tape Gateway enables you to replace using physical tapes on-premises with virtual tapes in AWS without changing existing backup workflows. Tape Gateway supports all leading backup applications and caches virtual tapes on-premises for low-latency data access. Tape Gateway encrypts data between the gateway and AWS for secure data transfer and compresses data and transitions virtual tapes between Amazon S3 and Amazon S3 Glacier, or Amazon S3 Glacier Deep Archive, to minimize storage costs.</p>
 <h3 id="File-Gateway"><a href="#File-Gateway" class="headerlink" title="File Gateway"></a>File Gateway</h3><p>File Gateway provides a seamless way to connect to the cloud in order to store application data files and backup images as durable objects in Amazon S3 cloud storage. File Gateway offers <code>SMB or NFS-based</code> access to data in Amazon S3 with local caching.</p>
 <h3 id="Volume-Gateway"><a href="#Volume-Gateway" class="headerlink" title="Volume Gateway"></a>Volume Gateway</h3><p>You can configure the AWS Storage Gateway service as a Volume Gateway to present <code>cloud-based iSCSI block</code> storage volumes to your <code>on-premises</code> applications. The Volume Gateway provides either a local cache or full volumes on-premises while also storing full copies of your volumes in the AWS cloud. Volume Gateway also provides Amazon EBS Snapshots of your data for backup, disaster recovery, and migration. It’s easy to get started with the Volume Gateway: Deploy it as a virtual machine or hardware appliance, give it local disk resources, connect it to your applications, and start using your hybrid cloud storage for block data.</p>
@@ -2622,10 +2650,16 @@ With this method, a script is used to run the opsworks-cm API associate-node com
 <h3 id="SSE-KMS"><a href="#SSE-KMS" class="headerlink" title="SSE-KMS"></a>SSE-KMS</h3><p>Similar to SSE-S3 and also <code>provides</code> you with an <code>audit trail</code> of when your key was used and by whom. Additionally, you have the <code>option</code> to <code>create</code> and <code>manage encryption keys yourself</code>.</p>
 <h3 id="SSE-C"><a href="#SSE-C" class="headerlink" title="SSE-C"></a>SSE-C</h3><p><code>You manage the encryption keys</code> and <code>Amazon S3 manages the encryption</code> as it writes to disks and decryption when you access your objects.</p>
 <h3 id="Client-Side-Encryption"><a href="#Client-Side-Encryption" class="headerlink" title="Client-Side Encryption"></a>Client-Side Encryption</h3><p>You can encrypt data client-side and upload the encrypted data to Amazon S3. In this case, you manage the encryption process, the encryption keys, and related tools.</p>
-<h2 id="AWS-Elastic-Beanstalk"><a href="#AWS-Elastic-Beanstalk" class="headerlink" title="AWS Elastic Beanstalk"></a>AWS Elastic Beanstalk</h2><h3 id="deployment-policy-in-Elastic-Beanstalk"><a href="#deployment-policy-in-Elastic-Beanstalk" class="headerlink" title="deployment policy in Elastic Beanstalk:"></a>deployment policy in Elastic Beanstalk:</h3><p>– <code>All at once</code>: Deploy the new version to all instances simultaneously. All instances in your environment are out of service for a short time while the deployment occurs.</p>
-<p>– <code>Rolling</code>: Deploy the new version in batches. Each batch is taken out of service during the deployment phase, reducing your environment’s capacity by the number of instances in a batch.</p>
-<p>– <code>Rolling with additional batch</code>: Deploy the new version in batches, but first launch a new batch of instances to ensure full capacity during the deployment process.</p>
-<p>– <code>Immutable</code>: Deploy the new version to a fresh group of instances by performing an immutable update.</p>
+<h2 id="AWS-Elastic-Beanstalk"><a href="#AWS-Elastic-Beanstalk" class="headerlink" title="AWS Elastic Beanstalk"></a>AWS Elastic Beanstalk</h2><h3 id="deployment-policy-in-Elastic-Beanstalk"><a href="#deployment-policy-in-Elastic-Beanstalk" class="headerlink" title="deployment policy in Elastic Beanstalk:"></a>deployment policy in Elastic Beanstalk:</h3><ul>
+<li><p><code>All at once</code>: Deploy the new version to all instances simultaneously. All instances in your environment are out of service for a short time while the deployment occurs.</p>
+</li>
+<li><p><code>Rolling</code>: Deploy the new version in batches. Each batch is taken out of service during the deployment phase, reducing your environment’s capacity by the number of instances in a batch.</p>
+</li>
+<li><p><code>Rolling with additional batch</code>: Deploy the new version in batches, but first launch a new batch of instances to ensure full capacity during the deployment process.</p>
+</li>
+<li><p><code>Immutable</code>: Deploy the new version to a fresh group of instances by performing an immutable update.</p>
+</li>
+</ul>
 <p>With deployment policies such as ‘All at once’, AWS Elastic Beanstalk performs an in-place update when you update your application versions and your application can become unavailable to users for a short period of time. You can avoid this downtime by performing a blue&#x2F;green deployment, where you deploy the new version to a separate environment, and then swap CNAMEs (via Route 53) of the two environments to redirect traffic to the new version instantly. In case of any deployment issues, the rollback process is very quick via swapping the URLs for the two environments.</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html">Deploying applications to Elastic Beanstalk environments</a></p>
 <h2 id="Dedicated-Hosts-and-Dedicated-Instances"><a href="#Dedicated-Hosts-and-Dedicated-Instances" class="headerlink" title="Dedicated Hosts and Dedicated Instances"></a>Dedicated Hosts and Dedicated Instances</h2><h2 id="Dedicated-Instances"><a href="#Dedicated-Instances" class="headerlink" title="Dedicated Instances"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a></h2><p>Are Amazon EC2 instances that run in a virtual private cloud (VPC) on <code>hardware</code> that’s <code>dedicated</code> to a <code>single customer</code>. Dedicated Instances that belong to different AWS accounts are physically isolated at a hardware level, even if those accounts are linked to a single-payer account. <code>Note</code> that Dedicated Instances may share hardware with other instances from the same AWS account that are not Dedicated Instances.</p>
@@ -2639,7 +2673,7 @@ With this method, a script is used to run the opsworks-cm API associate-node com
 <h2 id="AWS-CloudHSM-Hardware-Security-Module"><a href="#AWS-CloudHSM-Hardware-Security-Module" class="headerlink" title="AWS CloudHSM (Hardware Security Module)"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/clusters.html">AWS CloudHSM (Hardware Security Module)</a></h2><p>CloudHSM provides <code>tamper-resistant hardware</code> that is <code>available</code> in <code>multiple Availability Zones</code> (AZs), ensuring <code>high availability</code> and <code>durability of the keys</code>.</p>
 <p>AWS CloudHSM provides dedicated <code>hardware security</code> modules to store and <code>manage cryptographic KEYS securely</code>. It offers <code>FIPS 140-2 Level 3</code> validated HSMs, which are ideal for meeting compliance requirements. With CloudHSM, you have full control over the key lifecycle and can perform key operations within the HSM, ensuring strong security and compliance for your keys.</p>
 <p>You can use stack sets to deploy your catalog to many accounts at the same time. If you want to share a reference (an imported version of your portfolio that stays in sync with the original), you can use account-to-account sharing or you can share using AWS Organizations.</p>
-<h2 id="Amazon-EFS-–-Elastic-File-System"><a href="#Amazon-EFS-–-Elastic-File-System" class="headerlink" title="Amazon EFS – Elastic File System"></a>Amazon EFS – Elastic File System</h2><ul>
+<h2 id="Amazon-EFS-Elastic-File-System"><a href="#Amazon-EFS-Elastic-File-System" class="headerlink" title="Amazon EFS - Elastic File System"></a>Amazon EFS - Elastic File System</h2><ul>
 <li><p>Use cases: content management, web serving, data sharing, Wordpress</p>
 </li>
 <li><p>Uses NFSv4.1 protocol</p>
@@ -2681,7 +2715,7 @@ With this method, a script is used to run the opsworks-cm API associate-node com
 <li>Can’t be used to manage snapshots&#x2F;AMIs created outside DLM.</li>
 <li>Can’t be used to manage instance-store backed AMIs</li>
 </ul>
-<h3 id="EFS-–-Storage-Classes"><a href="#EFS-–-Storage-Classes" class="headerlink" title="EFS – Storage Classes"></a>EFS – Storage Classes</h3><p><strong><code>Storage Tiers (lifecycle management feature – move file after N days)</code></strong></p>
+<h3 id="EFS-Storage-Classes"><a href="#EFS-Storage-Classes" class="headerlink" title="EFS - Storage Classes"></a>EFS - Storage Classes</h3><p><strong><code>Storage Tiers (lifecycle management feature - move file after N days)</code></strong></p>
 <ul>
 <li>Standard: for frequently accessed files</li>
 <li>Infrequent access (EFS-IA): cost to retrieve files, lower price to store. Enable EFS-IA with a Lifecycle Policy</li>
@@ -2695,7 +2729,7 @@ With this method, a script is used to run the opsworks-cm API associate-node com
 <li><p>Over 90% in cost savings</p>
 </li>
 </ul>
-<h3 id="EFS-–-CloudWatch-Metrics"><a href="#EFS-–-CloudWatch-Metrics" class="headerlink" title="EFS – CloudWatch Metrics"></a>EFS – CloudWatch Metrics</h3><p><strong><code>PercentIOLimit</code></strong></p>
+<h3 id="EFS-CloudWatch-Metrics"><a href="#EFS-CloudWatch-Metrics" class="headerlink" title="EFS - CloudWatch Metrics"></a>EFS - CloudWatch Metrics</h3><p><strong><code>PercentIOLimit</code></strong></p>
 <ul>
 <li>How close the file system reaching the I&#x2F;O limit (General Purpose)</li>
 <li>If at 100%, move to Max I&#x2F;O (migration)</li>
@@ -2779,7 +2813,7 @@ Amazon Macie <code>only supports S3 as a data source</code>.</p>
 <p>With Resource Groups, you can create, maintain, and view a collection of resources that share common tags. Tag Editor manages tags across services and AWS Regions. Tag Editor can perform a global search and can edit a large number of tags at one time.</p>
 <p>For more information about resource groups and tagging, see Tag Editor.</p>
 <h2 id="👀-Billing-Preferences"><a href="#👀-Billing-Preferences" class="headerlink" title="👀 Billing Preferences"></a>👀 Billing Preferences</h2><p>The management account of an organization can change this setting by turning off <code>RI</code> (Reserved Instances) sharing for <code>an individual member account</code> the more suitable service is AWS WAF</p>
-<h2 id="👀-AWS-Shield-Advanced"><a href="#👀-AWS-Shield-Advanced" class="headerlink" title="👀 AWS Shield Advanced"></a>👀 AWS Shield Advanced</h2><p>is more suitable to be used against <code>distributed denial of service (DDoS</code>) attacks but not for common web exploits such as <code>cross-site scripting</code>, <code>SQL injection</code>, and <code>brute-force HTTP flood attacks</code>.</p>
+<h2 id="👀-AWS-Shield-Advanced"><a href="#👀-AWS-Shield-Advanced" class="headerlink" title="👀 AWS Shield Advanced"></a>👀 AWS Shield Advanced</h2><p>is more suitable to be used against <code>distributed denial of service (DDoS</code>) attacks but <code>NOT</code> for common web exploits such as <code>cross-site scripting</code>, <code>SQL injection</code>, and <code>brute-force HTTP flood attacks</code>.</p>
 <h2 id="👀-A-placement-group"><a href="#👀-A-placement-group" class="headerlink" title="👀 A placement group"></a>👀 A placement group</h2><p>is a logical <code>grouping</code> of <code>instances</code> <code>within</code> a <code>single Availability Zone</code>. By placing the EC2 instances in a placement group, you can ensure that the instances are physically located close to each other, which can significantly <code>reduce network latency between them</code>. This can <code>improve the performance</code> of inter-instance communication and reduce the overall latency in data transfer.</p>
 <p>Sometimes you want control over the EC2 Instance placement strategy, When you create a placement group, you specify one of the following strategies for the group:</p>
 <ul>
@@ -2789,7 +2823,7 @@ Amazon Macie <code>only supports S3 as a data source</code>.</p>
 <li><code>Use</code> case: Big Data job that needs to complete fast</li>
 </ul>
 </li>
-<li><code>Spread—spreads</code> instances across <code>underlying hardware</code> (max 7 instances per group per AZ) – critical applications<ul>
+<li><code>Spread—spreads</code> instances across <code>underlying hardware</code> (max 7 instances per group per AZ) - critical applications<ul>
 <li><code>Pros</code>:<ul>
 <li>Can span across Availability Zones (AZ)</li>
 <li>Reduced risk is simultaneous failure</li>
@@ -2817,11 +2851,13 @@ Amazon Macie <code>only supports S3 as a data source</code>.</p>
 </ul>
 </li>
 </ul>
-<h2 id="👀-Network-Firewall"><a href="#👀-Network-Firewall" class="headerlink" title="👀 Network Firewall"></a>👀 Network Firewall</h2><p>You can use Network Firewall to monitor and protect your Amazon VPC traffic in a number of ways, including the following:
-– Pass traffic through only from known AWS service domains or IP address endpoints, such as Amazon S3.
-– Use custom <code>lists of known bad domains to limit the types of domain names that your applications can access</code>.
-– Perform <code>deep packet inspection</code> DPI on traffic entering or leaving your VPC.
-– Use stateful protocol detection to filter protocols like HTTPS, independent of the port used.</p>
+<h2 id="👀-Network-Firewall"><a href="#👀-Network-Firewall" class="headerlink" title="👀 Network Firewall"></a>👀 Network Firewall</h2><p>You can use Network Firewall to monitor and protect your Amazon VPC traffic in a number of ways, including the following:</p>
+<ul>
+<li>Pass traffic through only from known AWS service domains or IP address endpoints, such as Amazon S3.</li>
+<li>Use custom <code>lists of known bad domains to limit the types of domain names that your applications can access</code>.</li>
+<li>Perform <code>deep packet inspection</code> DPI on traffic entering or leaving your VPC.</li>
+<li>Use stateful protocol detection to filter protocols like HTTPS, independent of the port used.</li>
+</ul>
 <h2 id="👀-Access-Analyzer"><a href="#👀-Access-Analyzer" class="headerlink" title="👀 Access Analyzer"></a>👀 Access Analyzer</h2><p>helps you identify the resources in your organization and accounts, such as Amazon S3 buckets or IAM roles, <code>shared with an external entity</code>. This lets you identify unintended access to your resources and data, which is a security risk. Access Analyzer <code>identifies resources shared</code> with <code>external principals</code> by using logic-based reasoning to analyze the resource-based policies in your AWS environment. For each instance of a resource shared outside of your account, Access Analyzer generates a finding.</p>
 <h2 id="👀-Tags-with-AWS-Organizations"><a href="#👀-Tags-with-AWS-Organizations" class="headerlink" title="👀 Tags with AWS Organizations"></a>👀 Tags with AWS Organizations</h2><ul>
 <li><p>Use <code>AWS Service Catalog</code> to tag the provisioned resources with corresponding unique identifiers for portfolio, product, and users:
@@ -2892,7 +2928,7 @@ Documents</li>
 <li>Regional service</li>
 <li>Works with EC2, S3, DynamoDB, Lambda, etc…</li>
 </ul>
-<h3 id="SSM-–-Inventory"><a href="#SSM-–-Inventory" class="headerlink" title="SSM – Inventory"></a>SSM – Inventory</h3><ol>
+<h3 id="SSM-Inventory"><a href="#SSM-Inventory" class="headerlink" title="SSM - Inventory"></a>SSM - Inventory</h3><ol>
 <li>Collect metadata from your managed instances (EC2&#x2F;On-premises)</li>
 <li>Metadata includes installed software, OS drivers, configurations, installed updates, running services …</li>
 <li>View data in AWS Console or store in S3 and query and analyze using Athena and QuickSight</li>
@@ -2908,7 +2944,7 @@ Documents</li>
 <h3 id="High-Availability-amp-Scalability-For-EC2"><a href="#High-Availability-amp-Scalability-For-EC2" class="headerlink" title="High Availability &amp; Scalability For EC2"></a>High Availability &amp; Scalability For EC2</h3><ul>
 <li>Vertical Scaling: Increase instance size (&#x3D; scale up &#x2F; down)<ul>
 <li>From: t2.nano - 0.5G of RAM, 1 vCPU</li>
-<li>To: u-12tb1.metal – 12.3 TB of RAM, 448 vCPUs</li>
+<li>To: u-12tb1.metal - 12.3 TB of RAM, 448 vCPUs</li>
 </ul>
 </li>
 <li>Horizontal Scaling: Increase number of instances (&#x3D; scale out &#x2F; in)<ul>
@@ -2955,13 +2991,13 @@ To solve this use-case, you need to configure the Auto Scaling groups to scale y
 <li><code>Amazon Aurora</code>: Dynamic Read Replicas Auto Scaling</li>
 </ul>
 <h3 id="Target-Groups"><a href="#Target-Groups" class="headerlink" title="Target Groups"></a>Target Groups</h3><ul>
-<li><p>EC2 instances (can be managed by an Auto Scaling Group) – HTTP</p>
+<li><p>EC2 instances (can be managed by an Auto Scaling Group) - HTTP</p>
 </li>
-<li><p>ECS tasks (managed by ECS itself) – HTTP</p>
+<li><p>ECS tasks (managed by ECS itself) - HTTP</p>
 </li>
-<li><p>Lambda functions – HTTP request is translated into a JSON event</p>
+<li><p>Lambda functions - HTTP request is translated into a JSON event</p>
 </li>
-<li><p>IP Addresses – must be private IPs</p>
+<li><p>IP Addresses - must be private IPs</p>
 </li>
 <li><p>ALB can route to multiple target groups</p>
 </li>
@@ -3019,15 +3055,15 @@ To solve this use-case, you need to configure the Auto Scaling groups to scale y
 </ul>
 </li>
 </ul>
-<p>Lambda Monitoring – CloudWatch Metrics</p>
+<p>Lambda Monitoring - CloudWatch Metrics</p>
 <ul>
-<li><code>Invocations</code> – number of times your function is invoked (success&#x2F;failure)</li>
-<li><code>Duration</code> – amount of time your function spends processing an event</li>
-<li><code>Errors</code> – number of invocations that result in a function error</li>
-<li><code>Throttles</code> – number of invocation requests that are throttled (no concurrency available)</li>
-<li><code>DeadLetterErrors</code> – number of times Lambda failed to send an event to a DLQ (async invocations)</li>
-<li><code>IteratorAge</code> – time between when a Stream receives a record and when the Event Source Mapping sends the event to the function (for Event Source Mapping that reads from Stream)</li>
-<li><code>ConcurrentExecutions</code> – number of function instances that are processing events</li>
+<li><code>Invocations</code> - number of times your function is invoked (success&#x2F;failure)</li>
+<li><code>Duration</code> - amount of time your function spends processing an event</li>
+<li><code>Errors</code> - number of invocations that result in a function error</li>
+<li><code>Throttles</code> - number of invocation requests that are throttled (no concurrency available)</li>
+<li><code>DeadLetterErrors</code> - number of times Lambda failed to send an event to a DLQ (async invocations)</li>
+<li><code>IteratorAge</code> - time between when a Stream receives a record and when the Event Source Mapping sends the event to the function (for Event Source Mapping that reads from Stream)</li>
+<li><code>ConcurrentExecutions</code> - number of function instances that are processing events</li>
 </ul>
 <hr>
 <h2 id="CodeDeploy"><a href="#CodeDeploy" class="headerlink" title="CodeDeploy"></a>CodeDeploy</h2><p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html">CodeDeploy</a> is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances, or serverless Lambda functions. It allows you to rapidly release new features, update Lambda function versions, avoid downtime during application deployment, and handle the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.</p>
@@ -3078,7 +3114,7 @@ To solve this use-case, you need to configure the Auto Scaling groups to scale y
 </ul>
 </li>
 </ul>
-<h3 id="ElasticSearch-–-Production-Setup"><a href="#ElasticSearch-–-Production-Setup" class="headerlink" title="ElasticSearch – Production Setup"></a>ElasticSearch – Production Setup</h3><p>It’s recommended to:</p>
+<h3 id="ElasticSearch-Production-Setup"><a href="#ElasticSearch-Production-Setup" class="headerlink" title="ElasticSearch - Production Setup"></a>ElasticSearch - Production Setup</h3><p>It’s recommended to:</p>
 <ul>
 <li>Use <em>3 dedicated Master nodes</em></li>
 <li>Use at least <em>2 Data nodes per AZ</em> (for replication)</li>
@@ -3089,7 +3125,7 @@ To solve this use-case, you need to configure the Auto Scaling groups to scale y
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="clk7o230q0004dnoicuf9993a" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="clkw5f8dp0004cwovabkpfqym" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3115,7 +3151,7 @@ To solve this use-case, you need to configure the Auto Scaling groups to scale y
       <ul>
         
           <li>
-            <a href="/2023/07/18/Getting-Started-With-Hexo/">Getting started with Hexo</a>
+            <a href="/2023/08/04/Getting-Started-With-Hexo/">Getting started with Hexo</a>
           </li>
         
           <li>
@@ -3123,7 +3159,7 @@ To solve this use-case, you need to configure the Auto Scaling groups to scale y
           </li>
         
           <li>
-            <a href="/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/">AWS Certified SysOps Administrator – Associate (SOA-C02)</a>
+            <a href="/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/">AWS Certified SysOps Administrator - Associate (SOA-C02)</a>
           </li>
         
           <li>
