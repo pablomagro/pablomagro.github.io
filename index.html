@@ -84,8 +84,8 @@ ga('send', 'pageview');
     <article id="post-Getting-Started-With-Hexo" class="article article-type-post"
   itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2023/08/25/Getting-Started-With-Hexo/" class="article-date">
-  <time datetime="2023-08-25T22:58:15.106Z" itemprop="datePublished">26 Aug 2023</time>
+    <a href="/2023/09/17/Getting-Started-With-Hexo/" class="article-date">
+  <time datetime="2023-09-17T19:34:15.930Z" itemprop="datePublished">18 Sep 2023</time>
 </a>
     
   <div class="article-category">
@@ -100,7 +100,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/08/25/Getting-Started-With-Hexo/">Getting started with Hexo</a>
+      <a class="article-title" href="/2023/09/17/Getting-Started-With-Hexo/">Getting started with Hexo</a>
     </h1>
   
 
@@ -189,9 +189,9 @@ You can use a custom domain name for your github pages website. All you need to 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/08/25/Getting-Started-With-Hexo/" data-id="cllr71ylm000hd7nh5589c27b" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/09/17/Getting-Started-With-Hexo/" data-id="clmnuw41d000he8ov6yxt3dog" class="article-share-link">Share</a>
       
-        <a href="https://blog.pablo-magro-gaspar.site/2023/08/25/Getting-Started-With-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="https://blog.pablo-magro-gaspar.site/2023/09/17/Getting-Started-With-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
@@ -284,7 +284,7 @@ You can use a custom domain name for your github pages website. All you need to 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/07/13/SOLID-Principles/" data-id="cllr71ynu004od7nhhlpm14a9" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/07/13/SOLID-Principles/" data-id="clmnuw420001re8ovcm4u9i7p" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/07/13/SOLID-Principles/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -368,7 +368,7 @@ You can use a custom domain name for your github pages website. All you need to 
 <li>High Resolution: 1&#x2F;5&#x2F;10&#x2F;30 second(s) - Higher cost</li>
 </ul>
 </li>
-<li><p>Important <code>👀 Exam</code>: <strong><code>Accepts metric data points two weeks in the past and two hours in the future (make sure to configure your EC2 instance time correctly)</code></strong></p>
+<li><p>Important <code>👀 EXAM</code>: <strong><code>Accepts metric data points two weeks in the past and two hours in the future (make sure to configure your EC2 instance time correctly)</code></strong></p>
 </li>
 <li><p>You can <code>use AWS CLI or API</code> to <code>upload</code> the <code>data metrics</code> to CloudWatch.</p>
 </li>
@@ -382,7 +382,7 @@ You can use a custom domain name for your github pages website. All you need to 
 <h3 id="CloudWatch-Dashboards"><a href="#CloudWatch-Dashboards" class="headerlink" title="CloudWatch Dashboards"></a>CloudWatch Dashboards</h3><ul>
 <li>Great way to setup custom dashboards for quick access to key metrics and alarms</li>
 <li><strong><code>Dashboards are global</code></strong></li>
-<li><strong>&#96;&#96;Dashboards can include graphs from different AWS accounts and regions</strong>&#96;&#96;** <code>👀 Exam</code></li>
+<li><strong>&#96;&#96;Dashboards can include graphs from different AWS accounts and regions</strong>&#96;&#96;** - <code>👀 EXAM</code></li>
 <li>You can change the time zone &amp; time range of the dashboards</li>
 <li>You can setup automatic refresh (10s, 1m, 2m, 5m, 15m)</li>
 <li>Dashboards can be shared with people who don’t have an AWS account (public, email address, 3rd party SSO provider through Amazon Cognito)</li>
@@ -409,12 +409,14 @@ You can use a custom domain name for your github pages website. All you need to 
 </li>
 </ul>
 <h3 id="Alarms"><a href="#Alarms" class="headerlink" title="Alarms"></a>Alarms</h3><p>CloudWatch alarms allow you to monitor metrics and trigger actions based on defined thresholds. In this case, you can create a CloudWatch alarm that monitors the CPU utilization metric of the EC2 instance. When the CPU utilization reaches 100%, the alarm will be triggered, and you can configure actions such as sending notifications or executing automated actions to address the unresponsiveness issue.</p>
-<h3 id="Alarm-Targets"><a href="#Alarm-Targets" class="headerlink" title="Alarm Targets:"></a>Alarm Targets:</h3><ul>
+<h3 id="Alarm-Targets-👀-EXAM"><a href="#Alarm-Targets-👀-EXAM" class="headerlink" title="Alarm Targets - 👀 EXAM"></a>Alarm Targets - 👀 EXAM</h3><ul>
 <li><p><code>EC2</code> - Stop, Terminate, Reboot, or Recover an EC2 Instance</p>
 </li>
 <li><p><code>EC2 Auto Scaling</code> - Trigger Auto Scaling Action, scaling up or down.</p>
 </li>
 <li><p><code>SNS</code> - Send notification to SNS (from which you can do pretty much anything)</p>
+</li>
+<li><p>creating a <code>Systems Manager OpsItem</code>.</p>
 </li>
 <li><p><code>Composite Alarms are monitoring the states of multiple other alarms</code></p>
 </li>
@@ -471,7 +473,7 @@ Instance Status Checks</li>
 <li>Monitors software&#x2F;network configuration of your instance (invalid network configuration, exhausted memory, …)</li>
 <li>Resolution: reboot the instance or change instance configuration.</li>
 </ul>
-<h4 id="Status-Checks-CW-Metrics-amp-Recovery-OJO-👀"><a href="#Status-Checks-CW-Metrics-amp-Recovery-OJO-👀" class="headerlink" title="Status Checks - CW Metrics &amp; Recovery - OJO 👀"></a>Status Checks - CW Metrics &amp; Recovery - OJO <code>👀</code></h4><ul>
+<h4 id="Status-Checks-CW-Metrics-amp-Recovery-👀-EXAM"><a href="#Status-Checks-CW-Metrics-amp-Recovery-👀-EXAM" class="headerlink" title="Status Checks - CW Metrics &amp; Recovery - 👀 EXAM"></a>Status Checks - CW Metrics &amp; Recovery - <code>👀 EXAM</code></h4><ul>
 <li>CloudWatch Metrics (1 minute interval)<ul>
 <li><code>StatusCheckFailed_System</code></li>
 <li><code>StatusCheckFailed_Instance</code></li>
@@ -673,9 +675,9 @@ These AWS Config rules act as controls to prevent any non-compliant S3 activitie
 </li>
 </ul>
 <hr>
-<h2 id="👀-Q-AWS-Task-Orchestrator-and-Executor-AWSTOE"><a href="#👀-Q-AWS-Task-Orchestrator-and-Executor-AWSTOE" class="headerlink" title="👀 Q AWS Task Orchestrator and Executor (AWSTOE)"></a>👀 Q AWS Task Orchestrator and Executor (AWSTOE)</h2><p>Use the <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/toe-get-started.html">AWS Task Orchestrator and Executor (AWSTOE)</a> application <code>to orchestrate complex workflows</code>, <code>modify system configurations</code>, and <code>test your systems without writing code</code>. This application uses a declarative document schema. Because it is a standalone application, it does not require additional server setup.</p>
+<h2 id="AWS-Task-Orchestrator-and-Executor-AWSTOE-👀-EXAM"><a href="#AWS-Task-Orchestrator-and-Executor-AWSTOE-👀-EXAM" class="headerlink" title="AWS Task Orchestrator and Executor (AWSTOE) - 👀 EXAM"></a>AWS Task Orchestrator and Executor (AWSTOE) - 👀 EXAM</h2><p>Use the <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/toe-get-started.html">AWS Task Orchestrator and Executor (AWSTOE)</a> application <code>to orchestrate complex workflows</code>, <code>modify system configurations</code>, and <code>test your systems without writing code</code>. This application uses a declarative document schema. Because it is a standalone application, it does not require additional server setup.</p>
 <hr>
-<h2 id="👀-AWS-Artifact"><a href="#👀-AWS-Artifact" class="headerlink" title="👀 AWS Artifact"></a><code>👀</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html">AWS Artifact</a></h2><p>AWS Artifact <code>keeps compliance-related reports and agreements</code>.</p>
+<h2 id="96-AWS-Artifact-👀-EXAM"><a href="#96-AWS-Artifact-👀-EXAM" class="headerlink" title="&#96;AWS Artifact - 👀 EXAM"></a>&#96;<a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html">AWS Artifact</a> - 👀 EXAM</h2><p>AWS Artifact <code>keeps compliance-related reports and agreements</code>.</p>
 <hr>
 <h2 id="RDS"><a href="#RDS" class="headerlink" title="RDS"></a>RDS</h2><h3 id="Advantage-over-using-RDS-versus-deploying"><a href="#Advantage-over-using-RDS-versus-deploying" class="headerlink" title="Advantage over using RDS versus deploying"></a>Advantage over using RDS versus deploying</h3><ul>
 <li>RDS is a managed service:<ul>
@@ -782,8 +784,8 @@ These AWS Config rules act as controls to prevent any non-compliant S3 activitie
 </li>
 </ul>
 <p>Amazon RDS provides <code>metrics</code> in real time for the operating system (OS) that your DB instance runs on. You can view the metrics for your DB instance using the console. Also, you can consume the &#96;Enhanced Monitoring&#96;&#96; JSON output from Amazon CloudWatch Logs in a monitoring system of your choice.</p>
-<h3 id="RDS-storage-autoscaling"><a href="#RDS-storage-autoscaling" class="headerlink" title="RDS storage autoscaling"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">RDS storage autoscaling</a></h3><p>With RDS storage autoscaling, you can set the desired maximum storage limit. Autoscaling will manage the storage size. RDS storage autoscaling monitors actual storage consumption and then scales capacity automatically when actual utilization approaches the provisioned storage capacity.</p>
-<h3 id="👀-Q-Enable-Enhanced-Monitoring"><a href="#👀-Q-Enable-Enhanced-Monitoring" class="headerlink" title="👀 *Q Enable Enhanced Monitoring"></a><code>👀</code> <code>*Q</code> Enable Enhanced Monitoring</h3><hr>
+<h3 id="RDS-storage-autoscaling-👀-EXAM"><a href="#RDS-storage-autoscaling-👀-EXAM" class="headerlink" title="RDS storage autoscaling - 👀 EXAM"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">RDS storage autoscaling</a> - <code>👀</code> EXAM</h3><p>With RDS storage autoscaling, you can set the desired maximum storage limit. Autoscaling will manage the storage size. RDS storage autoscaling monitors actual storage consumption and then scales capacity automatically when actual utilization approaches the provisioned storage capacity.</p>
+<hr>
 <h2 id="Amazon-Aurora-DB"><a href="#Amazon-Aurora-DB" class="headerlink" title="Amazon Aurora DB"></a>Amazon Aurora DB</h2><ul>
 <li>Aurora is a proprietary technology from AWS (not open sourced)</li>
 <li>Postgres and MySQL are both supported as Aurora DB (that means your drivers will work as if Aurora was a Postgres or MySQL database)</li>
@@ -839,7 +841,7 @@ This metric reports the value of the Seconds_Behind_Master field of the <em>MySQ
 <li><code>AuroraReplicaLag</code> - This metric captures the <code>amount of lag</code> an Aurora replica experiences <code>when replicating updates from the primary instance</code>.</li>
 <li><code>InsertLatency</code> - This metric captures <code>the average duration of insert operations</code>.</li>
 </ol>
-<h2 id="👀-Aurora-Reader-Endpoint"><a href="#👀-Aurora-Reader-Endpoint" class="headerlink" title="👀 Aurora Reader Endpoint"></a>👀 Aurora Reader Endpoint</h2><p>To <code>perform queries</code>, you can connect to the reader endpoint, with Aurora automatically performing load-balancing among all the Aurora <code>Replicas</code>.</p>
+<h2 id="Aurora-Reader-Endpoint-👀-EXAM"><a href="#Aurora-Reader-Endpoint-👀-EXAM" class="headerlink" title="Aurora Reader Endpoint - 👀 EXAM"></a>Aurora Reader Endpoint - 👀 EXAM</h2><p>To <code>perform queries</code>, you can connect to the reader endpoint, with Aurora automatically performing load-balancing among all the Aurora <code>Replicas</code>.</p>
 <p>A reader endpoint for an Aurora DB cluster provides load-balancing support for read-only connections to the DB cluster. Use the reader endpoint <code>for read operations</code>, such as queries. By processing those statements on the read-only Aurora Replicas, this endpoint reduces the overhead on the primary instance. It also helps the cluster to scale the capacity to handle simultaneous SELECT queries, proportional to the number of Aurora Replicas in the cluster. Each Aurora DB cluster has one reader endpoint.</p>
 <p>Reference:<a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html">Amazon Aurora connection management</a></p>
 <hr>
@@ -861,7 +863,10 @@ This metric reports the value of the Seconds_Behind_Master field of the <em>MySQ
 </ul>
 <h3 id="ElastiCache-Replication-Redis-Cluster-Mode-Disabled"><a href="#ElastiCache-Replication-Redis-Cluster-Mode-Disabled" class="headerlink" title="ElastiCache Replication (Redis): Cluster Mode Disabled"></a>ElastiCache Replication (Redis): Cluster Mode Disabled</h3><ul>
 <li>One primary node, up to 5 replicas</li>
-<li>Asynchronous Replication</li>
+<li>Asynchronous Replication.<ul>
+<li>Therefore, when a primary node fails over to a replica, a small amount of data might be lost due to replication lag.</li>
+</ul>
+</li>
 <li>The primary node is used for read&#x2F;write</li>
 <li>The other nodes are read-only</li>
 <li><code>One shard, all nodes have all the data</code></li>
@@ -1234,7 +1239,7 @@ or scale out (add additional nodes to the cluster) to accommodate the additional
 <li>1, 2, 5, 10 Gbps available at select AWS Direct Connect Partners</li>
 </ul>
 </li>
-<li>Lead times are often longer than 1 <code>month to establish a new connection</code> - EXAM</li>
+<li>Lead times are often longer than 1 <code>month to establish a new connection</code> - 👀 EXAM</li>
 </ul>
 <h3 id="Direct-Connect-Encryption"><a href="#Direct-Connect-Encryption" class="headerlink" title="Direct Connect - Encryption"></a>Direct Connect - Encryption</h3><ul>
 <li>Data in transit is <code>not encrypted</code> but is private</li>
@@ -1348,7 +1353,7 @@ Configure IPv6 on Your Instances - If your instance was launched from an AMI tha
 <li><code>Egress-only Internet Gateway</code> - like a NAT Gateway, but for IPv6</li>
 </ul>
 <h3 id="Networking-Costs-in-AWS-per-GB"><a href="#Networking-Costs-in-AWS-per-GB" class="headerlink" title="Networking Costs in AWS per GB"></a>Networking Costs in AWS per GB</h3><ul>
-<li>Use Private IP instead of Public IP for good savings and better network  performance</li>
+<li>Use Private IP instead of Public IP for good savings and better network performance</li>
 <li>Use same AZ for maximum savings (at the cost of high availability) - Exam 👀</li>
 </ul>
 <h3 id="S3-Data-Transfer-Pricing-Analysis-for-USA"><a href="#S3-Data-Transfer-Pricing-Analysis-for-USA" class="headerlink" title="S3 Data Transfer Pricing - Analysis for USA"></a>S3 Data Transfer Pricing - Analysis for USA</h3><ul>
@@ -1367,18 +1372,24 @@ Configure IPv6 on Your Instances - If your instance was launched from an AMI tha
 </li>
 <li><code>S3 Cross Region Replication</code>: $0.02 per GB</li>
 </ul>
-<h3 id="AWS-Network-Firewall"><a href="#AWS-Network-Firewall" class="headerlink" title="AWS Network Firewall"></a>AWS Network Firewall</h3><ul>
-<li>Protect your entire Amazon VPC</li>
+<h3 id="AWS-Network-Firewall-👀-OJO"><a href="#AWS-Network-Firewall-👀-OJO" class="headerlink" title="AWS Network Firewall - 👀 OJO"></a>AWS Network Firewall - 👀 OJO</h3><ul>
+<li><code>Protect your entire Amazon VPC</code><ul>
+<li>Pass traffic through only from known AWS service domains or IP address endpoints, such as Amazon S3.</li>
+<li>Use custom <code>lists of known bad domains to limit the types of domain names that your applications can access</code>.</li>
+<li>Perform <code>deep packet inspection</code> DPI on traffic entering or leaving your VPC.</li>
+<li>Use stateful protocol detection to filter protocols like HTTPS, independent of the port used.</li>
 <li>From Layer 3 to Layer 7 protection</li>
-<li>Any direction, you can inspect<ul>
-<li>VPC to VPC traffic</li>
-<li>Outbound to internet</li>
-<li>Inbound from internet</li>
-<li>To &#x2F; from Direct Connect &amp; Site-to-Site VPN</li>
 </ul>
 </li>
-<li>Internally, the AWS Network Firewall uses the AWS Gateway Load Balancer</li>
-<li>Rules can be centrally managed cross-account by AWS Firewall Manager to apply to many VPCs</li>
+<li>Any direction, you can inspect<ul>
+<li><code>VPC</code> to <code>VPC</code> traffic</li>
+<li><code>Outbound</code> to internet</li>
+<li><code>Inbound</code> from internet</li>
+<li><code>To / from Direct Connect &amp; Site-to-Site VPN</code></li>
+</ul>
+</li>
+<li>Internally, the AWS Network Firewall uses the AWS Gateway Load Balancer 👀</li>
+<li>Rules can be centrally managed <code>cross-account</code> by <code>AWS Firewall Manager</code> to apply to many VPCs</li>
 </ul>
 <h3 id="Network-Firewall-Fine-Grained-Controls"><a href="#Network-Firewall-Fine-Grained-Controls" class="headerlink" title="Network Firewall - Fine Grained Controls"></a>Network Firewall - Fine Grained Controls</h3><ul>
 <li><p>Supports 1000s of rules</p>
@@ -1421,7 +1432,10 @@ Configure IPv6 on Your Instances - If your instance was launched from an AMI tha
 <li><p>We need to define <code>WaitCondition</code>:</p>
 <ul>
 <li>Block the template until it receives a signal from cfn-signal</li>
-<li>We attach a <code>CreationPolicy</code> (also works on EC2, ASG)</li>
+<li>We attach a <code>CreationPolicy</code> (also works on EC2, ASG)<ul>
+<li>The creation policy is <code>invoked only</code> when AWS CloudFormation creates the associated resource. Currently, the only AWS CloudFormation resources that support creation policies are <code>AWS::AutoScaling::AutoScalingGroup, AWS::EC2::Instance, and AWS::CloudFormation::WaitCondition</code>.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1439,9 +1453,9 @@ Configure IPv6 on Your Instances - If your instance was launched from an AMI tha
 <h3 id="Q-To-lunch-the-last-AMI"><a href="#Q-To-lunch-the-last-AMI" class="headerlink" title="*Q To lunch the last AMI."></a><code>*Q</code> To lunch the last AMI.</h3><p>Use the Parameters section in the template to specify the Systems Manager (SSM) Parameter, which contains the latest version of the Windows regional AMI ID.</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Parameters:</span></span><br><span class="line">  <span class="attr">LatestWindowsAMIParameter:</span></span><br><span class="line">    <span class="attr">Type:</span> <span class="string">AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;</span></span><br><span class="line">    <span class="attr">Default:</span> <span class="string">/LatestWindowsAMI</span></span><br><span class="line"></span><br><span class="line"><span class="attr">Parameters:</span></span><br><span class="line">  <span class="attr">LatestWindowsAMIParameter:</span></span><br><span class="line">    <span class="attr">Type:</span> <span class="string">AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;</span></span><br><span class="line">    <span class="attr">Default:</span> <span class="string">/LatestWindowsAMI</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="👀-UpdatePolicy-96-attribute"><a href="#👀-UpdatePolicy-96-attribute" class="headerlink" title="👀 UpdatePolicy&#96; attribute"></a><code>👀 </code>UpdatePolicy&#96; attribute</h3><p>By adding the <code>UpdatePolicy</code> attribute in CloudFormation and enabling the WaitOnResourceSignals property, the Auto Scaling group update process will be handled more gracefully. This approach allows CloudFormation to monitor the health and success of each instance during the update process before moving on to the next instance.</p>
+<h3 id="UpdatePolicy-attribute-👀-EXAM"><a href="#UpdatePolicy-attribute-👀-EXAM" class="headerlink" title="UpdatePolicy attribute - 👀 EXAM"></a>UpdatePolicy attribute - <code>👀 EXAM</code></h3><p>By adding the <code>UpdatePolicy</code> attribute in CloudFormation and enabling the WaitOnResourceSignals property, the Auto Scaling group update process will be handled more gracefully. This approach allows CloudFormation to monitor the health and success of each instance during the update process before moving on to the next instance.</p>
 <p>Appending a health check at the end of the user data script allows the instance to signal CloudFormation that it has successfully completed its initialization. This helps ensure that the instance is fully operational before proceeding to the next instance in the Auto Scaling group update process.</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">CreationPolicy:</span></span><br><span class="line">  <span class="attr">AutoScalingCreationPolicy:</span></span><br><span class="line">    <span class="attr">MinSuccessfulInstancesPercent:</span> <span class="string">Integer</span></span><br><span class="line">  <span class="attr">ResourceSignal:</span></span><br><span class="line">    <span class="attr">Count:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line">    <span class="attr">Timeout:</span> <span class="string">PT15M</span></span><br><span class="line"><span class="attr">UpdatePolicy:</span></span><br><span class="line">  <span class="attr">AutoScalingRollingUpdate:</span></span><br><span class="line">    <span class="attr">MinInstancesInService:</span> <span class="string">&#x27;1&#x27;</span></span><br><span class="line">    <span class="attr">MaxBatchSize:</span> <span class="string">&#x27;2&#x27;</span></span><br><span class="line">    <span class="attr">PauseTime:</span> <span class="string">PT1M</span></span><br><span class="line">    <span class="attr">WaitOnResourceSignals:</span> <span class="string">&#x27;true&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">CreationPolicy:</span></span><br><span class="line">  <span class="attr">AutoScalingCreationPolicy:</span></span><br><span class="line">    <span class="attr">MinSuccessfulInstancesPercent:</span> <span class="string">Integer</span></span><br><span class="line">  <span class="attr">ResourceSignal:</span></span><br><span class="line">    <span class="attr">Count:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line">    <span class="attr">Timeout:</span> <span class="string">PT15M</span></span><br><span class="line"></span><br><span class="line"><span class="attr">UpdatePolicy:</span></span><br><span class="line">  <span class="attr">AutoScalingRollingUpdate:</span></span><br><span class="line">    <span class="attr">MinInstancesInService:</span> <span class="string">&#x27;1&#x27;</span></span><br><span class="line">    <span class="attr">MaxBatchSize:</span> <span class="string">&#x27;2&#x27;</span></span><br><span class="line">    <span class="attr">PauseTime:</span> <span class="string">PT1M</span></span><br><span class="line">    <span class="attr">WaitOnResourceSignals:</span> <span class="string">&#x27;true&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="👀-DependsOn-attribute"><a href="#👀-DependsOn-attribute" class="headerlink" title="👀 DependsOn attribute"></a>👀 <code>DependsOn</code> attribute</h3><p>With the DependsOn attribute, you can specify that the <code>creation</code> of a specific resource <code>follows another</code>. When you add a DependsOn attribute to a resource, that resource is created only after the creation of the resource specified in the DependsOn attribute.</p>
 <h3 id="Set-Tags-consistently-in-AWS-across-all-accounts"><a href="#Set-Tags-consistently-in-AWS-across-all-accounts" class="headerlink" title="Set Tags consistently in AWS across all accounts"></a>Set Tags consistently in AWS across all accounts</h3><p>Use the CloudFormation <code>Resource Tags property</code> to apply tags to certain resource types upon creation.</p>
@@ -1453,6 +1467,12 @@ Configure IPv6 on Your Instances - If your instance was launched from an AMI tha
 
 <h3 id="No-conditions-in-parameters"><a href="#No-conditions-in-parameters" class="headerlink" title="No conditions in parameters"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html">No conditions in parameters</a></h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Parameters:</span></span><br><span class="line">  <span class="attr">InstanceTypeParameter:</span></span><br><span class="line">    <span class="attr">Type:</span> <span class="string">String</span></span><br><span class="line">    <span class="attr">Default:</span> <span class="string">t2.micro</span></span><br><span class="line">    <span class="attr">AllowedValues:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">t2.micro</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">m1.small</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">m1.large</span></span><br><span class="line">    <span class="attr">Description:</span> <span class="string">Enter</span> <span class="string">t2.micro,</span> <span class="string">m1.small,</span> <span class="string">or</span> <span class="string">m1.large.</span> <span class="string">Default</span> <span class="string">is</span> <span class="string">t2.micro.</span></span><br></pre></td></tr></table></figure>
 
+<ul>
+<li><code>!GetAtt</code> - The Fn::GetAtt intrinsic function returns the value of an attribute from a resource in the template. This example snippet returns a string containing the DNS name of the load balancer with the logical name myELB - YML : !GetAtt myELB.DNSName JSON : “Fn::GetAtt” : [ “myELB” , “DNSName” ]</li>
+<li><code>!Sub</code> - The intrinsic function Fn::Sub substitutes variables in an input string with values that you specify. In your templates, you can use this function to construct commands or outputs that include values that aren’t available until you create or update a stack.</li>
+<li><code>!Ref</code> - The intrinsic function Ref returns the value of the specified parameter or resource.</li>
+<li><code>!FindInMap</code> - The intrinsic function Fn::FindInMap returns the value corresponding to keys in a two-level map that is declared in the Mappings section. For example, you can use this in the Mappings section that contains a single map, RegionMap, that associates AMIs with AWS regions.</li>
+</ul>
 <hr>
 <h2 id="AWS-Backup"><a href="#AWS-Backup" class="headerlink" title="AWS Backup"></a>AWS Backup</h2><ul>
 <li>Fully managed service</li>
@@ -1564,32 +1584,48 @@ AWS Backup is a fully managed and cost-effective backup service that simplifies 
 </li>
 </ul>
 <hr>
-<h2 id="Q-AWS-Inspector"><a href="#Q-AWS-Inspector" class="headerlink" title="*Q AWS Inspector"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://aws.amazon.com/inspector/">AWS Inspector</a></h2><p>Amazon Inspector is <code>used for security compliance of instances and applications deployed on AWS</code>.</p>
-<p>Amazon Inspector <code>checks</code> for <code>unintended network accessibility</code> of your Amazon EC2 instances and <em><code>vulnerabilities</code></em> on those EC2 instances.</p>
-<p>Amazon Inspector also <code>integrates</code> with <code>AWS Security Hub</code> to provide a <code>view</code> of your <code>security posture across multiple AWS accounts</code>.</p>
+<p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/inspector/v1/userguide/inspector_assessments.html">Amazon Inspector</a>:
+Securiry Compliance for EC2 and Sofware deployed on AWS.</p>
+<h2 id="AWS-Inspector-👀-EXAM"><a href="#AWS-Inspector-👀-EXAM" class="headerlink" title="AWS Inspector - 👀 EXAM"></a><a target="_blank" rel="noopener" href="https://aws.amazon.com/inspector/">AWS Inspector</a> - 👀 EXAM</h2><ul>
+<li>Amazon Inspector is <code>used for security compliance of instances and applications deployed on AWS</code>.</li>
+<li>Amazon Inspector <code>checks</code> for <code>unintended network accessibility</code> of your Amazon EC2 instances and <em><code>vulnerabilities</code></em> on those EC2 instances.</li>
+<li>Amazon Inspector also <code>integrates</code> with <code>AWS Security Hub</code> to provide a <code>view</code> of your <code>security posture across multiple AWS accounts</code>.</li>
+</ul>
 <p>Amazon Inspector is an automated security assessment service that helps you <code>test</code> the <code>network accessibility</code> of your Amazon EC2 instances and the <code>security state of your applications running on the instances</code>.</p>
-<p>An Amazon Inspector assessment report can be generated for an assessment run once it has been successfully completed. An assessment report is a document that details what is tested in the assessment run, and the results of the assessment. The results of your assessment are formatted into a standard report, which can be generated to share results within your team for remediation actions, to enrich compliance audit data, or to store for future reference.</p>
+<p>An <code>Amazon Inspector assessment report can be generated for an assessment run once it has been successfully completed</code>. An assessment report is a document that details what is tested in the assessment run, and the results of the assessment. The results of your assessment are formatted into a standard report, which can be generated to share results within your team for remediation actions, to enrich compliance audit data, or to store for future reference.</p>
 <p>You can select from two types of report for your assessment, a findings report or a full report. The findings report contains an executive summary of the assessment, the instances targeted, the rules packages tested, the rules that generated findings, and detailed information about each of these rules along with the list of instances that failed the check. The full report contains all the
 information in the findings report and additionally provides the list of rules that were checked and passed on all instances in the assessment target.</p>
 <h2 id="👀-Amazon-Inspector"><a href="#👀-Amazon-Inspector" class="headerlink" title="👀 Amazon Inspector"></a>👀 Amazon Inspector</h2><ul>
 <li><code>Automated Security Assessments</code></li>
-<li><code>For EC2 instances</code></li>
-<li><code>For Container Images push to Amazon ECR</code></li>
-<li><code>For Lambda Functions</code></li>
+<li>For <code>EC2 instances</code><ul>
+<li>Leveraging the AWS System Manager (SSM) agent</li>
+<li>Analyze against unintended network accessibility</li>
+<li>Analyze the running OS against known vulnerabilities</li>
 </ul>
-<p>-&gt; <code>Reporting &amp; integration with AWS Security Hub</code></p>
-<p>-&gt; <code>Send findings to Amazon Event Bridge</code></p>
+</li>
+<li>For Container Images push to <code>Amazon ECR</code><ul>
+<li>Assessment of Container Images as they are pushed  Amazon ECR</li>
+</ul>
+</li>
+<li>For <code>Lambda Functions</code><ul>
+<li>Identifies software vulnerabilities in function code and package ependencies</li>
+<li>Assessment of functions as they are deployed</li>
+</ul>
+</li>
+</ul>
+<p>-&gt; Reporting &amp; integration with <code>AWS Security Hub</code>
+  To provide a view of your security posture across multiple AWS accounts.
+-&gt; Send findings to Amazon <code>Event Bridge</code></p>
+<h3 id="AWS-Security-Hub-TODO"><a href="#AWS-Security-Hub-TODO" class="headerlink" title="AWS Security Hub - TODO"></a>AWS Security Hub - TODO</h3><p>Supports automated security checks aligned to the Center for Internet Security’s (CIS) AWS Foundations Benchmark version 1.4.0 requirements for Level 1 and 2 (CIS v1.4.0).</p>
+<h3 id="CIS-AWS-Foundations-Benchmark-TODO"><a href="#CIS-AWS-Foundations-Benchmark-TODO" class="headerlink" title="CIS AWS Foundations Benchmark  - TODO"></a>CIS AWS Foundations Benchmark  - TODO</h3><p>Serves as a set of security configuration best practices for AWS. These industry-accepted best practices provide you with clear, step-by-step implementation and assessment procedures. Ranging from operating systems to cloud services and network devices, the controls in this benchmark help you protect the specific systems that your organization uses.</p>
+<p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/securityhub/latest/userguide/cis-aws-foundations-benchmark.html">https://docs.aws.amazon.com/securityhub/latest/userguide/cis-aws-foundations-benchmark.html</a>
+<a target="_blank" rel="noopener" href="https://aws.amazon.com/about-aws/whats-new/2022/11/security-hub-center-internet-securitys-cis-foundations-benchmark-version-1-4-0/">https://aws.amazon.com/about-aws/whats-new/2022/11/security-hub-center-internet-securitys-cis-foundations-benchmark-version-1-4-0/</a></p>
 <h3 id="What-does-Amazon-Inspector-evaluate"><a href="#What-does-Amazon-Inspector-evaluate" class="headerlink" title="What does Amazon Inspector evaluate?"></a>What does Amazon Inspector evaluate?</h3><ul>
-<li><p><code>Only for EC2 instances, Container Images &amp; Lambda functions</code> - <code>EXAM</code></p>
-</li>
-<li><p>Continuous scanning of the infrastructure, only when needed</p>
-</li>
-<li><p>Package vulnerabilities (EC2, ECR &amp; Lambda) - database of CVE</p>
-</li>
-<li><p>Network reachability (EC2)</p>
-</li>
-<li><p>A risk score is associated with all vulnerabilities for prioritization</p>
-</li>
+<li><code>Only for EC2 instances, Container Images &amp; Lambda functions</code> - <code>EXAM</code></li>
+<li>Continuous scanning of the infrastructure, only when needed</li>
+<li>Package vulnerabilities (EC2, ECR &amp; Lambda) - database of CVE</li>
+<li>Network reachability (EC2)</li>
+<li>A risk score is associated with all vulnerabilities for prioritization</li>
 </ul>
 <p>Amazon Inspector discovers potential security issues by using security rules to analyze AWS resources. Amazon Inspector also integrates with AWS Security Hub to provide a view of your security posture across multiple AWS accounts.</p>
 <hr>
@@ -1610,7 +1646,7 @@ information in the findings report and additionally provides the list of rules t
 </li>
 <li>Can setup <code>EventBridge rules</code> to be notified in case of findings</li>
 <li>EventBridge rules can target AWS Lambda or SNS</li>
-<li><code>Can protect against CryptoCurrency attacks (has a dedicated “finding” for it)</code> - Exam</li>
+<li><code>Can protect against CryptoCurrency attacks (has a dedicated “finding” for it)</code> - 👀 EXAM</li>
 </ul>
 <hr>
 <h2 id="AWS-Macie"><a href="#AWS-Macie" class="headerlink" title="AWS Macie"></a>AWS Macie</h2><ul>
@@ -1621,7 +1657,7 @@ information in the findings report and additionally provides the list of rules t
 <hr>
 <h2 id="Q-AWS-Trusted-Advisor"><a href="#Q-AWS-Trusted-Advisor" class="headerlink" title="*Q AWS Trusted Advisor"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html">AWS Trusted Advisor</a></h2><p>Trusted Advisor provides real-time guidance to help users follow AWS best practices to provision their resources. <code>Hight level account assessment</code>.</p>
 <p>E.g. AWS Trusted Advisor checks for service <code>usage</code> that is more than 80% of the <code>service limit</code>.</p>
-<h3 id="Check-categories-Exam"><a href="#Check-categories-Exam" class="headerlink" title="Check categories - Exam"></a>Check categories - Exam</h3><ul>
+<h3 id="Check-categories-👀-EXAM"><a href="#Check-categories-👀-EXAM" class="headerlink" title="Check categories - 👀 EXAM"></a>Check categories - 👀 EXAM</h3><ul>
 <li><code>Cost optimization</code></li>
 <li><code>Performance</code></li>
 <li><code>Security</code></li>
@@ -1711,7 +1747,7 @@ information in the findings report and additionally provides the list of rules t
 <li>Great for availability and durability</li>
 </ul>
 <hr>
-<h2 id="👀-AWS-Artifact-Not-really-a-service-EXAM"><a href="#👀-AWS-Artifact-Not-really-a-service-EXAM" class="headerlink" title="👀 AWS Artifact (Not really a service) - EXAM"></a>👀 <code>AWS Artifact</code> (Not really a service) - EXAM</h2><p>is a service that provides <code>on-demand</code> access to AWS <code>compliance reports</code> and other relevant documents.</p>
+<h2 id="👀-AWS-Artifact-Not-really-a-service-👀-EXAM"><a href="#👀-AWS-Artifact-Not-really-a-service-👀-EXAM" class="headerlink" title="👀 AWS Artifact (Not really a service) - 👀 EXAM"></a>👀 <code>AWS Artifact</code> (Not really a service) - 👀 EXAM</h2><p>is a service that provides <code>on-demand</code> access to AWS <code>compliance reports</code> and other relevant documents.</p>
 <ul>
 <li><code>Artifact Reports</code> - Allows you to download AWS security and compliance documents from third-party auditors, like AWS ISO certifications, Payment Card Industry (PCI), and System and Organization Control (SOC) reports</li>
 <li><code>Artifact Agreements</code> - Allows you to review, accept, and track the status of AWS agreements such as the Business Associate Addendum (BAA) or the Health Insurance Portability and Accountability Act (HIPAA) for an individual account or in your organization -</li>
@@ -1779,8 +1815,9 @@ information in the findings report and additionally provides the list of rules t
 </ul>
 <h3 id="Q-To-set-up-a-backup-strategy-for-an-Amazon-Elastic-Block-Store-Amazon-EBS-volume-storing-a-custom-database-on-an-Amazon-EC2-instance-the-following-action-should-be-taken"><a href="#Q-To-set-up-a-backup-strategy-for-an-Amazon-Elastic-Block-Store-Amazon-EBS-volume-storing-a-custom-database-on-an-Amazon-EC2-instance-the-following-action-should-be-taken" class="headerlink" title="*Q. To set up a backup strategy for an Amazon Elastic Block Store (Amazon EBS) volume storing a custom database on an Amazon EC2 instance, the following action should be taken:"></a><code>*Q.</code> To set up a backup strategy for an Amazon Elastic Block Store (Amazon EBS) volume storing a custom database on an Amazon EC2 instance, the following action should be taken:</h3><p>Create an Amazon <code>Data Lifecycle Manager (Amazon DLM)</code> policy to <code>take</code> a <code>snapshot of the EBS</code> volume on a <code>recurring schedule</code>.</p>
 <p><code>Explanation</code>: Amazon Data Lifecycle Manager (Amazon DLM) allows you to create automated snapshot lifecycle policies for your Amazon EBS volumes. By creating an Amazon DLM policy, you can define the desired backup schedule and retention period for the EBS volume. The policy will then automatically create snapshots according to the defined schedule. This ensures that regular backups are taken and can be used for data recovery if needed.</p>
-<h3 id="EBS-volumes-deleted-with-the-TerminateInstances-API-call-continue-to-show-for-some-time-on-AWS-Config-console"><a href="#EBS-volumes-deleted-with-the-TerminateInstances-API-call-continue-to-show-for-some-time-on-AWS-Config-console" class="headerlink" title="EBS volumes deleted with the TerminateInstances API call continue to show for some time on AWS Config console"></a><a target="_blank" rel="noopener" href="https://docs.amazonaws.cn/en_us/AWSEC2/latest/WindowsGuide/ebs-deleting-volume.html">EBS volumes deleted</a> with the <code>TerminateInstances</code> API call continue to show for some time on AWS Config console</h3><p>Terminated Amazon EC2 instances use the <code>DeleteOnTermination</code> attribute for each attached EBS volume to determine to delete the volume. Amazon EC2 deletes the Amazon EBS volume that has the <code>DeleteOnTermination</code> attribute set to true, but it does not publish the <code>DeleteVolume</code> API call. This is because AWS Config uses the <em>DeleteVolume</em> API call as a trigger with the rule, and the resource changes aren’t recorded for the EBS volume. The EBS volume still shows as compliant or noncompliant.</p>
-<p>AWS Config performs a baseline every six hours to check for new configuration items with the ResourceDeleted status. The AWS Config rule then removes the deleted EBS volumes from the evaluation results.</p>
+<h3 id="EBS-volumes-deleted-with-the-TerminateInstances-API-call-continue-to-show-for-some-time-on-AWS-Config-console-👀-EXAM"><a href="#EBS-volumes-deleted-with-the-TerminateInstances-API-call-continue-to-show-for-some-time-on-AWS-Config-console-👀-EXAM" class="headerlink" title="EBS volumes deleted with the TerminateInstances API call continue to show for some time on AWS Config console - 👀 EXAM"></a><a target="_blank" rel="noopener" href="https://docs.amazonaws.cn/en_us/AWSEC2/latest/WindowsGuide/ebs-deleting-volume.html">EBS volumes deleted</a> with the <code>TerminateInstances</code> API call continue to show for some time on AWS Config console - 👀 EXAM</h3><p>Terminated Amazon EC2 instances use the <code>DeleteOnTermination</code> attribute for each attached EBS volume to determine to delete the volume. Amazon EC2 deletes the Amazon EBS volume that has the <code>DeleteOnTermination</code> attribute set to true, but it does not publish the <code>DeleteVolume</code> API call. This is because AWS Config uses the <em>DeleteVolume</em> API call as a trigger with the rule, and the resource changes aren’t recorded for the EBS volume. The EBS volume still shows as compliant or noncompliant.
+AWS Config performs a baseline every six hours to check for new configuration items with the ResourceDeleted status. The AWS Config rule then removes the deleted EBS volumes from the evaluation results.</p>
+<p>Amazon EBS volumes deleted using the <code>DeleteVolume API call</code> invoke a <code>DescribeVolumes</code> API call on volume. The DescribeVolumes API call <code>returns an InvalidVolume</code>.<code>NotFound</code> error code and the Amazon EBS volume is <code>removed</code> from the list of resources in AWS Config</p>
 <h3 id="SSD-backed-volumes-IOPS-intensive"><a href="#SSD-backed-volumes-IOPS-intensive" class="headerlink" title="SSD-backed volumes (IOPS-intensive)"></a>SSD-backed volumes (IOPS-intensive)</h3><h3 id="EBS-Volume-Types"><a href="#EBS-Volume-Types" class="headerlink" title="EBS Volume Types"></a>EBS Volume Types</h3><p>EBS Volumes come in 6 types</p>
 <ul>
 <li><code>gp2 / gp3</code> (SSD): <code>General purpose</code> SSD volume that balances price and performance for a wide variety of workloads.</li>
@@ -1794,7 +1831,7 @@ information in the findings report and additionally provides the list of rules t
 <ul>
 <li><code>EBS-optimized</code> <code>instance</code> uses an optimized configuration stack and provides additional, dedicated capacity for Amazon<code> EBS I/O</code>. This optimization provides the best performance for your EBS volumes by minimizing contention between Amazon EBS I&#x2F;O and other traffic from your instance.</li>
 </ul>
-<h2 id="Provisioned-IOPS-SSD-io2-Block-Express-io2-amp-io1-volumes"><a href="#Provisioned-IOPS-SSD-io2-Block-Express-io2-amp-io1-volumes" class="headerlink" title="Provisioned IOPS SSD (io2 Block Express, io2 &amp; io1) volumes"></a>Provisioned IOPS SSD (io2 Block Express, io2 &amp; <code>io1</code>) volumes</h2><p>Provisioned IOPS SSD volumes are designed to deliver a maximum of 256,000 IOPS, 4,000 MB&#x2F;s of throughput, and 64 TiB in size per volume1. io2 Block Express is the latest generation of the Provisioned IOPS SSD volumes that delivers 4x higher throughput, IOPS, and capacity than regular io2 volumes, along with sub-millisecond latency - at the same price as io2. io2 Block Express provides highest block storage performance for the largest, most I&#x2F;O- intensive, mission-critical deployments of Oracle, Microsoft SQL Server, SAP HANA, and SAS Analytics</p>
+<h2 id="Provisioned-IOPS-SSD-io2-Block-Express-io2-amp-io1-volumes"><a href="#Provisioned-IOPS-SSD-io2-Block-Express-io2-amp-io1-volumes" class="headerlink" title="Provisioned IOPS SSD (io2 Block Express, io2 &amp; io1) volumes"></a>Provisioned IOPS SSD (io2 Block Express, io2 &amp; <code>io1</code>) volumes</h2><p>Provisioned IOPS SSD volumes are designed to deliver a maximum of 256,000 IOPS, 4,000 MB&#x2F;s of throughput, and 64 TiB in size per volume1. io2 Block Express is the latest generation of the Provisioned IOPS SSD volumes that delivers 4x higher throughput, IOPS, and capacity than regular io2 volumes, along with sub-millisecond latency - at the same price as io2. io2 Block Express provides highest block storage performnce for the largest, most I&#x2F;O- intensive, mission-critical deployments of Oracle, Microsoft SQL Server, SAP HANA, and SAS Analytics</p>
 <h4 id="General-purpose-SSD-gp3-and-gp2-volumes"><a href="#General-purpose-SSD-gp3-and-gp2-volumes" class="headerlink" title="General purpose SSD (gp3 and gp2) volumes"></a>General purpose SSD (<code>gp3 and gp2</code>) volumes</h4><p>General-purpose volumes are backed by solid-state drives (SSDs) and are suitable for a broad range of transactional workloads, virtual desktops, medium sized single instance databases, latency sensitive interactive applications, dev&#x2F;test environments, and boot volumes.</p>
 <h3 id="HDD-backed-volumes-MB-x2F-s-intensive"><a href="#HDD-backed-volumes-MB-x2F-s-intensive" class="headerlink" title="HDD-backed volumes (MB&#x2F;s-intensive)"></a>HDD-backed volumes (MB&#x2F;s-intensive)</h3><h3 id="Throughput-optimized-HDD-st1-volumes"><a href="#Throughput-optimized-HDD-st1-volumes" class="headerlink" title="Throughput optimized HDD (st1) volumes"></a>Throughput optimized HDD (<code>st1</code>) volumes</h3><p>ST1 is backed by hard disk drives (HDDs) and is ideal for frequently accessed, throughput intensive workloads with large datasets and large I&#x2F;O sizes, such as MapReduce, Kafka, log processing, data warehouse, and ETL workloads.</p>
 <h3 id="Cold-HDD-sc1-volumes"><a href="#Cold-HDD-sc1-volumes" class="headerlink" title="Cold HDD (sc1) volumes"></a>Cold HDD (<code>sc1</code>) volumes</h3><p>SC1 is backed by hard disk drives (HDDs) and provides the lowest cost per GB of all EBS volume types. It is ideal for less frequently accessed workloads with large, cold datasets.</p>
@@ -1857,7 +1894,7 @@ You can also simplify and speed up business workflows and big data jobs using Am
 <li><p><strong><code>Encryption</code></strong>: encrypt objects in Amazon S3 using encryption keys</p>
 </li>
 </ul>
-<h3 id="S3-Bucket-Policies-👀-OJO"><a href="#S3-Bucket-Policies-👀-OJO" class="headerlink" title="S3 Bucket Policies 👀 OJO"></a>S3 Bucket Policies 👀 OJO</h3><ul>
+<h3 id="S3-Bucket-Policies-👀-EXAM"><a href="#S3-Bucket-Policies-👀-EXAM" class="headerlink" title="S3 Bucket Policies 👀 EXAM"></a>S3 Bucket Policies 👀 EXAM</h3><ul>
 <li><p>Use S3 bucket for policy to:</p>
 <ul>
 <li>Grant public access to the bucket</li>
@@ -1876,7 +1913,7 @@ You can also simplify and speed up business workflows and big data jobs using Am
 <li><p>Examples here: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html">https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html</a></p>
 </li>
 </ul>
-<h3 id="S3-Performance-👀-OJO"><a href="#S3-Performance-👀-OJO" class="headerlink" title="S3 Performance 👀 OJO"></a>S3 Performance 👀 OJO</h3><ul>
+<h3 id="S3-Performance-👀-EXAM"><a href="#S3-Performance-👀-EXAM" class="headerlink" title="S3 Performance 👀 EXAM"></a>S3 Performance 👀 EXAM</h3><ul>
 <li><p><strong><code>Multi-Part upload</code></strong>:</p>
 <ul>
 <li>recommended for files &gt; 100MB, must use for files &gt; 5GB</li>
@@ -1892,7 +1929,7 @@ You can also simplify and speed up business workflows and big data jobs using Am
 </ul>
 <h3 id="S3-Batch-Operations"><a href="#S3-Batch-Operations" class="headerlink" title="S3 Batch Operations"></a>S3 Batch Operations</h3><p>Eg Encrypt un-encrypted objects.</p>
 <p><strong><code>You can use S3 Inventory to get object list and use S3 Select to filter your objects.</code></strong></p>
-<h3 id="S3-Inventory-👀-OJO"><a href="#S3-Inventory-👀-OJO" class="headerlink" title="S3 Inventory 👀 OJO"></a>S3 Inventory 👀 OJO</h3><ul>
+<h3 id="S3-Inventory-👀-EXAM"><a href="#S3-Inventory-👀-EXAM" class="headerlink" title="S3 Inventory 👀 EXAM"></a>S3 Inventory 👀 EXAM</h3><ul>
 <li>List objects and their corresponding metadata (alternative to S3 List API operation)</li>
 <li>Usage examples:<ul>
 <li><code>Audit and report on the replication and encryption status of your objects</code></li>
@@ -1906,7 +1943,7 @@ You can also simplify and speed up business workflows and big data jobs using Am
 <li>You can filter generated report using S3 Select</li>
 <li>Use cases: <code>Business</code>, <code>Compliance</code>, <code>Regulatory</code> needs, …</li>
 </ul>
-<h3 id="Amazon-S3-Analytics-Storage-Class-Analysis-👀-OJO"><a href="#Amazon-S3-Analytics-Storage-Class-Analysis-👀-OJO" class="headerlink" title="Amazon S3 Analytics - Storage Class Analysis 👀 OJO"></a>Amazon S3 Analytics - Storage Class Analysis 👀 OJO</h3><ul>
+<h3 id="Amazon-S3-Analytics-Storage-Class-Analysis-👀-EXAM"><a href="#Amazon-S3-Analytics-Storage-Class-Analysis-👀-EXAM" class="headerlink" title="Amazon S3 Analytics - Storage Class Analysis 👀 EXAM"></a>Amazon S3 Analytics - Storage Class Analysis 👀 EXAM</h3><ul>
 <li><p>Help you <strong><code>decide when to transition objects to the right storage class</code></strong></p>
 </li>
 <li><p>Recommendations for <code>Standard</code> and <code>Standard IA</code></p>
@@ -1920,7 +1957,7 @@ You can also simplify and speed up business workflows and big data jobs using Am
 </code></pre>
 </li>
 </ul>
-<h3 id="Amazon-S3-Glacier-Vault-Policies-amp-Vault-Lock-👀-OJO"><a href="#Amazon-S3-Glacier-Vault-Policies-amp-Vault-Lock-👀-OJO" class="headerlink" title="Amazon S3 Glacier - Vault Policies &amp; Vault Lock 👀 OJO"></a>Amazon S3 Glacier - Vault Policies &amp; Vault Lock 👀 OJO</h3><ul>
+<h3 id="Amazon-S3-Glacier-Vault-Policies-amp-Vault-Lock-👀-EXAM"><a href="#Amazon-S3-Glacier-Vault-Policies-amp-Vault-Lock-👀-EXAM" class="headerlink" title="Amazon S3 Glacier - Vault Policies &amp; Vault Lock 👀 EXAM"></a>Amazon S3 Glacier - Vault Policies &amp; Vault Lock 👀 EXAM</h3><ul>
 <li>Each Vault has:<ul>
 <li>ONE vault access policy</li>
 <li>ONE vault lock policy</li>
@@ -1963,7 +2000,8 @@ You can also simplify and speed up business workflows and big data jobs using Am
 </ol>
 <p>Amazon S3 - Force Encryption in Transit
 aws:SecureTransport</p>
-<h2 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h2><ul>
+<h2 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h2><p>Cross-origin resource sharing (CORS) defines a way for client web applications that are loaded in one domain to interact with resources in a different domain</p>
+<ul>
 <li><strong><code>Cross-Origin Resource Sharing (CORS)</code></strong></li>
 <li>Origin &#x3D; scheme (protocol) + host (domain) + port<ul>
 <li>example: <a target="_blank" rel="noopener" href="https://www.example.com/">https://www.example.com</a> (implied port is 443 for HTTPS, 80 for HTTP)</li>
@@ -1974,7 +2012,7 @@ aws:SecureTransport</p>
 <li>Different origins: <a target="_blank" rel="noopener" href="http://www.example.com/">http://www.example.com</a> &amp; <a target="_blank" rel="noopener" href="http://other.example.com/">http://other.example.com</a></li>
 <li>The requests won’t be fulfilled unless the other origin allows for the requests, using CORS Headers (example: <code>**Access-Control-Allow-Origin**</code>)</li>
 </ul>
-<h3 id="👀-OJO-Exam-question"><a href="#👀-OJO-Exam-question" class="headerlink" title="👀 OJO Exam question"></a>👀 OJO Exam question</h3><ul>
+<h3 id="👀-EXAM-question"><a href="#👀-EXAM-question" class="headerlink" title="👀 EXAM question"></a>👀 EXAM question</h3><ul>
 <li>If a client makes a cross-origin request on our S3 bucket, we need to enable the correct CORS headers.
 You can allow for a specific origin or for * (all origins)</li>
 </ul>
@@ -2073,7 +2111,7 @@ device (usually a mobile phone or hardware) before doing important operations on
 <h3 id="FSx-for-NetAppONTAP"><a href="#FSx-for-NetAppONTAP" class="headerlink" title="FSx for NetAppONTAP"></a>FSx for NetAppONTAP</h3><ul>
 <li>Managed NetApp ONTAP on AWS</li>
 <li>File System compatible with <strong><code>NFS, SMB, iSCSI protocols</code></strong></li>
-<li><strong><code>Point-in-time instantaneous cloning (helpful for testingnew workloads)</code></strong></li>
+<li><strong><code>Point-in-time instantaneous cloning (helpful for testing new workloads)</code></strong></li>
 </ul>
 <h3 id="FSx-for-OpenZFS"><a href="#FSx-for-OpenZFS" class="headerlink" title="FSx for OpenZFS"></a>FSx for OpenZFS</h3><ul>
 <li>Managed OpenZFS file system on AWS</li>
@@ -2172,7 +2210,8 @@ device (usually a mobile phone or hardware) before doing important operations on
 <li>S3 website (must first enable the bucket as a static S3 website)</li>
 <li>Any HTTP backend you want</li>
 </ul>
-<h2 id="Q-AwS-Origin-Shield"><a href="#Q-AwS-Origin-Shield" class="headerlink" title="*Q AwS Origin Shield"></a><code>*Q</code> AwS Origin Shield</h2><p>Enabling the Origin Shield <code>feature</code> in <code>CloudFront</code> helps reduce the load on the origin server by <code>adding</code> an additional <code>caching layer</code> <em>between</em> <code>CloudFront edge locations</code> and &#96;the origin. It improves cache hit ratios and reduces the number of requests hitting the origin by serving content from the Origin Shield cache.</p>
+<h2 id="AwS-Origin-Shield-👀-EXAM"><a href="#AwS-Origin-Shield-👀-EXAM" class="headerlink" title="AwS Origin Shield - 👀 EXAM"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">AwS Origin Shield</a> - 👀 EXAM</h2><p>Enabling the Origin Shield <code>feature</code> in <code>CloudFront</code> helps reduce the load on the origin server by <code>adding</code> an additional <code>caching layer</code> <em>between</em> <code>CloudFront edge locations</code> and &#96;the origin. It improves cache hit ratios and reduces the number of requests hitting the origin by serving content from the Origin Shield cache.</p>
+<p><img src="/../images/AWS-CloudFront-Origin-Shield.png" alt="CloudFront Origin Shield"></p>
 <h2 id="AWS-WAF-Web-Application-Firewall-1"><a href="#AWS-WAF-Web-Application-Firewall-1" class="headerlink" title="AWS WAF (Web Application Firewall)"></a>AWS WAF (Web Application Firewall)</h2><p>AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to an Amazon <code>CloudFront</code> distribution, an Amazon <code>API Gateway</code> REST API, an <code>Application Load Balancer</code>, or an <code>AWS AppSync GraphQL API</code>.</p>
 <h3 id="Q-Change-AWS-Firewall-Manager-administration-account"><a href="#Q-Change-AWS-Firewall-Manager-administration-account" class="headerlink" title="*Q Change AWS Firewall Manager administration account"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-change-administrator.html">Change AWS Firewall Manager administration account</a></h3><p>You can designate <code>only one account in</code> an <code>organization as a Firewall Manager administrator account</code>. To create a new Firewall Manager administrator account, you must revoke the original administrator account first.</p>
 <h3 id="CloudFront-Origin-Headers-vs-Cache-Behavior"><a href="#CloudFront-Origin-Headers-vs-Cache-Behavior" class="headerlink" title="CloudFront Origin Headers vs Cache Behavior"></a>CloudFront Origin Headers vs Cache Behavior</h3><p><code>Origin Custom Headers</code>:</p>
@@ -2271,7 +2310,9 @@ you plan for <code>scheduled activities</code>.</p>
 <li>This means that RIs and Savings Plans discounts aren’t shared between any accounts that have sharing turned off.</li>
 <li>To share an RI or Savings Plans discount with an account, <code>both accounts must have sharing turned on</code>.</li>
 </ul>
-<h3 id="AWS-Organizations-IAM-Policies"><a href="#AWS-Organizations-IAM-Policies" class="headerlink" title="AWS Organizations - IAM Policies"></a>AWS Organizations - IAM Policies</h3><p>Use <code>aws:PrincipalOrgID</code> condition key in your resource-based policies to restrict access to IAM principals from accounts in an AWS Organizat</p>
+<h3 id="AWS-Organizations-IAM-Policies"><a href="#AWS-Organizations-IAM-Policies" class="headerlink" title="AWS Organizations - IAM Policies"></a>AWS Organizations - IAM Policies</h3><p>Use <code>aws:PrincipalOrgID</code> condition key in your resource-based policies to restrict access to <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-bucket-user-policy-specifying-principal-intro.html">IAM principals</a> from accounts in an AWS Organization&#96;&#96;</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;Version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2012-10-17&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Statement&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Sid&quot;</span><span class="punctuation">:</span> <span class="string">&quot;AllowGetObject&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Effect&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Allow&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Principal&quot;</span><span class="punctuation">:</span> <span class="string">&quot;*&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// &quot;Principal&quot;:&#123;&quot;AWS&quot;:&quot;*&quot;&#125; // Equivalent to above statement</span></span><br><span class="line">    <span class="attr">&quot;Action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;s3:GetObject&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Resource&quot;</span><span class="punctuation">:</span> <span class="string">&quot;arn:aws:s3:::policy-heneral-luna/*&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Condition&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;StringEquals&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;aws: PrincipalOrgID&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;o-xxxxxxxxxxx&quot;</span><span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="AWS-Organizations-Tag-Policies"><a href="#AWS-Organizations-Tag-Policies" class="headerlink" title="AWS Organizations - Tag Policies"></a>AWS Organizations - Tag Policies</h2><ul>
 <li>Helps you standardize tags across resources in an AWS Organization</li>
 <li>Ensure consistent tags, audit tagged resources, maintain proper resources categorization, …</li>
@@ -2282,7 +2323,7 @@ you plan for <code>scheduled activities</code>.</p>
 <li>Use CloudWatch Events to monitor non-compliant tags</li>
 </ul>
 <hr>
-<h2 id="AWS-Control-Tower"><a href="#AWS-Control-Tower" class="headerlink" title="AWS Control Tower"></a>AWS Control Tower</h2><p>Offers the easiest way to <code>set up and govern a secure, multi-account AWS environment</code>. It establishes a landing zone that is <code>based on the best-practices</code> blueprints and enables governance using guardrails you can choose from a pre-packaged list. The landing zone is a well-architected, multi-account baseline that follows AWS best practices. Guardrails implement governance rules for security, compliance, and operations.</p>
+<h2 id="AWS-Control-Tower-lt-AWS-Organizations-👀-EXAM"><a href="#AWS-Control-Tower-lt-AWS-Organizations-👀-EXAM" class="headerlink" title="AWS Control Tower -  &lt;- AWS Organizations - 👀 EXAM"></a>AWS Control Tower -  &lt;- AWS Organizations - 👀 EXAM</h2><p>Offers the easiest way to <code>set up and govern a secure, multi-account AWS environment</code>. It establishes a landing zone that is <code>based on the best-practices</code> blueprints and enables <code>governance</code> using <code>guardrails</code> you can choose from a pre-packaged list. The landing zone is a well-architected, multi-account baseline that follows AWS best practices. Guardrails implement governance rules for security, compliance, and operations.</p>
 <ul>
 <li>Benefits:<ul>
 <li>Automate the set up of your environment in a few clicks</li>
@@ -2296,19 +2337,22 @@ you plan for <code>scheduled activities</code>.</p>
 </ul>
 </li>
 </ul>
+<p>AWS Control Tower provides <code>three methods for creating member accounts</code>:</p>
+<ul>
+<li>Through the <code>Account Factory console</code> that is part of <code>AWS Service Catalog</code>.</li>
+<li>Through the <code>Enroll account feature</code> within AWS <code>Control Tower</code>.</li>
+<li>From your AWS <code>Control Tower landing zone’s management account</code>, using <code>Lambda</code> code and <code>appropriate IAM roles</code>.</li>
+</ul>
 <hr>
 <h2 id="👀-AWS-Service-Catalog"><a href="#👀-AWS-Service-Catalog" class="headerlink" title="👀 AWS Service Catalog"></a>👀 AWS Service Catalog</h2><p>AWS Service Catalog allows <code>organizations to create and manage catalogs of IT services that are approved for use on AWS</code>. These IT services can include everything from virtual machine images, servers, software, and databases to complete multi-tier application architectures. AWS Service Catalog allows you to centrally manage deployed IT services and your applications, resources, and metadata. This helps you achieve <code>consistent governance</code> and <code>meet your compliance requirements</code> while enabling users to quickly deploy only the approved IT services they need.</p>
-<h4 id="Sharing-and-Importing-Portfolios"><a href="#Sharing-and-Importing-Portfolios" class="headerlink" title="Sharing and Importing Portfolios"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_sharing.html">Sharing and Importing Portfolios</a></h4><p>To make your Service Catalog products available to users who are not in your AWS accounts, such as users who belong to other organizations or to other AWS accounts in your organization, you share your portfolios with them. You can share in several ways, including <code>account-to-account</code> sharing, <code>organizational</code> sharing, and <code>deploying catalogs using stack sets</code>.</p>
+<h4 id="Sharing-and-Importing-Portfolios-👀-EXAM"><a href="#Sharing-and-Importing-Portfolios-👀-EXAM" class="headerlink" title="Sharing and Importing Portfolios - 👀 EXAM"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_sharing.html">Sharing and Importing Portfolios</a> - 👀 EXAM</h4><p>To make your <code>Service Catalog</code> products available to users who are not in your AWS accounts, such as users who belong to other organizations or to other AWS accounts in your organization, you share your portfolios with them. You can share in several ways, including <code>account-to-account</code> sharing, <code>organizational</code> sharing, and <code>deploying catalogs using stack sets</code>.</p>
 <p>Before you share your products and portfolios to other accounts, you must decide whether you want to share a reference of the catalog or to deploy a copy of the catalog into each recipient account. Note that if you deploy a copy, you must redeploy if there are updates you want to propagate to the recipient accounts.</p>
 <ul>
-<li><p>Users that are new to AWS have too many options, and may create stacks that are not compliant &#x2F; in line with the rest of the organization</p>
-</li>
-<li><p>Some users just want a quick <code>self-service portal</code> to launch a set of <code>authorized products</code> pre-defined <code>by admins</code></p>
-</li>
-<li><p>Includes: virtual machines, databases, storage options, etc…</p>
-</li>
+<li>Users that are new to AWS have too many options, and may create stacks that are not compliant &#x2F; in line with the rest of the organization</li>
+<li>Some users just want a quick <code>self-service portal</code> to launch a set of <code>authorized products</code> pre-defined <code>by admins</code></li>
+<li>Includes: virtual machines, databases, storage options, etc…</li>
 </ul>
-<h3 id="AWS-Service-Catalog-Sharing-Catalogs"><a href="#AWS-Service-Catalog-Sharing-Catalogs" class="headerlink" title="AWS Service Catalog - Sharing Catalogs"></a>AWS Service Catalog - Sharing Catalogs</h3><p>Share portfolios with individual AWS accounts or AWS Organizations.</p>
+<h3 id="AWS-Service-Catalog-Sharing-Catalogs"><a href="#AWS-Service-Catalog-Sharing-Catalogs" class="headerlink" title="AWS Service Catalog - Sharing Catalogs"></a>AWS Service Catalog - Sharing Catalogs</h3><p><code>Share portfolios</code> with <code>individual AWS accounts or AWS Organizations</code>.</p>
 <h3 id="AWS-Service-Catalog-TagOptions-Library"><a href="#AWS-Service-Catalog-TagOptions-Library" class="headerlink" title="AWS Service Catalog - TagOptions Library"></a>AWS Service Catalog - TagOptions Library</h3><ul>
 <li>Easily manage tags on provisioned products</li>
 <li><code>TagOption</code>:<ul>
@@ -2319,10 +2363,10 @@ you plan for <code>scheduled activities</code>.</p>
 <li>Can be associated with Portfolios and Products.</li>
 <li>Use cases: <code>proper resources tagging</code>, <code>defined allowed</code> tags, …</li>
 <li>Can be shared with other AWS accounts and AWS Organizations.</li>
-<li>A consistent <code>taxonomy</code></li>
+<li>A consistent <code>taxonomy</code> - 👀 EXAM</li>
 </ul>
 <hr>
-<h2 id="Cost-Explorer"><a href="#Cost-Explorer" class="headerlink" title="Cost Explorer"></a>Cost Explorer</h2><ul>
+<h2 id="Cost-Explorer-👀-EXAM-OJO"><a href="#Cost-Explorer-👀-EXAM-OJO" class="headerlink" title="Cost Explorer - 👀 EXAM - OJO"></a>Cost Explorer - 👀 EXAM - OJO</h2><ul>
 <li>Visualize, understand, and manage your AWS costs and usage over time</li>
 <li>Create custom reports that analyze cost and usage data.</li>
 <li>Analyze your data at a high level: total costs and usage across all accounts</li>
@@ -2330,7 +2374,7 @@ you plan for <code>scheduled activities</code>.</p>
 <li>Choose an optimal <code>Savings Plan</code> (to lower prices on your bill)</li>
 <li><code>Forecast usage up to 12 months based on previous usage</code></li>
 </ul>
-<h2 id="👀-Q-Collect-information-about-the-service-costs-of-each-developer"><a href="#👀-Q-Collect-information-about-the-service-costs-of-each-developer" class="headerlink" title="👀 *Q Collect information about the service costs of each developer"></a><code>👀</code> <code>*Q</code> Collect information about the service costs of each developer</h2><ul>
+<h2 id="👀-Collect-information-about-the-service-costs-of-each-developer"><a href="#👀-Collect-information-about-the-service-costs-of-each-developer" class="headerlink" title="👀 Collect information about the service costs of each developer"></a><code>👀</code> Collect information about the service costs of each developer</h2><ul>
 <li><p>The AWS-generated <em>tag</em> <code>createdBy</code> defines and applies to supported AWS resources for cost allocation purposes. To use the AWS-generated tags, a management account owner must activate it in the Billing and Cost Management console. When a management account owner activates the tag, it is also activated for all member accounts.</p>
 </li>
 <li><p><code>Cost Explorer</code> is a tool that enables you to view and <code>analyze your costs and usage</code>. You can explore your usage and costs using the main graph, the Cost Explorer cost and usage reports, or the Cost Explorer RI reports.</p>
@@ -2345,7 +2389,10 @@ you plan for <code>scheduled activities</code>.</p>
 <hr>
 <h2 id="AWS-Budgets"><a href="#AWS-Budgets" class="headerlink" title="AWS Budgets"></a>AWS Budgets</h2><ul>
 <li><code>Create budget and send alarms when costs exceeds the budget</code>.</li>
-<li>4 types of budgets: <code>Usage, Cost, Reservation, Savings Plans</code>.</li>
+<li>4 types of budgets: <code>Usage, Cost, Reservation, Savings Plans</code>.<ul>
+<li>Usage e.g. to create a cost budget exclusively for <code>data transfer expenses</code></li>
+</ul>
+</li>
 <li>For Reserved Instances (RI)<ul>
 <li>Track utilization</li>
 <li>Supports <code>EC2, ElastiCache, RDS, Redshift</code></li>
@@ -2382,15 +2429,15 @@ you plan for <code>scheduled activities</code>.</p>
 <li>Can be configured for daily exports to S3</li>
 <li>Can be integrated with Athena, Redshift or QuickSight</li>
 </ul>
-<h3 id="AWS-Compute-Optimizer"><a href="#AWS-Compute-Optimizer" class="headerlink" title="AWS Compute Optimizer"></a>AWS Compute Optimizer</h3><ul>
+<h3 id="AWS-Compute-Optimizer-👀-EXAM-OJO-👀"><a href="#AWS-Compute-Optimizer-👀-EXAM-OJO-👀" class="headerlink" title="AWS Compute Optimizer - 👀 EXAM OJO - 👀"></a>AWS Compute Optimizer - 👀 EXAM OJO - 👀</h3><ul>
 <li><code>Reduce costs and improve performance by</code> recommending optimal AWS resources for your workloads</li>
-<li>Helps you choose optimal configurations and right-size your workloads (over&#x2F;under provisioned)</li>
+<li><code>Helps you choose optimal configurations and right-size your workloads (over/under provisioned)</code> - 👀 EXAM</li>
 <li>Uses Machine Learning to analyze your <code>resources configurations and their utilization CloudWatch metrics</code></li>
 <li>Supported resources<ul>
-<li>EC2 instances</li>
-<li>EC2 Auto Scaling Groups</li>
-<li>EBS volumes</li>
-<li>Lambda functions</li>
+<li><code>EC2 instances</code></li>
+<li>EC2 <code>Auto Scaling Groups</code></li>
+<li><code>EBS</code> volumes</li>
+<li><code>Lambda</code> functions</li>
 </ul>
 </li>
 <li>Lower your costs by up to 25%</li>
@@ -2412,9 +2459,9 @@ you plan for <code>scheduled activities</code>.</p>
 </ul>
 </li>
 </ul>
-<h3 id="IAM-Access-Analyzer"><a href="#IAM-Access-Analyzer" class="headerlink" title="IAM Access Analyzer"></a>IAM Access Analyzer</h3><p>helps you <code>identify the resources in your organization and accounts</code>, such as <code>Amazon S3 buckets</code> or <code>IAM roles</code>, <code>shared with an external entity</code>. This lets you identify unintended access to your resources and data, which is a security risk. Access Analyzer identifies resources shared with external principals by using logic-based reasoning to analyze the resource-based policies in your AWS environment. For each instance of a resource shared outside of your account, Access Analyzer generates a finding.</p>
+<h3 id="IAM-Access-Analyzer-👀-EXAM"><a href="#IAM-Access-Analyzer-👀-EXAM" class="headerlink" title="IAM Access Analyzer - 👀 EXAM"></a>IAM Access Analyzer - 👀 EXAM</h3><p>helps you <code>identify the resources in your organization and accounts</code>, such as <code>Amazon S3 buckets</code> or <code>IAM roles</code>, <code>shared with an external entity</code>. This lets you identify unintended access to your resources and data, which is a security risk. Access Analyzer identifies resources shared with external principals by using logic-based reasoning to analyze the resource-based policies in your AWS environment. For each instance of a resource shared outside of your account, Access Analyzer generates a finding.</p>
 <ul>
-<li><code>Find out which resources are shared externally</code> - OJO<ul>
+<li><code>Find out which resources are shared externally</code> - 👀 EXAM<ul>
 <li>S3 Buckets</li>
 <li>IAM Roles</li>
 <li>KMS Keys</li>
@@ -2432,6 +2479,7 @@ you plan for <code>scheduled activities</code>.</p>
 <li><code>Resource-based</code> policies are attached to a resource. For example, you can attach resource-based policies to Amazon S3 buckets, Amazon SQS queues, and AWS Key Management Service encryption keys.</li>
 <li><code>Identity-based</code> policies and <code>resource-based</code> policies are both permissions policies and are evaluated together. For a request to which only permissions policies apply, AWS first checks all policies for a Deny. If one exists, then the request is denied. Then AWS checks for each Allow. If at least one policy statement allows the action in the request, the request is allowed. It doesn’t matter whether the Allow is in the identity-based policy or the resource-based policy.</li>
 </ul>
+<p>References: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies</a> - 👀 EXAM</p>
 <h4 id="Trust-policy"><a href="#Trust-policy" class="headerlink" title="Trust policy"></a>Trust policy</h4><p>Defines which principal entities (accounts, users, roles, and federated users) can assume the role. An IAM role is both an identity and a resource that supports resource-based policies. For this reason, you <code>must attach both a trust policy and an identity-based policy to an IAM role</code>. The <code>IAM service</code> <code>supports only one</code> type of <code>resource-based</code> policy called a <code>role trust policy</code>, which is attached to an IAM role.</p>
 <p>References: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies</a></p>
 <hr>
@@ -2440,10 +2488,11 @@ you plan for <code>scheduled activities</code>.</p>
 <li>These users assume identity provided access role.</li>
 <li><code>Federation assumes a form of 3rd party authentication</code><ul>
 <li>LDAP</li>
-<li>Microsoft Active Directory (~&#x3D; SAML) - EXAM</li>
-<li>Single Sign On - EXAM</li>
+<li>Microsoft Active Directory (~&#x3D; SAML) - 👀 EXAM
+<br><img src="/../images/Microsoft-Active-Directory.png" alt="Microsoft Active Directory"></li>
+<li>Single Sign On - 👀 EXAM</li>
 <li>Open ID</li>
-<li>Cognito - EXAM</li>
+<li>Cognito - 👀 EXAM</li>
 </ul>
 </li>
 <li><code>Using federation, you don’t need to create IAM users (user management is outside of AWS)</code>.</li>
@@ -2611,7 +2660,7 @@ you plan for <code>scheduled activities</code>.</p>
 <li>Alias Record is always of type A&#x2F;AAAA for AWS resources (IPv4 &#x2F; IPv6)</li>
 <li><code>You can’t set the TTL</code></li>
 </ul>
-<h2 id="Route-53-Alias-Records-Targets"><a href="#Route-53-Alias-Records-Targets" class="headerlink" title="Route 53 - Alias Records Targets"></a>Route 53 - Alias Records Targets</h2><p><strong>You cannot set an ALIAS record for an EC2 DNS name</strong> - EXAM</p>
+<h2 id="Route-53-Alias-Records-Targets"><a href="#Route-53-Alias-Records-Targets" class="headerlink" title="Route 53 - Alias Records Targets"></a>Route 53 - Alias Records Targets</h2><p><strong>You cannot set an ALIAS record for an EC2 DNS name</strong> - 👀 EXAM</p>
 <h2 id="Route-53-Routing-Policies"><a href="#Route-53-Routing-Policies" class="headerlink" title="Route 53 - Routing Policies"></a>Route 53 - Routing Policies</h2><ul>
 <li>Define how Route 53 responds to DNS queries</li>
 <li>Don’t get confused by the word “Routing”<ul>
@@ -2630,12 +2679,12 @@ you plan for <code>scheduled activities</code>.</p>
 </ul>
 </li>
 </ul>
-<h3 id="Types-of-health-checks-OJO"><a href="#Types-of-health-checks-OJO" class="headerlink" title="Types of health checks - OJO"></a>Types of health checks - OJO</h3><ol>
+<h3 id="Types-of-health-checks-👀-EXAM"><a href="#Types-of-health-checks-👀-EXAM" class="headerlink" title="Types of health checks - 👀 EXAM"></a>Types of health checks - 👀 EXAM</h3><ol>
 <li><code>Health checks that monitor an endpoint</code> - You can configure a health check that monitors an endpoint that you specify either by IP address or by domain name. At regular intervals that you specify, Route 53 submits automated requests over the internet to your application, server, or other resources to verify that it’s reachable, available, and functional. Optionally, you can configure the health check to make requests similar to those that your users make, such as requesting a web page from a specific URL.</li>
 <li><code>Health checks that monitor other health checks</code> (calculated health checks) - You can create a health check that monitors whether Route 53 considers other health checks healthy or unhealthy. One situation where this might be useful is when you have multiple resources that perform the same function, such as multiple web servers, and your chief concern is whether some minimum number of your resources are healthy. You can create a  health check for each resource without configuring notifications for those health checks. Then you can create a health check that monitors the status of the other health checks, and that notifies you only when the number of available web resources drops below a specified threshold.</li>
 <li><code>Health checks that monitor CloudWatch alarms</code> - You can create CloudWatch alarms that monitor the status of CloudWatch metrics, such as the number of throttled read events for an Amazon DynamoDB database or the number of Elastic Load Balancing hosts that are considered healthy. After you create an alarm, you can create a health check that monitors the same data stream that CloudWatch monitors for the alarm.</li>
 </ol>
-<h3 id="“Evaluate-Target-Health”-OJO"><a href="#“Evaluate-Target-Health”-OJO" class="headerlink" title="“Evaluate Target Health” - OJO"></a>“Evaluate Target Health” - OJO</h3><p>You need to set the <code>Evaluate Target Health</code> flag to <code>true</code> on Route 53. This way, Route 53 will check both ALB entry to ensure that your ALBs are responding.</p>
+<h3 id="“Evaluate-Target-Health”-👀-EXAM"><a href="#“Evaluate-Target-Health”-👀-EXAM" class="headerlink" title="“Evaluate Target Health” - 👀 EXAM"></a>“Evaluate Target Health” - 👀 EXAM</h3><p>You need to set the <code>Evaluate Target Health</code> flag to <code>true</code> on Route 53. This way, Route 53 will check both ALB entry to ensure that your ALBs are responding.</p>
 <h3 id="Routing-Policies-Weighted"><a href="#Routing-Policies-Weighted" class="headerlink" title="Routing Policies - Weighted"></a>Routing Policies - Weighted</h3><ul>
 <li>Control the % of the requests that go to each specific resource</li>
 <li>Assign each record a relative weight:<ul>
@@ -2712,7 +2761,7 @@ you plan for <code>scheduled activities</code>.</p>
 </ul>
 </li>
 </ul>
-<h3 id="Route-53-Hybrid-DNS-OJO"><a href="#Route-53-Hybrid-DNS-OJO" class="headerlink" title="Route 53 - Hybrid DNS - OJO"></a>Route 53 - Hybrid DNS - OJO</h3><ul>
+<h3 id="Route-53-Hybrid-DNS-👀-EXAM"><a href="#Route-53-Hybrid-DNS-👀-EXAM" class="headerlink" title="Route 53 - Hybrid DNS - 👀 EXAM"></a>Route 53 - Hybrid DNS - 👀 EXAM</h3><ul>
 <li>By default, Route 53 Resolver automatically answers DNS queries for:<ul>
 <li>Local domain names for EC2 instances</li>
 <li>Records in Private Hosted Zones</li>
@@ -2800,17 +2849,25 @@ you plan for <code>scheduled activities</code>.</p>
 <li><code>Terminate</code> the Spot Instance</li>
 </ol>
 <p>The default is to <code>terminate</code> Spot Instances when they are interrupted.</p>
-<h3 id="Q-Spot-Fleet-Config-Cost-Optimization"><a href="#Q-Spot-Fleet-Config-Cost-Optimization" class="headerlink" title="*Q Spot Fleet Config Cost Optimization"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-spot-fleet-works.html">Spot Fleet Config Cost Optimization</a></h3><p>Using <code>lowestPrice</code> allocation <code>strategy</code> a Spot Fleet automatically deploys the lowest price combination of instance types and Availability Zones based on the current Spot price across the number of Spot pools specified. You can use this combination to avoid the most expensive Spot Instances.</p>
+<h3 id="EXAM-Spot-Fleet-Config-Cost-Optimization"><a href="#EXAM-Spot-Fleet-Config-Cost-Optimization" class="headerlink" title="EXAM Spot Fleet Config Cost Optimization"></a><code>EXAM</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-spot-fleet-works.html">Spot Fleet Config Cost Optimization</a></h3><p>Using <code>lowestPrice</code> allocation <code>strategy</code> a Spot Fleet automatically deploys the lowest price combination of instance types and Availability Zones based on the current Spot price across the number of Spot pools specified. You can use this combination to avoid the most expensive Spot Instances.</p>
 <p><u>Spot Fleets allow us to automatically request Spot Instances with the lowest price</u></p>
+<p>You can specify one of the following allocation strategies:</p>
+<ul>
+<li>priceCapacityOptimized</li>
+<li>capacityOptimized</li>
+<li>diversified</li>
+<li><code>lowestPrice</code></li>
+<li><code>InstancePoolsToUseCount</code></li>
+</ul>
 <h3 id="Q-Get-public-IP-address"><a href="#Q-Get-public-IP-address" class="headerlink" title="*Q Get public IP address"></a><code>*Q</code> Get public IP address</h3><p>EC2 instances in AWS have <code>metadata</code> associated with them that can be accessed from within the instance. This metadata includes information about the instance, such as its IP address, instance type, security groups, and more.</p>
 <p>Can make an HTTP GET request to a specific URL provided by the instance metadata service. The URL is <a target="_blank" rel="noopener" href="http://169.254.169.254/latest/meta-data/public-ipv4">http://169.254.169.254/latest/meta-data/public-ipv4</a>.</p>
 <h3 id="👀-EC2-Detailed-monitoring-👀"><a href="#👀-EC2-Detailed-monitoring-👀" class="headerlink" title="👀 EC2 Detailed monitoring 👀"></a>👀 EC2 Detailed monitoring 👀</h3><p><code>Metrics are the fundamental concept in CloudWatch</code>. A metric represents a time-ordered set of data points that are published to CloudWatch. Think of a metric as a variable to monitor, and the data points as representing the values of that variable over time.</p>
 <p><code>By default, your instance is enabled for basic monitoring</code>. You can optionally enable detailed monitoring. After you enable <code>detailed monitoring</code>, the Amazon EC2 console displays monitoring graphs with a <code>1-minute period</code> for the instance. .In <code>Basic monitoring</code>, data is available automatically in <code>5-minute periods</code> at no charge</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch-new.html">Enable or turn off detailed monitoring for your instances</a></p>
-<h3 id="👀-EC2-Launch-Troubleshooting-👀"><a href="#👀-EC2-Launch-Troubleshooting-👀" class="headerlink" title="👀 EC2 Launch Troubleshooting 👀"></a>👀 EC2 Launch Troubleshooting 👀</h3><p><code>InstanceLimitExceeded</code>: if you get this error, it means that you have reached your limit of <code>max number of vCPUs</code> per <code>region</code>.</p>
-<p><code>InsufficientInstanceCapacity</code> : if you get this error, it means &#96;AWS does not have that enough On-Demand capacity&#96;&#96; in the particular AZ where
+<h3 id="👀-EC2-Launch-Troubleshooting-👀-EXAM"><a href="#👀-EC2-Launch-Troubleshooting-👀-EXAM" class="headerlink" title="👀 EC2 Launch Troubleshooting - 👀 EXAM"></a>👀 EC2 Launch Troubleshooting - 👀 EXAM</h3><p><code>InstanceLimitExceeded</code>: if you get this error, it means that you have reached your limit of <code>max number of vCPUs</code> per <code>region</code>.
+&#96;&#96;InsufficientInstanceCapacity<code>: if you get this error, it means</code>AWS does not have that enough On-Demand capacity&#96; in the particular AZ where
 the instance is launched.</p>
-<p><code>Instance Terminates Immediately</code> <strong>(goes from pending to terminated)</strong></p>
+<p><code>Instance Terminates Immediately</code> <strong>(goes from pending to terminated)</strong> - 👀 EXAM</p>
 <ol>
 <li>You’ve reached your EBS volume limit.</li>
 <li>An EBS snapshot is corrupt.</li>
@@ -2888,7 +2945,6 @@ With this method, a script is used to run the opsworks-cm API associate-node com
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html">Deploying applications to Elastic Beanstalk environments</a></p>
 <h2 id="Dedicated-Hosts-and-Dedicated-Instances"><a href="#Dedicated-Hosts-and-Dedicated-Instances" class="headerlink" title="Dedicated Hosts and Dedicated Instances"></a>Dedicated Hosts and Dedicated Instances</h2><h2 id="Dedicated-Instances"><a href="#Dedicated-Instances" class="headerlink" title="Dedicated Instances"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a></h2><p>Are Amazon EC2 instances that run in a virtual private cloud (VPC) on <code>hardware</code> that’s <code>dedicated</code> to a <code>single customer</code>. Dedicated Instances that belong to different AWS accounts are physically isolated at a hardware level, even if those accounts are linked to a single-payer account. <code>Note</code> that Dedicated Instances may share hardware with other instances from the same AWS account that are not Dedicated Instances.</p>
 <h2 id="Dedicated-Host"><a href="#Dedicated-Host" class="headerlink" title="Dedicated Host"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a></h2><p>Is a <code>physical server</code> with EC2 instance capacity fully dedicated to your use.</p>
-<p>Dedicated Hosts allow you to <code>use your existing per-socket, per-core, or per-VM software licenses, including Windows Server, Microsoft SQL Server, SUSE, and Linux Enterprise Server</code>.</p>
 <ul>
 <li>Dedicated Hosts <code>allow</code> you to <code>use</code> your <code>existing software licenses</code> on EC2 instances. With a Dedicated Host, you have <code>visibility and control</code> over how <code>instances</code> are placed on the server.</li>
 <li>Dedicated Hosts allow you to use your existing <code>per-socket</code>, <code>per-core</code>, or <code>per-VM software licenses</code>, including <code>Windows Server</code>, <code>Microsoft SQL Server</code>, <code>SUSE</code>, and <code>Linux Enterprise Server</code>.</li>
@@ -2913,6 +2969,11 @@ With this method, a script is used to run the opsworks-cm API associate-node com
 <li><p>File system scales automatically, pay-per-use, no capacity planning!</p>
 </li>
 </ul>
+<h3 id="Creating-security-groups"><a href="#Creating-security-groups" class="headerlink" title="Creating security groups"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/efs/latest/ug/accessing-fs-create-security-groups.html">Creating security groups</a></h3><p>Regardless, to enable traffic between an EC2 instance and a mount target (and thus the file system), you must configure the following rules in these security groups:</p>
+<ul>
+<li>The <code>security groups</code> that you associate with a <code>mount target must allow inbound access</code> for the TCP protocol <code>on the NFS port from all EC2</code> instances on which you want to mount the file system.</li>
+<li>Each EC2 instance that <code>mounts the file system must have a security group that allows outbound</code> access to the mount target <code>on the NFS port</code>.</li>
+</ul>
 <h3 id="EFS-vs-EBS"><a href="#EFS-vs-EBS" class="headerlink" title="EFS vs EBS"></a>EFS vs EBS</h3><h3 id="EFS-Access-Points"><a href="#EFS-Access-Points" class="headerlink" title="EFS - Access Points"></a>EFS - Access Points</h3><ul>
 <li>Easily manage applications access to NFS environments</li>
 <li>Enforce a POSIX user and group to use when accessing the file system</li>
@@ -2932,7 +2993,7 @@ With this method, a script is used to run the opsworks-cm API associate-node com
 </ul>
 </li>
 </ul>
-<h3 id="Amazon-Data-Lifecycle-Manager-OJO"><a href="#Amazon-Data-Lifecycle-Manager-OJO" class="headerlink" title="Amazon Data Lifecycle Manager - OJO"></a>Amazon Data Lifecycle Manager - OJO</h3><ul>
+<h3 id="Amazon-Data-Lifecycle-Manager-👀-EXAM"><a href="#Amazon-Data-Lifecycle-Manager-👀-EXAM" class="headerlink" title="Amazon Data Lifecycle Manager - 👀 EXAM"></a>Amazon Data Lifecycle Manager - <code>👀 EXAM</code></h3><ul>
 <li>Automate the creation, retention, and deletion of EBS snapshots and EBS-backed AMIs.</li>
 <li>Schedule backups, cross-account snapshot copies, delete outdated backups, …</li>
 <li>Uses resource tags to identify the resources (EC2 instances, EBS volumes).</li>
@@ -2956,7 +3017,7 @@ With this method, a script is used to run the opsworks-cm API associate-node com
 <h3 id="EFS-CloudWatch-Metrics"><a href="#EFS-CloudWatch-Metrics" class="headerlink" title="EFS - CloudWatch Metrics"></a>EFS - CloudWatch Metrics</h3><p><strong><code>PercentIOLimit</code></strong></p>
 <ul>
 <li>How close the file system reaching the I&#x2F;O limit (General Purpose)</li>
-<li>If at 100%, move to Max I&#x2F;O (migration)</li>
+<li>If at 100%, move to Max I&#x2F;O (migration) - <code>👀 EXAM</code></li>
 </ul>
 <p><strong><code>BurstCreditBalance</code></strong></p>
 <ul>
@@ -2988,7 +3049,7 @@ To connect your Amazon EFS file system to your Amazon EC2 instance, you <code>mu
 <li>Mounting a file system when creating a new EC2 instance.</li>
 </ul>
 <hr>
-<h2 id="AWS-Control-Tower-1"><a href="#AWS-Control-Tower-1" class="headerlink" title="AWS Control Tower"></a>AWS Control Tower</h2><p>Offers the easiest way to <code>set up</code> and <code>govern</code> a <code>secure, multi-account AWS environment</code>. It establishes a landing zone that is based on the best-practices blueprints and enables governance using guardrails you can choose from a pre-packaged list. The landing zone is a well-architected, multi-account baseline that follows AWS best practices. Guardrails implement governance rules for security, compliance, and operations.</p>
+<h2 id="AWS-Control-Tower"><a href="#AWS-Control-Tower" class="headerlink" title="AWS Control Tower"></a>AWS Control Tower</h2><p>Offers the easiest way to <code>set up</code> and <code>govern</code> a <code>secure, multi-account AWS environment</code>. It establishes a landing zone that is based on the best-practices blueprints and enables governance using guardrails you can choose from a pre-packaged list. The landing zone is a well-architected, multi-account baseline that follows AWS best practices. Guardrails implement governance rules for security, compliance, and operations.</p>
 <hr>
 <h2 id="AWS-X-Ray"><a href="#AWS-X-Ray" class="headerlink" title="AWS X-Ray"></a>AWS X-Ray</h2><ul>
 <li>Debugging in Production, the good old way:<ul>
@@ -3033,13 +3094,15 @@ To connect your Amazon EFS file system to your Amazon EC2 instance, you <code>mu
 <h2 id="👀-AWS-Cost"><a href="#👀-AWS-Cost" class="headerlink" title="👀 AWS Cost"></a>👀 AWS Cost</h2><p>In <code>AWS Cost</code> and <code>Usage Reports</code>, you can choose to have AWS <code>publish billing reports</code> to an <code>Amazon Simple Storage</code> Service (Amazon S3) bucket that you own. You can receive reports that break down your costs by the hour or month, by product or product resource, or by tags that you define yourself. AWS updates the report in your bucket once a day in a comma-separated value (CSV) format. You can view the reports using spreadsheet software such as Microsoft Excel or Apache OpenOffice Calc or access them from an application using the Amazon S3 API.</p>
 <h2 id="AWS-Database-Migration-Service-DMS"><a href="#AWS-Database-Migration-Service-DMS" class="headerlink" title="AWS Database Migration Service (DMS)"></a>AWS Database Migration Service (DMS)</h2><h2 id="Amazon-Macie"><a href="#Amazon-Macie" class="headerlink" title="Amazon Macie"></a>Amazon Macie</h2><p>is a fully managed data security and data privacy service that uses <code>machine learning</code> and pattern matching to help you discover, monitor, and protect sensitive data in your AWS environment. Macie automates the discovery of sensitive data, such as <code>personally identifiable information (PII)</code> and financial data, to provide you with a better understanding of the data that your organization stores in Amazon S3.
 Amazon Macie <code>only supports S3 as a data source</code>.</p>
-<h2 id="👀-Run-Command"><a href="#👀-Run-Command" class="headerlink" title="👀 Run Command"></a>👀 Run Command</h2><h2 id="👀EC2Rescue"><a href="#👀EC2Rescue" class="headerlink" title="👀EC2Rescue"></a><code>👀</code><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-ec2rescue.html">EC2Rescue</a></h2><p>EC2Rescue can help you diagnose and troubleshoot problems on Amazon EC2 Linux and Windows Server instances. You can run the tool manually, as described in Using EC2Rescue for Linux Server and Using EC2Rescue for Windows Server. Or, you can run the tool automatically by using Systems Manager Automation and the AWSSupport-ExecuteEC2Rescue document. The AWSSupport-ExecuteEC2Rescue document is designed to perform a combination of Systems Manager actions, AWS CloudFormation actions, and Lambda functions that automate the steps normally required to use EC2Rescue.</p>
-<p>EC2Rescue for EC2 Windows is a convenient, straightforward, GUI-based troubleshooting tool that can be run on your Amazon EC2 Windows Server instances to troubleshoot operating system-level issues and collect advanced logs and configuration files for further analysis. EC2Rescue simplifies and expedites the troubleshooting of EC2 Windows instances.</p>
+<h2 id="👀-Run-Command"><a href="#👀-Run-Command" class="headerlink" title="👀 Run Command"></a>👀 Run Command</h2><h2 id="👀-EC2Rescue"><a href="#👀-EC2Rescue" class="headerlink" title="👀 EC2Rescue"></a><code>👀</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-ec2rescue.html">EC2Rescue</a></h2><p><code>EC2Rescue can help you diagnose and troubleshoot problems on Amazon EC2 Linux and Windows Server instances</code>.</p>
+<p>You can <code>run</code> the tool manually, as described in Using EC2Rescue for Linux Server and Using EC2Rescue for Windows Server. Or, you can run the tool automatically by using <code>Systems Manager Automation</code> and the <code>AWSSupport-ExecuteEC2Rescue</code> document. The AWSSupport-ExecuteEC2Rescue document is designed to perform a combination of Systems Manager actions, AWS CloudFormation actions, and Lambda functions that automate the steps normally required to use EC2Rescue.</p>
+<p>EC2Rescue for EC2 Windows is a convenient, straightforward, GUI-based troubleshooting tool that can be run on your Amazon EC2 Windows Server instances to <code>troubleshoot operating system-level issues and collect advanced logs</code> and configuration files for further analysis. EC2Rescue simplifies and expedites the troubleshooting of EC2 Windows instances.</p>
 <h2 id="Service-Control-Policies"><a href="#Service-Control-Policies" class="headerlink" title="Service Control Policies"></a>Service Control Policies</h2><h3 id="Groups"><a href="#Groups" class="headerlink" title="Groups"></a>Groups</h3><p>Can be granted permissions using access control policies - Groups can be granted permissions using access control policies. This makes it easier to manage permissions for a collection of users, rather than having to manage permissions for each user.<a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html">https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html</a></p>
 <hr>
-<p>Activate a <code>cost allocation</code> tag that is named Department in the <code>AWS Billing</code> and <code>Cost Management console in the Organizations management account</code>. Use a tag policy to mandate a Department tag on new resources.</p>
+<h2 id="Billing-Stuff"><a href="#Billing-Stuff" class="headerlink" title="Billing Stuff"></a>Billing Stuff</h2><p>Activate a <code>cost allocation</code> tag that is named Department in the <code>AWS Billing</code> and <code>Cost Management console in the Organizations management account</code>. Use a tag policy to mandate a Department tag on new resources.</p>
 <p>Correct. You must activate a tag in the Billing and Cost Management console before viewing the expense by cost allocation tag. You should mandate the use of tags to ensure that the resources are tagged correctly.</p>
 <p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html</a></p>
+<h3 id="👀-Generate-Billing-Alerts"><a href="#👀-Generate-Billing-Alerts" class="headerlink" title="👀 Generate Billing Alerts"></a>👀 Generate Billing Alerts</h3><p><code>Before</code> you can <code>create an alarm for your estimated charges</code>, you <code>must enable billing alerts on your Accounts Preferences page first</code>, so that you can monitor your estimated AWS charges and create an alarm using billing metric data. After you enable billing alerts, you cannot disable data collection, but you can delete any billing alarms that you created.</p>
 <hr>
 <p>Use the <code>AWS Resource Groups</code> Tag Editor to identify resources that are not tagged in each account. Apply a tag that is named Department to any untagged resources.</p>
 <p>With Resource Groups, you can create, maintain, and view a collection of resources that share common tags. Tag Editor manages tags across services and AWS Regions. Tag Editor can perform a global search and can edit a large number of tags at one time.</p>
@@ -3083,22 +3146,7 @@ Amazon Macie <code>only supports S3 as a data source</code>.</p>
 </ul>
 </li>
 </ul>
-<h2 id="👀-Network-Firewall"><a href="#👀-Network-Firewall" class="headerlink" title="👀 Network Firewall"></a>👀 Network Firewall</h2><p>You can use Network Firewall to monitor and protect your Amazon VPC traffic in a number of ways, including the following:</p>
-<ul>
-<li>Pass traffic through only from known AWS service domains or IP address endpoints, such as Amazon S3.</li>
-<li>Use custom <code>lists of known bad domains to limit the types of domain names that your applications can access</code>.</li>
-<li>Perform <code>deep packet inspection</code> DPI on traffic entering or leaving your VPC.</li>
-<li>Use stateful protocol detection to filter protocols like HTTPS, independent of the port used.</li>
-</ul>
 <h2 id="👀-Access-Analyzer"><a href="#👀-Access-Analyzer" class="headerlink" title="👀 Access Analyzer"></a>👀 Access Analyzer</h2><p>helps you identify the resources in your organization and accounts, such as Amazon S3 buckets or IAM roles, <code>shared with an external entity</code>. This lets you identify unintended access to your resources and data, which is a security risk. Access Analyzer <code>identifies resources shared</code> with <code>external principals</code> by using logic-based reasoning to analyze the resource-based policies in your AWS environment. For each instance of a resource shared outside of your account, Access Analyzer generates a finding.</p>
-<h2 id="👀-Tags-with-AWS-Organizations"><a href="#👀-Tags-with-AWS-Organizations" class="headerlink" title="👀 Tags with AWS Organizations"></a>👀 Tags with AWS Organizations</h2><ul>
-<li><p>Use <code>AWS Service Catalog</code> to tag the provisioned resources with corresponding unique identifiers for portfolio, product, and users:
-AWS <code>Service Catalog</code> allows you to create and manage catalogs of IT services that are approved for use within your <code>organization</code>. When provisioning resources through AWS Service Catalog, you can define <code>tags</code> that are automatically applied to the provisioned resources. By leveraging this feature, you can ensure consistent tagging across different accounts and resources.</p>
-</li>
-<li><p>Use <code>AWS Systems Manager</code> <strong><code>Automation</code></strong> to automatically add <code>tags</code> to your <code>provisioned</code> resources:
-AWS &#96;&#96;Systems Manager Automation provides a way to automate common operational tasks across AWS resources. You can create automation workflows that include tagging resources with the desired set of tags. By utilizing Systems Manager Automation, you can enforce consistent tagging practices during resource creation.</p>
-</li>
-</ul>
 <h2 id="AWS-System-Manager"><a href="#AWS-System-Manager" class="headerlink" title="AWS System Manager"></a>AWS System Manager</h2><p>👀 AWS Systems Manager provides a unified, centralized way to manage both your Amazon EC2 instances and on-premises servers (including <code>Raspbian</code> systems, devices such as <code>Raspberry Pi</code> through a single interface). It offers a wide range of capabilities, including <code>inventory management</code>, <code>patch management</code>, <code>automation</code>, and <code>configuration management</code>, allowing you to efficiently manage your hybrid infrastructure from a single console. With Systems Manager, you can maintain consistent configurations, apply patches, and automate administrative tasks for your on-premises servers, just like you would for your EC2 instances.</p>
 <ul>
 <li>Helps you manage your <strong>EC2</strong> and <strong>On-Premises</strong> systems at scale.</li>
@@ -3110,7 +3158,7 @@ AWS &#96;&#96;Systems Manager Automation provides a way to automate common opera
 <li><code>Integrated with AWS Config</code>.</li>
 <li>Free service.</li>
 </ul>
-<h3 id="Main-Features-for-the-Examen"><a href="#Main-Features-for-the-Examen" class="headerlink" title="Main Features for the Examen"></a>Main Features for the Examen</h3><ul>
+<h3 id="Main-Features-for-the-EXAM"><a href="#Main-Features-for-the-EXAM" class="headerlink" title="Main Features for the EXAM"></a>Main Features for the EXAM</h3><ul>
 <li>Resource Groups</li>
 <li>Shared Resources
 Documents</li>
@@ -3131,6 +3179,9 @@ Documents</li>
 <li>Patch Manager</li>
 </ul>
 </li>
+<li><code>Create</code> custom <code>runbooks or use pre-defined runbooks maintained</code> by AWS.</li>
+<li><code>Receive notifications</code> about Automation tasks and runbooks <code>by using Amazon EventBridge</code>.</li>
+<li><code>Monitor Automation progress and details</code> by using the AWS <code>Systems Manager console</code>.</li>
 </ul>
 <h3 id="👀-Fleet-Manager"><a href="#👀-Fleet-Manager" class="headerlink" title="👀 Fleet Manager"></a>👀 <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet.html">Fleet Manager</a></h3><p>Helps you remotely <code>manage</code> your <code>server fleet</code> that runs on <code>AWS</code> or on <code>premises</code>. With Fleet Manager, you can gather data from individual instances to perform common troubleshooting and management tasks from a single console. However, you cannot use Fleet Manager to upload a script to start or stop instances.</p>
 <h3 id="Recover-impaired-instances"><a href="#Recover-impaired-instances" class="headerlink" title="Recover impaired instances"></a>Recover impaired instances</h3><p>A Systems Manager <code>Automation document</code> defines the <code>Automation workflow</code> (the actions that Systems Manager performs on your managed instances and AWS resources). Automation includes several pre-defined Automation documents that you can use to perform common tasks like restarting one or more EC2 instances or creating an Amazon Machine Image (AMI).</p>
@@ -3245,7 +3296,7 @@ To solve this use-case, you need to configure the Auto Scaling groups to scale y
 <li><code>AWS::Elasticsearch::Domain</code></li>
 <li><code>AWS::Lambda::Alias</code></li>
 </ul>
-<h3 id="AutoScalingReplacingUpdate-policy-EXAM"><a href="#AutoScalingReplacingUpdate-policy-EXAM" class="headerlink" title="AutoScalingReplacingUpdate policy - *EXAM"></a>AutoScalingReplacingUpdate policy - <code>*EXAM</code></h3><h3 id="AutoScalingRollingUpdate-policy"><a href="#AutoScalingRollingUpdate-policy" class="headerlink" title="AutoScalingRollingUpdate policy"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html">AutoScalingRollingUpdate policy</a></h3><p>With rolling updates, you can specify whether CloudFormation performs updates in batches or all at once for instances that are in an Auto Scaling group. The <code>AutoScalingRollingUpdate</code> policy is the only CloudFormation feature that provides such an incremental update throughout the Auto Scaling group.</p>
+<h3 id="AutoScalingReplacingUpdate-policy-EXAM"><a href="#AutoScalingReplacingUpdate-policy-EXAM" class="headerlink" title="AutoScalingReplacingUpdate policy - EXAM"></a>AutoScalingReplacingUpdate policy - <code>EXAM</code></h3><h3 id="AutoScalingRollingUpdate-policy"><a href="#AutoScalingRollingUpdate-policy" class="headerlink" title="AutoScalingRollingUpdate policy"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html">AutoScalingRollingUpdate policy</a></h3><p>With rolling updates, you can specify whether CloudFormation performs updates in batches or all at once for instances that are in an Auto Scaling group. The <code>AutoScalingRollingUpdate</code> policy is the only CloudFormation feature that provides such an incremental update throughout the Auto Scaling group.</p>
 <h3 id="AutoScalingScheduledAction-policy"><a href="#AutoScalingScheduledAction-policy" class="headerlink" title="AutoScalingScheduledAction policy"></a>AutoScalingScheduledAction policy</h3><p>Applies when you update a stack that includes an Auto Scalling group with an associated scheduled action.</p>
 <h3 id="Lambda-Tracing-with-X-Ray"><a href="#Lambda-Tracing-with-X-Ray" class="headerlink" title="Lambda Tracing with X-Ray"></a>Lambda Tracing with X-Ray</h3><ul>
 <li>Enable in Lambda configuration (<code>Active Tracing</code>)</li>
@@ -3298,7 +3349,7 @@ To solve this use-case, you need to configure the Auto Scaling groups to scale y
 <li><code>ConcurrentExecutions</code> - number of function instances that are processing events</li>
 </ul>
 <hr>
-<h2 id="CodeDeploy"><a href="#CodeDeploy" class="headerlink" title="CodeDeploy"></a>CodeDeploy</h2><p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html">CodeDeploy</a> is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances, or serverless Lambda functions. It allows you to rapidly release new features, update Lambda function versions, avoid downtime during application deployment, and handle the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.</p>
+<h2 id="CodeDeploy-👀-EXAM"><a href="#CodeDeploy-👀-EXAM" class="headerlink" title="CodeDeploy - 👀 EXAM"></a>CodeDeploy - 👀 EXAM</h2><p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html">CodeDeploy</a> is a deployment service that automates application deployments to <code>Amazon EC2 instances</code>, <code>on-premises instances</code>, or <code>serverless Lambda functions</code>. It allows you to rapidly release new features, update Lambda function versions, avoid downtime during application deployment, and handle the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.</p>
 <ul>
 <li><p><em>Application</em>: Container</p>
 </li>
@@ -3353,11 +3404,18 @@ To solve this use-case, you need to configure the Auto Scaling groups to scale y
 <li><em>Deploy</em> the domain across <em>3 AZ</em></li>
 <li><em>Create</em> at least <em>one replica or each index in the cluster</em></li>
 </ul>
-
+<hr>
+<h2 id="Amazon-EMR-Optional"><a href="#Amazon-EMR-Optional" class="headerlink" title="Amazon EMR - Optional"></a>Amazon <a target="_blank" rel="noopener" href="https://aws.amazon.com/emr/">EMR</a> - Optional</h2><p>is the industry-leading cloud big data solution for petabyte-scale data processing, interactive analytics, and machine learning using open-source frameworks such as Apache Spark, Apache Hive, and Presto.</p>
+<p>a point-in-time recovery in Amazon Aurora means restoring the database to a new DB cluster from a snapshot. Take note that the requirement is to ensure the restore procedure is done on the same DB instance.</p>
+<hr>
+<h2 id="AWS-Global-Accelerator"><a href="#AWS-Global-Accelerator" class="headerlink" title="AWS Global Accelerator"></a>AWS Global Accelerator</h2><p> service that <code>improves</code> the <code>availability and performance of your applications with local or global users</code>. It provides static IP addresses that act as a fixed entry point to your application endpoints in a single or multiple AWS Regions, such as your Application Load Balancers, Network Load Balancers or Amazon EC2 instances. AWS Global Accelerator will not help in accelerating the file transfer speeds into S3 for the given use-case.</p>
+<p>Global Accelerator service does not work with S3. It only supports endpoints like application load balancers, network load balancers, EC2 instances, or elastic IP addresses.</p>
+<p>–</p>
+<h2 id="AWS-Systems-Manager-OpsCenter"><a href="#AWS-Systems-Manager-OpsCenter" class="headerlink" title="AWS Systems Manager OpsCenter"></a>AWS Systems Manager OpsCenter</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="cllr71ykv0004d7nh1ccifeb7" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="clmnuw4160006e8ovet8n4bhk" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3494,7 +3552,7 @@ leading cross-functional teams, coordinating resources, managing timelines, and 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/01/Prompts/" data-id="cllr71ymi001dd7nhh4pfgral" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/01/Prompts/" data-id="clmnuw41t001ce8ovdhpl8xlb" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/05/01/Prompts/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3806,7 +3864,7 @@ leading cross-functional teams, coordinating resources, managing timelines, and 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/04/14/React-Hooks-All-React-Hooks-Explained/" data-id="cllr71yml001jd7nhe7tc6oxu" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/04/14/React-Hooks-All-React-Hooks-Explained/" data-id="clmnuw41v001ie8ovhkx5514e" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/04/14/React-Hooks-All-React-Hooks-Explained/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3836,7 +3894,7 @@ leading cross-functional teams, coordinating resources, managing timelines, and 
       <ul>
         
           <li>
-            <a href="/2023/08/25/Getting-Started-With-Hexo/">Getting started with Hexo</a>
+            <a href="/2023/09/17/Getting-Started-With-Hexo/">Getting started with Hexo</a>
           </li>
         
           <li>
