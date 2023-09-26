@@ -2,6 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/</loc>
+    
+    <lastmod>2023-09-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/</loc>
+    
+    <lastmod>2023-09-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/Anchor-Links-in-Markdown/</loc>
+    
+    <lastmod>2023-09-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2016/09/14/Bootable-CD-from-ISO/</loc>
+    
+    <lastmod>2023-09-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/04/03/Coding-Resources/</loc>
+    
+    <lastmod>2023-09-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2017/11/15/Disable-baloo-file-extractor/</loc>
+    
+    <lastmod>2023-09-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2020/04/12/Find%20out%20what%20package%20produced%20a%20particular%20file/</loc>
+    
+    <lastmod>2023-09-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/09/26/Getting-Started-With-Hexo/</loc>
+    
+    <lastmod>2023-09-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/Git-Documentation/</loc>
     
     <lastmod>2023-09-26</lastmod>
@@ -192,78 +264,6 @@
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/2023/02/16/AI-Websites-to-make-your-Life-Easier/</loc>
-    
-    <lastmod>2023-09-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/</loc>
-    
-    <lastmod>2023-09-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/</loc>
-    
-    <lastmod>2023-09-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/Anchor-Links-in-Markdown/</loc>
-    
-    <lastmod>2023-09-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2016/09/14/Bootable-CD-from-ISO/</loc>
-    
-    <lastmod>2023-09-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/04/03/Coding-Resources/</loc>
-    
-    <lastmod>2023-09-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2017/11/15/Disable-baloo-file-extractor/</loc>
-    
-    <lastmod>2023-09-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2020/04/12/Find%20out%20what%20package%20produced%20a%20particular%20file/</loc>
-    
-    <lastmod>2023-09-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/09/26/Getting-Started-With-Hexo/</loc>
     
     <lastmod>2023-09-26</lastmod>
     

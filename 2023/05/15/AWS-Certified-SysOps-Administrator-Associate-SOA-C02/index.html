@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://blog.pablo-magro-gaspar.site/images/AWS-CloudFront-Origin-Shield.png">
 <meta property="og:image" content="https://blog.pablo-magro-gaspar.site/images/Microsoft-Active-Directory.png">
 <meta property="article:published_time" content="2023-05-15T01:27:03.000Z">
-<meta property="article:modified_time" content="2023-09-26T17:20:32.183Z">
+<meta property="article:modified_time" content="2023-09-26T17:36:32.914Z">
 <meta property="article:author" content="Pablo Magro Gaspar">
 <meta property="article:tag" content="Certifications">
 <meta property="article:tag" content="SysOps">
@@ -3316,33 +3316,39 @@ you should consider using an A record as an A Record maps to one or more IP Addr
 <ol>
 <li>How to configure ECS to have flow logs ONLY FROM CONTAINERS (two answers) options:</li>
 </ol>
-<p>a) use aws vpc network mode.
-b) something.
-c) use bridge network mode.
-d) enable container ENI flow logs.</p>
+<ul>
+<li>a) use aws vpc network mode.</li>
+<li>b) something.</li>
+<li>c) use bridge network mode.</li>
+<li>d) enable container ENI flow logs.</li>
+</ul>
 <p>The first one seems to be quite simple, in awsvpc mode each container has it’s own elastic network interface and you can have flow flog for ENI. So that seems to be the correct answer.</p>
 <ol start="2">
 <li>Someone created a lambda that is triggered by S3 PutObject event and this lambda writes new file to the same bucket. How should the admin stop the loop (one answer)</li>
 </ol>
-<p>a) set reserved concurrency to 0
-b) deny the lambda bucket access
-c) something
-d) something</p>
+<ul>
+<li>a) set reserved concurrency to 0</li>
+<li>b) deny the lambda bucket access</li>
+<li>c) something</li>
+<li>d) something</li>
+</ul>
 <p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html</a>
 “To throttle a function, set the reserved concurrency to zero” so i guess setting it to 0 is the right answer.</p>
 <ol start="3">
 <li>What would a sysops need to connect to a managed kubernetes service from his own machine after he set the cluster up</li>
 </ol>
-<p>a) kubeconfig
-b) kube-proxy.yaml
-c) something
-d) something</p>
+<ul>
+<li>a) kubeconfig</li>
+<li>b) kube-proxy.yaml</li>
+<li>c) something</li>
+<li>d) something</li>
+</ul>
 <p>I also remember that there was one question about</p>
 <ul>
 <li><code>S3 Object Lock</code> and one answer was <code>with Governance mode and the other one with Compliance mode</code></li>
 </ul>
 <h3 id="Review-berfore-exam"><a href="#Review-berfore-exam" class="headerlink" title="Review berfore exam"></a>Review berfore exam</h3><ul>
-<li><p><code>Amazon Inspector</code> - Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS. Amazon Inspector automatically assesses applications for exposure, vulnerabilities, and deviations from best practices. After performing an assessment, Amazon Inspector produces a detailed list of security findings prioritized by level of severity.</p>
+<li><p><code>Amazon Inspector</code> - Amazon Inspector is an automated <strong><code>security assessment service that helps improve the security and compliance of applications deployed on AWS</code></strong>. Amazon Inspector automatically assesses applications for exposure, vulnerabilities, and deviations from best practices. After performing an assessment, Amazon Inspector <strong><code>produces a detailed list of security findings</code></strong> prioritized by level of severity.</p>
 </li>
 <li><p><code>AWS Control Tower</code> - AWS Control Tower offers the easiest way to set up and govern a secure, multi-account AWS environment. It establishes a landing zone that is based on the best-practices blueprints and enables governance using guardrails you can choose from a pre-packaged list. The landing zone is a well-architected, multi-account baseline that follows AWS best practices. Guardrails implement governance rules for security, compliance, and operations.</p>
 </li>
@@ -3372,19 +3378,23 @@ d) something</p>
   to be notified of any issues that occur in the underlying hardware that hosts the AWS resources.</li>
 </ul>
 <h3 id="Costs"><a href="#Costs" class="headerlink" title="Costs"></a>Costs</h3><p>Q) Provides the most detailed information about your AWS Bill and can generate reports with hourly, daily, or monthly granularity. Reports are stored in your selected S3 bucket and can be analyzed using Amazon Athena, Amazon Redshift or Amazon QuickSight</p>
-<p>AWS Cost and Usage Report</p>
+<pre><code>AWS Cost and Usage Report
+</code></pre>
 <p>Q) An easy-to-use interface that lets you visualize your AWS costs and provides a set of ready-to-use default reports to help you get started.</p>
-<p>AWS Cost Explorer</p>
+<pre><code>AWS Cost Explorer
+</code></pre>
 <p>Q) To provide them a way to <code>get billing updates more than once a month. using a spreadsheet</code></p>
 <ul>
 <li>Configure your <code>AWS Cost and Usage Report</code> to generate and publish billing reports in CSV format to an S3 bucket every day.</li>
 <li>AWS Budgets simply gives you the ability to set custom budgets that alert you when your costs or usage exceed or forecasted to exceed your budgeted amount</li>
 </ul>
-<p>Q) Best way to properly get <code>billing reports for the different company departments</code>, with the least possible administrative overhead?
-<code>Cost Allocation Tags</code></p>
+<p>Q) Best way to properly get <code>billing reports for the different company departments</code>, with the least possible administrative overhead?</p>
+<pre><code>Cost Allocation Tags
+</code></pre>
 <p>A tag is a label that you or AWS assigns to an AWS resource. Each tag consists of a key and a value. For each resource, each tag key must be unique, and each tag key can have only one value. You can use tags to organize your resources, and cost allocation tags to track your AWS costs on a detailed level. After you activate cost allocation tags, AWS uses the cost allocation tags to organize your resource costs on your cost allocation report, to make it easier for you to categorize and track your AWS costs.</p>
-<p>Q) To see a <code>report showing the allocation of costs for these EIPs</code> by department.
-Define Cost Allocation Tags and generate a report using Cost Explorer</p>
+<p>Q) To see a <code>report showing the allocation of costs for these EIPs</code> by department.</p>
+<pre><code>Define Cost Allocation Tags and generate a report using Cost Explorer
+</code></pre>
 <h3 id="Tags"><a href="#Tags" class="headerlink" title="Tags"></a>Tags</h3><p>Q) Tags are consistently applied when your resources are created in AWS across all accounts.</p>
 <pre><code>A: AWS Service Catalog to tag the provisioned resources with corresponding unique identifiers for portfolio, product, and users.
 A: AWS CloudFormation Resource Tags property to apply tags to certain resource types upon creation.
@@ -3406,7 +3416,7 @@ difficult to forecast.</p>
 <pre><code>Elastic Throughput
 </code></pre>
 <p>Q) A type of Performance Mode in Amazon EFS that provides the lowest per-operation latency</p>
-<pre><code>  Max Throughput
+<pre><code>Max Throughput
 </code></pre>
 <p>Q) A networking service that provides static IP addresses that act as a fixed entry point to your applications and eliminate the complexity of managing specific IP addresses for different AWS Regions and Availability Zones.</p>
 <pre><code>AWS Global Accelerator
@@ -3421,7 +3431,7 @@ difficult to forecast.</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="cln0l2vh30004efor8le03o8y" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="cln0lnc460004eqov55c5fwv1" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/#disqus_thread" class="article-comment-link">Comments</a>
       
