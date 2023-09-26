@@ -182,14 +182,10 @@ ga('send', 'pageview');
 <li>Route53: Log DNS queries</li>
 </ul>
 <h3 id="CloudWatch-Logs-Subscriptions"><a href="#CloudWatch-Logs-Subscriptions" class="headerlink" title="CloudWatch Logs Subscriptions"></a>CloudWatch Logs Subscriptions</h3><ul>
-<li><p><strong><code>Get a real-time log events from CloudWatch Logs for processing and analysis</code></strong></p>
-</li>
-<li><p>Send to Kinesis Data Streams, Kinesis Data Firehose, or Lambda</p>
-</li>
-<li><p><code>Subscription Filter </code>- filter which logs are events delivered to your destination</p>
-</li>
-<li><p><code>Cross-Account Subscription</code> - send log events to resources in a different AWS account (KDS, KDF)</p>
-</li>
+<li><strong><code>Get a real-time log events from CloudWatch Logs for processing and analysis</code></strong></li>
+<li>Send to Kinesis Data Streams, Kinesis Data Firehose, or Lambda</li>
+<li><code>Subscription Filter </code>- filter which logs are events delivered to your destination</li>
+<li><code>Cross-Account Subscription</code> - send log events to resources in a different AWS account (KDS, KDF)</li>
 </ul>
 <h3 id="Alarms"><a href="#Alarms" class="headerlink" title="Alarms"></a>Alarms</h3><p>CloudWatch alarms allow you to monitor metrics and trigger actions based on defined thresholds. In this case, you can create a CloudWatch alarm that monitors the CPU utilization metric of the EC2 instance. When the CPU utilization reaches 100%, the alarm will be triggered, and you can configure actions such as sending notifications or executing automated actions to address the unresponsiveness issue.</p>
 <h3 id="Alarm-Targets-👀-EXAM"><a href="#Alarm-Targets-👀-EXAM" class="headerlink" title="Alarm Targets - 👀 EXAM"></a>Alarm Targets - 👀 EXAM</h3><ul>
@@ -284,12 +280,16 @@ Instance Status Checks</li>
 <h4 id="EBS-Snapshots"><a href="#EBS-Snapshots" class="headerlink" title="EBS Snapshots"></a>EBS Snapshots</h4><p>It is possible to <code>create an automated snapshot of an existing Amazon Elastic Block Store (Amazon EBS)</code> volume on a schedule. You can choose a fixed rate to create a snapshot every few minutes or use a cron expression to specify that the snapshot is made at a specific time of day.</p>
 <p>Snapshots are incremental backups, which means that only the blocks on the device that have changed after your most recent snapshot are saved. This minimizes the time required to create the snapshot and saves on storage costs by not duplicating data. Each snapshot contains all of the information that is needed to restore your data (from the moment when the snapshot was taken) to a new EBS volume.</p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/TakeScheduledSnapshot.html">Schedule Automated Amazon EBS Snapshots Using CloudWatch Events</a></p>
-<h3 id="Q-Filters"><a href="#Q-Filters" class="headerlink" title="*Q Filters"></a>*Q <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringLogData.html">Filters</a></h3><p>You can create a <code>count</code> of <code>404</code> errors <code>and exclude</code> other <code>4xx</code> errors with a filter pattern on 404 errors.</p>
+<h3 id="Filters-QUESTION"><a href="#Filters-QUESTION" class="headerlink" title="Filters - QUESTION"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringLogData.html">Filters</a> - QUESTION</h3><p>You can create a <code>count</code> of <code>404</code> errors <code>and exclude</code> other <code>4xx</code> errors with a filter pattern on 404 errors.</p>
 <h3 id="Agents"><a href="#Agents" class="headerlink" title="Agents"></a>Agents</h3><p>If your AMI contains a CloudWatch agent, it’s automatically installed on EC2 instances when you create an EC2 Auto Scaling group. With the stock Amazon Linux AMI, you need to install it (AWS recommends to install via yum).</p>
 <h4 id="Install-Agents-to-track-the-state-of-each-of-the-instances"><a href="#Install-Agents-to-track-the-state-of-each-of-the-instances" class="headerlink" title="Install Agents to track the state of each of the instances"></a>Install Agents to track the state of each of the instances</h4><p>You must attach the <code>CloudWatchAgentServerRole</code> IAM role to the EC2 instance to be able to run the CloudWatch agent on the instance. This role enables the CloudWatch agent to perform actions on the instance.</p>
 <h3 id="Publish-custom-metrics-to-CloudWatch"><a href="#Publish-custom-metrics-to-CloudWatch" class="headerlink" title="Publish custom metrics to CloudWatch."></a>Publish custom metrics to CloudWatch.</h3><p>You can publish your own metrics to CloudWatch using the AWS CLI or an API. You can view statistical graphs of your published metrics with the AWS Management Console. CloudWatch stores data about a metric as a series of data points. Each data point has an associated time stamp. You can even publish an aggregated set of data points called a statistic set.</p>
 <p>The <code>put-metric-data</code> <code>command</code> publishes metric data to Amazon CloudWatch, which associates it with the specified metric. If the specified metric does not exist, CloudWatch creates the metric which can take up to fifteen minutes for the metric to appear in calls to <code>ListMetrics</code>.</p>
 <h3 id="Collect-process-metrics-with-the-procstat-plugin"><a href="#Collect-process-metrics-with-the-procstat-plugin" class="headerlink" title="Collect process metrics with the procstat plugin"></a>Collect process metrics with the <code>procstat</code> plugin</h3><p>The <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Agent-procstat-process-metrics.html">procstat</a> plugin enables you to <code>collect metrics from individual processes</code>. It is supported on Linux servers and on servers running Windows Server 2012 or later.</p>
+<h3 id="Dashboard-Body-Structure-and-Syntax-EXAM"><a href="#Dashboard-Body-Structure-and-Syntax-EXAM" class="headerlink" title="Dashboard Body Structure and Syntax - EXAM"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a> - EXAM</h3><p>A <code>DashboardBody</code> is a string in JSON format. It can include an array of between 0 and 500 widget objects, as well as a few other parameters. The dashboard must include a widgets array, but that array can be empty.</p>
+<p>When deploying resources using AWS CloudFormation, the goal is often to define as much of the desired infrastructure as possible directly within the template. This is achieved by taking the JSON representation of the prototype dashboard and embedding it directly within the CloudFormation template using the DashboardBody property.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Resources:</span></span><br><span class="line">  <span class="attr">MyCloudWatchDashboard:</span></span><br><span class="line">    <span class="attr">Type:</span> <span class="string">AWS::CloudWatch::Dashboard</span></span><br><span class="line">    <span class="attr">Properties:</span></span><br><span class="line">      <span class="attr">DashboardName:</span> <span class="string">MyDashboard</span></span><br><span class="line">      <span class="attr">DashboardBody:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">          &quot;widgets&quot;: [</span></span><br><span class="line"><span class="string">            &#123;</span></span><br><span class="line"><span class="string">              &quot;type&quot;: &quot;text&quot;,</span></span><br><span class="line"><span class="string">              &quot;x&quot;: 0,</span></span><br><span class="line"><span class="string">              &quot;y&quot;: 0,</span></span><br><span class="line"><span class="string">              &quot;width&quot;: 12,</span></span><br><span class="line"><span class="string">              &quot;height&quot;: 1,</span></span><br><span class="line"><span class="string">              &quot;properties&quot;: &#123;</span></span><br><span class="line"><span class="string">                &quot;markdown&quot;: &quot;### My Dashboard&quot;</span></span><br><span class="line"><span class="string">              &#125;</span></span><br><span class="line"><span class="string">            &#125;,</span></span><br><span class="line"><span class="string">            &#123;</span></span><br><span class="line"><span class="string">              &quot;type&quot;: &quot;metric&quot;,</span></span><br><span class="line"><span class="string">              &quot;x&quot;: 0,</span></span><br><span class="line"><span class="string">              &quot;y&quot;: 1,</span></span><br><span class="line"><span class="string">              &quot;width&quot;: 12,</span></span><br><span class="line"><span class="string">              &quot;height&quot;: 6,</span></span><br><span class="line"><span class="string">              &quot;properties&quot;: &#123;</span></span><br><span class="line"><span class="string">                &quot;metrics&quot;: [[&quot;AWS/EC2&quot;, &quot;CPUUtilization&quot;, &quot;InstanceId&quot;, &quot;i-1234567890abcdef0&quot;]],</span></span><br><span class="line"><span class="string">                &quot;title&quot;: &quot;EC2 CPU Utilization&quot;,</span></span><br><span class="line"><span class="string">                &quot;period&quot;: 300,</span></span><br><span class="line"><span class="string">                &quot;stat&quot;: &quot;Average&quot;,</span></span><br><span class="line"><span class="string">                &quot;region&quot;: &quot;us-east-1&quot;,</span></span><br><span class="line"><span class="string">                &quot;yAxis&quot;: &#123;&quot;left&quot;: &#123;&quot;min&quot;: 0, &quot;max&quot;: 100&#125;&#125;</span></span><br><span class="line"><span class="string">              &#125;</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">          ]</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <h2 id="CloudTrail"><a href="#CloudTrail" class="headerlink" title="CloudTrail"></a>CloudTrail</h2><p><code>Provides governance, compliance and audit for your AWS Account</code></p>
 <ul>
@@ -429,6 +429,8 @@ These AWS Config rules act as controls to prevent any non-compliant S3 activitie
 <h3 id="AWS-Config-Auto-Remediation"><a href="#AWS-Config-Auto-Remediation" class="headerlink" title="AWS Config Auto Remediation"></a>AWS Config Auto Remediation</h3><h3 id="Config-Rules-Notifications"><a href="#Config-Rules-Notifications" class="headerlink" title="Config Rules - Notifications"></a>Config Rules - Notifications</h3><ul>
 <li>Use EventBridge to trigger notifications when AWS resources are noncompliant</li>
 <li>Ability to send configuration changes and compliance state notifications to SNS (all events - use SNS Filtering or filter at client-side)</li>
+<li><code>👀 QUESTION</code></li>
+<li>If there are EC2s that are terminated in an environment, you should use the <strong><code>[EIP-attached Config rule](https://docs.aws.amazon.com/config/latest/developerguide/eip-attached.html)</code></strong> to find EIPs that are unattached in your environment.</li>
 </ul>
 <h3 id="AWS-Config-Aggregators"><a href="#AWS-Config-Aggregators" class="headerlink" title="AWS Config - Aggregators"></a>AWS Config - Aggregators</h3><ul>
 <li>The aggregator is created <code>in one central aggregator account</code>.</li>
@@ -617,6 +619,8 @@ To encrypt an un-encrypted database, go through a DB snapshot &amp; restore as e
 <li>The DB instance must be running in a publicly accessible subnet.</li>
 </ol>
 <p>For Amazon Aurora DB instances, you can’t choose a specific subnet. Instead, choose a DB subnet group when you create the instance. Create a DB subnet group with subnets of similar network configuration. For example, a DB subnet group for Public subnets.</p>
+<h3 id="Aurora-Replicas-TODO"><a href="#Aurora-Replicas-TODO" class="headerlink" title="Aurora Replicas - TODO"></a>Aurora Replicas - TODO</h3><p>Aurora Replicas are independent endpoints in an Aurora DB cluster, best used for scaling read operations and increasing availability. Up to 15 Aurora Replicas can be distributed across the Availability Zones that a DB cluster spans within an AWS Region. The DB cluster volume is made up of multiple copies of the data for the DB cluster. However, the data in the cluster volume is represented as a single, logical volume to the primary instance and to Aurora Replicas in the DB cluster.</p>
+<p>Alternatively, you can also use Amazon Aurora Multi-Master which is a feature of the Aurora MySQL-compatible edition that adds the ability to scale out write performance across multiple Availability Zones, allowing applications to direct read&#x2F;write workloads to multiple instances in a database cluster and operate with higher availability.</p>
 <h3 id="Metrics-to-generate-reports-on-the-Aurora-DB-Cluster-and-its-replicas"><a href="#Metrics-to-generate-reports-on-the-Aurora-DB-Cluster-and-its-replicas" class="headerlink" title="Metrics to generate reports on the Aurora DB Cluster and its replicas"></a>Metrics to generate reports on the Aurora DB Cluster and its replicas</h3><ol>
 <li><code>AuroraReplicaLagMaximum</code> - This metric captures the <code>maximum amount of lag between the primary instance and each Aurora DB instance in the DB cluster</code>.</li>
 <li><code>AuroraBinlogReplicaLag</code> - This metric captures the <code>amount of time a replica DB cluster running</code> on Aurora MySQL-Compatible Edition lags behind the source DB cluster.
@@ -1155,7 +1159,7 @@ Configure IPv6 on Your Instances - If your instance was launched from an AMI tha
 </li>
 <li><code>S3 Cross Region Replication</code>: $0.02 per GB</li>
 </ul>
-<h3 id="AWS-Network-Firewall-👀-OJO"><a href="#AWS-Network-Firewall-👀-OJO" class="headerlink" title="AWS Network Firewall - 👀 OJO"></a>AWS Network Firewall - 👀 OJO</h3><ul>
+<h3 id="AWS-Network-Firewall-👀-OJO-QUESTION"><a href="#AWS-Network-Firewall-👀-OJO-QUESTION" class="headerlink" title="AWS Network Firewall - 👀 OJO QUESTION"></a>AWS Network Firewall - 👀 OJO QUESTION</h3><ul>
 <li><code>Protect your entire Amazon VPC</code><ul>
 <li>Pass traffic through only from known AWS service domains or IP address endpoints, such as Amazon S3.</li>
 <li>Use custom <code>lists of known bad domains to limit the types of domain names that your applications can access</code>.</li>
@@ -1233,7 +1237,7 @@ Configure IPv6 on Your Instances - If your instance was launched from an AMI tha
 <h4 id="Use-AWS-CloudFormation-StackSets-for-Multiple-Accounts-in-an-AWS-Organization"><a href="#Use-AWS-CloudFormation-StackSets-for-Multiple-Accounts-in-an-AWS-Organization" class="headerlink" title="Use AWS CloudFormation StackSets for Multiple Accounts in an AWS Organization:"></a><code>Use</code> AWS CloudFormation <code>StackSets for Multiple Accounts in an AWS Organization</code>:</h4><p>Use AWS CloudFormation <code>StackSets</code> to <code>deploy a template</code> to <code>each account</code> to create the new IAM roles.</p>
 <p><code>Explanation</code>: AWS CloudFormation StackSets allows you to deploy a CloudFormation template across multiple AWS accounts. By using StackSets, you can create and manage the same IAM roles in each account within the organization. This ensures consistent deployment of roles across accounts and simplifies the management process.</p>
 <p><code>Reference</code>: <a target="_blank" rel="noopener" href="https://aws.amazon.com/blogs/aws/new-use-aws-cloudformation-stacksets-for-multiple-accounts-in-an-aws-organization/">New: Use AWS CloudFormation StackSets for Multiple Accounts in an AWS Organization</a></p>
-<h3 id="Q-To-lunch-the-last-AMI"><a href="#Q-To-lunch-the-last-AMI" class="headerlink" title="*Q To lunch the last AMI."></a><code>*Q</code> To lunch the last AMI.</h3><p>Use the Parameters section in the template to specify the Systems Manager (SSM) Parameter, which contains the latest version of the Windows regional AMI ID.</p>
+<h3 id="QUESTION-To-lunch-the-last-AMI"><a href="#QUESTION-To-lunch-the-last-AMI" class="headerlink" title="QUESTION To lunch the last AMI."></a><code>QUESTION</code> To lunch the last AMI.</h3><p>Use the Parameters section in the template to specify the Systems Manager (SSM) Parameter, which contains the latest version of the Windows regional AMI ID.</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Parameters:</span></span><br><span class="line">  <span class="attr">LatestWindowsAMIParameter:</span></span><br><span class="line">    <span class="attr">Type:</span> <span class="string">AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;</span></span><br><span class="line">    <span class="attr">Default:</span> <span class="string">/LatestWindowsAMI</span></span><br><span class="line"></span><br><span class="line"><span class="attr">Parameters:</span></span><br><span class="line">  <span class="attr">LatestWindowsAMIParameter:</span></span><br><span class="line">    <span class="attr">Type:</span> <span class="string">AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;</span></span><br><span class="line">    <span class="attr">Default:</span> <span class="string">/LatestWindowsAMI</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="UpdatePolicy-attribute-👀-EXAM"><a href="#UpdatePolicy-attribute-👀-EXAM" class="headerlink" title="UpdatePolicy attribute - 👀 EXAM"></a>UpdatePolicy attribute - <code>👀 EXAM</code></h3><p>By adding the <code>UpdatePolicy</code> attribute in CloudFormation and enabling the WaitOnResourceSignals property, the Auto Scaling group update process will be handled more gracefully. This approach allows CloudFormation to monitor the health and success of each instance during the update process before moving on to the next instance.</p>
@@ -1282,10 +1286,11 @@ Configure IPv6 on Your Instances - If your instance was launched from an AMI tha
 </ul>
 </li>
 </ul>
-<p><code>👀 *Q</code>
-AWS Backup is a fully managed and cost-effective backup service that simplifies and <code>automates data</code> backup across AWS services including <code>Amazon EBS</code>, <code>Amazon EC2</code>, <code>Amazon RDS</code>, <code>Amazon Aurora</code>, <code>Amazon DynamoDB</code>, <code>Amazon EFS</code>, and AWS <code>Storage Gateway</code>. In addition, AWS Backup <code>leverages</code> AWS <code>Organizations</code> to implement and maintain a central view of backup policy across resources in a multi-account AWS environment. Customers <code>simply tag</code> and associate their <code>AWS resources</code> with backup policies managed by AWS Backup for Cross-Region data replication.</p>
-<h3 id="👀-Q-For-the-production-account-a-SysOps-administrator-must-ensure-that-all-data-is-backed-up-daily-for-all-current-and-future-Amazon-EC2-instances-and-Amazon-Elastic-File-System-Amazon-EFS-file-systems-Backups-must-be-retained-for-30-days"><a href="#👀-Q-For-the-production-account-a-SysOps-administrator-must-ensure-that-all-data-is-backed-up-daily-for-all-current-and-future-Amazon-EC2-instances-and-Amazon-Elastic-File-System-Amazon-EFS-file-systems-Backups-must-be-retained-for-30-days" class="headerlink" title="👀 *Q  For the production account, a SysOps administrator must ensure that all data is backed up daily for all current and future Amazon EC2 instances and Amazon Elastic File System (Amazon EFS) file systems. Backups must be retained for 30 days"></a><code>👀 *Q</code>  For the production account, a SysOps administrator must ensure that all data is backed up daily for all current and future Amazon EC2 instances and Amazon Elastic File System (Amazon EFS) file systems. Backups must be retained for 30 days</h3><p>Create a backup plan in AWS Backup. Assign resources by resource ID, selecting all existing EC2 and EFS resources that are running in the account. Edit the backup plan daily to include any new resources. Schedule the backup plan to run every day with a lifecycle policy to expire backups after 30 days.</p>
+<h3 id="👀-QUESTIONUESTION"><a href="#👀-QUESTIONUESTION" class="headerlink" title="👀 QUESTIONUESTION"></a><code>👀 QUESTIONUESTION</code></h3><p>AWS Backup is a fully managed and cost-effective backup service that simplifies and <code>automates data</code> backup across AWS services including <code>Amazon EBS</code>, <code>Amazon EC2</code>, <code>Amazon RDS</code>, <code>Amazon Aurora</code>, <code>Amazon DynamoDB</code>, <code>Amazon EFS</code>, and AWS <code>Storage Gateway</code>. In addition, AWS Backup <code>leverages</code> AWS <code>Organizations</code> to implement and maintain a central view of backup policy across resources in a multi-account AWS environment. Customers <code>simply tag</code> and associate their <code>AWS resources</code> with backup policies managed by AWS Backup for Cross-Region data replication.</p>
+<h3 id="👀-QUESTIONUESTION-For-the-production-account-a-SysOps-administrator-must-ensure-that-all-data-is-backed-up-daily-for-all-current-and-future-Amazon-EC2-instances-and-Amazon-Elastic-File-System-Amazon-EFS-file-systems-Backups-must-be-retained-for-30-days"><a href="#👀-QUESTIONUESTION-For-the-production-account-a-SysOps-administrator-must-ensure-that-all-data-is-backed-up-daily-for-all-current-and-future-Amazon-EC2-instances-and-Amazon-Elastic-File-System-Amazon-EFS-file-systems-Backups-must-be-retained-for-30-days" class="headerlink" title="👀 QUESTIONUESTION  For the production account, a SysOps administrator must ensure that all data is backed up daily for all current and future Amazon EC2 instances and Amazon Elastic File System (Amazon EFS) file systems. Backups must be retained for 30 days"></a><code>👀 QUESTIONUESTION</code>  For the production account, a SysOps administrator must ensure that all data is backed up daily for all current and future Amazon EC2 instances and Amazon Elastic File System (Amazon EFS) file systems. Backups must be retained for 30 days</h3><p>Create a backup plan in AWS Backup. Assign resources by resource ID, selecting all existing EC2 and EFS resources that are running in the account. Edit the backup plan daily to include any new resources. Schedule the backup plan to run every day with a lifecycle policy to expire backups after 30 days.</p>
 <p><code>Explanation</code>: AWS Backup provides a centralized and automated solution for backing up data. By creating a backup plan and assigning resources by resource ID, you can easily include all existing EC2 instances and EFS file systems in the backup process. Editing the backup plan daily ensures that any new resources are automatically included in the backups. By scheduling the backup plan to run every day and configuring a lifecycle policy to expire backups after 30 days, you meet the requirement of daily backups with a retention period of 30 days.</p>
+<h3 id="AWS-Backup-does-not-reboot-EC2-instances-👀-QUESTIONUESTION"><a href="#AWS-Backup-does-not-reboot-EC2-instances-👀-QUESTIONUESTION" class="headerlink" title="AWS Backup does not reboot EC2 instances - 👀 QUESTIONUESTION"></a>AWS Backup does not reboot EC2 instances - <code>👀 QUESTIONUESTION</code></h3><p>AWS Backup does not reboot EC2 instances at any time. To maintain the file integrity of images created, you have to apply the reboot parameter when taking images.</p>
+<p>To create a Lambda function that calls the <code>CreateImage API with a reboot parameter</code> and then <code>schedule the function to run on a daily basis via Amazon EventBridge</code> (Amazon CloudWatch Events).</p>
 <h3 id="AWS-Backup-Vault-Lock"><a href="#AWS-Backup-Vault-Lock" class="headerlink" title="AWS Backup Vault Lock"></a>AWS Backup Vault Lock</h3><ul>
 <li>Enforce a WORM (Write On1ce Read Many) state for all the backups that you store in your AWS Backup Vault</li>
 <li>Additional layer of defense to protect your backups against:<ul>
@@ -1412,7 +1417,7 @@ information in the findings report and additionally provides the list of rules t
 </ul>
 <p>Amazon Inspector discovers potential security issues by using security rules to analyze AWS resources. Amazon Inspector also integrates with AWS Security Hub to provide a view of your security posture across multiple AWS accounts.</p>
 <hr>
-<h2 id="Amazon-GuardDuty-👀"><a href="#Amazon-GuardDuty-👀" class="headerlink" title="Amazon GuardDuty -  👀"></a>Amazon GuardDuty -  👀</h2><ul>
+<h2 id="Amazon-GuardDuty-👀-EXAM"><a href="#Amazon-GuardDuty-👀-EXAM" class="headerlink" title="Amazon GuardDuty -  👀 EXAM"></a>Amazon GuardDuty -  👀 EXAM</h2><ul>
 <li><code>Intelligent Threat discovery to protect your AWS Account</code>.</li>
 <li>Uses Machine Learning algorithms, anomaly detection, 3rd party data</li>
 <li>One click to enable (30 days trial), no need to install software</li>
@@ -1438,7 +1443,7 @@ information in the findings report and additionally provides the list of rules t
 <li>Notify to Amazon EventBridge &#x3D;&gt; Integrations</li>
 </ul>
 <hr>
-<h2 id="Q-AWS-Trusted-Advisor"><a href="#Q-AWS-Trusted-Advisor" class="headerlink" title="*Q AWS Trusted Advisor"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html">AWS Trusted Advisor</a></h2><p>Trusted Advisor provides real-time guidance to help users follow AWS best practices to provision their resources. <code>Hight level account assessment</code>.</p>
+<h2 id="QUESTION-AWS-Trusted-Advisor"><a href="#QUESTION-AWS-Trusted-Advisor" class="headerlink" title="QUESTION AWS Trusted Advisor"></a><code>QUESTION</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html">AWS Trusted Advisor</a></h2><p>Trusted Advisor provides real-time guidance to help users follow AWS best practices to provision their resources. <code>Hight level account assessment</code>.</p>
 <p>E.g. AWS Trusted Advisor checks for service <code>usage</code> that is more than 80% of the <code>service limit</code>.</p>
 <h3 id="Check-categories-👀-EXAM"><a href="#Check-categories-👀-EXAM" class="headerlink" title="Check categories - 👀 EXAM"></a>Check categories - 👀 EXAM</h3><ul>
 <li><code>Cost optimization</code></li>
@@ -1588,15 +1593,42 @@ information in the findings report and additionally provides the list of rules t
 </ul>
 </li>
 </ul>
-<hr>
-<h2 id="EBS"><a href="#EBS" class="headerlink" title="EBS"></a>EBS</h2><p><code>*Q</code></p>
+<h3 id="SSM-Patch-Manager"><a href="#SSM-Patch-Manager" class="headerlink" title="SSM - Patch Manager"></a>SSM - Patch Manager</h3><ul>
+<li>Patch Baseline</li>
+<li>Defines which patches should and shouldn’t be installed on your instances</li>
+<li>Ability to create custom Patch Baselines (specify approved&#x2F;rejected patches)</li>
+<li>Patches can be auto-approved within days of their release</li>
+<li>By default, install only critical patches and patches related to security</li>
+<li>Patch Group</li>
+<li>Associate a set of instances with a specific Patch Baseline</li>
+<li><strong><code>Example: create Patch Groups for different environments (dev, test, prod)</code></strong></li>
+<li>Instances should be defined with the tag key <strong><code>Patch Group</code></strong>.</li>
+<li>An instance can only be in one Patch Group</li>
+<li>Patch Group can be registered with only one Patch Baseline</li>
+</ul>
+<h3 id="SSM-Patch-Manager-Patch-Baselines"><a href="#SSM-Patch-Manager-Patch-Baselines" class="headerlink" title="SSM - Patch Manager Patch Baselines"></a>SSM - <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-patch.html">Patch Manager Patch Baselines</a></h3><ul>
+<li><p><strong>Pre-Defined Patch Baseline</strong></p>
+<ul>
+<li>Managed by AWS for different Operating Systems (can’t be modified)</li>
+<li>A<strong>WS-RunPatchBaseline (SSM Document)</strong> - apply both operating system and application patches (Linux, macOS, Windows Server)</li>
+</ul>
+</li>
+<li><p><strong>Custom Patch Baseline</strong></p>
+<ul>
+<li>Create your own Patch Baseline and choose which patches to auto-approve</li>
+<li>Operating System, allowed patches, rejected patches, …</li>
+<li>Ability to specify custom and alternative patch repositories</li>
+</ul>
+</li>
+</ul>
+<h2 id="A-patch-group-is-essentially-an-association-of-EC2-instances-that-share-the-same-patching-requirements-Within-Patch-Manager-a-patch-baseline-is-a-set-of-rules-that-dictate-which-patches-should-be-installed-By-using-separate-patch-baselines-for-each-group-it-provides-granular-control-over-the-patching-process"><a href="#A-patch-group-is-essentially-an-association-of-EC2-instances-that-share-the-same-patching-requirements-Within-Patch-Manager-a-patch-baseline-is-a-set-of-rules-that-dictate-which-patches-should-be-installed-By-using-separate-patch-baselines-for-each-group-it-provides-granular-control-over-the-patching-process" class="headerlink" title="A patch group is essentially an association of EC2 instances that share the same patching requirements. Within Patch Manager, a patch baseline is a set of rules that dictate which patches should be installed. By using separate patch baselines for each group, it provides granular control over the patching process"></a>A patch group is essentially an association of EC2 instances that share the same patching requirements. Within Patch Manager, a patch baseline is a set of rules that dictate which patches should be installed. By using separate patch baselines for each group, it provides granular control over the patching process</h2><h2 id="EBS"><a href="#EBS" class="headerlink" title="EBS"></a>EBS</h2><p><code>QUESTION</code></p>
 <ul>
 <li>Use <code>separate</code> Amazon EBS <code>volumes</code> for the <code>operating system</code> and <code>your data</code>, even though root volume persistence feature is available.</li>
 <li>EBS snapshots <code>only capture data that has been written to your Amazon EBS volume</code>, which might exclude any data that has been locally cached by your application or operating system.</li>
 <li>By default, <code>data</code> on a <code>non-root EBS volume</code> is <code>preserved</code> even if the instance is <code>shutdown or terminated</code>.
   By default, when you attach a non-root EBS volume to an instance, its <code>DeleteOnTermination</code> attribute is <code>set</code> to <code>false</code>. Therefore, the default is to preserve these volumes. After the instance terminates, you can take a snapshot of the preserved volume or attach it to another instance. You must delete a volume to avoid incurring further charges.</li>
 </ul>
-<h3 id="Q-To-set-up-a-backup-strategy-for-an-Amazon-Elastic-Block-Store-Amazon-EBS-volume-storing-a-custom-database-on-an-Amazon-EC2-instance-the-following-action-should-be-taken"><a href="#Q-To-set-up-a-backup-strategy-for-an-Amazon-Elastic-Block-Store-Amazon-EBS-volume-storing-a-custom-database-on-an-Amazon-EC2-instance-the-following-action-should-be-taken" class="headerlink" title="*Q. To set up a backup strategy for an Amazon Elastic Block Store (Amazon EBS) volume storing a custom database on an Amazon EC2 instance, the following action should be taken:"></a><code>*Q.</code> To set up a backup strategy for an Amazon Elastic Block Store (Amazon EBS) volume storing a custom database on an Amazon EC2 instance, the following action should be taken:</h3><p>Create an Amazon <code>Data Lifecycle Manager (Amazon DLM)</code> policy to <code>take</code> a <code>snapshot of the EBS</code> volume on a <code>recurring schedule</code>.</p>
+<h3 id="QUESTION-To-set-up-a-backup-strategy-for-an-Amazon-Elastic-Block-Store-Amazon-EBS-volume-storing-a-custom-database-on-an-Amazon-EC2-instance-the-following-action-should-be-taken"><a href="#QUESTION-To-set-up-a-backup-strategy-for-an-Amazon-Elastic-Block-Store-Amazon-EBS-volume-storing-a-custom-database-on-an-Amazon-EC2-instance-the-following-action-should-be-taken" class="headerlink" title="QUESTION. To set up a backup strategy for an Amazon Elastic Block Store (Amazon EBS) volume storing a custom database on an Amazon EC2 instance, the following action should be taken:"></a><code>QUESTION.</code> To set up a backup strategy for an Amazon Elastic Block Store (Amazon EBS) volume storing a custom database on an Amazon EC2 instance, the following action should be taken:</h3><p>Create an Amazon <code>Data Lifecycle Manager (Amazon DLM)</code> policy to <code>take</code> a <code>snapshot of the EBS</code> volume on a <code>recurring schedule</code>.</p>
 <p><code>Explanation</code>: Amazon Data Lifecycle Manager (Amazon DLM) allows you to create automated snapshot lifecycle policies for your Amazon EBS volumes. By creating an Amazon DLM policy, you can define the desired backup schedule and retention period for the EBS volume. The policy will then automatically create snapshots according to the defined schedule. This ensures that regular backups are taken and can be used for data recovery if needed.</p>
 <h3 id="EBS-volumes-deleted-with-the-TerminateInstances-API-call-continue-to-show-for-some-time-on-AWS-Config-console-👀-EXAM"><a href="#EBS-volumes-deleted-with-the-TerminateInstances-API-call-continue-to-show-for-some-time-on-AWS-Config-console-👀-EXAM" class="headerlink" title="EBS volumes deleted with the TerminateInstances API call continue to show for some time on AWS Config console - 👀 EXAM"></a><a target="_blank" rel="noopener" href="https://docs.amazonaws.cn/en_us/AWSEC2/latest/WindowsGuide/ebs-deleting-volume.html">EBS volumes deleted</a> with the <code>TerminateInstances</code> API call continue to show for some time on AWS Config console - 👀 EXAM</h3><p>Terminated Amazon EC2 instances use the <code>DeleteOnTermination</code> attribute for each attached EBS volume to determine to delete the volume. Amazon EC2 deletes the Amazon EBS volume that has the <code>DeleteOnTermination</code> attribute set to true, but it does not publish the <code>DeleteVolume</code> API call. This is because AWS Config uses the <em>DeleteVolume</em> API call as a trigger with the rule, and the resource changes aren’t recorded for the EBS volume. The EBS volume still shows as compliant or noncompliant.
 AWS Config performs a baseline every six hours to check for new configuration items with the ResourceDeleted status. The AWS Config rule then removes the deleted EBS volumes from the evaluation results.</p>
@@ -1624,7 +1656,7 @@ AWS Config performs a baseline every six hours to check for new configuration it
 <li>If your instance belongs to an Auto Scaling group, the Amazon EC2 Auto Scaling service considers the stopped instance as unhealthy and may terminate it, launching a replacement instance instead. To avoid this, you can temporarily suspend the scaling processes for the group while resizing your instance.</li>
 </ol>
 <p>Reference: <a target="_blank" rel="noopener" href="https://aws.amazon.com/ebs/features/">Amazon EBS features</a></p>
-<h2 id="S3"><a href="#S3" class="headerlink" title="S3"></a>S3</h2><h3 id="Q-S3-inventory"><a href="#Q-S3-inventory" class="headerlink" title="*Q S3 inventory"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html">S3 inventory</a></h3><p>Is one of the tools Amazon S3 provides to help manage your storage. You can use it <code>to audit and report on the replication and encryption status of your objects</code> for business, compliance, and regulatory needs.
+<h2 id="S3"><a href="#S3" class="headerlink" title="S3"></a>S3</h2><h3 id="QUESTION-S3-inventory"><a href="#QUESTION-S3-inventory" class="headerlink" title="QUESTION S3 inventory"></a><code>QUESTION</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html">S3 inventory</a></h3><p>Is one of the tools Amazon S3 provides to help manage your storage. You can use it <code>to audit and report on the replication and encryption status of your objects</code> for business, compliance, and regulatory needs.
 You can also simplify and speed up business workflows and big data jobs using Amazon S3 inventory, which provides a scheduled alternative to the Amazon S3 synchronous List API operation.</p>
 <h3 id="Retain-Until-Date"><a href="#Retain-Until-Date" class="headerlink" title="Retain Until Date"></a>Retain Until Date</h3><p>A retention period safeguards an object version for a specified duration. When a retention period is assigned to an object version, Amazon S3 records a timestamp in the object version’s metadata, indicating when the retention period concludes. Once the retention period ends, the object version can be overwritten or deleted, unless a legal hold has also been placed on it.</p>
 <p>You can assign a retention period to an object version either explicitly or through a default setting at the bucket level. Explicitly applying a retention period involves specifying a “Retain Until Date” for the object version. Amazon S3 stores this setting in the object version’s metadata and ensures the protection of the object version until the retention period expires.</p>
@@ -1644,10 +1676,10 @@ You can also simplify and speed up business workflows and big data jobs using Am
 <h3 id="As-a-Website"><a href="#As-a-Website" class="headerlink" title="As a Website"></a>As a Website</h3><p>If you use an Amazon S3 bucket configured as a website endpoint, <code>you must set it up with CloudFront as a custom origin</code>. You can’t use the origin access identity feature. However, you can restrict access to content on a custom origin by setting up custom headers and configuring your origin to require them.</p>
 <h3 id="Enable-MFA-Delete"><a href="#Enable-MFA-Delete" class="headerlink" title="Enable MFA-Delete"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html#MultiFactorAuthenticationDelete">Enable MFA-Delete</a></h3><p>You should note that <code>only</code> the bucket owner (<code>root account</code>) <code>can enable MFA Delete</code> only <code>via</code> the AWS <code>CLI</code>. However, the bucket owner, the AWS account that created the bucket (root account), and all authorized IAM users can enable versioning.</p>
 <h3 id="Vault-Lock-Policy"><a href="#Vault-Lock-Policy" class="headerlink" title="Vault Lock Policy"></a>Vault Lock Policy</h3><p>S3 Glacier Vault Lock <code>allows</code> you to easily deploy and <code>enforce compliance controls for individual S3 Glacier vaults</code> with a <code>vault lock policy</code>. You <code>can specify controls</code> such as <code>“write once read many” (WORM)</code> in a vault lock policy and lock the policy from future edits. Once locked, the policy can no longer be changed.</p>
-<h3 id="Q-Snowball-Edge"><a href="#Q-Snowball-Edge" class="headerlink" title="*Q Snowball Edge"></a><code>*Q</code> Snowball Edge</h3><p>AWS Snowball is a service designed for large-scale data transfers. Snowball Edge appliances are rugged, petabyte-scale data transfer devices that can be used for offline data migration. By using multiple instances of the AWS Snowball client and multiple Snowball Edge Appliances, the company can achieve fast and cost-effective data migration.</p>
+<h3 id="QUESTION-Snowball-Edge"><a href="#QUESTION-Snowball-Edge" class="headerlink" title="QUESTION Snowball Edge"></a><code>QUESTION</code> Snowball Edge</h3><p>AWS Snowball is a service designed for large-scale data transfers. Snowball Edge appliances are rugged, petabyte-scale data transfer devices that can be used for offline data migration. By using multiple instances of the AWS Snowball client and multiple Snowball Edge Appliances, the company can achieve fast and cost-effective data migration.</p>
 <p>Using multiple instances of the AWS Snowball client and Snowball Edge Appliances <code>allows</code> for <code>parallel data transfers</code>, significantly <code>reducing the migration time</code>. It also <code>avoids</code> the need for <code>network-based transfers</code>, which could be slower and potentially costly due to data transfer charges.</p>
 <h3 id="Amazon-S3-Storage-Classes"><a href="#Amazon-S3-Storage-Classes" class="headerlink" title="Amazon S3 Storage Classes"></a><a target="_blank" rel="noopener" href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a></h3><h4 id="Amazon-S3-Standard-Infrequent-Access-S3-Standard-IA"><a href="#Amazon-S3-Standard-Infrequent-Access-S3-Standard-IA" class="headerlink" title="Amazon S3 Standard-Infrequent Access (S3 Standard-IA)"></a>Amazon S3 Standard-Infrequent Access (S3 Standard-IA)</h4><p>S3 Standard-IA is for data that is accessed less frequently, but requires rapid access when needed. S3 Standard-IA offers the high durability, high throughput, and low latency of S3 Standard, with a low per GB storage price and per GB retrieval charge.</p>
-<h3 id="Q-Access-to-Amazon-S3-via-Direct-Connect"><a href="#Q-Access-to-Amazon-S3-via-Direct-Connect" class="headerlink" title="*Q Access to Amazon S3 via Direct Connect"></a><code>*Q</code> Access to Amazon S3 via Direct Connect</h3><p>It’s not possible to directly access an S3 bucket through a private virtual interface (VIF) using Direct Connect. This is true even if you have an Amazon Virtual Private Cloud (Amazon VPC) endpoint for Amazon S3 in your VPC because <code>VPC endpoint connections can&#39;t extend outside of a VPC</code>. Additionally, Amazon S3 resolves to public IP addresses, even if you enable a VPC endpoint for Amazon S3.</p>
+<h3 id="QUESTION-Access-to-Amazon-S3-via-Direct-Connect"><a href="#QUESTION-Access-to-Amazon-S3-via-Direct-Connect" class="headerlink" title="QUESTION Access to Amazon S3 via Direct Connect"></a><code>QUESTION</code> Access to Amazon S3 via Direct Connect</h3><p>It’s not possible to directly access an S3 bucket through a private virtual interface (VIF) using Direct Connect. This is true even if you have an Amazon Virtual Private Cloud (Amazon VPC) endpoint for Amazon S3 in your VPC because <code>VPC endpoint connections can&#39;t extend outside of a VPC</code>. Additionally, Amazon S3 resolves to public IP addresses, even if you enable a VPC endpoint for Amazon S3.</p>
 <p>However, you can establish access to Amazon S3 using <code>Direct Connect</code> by following these steps (This configuration doesn’t require a VPC endpoint for Amazon S3, because traffic doesn’t traverse the VPC):</p>
 <ol>
 <li>Create a <code>connection</code>. You can request a <code>dedicated connection or a hosted connection</code>.</li>
@@ -1822,9 +1854,9 @@ device (usually a mobile phone or hardware) before doing important operations on
 </ul>
 <h4 id="Allow-access-if-users-are-MFA-authenticated"><a href="#Allow-access-if-users-are-MFA-authenticated" class="headerlink" title="Allow access if users are MFA authenticated"></a>Allow access if users are MFA authenticated</h4><p>use an MFA condition in a policy to check the following properties:</p>
 <ul>
-<li><p>Existence—To simply verify that the user did authenticate with MFA, check that the <code>aws:MultiFactorAuthPresent</code> key is True in a Bool condition. The key is only present when the user authenticates with short-term credentials. Long-term credentials, such as access keys, do not include this key.</p>
+<li><p>Existence-To simply verify that the user did authenticate with MFA, check that the <code>aws:MultiFactorAuthPresent</code> key is True in a Bool condition. The key is only present when the user authenticates with short-term credentials. Long-term credentials, such as access keys, do not include this key.</p>
 </li>
-<li><p>Duration—If you want to grant access only within a specified time after MFA authentication, use a numeric condition type to compare the aws:MultiFactorAuthAge key’s age to a value (such as 3600 seconds). Note that the <code>aws:MultiFactorAuthAge</code> key is not present if MFA was not used.</p>
+<li><p>Duration-If you want to grant access only within a specified time after MFA authentication, use a numeric condition type to compare the aws:MultiFactorAuthAge key’s age to a value (such as 3600 seconds). Note that the <code>aws:MultiFactorAuthAge</code> key is not present if MFA was not used.</p>
 </li>
 </ul>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;Condition&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;Bool&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;</span></span><br><span class="line"><span class="string">    &quot;</span>aws<span class="punctuation">:</span>MultiFactorAuthPresent<span class="string">&quot;: &quot;</span><span class="literal"><span class="keyword">true</span></span><span class="string">&quot;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
@@ -1996,7 +2028,7 @@ device (usually a mobile phone or hardware) before doing important operations on
 <h2 id="AwS-Origin-Shield-👀-EXAM"><a href="#AwS-Origin-Shield-👀-EXAM" class="headerlink" title="AwS Origin Shield - 👀 EXAM"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">AwS Origin Shield</a> - 👀 EXAM</h2><p>Enabling the Origin Shield <code>feature</code> in <code>CloudFront</code> helps reduce the load on the origin server by <code>adding</code> an additional <code>caching layer</code> <em>between</em> <code>CloudFront edge locations</code> and &#96;the origin. It improves cache hit ratios and reduces the number of requests hitting the origin by serving content from the Origin Shield cache.</p>
 <p><img src="/../images/AWS-CloudFront-Origin-Shield.png" alt="CloudFront Origin Shield"></p>
 <h2 id="AWS-WAF-Web-Application-Firewall-1"><a href="#AWS-WAF-Web-Application-Firewall-1" class="headerlink" title="AWS WAF (Web Application Firewall)"></a>AWS WAF (Web Application Firewall)</h2><p>AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to an Amazon <code>CloudFront</code> distribution, an Amazon <code>API Gateway</code> REST API, an <code>Application Load Balancer</code>, or an <code>AWS AppSync GraphQL API</code>.</p>
-<h3 id="Q-Change-AWS-Firewall-Manager-administration-account"><a href="#Q-Change-AWS-Firewall-Manager-administration-account" class="headerlink" title="*Q Change AWS Firewall Manager administration account"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-change-administrator.html">Change AWS Firewall Manager administration account</a></h3><p>You can designate <code>only one account in</code> an <code>organization as a Firewall Manager administrator account</code>. To create a new Firewall Manager administrator account, you must revoke the original administrator account first.</p>
+<h3 id="QUESTION-Change-AWS-Firewall-Manager-administration-account"><a href="#QUESTION-Change-AWS-Firewall-Manager-administration-account" class="headerlink" title="QUESTION Change AWS Firewall Manager administration account"></a><code>QUESTION</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-change-administrator.html">Change AWS Firewall Manager administration account</a></h3><p>You can designate <code>only one account in</code> an <code>organization as a Firewall Manager administrator account</code>. To create a new Firewall Manager administrator account, you must revoke the original administrator account first.</p>
 <h3 id="CloudFront-Origin-Headers-vs-Cache-Behavior"><a href="#CloudFront-Origin-Headers-vs-Cache-Behavior" class="headerlink" title="CloudFront Origin Headers vs Cache Behavior"></a>CloudFront Origin Headers vs Cache Behavior</h3><p><code>Origin Custom Headers</code>:</p>
 <ul>
 <li>Origin-level setting</li>
@@ -2016,8 +2048,8 @@ device (usually a mobile phone or hardware) before doing important operations on
 <li>Specify none or the minimally required <code>query string parameters</code></li>
 <li>Separate static and dynamic distributions (two origins)</li>
 </ul>
-<h2 id="CloudFront-with-ALB-sticky-sessions"><a href="#CloudFront-with-ALB-sticky-sessions" class="headerlink" title="CloudFront with ALB sticky sessions"></a>CloudFront with ALB sticky sessions</h2><ul>
-<li>Must forward &#x2F; whitelist the cookie that controls the session affinity to the origin to allow the session affinity to work</li>
+<h2 id="CloudFront-with-ALB-sticky-sessions-EXAM-QUESTION"><a href="#CloudFront-with-ALB-sticky-sessions-EXAM-QUESTION" class="headerlink" title="CloudFront with ALB sticky sessions - EXAM QUESTION"></a>CloudFront with <strong>ALB sticky sessions</strong> - EXAM QUESTION</h2><p>-<code> Must forward / whitelist the cookie that controls the session affinity to the origin</code> to allow the session affinity to work</p>
+<ul>
 <li>Set a TTL to a value lesser than when the authentication cookie expire</li>
 </ul>
 <p><code>Cookie: AWSALB=...</code></p>
@@ -2057,7 +2089,7 @@ you plan for <code>scheduled activities</code>.</p>
 <li>This is possible for Account events (resources that are affected in your account) and Public Events (Regional availability of a service)</li>
 <li>Use cases: send notifications, capture event information, take corrective action…</li>
 </ul>
-<h2 id="👀-Q-AWS-Personal-Health-Dashboard"><a href="#👀-Q-AWS-Personal-Health-Dashboard" class="headerlink" title="👀 *Q AWS Personal Health Dashboard"></a>👀 <code>*Q</code> AWS Personal Health Dashboard</h2><p>AWS Personal Health Dashboard provides <code>alerts</code> and <em><code>remediation guidance</code></em> when AWS is experiencing <code>events that may impact you</code>. While the Service Health Dashboard displays the general status of AWS services, Personal Health Dashboard gives you a personalized view into the <em>performance and availability</em> of the AWS services underlying your AWS resources.</p>
+<h2 id="👀-QUESTION-AWS-Personal-Health-Dashboard"><a href="#👀-QUESTION-AWS-Personal-Health-Dashboard" class="headerlink" title="👀 QUESTION AWS Personal Health Dashboard"></a>👀 <code>QUESTION</code> AWS Personal Health Dashboard</h2><p>AWS Personal Health Dashboard provides <code>alerts</code> and <em><code>remediation guidance</code></em> when AWS is experiencing <code>events that may impact you</code>. While the Service Health Dashboard displays the general status of AWS services, Personal Health Dashboard gives you a personalized view into the <em>performance and availability</em> of the AWS services underlying your AWS resources.</p>
 <p>What’s more, Personal Health Dashboard proactively notifies you when AWS experiences any events that may affect you, helping provide quick visibility and guidance to help you minimize the impact of events in progress, and plan for any scheduled changes, such as AWS hardware maintenance.</p>
 <p>The <code>AWS Health API provides</code> programmatic <code>access</code> to the <code>AWS Health information</code> that appears in the AWS Personal Health Dashboard. You can use the API operations to get information about events that might affect your AWS services and resources.</p>
 <hr>
@@ -2136,7 +2168,7 @@ you plan for <code>scheduled activities</code>.</p>
 <li>Includes: virtual machines, databases, storage options, etc…</li>
 </ul>
 <h3 id="AWS-Service-Catalog-Sharing-Catalogs"><a href="#AWS-Service-Catalog-Sharing-Catalogs" class="headerlink" title="AWS Service Catalog - Sharing Catalogs"></a>AWS Service Catalog - Sharing Catalogs</h3><p><code>Share portfolios</code> with <code>individual AWS accounts or AWS Organizations</code>.</p>
-<h3 id="AWS-Service-Catalog-TagOptions-Library"><a href="#AWS-Service-Catalog-TagOptions-Library" class="headerlink" title="AWS Service Catalog - TagOptions Library"></a>AWS Service Catalog - TagOptions Library</h3><ul>
+<h3 id="AWS-Service-Catalog-TagOptions-Library-EXAM"><a href="#AWS-Service-Catalog-TagOptions-Library-EXAM" class="headerlink" title="AWS Service Catalog - TagOptions Library - EXAM"></a>AWS Service Catalog - TagOptions Library - EXAM</h3><ul>
 <li>Easily manage tags on provisioned products</li>
 <li><code>TagOption</code>:<ul>
 <li>Key-value pair managed in AWS Service Catalog</li>
@@ -2186,7 +2218,7 @@ you plan for <code>scheduled activities</code>.</p>
 <li><code>Same options as AWS Cost Explorer!</code></li>
 <li>2 budgets are free, then $0.02&#x2F;day&#x2F;budget</li>
 </ul>
-<h3 id="Cost-Allocation-Tags"><a href="#Cost-Allocation-Tags" class="headerlink" title="Cost Allocation Tags"></a>Cost Allocation Tags</h3><ul>
+<h3 id="Cost-Allocation-Tags-EXAM"><a href="#Cost-Allocation-Tags-EXAM" class="headerlink" title="Cost Allocation Tags - EXAM"></a>Cost Allocation Tags - EXAM</h3><ul>
 <li>Use <code>cost allocation tags</code> to track your AWS costs on a detailed level</li>
 <li><code>AWS generated tags</code><ul>
 <li>Automatically applied to the resource you create</li>
@@ -2199,7 +2231,7 @@ you plan for <code>scheduled activities</code>.</p>
 </ul>
 </li>
 </ul>
-<h3 id="Cost-and-Usage-Reports"><a href="#Cost-and-Usage-Reports" class="headerlink" title="Cost and Usage Reports"></a>Cost and Usage Reports</h3><ul>
+<h3 id="Cost-and-Usage-Reports-EXAM"><a href="#Cost-and-Usage-Reports-EXAM" class="headerlink" title="Cost and Usage Reports - EXAM"></a>Cost and Usage Reports - EXAM</h3><ul>
 <li>Dive deeper into your AWS costs and usage</li>
 <li>The AWS Cost &amp; Usage Report contains <code>the most comprehensive set of AWS cost and usage data available</code></li>
 <li>Includes additional metadata about AWS services, pricing, and reservations (<code>e.g., Amazon EC2 Reserved Instances (RIs)</code>)</li>
@@ -2209,10 +2241,10 @@ you plan for <code>scheduled activities</code>.</p>
 <li>any tags that you have activated for cost allocation purposes</li>
 </ul>
 </li>
-<li>Can be configured for daily exports to S3</li>
+<li><code>Can be configured for daily exports to S3</code></li>
 <li>Can be integrated with Athena, Redshift or QuickSight</li>
 </ul>
-<h3 id="AWS-Compute-Optimizer-👀-EXAM-OJO-👀"><a href="#AWS-Compute-Optimizer-👀-EXAM-OJO-👀" class="headerlink" title="AWS Compute Optimizer - 👀 EXAM OJO - 👀"></a>AWS Compute Optimizer - 👀 EXAM OJO - 👀</h3><ul>
+<h3 id="AWS-Compute-Optimizer-👀-EXAM-OJO-👀"><a href="#AWS-Compute-Optimizer-👀-EXAM-OJO-👀" class="headerlink" title="AWS Compute Optimizer - 👀 EXAM OJO - 👀"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is-compute-optimizer.html">AWS Compute Optimizer</a> - 👀 EXAM OJO - 👀</h3><ul>
 <li><code>Reduce costs and improve performance by</code> recommending optimal AWS resources for your workloads</li>
 <li><code>Helps you choose optimal configurations and right-size your workloads (over/under provisioned)</code> - 👀 EXAM</li>
 <li>Uses Machine Learning to analyze your <code>resources configurations and their utilization CloudWatch metrics</code></li>
@@ -2235,7 +2267,7 @@ you plan for <code>scheduled activities</code>.</p>
 <li>a report that lists all your account’s users and the status of their various credentials</li>
 </ul>
 </li>
-<li><p><code>IAM Access Advisor (user-level)</code></p>
+<li><p><code>IAM Access Advisor (user-level)</code> - QUESTION</p>
 <ul>
 <li>Access advisor shows the service permissions granted to a user and when those services were last accessed.</li>
 <li>You can use this in1formation to revise your policies.</li>
@@ -2558,7 +2590,7 @@ you plan for <code>scheduled activities</code>.</p>
 </ul>
 </li>
 </ul>
-<h3 id="Route-53-Resolver-Endpoints"><a href="#Route-53-Resolver-Endpoints" class="headerlink" title="Route 53 - Resolver Endpoints"></a>Route 53 - Resolver Endpoints</h3><ul>
+<h3 id="Route-53-Resolver-Endpoints-QUESTION"><a href="#Route-53-Resolver-Endpoints-QUESTION" class="headerlink" title="Route 53 - Resolver Endpoints - QUESTION"></a>Route 53 - Resolver Endpoints - QUESTION</h3><ul>
 <li><p><code>Inbound Endpoint</code></p>
 <ul>
 <li>DNS Resolvers on your network can forward DNS queries to Route 53 Resolver</li>
@@ -2642,7 +2674,7 @@ you plan for <code>scheduled activities</code>.</p>
 <li><code>lowestPrice</code></li>
 <li><code>InstancePoolsToUseCount</code></li>
 </ul>
-<h3 id="Q-Get-public-IP-address"><a href="#Q-Get-public-IP-address" class="headerlink" title="*Q Get public IP address"></a><code>*Q</code> Get public IP address</h3><p>EC2 instances in AWS have <code>metadata</code> associated with them that can be accessed from within the instance. This metadata includes information about the instance, such as its IP address, instance type, security groups, and more.</p>
+<h3 id="QUESTION-Get-public-IP-address"><a href="#QUESTION-Get-public-IP-address" class="headerlink" title="QUESTION Get public IP address"></a><code>QUESTION</code> Get public IP address</h3><p>EC2 instances in AWS have <code>metadata</code> associated with them that can be accessed from within the instance. This metadata includes information about the instance, such as its IP address, instance type, security groups, and more.</p>
 <p>Can make an HTTP GET request to a specific URL provided by the instance metadata service. The URL is <a target="_blank" rel="noopener" href="http://169.254.169.254/latest/meta-data/public-ipv4">http://169.254.169.254/latest/meta-data/public-ipv4</a>.</p>
 <h3 id="👀-EC2-Detailed-monitoring-👀"><a href="#👀-EC2-Detailed-monitoring-👀" class="headerlink" title="👀 EC2 Detailed monitoring 👀"></a>👀 EC2 Detailed monitoring 👀</h3><p><code>Metrics are the fundamental concept in CloudWatch</code>. A metric represents a time-ordered set of data points that are published to CloudWatch. Think of a metric as a variable to monitor, and the data points as representing the values of that variable over time.</p>
 <p><code>By default, your instance is enabled for basic monitoring</code>. You can optionally enable detailed monitoring. After you enable <code>detailed monitoring</code>, the Amazon EC2 console displays monitoring graphs with a <code>1-minute period</code> for the instance. .In <code>Basic monitoring</code>, data is available automatically in <code>5-minute periods</code> at no charge</p>
@@ -2694,23 +2726,23 @@ They are optimized to deliver tens of thousands of <code>low-latency</code>, <co
 <h2 id="👀-AWS-Directory-Services"><a href="#👀-AWS-Directory-Services" class="headerlink" title="👀 AWS Directory Services"></a>👀 AWS Directory Services</h2><p>service that automatically <code>creates</code> an AWS <code>security group</code> in your VPC with network rules for traffic in and out of AWS managed domain controllers. The default inbound rules <code>allow traffic from any source (0.0.0.0/0) to ports required by Active Directory</code>. These rules do not introduce security vulnerabilities, as traffic to the domain controllers is limited to traffic from your VPC, other peered VPCs, or networks connected using AWS Direct Connect, AWS Transit Gateway or Virtual Private Network.</p>
 <p><code>By default</code>, AWS Directory Services creates security groups that <em><code>allow unrestricted access</code></em>, which can be &#96;flagged as a security concern. To address this issue, you need to review the security group rules and make necessary adjustments to restrict access based on your specific requirements and security best practices.</p>
 <p>Using <code>AWS Trusted Advisor</code> can provide additional insights into security best practices and potential misconfigurations, but it may not specifically highlight the security group issue related to AWS Directory Services.</p>
-<h2 id="Q-SAML-federation"><a href="#Q-SAML-federation" class="headerlink" title="*Q SAML federation"></a><code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">SAML federation</a></h2><ul>
+<h2 id="QUESTION-SAML-federation"><a href="#QUESTION-SAML-federation" class="headerlink" title="QUESTION SAML federation"></a><code>QUESTION</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">SAML federation</a></h2><ul>
 <li><code>SAML federation between AWS and</code> the corporate <code>Active Directory and mapping Active Directory groups to IAM groups</code> is the recommended way to make access more secure and streamlined.</li>
 </ul>
-<h2 id="Enhanced-networking"><a href="#Enhanced-networking" class="headerlink" title="Enhanced networking"></a>Enhanced networking</h2><p><code>*Q</code> Consider using enhanced networking for the following scenarios of <code>network performance issues</code>:</p>
+<h2 id="Enhanced-networking"><a href="#Enhanced-networking" class="headerlink" title="Enhanced networking"></a>Enhanced networking</h2><p><code>QUESTION</code> Consider using enhanced networking for the following scenarios of <code>network performance issues</code>:</p>
 <ol>
 <li>If your packets-per-second rate reaches its ceiling, consider moving to enhanced networking. If your rate reaches its ceiling, you’ve likely reached the upper thresholds of the virtual network interface driver.</li>
 <li>If your throughput is near or exceeding 20K packets per second (PPS) on the VIF driver, it’s a best practice to use enhanced networking.</li>
 </ol>
 <p>All current generation instance types support enhanced networking, except for T2 instances.</p>
-<h2 id="Cost-Allocation-Tags-1"><a href="#Cost-Allocation-Tags-1" class="headerlink" title="Cost Allocation Tags"></a>Cost Allocation Tags</h2><p>A tag is a label that you or AWS assigns to an AWS resource. Each tag consists of a key and a value. For each resource, each tag key must be unique, and each tag key can have only one value. You can use tags to organize your resources, and cost allocation tags to track your AWS costs on a detailed level. After you activate cost allocation tags, AWS uses the cost allocation tags to organize your resource costs on your cost allocation report, to make it easier for you to categorize and track your AWS costs.</p>
-<h2 id="👀-Q-AWS-Resource-Groups-Tag-Editor"><a href="#👀-Q-AWS-Resource-Groups-Tag-Editor" class="headerlink" title="👀 *Q AWS Resource Groups Tag Editor"></a>👀 <code>*Q</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/ARG/latest/userguide/tag-editor.html">AWS Resource Groups Tag Editor</a></h2><p>With Resource Groups, you can create, maintain, and view a collection of resources that share common tags. Tag Editor manages <code>tags across services and AWS Regions</code>. Tag Editor can perform a global search and can edit a large number of tags at one time.</p>
+<h2 id="Cost-Allocation-Tags"><a href="#Cost-Allocation-Tags" class="headerlink" title="Cost Allocation Tags"></a>Cost Allocation Tags</h2><p>A tag is a label that you or AWS assigns to an AWS resource. Each tag consists of a key and a value. For each resource, each tag key must be unique, and each tag key can have only one value. You can use tags to organize your resources, and cost allocation tags to track your AWS costs on a detailed level. After you activate cost allocation tags, AWS uses the cost allocation tags to organize your resource costs on your cost allocation report, to make it easier for you to categorize and track your AWS costs.</p>
+<h2 id="👀-QUESTION-AWS-Resource-Groups-Tag-Editor"><a href="#👀-QUESTION-AWS-Resource-Groups-Tag-Editor" class="headerlink" title="👀 QUESTION AWS Resource Groups Tag Editor"></a>👀 <code>QUESTION</code> <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/ARG/latest/userguide/tag-editor.html">AWS Resource Groups Tag Editor</a></h2><p>With Resource Groups, you can create, maintain, and view a collection of resources that share common tags. Tag Editor manages <code>tags across services and AWS Regions</code>. Tag Editor can perform a global search and can edit a large number of tags at one time.</p>
 <h2 id="OpsWorks"><a href="#OpsWorks" class="headerlink" title="OpsWorks"></a>OpsWorks</h2><p>AWS OpsWorks is a <code>configuration management service</code> that provides managed instances of <code>Chef</code> and <code>Puppet</code>.</p>
 <h3 id="👀-Chef-Server"><a href="#👀-Chef-Server" class="headerlink" title="👀 Chef Server"></a>👀 Chef Server</h3><p>You can <code>add nodes</code> automatically to your Chef Server using the <code>unattended method</code>. The recommended method of unattended (or automatic) association of new nodes is to <code>configure</code> the <code>Chef Client Cookbook</code>.
 With this method, a script is used to run the opsworks-cm API associate-node command to associate a new node with your Chef server. Steps are found in the references.</p>
-<h2 id="Q-AWS-Service-Health-Dashboard"><a href="#Q-AWS-Service-Health-Dashboard" class="headerlink" title="*Q AWS Service Health Dashboard"></a><code>*Q</code> AWS Service Health Dashboard</h2><p>Publishes the most up-to-the-minute information on the status and availability of all AWS services in tabular form for all Regions that AWS is present in. You can check on this page <a target="_blank" rel="noopener" href="https://status.aws.amazon.com/">https://status.aws.amazon.com/</a> to get current status information.</p>
+<h2 id="QUESTION-AWS-Service-Health-Dashboard"><a href="#QUESTION-AWS-Service-Health-Dashboard" class="headerlink" title="QUESTION AWS Service Health Dashboard"></a><code>QUESTION</code> AWS Service Health Dashboard</h2><p>Publishes the most up-to-the-minute information on the status and availability of all AWS services in tabular form for all Regions that AWS is present in. You can check on this page <a target="_blank" rel="noopener" href="https://status.aws.amazon.com/">https://status.aws.amazon.com/</a> to get current status information.</p>
 <h2 id="👀-Cost-Allocation-Tags-Account-Level"><a href="#👀-Cost-Allocation-Tags-Account-Level" class="headerlink" title="👀 Cost Allocation Tags - Account Level"></a>👀 Cost Allocation Tags - Account Level</h2><p>A tag is a label that you or AWS assigns to an AWS resource. Each tag consists of a key and a value. For each resource, each tag key must be unique, and each tag key can have only one value. You can use tags to organize your resources, and cost allocation tags to track your AWS costs on a detailed level. After you activate cost allocation tags, AWS uses the cost allocation tags to organize your resource costs on your cost allocation report, to make it easier for you to categorize and track your AWS costs.</p>
-<h2 id="Protecting-data-using-encryption"><a href="#Protecting-data-using-encryption" class="headerlink" title="Protecting data using encryption"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingEncryption.html">Protecting data using encryption</a></h2><h3 id="SSE-S3-Server-Side-Encryption-with-Amazon-S3-Managed-Keys-SSE-S3"><a href="#SSE-S3-Server-Side-Encryption-with-Amazon-S3-Managed-Keys-SSE-S3" class="headerlink" title="SSE-S3 - Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3)"></a>SSE-S3 - Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3)</h3><p>Using SSE-S3 each object is encrypted with a unique key employing strong multi-factor encryption. As an additional safeguard, it encrypts the key itself with a master key that it regularly rotates. Amazon S3 server-side encryption uses one of the strongest block ciphers available, 256-bit Advanced Encryption Standard (AES-256), to encrypt your data.</p>
+<h2 id="Protecting-data-using-encryption-QUESTION"><a href="#Protecting-data-using-encryption-QUESTION" class="headerlink" title="Protecting data using encryption - QUESTION"></a><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingEncryption.html">Protecting data using encryption</a> - QUESTION</h2><h3 id="SSE-S3-Server-Side-Encryption-with-Amazon-S3-Managed-Keys-SSE-S3"><a href="#SSE-S3-Server-Side-Encryption-with-Amazon-S3-Managed-Keys-SSE-S3" class="headerlink" title="SSE-S3 - Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3)"></a>SSE-S3 - Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3)</h3><p>Using SSE-S3 each object is encrypted with a unique key employing strong multi-factor encryption. As an additional safeguard, it encrypts the key itself with a master key that it regularly rotates. Amazon S3 server-side encryption uses one of the strongest block ciphers available, 256-bit Advanced Encryption Standard (AES-256), to encrypt your data.</p>
 <h3 id="SSE-KMS"><a href="#SSE-KMS" class="headerlink" title="SSE-KMS"></a>SSE-KMS</h3><p>Similar to SSE-S3 and also <code>provides</code> you with an <code>audit trail</code> of when your key was used and by whom. Additionally, you have the <code>option</code> to <code>create</code> and <code>manage encryption keys yourself</code>.</p>
 <h3 id="SSE-C"><a href="#SSE-C" class="headerlink" title="SSE-C"></a>SSE-C</h3><p><code>You manage the encryption keys</code> and <code>Amazon S3 manages the encryption</code> as it writes to disks and decryption when you access your objects.</p>
 <h3 id="Client-Side-Encryption"><a href="#Client-Side-Encryption" class="headerlink" title="Client-Side Encryption"></a>Client-Side Encryption</h3><p>You can encrypt data client-side and upload the encrypted data to Amazon S3. In this case, you manage the encryption process, the encryption keys, and related tools.</p>
@@ -2832,7 +2864,8 @@ To connect your Amazon EFS file system to your Amazon EC2 instance, you <code>mu
 <li>Mounting a file system when creating a new EC2 instance.</li>
 </ul>
 <hr>
-<h2 id="AWS-Control-Tower"><a href="#AWS-Control-Tower" class="headerlink" title="AWS Control Tower"></a>AWS Control Tower</h2><p>Offers the easiest way to <code>set up</code> and <code>govern</code> a <code>secure, multi-account AWS environment</code>. It establishes a landing zone that is based on the best-practices blueprints and enables governance using guardrails you can choose from a pre-packaged list. The landing zone is a well-architected, multi-account baseline that follows AWS best practices. Guardrails implement governance rules for security, compliance, and operations.</p>
+<h2 id="AWS-Control-Tower"><a href="#AWS-Control-Tower" class="headerlink" title="AWS Control Tower"></a>AWS Control Tower</h2><p>Offers the easiest way to <code>set up</code> and <code>govern</code> a <code>secure, multi-account AWS environment</code>.</p>
+<p>It <code>establishes a landing zone that</code> is based on the best-practices blueprints and enables governance using guardrails you can choose from a pre-packaged list. The landing zone is a well-architected, multi-account baseline that follows AWS best practices. Guardrails implement governance rules for security, compliance, and operations.</p>
 <hr>
 <h2 id="AWS-X-Ray"><a href="#AWS-X-Ray" class="headerlink" title="AWS X-Ray"></a>AWS X-Ray</h2><ul>
 <li>Debugging in Production, the good old way:<ul>
@@ -2895,13 +2928,13 @@ Amazon Macie <code>only supports S3 as a data source</code>.</p>
 <h2 id="👀-A-placement-group"><a href="#👀-A-placement-group" class="headerlink" title="👀 A placement group"></a>👀 A placement group</h2><p>is a logical <code>grouping</code> of <code>instances</code> <code>within</code> a <code>single Availability Zone</code>. By placing the EC2 instances in a placement group, you can ensure that the instances are physically located close to each other, which can significantly <code>reduce network latency between them</code>. This can <code>improve the performance</code> of inter-instance communication and reduce the overall latency in data transfer.</p>
 <p>Sometimes you want control over the EC2 Instance placement strategy, When you create a placement group, you specify one of the following strategies for the group:</p>
 <ul>
-<li><code>Cluster—clusters</code> instances into a <code>low-latency</code> group in a <code>single Availability Zone</code>.<ul>
+<li><code>Cluster-clusters</code> instances into a <code>low-latency</code> group in a <code>single Availability Zone</code>.<ul>
 <li><code>Pros</code>: Great network (10 Gbps bandwidth between instances with Enhanced Networking enabled - recommended)</li>
 <li><code>Cons</code>: If the rack fails, all instances fails at the same time</li>
 <li><code>Use</code> case: Big Data job that needs to complete fast</li>
 </ul>
 </li>
-<li><code>Spread—spreads</code> instances across <code>underlying hardware</code> (max 7 instances per group per AZ) - critical applications<ul>
+<li><code>Spread-spreads</code> instances across <code>underlying hardware</code> (max 7 instances per group per AZ) - critical applications<ul>
 <li><code>Pros</code>:<ul>
 <li>Can span across Availability Zones (AZ)</li>
 <li>Reduced risk is simultaneous failure</li>
@@ -2919,7 +2952,7 @@ Amazon Macie <code>only supports S3 as a data source</code>.</p>
 </li>
 </ul>
 </li>
-<li><code>Partition—spreads</code> <code>instances across many different partitions</code> (which rely on different sets of racks) within an AZ. Scales to 100s of EC2 instances per group (Hadoop, Cassandra, Kafka)<ul>
+<li><code>Partition-spreads</code> <code>instances across many different partitions</code> (which rely on different sets of racks) within an AZ. Scales to 100s of EC2 instances per group (Hadoop, Cassandra, Kafka)<ul>
 <li>Up to 7 partitions per AZ  Can span across multiple AZs in the same region</li>
 <li>Up to 100s of EC2 instances</li>
 <li>The instances in a partition do not share racks with the instances in the other partitions</li>
@@ -3002,8 +3035,8 @@ Documents</li>
 <li>Query data from multiple AWS accounts and regions</li>
 <li>Create Custom Inventory for your custom metadata (e.g., rack location of each managed instance)</li>
 </ol>
-<hr>
-<h2 id="Scalability-amp-High-Availability"><a href="#Scalability-amp-High-Availability" class="headerlink" title="Scalability &amp; High Availability"></a>Scalability &amp; High Availability</h2><p>Scalability means that an application &#x2F; system can handle greater loads by adapting.</p>
+<h2 id="AWS-Systems-Manager-Distributor"><a href="#AWS-Systems-Manager-Distributor" class="headerlink" title="AWS Systems Manager - Distributor"></a>AWS Systems Manager - Distributor</h2><p>Allows you to securely distribute and install software packages, like your custom software’s .msi installer, across a large set of instances.</p>
+<h3 id="AWS-Systems-Manager-State-Manager"><a href="#AWS-Systems-Manager-State-Manager" class="headerlink" title="AWS Systems Manager State Manager"></a>AWS Systems Manager State Manager</h3><h2 id="Uses-associations-to-enforce-a-desired-state-for-your-instances-By-setting-up-an-association-to-run-the-AWS-ConfigureAWSPackage-document-you’re-effectively-telling-the-Systems-Manager-to-install-or-update-the-specified-package-in-this-case-your-custom-software-on-instances-with-the-specified-tags"><a href="#Uses-associations-to-enforce-a-desired-state-for-your-instances-By-setting-up-an-association-to-run-the-AWS-ConfigureAWSPackage-document-you’re-effectively-telling-the-Systems-Manager-to-install-or-update-the-specified-package-in-this-case-your-custom-software-on-instances-with-the-specified-tags" class="headerlink" title="Uses associations to enforce a desired state for your instances. By setting up an association to run the AWS-ConfigureAWSPackage document, you’re effectively telling the Systems Manager to install or update the specified package (in this case, your custom software) on instances with the specified tags"></a>Uses associations to enforce a desired state for your instances. By setting up an association to run the AWS-ConfigureAWSPackage document, you’re effectively telling the Systems Manager to install or update the specified package (in this case, your custom software) on instances with the specified tags</h2><h2 id="Scalability-amp-High-Availability"><a href="#Scalability-amp-High-Availability" class="headerlink" title="Scalability &amp; High Availability"></a>Scalability &amp; High Availability</h2><p>Scalability means that an application &#x2F; system can handle greater loads by adapting.</p>
 <p><strong>Scalability is linked but different to High Availability</strong></p>
 <h3 id="Vertical-Scalability"><a href="#Vertical-Scalability" class="headerlink" title="Vertical Scalability"></a>Vertical Scalability</h3><p>Vertically scalability means increasing the size of the resource (instance)</p>
 <h3 id="Horizontal-Scalability"><a href="#Horizontal-Scalability" class="headerlink" title="Horizontal Scalability"></a>Horizontal Scalability</h3><p>Horizontal Scalability means increasing the number of instances &#x2F; systems for your application</p>
@@ -3027,9 +3060,9 @@ Documents</li>
 <h2 id="Gateway-Load-Balancer"><a href="#Gateway-Load-Balancer" class="headerlink" title="Gateway Load Balancer"></a>Gateway Load Balancer</h2><p>Uses the <strong>GENEVE</strong> protocol on port <strong>6081</strong></p>
 <h2 id="Application-Load-Balancers"><a href="#Application-Load-Balancers" class="headerlink" title="Application Load Balancers"></a>Application Load Balancers</h2><h3 id="Monitoring"><a href="#Monitoring" class="headerlink" title="Monitoring"></a>Monitoring</h3><ul>
 <li><code>**RequestCountPerTarget**</code></li>
-<li><code>**SurgeQueueLength**</code>: The total of requests (HTTP listener) or connections (TCP listener) that are pending routing to a healthy instance. Help to scale out ASG. Max value is 1024</li>
-<li><code>👀</code> <code>SpilloverCount</code> represents the total <code>number of requests</code> that were <code>rejected</code> <code>because</code> the surge <code>queue</code> is <code>full</code>.
+<li><code>👀 EXAM</code> <code>SpilloverCount</code> represents the total <code>number of requests</code> that were <code>rejected</code> <code>because</code> the surge <code>queue</code> is <code>full</code>.
 To solve this use-case, you need to configure the Auto Scaling groups to scale your instances based on the <code>SurgeQueueLength</code> metric.</li>
+<li><code>**SurgeQueueLength**</code>: The total of requests (HTTP listener) or connections (TCP listener) that are pending routing to a healthy instance. Help to scale out ASG. Max value is 1024</li>
 </ul>
 <h3 id="Target-Groups-Settings"><a href="#Target-Groups-Settings" class="headerlink" title="Target Groups Settings"></a>Target Groups Settings</h3><ul>
 <li><code>deregisteration_delay.timeout_seconds</code>: time the load balancer waits before deregistering a target.</li>
@@ -3188,17 +3221,188 @@ To solve this use-case, you need to configure the Auto Scaling groups to scale y
 <li><em>Create</em> at least <em>one replica or each index in the cluster</em></li>
 </ul>
 <hr>
+<h2 id="AWS-IAM-Identity-Center-successor-to-AWS-Single-Sign-On-EXAM"><a href="#AWS-IAM-Identity-Center-successor-to-AWS-Single-Sign-On-EXAM" class="headerlink" title="AWS IAM Identity Center (successor to AWS Single Sign-On) - EXAM"></a>AWS IAM Identity Center (successor to AWS Single Sign-On) - EXAM</h2><ul>
+<li><p>One login (single sign-on) for all your</p>
+<ul>
+<li><strong><code>AWS accounts in AWS Organizations</code></strong></li>
+<li>Business cloud applications (e.g., Salesforce, Box, Microsoft 365, …)</li>
+<li>SAML2.0-enabled applications</li>
+<li>EC2 Windows Instances</li>
+</ul>
+</li>
+<li><p>Identity providers</p>
+</li>
+<li><p>Built-in identity store in IAM Identity Center</p>
+</li>
+<li><p>3rd party: Active Directory (AD), OneLogin, Okta…</p>
+</li>
+</ul>
+<hr>
+<h2 id="AWS-Systems-Manager-AWS-Systems-Manager-OpsCenter"><a href="#AWS-Systems-Manager-AWS-Systems-Manager-OpsCenter" class="headerlink" title="AWS Systems Manager - AWS Systems Manager OpsCenter"></a>AWS Systems Manager - AWS Systems Manager OpsCenter</h2><p>Provides a central location where operations engineers and IT professionals can manage operational work items (OpsItems) related to AWS resources.</p>
+<p>An OpsItem is any operational issue or interruption that needs investigation and remediation. Using OpsCenter, you can view contextual investigation data about each OpsItem, including related OpsItems and related resources. You can also run Systems Manager Automation runbooks to resolve OpsItems.</p>
+<hr>
 <h2 id="Amazon-EMR-Optional"><a href="#Amazon-EMR-Optional" class="headerlink" title="Amazon EMR - Optional"></a>Amazon <a target="_blank" rel="noopener" href="https://aws.amazon.com/emr/">EMR</a> - Optional</h2><p>is the industry-leading cloud big data solution for petabyte-scale data processing, interactive analytics, and machine learning using open-source frameworks such as Apache Spark, Apache Hive, and Presto.</p>
 <p>a point-in-time recovery in Amazon Aurora means restoring the database to a new DB cluster from a snapshot. Take note that the requirement is to ensure the restore procedure is done on the same DB instance.</p>
 <hr>
-<h2 id="AWS-Global-Accelerator"><a href="#AWS-Global-Accelerator" class="headerlink" title="AWS Global Accelerator"></a>AWS Global Accelerator</h2><p> service that <code>improves</code> the <code>availability and performance of your applications with local or global users</code>. It provides static IP addresses that act as a fixed entry point to your application endpoints in a single or multiple AWS Regions, such as your Application Load Balancers, Network Load Balancers or Amazon EC2 instances. AWS Global Accelerator will not help in accelerating the file transfer speeds into S3 for the given use-case.</p>
+<h2 id="AWS-Global-Accelerator"><a href="#AWS-Global-Accelerator" class="headerlink" title="AWS Global Accelerator"></a>AWS Global Accelerator</h2><p>service that <code>improves</code> the <code>availability and performance of your applications with local or global users</code>. It provides static IP addresses that act as a fixed entry point to your application endpoints in a single or multiple AWS Regions, such as your Application Load Balancers, Network Load Balancers or Amazon EC2 instances. AWS Global Accelerator will not help in accelerating the file transfer speeds into S3 for the given use-case.</p>
 <p>Global Accelerator service does not work with S3. It only supports endpoints like application load balancers, network load balancers, EC2 instances, or elastic IP addresses.</p>
-<p>–</p>
-<h2 id="AWS-Systems-Manager-OpsCenter"><a href="#AWS-Systems-Manager-OpsCenter" class="headerlink" title="AWS Systems Manager OpsCenter"></a>AWS Systems Manager OpsCenter</h2>
+<hr>
+<h2 id="ASG-WARM-Pool"><a href="#ASG-WARM-Pool" class="headerlink" title="ASG WARM Pool"></a>ASG WARM Pool</h2><p>A warm pool gives your the ability to decrease latency for apps tat have exceptionally long boot times, eg because instance need to write mssive amountos of data to disk.</p>
+<hr>
+<h2 id="Other-Quetions-Link"><a href="#Other-Quetions-Link" class="headerlink" title="Other Quetions - Link"></a>Other Quetions - <a target="_blank" rel="noopener" href="https://collin-smith.medium.com/passing-the-aws-certified-sysops-administrator-associate-certification-in-2023-a1e5f08d1b12">Link</a></h2><ol>
+<li>If an S3 Bucket implemented <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html">Governance Mode S3 Object Locking</a> and you wanted to bypass this you. You must have the <code>s3:BypassGovernanceRetention</code> permission and must explicitly include <code>x-amz-bypass-governance-retention:true</code> as a request header with any request that requires overriding governance mode.</li>
+</ol>
+<p>S3 Object Lock provides two retention modes:</p>
+<ul>
+<li>Governance mode</li>
+<li>Compliance mode</li>
+</ul>
+<ul>
+<li>In <code>compliance mode</code>, a protected object version <code>can’t be overwritten or deleted by any user</code>, including the root user in your AWS account.</li>
+<li>In <code>governance mode</code>, users <code>can’t overwrite or delete an object</code> version or alter its lock settings unless <strong><code>they have special permissions</code></strong>.</li>
+</ul>
+<ol start="2">
+<li><p>If you encounter the <strong><code>OUTDATED</code></strong> status when running a <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html">CloudFormation StackSet</a> for one region. According to <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-troubleshooting.html">Troubleshooting AWS CloudFormation StackSets</a> coud be a result that “the template could be trying to create global resources that must be unique but aren’t, such as S3 buckets.”</p>
+</li>
+<li><p>If you had a single AWS Aurora cluster with one writer and reader and you were encountering memory issues, you might want to deal with this using AWS Aurora DB Multi-Master. However, I believe the AWS Aurora DB Multi-Master has been phased out. You can read further on trouble shooting <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Troubleshooting.html">AWS Aurora Memory Issues</a>.</p>
+</li>
+<li><p>If there are EC2s that are terminated in an environment, you should use the EIP-attached Config rule to find EIPs that are unattached in your environment.</p>
+</li>
+<li><p>If you have an Lambda which processes&#x2F;updates an S3 object and writes the updated object back to the same S3 bucket, you might want to consider <a target="_blank" rel="noopener" href="https://aws.amazon.com/blogs/compute/avoiding-recursive-invocation-with-amazon-s3-and-aws-lambda/">ways to avoid recursive Lambda calls on the same S3 bucket</a>. Generally using a separate bucket is preferred. If you must use the same bucket you can consider some of the following options:</p>
+</li>
+</ol>
+<p>  (1) Using a prefix or suffix in the S3 event notification
+  (2) Using object metadata to identify the original S3 object
+  (3) Using an Amazon DynamoDB table to filter duplicate events</p>
+<ol start="6">
+<li><p>If you have an on premise server with a fixed IP address and you are migrating this to an EC2 behind a load balancer, you should consider using an A record as an A Record maps to one or more IP Addresses. A CNAME record should not be used as it maps an alias name to another name (Not an IP Address)</p>
+</li>
+<li><p>If you have some existing EC2 and you are a client who wishes to convert some of these to Fargate. You should consider <a target="_blank" rel="noopener" href="https://aws.amazon.com/savingsplans/">Cost Savings Plans</a> and <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/savingsplans/latest/userguide/sp-applying.html">different scenarios</a> to reduce costs ensure that there are no unused reservations. Options to be considered:</p>
+</li>
+</ol>
+<ul>
+<li>Compute Savings Plan with no upfront costs.</li>
+<li>Compute Savings Plan with partial upfront costs.</li>
+<li>EC2 Instance Savings Plans.</li>
+</ul>
+<ol start="8">
+<li>If there are many EC2s behind an autoscaler that are failing intermittently and it will take weeks to solve the actual issue. Some ways to deal with this could include:</li>
+</ol>
+<p>  (a) Use CloudWatch agent with health checks and restart them
+  (b) AWS System State Manager&#x2F;AWS System Session Manager to check the status of these applications every 5 minutes and restart them.</p>
+<ol start="9">
+<li>Given S3 bucket and enabled <code>S3 Object Lock in governance</code> mode to ensure data integrity and retention that adheres to the write-once-read-many (WORM) model.</li>
+</ol>
+<h3 id="More-questions-from-Reddit"><a href="#More-questions-from-Reddit" class="headerlink" title="More questions from Reddit"></a>More questions from Reddit</h3><p>Two interesting questions from my exam:</p>
+<ol>
+<li>How to configure ECS to have flow logs ONLY FROM CONTAINERS (two answers) options:</li>
+</ol>
+<p>a) use aws vpc network mode
+b) something
+c) use bridge network mode
+d) enable container ENI flow logs</p>
+<p>The first one seems to be quite simple, in awsvpc mode each container has it’s own elastic network interface and you can have flow flog for ENI. So that seems to be the correct answer.</p>
+<ol start="2">
+<li>Someone created a lambda that is triggered by S3 PutObject event and this lambda writes new file to the same bucket. How should the admin stop the loop (one answer)</li>
+</ol>
+<p>a) set reserved concurrency to 0
+b) deny the lambda bucket access
+c) something
+d) something</p>
+<p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html</a>
+“To throttle a function, set the reserved concurrency to zero” so i guess setting it to 0 is the right answer.</p>
+<ol start="3">
+<li>What would a sysops need to connect to a managed kubernetes service from his own machine after he set the cluster up</li>
+</ol>
+<p>a) kubeconfig
+b) kube-proxy.yaml
+c) something
+d) something</p>
+<p>I also remember that there was one question about</p>
+<ul>
+<li><code>S3 Object Lock</code> and one answer was <code>with Governance mode and the other one with Compliance mode</code></li>
+</ul>
+<h3 id="Review-berfore-exam"><a href="#Review-berfore-exam" class="headerlink" title="Review berfore exam"></a>Review berfore exam</h3><ul>
+<li><p><code>Amazon Inspector</code> - Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS. Amazon Inspector automatically assesses applications for exposure, vulnerabilities, and deviations from best practices. After performing an assessment, Amazon Inspector produces a detailed list of security findings prioritized by level of severity.</p>
+</li>
+<li><p><code>AWS Control Tower</code> - AWS Control Tower offers the easiest way to set up and govern a secure, multi-account AWS environment. It establishes a landing zone that is based on the best-practices blueprints and enables governance using guardrails you can choose from a pre-packaged list. The landing zone is a well-architected, multi-account baseline that follows AWS best practices. Guardrails implement governance rules for security, compliance, and operations.</p>
+</li>
+<li><p><code>AWS Service Catalog</code> - AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS. These IT services can include everything from virtual machine images, servers, software, and databases to complete multi-tier application architectures. AWS Service Catalog allows you to centrally manage deployed IT services and your applications, resources, and metadata. This helps you achieve consistent governance and meet your compliance requirements while enabling users to quickly deploy only the approved IT services they need.</p>
+</li>
+<li><p><code>Checks Security</code></p>
+<ul>
+<li>Security Checks inspect the AWS aws and make “Recommendations”: <code>AWS Trusted Advisor</code><ul>
+<li>AWS Config unlike does recommendations</li>
+</ul>
+</li>
+<li><code>AWS Inspector</code> targets <code>only EC2 instances</code> that run on a number of supported operating systems.</li>
+</ul>
+</li>
+<li><p><code>Systems Manager</code></p>
+</li>
+<li><p>Build <code>automation to configure and manage instances and AWS resources</code>.</p>
+<ul>
+<li>Create custom runbooks or use pre-defined runbooks maintained by AWS.</li>
+<li>Receive notifications about Automation tasks and runbooks by using Amazon EventBridge.</li>
+<li>Monitor Automation progress and details by using the AWS Systems Manager console.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Checks-Health"><a href="#Checks-Health" class="headerlink" title="Checks Health"></a>Checks Health</h3><ul>
+<li>AWS Personal Health Dashboard (Use the Personal Health Dashboard which provides information about AWS Health events that can affect your account)
+  to be notified of any issues that occur in the underlying hardware that hosts the AWS resources.</li>
+</ul>
+<h3 id="Costs"><a href="#Costs" class="headerlink" title="Costs"></a>Costs</h3><p>Q) Provides the most detailed information about your AWS Bill and can generate reports with hourly, daily, or monthly granularity. Reports are stored in your selected S3 bucket and can be analyzed using Amazon Athena, Amazon Redshift or Amazon QuickSight</p>
+<p>AWS Cost and Usage Report</p>
+<p>Q) An easy-to-use interface that lets you visualize your AWS costs and provides a set of ready-to-use default reports to help you get started.</p>
+<p>AWS Cost Explorer</p>
+<p>Q) To provide them a way to <code>get billing updates more than once a month. using a spreadsheet</code></p>
+<ul>
+<li>Configure your <code>AWS Cost and Usage Report</code> to generate and publish billing reports in CSV format to an S3 bucket every day.</li>
+<li>AWS Budgets simply gives you the ability to set custom budgets that alert you when your costs or usage exceed or forecasted to exceed your budgeted amount</li>
+</ul>
+<p>Q) Best way to properly get <code>billing reports for the different company departments</code>, with the least possible administrative overhead?
+<code>Cost Allocation Tags</code></p>
+<p>A tag is a label that you or AWS assigns to an AWS resource. Each tag consists of a key and a value. For each resource, each tag key must be unique, and each tag key can have only one value. You can use tags to organize your resources, and cost allocation tags to track your AWS costs on a detailed level. After you activate cost allocation tags, AWS uses the cost allocation tags to organize your resource costs on your cost allocation report, to make it easier for you to categorize and track your AWS costs.</p>
+<p>Q) To see a <code>report showing the allocation of costs for these EIPs</code> by department.
+Define Cost Allocation Tags and generate a report using Cost Explorer</p>
+<h3 id="Tags"><a href="#Tags" class="headerlink" title="Tags"></a>Tags</h3><p>Q) Tags are consistently applied when your resources are created in AWS across all accounts.</p>
+<pre><code>A: AWS Service Catalog to tag the provisioned resources with corresponding unique identifiers for portfolio, product, and users.
+A: AWS CloudFormation Resource Tags property to apply tags to certain resource types upon creation.
+</code></pre>
+<h3 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h3><p>Q) Provides the most detailed information about your AWS Bill and can generate reports with hourly, daily, or monthly granularity. Reports are stored in your selected S3 bucket and can be analyzed using Amazon Athena, Amazon Redshift or Amazon QuickSight</p>
+<pre><code>AWS Cost and Usage Report
+</code></pre>
+<p>Q) An easy-to-use interface that lets you visualize your AWS costs and provides a set of ready-to-use default reports to help you get started.</p>
+<pre><code>AWS Cost Explorer
+</code></pre>
+<p>Q) An Amazon EFS performance mode that is designed for highly parallelized workloads that can tolerate high latencies:</p>
+<pre><code>Max I/0
+</code></pre>
+<p>Q) A type of Amazon EFS Throughput Mode that is recommended if you want a throughput that scales with the amount of storage in your file system.</p>
+<pre><code>Bursting Throughput
+</code></pre>
+<p>Q) One of the Throughput Modes in Amazon EFS that is recommended if you have spiky or unpredictable workloads and performance requirements that are
+difficult to forecast.</p>
+<pre><code>Elastic Throughput
+</code></pre>
+<p>Q) A type of Performance Mode in Amazon EFS that provides the lowest per-operation latency</p>
+<pre><code>  Max Throughput
+</code></pre>
+<p>Q) A networking service that provides static IP addresses that act as a fixed entry point to your applications and eliminate the complexity of managing specific IP addresses for different AWS Regions and Availability Zones.</p>
+<pre><code>AWS Global Accelerator
+</code></pre>
+<p>Q) Automatically collects log data from your AWS resources and uses machine learning, statistical analysis, and graph theory to build a linked set of data that enables you to easily conduct faster and more efficient security investigations.</p>
+<pre><code>Amazon Detective
+</code></pre>
+<p>Q) Responds recursively to DNS queries from AWS resources for public records, Amazon VPC-specific DNS names, and Amazon Route 53 private hosted zones, and is available by default in all VPCs.</p>
+<pre><code>AWS Route 53 Resolver
+</code></pre>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="clmnuw4160006e8ovet8n4bhk" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/" data-id="cln02x2b40004dwovgggt9mzg" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -3372,9 +3576,9 @@ Define the firewall around the instances</p>
 <p>Public DNS (IPv4)
 ec2-54-153-150-4.ap-southeast-2.compute.amazonaws.com
 IPv4 Public IP 54.153.150.4</p>
-<p>ssh <a href="mailto:&#101;&#99;&#x32;&#x2d;&#x75;&#x73;&#x65;&#x72;&#64;&#101;&#x63;&#x32;&#x2d;&#x35;&#x34;&#45;&#x31;&#x35;&#51;&#45;&#x31;&#x35;&#x30;&#x2d;&#52;&#46;&#97;&#x70;&#45;&#x73;&#111;&#117;&#116;&#x68;&#101;&#97;&#x73;&#x74;&#45;&#x32;&#x2e;&#x63;&#x6f;&#109;&#x70;&#x75;&#x74;&#x65;&#x2e;&#x61;&#x6d;&#x61;&#122;&#111;&#110;&#97;&#x77;&#x73;&#46;&#99;&#111;&#109;">&#101;&#99;&#x32;&#x2d;&#x75;&#x73;&#x65;&#x72;&#64;&#101;&#x63;&#x32;&#x2d;&#x35;&#x34;&#45;&#x31;&#x35;&#51;&#45;&#x31;&#x35;&#x30;&#x2d;&#52;&#46;&#97;&#x70;&#45;&#x73;&#111;&#117;&#116;&#x68;&#101;&#97;&#x73;&#x74;&#45;&#x32;&#x2e;&#x63;&#x6f;&#109;&#x70;&#x75;&#x74;&#x65;&#x2e;&#x61;&#x6d;&#x61;&#122;&#111;&#110;&#97;&#x77;&#x73;&#46;&#99;&#111;&#109;</a>
-ssh <a href="mailto:&#x65;&#99;&#x32;&#45;&#117;&#115;&#101;&#x72;&#64;&#53;&#52;&#46;&#x31;&#x35;&#51;&#46;&#49;&#53;&#x30;&#x2e;&#x34;">&#x65;&#99;&#x32;&#45;&#117;&#115;&#101;&#x72;&#64;&#53;&#52;&#46;&#x31;&#x35;&#51;&#46;&#49;&#53;&#x30;&#x2e;&#x34;</a>
-ssh -i EC2Tutorial.pem <a href="mailto:&#101;&#x63;&#50;&#x2d;&#117;&#x73;&#101;&#114;&#x40;&#53;&#x34;&#46;&#49;&#x35;&#51;&#x2e;&#x31;&#53;&#x30;&#46;&#52;">&#101;&#x63;&#50;&#x2d;&#117;&#x73;&#101;&#114;&#x40;&#53;&#x34;&#46;&#49;&#x35;&#51;&#x2e;&#x31;&#53;&#x30;&#46;&#52;</a></p>
+<p>ssh <a href="mailto:&#x65;&#x63;&#x32;&#45;&#x75;&#x73;&#x65;&#114;&#x40;&#101;&#99;&#x32;&#x2d;&#53;&#x34;&#45;&#x31;&#53;&#x33;&#45;&#x31;&#x35;&#x30;&#x2d;&#52;&#46;&#x61;&#112;&#45;&#x73;&#x6f;&#117;&#116;&#x68;&#x65;&#x61;&#x73;&#x74;&#x2d;&#x32;&#46;&#99;&#x6f;&#x6d;&#x70;&#x75;&#x74;&#x65;&#46;&#97;&#109;&#x61;&#x7a;&#111;&#110;&#x61;&#119;&#115;&#46;&#99;&#111;&#x6d;">&#x65;&#x63;&#x32;&#45;&#x75;&#x73;&#x65;&#114;&#x40;&#101;&#99;&#x32;&#x2d;&#53;&#x34;&#45;&#x31;&#53;&#x33;&#45;&#x31;&#x35;&#x30;&#x2d;&#52;&#46;&#x61;&#112;&#45;&#x73;&#x6f;&#117;&#116;&#x68;&#x65;&#x61;&#x73;&#x74;&#x2d;&#x32;&#46;&#99;&#x6f;&#x6d;&#x70;&#x75;&#x74;&#x65;&#46;&#97;&#109;&#x61;&#x7a;&#111;&#110;&#x61;&#119;&#115;&#46;&#99;&#111;&#x6d;</a>
+ssh <a href="mailto:&#101;&#x63;&#x32;&#x2d;&#117;&#x73;&#x65;&#x72;&#64;&#x35;&#x34;&#46;&#x31;&#53;&#x33;&#x2e;&#x31;&#x35;&#x30;&#46;&#52;">&#101;&#x63;&#x32;&#x2d;&#117;&#x73;&#x65;&#x72;&#64;&#x35;&#x34;&#46;&#x31;&#53;&#x33;&#x2e;&#x31;&#x35;&#x30;&#46;&#52;</a>
+ssh -i EC2Tutorial.pem <a href="mailto:&#101;&#x63;&#50;&#x2d;&#117;&#115;&#x65;&#x72;&#x40;&#53;&#x34;&#x2e;&#x31;&#53;&#51;&#46;&#x31;&#x35;&#x30;&#46;&#52;">&#101;&#x63;&#50;&#x2d;&#117;&#115;&#x65;&#x72;&#x40;&#53;&#x34;&#x2e;&#x31;&#53;&#51;&#46;&#x31;&#x35;&#x30;&#46;&#52;</a></p>
 <p>  Q: You are getting a permission error exception when trying to SSH into your Linux Instance
   A: the key is missing permissions chmod 0400
   The exam expects you to know this, even if you used Windows &#x2F; Putty to SSH into your instances. If you’re a windows user, just have a quick look at the Linux SSH lecture!</p>
@@ -9506,7 +9710,7 @@ A: Trusted Advisor</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/" data-id="clmnuw4100001e8ovdrnvb1c3" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/" data-id="cln02x2b10001dwovd0a365hi" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -9532,7 +9736,7 @@ A: Trusted Advisor</p>
       <ul>
         
           <li>
-            <a href="/2023/09/17/Getting-Started-With-Hexo/">Getting started with Hexo</a>
+            <a href="/2023/09/26/Getting-Started-With-Hexo/">Getting started with Hexo</a>
           </li>
         
           <li>
