@@ -81,6 +81,64 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Node-best-and-useful-global-CLIs" class="article article-type-post"
+  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/23/Node-best-and-useful-global-CLIs/" class="article-date">
+  <time datetime="2018-08-23T19:54:18.000Z" itemprop="datePublished">24 Aug 2018</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Global/">Global</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/23/Node-best-and-useful-global-CLIs/">Node best and useful global CLIs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="General-utilities"><a href="#General-utilities" class="headerlink" title="General utilities"></a>General utilities</h1><p>Use sudo if you are using GNU&#x2F;Linux</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g tldr</span><br><span class="line">npm install -g fkill-cli</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="tldr"><a href="#tldr" class="headerlink" title="tldr"></a>tldr</h2><p>A Node.js based command-line client for <a target="_blank" rel="noopener" href="https://github.com/tldr-pages/tldr">tldr</a>.</p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>To see tldr pages:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tldr --update download the latest pages and generate search index</span><br></pre></td></tr></table></figure>
+
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Find the tldr page for the <code>find</code> command.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">$ tldr find</span><br><span class="line"></span><br><span class="line">  find</span><br><span class="line"></span><br><span class="line">  Find files under the given directory tree, recursively.</span><br><span class="line"></span><br><span class="line">  - Find files by extension:</span><br><span class="line">    find root_path -name &#x27;*.ext&#x27;</span><br><span class="line"></span><br><span class="line">  - Find files matching path pattern:</span><br><span class="line">    find root_path -path &#x27;**/lib/**/*.ext&#x27;</span><br><span class="line"></span><br><span class="line">  - Run a command for each file, use &#123;&#125; within the command to access the filename:</span><br><span class="line">    find root_path -name &#x27;*.ext&#x27; -exec wc -l &#123;&#125; \;</span><br><span class="line"></span><br><span class="line">  - Find files modified in the last 24-hour period:</span><br><span class="line">    find root_path -mtime -1</span><br><span class="line"></span><br><span class="line">  - Find files using case insensitive name matching, of a certain size:</span><br><span class="line">    find root_path -size +500k -size -10MB -iname &#x27;*.TaR.gZ&#x27;</span><br><span class="line"></span><br><span class="line">  - Delete files by name, older than 180 days:</span><br><span class="line">    find root_path -name &#x27;*.ext&#x27; -mtime +180 -delete</span><br><span class="line"></span><br><span class="line">  - Find files matching more than one search criteria:</span><br><span class="line">    find root_path -name &#x27;*.py&#x27; -or -name &#x27;*.r&#x27;</span><br><span class="line"></span><br><span class="line">  - Find files matching a given pattern, while excluding specific paths:</span><br><span class="line">    find root_path -name &#x27;*.py&#x27; -not -path &#x27;*/site-packages/*&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="fkill-cli"><a href="#fkill-cli" class="headerlink" title="fkill-cli"></a><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/fkill-cli">fkill-cli</a></h2><p>Fabulously kill processes. Cross-platform.</p>
+<p>Sometimes you know the process you want to finish and then you do not need to type: <code>ps -ef | grep -i &lt;process-name&gt;</code>, then can use th interactive fkill-cli and select the process to kill.</p>
+<h3 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ fkill --<span class="built_in">help</span></span><br><span class="line"></span><br><span class="line">Usage</span><br><span class="line">  $ fkill [&lt;pid|name&gt; …]</span><br><span class="line"></span><br><span class="line">Options</span><br><span class="line">  --force -f    Force <span class="built_in">kill</span></span><br><span class="line">  --verbose -v  Show process arguments</span><br><span class="line"></span><br><span class="line">Examples</span><br><span class="line">  $ fkill 1337</span><br><span class="line">  $ fkill safari</span><br><span class="line">  $ fkill :8080</span><br><span class="line">  $ fkill 1337 safari :8080</span><br><span class="line">  $ fkill</span><br><span class="line"></span><br><span class="line">To <span class="built_in">kill</span> a port, prefix it with a colon. For example: :8080.</span><br><span class="line"></span><br><span class="line">Run without arguments to use the interactive interface.</span><br><span class="line">The process name is <span class="keyword">case</span> insensitive.</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.pablo-magro-gaspar.site/2018/08/23/Node-best-and-useful-global-CLIs/" data-id="cmnz1lcfc0014tq0je8dxa4jf" class="article-share-link">Share</a>
+      
+        <a href="https://blog.pablo-magro-gaspar.site/2018/08/23/Node-best-and-useful-global-CLIs/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/" rel="tag">Node</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Try-a-new-OS" class="article article-type-post"
   itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
   <div class="article-meta">
@@ -113,7 +171,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2018/08/23/Try-a-new-OS/" data-id="cmnz15lgr0020v80jcal003uw" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2018/08/23/Try-a-new-OS/" data-id="cmnz1lcfj0022tq0jagih95ym" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2018/08/23/Try-a-new-OS/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -194,7 +252,7 @@ This video from 2013 demonstrates some other cool features: <a target="_blank" r
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2018/08/22/KDE-connect/" data-id="cmnz15lgh000xv80janxx0jaq" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2018/08/22/KDE-connect/" data-id="cmnz1lcfb000ytq0j6ned30jc" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2018/08/22/KDE-connect/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -248,7 +306,7 @@ This video from 2013 demonstrates some other cool features: <a target="_blank" r
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2018/01/04/Obtain-a-refresh-token-at-Google-OAuth2-Playground/" data-id="cmnz15lgj0013v80ja2mmeq63" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2018/01/04/Obtain-a-refresh-token-at-Google-OAuth2-Playground/" data-id="cmnz1lcfd0015tq0jel321gbo" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2018/01/04/Obtain-a-refresh-token-at-Google-OAuth2-Playground/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -343,7 +401,7 @@ Code:</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/" data-id="cmnz15lgg000rv80jbix75ioo" class="article-share-link">Share</a>
+      <a data-url="https://blog.pablo-magro-gaspar.site/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/" data-id="cmnz1lcf9000ttq0j5x377tj1" class="article-share-link">Share</a>
       
         <a href="https://blog.pablo-magro-gaspar.site/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -357,86 +415,10 @@ Code:</p>
 
 
   
-    <article id="latest-Install-latest-hplip-version-on-Debian-9" class="article article-type-latest"
-  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/28/Install-latest-hplip-version-on-Debian-9/" class="article-date">
-  <time datetime="2017-12-28T22:35:26.000Z" itemprop="datePublished">29 Dec 2017</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/GNU-Linux/">GNU/Linux</a>►<a class="article-category-link" href="/categories/GNU-Linux/Debian/">Debian</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/28/Install-latest-hplip-version-on-Debian-9/">Install latest hplip version on Debian 9</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>I bought a new HP Deskjet 2621 and I tried to install it using the hp-setup which didn’t recognize it.</p>
-<p>The problem is the hplip version (generaly 3.16.11+repack0-3 in jessie and 3.16.11+repack0-1~bpo8+1 in jessie-backports), if you have a too recent printer (like me), ppd files are not available in version 3.16.11+repack0-3.</p>
-<p>I tried to install latest one <a target="_blank" rel="noopener" href="https://sourceforge.net/projects/hplip/files/hplip/3.17.11/">binary</a> (at that moment).</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh hplip-3.17.11.run</span><br></pre></td></tr></table></figure>
-
-<p>After the whole process a had a dependencies problems because packages:</p>
-<ul>
-<li><strong>pyqt4</strong></li>
-<li><strong>pyqt4-dbus</strong></li>
-</ul>
-<p>had different names in 9.3:</p>
-<ul>
-<li><strong>python-qt4</strong></li>
-<li><strong>python-qt4-dbus</strong></li>
-</ul>
-<p>So to fix it you have two options once downloaded the source code from above link.</p>
-<ol>
-<li>Following the instructions from the following <a target="_blank" rel="noopener" href="https://answers.launchpad.net/hplip/+question/452076">link</a> (#3 message).</li>
-<li>Compile and install it your self.</li>
-</ol>
-<p>I chose the 2nd option:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/src/hplip-3.17.11 $ ./configure</span><br></pre></td></tr></table></figure>
-
-<p>Here I found another dependencies issue:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;configure: error: cannot find net-snmp support (or --disable-network-build)&quot;</span><br></pre></td></tr></table></figure>
-
-<p>Disabling the networking build is bad idea if you have a wireless printer, it won’t work. Then your have to install the <strong>net-snmp</strong> packages and the development packages for <strong>openssl</strong>.</p>
-<p>Once installed above dependencies, I just executed bellow commands to install the hp-setup binary with my printer drivers.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~/src/hplip-3.17.11 $ make clean</span><br><span class="line">~/src/hplip-3.17.11 $ ./configure</span><br><span class="line">~/src/hplip-3.17.11 $ make</span><br><span class="line">~/src/hplip-3.17.11 $ su -c <span class="string">&quot;make install&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>And then execute hp-setup ans install your printer:</p>
-<img src="https://i.imgur.com/A9DIJ2v.png" width="" height="" alt="Hp-setup example" />
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.pablo-magro-gaspar.site/2017/12/28/Install-latest-hplip-version-on-Debian-9/" data-id="cmnz15lgh000vv80jfqkibmjq" class="article-share-link">Share</a>
-      
-        <a href="https://blog.pablo-magro-gaspar.site/2017/12/28/Install-latest-hplip-version-on-Debian-9/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Install/" rel="tag">Install</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hplip/" rel="tag">hplip</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; __(&#39;prev&#39;)</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">__(&#39;next&#39;) &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; __(&#39;prev&#39;)</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">__(&#39;next&#39;) &amp;raquo;</a>
   </nav>
 </section>
         
@@ -453,6 +435,10 @@ Code:</p>
           </li>
         
           <li>
+            <a href="/2026/04/14/Claude-Code-Skills-Setup/">Claude Code - Skills Setup</a>
+          </li>
+        
+          <li>
             <a href="/2023/07/13/SOLID-Principles/">SOLID Principles</a>
           </li>
         
@@ -462,10 +448,6 @@ Code:</p>
         
           <li>
             <a href="/2023/05/01/Prompts/">Prompts</a>
-          </li>
-        
-          <li>
-            <a href="/2023/04/14/React-Hooks-All-React-Hooks-Explained/">React Hooks - Some React Hooks Explained</a>
           </li>
         
       </ul>
@@ -487,7 +469,7 @@ Code:</p>
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/Certifications/" style="font-size: 20px;">Certifications</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Install/" style="font-size: 20px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Prompts/" style="font-size: 10px;">Prompts</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/Resources/" style="font-size: 10px;">Resources</a> <a href="/tags/SOA-C02/" style="font-size: 10px;">SOA-C02</a> <a href="/tags/SOLID-Principles/" style="font-size: 10px;">SOLID Principles</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/SysOps/" style="font-size: 10px;">SysOps</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
+      <a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/CLI/" style="font-size: 10px;">CLI</a> <a href="/tags/Certifications/" style="font-size: 20px;">Certifications</a> <a href="/tags/Claude/" style="font-size: 10px;">Claude</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Install/" style="font-size: 20px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Prompts/" style="font-size: 10px;">Prompts</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/Resources/" style="font-size: 10px;">Resources</a> <a href="/tags/SOA-C02/" style="font-size: 10px;">SOA-C02</a> <a href="/tags/SOLID-Principles/" style="font-size: 10px;">SOLID Principles</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/SysOps/" style="font-size: 10px;">SysOps</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
     </div>
   </div>
 

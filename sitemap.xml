@@ -2,7 +2,88 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/How-do-I-reset-a-monitor-settings/</loc>
+    
+    <lastmod>2026-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/02/17/How-to-add-Open-Folder-with-X-when-I-right-click-in-an-folder-in-Dolphin/</loc>
+    
+    <lastmod>2026-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/</loc>
+    
+    <lastmod>2026-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2017/12/28/Install-latest-hplip-version-on-Debian-9/</loc>
+    
+    <lastmod>2026-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2018/08/22/KDE-connect/</loc>
+    
+    <lastmod>2026-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/02/28/Kubernetes-Notes/</loc>
+    
+    <lastmod>2026-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2018/08/23/Node-best-and-useful-global-CLIs/</loc>
+    
+    <lastmod>2026-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2018/01/04/Obtain-a-refresh-token-at-Google-OAuth2-Playground/</loc>
+    
+    <lastmod>2026-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.pablo-magro-gaspar.site/2017/11/21/Productive-VS-Code-Extensions/</loc>
+    
+    <lastmod>2026-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2016/09/17/Post-Installing-GNU-Linux-Debian-based/</loc>
     
     <lastmod>2026-04-14</lastmod>
     
@@ -101,6 +182,24 @@
   </url>
   
   <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/02/16/AI-Websites-to-make-your-Life-Easier/</loc>
+    
+    <lastmod>2026-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/</loc>
+    
+    <lastmod>2026-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/Anchor-Links-in-Markdown/</loc>
     
     <lastmod>2026-04-14</lastmod>
@@ -119,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/</loc>
+    <loc>https://blog.pablo-magro-gaspar.site/2026/04/14/Claude-Code-Skills-Setup/</loc>
     
     <lastmod>2026-04-14</lastmod>
     
@@ -173,97 +272,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2016/09/13/How-do-I-reset-a-monitor-settings/</loc>
-    
-    <lastmod>2026-04-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/02/17/How-to-add-Open-Folder-with-X-when-I-right-click-in-an-folder-in-Dolphin/</loc>
-    
-    <lastmod>2026-04-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/</loc>
-    
-    <lastmod>2026-04-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2017/12/28/Install-latest-hplip-version-on-Debian-9/</loc>
-    
-    <lastmod>2026-04-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2018/08/22/KDE-connect/</loc>
-    
-    <lastmod>2026-04-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/02/28/Kubernetes-Notes/</loc>
-    
-    <lastmod>2026-04-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2018/08/23/Node-best-and-useful-global-CLIs/</loc>
-    
-    <lastmod>2026-04-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2018/01/04/Obtain-a-refresh-token-at-Google-OAuth2-Playground/</loc>
-    
-    <lastmod>2026-04-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2016/09/17/Post-Installing-GNU-Linux-Debian-based/</loc>
-    
-    <lastmod>2026-04-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2023/02/16/AI-Websites-to-make-your-Life-Easier/</loc>
-    
-    <lastmod>2026-04-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/</loc>
+    <loc>https://blog.pablo-magro-gaspar.site/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/</loc>
     
     <lastmod>2026-04-14</lastmod>
     
@@ -282,6 +291,13 @@
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Websites/</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/tags/Certifications/</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -309,21 +325,21 @@
   </url>
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/tags/Certifications/</loc>
+    <loc>https://blog.pablo-magro-gaspar.site/tags/Claude/</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/tags/SysOps/</loc>
+    <loc>https://blog.pablo-magro-gaspar.site/tags/AI/</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/tags/SOA-C02/</loc>
+    <loc>https://blog.pablo-magro-gaspar.site/tags/CLI/</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -435,7 +451,14 @@
   </url>
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/tags/Post-Install/</loc>
+    <loc>https://blog.pablo-magro-gaspar.site/tags/SysOps/</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/tags/SOA-C02/</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -443,6 +466,13 @@
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/tags/Extensions/</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/tags/Post-Install/</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -542,6 +572,13 @@
   </url>
   
   <url>
+    <loc>https://blog.pablo-magro-gaspar.site/categories/AWS/</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/Markdown/</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -556,28 +593,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/categories/AWS/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/Coding/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/categories/GNU-Linux/Debian/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/categories/GNU-Linux/CLI/</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -592,6 +608,13 @@
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/Git/</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/categories/GNU-Linux/CLI/</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -613,6 +636,13 @@
   
   <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/GNU-Linux/Installer/</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/categories/GNU-Linux/Debian/</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -689,6 +719,13 @@
   </url>
   
   <url>
+    <loc>https://blog.pablo-magro-gaspar.site/categories/KDE/Dolphin/</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/OS/</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -703,7 +740,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/categories/KDE/Dolphin/</loc>
+    <loc>https://blog.pablo-magro-gaspar.site/categories/CLI/</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -724,21 +761,14 @@
   </url>
   
   <url>
-    <loc>https://blog.pablo-magro-gaspar.site/categories/Google/OAuth2-0/Nodemailer/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pablo-magro-gaspar.site/categories/CLI/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.pablo-magro-gaspar.site/categories/CLI/youtube-dl/</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pablo-magro-gaspar.site/categories/Google/OAuth2-0/Nodemailer/</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
