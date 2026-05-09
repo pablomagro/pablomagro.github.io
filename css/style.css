@@ -678,21 +678,14 @@ a.article-title:hover {
   height: 100%;
   margin-top: 0;
 }
-.article-featured .article-inner {
-  border-top: 3px solid #258fb8;
-}
 .article-badge {
   display: inline-block;
-  background: #258fb8;
-  color: #fff;
+  color: #258fb8;
   font-size: 0.75em;
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 3px;
-  margin-bottom: 10px;
-  vertical-align: middle;
+  margin-bottom: 4px;
 }
 .article-more-link a {
   display: inline-block;
