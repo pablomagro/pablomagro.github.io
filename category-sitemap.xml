@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/CLI/youtube-dl/</loc>
+        <lastmod>2026-05-09T21:51:02.779Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/CLI/</loc>
+        <lastmod>2026-05-09T21:51:02.779Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Design/TypeScript/</loc>
+        <lastmod>2026-05-09T21:51:02.779Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Hosting/</loc>
+        <lastmod>2026-05-09T21:51:02.779Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/OS/</loc>
+        <lastmod>2026-05-09T21:51:02.779Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Java/</loc>
+        <lastmod>2026-05-09T21:51:02.779Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Design/</loc>
+        <lastmod>2026-05-09T21:51:02.779Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Google/OAuth2-0/Nodemailer/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Google/OAuth2-0/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/KDE/Dolphin/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Refranes-Citas-Proverbios/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/React/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Protractor/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/VS-Code/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Open-AI/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Google/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Global/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Kubernetes/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/GNU-Linux/Installer/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/KDE/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/GNU-Linux/KDE/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Git/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/GNU-Linux/Debian/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/GNU-Linux/</loc>
+        <lastmod>2026-05-09T21:51:02.778Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/AWS/</loc>
+        <lastmod>2026-05-09T21:51:02.777Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Hexo/</loc>
+        <lastmod>2026-05-09T21:51:02.777Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/GNU-Linux/CLI/</loc>
+        <lastmod>2026-05-09T21:51:02.777Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Coding/</loc>
+        <lastmod>2026-05-09T21:51:02.777Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/Markdown/</loc>
+        <lastmod>2026-05-09T21:51:02.777Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.pablo-magro-gaspar.site/categories/AI/</loc>
+        <lastmod>2026-05-09T21:51:02.777Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+</urlset>
+<!-- XML Sitemap generated by Hexo SEO Friendly Sitemap Generator -->
