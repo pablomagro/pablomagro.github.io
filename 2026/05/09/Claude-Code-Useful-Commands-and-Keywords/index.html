@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#202020">
+
+    <meta name="author" content="Pablo Magro Gaspar">
+
+
+    <meta name="subtitle" content="Pablo Magro's Blog (Developer)">
+
+
+    <meta name="description" content="Some tech things to refresh and don't forget">
+
+
+
+
+
+<title>Claude Code - Useful Commands and Keywords | Technical Tips to Revitalize Your Devices and Memory</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap">
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/menu.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Technical Tips to Revitalize Your Devices and Memory" type="application/atom+xml">
+</head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/">
+          
+            Frame.
+          
+        </a>
+      </div>
+      <button id="menu-btn" class="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()">
+        Menu
+      </button>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/archives/">Archive</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/categories/gallery/">Gallery</a>
+              </li> 
+                   
+          
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<script src="/js/menu.js"></script>
+
+
+      <div class="main" id="main-content">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
+            
+                
+                    <span class="post-tag">
+                        <a href="/tags/Claude/">
+                            Claude
+                        </a>
+                    </span>    
+                
+                    <span class="post-tag">
+                        <a href="/tags/AI/">
+                            AI
+                        </a>
+                    </span>    
+                
+                    <span class="post-tag">
+                        <a href="/tags/CLI/">
+                            CLI
+                        </a>
+                    </span>    
+                
+                    <span class="post-tag">
+                        <a href="/tags/Productivity/">
+                            Productivity
+                        </a>
+                    </span>    
+                           
+            
+        </div>
+        <div class="post-title">
+            
+            
+                Claude Code - Useful Commands and Keywords
+            
+            
+        </div>
+        <span class="post-date">
+            May 10, 2026
+        </span>
+    </div>
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+              
+    </div>
+</div>
+    <div class="post-content">
+    <p><a target="_blank" rel="noopener" href="https://claude.ai/code">Claude Code</a> ships with several built-in commands and keywords that improve how you interact with it day-to-day. Here are the ones worth knowing.</p>
+<hr>
+<h2 id="ultrathink-—-Deeper-Reasoning-on-Demand"><a href="#ultrathink-—-Deeper-Reasoning-on-Demand" class="headerlink" title="ultrathink — Deeper Reasoning on Demand"></a><code>ultrathink</code> — Deeper Reasoning on Demand</h2><p>Typing <code>ultrathink</code> anywhere in your message tells Claude to reason more thoroughly before responding. It’s useful when a task is genuinely complex — architecture decisions, tricky bugs, multi-file refactors — and a shallow first pass would waste time.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ultrathink Can you provide suggestions to improve this project?</span><br></pre></td></tr></table></figure>
+
+<p>There is a family of these keywords, each triggering a progressively deeper thinking budget:</p>
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Reasoning depth</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>think</code></td>
+<td>Light extended thinking</td>
+</tr>
+<tr>
+<td><code>think hard</code></td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td><code>think harder</code></td>
+<td>Deep</td>
+</tr>
+<tr>
+<td><code>ultrathink</code></td>
+<td>Maximum</td>
+</tr>
+</tbody></table>
+<p>Use them selectively. On straightforward tasks they add latency with no benefit.</p>
+<hr>
+<h2 id="effort-—-Control-How-Hard-Claude-Works"><a href="#effort-—-Control-How-Hard-Claude-Works" class="headerlink" title="/effort — Control How Hard Claude Works"></a><code>/effort</code> — Control How Hard Claude Works</h2><p><code>/effort</code> sets the effort level Claude applies to responses. Useful when you want faster, lighter answers for exploratory work, or maximum thoroughness for critical changes.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/effort low      # faster, lighter responses</span><br><span class="line">/effort auto     # default — Claude decides based on task complexity</span><br></pre></td></tr></table></figure>
+
+<p>Running <code>/effort</code> with no argument shows the current setting. Toggle it back to <code>auto</code> when you want Claude to self-pace again.</p>
+<hr>
+<h2 id="insights-—-Analyze-Your-Usage-Patterns"><a href="#insights-—-Analyze-Your-Usage-Patterns" class="headerlink" title="/insights — Analyze Your Usage Patterns"></a><code>/insights</code> — Analyze Your Usage Patterns</h2><p><code>/insights</code> analyzes your recent sessions and generates a usage report — both a console summary and a full HTML report saved locally.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/insights</span><br></pre></td></tr></table></figure>
+
+<p>Output example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">32 sessions · 592 messages · 337h · 88 commits</span><br><span class="line">Report URL: file:///home/pablo/.claude/usage-data/report.html</span><br></pre></td></tr></table></figure>
+
+<p>The report covers:</p>
+<ul>
+<li><strong>Project areas</strong> — which projects got the most attention and what was done</li>
+<li><strong>Interaction style</strong> — how you batch tasks, redirect Claude, and delegate</li>
+<li><strong>Friction analysis</strong> — recurring failure modes with examples from your own sessions (wrong scope, regressions, auth blockers)</li>
+<li><strong>Suggestions</strong> — CLAUDE.md additions, features to try, copyable prompts</li>
+<li><strong>On the horizon</strong> — ambitious autonomous workflows matched to your patterns</li>
+</ul>
+<p>The friction analysis is the most actionable part. A wrong-scope mistake in a single session feels like a one-off; seeing it happen 16 times across a month makes it worth fixing in CLAUDE.md.</p>
+<hr>
+<h2 id="clear-—-Reset-the-Conversation-Context"><a href="#clear-—-Reset-the-Conversation-Context" class="headerlink" title="/clear — Reset the Conversation Context"></a><code>/clear</code> — Reset the Conversation Context</h2><p><code>/clear</code> wipes the current conversation context and starts fresh. Use it when:</p>
+<ul>
+<li>The context has grown too large and responses are slowing down</li>
+<li>You are switching to an unrelated task in the same session</li>
+<li>Claude has gone off-track and a clean slate is faster than correcting it</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/clear</span><br></pre></td></tr></table></figure>
+
+<p>A related command is <code>/compact</code>, which summarizes the conversation history instead of discarding it — useful when you want to continue a long session without losing the thread entirely.</p>
+<hr>
+<h2 id="Combining-Them"><a href="#Combining-Them" class="headerlink" title="Combining Them"></a>Combining Them</h2><p>These commands complement each other in practice. A typical flow might look like:</p>
+<ol>
+<li>Start a complex task with <code>ultrathink</code> to get a thorough plan upfront</li>
+<li>Switch to <code>/effort auto</code> for the implementation work</li>
+<li>Use <code>/clear</code> between unrelated tasks to keep context clean</li>
+<li>Run <code>/insights</code> periodically to spot patterns and improve your workflow</li>
+</ol>
+<p>Small adjustments — adding the right keyword, clearing context at the right moment — add up over dozens of sessions.</p>
+
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+                <div class="icon arrow-left"></div>
+                <div class="post-link">
+                    <a href="/2026/05/09/Getting-Started-With-Hexo/">Prev</a>
+                </div>
+            
+        </div>
+        <div class="next-item">
+            
+                <div class="icon arrow-right"></div>
+                <div class="post-link">
+                  <a href="/2026/04/14/Claude-Code-Skills-Setup/">Next</a>  
+                </div>  
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+    
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            
+            var disqus_config = function () {
+                this.page.url = 'https://blog.pablo-magro-gaspar.site/2026/05/09/Claude-Code-Useful-Commands-and-Keywords/';  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = '2026/05/09/Claude-Code-Useful-Commands-and-Keywords/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                this.language = 'en'
+            };
+            
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'pablomagro';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>   
+     
+    
+    
+
+</div>
+     
+  
+</article>
+        </div>
+      </div>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+  </body>
+</html>
