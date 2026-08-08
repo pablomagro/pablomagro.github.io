@@ -84,6 +84,105 @@ ga('send', 'pageview');
   
   
   
+    <article id="post-youtube-dl" class="article article-type-post"
+  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/13/youtube-dl/" class="article-date">
+  <time datetime="2016-09-13T04:13:19.000Z" itemprop="datePublished">13 Sep 2016</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CLI/">CLI</a>►<a class="article-category-link" href="/categories/CLI/youtube-dl/">youtube-dl</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/13/youtube-dl/">youtube-dl</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><a target="_blank" rel="noopener" href="https://github.com/rg3/youtube-dl">youtube-dl</a></strong> is a command-line program to download videos from YouTube.com and a few more sites. It requires the Python interpreter, version 2.6, 2.7, or 3.2+, and it is not platform specific. It should work on your Unix box, on Windows or on Mac OS X. It is released to the public domain, which means you can modify it, redistribute it or use it however you like.</p>
+<pre><code>youtube-dl [OPTIONS] URL [URL...]
+</code></pre>
+<h2 id="My-common-options"><a href="#My-common-options" class="headerlink" title="My common options"></a>My common options</h2><p>OPTIONS</p>
+<pre><code>-i, --ignore-errors              Continue on download errors, for example to
+                                 skip unavailable videos in a playlist
+
+-w, --no-overwrites              Do not overwrite files
+
+-c, --continue                   Force resume of partially downloaded files.
+                                 By default, youtube-dl will resume
+
+-F, --list-formats               List all available formats of requested
+                                 videos
+
+-f, --format FORMAT              Video format code, see the &quot;FORMAT
+                                 SELECTION&quot; for all the info
+</code></pre>
+<p>Subtitle Options:</p>
+<pre><code>--all-subs                       Download all the available subtitles of the
+                                 video
+</code></pre>
+<p>Authentication Options:</p>
+<pre><code>-u, --username USERNAME          Login with this account ID
+-p, --password PASSWORD          Account password. If this option is left
+</code></pre>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ youtube-dl --all-subs -f &#x27;(mp4)[height=720]&#x27; -iwc --username yourusername --password yourpassword &quot;https://www.anyresource.com/content&quot;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ youtube-dl --all-subs -f &#x27;(mp4)[height=720]&#x27; -iwc --username yourusername --password yourpassword -o &#x27;%(playlist)s/%(chapter_number)s - %(chapter)s/%(playlist_index)s. %(title)s.%(ext)s&#x27; https://www.anyresource.com/content --playlist-start 14</span><br></pre></td></tr></table></figure>
+
+<h2 id="How-to-download-your-Udemy-course-videos-using-youtube-dl"><a href="#How-to-download-your-Udemy-course-videos-using-youtube-dl" class="headerlink" title="How to download your Udemy course videos using youtube-dl"></a>How to download your Udemy course videos using youtube-dl</h2><blockquote>
+<p>$ youtube-dl –list-extractors | grep udemy</p>
+</blockquote>
+<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><ol>
+<li>Get link to the course to download. e.g. <a target="_blank" rel="noopener" href="https://www.udemy.com/course-name/">https://www.udemy.com/course-name/</a></li>
+<li>Login into udemy website, save the cookie from chrome using Chrome <a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/cookiestxt/njabckikapfpffapmjgojcnbfjonfjfg">Cookie.txt</a> export extension. Save it to file udemy-cookies.txt</li>
+<li>Get the link of the video that you want to download. usually in format. Use the command provided below where you have to replace the {course_link} and {path_to_cookies_file} with respective paths.</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ youtube-dl &#123;course_link&#125; --cookies &#123;path_to_cookies_file&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ youtube-dl --cookies ./udemy-cookies.txt https://www.udemy.com/course-name/</span><br></pre></td></tr></table></figure>
+
+<p><strong>Notes</strong></p>
+<ul>
+<li>If you have previously installed <code>youtube-dl</code>, you should update it before attempting to download your Udemy courses<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ youtube-dl -U</span><br></pre></td></tr></table></figure></li>
+<li>If you want your videos to be organized by chapter and the indices included, you can specify the output flag <code>-o</code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ youtube-dl --cookies ./udemy-cookies.txt -o &#x27;%(playlist)s/%(chapter_number)s - %(chapter)s/%(playlist_index)s. %(title)s.%(ext)s&#x27; https://www.udemy.com/course-name/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>My preference</strong>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ youtube-dl --cookies cookies.txt -o %(playlist)s\%(chapter_number)s.%(chapter)s\%(playlist_index)s.%(title)s.%(ext)s https://www.udemy.com/course-name</span><br></pre></td></tr></table></figure></p>
+<p><strong>Source</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://gist.github.com/barbietunnie/8531d9c26cd1c0668e7278c7c4ba5853#how-to-download-your-udemy-course-videos-using-youtube-dl">How to download your Udemy course videos using youtube-dl</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.pmagas.com/2016/09/13/youtube-dl/" data-id="cmsk4v2s7002l004sd0p81c1t" class="article-share-link">Share</a>
+      
+        <a href="https://blog.pmagas.com/2016/09/13/youtube-dl/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/youtube-dl/" rel="tag">youtube-dl</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
     <article id="post-Anchor-Links-in-Markdown" class="article article-type-post"
   itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
   <div class="article-meta">
@@ -125,7 +224,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2016/09/13/Anchor-Links-in-Markdown/" data-id="cmoyvy8iv00011f3fg8xf2vpr" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2016/09/13/Anchor-Links-in-Markdown/" data-id="cmsk4v2rh0001004sbeqk5tv2" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2016/09/13/Anchor-Links-in-Markdown/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -194,7 +293,7 @@ element(by.deepCss(&#39;span&#39;))             // for selecting all level of sp
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2016/09/13/Protractor-Locators/" data-id="cmoyvy8je001k1f3fg83senmh" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2016/09/13/Protractor-Locators/" data-id="cmsk4v2s2001s004s0k8z7bb2" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2016/09/13/Protractor-Locators/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -226,6 +325,10 @@ element(by.deepCss(&#39;span&#39;))             // for selecting all level of sp
       <ul>
         
           <li>
+            <a href="/2026/05/26/Indie-SaaS-Starter-Stack/">Indie SaaS Starter Stack: 14 Tools to Go from Zero to Launched</a>
+          </li>
+        
+          <li>
             <a href="/2026/05/09/Claude-Code-Useful-Commands-and-Keywords/">Claude Code - Useful Commands and Keywords</a>
           </li>
         
@@ -241,10 +344,6 @@ element(by.deepCss(&#39;span&#39;))             // for selecting all level of sp
             <a href="/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/">AWS Certified SysOps Administrator - Associate (SOA-C02)</a>
           </li>
         
-          <li>
-            <a href="/2023/05/01/Prompts/">Prompts</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -254,7 +353,7 @@ element(by.deepCss(&#39;span&#39;))             // for selecting all level of sp
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/">CLI</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/youtube-dl/">youtube-dl</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Design/TypeScript/">TypeScript</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/">GNU/Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/CLI/">CLI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Debian/">Debian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Installer/">Installer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/KDE/">KDE</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Global/">Global</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/">OAuth2.0</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/Nodemailer/">Nodemailer</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hosting/">Hosting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/">KDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/Dolphin/">Dolphin</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kubernetes/">Kubernetes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Open-AI/">Open AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Protractor/">Protractor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Refranes-Citas-Proverbios/">Refranes, Citas, Proverbios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VS-Code/">VS Code</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/">CLI</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/youtube-dl/">youtube-dl</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Design/TypeScript/">TypeScript</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/">Development</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/">GNU/Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/CLI/">CLI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Debian/">Debian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Installer/">Installer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/KDE/">KDE</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Global/">Global</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/">OAuth2.0</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/Nodemailer/">Nodemailer</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hosting/">Hosting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/">KDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/Dolphin/">Dolphin</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kubernetes/">Kubernetes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Open-AI/">Open AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Protractor/">Protractor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Refranes-Citas-Proverbios/">Refranes, Citas, Proverbios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VS-Code/">VS Code</a></li></ul>
     </div>
   </div>
 
@@ -264,7 +363,7 @@ element(by.deepCss(&#39;span&#39;))             // for selecting all level of sp
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AI/" style="font-size: 20px;">AI</a> <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/CLI/" style="font-size: 20px;">CLI</a> <a href="/tags/Certifications/" style="font-size: 20px;">Certifications</a> <a href="/tags/Claude/" style="font-size: 20px;">Claude</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Install/" style="font-size: 20px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Productivity/" style="font-size: 10px;">Productivity</a> <a href="/tags/Prompts/" style="font-size: 10px;">Prompts</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/Resources/" style="font-size: 10px;">Resources</a> <a href="/tags/SOA-C02/" style="font-size: 10px;">SOA-C02</a> <a href="/tags/SOLID-Principles/" style="font-size: 10px;">SOLID Principles</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/SysOps/" style="font-size: 10px;">SysOps</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
+      <a href="/tags/AI/" style="font-size: 20px;">AI</a> <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/CLI/" style="font-size: 20px;">CLI</a> <a href="/tags/Certifications/" style="font-size: 20px;">Certifications</a> <a href="/tags/Claude/" style="font-size: 20px;">Claude</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Indie-Hacker/" style="font-size: 10px;">Indie Hacker</a> <a href="/tags/Install/" style="font-size: 20px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Productivity/" style="font-size: 10px;">Productivity</a> <a href="/tags/Prompts/" style="font-size: 10px;">Prompts</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/Resources/" style="font-size: 10px;">Resources</a> <a href="/tags/SOA-C02/" style="font-size: 10px;">SOA-C02</a> <a href="/tags/SOLID-Principles/" style="font-size: 10px;">SOLID Principles</a> <a href="/tags/SaaS/" style="font-size: 10px;">SaaS</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/Supabase/" style="font-size: 10px;">Supabase</a> <a href="/tags/SysOps/" style="font-size: 10px;">SysOps</a> <a href="/tags/Tech-Stack/" style="font-size: 10px;">Tech Stack</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Vercel/" style="font-size: 10px;">Vercel</a> <a href="/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
     </div>
   </div>
 

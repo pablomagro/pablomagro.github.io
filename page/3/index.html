@@ -84,6 +84,61 @@ ga('send', 'pageview');
   
   
   
+    <article id="post-How-to-add-Open-Folder-with-X-when-I-right-click-in-an-folder-in-Dolphin" class="article article-type-post"
+  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/17/How-to-add-Open-Folder-with-X-when-I-right-click-in-an-folder-in-Dolphin/" class="article-date">
+  <time datetime="2023-02-17T01:12:01.000Z" itemprop="datePublished">17 Feb 2023</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/KDE/">KDE</a>►<a class="article-category-link" href="/categories/KDE/Dolphin/">Dolphin</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/02/17/How-to-add-Open-Folder-with-X-when-I-right-click-in-an-folder-in-Dolphin/">How to add Open Folder with X when I right click in an folder in Dolphin</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://develop.kde.org/docs/extend/dolphin/service-menus/">Dolphin custom service menus</a></p>
+<p>You can do that by adding a file with a name ending in <code>.desktop</code> in the location that the command <code>kf5-config --path services</code> gives you with the contents below:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/pablo/.local/share/kservices5/:/usr/share/kservices5/</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Type=Service</span><br><span class="line">X-KDE-ServiceTypes=KonqPopupMenu/Plugin</span><br><span class="line">MimeType=inode/directory;</span><br><span class="line">Actions=openInVsCode</span><br><span class="line"></span><br><span class="line">[Desktop Action openInVsCode]</span><br><span class="line">Name=Open Directory in VSCode</span><br><span class="line">Icon=com.visualstudio.code</span><br><span class="line">Exec=code --open-url %u</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/open-vscode-desktop-screenshot.png" alt="alt text"></p>
+<p>Note that inside the <code>/usr/share/kservices5/</code> folder there are more examples that can be taken as reference.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.pmagas.com/2023/02/17/How-to-add-Open-Folder-with-X-when-I-right-click-in-an-folder-in-Dolphin/" data-id="cmsk4v2rt000t004sgn9419er" class="article-share-link">Share</a>
+      
+        <a href="https://blog.pmagas.com/2023/02/17/How-to-add-Open-Folder-with-X-when-I-right-click-in-an-folder-in-Dolphin/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Menu-Option/" rel="tag">Menu, Option</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
     <article id="post-AI-Websites-to-make-your-Life-Easier" class="article article-type-post"
   itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
   <div class="article-meta">
@@ -161,7 +216,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2023/02/16/AI-Websites-to-make-your-Life-Easier/" data-id="cmoyvy8is00001f3fapy34g8x" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2023/02/16/AI-Websites-to-make-your-Life-Easier/" data-id="cmsk4v2re0000004sb3x02wth" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2023/02/16/AI-Websites-to-make-your-Life-Easier/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -239,7 +294,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2023/02/15/free-host-for-web-application-sites/" data-id="cmoyvy8jj002e1f3f0qahc3ip" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2023/02/15/free-host-for-web-application-sites/" data-id="cmsk4v2s7002i004s9qpm0vgn" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2023/02/15/free-host-for-web-application-sites/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -363,7 +418,7 @@ You can use a custom domain name for your github pages website. All you need to 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2022/12/31/Getting-Started-With-Hexo/" data-id="cmoyvy8j6000r1f3fa5cu5y3j" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2022/12/31/Getting-Started-With-Hexo/" data-id="cmsk4v2rq000m004s3u228o6r" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2022/12/31/Getting-Started-With-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -539,9 +594,9 @@ Define the firewall around the instances</p>
 <p>Public DNS (IPv4)
 ec2-54-153-150-4.ap-southeast-2.compute.amazonaws.com
 IPv4 Public IP 54.153.150.4</p>
-<p>ssh <a href="mailto:&#x65;&#x63;&#50;&#45;&#117;&#115;&#x65;&#114;&#x40;&#101;&#99;&#50;&#45;&#x35;&#x34;&#45;&#49;&#x35;&#51;&#x2d;&#x31;&#53;&#x30;&#x2d;&#52;&#46;&#x61;&#112;&#x2d;&#x73;&#x6f;&#117;&#116;&#104;&#101;&#x61;&#115;&#x74;&#x2d;&#x32;&#x2e;&#99;&#111;&#109;&#x70;&#x75;&#x74;&#101;&#46;&#x61;&#109;&#x61;&#122;&#x6f;&#110;&#97;&#119;&#115;&#46;&#99;&#111;&#x6d;">&#x65;&#x63;&#50;&#45;&#117;&#115;&#x65;&#114;&#x40;&#101;&#99;&#50;&#45;&#x35;&#x34;&#45;&#49;&#x35;&#51;&#x2d;&#x31;&#53;&#x30;&#x2d;&#52;&#46;&#x61;&#112;&#x2d;&#x73;&#x6f;&#117;&#116;&#104;&#101;&#x61;&#115;&#x74;&#x2d;&#x32;&#x2e;&#99;&#111;&#109;&#x70;&#x75;&#x74;&#101;&#46;&#x61;&#109;&#x61;&#122;&#x6f;&#110;&#97;&#119;&#115;&#46;&#99;&#111;&#x6d;</a>
-ssh <a href="mailto:&#101;&#99;&#50;&#x2d;&#x75;&#x73;&#101;&#x72;&#x40;&#53;&#52;&#46;&#x31;&#x35;&#51;&#46;&#49;&#x35;&#48;&#46;&#x34;">&#101;&#99;&#50;&#x2d;&#x75;&#x73;&#101;&#x72;&#x40;&#53;&#52;&#46;&#x31;&#x35;&#51;&#46;&#49;&#x35;&#48;&#46;&#x34;</a>
-ssh -i EC2Tutorial.pem <a href="mailto:&#x65;&#x63;&#x32;&#45;&#x75;&#115;&#x65;&#114;&#x40;&#53;&#52;&#x2e;&#x31;&#x35;&#x33;&#x2e;&#49;&#x35;&#48;&#x2e;&#x34;">&#x65;&#x63;&#x32;&#45;&#x75;&#115;&#x65;&#114;&#x40;&#53;&#52;&#x2e;&#x31;&#x35;&#x33;&#x2e;&#49;&#x35;&#48;&#x2e;&#x34;</a></p>
+<p>ssh <a href="mailto:&#x65;&#99;&#x32;&#x2d;&#x75;&#x73;&#101;&#114;&#64;&#x65;&#x63;&#x32;&#x2d;&#53;&#x34;&#x2d;&#49;&#x35;&#51;&#45;&#x31;&#53;&#x30;&#x2d;&#x34;&#x2e;&#x61;&#x70;&#x2d;&#115;&#x6f;&#117;&#116;&#x68;&#x65;&#97;&#x73;&#116;&#45;&#50;&#46;&#x63;&#111;&#x6d;&#x70;&#117;&#x74;&#101;&#46;&#x61;&#109;&#x61;&#122;&#111;&#110;&#97;&#x77;&#115;&#x2e;&#99;&#x6f;&#x6d;">&#x65;&#99;&#x32;&#x2d;&#x75;&#x73;&#101;&#114;&#64;&#x65;&#x63;&#x32;&#x2d;&#53;&#x34;&#x2d;&#49;&#x35;&#51;&#45;&#x31;&#53;&#x30;&#x2d;&#x34;&#x2e;&#x61;&#x70;&#x2d;&#115;&#x6f;&#117;&#116;&#x68;&#x65;&#97;&#x73;&#116;&#45;&#50;&#46;&#x63;&#111;&#x6d;&#x70;&#117;&#x74;&#101;&#46;&#x61;&#109;&#x61;&#122;&#111;&#110;&#97;&#x77;&#115;&#x2e;&#99;&#x6f;&#x6d;</a>
+ssh <a href="mailto:&#101;&#x63;&#x32;&#x2d;&#x75;&#115;&#101;&#x72;&#64;&#x35;&#52;&#x2e;&#x31;&#53;&#x33;&#x2e;&#x31;&#x35;&#48;&#46;&#x34;">&#101;&#x63;&#x32;&#x2d;&#x75;&#115;&#101;&#x72;&#64;&#x35;&#52;&#x2e;&#x31;&#53;&#x33;&#x2e;&#x31;&#x35;&#48;&#46;&#x34;</a>
+ssh -i EC2Tutorial.pem <a href="mailto:&#101;&#x63;&#50;&#x2d;&#117;&#x73;&#101;&#x72;&#64;&#x35;&#52;&#x2e;&#49;&#x35;&#x33;&#x2e;&#x31;&#x35;&#48;&#46;&#52;">&#101;&#x63;&#50;&#x2d;&#117;&#x73;&#101;&#x72;&#64;&#x35;&#52;&#x2e;&#49;&#x35;&#x33;&#x2e;&#x31;&#x35;&#48;&#46;&#52;</a></p>
 <p>  Q: You are getting a permission error exception when trying to SSH into your Linux Instance
   A: the key is missing permissions chmod 0400
   The exam expects you to know this, even if you used Windows &#x2F; Putty to SSH into your instances. If you’re a windows user, just have a quick look at the Linux SSH lecture!</p>
@@ -6673,80 +6728,12 @@ A: Trusted Advisor</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/" data-id="cmoyvy8j0000a1f3ffhw657x0" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/" data-id="cmsk4v2ro000f004s0gwmffwr" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Certifications/" rel="tag">Certifications</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-    <article id="post-Find out what package produced a particular file" class="article article-type-post"
-  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/12/Find%20out%20what%20package%20produced%20a%20particular%20file/" class="article-date">
-  <time datetime="2020-04-12T11:46:03.000Z" itemprop="datePublished">12 Apr 2020</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/GNU-Linux/">GNU/Linux</a>►<a class="article-category-link" href="/categories/GNU-Linux/Debian/">Debian</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/12/Find%20out%20what%20package%20produced%20a%20particular%20file/">Find out what package produced a particular file</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>To identify the package that produced the file named foo execute either:</p>
-<ul>
-<li><p>dpkg –search foo</p>
-<pre><code>This searches for foo in installed packages. (This is (currently) equivalent to searching all of the files having the file extension of .list in the directory /var/lib/dpkg/info/, and adjusting the output to print the names of all the packages containing it, and diversions.).
-
-A faster alternative to this is the dlocate tool.
-
-    dlocate -S foo
-</code></pre>
-</li>
-<li><p>zgrep foo Contents-ARCH.gz</p>
-<pre><code>This searches for files which contain the substring foo in their full path names. The files Contents-ARCH.gz (where ARCH represents the wanted architecture) reside in the major package directories (main, non-free, contrib) at a Debian FTP site (i.e. under/debian/dists/jessie). A Contents file refers only to the packages in the subdirectory tree where it resides. Therefore, a user might have to search more than one Contents files to find the package containing the file foo.
-
-This method has the advantage over dpkg --search in that it will find files in packages that are not currently installed on your system.
-</code></pre>
-</li>
-<li><p>apt-file search foo</p>
-<pre><code>If you install the apt-file package, similar to the above, it searches files which contain the substring or regular expression foo in their full path names. The advantage over the example above is that there is no need to retrieve the Contents-ARCH.gz files as it will do this automatically for all the sources defined in /etc/apt/sources.list when you run (as root) apt-file update.
-</code></pre>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2020/04/12/Find%20out%20what%20package%20produced%20a%20particular%20file/" data-id="cmoyvy8j4000m1f3f8lsafrbf" class="article-share-link">Share</a>
-      
-        <a href="https://blog.pmagas.com/2020/04/12/Find%20out%20what%20package%20produced%20a%20particular%20file/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Packages/" rel="tag">Packages</a></li></ul>
 
     </footer>
   </div>
@@ -6773,6 +6760,10 @@ This method has the advantage over dpkg --search in that it will find files in
       <ul>
         
           <li>
+            <a href="/2026/05/26/Indie-SaaS-Starter-Stack/">Indie SaaS Starter Stack: 14 Tools to Go from Zero to Launched</a>
+          </li>
+        
+          <li>
             <a href="/2026/05/09/Claude-Code-Useful-Commands-and-Keywords/">Claude Code - Useful Commands and Keywords</a>
           </li>
         
@@ -6788,10 +6779,6 @@ This method has the advantage over dpkg --search in that it will find files in
             <a href="/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/">AWS Certified SysOps Administrator - Associate (SOA-C02)</a>
           </li>
         
-          <li>
-            <a href="/2023/05/01/Prompts/">Prompts</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -6801,7 +6788,7 @@ This method has the advantage over dpkg --search in that it will find files in
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/">CLI</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/youtube-dl/">youtube-dl</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Design/TypeScript/">TypeScript</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/">GNU/Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/CLI/">CLI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Debian/">Debian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Installer/">Installer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/KDE/">KDE</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Global/">Global</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/">OAuth2.0</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/Nodemailer/">Nodemailer</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hosting/">Hosting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/">KDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/Dolphin/">Dolphin</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kubernetes/">Kubernetes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Open-AI/">Open AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Protractor/">Protractor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Refranes-Citas-Proverbios/">Refranes, Citas, Proverbios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VS-Code/">VS Code</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/">CLI</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/youtube-dl/">youtube-dl</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Design/TypeScript/">TypeScript</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/">Development</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/">GNU/Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/CLI/">CLI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Debian/">Debian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Installer/">Installer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/KDE/">KDE</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Global/">Global</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/">OAuth2.0</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/Nodemailer/">Nodemailer</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hosting/">Hosting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/">KDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/Dolphin/">Dolphin</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kubernetes/">Kubernetes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Open-AI/">Open AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Protractor/">Protractor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Refranes-Citas-Proverbios/">Refranes, Citas, Proverbios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VS-Code/">VS Code</a></li></ul>
     </div>
   </div>
 
@@ -6811,7 +6798,7 @@ This method has the advantage over dpkg --search in that it will find files in
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AI/" style="font-size: 20px;">AI</a> <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/CLI/" style="font-size: 20px;">CLI</a> <a href="/tags/Certifications/" style="font-size: 20px;">Certifications</a> <a href="/tags/Claude/" style="font-size: 20px;">Claude</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Install/" style="font-size: 20px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Productivity/" style="font-size: 10px;">Productivity</a> <a href="/tags/Prompts/" style="font-size: 10px;">Prompts</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/Resources/" style="font-size: 10px;">Resources</a> <a href="/tags/SOA-C02/" style="font-size: 10px;">SOA-C02</a> <a href="/tags/SOLID-Principles/" style="font-size: 10px;">SOLID Principles</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/SysOps/" style="font-size: 10px;">SysOps</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
+      <a href="/tags/AI/" style="font-size: 20px;">AI</a> <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/CLI/" style="font-size: 20px;">CLI</a> <a href="/tags/Certifications/" style="font-size: 20px;">Certifications</a> <a href="/tags/Claude/" style="font-size: 20px;">Claude</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Indie-Hacker/" style="font-size: 10px;">Indie Hacker</a> <a href="/tags/Install/" style="font-size: 20px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Productivity/" style="font-size: 10px;">Productivity</a> <a href="/tags/Prompts/" style="font-size: 10px;">Prompts</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/Resources/" style="font-size: 10px;">Resources</a> <a href="/tags/SOA-C02/" style="font-size: 10px;">SOA-C02</a> <a href="/tags/SOLID-Principles/" style="font-size: 10px;">SOLID Principles</a> <a href="/tags/SaaS/" style="font-size: 10px;">SaaS</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/Supabase/" style="font-size: 10px;">Supabase</a> <a href="/tags/SysOps/" style="font-size: 10px;">SysOps</a> <a href="/tags/Tech-Stack/" style="font-size: 10px;">Tech Stack</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Vercel/" style="font-size: 10px;">Vercel</a> <a href="/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
     </div>
   </div>
 
