@@ -83,7 +83,81 @@ ga('send', 'pageview');
         <section id="main">
   
   
-    <article id="post-How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer" class="article article-type-post article-featured"
+    <article id="post-Fix-NordVPN-Breaking-Network-on-Linux-Disconnect" class="article article-type-post article-featured"
+  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/" class="article-date">
+  <time datetime="2026-08-25T12:00:00.000Z" itemprop="datePublished">26 Aug 2026</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Troubleshooting/">Troubleshooting</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+          <span class="article-badge">Latest Post</span>
+        
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/">Fix NordVPN Breaking Your Network on Linux After Disconnecting</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>If disconnecting NordVPN on Linux leaves you without internet access - no name resolution, no ping, <code>apt update</code> failing - the culprit is often the <code>nordvpnd</code> daemon fighting with NetworkManager, not NordVPN itself.</p>
+<blockquote>
+<p>Solution found and shared on the <a target="_blank" rel="noopener" href="https://forums.debian.net/viewtopic.php?t=157619">Debian Forums</a>.</p>
+</blockquote>
+<h2 id="The-Problem"><a href="#The-Problem" class="headerlink" title="The Problem"></a>The Problem</h2><p>Stopping NordVPN from the console (<code>nordvpn d</code>) doesn’t fully release control of the network. The <code>nordvpnd</code> daemon keeps running in the background even after the VPN connection itself is closed, and it can leave the system unable to resolve names, ping hosts, or reach the internet at all.</p>
+<h2 id="Diagnosing-It"><a href="#Diagnosing-It" class="headerlink" title="Diagnosing It"></a>Diagnosing It</h2><p>First, list running services to confirm the daemon is still active even after stopping NordVPN from the console:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl list-units --type=service</span><br></pre></td></tr></table></figure>
+
+<p>Look for:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nordvpnd.service                loaded active running NordVPN Daemon</span><br></pre></td></tr></table></figure>
+
+<h2 id="The-Fix"><a href="#The-Fix" class="headerlink" title="The Fix"></a>The Fix</h2><p>Stop the daemon directly:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl stop nordvpnd</span><br></pre></td></tr></table></figure>
+
+<p>Then restart NetworkManager to restore connectivity:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart NetworkManager</span><br></pre></td></tr></table></figure>
+
+<p>After this, internet access, name resolution, and <code>apt update</code> should work again.</p>
+<h2 id="What-Was-Confirmed"><a href="#What-Was-Confirmed" class="headerlink" title="What Was Confirmed"></a>What Was Confirmed</h2><p>Testing the cycle further showed:</p>
+<ul>
+<li>Restarting <code>nordvpnd</code> and then connecting via <code>nordvpn c</code> worked fine, with the network staying up.</li>
+<li>Disconnecting again via <code>nordvpn d</code> reproduced the same network breakage as before.</li>
+<li>Stopping the daemon (<code>sudo systemctl stop nordvpn</code>) alone fixed it - no NetworkManager restart needed at that point.</li>
+</ul>
+<h2 id="Takeaway"><a href="#Takeaway" class="headerlink" title="Takeaway"></a>Takeaway</h2><p>The workaround is to manually stop the <code>nordvpnd</code> daemon after disconnecting NordVPN, and start it again (or just let <code>nordvpn c</code> restart it) before reconnecting. It’s a bit annoying to do by hand every time, but it reliably avoids the broken-network state. This could be scripted into a small wrapper around <code>nordvpn c</code> &#x2F; <code>nordvpn d</code> if you want to automate it.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.pmagas.com/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/" data-id="cmt907k85000rz8yy2aqt18pt" class="article-share-link">Share</a>
+      
+        <a href="https://blog.pmagas.com/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debian/" rel="tag">Debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Networking/" rel="tag">Networking</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NordVPN/" rel="tag">NordVPN</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+    <article id="post-How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer" class="article article-type-post"
   itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/" class="article-date">
@@ -99,8 +173,6 @@ ga('send', 'pageview');
     
     
       <header class="article-header">
-        
-          <span class="article-badge">Latest Post</span>
         
         
   
@@ -167,7 +239,7 @@ Code:</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/" data-id="cmsxons5c0019ys6h2mhn842a" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/" data-id="cmt907k880015z8yy38274q2d" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -194,6 +266,10 @@ Code:</p>
       <ul>
         
           <li>
+            <a href="/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/">Fix NordVPN Breaking Your Network on Linux After Disconnecting</a>
+          </li>
+        
+          <li>
             <a href="/2026/08/17/Data-Removal-and-Digital-Footprint-Tools/">Data Removal and Digital Footprint Tools: DeleteMe vs Incogni vs Redact</a>
           </li>
         
@@ -209,10 +285,6 @@ Code:</p>
             <a href="/2026/05/09/Claude-Code-Useful-Commands-and-Keywords/">Claude Code - Useful Commands and Keywords</a>
           </li>
         
-          <li>
-            <a href="/2026/04/14/Claude-Code-Skills-Setup/">Claude Code - Skills Setup</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -222,7 +294,7 @@ Code:</p>
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/">CLI</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/youtube-dl/">youtube-dl</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Design/TypeScript/">TypeScript</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/">Development</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/">GNU/Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/CLI/">CLI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Debian/">Debian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Installer/">Installer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/KDE/">KDE</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Global/">Global</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/">OAuth2.0</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/Nodemailer/">Nodemailer</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hosting/">Hosting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/">KDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/Dolphin/">Dolphin</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kubernetes/">Kubernetes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Open-AI/">Open AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Privacy/">Privacy</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Protractor/">Protractor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Refranes-Citas-Proverbios/">Refranes, Citas, Proverbios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VS-Code/">VS Code</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/">CLI</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/youtube-dl/">youtube-dl</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Design/TypeScript/">TypeScript</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/">Development</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/">GNU/Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/CLI/">CLI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Debian/">Debian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Installer/">Installer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/KDE/">KDE</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Global/">Global</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/">OAuth2.0</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/Nodemailer/">Nodemailer</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hosting/">Hosting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/">KDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/Dolphin/">Dolphin</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kubernetes/">Kubernetes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Open-AI/">Open AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Privacy/">Privacy</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Protractor/">Protractor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Refranes-Citas-Proverbios/">Refranes, Citas, Proverbios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Troubleshooting/">Troubleshooting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VS-Code/">VS Code</a></li></ul>
     </div>
   </div>
 
@@ -232,7 +304,7 @@ Code:</p>
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AI/" style="font-size: 20px;">AI</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/CLI/" style="font-size: 20px;">CLI</a> <a href="/tags/Certifications/" style="font-size: 20px;">Certifications</a> <a href="/tags/Claude/" style="font-size: 20px;">Claude</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Indie-Hacker/" style="font-size: 10px;">Indie Hacker</a> <a href="/tags/Install/" style="font-size: 20px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Privacy/" style="font-size: 20px;">Privacy</a> <a href="/tags/Productivity/" style="font-size: 10px;">Productivity</a> <a href="/tags/Prompts/" style="font-size: 10px;">Prompts</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/Resources/" style="font-size: 10px;">Resources</a> <a href="/tags/SOA-C02/" style="font-size: 10px;">SOA-C02</a> <a href="/tags/SOLID-Principles/" style="font-size: 10px;">SOLID Principles</a> <a href="/tags/SaaS/" style="font-size: 10px;">SaaS</a> <a href="/tags/Security/" style="font-size: 20px;">Security</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/Supabase/" style="font-size: 10px;">Supabase</a> <a href="/tags/SysOps/" style="font-size: 10px;">SysOps</a> <a href="/tags/Tech-Stack/" style="font-size: 10px;">Tech Stack</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/Tools/" style="font-size: 20px;">Tools</a> <a href="/tags/Vercel/" style="font-size: 10px;">Vercel</a> <a href="/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
+      <a href="/tags/AI/" style="font-size: 20px;">AI</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/CLI/" style="font-size: 20px;">CLI</a> <a href="/tags/Certifications/" style="font-size: 20px;">Certifications</a> <a href="/tags/Claude/" style="font-size: 20px;">Claude</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 20px;">Debian</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Indie-Hacker/" style="font-size: 10px;">Indie Hacker</a> <a href="/tags/Install/" style="font-size: 20px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/Networking/" style="font-size: 10px;">Networking</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/NordVPN/" style="font-size: 10px;">NordVPN</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Privacy/" style="font-size: 20px;">Privacy</a> <a href="/tags/Productivity/" style="font-size: 10px;">Productivity</a> <a href="/tags/Prompts/" style="font-size: 10px;">Prompts</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/Resources/" style="font-size: 10px;">Resources</a> <a href="/tags/SOA-C02/" style="font-size: 10px;">SOA-C02</a> <a href="/tags/SOLID-Principles/" style="font-size: 10px;">SOLID Principles</a> <a href="/tags/SaaS/" style="font-size: 10px;">SaaS</a> <a href="/tags/Security/" style="font-size: 20px;">Security</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/Supabase/" style="font-size: 10px;">Supabase</a> <a href="/tags/SysOps/" style="font-size: 10px;">SysOps</a> <a href="/tags/Tech-Stack/" style="font-size: 10px;">Tech Stack</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/Tools/" style="font-size: 20px;">Tools</a> <a href="/tags/Vercel/" style="font-size: 10px;">Vercel</a> <a href="/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
     </div>
   </div>
 

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Fix NordVPN Breaking Your Network on Linux After Disconnecting | Root Access</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="If disconnecting NordVPN on Linux leaves you without internet access - no name resolution, no ping, apt update failing - the culprit is often the nordvpnd daemon fighting with NetworkManager, not Nord">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fix NordVPN Breaking Your Network on Linux After Disconnecting">
+<meta property="og:url" content="https://blog.pmagas.com/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/index.html">
+<meta property="og:site_name" content="Root Access">
+<meta property="og:description" content="If disconnecting NordVPN on Linux leaves you without internet access - no name resolution, no ping, apt update failing - the culprit is often the nordvpnd daemon fighting with NetworkManager, not Nord">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-08-25T12:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-25T18:33:57.156Z">
+<meta property="article:author" content="Pablo Magro Gaspar">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="NordVPN">
+<meta property="article:tag" content="Networking">
+<meta property="article:tag" content="Debian">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@https:&#x2F;&#x2F;twitter.com&#x2F;esrhim">
+<link rel="publisher" href="https://plus.google.com/u/0/113537401711657998977?rel=author">
+  
+    <link rel="alternate" href="/atom.xml" title="Root Access" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-70668709-6', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Root Access</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.pmagas.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Fix-NordVPN-Breaking-Network-on-Linux-Disconnect" class="article article-type-post"
+  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/" class="article-date">
+  <time datetime="2026-08-25T12:00:00.000Z" itemprop="datePublished">26 Aug 2026</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Troubleshooting/">Troubleshooting</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Fix NordVPN Breaking Your Network on Linux After Disconnecting
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>If disconnecting NordVPN on Linux leaves you without internet access - no name resolution, no ping, <code>apt update</code> failing - the culprit is often the <code>nordvpnd</code> daemon fighting with NetworkManager, not NordVPN itself.</p>
+<blockquote>
+<p>Solution found and shared on the <a target="_blank" rel="noopener" href="https://forums.debian.net/viewtopic.php?t=157619">Debian Forums</a>.</p>
+</blockquote>
+<h2 id="The-Problem"><a href="#The-Problem" class="headerlink" title="The Problem"></a>The Problem</h2><p>Stopping NordVPN from the console (<code>nordvpn d</code>) doesn’t fully release control of the network. The <code>nordvpnd</code> daemon keeps running in the background even after the VPN connection itself is closed, and it can leave the system unable to resolve names, ping hosts, or reach the internet at all.</p>
+<h2 id="Diagnosing-It"><a href="#Diagnosing-It" class="headerlink" title="Diagnosing It"></a>Diagnosing It</h2><p>First, list running services to confirm the daemon is still active even after stopping NordVPN from the console:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl list-units --type=service</span><br></pre></td></tr></table></figure>
+
+<p>Look for:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nordvpnd.service                loaded active running NordVPN Daemon</span><br></pre></td></tr></table></figure>
+
+<h2 id="The-Fix"><a href="#The-Fix" class="headerlink" title="The Fix"></a>The Fix</h2><p>Stop the daemon directly:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl stop nordvpnd</span><br></pre></td></tr></table></figure>
+
+<p>Then restart NetworkManager to restore connectivity:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart NetworkManager</span><br></pre></td></tr></table></figure>
+
+<p>After this, internet access, name resolution, and <code>apt update</code> should work again.</p>
+<h2 id="What-Was-Confirmed"><a href="#What-Was-Confirmed" class="headerlink" title="What Was Confirmed"></a>What Was Confirmed</h2><p>Testing the cycle further showed:</p>
+<ul>
+<li>Restarting <code>nordvpnd</code> and then connecting via <code>nordvpn c</code> worked fine, with the network staying up.</li>
+<li>Disconnecting again via <code>nordvpn d</code> reproduced the same network breakage as before.</li>
+<li>Stopping the daemon (<code>sudo systemctl stop nordvpn</code>) alone fixed it - no NetworkManager restart needed at that point.</li>
+</ul>
+<h2 id="Takeaway"><a href="#Takeaway" class="headerlink" title="Takeaway"></a>Takeaway</h2><p>The workaround is to manually stop the <code>nordvpnd</code> daemon after disconnecting NordVPN, and start it again (or just let <code>nordvpn c</code> restart it) before reconnecting. It’s a bit annoying to do by hand every time, but it reliably avoids the broken-network state. This could be scripted into a small wrapper around <code>nordvpn c</code> &#x2F; <code>nordvpn d</code> if you want to automate it.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.pmagas.com/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/" data-id="cmt907k85000rz8yy2aqt18pt" class="article-share-link">Share</a>
+      
+        <a href="https://blog.pmagas.com/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debian/" rel="tag">Debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Networking/" rel="tag">Networking</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NordVPN/" rel="tag">NordVPN</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/08/17/Data-Removal-and-Digital-Footprint-Tools/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Data Removal and Digital Footprint Tools: DeleteMe vs Incogni vs Redact</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/">Fix NordVPN Breaking Your Network on Linux After Disconnecting</a>
+          </li>
+        
+          <li>
+            <a href="/2026/08/17/Data-Removal-and-Digital-Footprint-Tools/">Data Removal and Digital Footprint Tools: DeleteMe vs Incogni vs Redact</a>
+          </li>
+        
+          <li>
+            <a href="/2026/08/17/How-to-Disable-Android-Background-Screen-Analysis/">How to Disable the Hidden Background Screen-Analysis Feature on Android</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/26/Indie-SaaS-Starter-Stack/">Indie SaaS Starter Stack: 14 Tools to Go from Zero to Launched</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/09/Claude-Code-Useful-Commands-and-Keywords/">Claude Code - Useful Commands and Keywords</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/">CLI</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/youtube-dl/">youtube-dl</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Design/TypeScript/">TypeScript</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/">Development</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/">GNU/Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/CLI/">CLI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Debian/">Debian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Installer/">Installer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/KDE/">KDE</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Global/">Global</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/">OAuth2.0</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/Nodemailer/">Nodemailer</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hosting/">Hosting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/">KDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/Dolphin/">Dolphin</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kubernetes/">Kubernetes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Open-AI/">Open AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Privacy/">Privacy</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Protractor/">Protractor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Refranes-Citas-Proverbios/">Refranes, Citas, Proverbios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Troubleshooting/">Troubleshooting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VS-Code/">VS Code</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI/" style="font-size: 20px;">AI</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/CLI/" style="font-size: 20px;">CLI</a> <a href="/tags/Certifications/" style="font-size: 20px;">Certifications</a> <a href="/tags/Claude/" style="font-size: 20px;">Claude</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 20px;">Debian</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Indie-Hacker/" style="font-size: 10px;">Indie Hacker</a> <a href="/tags/Install/" style="font-size: 20px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/Networking/" style="font-size: 10px;">Networking</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/NordVPN/" style="font-size: 10px;">NordVPN</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Privacy/" style="font-size: 20px;">Privacy</a> <a href="/tags/Productivity/" style="font-size: 10px;">Productivity</a> <a href="/tags/Prompts/" style="font-size: 10px;">Prompts</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/Resources/" style="font-size: 10px;">Resources</a> <a href="/tags/SOA-C02/" style="font-size: 10px;">SOA-C02</a> <a href="/tags/SOLID-Principles/" style="font-size: 10px;">SOLID Principles</a> <a href="/tags/SaaS/" style="font-size: 10px;">SaaS</a> <a href="/tags/Security/" style="font-size: 20px;">Security</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/Supabase/" style="font-size: 10px;">Supabase</a> <a href="/tags/SysOps/" style="font-size: 10px;">SysOps</a> <a href="/tags/Tech-Stack/" style="font-size: 10px;">Tech Stack</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/Tools/" style="font-size: 20px;">Tools</a> <a href="/tags/Vercel/" style="font-size: 10px;">Vercel</a> <a href="/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 Pablo Magro Gaspar<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'pablomagro';
+  
+  var disqus_url = 'https://blog.pmagas.com/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+<link rel="stylesheet" href="/scroll2top/scroll2top.css">
+
+
+<script src="/scroll2top/scroll2top.js"></script>
+
+
+<div class="scrollup">
+  <a title="Scroll up" href="#">Scroll</a>
+</div>
+    
+  </div>
+</body>
+</html>

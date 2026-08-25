@@ -84,6 +84,84 @@ ga('send', 'pageview');
   
   
   
+    <article id="latest-Install-latest-hplip-version-on-Debian-9" class="article article-type-latest"
+  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/28/Install-latest-hplip-version-on-Debian-9/" class="article-date">
+  <time datetime="2017-12-28T22:35:26.000Z" itemprop="datePublished">29 Dec 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GNU-Linux/">GNU/Linux</a>►<a class="article-category-link" href="/categories/GNU-Linux/Debian/">Debian</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/28/Install-latest-hplip-version-on-Debian-9/">Install latest hplip version on Debian 9</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I bought a new HP Deskjet 2621 and I tried to install it using the hp-setup which didn’t recognize it.</p>
+<p>The problem is the hplip version (generaly 3.16.11+repack0-3 in jessie and 3.16.11+repack0-1~bpo8+1 in jessie-backports), if you have a too recent printer (like me), ppd files are not available in version 3.16.11+repack0-3.</p>
+<p>I tried to install latest one <a target="_blank" rel="noopener" href="https://sourceforge.net/projects/hplip/files/hplip/3.17.11/">binary</a> (at that moment).</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh hplip-3.17.11.run</span><br></pre></td></tr></table></figure>
+
+<p>After the whole process a had a dependencies problems because packages:</p>
+<ul>
+<li><strong>pyqt4</strong></li>
+<li><strong>pyqt4-dbus</strong></li>
+</ul>
+<p>had different names in 9.3:</p>
+<ul>
+<li><strong>python-qt4</strong></li>
+<li><strong>python-qt4-dbus</strong></li>
+</ul>
+<p>So to fix it you have two options once downloaded the source code from above link.</p>
+<ol>
+<li>Following the instructions from the following <a target="_blank" rel="noopener" href="https://answers.launchpad.net/hplip/+question/452076">link</a> (#3 message).</li>
+<li>Compile and install it your self.</li>
+</ol>
+<p>I chose the 2nd option:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/src/hplip-3.17.11 $ ./configure</span><br></pre></td></tr></table></figure>
+
+<p>Here I found another dependencies issue:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;configure: error: cannot find net-snmp support (or --disable-network-build)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Disabling the networking build is bad idea if you have a wireless printer, it won’t work. Then your have to install the <strong>net-snmp</strong> packages and the development packages for <strong>openssl</strong>.</p>
+<p>Once installed above dependencies, I just executed bellow commands to install the hp-setup binary with my printer drivers.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~/src/hplip-3.17.11 $ make clean</span><br><span class="line">~/src/hplip-3.17.11 $ ./configure</span><br><span class="line">~/src/hplip-3.17.11 $ make</span><br><span class="line">~/src/hplip-3.17.11 $ su -c <span class="string">&quot;make install&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>And then execute hp-setup ans install your printer:</p>
+<img src="https://i.imgur.com/A9DIJ2v.png" width="" height="" alt="Hp-setup example" />
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.pmagas.com/2017/12/28/Install-latest-hplip-version-on-Debian-9/" data-id="cmt907k8a001cz8yy4u0v1qn6" class="article-share-link">Share</a>
+      
+        <a href="https://blog.pmagas.com/2017/12/28/Install-latest-hplip-version-on-Debian-9/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Install/" rel="tag">Install</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hplip/" rel="tag">hplip</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
     <article id="post-Productive-VS-Code-Extensions" class="article article-type-post"
   itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
   <div class="article-meta">
@@ -177,7 +255,7 @@ Code completion, highlighting, and hover information for inline html.</p>
 <li>Quick info</li>
 <li>Go to definition</li>
 </ul>
-<p>This extension uses @angular&#x2F;<a href="mailto:&#x6c;&#97;&#x6e;&#x67;&#x75;&#97;&#103;&#x65;&#x2d;&#115;&#101;&#x72;&#x76;&#x69;&#99;&#101;&#64;&#53;&#x2e;&#x30;&#x2e;&#48;&#x2d;&#x62;&#101;&#116;&#x61;&#x2e;&#x35;">&#x6c;&#97;&#x6e;&#x67;&#x75;&#97;&#103;&#x65;&#x2d;&#115;&#101;&#x72;&#x76;&#x69;&#99;&#101;&#64;&#53;&#x2e;&#x30;&#x2e;&#48;&#x2d;&#x62;&#101;&#116;&#x61;&#x2e;&#x35;</a> and <a href="mailto:&#x74;&#x79;&#112;&#101;&#x73;&#x63;&#x72;&#x69;&#x70;&#116;&#64;&#50;&#x2e;&#52;&#x2e;&#x32;">&#x74;&#x79;&#112;&#101;&#x73;&#x63;&#x72;&#x69;&#x70;&#116;&#64;&#50;&#x2e;&#52;&#x2e;&#x32;</a>.</p>
+<p>This extension uses @angular&#x2F;<a href="mailto:&#108;&#97;&#110;&#103;&#117;&#97;&#x67;&#x65;&#x2d;&#x73;&#101;&#x72;&#118;&#x69;&#99;&#101;&#x40;&#53;&#46;&#x30;&#x2e;&#48;&#x2d;&#x62;&#x65;&#x74;&#x61;&#46;&#53;">&#108;&#97;&#110;&#103;&#117;&#97;&#x67;&#x65;&#x2d;&#x73;&#101;&#x72;&#118;&#x69;&#99;&#101;&#x40;&#53;&#46;&#x30;&#x2e;&#48;&#x2d;&#x62;&#x65;&#x74;&#x61;&#46;&#53;</a> and <a href="mailto:&#x74;&#x79;&#x70;&#101;&#115;&#x63;&#114;&#105;&#112;&#x74;&#x40;&#x32;&#x2e;&#52;&#x2e;&#50;">&#x74;&#x79;&#x70;&#101;&#115;&#x63;&#114;&#105;&#112;&#x74;&#x40;&#x32;&#x2e;&#52;&#x2e;&#50;</a>.</p>
 <h2 id="Auto-Rename-Tags"><a href="#Auto-Rename-Tags" class="headerlink" title="Auto Rename Tags "></a><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag">Auto Rename Tags</a> <a id="auto-rename-tags"></a></h2><p>Editor services for Angular templates. When typing in inline or external templates you will get suggestions for autocompletion.</p>
 <p>If you rename an HTML tag, the related closing tag will be adjusted simultaneously.</p>
 <img src="https://raw.githubusercontent.com/formulahendry/vscode-auto-rename-tag/master/images/usage.gif" width="727" height="473" alt="Usage example" />
@@ -349,7 +427,7 @@ Code completion, highlighting, and hover information for inline html.</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2017/11/21/Productive-VS-Code-Extensions/" data-id="cmsxons5f001mys6h6zbf2hfe" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2017/11/21/Productive-VS-Code-Extensions/" data-id="cmt907k8e001pz8yyf01lfccz" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2017/11/21/Productive-VS-Code-Extensions/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -401,7 +479,7 @@ Code completion, highlighting, and hover information for inline html.</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2017/11/15/Disable-baloo-file-extractor/" data-id="cmsxons54000lys6hdyza5dpp" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2017/11/15/Disable-baloo-file-extractor/" data-id="cmt907k83000lz8yygds5fpov" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2017/11/15/Disable-baloo-file-extractor/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -796,7 +874,7 @@ xclip can also print an X selection to standard out, which can then be redirecte
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2016/09/17/Post-Installing-GNU-Linux-Debian-based/" data-id="cmsxons5g001pys6h11dq3bw2" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2016/09/17/Post-Installing-GNU-Linux-Debian-based/" data-id="cmt907k8e001rz8yyhxde0b71" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2016/09/17/Post-Installing-GNU-Linux-Debian-based/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -858,7 +936,7 @@ finished, <strong>dd</strong> displays the number of complete and partial input 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2016/09/14/Bootable-CD-from-ISO/" data-id="cmsxons4z0005ys6h7uko0ugc" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2016/09/14/Bootable-CD-from-ISO/" data-id="cmt907k7x0006z8yy0my82tz0" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2016/09/14/Bootable-CD-from-ISO/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -873,100 +951,10 @@ finished, <strong>dd</strong> displays the number of complete and partial input 
 
     
   
-    <article id="post-ServletContextListener" class="article article-type-post"
-  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/13/ServletContextListener/" class="article-date">
-  <time datetime="2016-09-13T04:52:53.000Z" itemprop="datePublished">13 Sep 2016</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/13/ServletContextListener/">ServletContextListener</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Implementations of this interface recieve notifications about changes to the servlet context of the web application they are part of. To recieve notification events, the implementation class must be configured in the deployment descriptor for the web application.</p>
-<pre><code>public interface ServletContextListener extends EventListener
-</code></pre>
-<p><a target="_blank" rel="noopener" href="http://docs.oracle.com/javaee/7/api/javax/servlet/ServletContextListener.html">Interface</a> for receiving notification events about ServletContext lifecycle changes.</p>
-<h3 id="Methods-Summary"><a href="#Methods-Summary" class="headerlink" title="Methods Summary"></a>Methods Summary</h3><h5 id="void-contextDestroyed-ServletContextEvent-sce"><a href="#void-contextDestroyed-ServletContextEvent-sce" class="headerlink" title="void contextDestroyed(ServletContextEvent sce)"></a>void contextDestroyed(ServletContextEvent sce)</h5><pre><code>Notification that the servlet context is about to be shut down.
-</code></pre>
-<p>All servlets and filters will have been destroyed before any ServletContextListeners  are notified of context destruction.</p>
-<h4 id="void-contextInitialized-ServletContextEvent-sce"><a href="#void-contextInitialized-ServletContextEvent-sce" class="headerlink" title="void contextInitialized(ServletContextEvent sce)"></a>void contextInitialized(ServletContextEvent sce)</h4><pre><code>Notification that the web application is ready to process requests.
-</code></pre>
-<p>All ServletContextListeners are notified of context initialization before any filters or servlets in the web application are initialized.</p>
-<h3 id="Set-the-deployment-descriptor"><a href="#Set-the-deployment-descriptor" class="headerlink" title="Set the deployment descriptor."></a>Set the deployment descriptor.</h3><h4 id="web-xml-Servlet-lt-3-0"><a href="#web-xml-Servlet-lt-3-0" class="headerlink" title="web.xml (Servlet &lt; 3.0)"></a>web.xml (Servlet &lt; 3.0)</h4><pre><code>Sample web.xml file:
-
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot; xmlns:web=&quot;http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot; xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot; id=&quot;WebApp_ID&quot; version=&quot;2.5&quot;&gt;
-  ...
-  &lt;listener&gt;
-    &lt;listener-class&gt;example.ExampleApplicationLifeCycleListener&lt;/listener-class&gt;
-  &lt;/listener&gt;
-  ...
-&lt;/web-app&gt;
-</code></pre>
-<h4 id="WebListener-Servlet-gt-x3D-3-0"><a href="#WebListener-Servlet-gt-x3D-3-0" class="headerlink" title="@WebListener (Servlet &gt;&#x3D; 3.0)"></a>@WebListener (Servlet &gt;&#x3D; 3.0)</h4><p>The <code>WebListener</code> annotation is used to register the following types of listeners</p>
-<ul>
-<li><em>Context Listener</em> (javax.servlet.ServletContextListener)</li>
-<li><em>Context Attribute Listener</em> (javax.servlet.ServletContextAttributeListener)</li>
-<li><em>Servlet Request Listener</em> (javax.servlet.ServletRequestListener)</li>
-<li><em>Servlet Request Attribute Listener</em> (javax.servlet.ServletRequestAttributeListener)</li>
-<li><em>Http Session Listener</em> (javax.servlet.http.HttpSessionListener)</li>
-<li><em>Http Session Attribute Listener</em> (javax.servlet.http.HttpSessionAttributeListener)</li>
-</ul>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Registering ServletContextListeners, which run your code before the web application is started. It waits for specified event happened, then “hijack” the event and run its own event.</p>
-<p><strong>Problem</strong>
-You want to initialize a database connection pool before the web application is started, is there a “main()” method in the web application environment?</p>
-<p><strong>Solution</strong>
-The ServletContextListener is what you want, it will run your code before the web application is started.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> example;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebListener;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletContextListener;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebListener</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ExampleApplicationLifeCycleListener</span> <span class="keyword">implements</span> <span class="title class_">ServletContextListener</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">contextInitialized</span><span class="params">(ServletContextEvent event)</span> &#123;</span><br><span class="line">    <span class="comment">//do on application init</span></span><br><span class="line">    <span class="type">EntityManagerFactory</span> <span class="variable">emf</span> <span class="operator">=</span></span><br><span class="line">            Persistence.createEntityManagerFactory(<span class="string">&quot;$objectdb/db/example.odb&quot;</span>);</span><br><span class="line">    event.getServletContext().setAttribute(<span class="string">&quot;emf&quot;</span>, emf);</span><br><span class="line">    System.out.println(<span class="string">&quot;ServletContextListener started&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">contextDestroyed</span><span class="params">(ServletContextEvent event)</span> &#123;</span><br><span class="line">    <span class="comment">//do on application destroy</span></span><br><span class="line">    <span class="type">EntityManagerFactory</span> <span class="variable">emf</span> <span class="operator">=</span></span><br><span class="line">            (EntityManagerFactory)event.getServletContext().getAttribute(<span class="string">&quot;emf&quot;</span>);</span><br><span class="line">    emf.close();  </span><br><span class="line">    System.out.println(<span class="string">&quot;ServletContextListener destroyed&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><ol>
-<li><a target="_blank" rel="noopener" href="https://www.ntu.edu.sg/home/ehchua/programming/java/JavaServlets.html">https://www.ntu.edu.sg/home/ehchua/programming/java/JavaServlets.html</a></li>
-<li><a target="_blank" rel="noopener" href="https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api/3.1.0">https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api/3.1.0</a></li>
-<li><a target="_blank" rel="noopener" href="http://blog.caucho.com/2009/10/06/servlet-30-tutorial-weblistener-webservlet-webfilter-and-webinitparam/">http://blog.caucho.com/2009/10/06/servlet-30-tutorial-weblistener-webservlet-webfilter-and-webinitparam/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.mkyong.com/servlet/what-is-listener-servletcontextlistener-example/">https://www.mkyong.com/servlet/what-is-listener-servletcontextlistener-example/</a></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2016/09/13/ServletContextListener/" data-id="cmsxons5k002eys6h4zgc1s0w" class="article-share-link">Share</a>
-      
-        <a href="https://blog.pmagas.com/2016/09/13/ServletContextListener/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Filter/" rel="tag">Filter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ServletContextListener/" rel="tag">ServletContextListener</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-    
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; __(&#39;prev&#39;)</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">__(&#39;next&#39;) &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; __(&#39;prev&#39;)</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">__(&#39;next&#39;) &amp;raquo;</a>
   </nav>
 
 </section>
@@ -978,6 +966,10 @@ The ServletContextListener is what you want, it will run your code before the we
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/">Fix NordVPN Breaking Your Network on Linux After Disconnecting</a>
+          </li>
         
           <li>
             <a href="/2026/08/17/Data-Removal-and-Digital-Footprint-Tools/">Data Removal and Digital Footprint Tools: DeleteMe vs Incogni vs Redact</a>
@@ -995,10 +987,6 @@ The ServletContextListener is what you want, it will run your code before the we
             <a href="/2026/05/09/Claude-Code-Useful-Commands-and-Keywords/">Claude Code - Useful Commands and Keywords</a>
           </li>
         
-          <li>
-            <a href="/2026/04/14/Claude-Code-Skills-Setup/">Claude Code - Skills Setup</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -1008,7 +996,7 @@ The ServletContextListener is what you want, it will run your code before the we
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/">CLI</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/youtube-dl/">youtube-dl</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Design/TypeScript/">TypeScript</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/">Development</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/">GNU/Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/CLI/">CLI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Debian/">Debian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Installer/">Installer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/KDE/">KDE</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Global/">Global</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/">OAuth2.0</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/Nodemailer/">Nodemailer</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hosting/">Hosting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/">KDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/Dolphin/">Dolphin</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kubernetes/">Kubernetes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Open-AI/">Open AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Privacy/">Privacy</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Protractor/">Protractor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Refranes-Citas-Proverbios/">Refranes, Citas, Proverbios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VS-Code/">VS Code</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/">CLI</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/youtube-dl/">youtube-dl</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Design/TypeScript/">TypeScript</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/">Development</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/">GNU/Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/CLI/">CLI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Debian/">Debian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Installer/">Installer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/KDE/">KDE</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Global/">Global</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/">OAuth2.0</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/Nodemailer/">Nodemailer</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hosting/">Hosting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/">KDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/Dolphin/">Dolphin</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kubernetes/">Kubernetes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Open-AI/">Open AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Privacy/">Privacy</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Protractor/">Protractor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Refranes-Citas-Proverbios/">Refranes, Citas, Proverbios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Troubleshooting/">Troubleshooting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VS-Code/">VS Code</a></li></ul>
     </div>
   </div>
 
@@ -1018,7 +1006,7 @@ The ServletContextListener is what you want, it will run your code before the we
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AI/" style="font-size: 20px;">AI</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/CLI/" style="font-size: 20px;">CLI</a> <a href="/tags/Certifications/" style="font-size: 20px;">Certifications</a> <a href="/tags/Claude/" style="font-size: 20px;">Claude</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Indie-Hacker/" style="font-size: 10px;">Indie Hacker</a> <a href="/tags/Install/" style="font-size: 20px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Privacy/" style="font-size: 20px;">Privacy</a> <a href="/tags/Productivity/" style="font-size: 10px;">Productivity</a> <a href="/tags/Prompts/" style="font-size: 10px;">Prompts</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/Resources/" style="font-size: 10px;">Resources</a> <a href="/tags/SOA-C02/" style="font-size: 10px;">SOA-C02</a> <a href="/tags/SOLID-Principles/" style="font-size: 10px;">SOLID Principles</a> <a href="/tags/SaaS/" style="font-size: 10px;">SaaS</a> <a href="/tags/Security/" style="font-size: 20px;">Security</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/Supabase/" style="font-size: 10px;">Supabase</a> <a href="/tags/SysOps/" style="font-size: 10px;">SysOps</a> <a href="/tags/Tech-Stack/" style="font-size: 10px;">Tech Stack</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/Tools/" style="font-size: 20px;">Tools</a> <a href="/tags/Vercel/" style="font-size: 10px;">Vercel</a> <a href="/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
+      <a href="/tags/AI/" style="font-size: 20px;">AI</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/CLI/" style="font-size: 20px;">CLI</a> <a href="/tags/Certifications/" style="font-size: 20px;">Certifications</a> <a href="/tags/Claude/" style="font-size: 20px;">Claude</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 20px;">Debian</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Indie-Hacker/" style="font-size: 10px;">Indie Hacker</a> <a href="/tags/Install/" style="font-size: 20px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/Networking/" style="font-size: 10px;">Networking</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/NordVPN/" style="font-size: 10px;">NordVPN</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Privacy/" style="font-size: 20px;">Privacy</a> <a href="/tags/Productivity/" style="font-size: 10px;">Productivity</a> <a href="/tags/Prompts/" style="font-size: 10px;">Prompts</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/Resources/" style="font-size: 10px;">Resources</a> <a href="/tags/SOA-C02/" style="font-size: 10px;">SOA-C02</a> <a href="/tags/SOLID-Principles/" style="font-size: 10px;">SOLID Principles</a> <a href="/tags/SaaS/" style="font-size: 10px;">SaaS</a> <a href="/tags/Security/" style="font-size: 20px;">Security</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/Supabase/" style="font-size: 10px;">Supabase</a> <a href="/tags/SysOps/" style="font-size: 10px;">SysOps</a> <a href="/tags/Tech-Stack/" style="font-size: 10px;">Tech Stack</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/Tools/" style="font-size: 20px;">Tools</a> <a href="/tags/Vercel/" style="font-size: 10px;">Vercel</a> <a href="/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
     </div>
   </div>
 
