@@ -188,7 +188,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2026/05/09/Claude-Code-Useful-Commands-and-Keywords/" data-id="cmt907k7z000bz8yy210p6eqv" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2026/05/09/Claude-Code-Useful-Commands-and-Keywords/" data-id="cmu6v5b5200060a42g156cbes" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2026/05/09/Claude-Code-Useful-Commands-and-Keywords/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -248,10 +248,22 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx pm-claude-skills add</span><br></pre></td></tr></table></figure>
 
 <p>Or install via <code>/plugin</code> inside Claude Code and search for <strong>pm-skills</strong>.</p>
+<h3 id="Security-Audit"><a href="#Security-Audit" class="headerlink" title="Security Audit"></a>Security Audit</h3><p><a target="_blank" rel="noopener" href="https://github.com/cloudflare/security-audit-skill">Cloudflare’s security-audit skill</a> turns the agent into a security auditor: reconnaissance, coverage-led hunting, candidate validation, and independently verified findings, written out as <code>REPORT.md</code> &#x2F; <code>FINDINGS-DETAIL.md</code>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx skills add https://github.com/cloudflare/security-audit-skill --skill security-audit -g -y</span><br></pre></td></tr></table></figure>
+
+<p>Trigger it with a prompt like <code>security audit this codebase</code>.</p>
 <h2 id="Official-Claude-Plugin"><a href="#Official-Claude-Plugin" class="headerlink" title="Official Claude Plugin"></a>Official Claude Plugin</h2><h3 id="Code-Simplifier"><a href="#Code-Simplifier" class="headerlink" title="Code Simplifier"></a>Code Simplifier</h3><p>Reviews changed code for reuse, quality, and efficiency, then fixes issues found.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">claude plugin install code-simplifier</span><br></pre></td></tr></table></figure>
 
 <p>Invoke with: <code>/simplify</code></p>
+<h2 id="MCP-Plugins"><a href="#MCP-Plugins" class="headerlink" title="MCP Plugins"></a>MCP Plugins</h2><h3 id="Context-Mode-—-Reduce-Context-Window-Usage"><a href="#Context-Mode-—-Reduce-Context-Window-Usage" class="headerlink" title="Context Mode — Reduce Context Window Usage"></a>Context Mode — Reduce Context Window Usage</h3><p><a target="_blank" rel="noopener" href="https://github.com/mksglu/context-mode">Context Mode</a> is an MCP server that sandboxes tool output (98% reduction — a 315 KB session becomes 5.4 KB) and persists session memory across context compactions, so Claude doesn’t forget which files it was editing.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/plugin marketplace add mksglu/context-mode</span><br><span class="line">/plugin install context-mode@context-mode</span><br></pre></td></tr></table></figure>
+
+<p>Verify with <code>/context-mode:ctx-doctor</code>, check savings with <code>/context-mode:ctx-stats</code>.</p>
+<h3 id="Engram-—-Persistent-Memory"><a href="#Engram-—-Persistent-Memory" class="headerlink" title="Engram — Persistent Memory"></a>Engram — Persistent Memory</h3><p><a target="_blank" rel="noopener" href="https://openengram.ai/">Engram</a> is a self-hosted, open-source memory server (Apache 2.0): it extracts facts, preferences, and decisions from conversations, consolidates them nightly, and recalls them across sessions and even across different models (Claude, ChatGPT, Gemini).</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># MCP server for Claude Desktop, Cursor, Windsurf, and any MCP client</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/openengram/engram-mcp</span><br></pre></td></tr></table></figure>
+
+<p>Runs entirely on your machine — no cloud account required; used via <code>engram.remember(...)</code> &#x2F; <code>engram.recall(...)</code>.</p>
 <h2 id="Quick-Reference-—-All-Skills"><a href="#Quick-Reference-—-All-Skills" class="headerlink" title="Quick Reference — All Skills"></a>Quick Reference — All Skills</h2><table>
 <thead>
 <tr>
@@ -316,8 +328,20 @@ ga('send', 'pageview');
 <td><code>/context7</code></td>
 </tr>
 <tr>
+<td>Security Audit</td>
+<td>prompt: “security audit this codebase”</td>
+</tr>
+<tr>
 <td>Code Simplifier</td>
 <td><code>/simplify</code></td>
+</tr>
+<tr>
+<td>Context Mode</td>
+<td><code>/context-mode:ctx-stats</code></td>
+</tr>
+<tr>
+<td>Engram Memory</td>
+<td>MCP tools: <code>remember</code> &#x2F; <code>recall</code></td>
 </tr>
 </tbody></table>
 <h2 id="Extra-Tools"><a href="#Extra-Tools" class="headerlink" title="Extra Tools"></a>Extra Tools</h2><h3 id="markitdown-—-Document-Reader"><a href="#markitdown-—-Document-Reader" class="headerlink" title="markitdown — Document Reader"></a>markitdown — Document Reader</h3><p>Converts files (PDF, Word, PowerPoint, Excel, HTML, CSV, JSON, Images, Audio, YouTube URLs, EPubs, ZIP) to Markdown so Claude can read them.</p>
@@ -329,7 +353,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2026/04/14/Claude-Code-Skills-Setup/" data-id="cmt907k7z000az8yygkno7d7f" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2026/04/14/Claude-Code-Skills-Setup/" data-id="cmu6v5b5100050a42a3828cq8" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2026/04/14/Claude-Code-Skills-Setup/#disqus_thread" class="article-comment-link">Comments</a>
       
