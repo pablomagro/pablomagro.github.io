@@ -84,6 +84,72 @@ ga('send', 'pageview');
   
   
   
+    <article id="post-Reducing-PDF-file-size-in-GNU-Linux" class="article article-type-post"
+  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/13/Reducing-PDF-file-size-in-GNU-Linux/" class="article-date">
+  <time datetime="2018-09-13T10:12:24.000Z" itemprop="datePublished">13 Sep 2018</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GNU-Linux/">GNU/Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/13/Reducing-PDF-file-size-in-GNU-Linux/">Reducing PDF file-size in GNU/Linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I have tried several apps to compress PDF files and the best one in my opinion in terms of useability and compression is <a target="_blank" rel="noopener" href="https://www.ghostscript.com/index.html">ghostscript</a>.</p>
+<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><p>Run from a terminal below command if you are based on Debian and children.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ghostscript - interpreter for the PostScript language and for PDF</span></span><br><span class="line">apt install ghostscript</span><br></pre></td></tr></table></figure>
+
+<h1 id="Use"><a href="#Use" class="headerlink" title="Use"></a>Use</h1><p>Run the following command to reduce the file-size of your PDF:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ghostscript -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/print -sOutputFile=new_file.pdf original_file.pdf</span><br></pre></td></tr></table></figure>
+
+<p><strong>Note</strong>: You can use gs if you wish. For me it is an alias for <code>git status</code>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> ghostscript</span><br><span class="line">ghostscript is /usr/bin/ghostscript</span><br><span class="line"></span><br><span class="line">ll /usr/bin/ghostscript</span><br><span class="line">lrwxrwxrwx 1 root root 2 Sep  6 10:02 /usr/bin/ghostscript -&gt; gs (/usr/bin/gs)</span><br></pre></td></tr></table></figure>
+
+<p>Now you have a few options here under -dPDFSettings:</p>
+<ul>
+<li><strong>&#x2F;screen</strong> Selects low-resolution output (72 dpi), and the lowest file-size.</li>
+<li><strong>&#x2F;ebook</strong> Selects medium-resolution output (150 dpi), with a medium file-size.</li>
+<li><strong>&#x2F;printer</strong> and <strong>&#x2F;prepress</strong> are both the high-resolution options (300 dpi), which is mainly used for printing PDFs. As you might have guessed, this option gives you the biggest file-size (yes, even bigger than your mother).</li>
+</ul>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ul>
+<li>How to Use Ghostscript: <a target="_blank" rel="noopener" href="https://www.ghostscript.com/doc/9.20/Use.htm">https://www.ghostscript.com/doc/9.20/Use.htm</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.pmagas.com/2018/09/13/Reducing-PDF-file-size-in-GNU-Linux/" data-id="cmwl1i76a0024yu4yhjzy7w9y" class="article-share-link">Share</a>
+      
+        <a href="https://blog.pmagas.com/2018/09/13/Reducing-PDF-file-size-in-GNU-Linux/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ghostscript/" rel="tag">Ghostscript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PDF/" rel="tag">PDF</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
     <article id="post-Node-best-and-useful-global-CLIs" class="article article-type-post"
   itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
   <div class="article-meta">
@@ -129,7 +195,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2018/08/23/Node-best-and-useful-global-CLIs/" data-id="cmu6v5b5h001n0a429gzqeu13" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2018/08/23/Node-best-and-useful-global-CLIs/" data-id="cmwl1i767001jyu4y0l7t1xrk" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2018/08/23/Node-best-and-useful-global-CLIs/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -177,7 +243,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2018/08/23/Try-a-new-OS/" data-id="cmu6v5b5o002p0a42hqpqhceb" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2018/08/23/Try-a-new-OS/" data-id="cmwl1i76b002dyu4y8u6ef52g" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2018/08/23/Try-a-new-OS/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -260,7 +326,7 @@ This video from 2013 demonstrates some other cool features: <a target="_blank" r
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2018/08/22/KDE-connect/" data-id="cmu6v5b5g001h0a428orng2qk" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2018/08/22/KDE-connect/" data-id="cmwl1i766001byu4y6swu29ym" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2018/08/22/KDE-connect/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -316,109 +382,12 @@ This video from 2013 demonstrates some other cool features: <a target="_blank" r
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2018/01/04/Obtain-a-refresh-token-at-Google-OAuth2-Playground/" data-id="cmu6v5b5i001q0a425p5ucjcv" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2018/01/04/Obtain-a-refresh-token-at-Google-OAuth2-Playground/" data-id="cmwl1i767001lyu4yhegg68u6" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2018/01/04/Obtain-a-refresh-token-at-Google-OAuth2-Playground/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Token/" rel="tag">Token</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-    <article id="post-How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer" class="article article-type-post"
-  itemscope itemtype="http://schema.org/Blog" id="post-hexo-tags-structureddata-keywords" class="article article-type-post" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/" class="article-date">
-  <time datetime="2018-01-03T07:09:55.000Z" itemprop="datePublished">3 Jan 2018</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/GNU-Linux/">GNU/Linux</a>►<a class="article-category-link" href="/categories/GNU-Linux/Installer/">Installer</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/">How to provide non-free firmware files to the Debian Stretch Installer</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>When I attempted to install Debian (9.3) on my laptop &#x2F; pc, I could not get a network connection, because the installer told me that it was missing the required firmware files for my network interfaces:</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Some of your hardware needs non-free firmware files to operate.  The firmware can be loaded from</span><br><span class="line">removable media, such as a USB stick or floppy.</span><br><span class="line"></span><br><span class="line">The missing firmware files are: iwlwifi-6000g2b-6.ucode iwlwifi-6000g2b-5.ucode</span><br><span class="line"></span><br><span class="line">If you have such media available now, insert it, and continue.</span><br><span class="line">Load missing firmware from removable media?</span><br></pre></td></tr></table></figure>
-
-<p>As I have been in this situation several times when I do not have a easy access to internet using a wired connection and I have a wireless card where the driver is not recognized by debian, and I have decided to write these lines to remind me how to fix it.</p>
-<h2 id="Faster-solution"><a href="#Faster-solution" class="headerlink" title="Faster solution"></a>Faster solution</h2><p>Use the unofficial ISO images with the non-free firmware already included (My normal option):
-<a target="_blank" rel="noopener" href="http://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/">http://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/</a></p>
-<h2 id="Longer-solution"><a href="#Longer-solution" class="headerlink" title="Longer solution"></a>Longer solution</h2><p>Download the non-free firmware, store it within an usb drive and mount it during the installation; you can check <a target="_blank" rel="noopener" href="https://www.linuxquestions.org/questions/debian-26/how-to-provide-non-free-firmware-files-to-the-debian-jessie-installer-4175542680/">this post</a> out, it is very well explained. Below is a summary from above post:</p>
-<ul>
-<li>First, of course, I had to actually find the required firmware files. To that end:</li>
-<li>I went to the Debian site.</li>
-<li>I clicked the Debian Packages link, to continue to the Debian Packages page.</li>
-<li>Under the Packages header, I selected the Search the contents of packages link.</li>
-<li>In the Keyword: field, I entered: iwlwifi.</li>
-<li>Under Display:, I selected the option labelled packages that contain files whose names contain the keyword.</li>
-<li>I left the Distribution: value unchanged at stable.</li>
-<li>I changed the Architecture: value to 64-bit PC (amd64).</li>
-<li>I clicked the Search button.</li>
-<li>In the list of search results that appeared next, I looked for the two files that I needed: iwlwifi-6000g2b-5.ucode and iwlwifi-6000g2b-6.ucode. Both files were present in the firmware-iwlwifi package.</li>
-<li>I clicked one of the firmware-iwlwifi links, to move on to the Binary firmware for Intel Wireless cards page.</li>
-<li>Under the Download firmware-iwlwifi header, I clicked the all architecture link to continue.</li>
-<li>On the next page, I clicked the link to the site from which I wanted to download the file.</li>
-</ul>
-<p>The Debian package firmware-iwlwifi_20161130-3_all.deb got downloaded for me.</p>
-<p>Next, it was time to extract the contents of the downloaded packages:</p>
-<p>I opened a command-line terminal window, and went to the directory where the packages were downloaded―which, in my case, was my personal download directory:
-Code:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Downloads</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>I extracted the contents of both packages into the current directory:</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-deb --extract firmware-iwlwifi_20161130-3_all.deb .</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>I copied the entire contents of the firmware subdirectory to a USB stick that was formatted with a FAT filesystem.</li>
-</ul>
-<p>Note, in particular, that the USB stick included the contents of the firmware directory, not the directory itself!</p>
-<p>Finally, the time had come to retry the Debian installation. I simply booted the computer off the Debian 8.0.0 medium, and when it complained again about the missing firmware files, I took the following steps:</p>
-<ul>
-<li>Inserted the USB stick.</li>
-<li>pressed the <code>&lt;CTRL&gt;+&lt;Alt&gt;+&lt;F2&gt;</code> key combination, to switch to the second virtual terminal.</li>
-<li>ran either the blkid or the fdisk -l command, to find out under which device name the USB stick was known: &#x2F;dev&#x2F;sdc. Its FAT filesystem, which contained the firmware files, then, was &#x2F;dev&#x2F;sdc1.</li>
-<li>mounted the FAT filesystem under the &#x2F;lib&#x2F;firmware mountpoint―which, however, I had to create first:</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /lib/firmware</span><br><span class="line">mount /dev/sdc1 /lib/firmware</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>I pressed <code>&lt;Ctrl&gt;+&lt;Alt&gt;+&lt;F5&gt;</code> to continue the installation process.</li>
-</ul>
-<p>The firmware files were successfully loaded, and I got prompted for my wireless networking parameters.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/" data-id="cmu6v5b5d00160a42clifgs7s" class="article-share-link">Share</a>
-      
-        <a href="https://blog.pmagas.com/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debian/" rel="tag">Debian</a></li></ul>
 
     </footer>
   </div>
@@ -445,6 +414,10 @@ Code:</p>
       <ul>
         
           <li>
+            <a href="/2026/11/18/fix-nvidia-desktop-effects-restarted-debian-13/">Fix &#34;Desktop effects were restarted due to a graphics reset&#34; on Debian 13 with NVIDIA</a>
+          </li>
+        
+          <li>
             <a href="/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/">Fix NordVPN Breaking Your Network on Linux After Disconnecting</a>
           </li>
         
@@ -460,10 +433,6 @@ Code:</p>
             <a href="/2026/05/26/Indie-SaaS-Starter-Stack/">Indie SaaS Starter Stack: 14 Tools to Go from Zero to Launched</a>
           </li>
         
-          <li>
-            <a href="/2026/05/09/Claude-Code-Useful-Commands-and-Keywords/">Claude Code - Useful Commands and Keywords</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -473,7 +442,7 @@ Code:</p>
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/">CLI</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/youtube-dl/">youtube-dl</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Design/TypeScript/">TypeScript</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/">Development</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/">GNU/Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/CLI/">CLI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Debian/">Debian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Installer/">Installer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/KDE/">KDE</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Global/">Global</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/">OAuth2.0</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/Nodemailer/">Nodemailer</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hosting/">Hosting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/">KDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/Dolphin/">Dolphin</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kubernetes/">Kubernetes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Open-AI/">Open AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Privacy/">Privacy</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Protractor/">Protractor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Refranes-Citas-Proverbios/">Refranes, Citas, Proverbios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Troubleshooting/">Troubleshooting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VS-Code/">VS Code</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/">CLI</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CLI/youtube-dl/">youtube-dl</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Design/TypeScript/">TypeScript</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/">Development</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/">GNU/Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/CLI/">CLI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Debian/">Debian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/Installer/">Installer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNU-Linux/KDE/">KDE</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Global/">Global</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/">OAuth2.0</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Google/OAuth2-0/Nodemailer/">Nodemailer</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hosting/">Hosting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/">KDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/KDE/Dolphin/">Dolphin</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kubernetes/">Kubernetes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Open-AI/">Open AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Privacy/">Privacy</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Protractor/">Protractor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Refranes-Citas-Proverbios/">Refranes, Citas, Proverbios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Troubleshooting/">Troubleshooting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VS-Code/">VS Code</a></li></ul>
     </div>
   </div>
 
@@ -483,7 +452,7 @@ Code:</p>
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AI/" style="font-size: 20px;">AI</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/CLI/" style="font-size: 20px;">CLI</a> <a href="/tags/Certifications/" style="font-size: 20px;">Certifications</a> <a href="/tags/Claude/" style="font-size: 20px;">Claude</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 20px;">Debian</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Indie-Hacker/" style="font-size: 10px;">Indie Hacker</a> <a href="/tags/Install/" style="font-size: 20px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/Networking/" style="font-size: 10px;">Networking</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/NordVPN/" style="font-size: 10px;">NordVPN</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Privacy/" style="font-size: 20px;">Privacy</a> <a href="/tags/Productivity/" style="font-size: 10px;">Productivity</a> <a href="/tags/Prompts/" style="font-size: 10px;">Prompts</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/Resources/" style="font-size: 10px;">Resources</a> <a href="/tags/SOA-C02/" style="font-size: 10px;">SOA-C02</a> <a href="/tags/SOLID-Principles/" style="font-size: 10px;">SOLID Principles</a> <a href="/tags/SaaS/" style="font-size: 10px;">SaaS</a> <a href="/tags/Security/" style="font-size: 20px;">Security</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/Supabase/" style="font-size: 10px;">Supabase</a> <a href="/tags/SysOps/" style="font-size: 10px;">SysOps</a> <a href="/tags/Tech-Stack/" style="font-size: 10px;">Tech Stack</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/Tools/" style="font-size: 20px;">Tools</a> <a href="/tags/Vercel/" style="font-size: 10px;">Vercel</a> <a href="/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
+      <a href="/tags/AI/" style="font-size: 15px;">AI</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Applications/" style="font-size: 10px;">Applications</a> <a href="/tags/Bitbucket/" style="font-size: 10px;">Bitbucket</a> <a href="/tags/Bootable/" style="font-size: 10px;">Bootable</a> <a href="/tags/CLI/" style="font-size: 15px;">CLI</a> <a href="/tags/Certifications/" style="font-size: 15px;">Certifications</a> <a href="/tags/Claude/" style="font-size: 15px;">Claude</a> <a href="/tags/Commands/" style="font-size: 10px;">Commands</a> <a href="/tags/Debian/" style="font-size: 20px;">Debian</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/Extensions/" style="font-size: 10px;">Extensions</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/tags/Free/" style="font-size: 10px;">Free</a> <a href="/tags/GNU-Linux/" style="font-size: 10px;">GNU/Linux</a> <a href="/tags/Ghostscript/" style="font-size: 10px;">Ghostscript</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/ISO/" style="font-size: 10px;">ISO</a> <a href="/tags/Indie-Hacker/" style="font-size: 10px;">Indie Hacker</a> <a href="/tags/Install/" style="font-size: 15px;">Install</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/KDE/" style="font-size: 10px;">KDE</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Menu-Option/" style="font-size: 10px;">Menu, Option</a> <a href="/tags/Monitor/" style="font-size: 10px;">Monitor</a> <a href="/tags/NVIDIA/" style="font-size: 10px;">NVIDIA</a> <a href="/tags/Networking/" style="font-size: 10px;">Networking</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/NordVPN/" style="font-size: 10px;">NordVPN</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/Packages/" style="font-size: 10px;">Packages</a> <a href="/tags/Post-Install/" style="font-size: 10px;">Post Install</a> <a href="/tags/Privacy/" style="font-size: 15px;">Privacy</a> <a href="/tags/Productivity/" style="font-size: 10px;">Productivity</a> <a href="/tags/Prompts/" style="font-size: 10px;">Prompts</a> <a href="/tags/Protractor/" style="font-size: 10px;">Protractor</a> <a href="/tags/Resources/" style="font-size: 10px;">Resources</a> <a href="/tags/SOA-C02/" style="font-size: 10px;">SOA-C02</a> <a href="/tags/SOLID-Principles/" style="font-size: 10px;">SOLID Principles</a> <a href="/tags/SaaS/" style="font-size: 10px;">SaaS</a> <a href="/tags/Security/" style="font-size: 15px;">Security</a> <a href="/tags/ServletContextListener/" style="font-size: 10px;">ServletContextListener</a> <a href="/tags/Supabase/" style="font-size: 10px;">Supabase</a> <a href="/tags/SysOps/" style="font-size: 10px;">SysOps</a> <a href="/tags/Tech-Stack/" style="font-size: 10px;">Tech Stack</a> <a href="/tags/Token/" style="font-size: 10px;">Token</a> <a href="/tags/Tools/" style="font-size: 15px;">Tools</a> <a href="/tags/Vercel/" style="font-size: 10px;">Vercel</a> <a href="/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/tags/hplip/" style="font-size: 10px;">hplip</a> <a href="/tags/youtube-dl/" style="font-size: 10px;">youtube-dl</a>
     </div>
   </div>
 
