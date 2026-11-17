@@ -1,4 +1,12 @@
 (function($){
+  // Dark mode toggle
+  $('#nav-theme-btn').on('click', function(){
+    var root = document.documentElement;
+    // CSS decides active scheme, covers OS-dark default
+    root.dataset.theme = getComputedStyle(root).colorScheme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+  });
+
   // Search
   var $searchWrap = $('#search-form-wrap'),
     isSearchAnim = false,

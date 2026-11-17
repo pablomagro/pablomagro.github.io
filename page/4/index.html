@@ -26,6 +26,10 @@
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
+  <script>
+    // Before first paint: avoids light flash
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
   
 <link rel="stylesheet" href="/css/style.css">
 
@@ -72,6 +76,7 @@ ga('send', 'pageview');
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <button id="nav-theme-btn" class="nav-icon" type="button" title="Toggle dark mode"></button>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.pmagas.com"></form>
@@ -180,7 +185,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2023/02/16/AI-Websites-to-make-your-Life-Easier/" data-id="cmwl1i75v0004yu4yaf8q6qbl" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2023/02/16/AI-Websites-to-make-your-Life-Easier/" data-id="cmwl380ps0000zb4ybcqdg6zu" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2023/02/16/AI-Websites-to-make-your-Life-Easier/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -258,7 +263,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2023/02/15/free-host-for-web-application-sites/" data-id="cmwl1i76n006hyu4y0yvofa2z" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2023/02/15/free-host-for-web-application-sites/" data-id="cmwl380qf002tzb4yaugl9lqn" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2023/02/15/free-host-for-web-application-sites/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -382,7 +387,7 @@ You can use a custom domain name for your github pages website. All you need to 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2022/12/31/Getting-Started-With-Hexo/" data-id="cmwl1i762000syu4y01x27ueg" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2022/12/31/Getting-Started-With-Hexo/" data-id="cmwl380q2000ozb4yenl1eti2" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2022/12/31/Getting-Started-With-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -558,9 +563,9 @@ Define the firewall around the instances</p>
 <p>Public DNS (IPv4)
 ec2-54-153-150-4.ap-southeast-2.compute.amazonaws.com
 IPv4 Public IP 54.153.150.4</p>
-<p>ssh <a href="mailto:&#x65;&#x63;&#50;&#x2d;&#x75;&#115;&#101;&#114;&#64;&#x65;&#99;&#50;&#45;&#53;&#x34;&#x2d;&#x31;&#53;&#x33;&#x2d;&#49;&#53;&#48;&#45;&#52;&#x2e;&#97;&#x70;&#x2d;&#x73;&#x6f;&#117;&#116;&#x68;&#101;&#x61;&#x73;&#116;&#45;&#x32;&#x2e;&#x63;&#111;&#109;&#x70;&#x75;&#116;&#101;&#x2e;&#x61;&#x6d;&#x61;&#122;&#x6f;&#110;&#97;&#119;&#x73;&#46;&#99;&#x6f;&#109;">&#x65;&#x63;&#50;&#x2d;&#x75;&#115;&#101;&#114;&#64;&#x65;&#99;&#50;&#45;&#53;&#x34;&#x2d;&#x31;&#53;&#x33;&#x2d;&#49;&#53;&#48;&#45;&#52;&#x2e;&#97;&#x70;&#x2d;&#x73;&#x6f;&#117;&#116;&#x68;&#101;&#x61;&#x73;&#116;&#45;&#x32;&#x2e;&#x63;&#111;&#109;&#x70;&#x75;&#116;&#101;&#x2e;&#x61;&#x6d;&#x61;&#122;&#x6f;&#110;&#97;&#119;&#x73;&#46;&#99;&#x6f;&#109;</a>
-ssh <a href="mailto:&#101;&#x63;&#50;&#45;&#117;&#115;&#x65;&#114;&#64;&#x35;&#52;&#46;&#49;&#53;&#x33;&#46;&#x31;&#x35;&#48;&#46;&#x34;">&#101;&#x63;&#50;&#45;&#117;&#115;&#x65;&#114;&#64;&#x35;&#52;&#46;&#49;&#53;&#x33;&#46;&#x31;&#x35;&#48;&#46;&#x34;</a>
-ssh -i EC2Tutorial.pem <a href="mailto:&#x65;&#99;&#x32;&#x2d;&#117;&#115;&#x65;&#x72;&#64;&#53;&#52;&#46;&#x31;&#53;&#51;&#x2e;&#49;&#x35;&#x30;&#46;&#x34;">&#x65;&#99;&#x32;&#x2d;&#117;&#115;&#x65;&#x72;&#64;&#53;&#52;&#46;&#x31;&#53;&#51;&#x2e;&#49;&#x35;&#x30;&#46;&#x34;</a></p>
+<p>ssh <a href="mailto:&#x65;&#99;&#x32;&#45;&#x75;&#115;&#x65;&#114;&#64;&#101;&#x63;&#x32;&#45;&#53;&#x34;&#45;&#49;&#x35;&#x33;&#45;&#x31;&#53;&#48;&#x2d;&#52;&#46;&#97;&#x70;&#45;&#115;&#x6f;&#117;&#116;&#x68;&#x65;&#97;&#115;&#116;&#x2d;&#x32;&#x2e;&#99;&#x6f;&#109;&#x70;&#x75;&#116;&#x65;&#x2e;&#x61;&#109;&#97;&#x7a;&#x6f;&#110;&#x61;&#119;&#115;&#x2e;&#x63;&#111;&#x6d;">&#x65;&#99;&#x32;&#45;&#x75;&#115;&#x65;&#114;&#64;&#101;&#x63;&#x32;&#45;&#53;&#x34;&#45;&#49;&#x35;&#x33;&#45;&#x31;&#53;&#48;&#x2d;&#52;&#46;&#97;&#x70;&#45;&#115;&#x6f;&#117;&#116;&#x68;&#x65;&#97;&#115;&#116;&#x2d;&#x32;&#x2e;&#99;&#x6f;&#109;&#x70;&#x75;&#116;&#x65;&#x2e;&#x61;&#109;&#97;&#x7a;&#x6f;&#110;&#x61;&#119;&#115;&#x2e;&#x63;&#111;&#x6d;</a>
+ssh <a href="mailto:&#101;&#x63;&#50;&#x2d;&#x75;&#x73;&#101;&#114;&#x40;&#x35;&#x34;&#46;&#49;&#x35;&#51;&#x2e;&#49;&#x35;&#48;&#x2e;&#52;">&#101;&#x63;&#50;&#x2d;&#x75;&#x73;&#101;&#114;&#x40;&#x35;&#x34;&#46;&#49;&#x35;&#51;&#x2e;&#49;&#x35;&#48;&#x2e;&#52;</a>
+ssh -i EC2Tutorial.pem <a href="mailto:&#x65;&#x63;&#x32;&#45;&#x75;&#115;&#x65;&#x72;&#64;&#53;&#x34;&#46;&#49;&#x35;&#51;&#x2e;&#x31;&#x35;&#x30;&#x2e;&#x34;">&#x65;&#x63;&#x32;&#45;&#x75;&#115;&#x65;&#x72;&#64;&#53;&#x34;&#46;&#49;&#x35;&#51;&#x2e;&#x31;&#x35;&#x30;&#x2e;&#x34;</a></p>
 <p>  Q: You are getting a permission error exception when trying to SSH into your Linux Instance
   A: the key is missing permissions chmod 0400
   The exam expects you to know this, even if you used Windows &#x2F; Putty to SSH into your instances. If you’re a windows user, just have a quick look at the Linux SSH lecture!</p>
@@ -6692,7 +6697,7 @@ A: Trusted Advisor</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/" data-id="cmwl1i75t0001yu4y0hts52m8" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/" data-id="cmwl380q5001czb4y16bief5b" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -6760,7 +6765,7 @@ This method has the advantage over dpkg --search in that it will find files in
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2020/04/12/Find%20out%20what%20package%20produced%20a%20particular%20file/" data-id="cmwl1i760000lyu4y8on2a2f3" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2020/04/12/Find%20out%20what%20package%20produced%20a%20particular%20file/" data-id="cmwl380q0000izb4y50ncgvg4" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2020/04/12/Find%20out%20what%20package%20produced%20a%20particular%20file/#disqus_thread" class="article-comment-link">Comments</a>
       

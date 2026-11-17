@@ -2,6 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.pmagas.com/2018/08/23/Try-a-new-OS/</loc>
+    
+    <lastmod>2026-11-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/2026/11/18/fix-nvidia-desktop-effects-restarted-debian-13/</loc>
+    
+    <lastmod>2026-11-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/2023/02/15/free-host-for-web-application-sites/</loc>
+    
+    <lastmod>2026-11-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/2016/09/13/youtube-dl/</loc>
+    
+    <lastmod>2026-11-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/2016/09/13/Git-Documentation/</loc>
+    
+    <lastmod>2026-11-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/2016/09/13/How-do-I-reset-a-monitor-settings/</loc>
+    
+    <lastmod>2026-11-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/2026/08/17/How-to-Disable-Android-Background-Screen-Analysis/</loc>
+    
+    <lastmod>2026-11-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/2023/02/17/How-to-add-Open-Folder-with-X-when-I-right-click-in-an-folder-in-Dolphin/</loc>
+    
+    <lastmod>2026-11-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.pmagas.com/2018/01/03/How-to-provide-non-free-firmware-files-to-the-Debian-Stretch-Installer/</loc>
     
     <lastmod>2026-11-17</lastmod>
@@ -20,6 +92,15 @@
   </url>
   
   <url>
+    <loc>https://blog.pmagas.com/2017/12/28/Install-latest-hplip-version-on-Debian-9/</loc>
+    
+    <lastmod>2026-11-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.pmagas.com/2018/08/22/KDE-connect/</loc>
     
     <lastmod>2026-11-17</lastmod>
@@ -30,15 +111,6 @@
   
   <url>
     <loc>https://blog.pmagas.com/2023/02/28/Kubernetes-Notes/</loc>
-    
-    <lastmod>2026-11-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/2017/12/28/Install-latest-hplip-version-on-Debian-9/</loc>
     
     <lastmod>2026-11-17</lastmod>
     
@@ -128,24 +200,6 @@
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/2016/09/13/ServletContextListener/</loc>
-    
-    <lastmod>2026-11-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/2018/08/23/Try-a-new-OS/</loc>
-    
-    <lastmod>2026-11-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.pmagas.com/2023/07/13/SOLID-Principles/</loc>
     
     <lastmod>2026-11-17</lastmod>
@@ -155,25 +209,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/2026/11/18/fix-nvidia-desktop-effects-restarted-debian-13/</loc>
-    
-    <lastmod>2026-11-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/2023/02/15/free-host-for-web-application-sites/</loc>
-    
-    <lastmod>2026-11-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/2016/09/13/youtube-dl/</loc>
+    <loc>https://blog.pmagas.com/2016/09/13/ServletContextListener/</loc>
     
     <lastmod>2026-11-17</lastmod>
     
@@ -191,34 +227,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/</loc>
-    
-    <lastmod>2026-11-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/2023/02/16/AI-Websites-to-make-your-Life-Easier/</loc>
-    
-    <lastmod>2026-11-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.pmagas.com/2016/09/14/Bootable-CD-from-ISO/</loc>
-    
-    <lastmod>2026-11-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/</loc>
     
     <lastmod>2026-11-17</lastmod>
     
@@ -245,7 +254,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/2017/11/15/Disable-baloo-file-extractor/</loc>
+    <loc>https://blog.pmagas.com/2023/04/03/Coding-Resources/</loc>
     
     <lastmod>2026-11-17</lastmod>
     
@@ -263,7 +272,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/2020/04/12/Find%20out%20what%20package%20produced%20a%20particular%20file/</loc>
+    <loc>https://blog.pmagas.com/2017/11/15/Disable-baloo-file-extractor/</loc>
     
     <lastmod>2026-11-17</lastmod>
     
@@ -272,7 +281,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/2023/04/03/Coding-Resources/</loc>
+    <loc>https://blog.pmagas.com/2020/04/12/Find%20out%20what%20package%20produced%20a%20particular%20file/</loc>
     
     <lastmod>2026-11-17</lastmod>
     
@@ -299,7 +308,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/2016/09/13/Git-Documentation/</loc>
+    <loc>https://blog.pmagas.com/2023/05/15/AWS-Certified-SysOps-Administrator-Associate-SOA-C02/</loc>
     
     <lastmod>2026-11-17</lastmod>
     
@@ -308,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/2016/09/13/How-do-I-reset-a-monitor-settings/</loc>
+    <loc>https://blog.pmagas.com/2023/02/16/AI-Websites-to-make-your-Life-Easier/</loc>
     
     <lastmod>2026-11-17</lastmod>
     
@@ -317,16 +326,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/2026/08/17/How-to-Disable-Android-Background-Screen-Analysis/</loc>
-    
-    <lastmod>2026-11-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/2023/02/17/How-to-add-Open-Folder-with-X-when-I-right-click-in-an-folder-in-Dolphin/</loc>
+    <loc>https://blog.pmagas.com/2020/05/13/AWS-Certified-Solutions-Architect-Certification-SAA-C02/</loc>
     
     <lastmod>2026-11-17</lastmod>
     
@@ -344,21 +344,14 @@
 
   
   <url>
-    <loc>https://blog.pmagas.com/tags/Bitbucket/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/tags/Certifications/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.pmagas.com/tags/Websites/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/tags/Bitbucket/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -373,20 +366,6 @@
   
   <url>
     <loc>https://blog.pmagas.com/tags/ISO/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/tags/SysOps/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/tags/SOA-C02/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -421,7 +400,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/tags/File/</loc>
+    <loc>https://blog.pmagas.com/tags/Resources/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -449,14 +428,14 @@
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/tags/Packages/</loc>
+    <loc>https://blog.pmagas.com/tags/File/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/tags/Resources/</loc>
+    <loc>https://blog.pmagas.com/tags/Packages/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -568,20 +547,6 @@
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/tags/Applications/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/tags/Doc/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.pmagas.com/tags/Install/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -596,6 +561,27 @@
   </url>
   
   <url>
+    <loc>https://blog.pmagas.com/tags/Applications/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/tags/Certifications/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/tags/Doc/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.pmagas.com/tags/Node/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -604,6 +590,20 @@
   
   <url>
     <loc>https://blog.pmagas.com/tags/Token/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/tags/SysOps/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/tags/SOA-C02/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -659,6 +659,13 @@
   </url>
   
   <url>
+    <loc>https://blog.pmagas.com/tags/SOLID-Principles/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.pmagas.com/tags/ServletContextListener/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -681,13 +688,6 @@
   
   <url>
     <loc>https://blog.pmagas.com/tags/GNU-Linux/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/tags/SOLID-Principles/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -724,21 +724,14 @@
 
   
   <url>
-    <loc>https://blog.pmagas.com/categories/Markdown/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/categories/AWS/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.pmagas.com/categories/AI/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/categories/Markdown/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -752,20 +745,6 @@
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/categories/Tools/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/categories/GNU-Linux/Debian/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.pmagas.com/categories/Coding/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -773,7 +752,28 @@
   </url>
   
   <url>
+    <loc>https://blog.pmagas.com/categories/Tools/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/categories/GNU-Linux/KDE/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.pmagas.com/categories/GNU-Linux/CLI/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/categories/GNU-Linux/Debian/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -795,13 +795,6 @@
   
   <url>
     <loc>https://blog.pmagas.com/categories/Git/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/categories/GNU-Linux/KDE/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -830,6 +823,13 @@
   
   <url>
     <loc>https://blog.pmagas.com/categories/Development/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/categories/AWS/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -892,14 +892,14 @@
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/categories/Java/</loc>
+    <loc>https://blog.pmagas.com/categories/Design/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/categories/OS/</loc>
+    <loc>https://blog.pmagas.com/categories/Java/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -913,21 +913,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pmagas.com/categories/Google/OAuth2-0/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/categories/Google/OAuth2-0/Nodemailer/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pmagas.com/categories/Design/</loc>
+    <loc>https://blog.pmagas.com/categories/OS/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -955,6 +941,13 @@
   </url>
   
   <url>
+    <loc>https://blog.pmagas.com/categories/Google/OAuth2-0/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.pmagas.com/categories/Design/TypeScript/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -963,6 +956,13 @@
   
   <url>
     <loc>https://blog.pmagas.com/categories/CLI/youtube-dl/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pmagas.com/categories/Google/OAuth2-0/Nodemailer/</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

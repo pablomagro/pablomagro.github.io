@@ -13,7 +13,7 @@
 <meta property="og:description" content="Implementations of this interface recieve notifications about changes to the servlet context of the web application they are part of. To recieve notification events, the implementation class must be c">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2016-09-13T04:52:53.000Z">
-<meta property="article:modified_time" content="2026-11-17T18:42:37.407Z">
+<meta property="article:modified_time" content="2026-11-17T19:30:41.298Z">
 <meta property="article:author" content="Pablo Magro Gaspar">
 <meta property="article:tag" content="ServletContextListener">
 <meta property="article:tag" content="Java">
@@ -31,6 +31,10 @@
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
+  <script>
+    // Before first paint: avoids light flash
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
   
 <link rel="stylesheet" href="/css/style.css">
 
@@ -77,6 +81,7 @@ ga('send', 'pageview');
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <button id="nav-theme-btn" class="nav-icon" type="button" title="Toggle dark mode"></button>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.pmagas.com"></form>
@@ -160,7 +165,7 @@ The ServletContextListener is what you want, it will run your code before the we
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2016/09/13/ServletContextListener/" data-id="cmwl1i76b002byu4y996j6nj9" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2016/09/13/ServletContextListener/" data-id="cmwl380qe002lzb4y59e321vm" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2016/09/13/ServletContextListener/#disqus_thread" class="article-comment-link">Comments</a>
       

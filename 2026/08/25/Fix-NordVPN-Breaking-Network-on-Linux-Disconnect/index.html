@@ -13,7 +13,7 @@
 <meta property="og:description" content="If disconnecting NordVPN on Linux leaves you without internet access - no name resolution, no ping, apt update failing - the culprit is often the nordvpnd daemon fighting with NetworkManager, not Nord">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-08-25T12:00:00.000Z">
-<meta property="article:modified_time" content="2026-11-17T18:42:37.406Z">
+<meta property="article:modified_time" content="2026-11-17T19:30:41.297Z">
 <meta property="article:author" content="Pablo Magro Gaspar">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="NordVPN">
@@ -32,6 +32,10 @@
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
+  <script>
+    // Before first paint: avoids light flash
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
   
 <link rel="stylesheet" href="/css/style.css">
 
@@ -78,6 +82,7 @@ ga('send', 'pageview');
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <button id="nav-theme-btn" class="nav-icon" type="button" title="Toggle dark mode"></button>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.pmagas.com"></form>
@@ -143,7 +148,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.pmagas.com/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/" data-id="cmwl1i761000ryu4yaz1wcu0q" class="article-share-link">Share</a>
+      <a data-url="https://blog.pmagas.com/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/" data-id="cmwl380q1000mzb4y7g1lgbwl" class="article-share-link">Share</a>
       
         <a href="https://blog.pmagas.com/2026/08/25/Fix-NordVPN-Breaking-Network-on-Linux-Disconnect/#disqus_thread" class="article-comment-link">Comments</a>
       
